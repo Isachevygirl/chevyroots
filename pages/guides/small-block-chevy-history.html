@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Complete History of the Small Block Chevy | ChevyRoots</title>
+  <meta name="description" content="From the 1955 265 V8 to the 2023 LT6 flat-plane crank, trace the full evolution of the small block Chevy — the most important engine in American automotive history." />
+  <meta name="keywords" content="small block chevy history, SBC engine history, chevy V8 history, LS engine history, LT engine history" />
+  <meta property="og:title" content="The Complete History of the Small Block Chevy" />
+  <meta property="og:description" content="From the 1955 265 V8 to the 2023 LT6 flat-plane crank — the full story of America's greatest engine." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/small-block-chevy-history.html" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/small-block-chevy-history.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg2:       #222222;
+      --bg3:       #2A2A2A;
+      --gold:      #C4A035;
+      --gold-lt:   #D4B455;
+      --gold-dk:   #9E7F22;
+      --text:      #F0EDE6;
+      --text-dim:  #B0ADA6;
+      --text-mute: #707070;
+      --border:    #333333;
+      --radius:    6px;
+      --radius-lg: 12px;
+      --trans:     0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      transition: color var(--trans);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+
+    .nav-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #111;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      transition: background var(--trans), transform var(--trans);
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover { background: var(--gold-lt); color: #111; transform: translateY(-1px); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+    }
+
+    /* ─── ARTICLE HEADER ─── */
+    .article-header {
+      padding-top: 60px;
+      background: linear-gradient(160deg, #1A1A1A 60%, #1f1a0e 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,160,53,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .article-header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px 48px;
+      position: relative;
+    }
+
+    .article-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .article-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+    }
+
+    .article-title span { color: var(--gold); }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+
+    .article-meta-item .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .article-hero-img {
+      width: 100%;
+      height: 380px;
+      background: #333;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .article-hero-img .img-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      text-align: center;
+      padding: 16px;
+    }
+
+    /* ─── LAYOUT ─── */
+    .article-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* ─── ARTICLE BODY ─── */
+    .article-body h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin: 48px 0 16px;
+      padding-top: 8px;
+      border-top: 2px solid var(--gold);
+    }
+
+    .article-body h2:first-child { margin-top: 0; }
+
+    .article-body h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      margin: 32px 0 10px;
+      text-transform: uppercase;
+    }
+
+    .article-body p {
+      margin-bottom: 20px;
+      color: var(--text-dim);
+      font-size: 16px;
+    }
+
+    .article-body p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 24px;
+      color: var(--text-dim);
+    }
+
+    .article-body li { margin-bottom: 8px; }
+
+    .spec-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+
+    .spec-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .spec-item {}
+
+    .spec-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-bottom: 2px;
+    }
+
+    .spec-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .inline-img {
+      width: 100%;
+      height: 260px;
+      background: #2e2e2e;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 28px 0;
+      border: 1px solid var(--border);
+    }
+
+    .inline-img .img-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      text-align: center;
+      padding: 16px;
+    }
+
+    .pullquote {
+      border-left: 4px solid var(--gold);
+      padding: 16px 24px;
+      margin: 32px 0;
+      background: rgba(196,160,53,0.06);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .pullquote p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text) !important;
+      margin: 0 !important;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── SIDEBAR ─── */
+    .sidebar {
+      position: sticky;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .sidebar-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+
+    .sidebar-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc-list a {
+      font-size: 13px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+    }
+
+    .toc-list a::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+      transition: background var(--trans);
+    }
+
+    .toc-list a:hover::before { background: var(--gold); }
+    .toc-list a:hover { color: var(--text); }
+
+    .related-article {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .related-article:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .related-thumb {
+      width: 64px;
+      height: 48px;
+      background: #333;
+      border-radius: var(--radius);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .related-thumb span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      color: var(--text-mute);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .related-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
+    .related-title:hover { color: var(--gold); }
+
+    .related-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+
+    /* ─── NEWSLETTER CTA ─── */
+    .newsletter-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px;
+    }
+
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .newsletter-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .newsletter-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+
+    .newsletter-sub {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color var(--trans);
+    }
+
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form input::placeholder { color: var(--text-mute); }
+
+    .newsletter-form button {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #111;
+      border: none;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--trans), transform var(--trans);
+      white-space: nowrap;
+    }
+
+    .newsletter-form button:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+    .newsletter-note {
+      font-size: 12px;
+      color: var(--text-mute);
+      margin-top: 12px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #111;
+      border-top: 1px solid var(--border);
+      padding: 48px 24px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--text-mute);
+      max-width: 240px;
+      line-height: 1.5;
+    }
+
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-col ul a {
+      font-size: 13px;
+      color: var(--text-mute);
+      transition: color var(--trans);
+    }
+
+    .footer-col ul a:hover { color: var(--text); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-mute);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .newsletter-form { flex-direction: column; }
+      .article-hero-img { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        Chevy<span>Roots</span>
+        <small class="nav-logo-sub">Run by a Chevy Girl</small>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/" class="active">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+      <a href="/pages/builds/" class="nav-cta">Submit Your Build</a>
+      <button class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-eyebrow">Engine History &nbsp;/&nbsp; Deep Dive</div>
+      <h1 class="article-title">The Complete History of the <span>Small Block Chevy</span></h1>
+      <div class="article-meta">
+        <div class="article-meta-item"><span class="dot"></span>By ChevyRoots Staff</div>
+        <div class="article-meta-item"><span class="dot"></span>Updated April 2026</div>
+        <div class="article-meta-item"><span class="dot"></span>12 min read</div>
+        <div class="article-meta-item"><span class="dot"></span>~2,100 words</div>
+      </div>
+      <div class="article-hero-img" style="background: #333 url('/photos/corvette/pexels_9843580_corvette.jpeg') center/cover no-repeat;">
+        <div class="img-label" style="display:none;">HERO IMAGE — Small Block Chevy engine cutaway / timeline collage<br>265 · 350 · LS1 · LT6</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE LAYOUT -->
+  <div class="article-layout">
+
+    <!-- MAIN CONTENT -->
+    <article class="article-body">
+
+      <p>There is one engine at the center of American automotive culture. It has powered the fastest street cars, the most iconic muscle, the most beloved sports cars, and the most trusted trucks this country has ever produced. It has been continuously developed for nearly 70 years. It has been copied, admired, and never truly surpassed. It is the <strong>small block Chevrolet V8</strong> — and this is its story.</p>
+
+      <h2 id="1955">1955: The 265 — A New Standard</h2>
+
+      <p>In 1953, Chevrolet was the best-selling American car brand, but it had an embarrassing problem: its engines were ancient. The stovebolt inline-six that powered most Chevys was fine for a grocery getter, but it was no match for Cadillac's OHV V8 or the new overhead-valve Ford and Plymouth V8s creeping into the market.</p>
+
+      <p>Chief engineer Ed Cole — one of the greatest engine designers in history — set out to change that. His mandate was to build a modern, lightweight, high-revving V8 that could be manufactured efficiently at Chevrolet's enormous scale. What emerged in 1955 was the <strong>265 cubic inch V8</strong>, and it redefined what an American engine could be.</p>
+
+      <p>The 265 was radical for its time. It used stamped steel rocker arms instead of costly machined components. It featured individual intake ports per cylinder. The short-skirt pistons kept reciprocating mass low. The engine weighed significantly less than the Ford Y-block V8 of the same era, yet made more power per pound. In base form it produced <strong>162 horsepower</strong>. The high-performance "Power Pack" option pushed that to <strong>180 hp</strong>. Chevy had a new heartbeat.</p>
+
+      <div class="spec-card">
+        <div class="spec-card-title">1955 Chevy 265 V8 — Base Specs</div>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">Displacement</div><div class="spec-value">265 ci (4.3L)</div></div>
+          <div class="spec-item"><div class="spec-label">Horsepower</div><div class="spec-value">162–180 hp</div></div>
+          <div class="spec-item"><div class="spec-label">Configuration</div><div class="spec-value">OHV V8</div></div>
+          <div class="spec-item"><div class="spec-label">Notable cars</div><div class="spec-value">'55 Bel Air, Nomad</div></div>
+        </div>
+      </div>
+
+      <h2 id="1957">1957: One Horsepower Per Cubic Inch</h2>
+
+      <p>Two years later, the engineers pushed the 265's bore to 3.875 inches and the stroke to 3.0 inches, yielding <strong>283 cubic inches</strong>. At that displacement, Chevy's engineers made history: when paired with the optional Rochester mechanical fuel injection system, the 283 produced <strong>283 horsepower</strong> — one horsepower per cubic inch. It was the first mass-production American engine to achieve that benchmark, and it became an instant legend.</p>
+
+      <p>The fuel-injected 283 was an expensive, finicky option — many owners deleted it and went back to carburetors — but the achievement mattered enormously for Chevrolet's reputation. It signaled that the small block wasn't just efficient. It was <strong>genuinely fast</strong>. The 283 also debuted in the <strong>1957 Corvette</strong>, making it the first small block to power America's sports car.</p>
+
+      <div class="spec-card">
+        <div class="spec-card-title">1957 Chevy 283 V8 — Fuel Injected</div>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">Displacement</div><div class="spec-value">283 ci (4.6L)</div></div>
+          <div class="spec-item"><div class="spec-label">Peak Power</div><div class="spec-value">283 hp @ 6,200 rpm</div></div>
+          <div class="spec-item"><div class="spec-label">Milestone</div><div class="spec-value">1 hp/ci (first US production)</div></div>
+          <div class="spec-item"><div class="spec-label">Notable cars</div><div class="spec-value">'57 Corvette, Bel Air</div></div>
+        </div>
+      </div>
+
+      <div class="inline-img" style="background: #333 url('/photos/belair/1957_Chevrolet_Bel_Air_-_Cruisin_for_a_Cure.jpg') center/cover no-repeat;">
+        <div class="img-label" style="display:none;">IMAGE — 1957 Rochester Fuel Injection unit on 283 V8<br>Period advertisement or engine bay photo</div>
+      </div>
+
+      <h2 id="1962">1962: The 327 — The Golden Era</h2>
+
+      <p>By 1962, Chevrolet had learned a great deal from racing the 283. A longer stroke — 3.25 inches — expanded displacement to <strong>327 cubic inches</strong>. Many engineers and enthusiasts consider this the finest small block of the classic era. The 327 found the ideal balance between displacement, bore-to-stroke ratio, and high-rpm breathing that made it feel alive in a way most engines didn't.</p>
+
+      <p>In the 1965 Corvette, the fuel-injected L84 327 produced <strong>375 horsepower</strong> from 327 cubic inches — a staggering output for a road car of that period. But even the milder 250 hp and 300 hp street versions were satisfying engines that revved freely and sounded magnificent. The 327 powered everything from the '63 Corvette Sting Ray to Chevrolet's full-size Impalas, and it remains one of the most beloved engines in American history.</p>
+
+      <div class="spec-card">
+        <div class="spec-card-title">1962–1969 Chevy 327 V8</div>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">Displacement</div><div class="spec-value">327 ci (5.4L)</div></div>
+          <div class="spec-item"><div class="spec-label">Power Range</div><div class="spec-value">250–375 hp</div></div>
+          <div class="spec-item"><div class="spec-label">Peak (L84)</div><div class="spec-value">375 hp / 350 lb-ft</div></div>
+          <div class="spec-item"><div class="spec-label">Notable cars</div><div class="spec-value">'63–'65 Corvette, Impala SS</div></div>
+        </div>
+      </div>
+
+      <h2 id="1967">1967: The 350 — The One That Lasted Forever</h2>
+
+      <p>The <strong>350 cubic inch small block</strong> debuted in the 1967 Camaro. It wasn't a dramatic step — an extra .09-inch bore stretch from the 327 — but it became the most produced V8 engine in automotive history. Flexible enough to be tuned from 145 hp (in smog-era emissions trim) to over 370 hp (in the LT-1 form of 1970), the 350 served cars, trucks, vans, boats, and industrial equipment for over three decades.</p>
+
+      <p>The 350's legacy is almost impossible to overstate. It powered the <strong>1969 Z/28 Camaro</strong>, the <strong>1970 Chevelle SS 350</strong>, every generation of Corvette from 1969 through 1991, millions of C/K pickup trucks, and more. Aftermarket parts availability for the 350 is essentially infinite — it's still one of the most popular engine swaps in existence today.</p>
+
+      <div class="pullquote">
+        <p>"The 350 is the small block. Everything else is a milestone on the way to it, or a refinement of it."</p>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-card-title">1967 Chevy 350 V8 — The Most Produced V8 in History</div>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">Displacement</div><div class="spec-value">350 ci (5.7L)</div></div>
+          <div class="spec-item"><div class="spec-label">Production years</div><div class="spec-value">1967–present (variants)</div></div>
+          <div class="spec-item"><div class="spec-label">Power range</div><div class="spec-value">145–370 hp (SBC era)</div></div>
+          <div class="spec-item"><div class="spec-label">Notable cars</div><div class="spec-value">Camaro, Corvette, C/K trucks</div></div>
+        </div>
+      </div>
+
+      <h2 id="1970">1970: The 400 — Maximum Displacement</h2>
+
+      <p>In 1970, GM pushed the small block's bore to 4.125 inches and the stroke to 3.75 inches to produce the largest-displacement small block in history: <strong>400 cubic inches</strong>. The 400 was rated at <strong>265 horsepower</strong> in standard form, though like many early-70s ratings, the actual output was higher than advertised due to the industry's shift to net horsepower ratings that year.</p>
+
+      <p>The 400 small block was designed primarily as a low-rpm torque engine for large Chevrolet and Pontiac passenger cars. It was never a rev machine, and the siamesed cylinder bores made it prone to overheating if not maintained carefully. Still, it represented the absolute outer limit of what the original small block architecture could achieve dimensionally — and it produced healthy low-end grunt in the big cars it was designed for.</p>
+
+      <h2 id="1992">1992: The LT1 — The First Modern Small Block</h2>
+
+      <p>By the late 1980s, the original small block architecture was running out of room to grow. Emissions standards, fuel economy mandates, and advancing competitor technology demanded a thorough rethink. The <strong>LT1</strong> introduced in the 1992 Corvette was the answer — and it was genuinely revolutionary for a production pushrod V8.</p>
+
+      <p>The LT1's most significant innovation was <strong>reverse-flow cooling</strong>: coolant flowed to the cylinder heads first (where temperatures are highest) before circulating to the block, instead of the traditional bottom-up approach. This allowed tighter combustion chamber tolerances, higher compression ratios without detonation, and better overall thermal efficiency. Centrally located distributor ignition and sequential port fuel injection completed the package.</p>
+
+      <p>The 1992 C4 Corvette LT1 produced <strong>300 horsepower at 5,000 rpm and 330 lb-ft of torque at 3,600 rpm</strong> from 350 cubic inches. That was a genuine leap over the outgoing L98. The LT1 also appeared in the fourth-generation Camaro and Firebird (275 hp), the Caprice SS, and the Impala SS — giving American performance cars their first real muscle since the early 1970s.</p>
+
+      <div class="spec-card">
+        <div class="spec-card-title">1992 LT1 — Gen II Small Block</div>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">Displacement</div><div class="spec-value">350 ci (5.7L)</div></div>
+          <div class="spec-item"><div class="spec-label">Power (Corvette)</div><div class="spec-value">300 hp / 330 lb-ft</div></div>
+          <div class="spec-item"><div class="spec-label">Innovation</div><div class="spec-value">Reverse-flow cooling</div></div>
+          <div class="spec-item"><div class="spec-label">Notable cars</div><div class="spec-value">C4 Corvette, B4C Caprice</div></div>
+        </div>
+      </div>
+
+      <div class="inline-img" style="background: #333 url('/photos/corvette/Chevrolet_Corvette_C4_Kulmbach_17RM0343.jpg') center/cover no-repeat;">
+        <div class="img-label" style="display:none;">IMAGE — 1992 C4 Corvette LT1 engine bay<br>Red/orange engine cover, central opti-spark distributor visible</div>
+      </div>
+
+      <h2 id="1997">1997: The LS1 — The Engine That Changed Everything</h2>
+
+      <p>If there is one single moment in the small block's history that towers above all others, it is <strong>1997 and the LS1</strong>. The Gen III small block was so different from everything that preceded it that calling it the same engine is almost misleading — yet the core DNA, the philosophy of lightweight construction and efficient design, remained.</p>
+
+      <p>The LS1 debuted in the <strong>1997 C5 Corvette</strong> at <strong>345 horsepower and 350 lb-ft of torque</strong> from 346 cubic inches (5.7L). The architecture was completely new: an all-aluminum block (the first small block with an aluminum block as standard, not an option), composite intake manifold, coil-near-plug ignition eliminating the distributor entirely, a cable-less electronic throttle body, and revised port and combustion chamber geometry that made the engine breathe like nothing before it.</p>
+
+      <p>The LS1 was also the first production small block to use a <strong>deep-skirt block design</strong> with six-bolt main caps, giving it exceptional rigidity. The result was an engine that was lighter, more powerful, more fuel-efficient, and more reliable than anything in its class. When the LS1 appeared in the 1998 fourth-generation Camaro and Firebird, producing <strong>305 to 325 horsepower</strong>, it gave budget-performance cars supercar-spec technology at blue-collar prices.</p>
+
+      <div class="pullquote">
+        <p>"The LS1 didn't just replace the old small block. It set the standard that every performance engine in the world would spend the next 25 years chasing."</p>
+      </div>
+
+      <div class="spec-card">
+        <div class="spec-card-title">1997 LS1 — Gen III Small Block</div>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">Displacement</div><div class="spec-value">346 ci (5.7L)</div></div>
+          <div class="spec-item"><div class="spec-label">Power (C5 Corvette)</div><div class="spec-value">345 hp / 350 lb-ft</div></div>
+          <div class="spec-item"><div class="spec-label">Block material</div><div class="spec-value">All-aluminum</div></div>
+          <div class="spec-item"><div class="spec-label">Notable cars</div><div class="spec-value">C5 Corvette, F-body Camaro/Firebird</div></div>
+        </div>
+      </div>
+
+      <h2 id="ls-family">2005–2009: LS2, LS3, LS7, and the LSA</h2>
+
+      <p>The Gen IV LS family expanded the platform in every direction. The <strong>LS2</strong> (2005, 6.0L / 400 hp) debuted in the C6 Corvette and GTO, offering a larger displacement without sacrificing the LS1's legendary reliability. The <strong>LS3</strong> (2008, 6.2L / 430 hp) became the standard C6 Corvette engine, and in later form it powered the fifth-gen Camaro SS.</p>
+
+      <p>But the crown jewel of the Gen IV era was the <strong>LS7</strong> — a hand-built 7.0L (427 ci) naturally aspirated V8 that produced <strong>505 horsepower at 6,300 rpm and 470 lb-ft at 4,800 rpm</strong>, designed specifically for the 2006 C6 Z06 Corvette. The LS7 used titanium connecting rods, a dry-sump lubrication system, and CNC-ported cylinder heads. It was the most powerful naturally aspirated production small block ever built at the time.</p>
+
+      <p>Meanwhile, the <strong>LSA</strong> — a supercharged 6.2L producing <strong>556 horsepower and 551 lb-ft</strong> — arrived in the 2009 Cadillac CTS-V, giving the world a luxury sedan that could embarrass Ferraris. The LS platform had become a complete performance ecosystem.</p>
+
+      <div class="spec-card">
+        <div class="spec-card-title">LS7 — Naturally Aspirated King</div>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">Displacement</div><div class="spec-value">427 ci (7.0L)</div></div>
+          <div class="spec-item"><div class="spec-label">Horsepower</div><div class="spec-value">505 hp @ 6,300 rpm</div></div>
+          <div class="spec-item"><div class="spec-label">Torque</div><div class="spec-value">470 lb-ft @ 4,800 rpm</div></div>
+          <div class="spec-item"><div class="spec-label">Featured in</div><div class="spec-value">2006–2013 C6 Z06</div></div>
+        </div>
+      </div>
+
+      <h2 id="2014">2014: LT1 Gen V — The Direct Injection Revolution</h2>
+
+      <p>When the C7 Corvette Stingray debuted in 2014, it brought the <strong>Gen V LT1</strong> — and despite the same name as the 1992 engine, there was essentially nothing shared. The Gen V LT1 introduced <strong>direct fuel injection</strong> (the first GM small block to do so), variable valve timing on both intake and exhaust camshafts, and <strong>Active Fuel Management</strong> (cylinder deactivation) that could shut down four of eight cylinders during light-load cruising.</p>
+
+      <p>The result: <strong>455 horsepower and 460 lb-ft of torque</strong> from the same 6.2L displacement as the LS3, plus substantially improved fuel economy — up to 29 mpg highway on the C7 manual. The LT1 also featured continuously variable valve lift on the intake side, composite rocker covers, and a revised dry-sump oiling system for track use. The LT4 variant in the Z06 added a supercharger for <strong>650 hp and 650 lb-ft</strong>.</p>
+
+      <div class="spec-card">
+        <div class="spec-card-title">2014 LT1 — Gen V Small Block</div>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">Displacement</div><div class="spec-value">376 ci (6.2L)</div></div>
+          <div class="spec-item"><div class="spec-label">Horsepower</div><div class="spec-value">455 hp / 460 lb-ft</div></div>
+          <div class="spec-item"><div class="spec-label">New features</div><div class="spec-value">DI, VVT both cams, AFM</div></div>
+          <div class="spec-item"><div class="spec-label">Featured in</div><div class="spec-value">C7 Corvette Stingray</div></div>
+        </div>
+      </div>
+
+      <h2 id="2023">2023: The LT6 — 670 Horsepower, Zero Turbos</h2>
+
+      <p>And then came the <strong>LT6</strong>. For the C8 Corvette Z06, GM's engineers set out to build the most powerful naturally aspirated production V8 ever created. The constraints were extraordinary: it had to fit behind the driver in the mid-engine C8 platform, it had to be emissions-compliant, and it had to be reliable enough for street use. What they built exceeded every expectation.</p>
+
+      <p>The 5.5L (338 ci) LT6 uses a <strong>flat-plane crankshaft</strong> — a configuration previously reserved for Ferrari, McLaren, and exotic European sports cars. A flat-plane crank fires cylinders in an alternating bank sequence that allows exhaust gases to evacuate more freely, enabling higher redlines and better power at high rpm. Combined with quad-overhead camshafts (making it technically a DOHC, not a traditional pushrod small block), individual throttle bodies for each cylinder, and titanium connecting rods, the LT6 achieves <strong>670 horsepower at 8,400 rpm and 460 lb-ft of torque</strong>. It redlines at <strong>8,600 rpm</strong>.</p>
+
+      <p>That figure — 670 hp, naturally aspirated, from 5.5 liters — is one of the most remarkable production engine achievements in American automotive history. For context, Ferrari's 3.9L twin-turbocharged V8 in the F8 Tributo makes 710 hp with forced induction. The LT6 does 670 hp without a single turbo, supercharger, or electric motor. Just air, fuel, and displacement.</p>
+
+      <div class="spec-card">
+        <div class="spec-card-title">2023 LT6 — The Greatest Naturally Aspirated Small Block</div>
+        <div class="spec-grid">
+          <div class="spec-item"><div class="spec-label">Displacement</div><div class="spec-value">338 ci (5.5L)</div></div>
+          <div class="spec-item"><div class="spec-label">Horsepower</div><div class="spec-value">670 hp @ 8,400 rpm</div></div>
+          <div class="spec-item"><div class="spec-label">Torque</div><div class="spec-value">460 lb-ft @ 6,300 rpm</div></div>
+          <div class="spec-item"><div class="spec-label">Redline</div><div class="spec-value">8,600 rpm</div></div>
+          <div class="spec-item"><div class="spec-label">Config</div><div class="spec-value">DOHC, flat-plane crank, ITBs</div></div>
+          <div class="spec-item"><div class="spec-label">Featured in</div><div class="spec-value">C8 Corvette Z06</div></div>
+        </div>
+      </div>
+
+      <div class="inline-img" style="background: #333 url('/photos/corvette/pexels_17508919_corvette.jpeg') center/cover no-repeat;">
+        <div class="img-label" style="display:none;">IMAGE — LT6 engine exposed in C8 Z06 rear bay<br>Individual throttle bodies visible, flat-plane crank architecture</div>
+      </div>
+
+      <h2 id="legacy">Why It Matters: The Most Important Engine in American History</h2>
+
+      <p>From a 162-horsepower debut in a 1955 Bel Air to a 670-horsepower naturally aspirated screamer revving to 8,600 rpm in a mid-engine supercar, the small block Chevy has traveled an extraordinary distance. Along the way it powered the fastest cars of each decade, set production records that still stand, and made performance accessible to generations of American drivers.</p>
+
+      <p>What makes it the most important engine in American automotive history isn't any single record or specification. It's the combination of <strong>continuous innovation</strong>, <strong>mass production practicality</strong>, <strong>aftermarket depth</strong>, and <strong>cultural resonance</strong>. There is no car community — hot rods, muscle cars, Corvette clubs, truck builders, drag racing — that doesn't have the small block at or near its center.</p>
+
+      <p>Ed Cole's 1955 design set a philosophy: build it light, build it strong, make it breathe. Nearly 70 years later, that philosophy still runs through every LT6 that spins to 8,600 rpm on a racetrack. The small block Chevy isn't just an engine. It's the DNA of American performance.</p>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">In This Article</div>
+        <ul class="toc-list">
+          <li><a href="#1955">1955: The 265 Debuts</a></li>
+          <li><a href="#1957">1957: 1 hp Per Cubic Inch</a></li>
+          <li><a href="#1962">1962: The 327 Golden Era</a></li>
+          <li><a href="#1967">1967: The 350 is Born</a></li>
+          <li><a href="#1970">1970: The 400 SBC</a></li>
+          <li><a href="#1992">1992: LT1 Gen II</a></li>
+          <li><a href="#1997">1997: The LS1</a></li>
+          <li><a href="#ls-family">2005–2009: LS2 / LS3 / LS7 / LSA</a></li>
+          <li><a href="#2014">2014: LT1 Gen V</a></li>
+          <li><a href="#2023">2023: LT6 Flat-Plane</a></li>
+          <li><a href="#legacy">Why It Matters</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Related Articles</div>
+
+        <div class="related-article">
+          <div class="related-thumb"><span>C8 Guide</span></div>
+          <div>
+            <a href="/pages/guides/c8-corvette-buyers-guide.html" class="related-title">2024–2025 C8 Corvette Buyer's Guide: Stingray vs Z06 vs E-Ray</a>
+            <div class="related-meta">Buyer's Guide · 11 min read</div>
+          </div>
+        </div>
+
+        <div class="related-article">
+          <div class="related-thumb"><span>Road Trip</span></div>
+          <div>
+            <a href="/pages/guides/america-250-chevy-road-trip.html" class="related-title">See the USA in Your Chevrolet: The Ultimate 2026 America 250 Road Trip</a>
+            <div class="related-meta">Road Trip · 9 min read</div>
+          </div>
+        </div>
+
+        <div class="related-article">
+          <div class="related-thumb"><span>Quiz</span></div>
+          <div>
+            <a href="/pages/guides/quiz.html" class="related-title">Which Chevy Should You Buy? Take the 7-Question Quiz</a>
+            <div class="related-meta">Interactive · 3 min</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Quick Reference</div>
+        <p style="font-size:13px; color: var(--text-mute); line-height:1.6; margin-bottom: 12px;">The small block Chevy family at a glance — every major generation.</p>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">1955</span><span>265 ci · 162–180 hp</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">1957</span><span>283 ci · 283 hp (FI)</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">1962</span><span>327 ci · 250–375 hp</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">1967</span><span>350 ci · 295 hp (debut)</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">1992</span><span>LT1 · 300 hp (Vette)</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">1997</span><span>LS1 · 345 hp (Gen III)</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">2006</span><span>LS7 · 505 hp (Z06)</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">2014</span><span>LT1 Gen V · 455 hp</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim);">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">2023</span><span>LT6 · 670 hp @ 8,400 rpm</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- NEWSLETTER CTA -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-eyebrow">ChevyRoots Newsletter</div>
+      <h2 class="newsletter-title">Get Deep Cuts Like This<br>In Your Inbox</h2>
+      <p class="newsletter-sub">Engine histories, buyer's guides, event roundups, and build features — no filler, no dealers, just real Chevy content.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="your@email.com" aria-label="Email address" />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note">Free. No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Chevy<span>Roots</span></div>
+          <p class="footer-tagline">The independent home for Chevrolet enthusiasts. No dealers. No filler. Just Chevy.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/pages/models/">Models</a></li>
+            <li><a href="/pages/builds/">Builds</a></li>
+            <li><a href="/pages/guides/">Guides</a></li>
+            <li><a href="/pages/events/">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/pages/guides/small-block-chevy-history.html">SBC History</a></li>
+            <li><a href="/pages/guides/c8-corvette-buyers-guide.html">C8 Buyer's Guide</a></li>
+            <li><a href="/pages/guides/america-250-chevy-road-trip.html">America 250 Road Trip</a></li>
+            <li><a href="/pages/guides/quiz.html">Find Your Chevy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ChevyRoots</h4>
+          <ul>
+            <li><a href="/pages/about/">About</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 ChevyRoots. Independent. Not affiliated with General Motors.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Complete History of the Small Block Chevy",
+    "description": "From the 1955 265 V8 to the 2023 LT6 flat-plane crank — the full evolution of the small block Chevy engine.",
+    "url": "https://chevyroots.com/pages/guides/small-block-chevy-history.html",
+    "datePublished": "2024-01-01",
+    "author": { "@type": "Organization", "name": "ChevyRoots", "url": "https://chevyroots.com" },
+    "publisher": { "@type": "Organization", "name": "ChevyRoots", "url": "https://chevyroots.com" }
+  }
+  </script>
+</body>
+</html>

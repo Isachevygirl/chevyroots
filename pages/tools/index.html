@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chevy Tools Hub — VIN Decoder, Specs & Fitment | ChevyRoots</title>
+  <meta name="description" content="Free Chevrolet tools: VIN Decoder, Spec Comparison, and Tire &amp; Wheel Fitment Guide for Chevy owners and enthusiasts." />
+  <meta name="keywords" content="Chevy VIN decoder, Chevrolet spec comparison, Chevy tire fitment, ChevyRoots tools" />
+  <link rel="canonical" href="https://chevyroots.com/pages/tools/" />
+  <meta property="og:title" content="Chevy Tools Hub | ChevyRoots" />
+  <meta property="og:description" content="Free Chevrolet tools: VIN Decoder, Spec Comparison, and Tire &amp; Wheel Fitment Guide." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/tools/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --charcoal: #1A1A1A;
+      --gold: #C4A035;
+      --gold-light: #D4B44A;
+      --red: #CC0000;
+      --warm-gray: #2A2A2A;
+      --mid-gray: #3A3A3A;
+      --light-gray: #B0A89A;
+      --off-white: #F0EDE6;
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --nav-height: 68px;
+      --max-width: 1280px;
+      --radius: 4px;
+      --radius-lg: 8px;
+      --transition: 200ms ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--charcoal);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2.5rem);
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .nav-logo-main {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+    .nav-logo-main em { font-style: normal; color: var(--gold); }
+    .nav-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-top: 1px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+    .nav-links a.active {
+      color: var(--gold);
+    }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+    }
+    .nav-menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--off-white);
+      transition: var(--transition);
+    }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: var(--warm-gray);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-mobile a:hover {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.75rem;
+      border: 2px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--charcoal);
+      border-color: var(--gold);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    /* PAGE HERO */
+    .page-hero {
+      padding: clamp(4rem, 8vw, 7rem) 0 clamp(2rem, 4vw, 3rem);
+      text-align: center;
+    }
+    .page-hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    .page-hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--light-gray);
+      font-size: 0.95rem;
+    }
+    .gold-line {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      margin: 1rem auto 0;
+    }
+
+    /* TOOL NAV */
+    .tool-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .tool-nav-btn {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.5rem;
+      border: 2px solid var(--mid-gray);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--light-gray);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .tool-nav-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .tool-nav-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--charcoal);
+    }
+
+    /* TOOL SECTIONS */
+    .tool-section {
+      display: none;
+      margin-bottom: 4rem;
+    }
+    .tool-section.active { display: block; }
+
+    .tool-card {
+      background: var(--warm-gray);
+      border: 1px solid rgba(176,168,154,0.1);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      margin-bottom: 1.5rem;
+    }
+    .tool-card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .tool-card h2 span { color: var(--gold); }
+    .tool-card p.desc {
+      color: var(--light-gray);
+      font-size: 0.88rem;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+
+    /* FORM ELEMENTS */
+    .input-group {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .input-field {
+      flex: 1;
+      min-width: 240px;
+      padding: 0.75rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      background: var(--charcoal);
+      border: 1px solid var(--mid-gray);
+      border-radius: var(--radius);
+      color: var(--off-white);
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .input-field:focus {
+      border-color: var(--gold);
+    }
+    .input-field::placeholder {
+      color: rgba(176,168,154,0.4);
+    }
+    select.input-field {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B0A89A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      padding-right: 2.5rem;
+    }
+
+    .btn-decode {
+      padding: 0.75rem 2rem;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    .btn-decode:hover { background: var(--gold-light); }
+
+    /* VIN RESULTS */
+    .vin-results {
+      display: none;
+      margin-top: 1.5rem;
+    }
+    .vin-results.show { display: block; }
+    .vin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .vin-item {
+      background: var(--charcoal);
+      border: 1px solid rgba(196,160,53,0.15);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+    }
+    .vin-item-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .vin-item-value {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--off-white);
+    }
+    .vin-error {
+      background: rgba(204,0,0,0.1);
+      border: 1px solid rgba(204,0,0,0.3);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      color: #ff6666;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      display: none;
+    }
+    .vin-error.show { display: block; }
+
+    /* EXPANDABLE */
+    .expandable {
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(176,168,154,0.1);
+      padding-top: 1rem;
+    }
+    .expandable-toggle {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .expandable-toggle .arrow {
+      transition: transform var(--transition);
+      font-size: 0.7rem;
+    }
+    .expandable-toggle.open .arrow { transform: rotate(90deg); }
+    .expandable-content {
+      display: none;
+      margin-top: 0.75rem;
+      color: var(--light-gray);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      max-width: 700px;
+    }
+    .expandable-content.show { display: block; }
+
+    /* COMPARISON TOOL */
+    .compare-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .compare-col h3 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .compare-col select {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      display: none;
+    }
+    .compare-table.show { display: table; }
+    .compare-table th,
+    .compare-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(176,168,154,0.08);
+    }
+    .compare-table th {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(196,160,53,0.06);
+    }
+    .compare-table td {
+      font-family: var(--font-body);
+      color: var(--off-white);
+    }
+    .compare-table td.winner {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .compare-table tr:hover td {
+      background: rgba(196,160,53,0.04);
+    }
+    .compare-table .vehicle-header {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* FITMENT TOOL */
+    .fitment-select-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .fitment-select-row label {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+    .fitment-results {
+      display: none;
+    }
+    .fitment-results.show { display: block; }
+    .fitment-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+    .fitment-table th,
+    .fitment-table td {
+      padding: 0.65rem 1rem;
+      text-align: left;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(176,168,154,0.08);
+    }
+    .fitment-table th {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(196,160,53,0.06);
+    }
+    .fitment-note {
+      background: rgba(196,160,53,0.06);
+      border-left: 3px solid var(--gold);
+      padding: 0.75rem 1rem;
+      font-size: 0.82rem;
+      color: var(--light-gray);
+      line-height: 1.6;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .fitment-note strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .fitment-section-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+      color: var(--off-white);
+    }
+
+    .dealer-note {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: rgba(196,160,53,0.06);
+      border: 1px solid rgba(196,160,53,0.15);
+      border-radius: var(--radius);
+      font-size: 0.82rem;
+      color: var(--light-gray);
+    }
+    .dealer-note strong { color: var(--gold); }
+
+    /* FOOTER */
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(176,168,154,0.1);
+      padding: clamp(2.5rem, 5vw, 4rem) 0 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(176,168,154,0.08);
+    }
+    .footer-brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--off-white);
+      margin-bottom: 0.25rem;
+    }
+    .footer-brand-name em { font-style: normal; color: var(--gold); }
+    .footer-brand-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-bottom: 1rem;
+    }
+    .footer-desc {
+      font-size: 0.82rem;
+      color: var(--light-gray);
+      line-height: 1.65;
+      max-width: 280px;
+      margin-bottom: 1.5rem;
+    }
+    .footer-social {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .social-btn {
+      width: 34px;
+      height: 34px;
+      background: var(--warm-gray);
+      border: 1px solid rgba(176,168,154,0.12);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--light-gray);
+      transition: color var(--transition), border-color var(--transition), background var(--transition);
+    }
+    .social-btn:hover {
+      color: var(--gold);
+      border-color: rgba(196,160,53,0.3);
+      background: rgba(196,160,53,0.06);
+    }
+    .footer-col-title {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 1.1rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--light-gray);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: var(--light-gray);
+      opacity: 0.6;
+    }
+    .footer-disclaimer {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      color: var(--light-gray);
+      opacity: 0.5;
+      max-width: 480px;
+      text-align: right;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-menu-toggle { display: flex; }
+      .compare-columns { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-disclaimer { text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .vin-grid { grid-template-columns: 1fr; }
+      .compare-table th, .compare-table td { padding: 0.5rem 0.6rem; font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="ChevyRoots home">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/">Guides</a></li>
+        <li><a href="/pages/mechanics/">Mechanics</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/ads/">Vintage Ads</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+      <button class="nav-menu-toggle" aria-label="Toggle mobile menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="/pages/models/" onclick="this.closest('.nav-mobile').classList.remove('open')">Models</a>
+    <a href="/pages/guides/" onclick="this.closest('.nav-mobile').classList.remove('open')">Guides</a>
+    <a href="/pages/mechanics/" onclick="this.closest('.nav-mobile').classList.remove('open')">Mechanics</a>
+    <a href="/pages/builds/" onclick="this.closest('.nav-mobile').classList.remove('open')">Builds</a>
+    <a href="/pages/events/" onclick="this.closest('.nav-mobile').classList.remove('open')">Events</a>
+    <a href="/pages/ads/" onclick="this.closest('.nav-mobile').classList.remove('open')">Vintage Ads</a>
+    <a href="/pages/crystals-corner/" onclick="this.closest('.nav-mobile').classList.remove('open')">Crystal's Corner</a>
+    <a href="/pages/news/" onclick="this.closest('.nav-mobile').classList.remove('open')">News</a>
+    <a href="/pages/about/" onclick="this.closest('.nav-mobile').classList.remove('open')">About</a>
+    <a href="/pages/builds/" class="btn btn-gold" style="margin-top:0.5rem;" onclick="this.closest('.nav-mobile').classList.remove('open')">Submit Your Build</a>
+  </div>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-eyebrow">ChevyRoots Utilities</div>
+        <h1>Tools <span style="color:var(--gold)">Hub</span></h1>
+        <p>Interactive tools for Chevy owners and enthusiasts. Decode your VIN, compare specs side-by-side, and check tire and wheel fitment.</p>
+        <span class="gold-line"></span>
+      </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 4rem;">
+
+      <div class="tool-nav">
+        <button class="tool-nav-btn active" onclick="showTool('vin')">VIN Decoder</button>
+        <button class="tool-nav-btn" onclick="showTool('compare')">Spec Comparison</button>
+        <button class="tool-nav-btn" onclick="showTool('fitment')">Tire &amp; Wheel Fitment</button>
+      </div>
+
+      <!-- ======================== VIN DECODER ======================== -->
+      <div id="tool-vin" class="tool-section active">
+        <div class="tool-card">
+          <h2>VIN <span>Decoder</span></h2>
+          <p class="desc">Enter your 17-character Vehicle Identification Number to decode country of origin, manufacturer, model year, assembly plant, and more.</p>
+
+          <div class="input-group">
+            <input type="text" id="vinInput" class="input-field" placeholder="Enter 17-character VIN (e.g. 1G1YY22G965104567)" maxlength="17" style="text-transform:uppercase;" />
+            <button class="btn-decode" onclick="decodeVIN()">Decode</button>
+          </div>
+
+          <div id="vinError" class="vin-error"></div>
+
+          <div id="vinResults" class="vin-results">
+            <div class="vin-grid" id="vinGrid"></div>
+            <div class="dealer-note">
+              <strong>Note:</strong> For full build sheet details, contact your dealer with your VIN. This decoder reads standard VIN positions but cannot access manufacturer-specific option codes.
+            </div>
+          </div>
+
+          <div class="expandable">
+            <button class="expandable-toggle" onclick="toggleExpand(this)">
+              <span class="arrow">&#9654;</span> What is a VIN?
+            </button>
+            <div class="expandable-content">
+              <p>A <strong>Vehicle Identification Number (VIN)</strong> is a unique 17-character code assigned to every motor vehicle when it is manufactured. Think of it as your vehicle's fingerprint &mdash; no two vehicles in operation have the same VIN.</p>
+              <p style="margin-top:0.5rem;">The VIN encodes information about the vehicle including the country where it was built, the manufacturer, vehicle type, engine and body style, the model year, the assembly plant, and a unique sequential production number.</p>
+              <p style="margin-top:0.5rem;">You can find your VIN on the driver&rsquo;s side dashboard (visible through the windshield), on the driver&rsquo;s side door jamb sticker, on your vehicle registration and insurance documents, or on the vehicle title.</p>
+              <p style="margin-top:0.5rem;">VINs never include the letters <strong>I</strong>, <strong>O</strong>, or <strong>Q</strong> to avoid confusion with the numbers 1 and 0.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======================== SPEC COMPARISON ======================== -->
+      <div id="tool-compare" class="tool-section">
+        <div class="tool-card">
+          <h2>Spec <span>Comparison</span></h2>
+          <p class="desc">Select two Chevrolet vehicles to compare specs side-by-side. The winning spec in each category is highlighted in gold.</p>
+
+          <div class="compare-columns">
+            <div class="compare-col">
+              <h3>Vehicle A</h3>
+              <select id="vehicleA" class="input-field" onchange="runComparison()">
+                <option value="">-- Select Vehicle --</option>
+              </select>
+            </div>
+            <div class="compare-col">
+              <h3>Vehicle B</h3>
+              <select id="vehicleB" class="input-field" onchange="runComparison()">
+                <option value="">-- Select Vehicle --</option>
+              </select>
+            </div>
+          </div>
+
+          <table class="compare-table" id="compareTable">
+            <thead>
+              <tr>
+                <th>Spec</th>
+                <th id="thA" class="vehicle-header">Vehicle A</th>
+                <th id="thB" class="vehicle-header">Vehicle B</th>
+              </tr>
+            </thead>
+            <tbody id="compareBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ======================== FITMENT GUIDE ======================== -->
+      <div id="tool-fitment" class="tool-section">
+        <div class="tool-card">
+          <h2>Tire &amp; Wheel <span>Fitment Guide</span></h2>
+          <p class="desc">Select your Chevy model to see stock wheel and tire sizes, popular upgrade options, and notes on lift kit requirements.</p>
+
+          <div class="fitment-select-row">
+            <label for="fitmentModel">Model:</label>
+            <select id="fitmentModel" class="input-field" style="min-width:200px;flex:0 1 auto;" onchange="showFitment()">
+              <option value="">-- Select Model --</option>
+              <option value="silverado">Silverado 1500</option>
+              <option value="colorado">Colorado</option>
+              <option value="tahoe">Tahoe</option>
+              <option value="corvette">Corvette</option>
+              <option value="camaro">Camaro</option>
+            </select>
+          </div>
+
+          <div id="fitmentResults" class="fitment-results"></div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Chevy<em>Roots</em></div>
+          <div class="footer-brand-tag">Independent Chevrolet Resource</div>
+          <p class="footer-desc">An independent enthusiast resource covering Chevrolet models, builds, events, and buying guides. Run by a Chevy girl from Houston, written for everyone who loves these trucks and cars.</p>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+            <a href="#" class="social-btn" aria-label="YouTube">YT</a>
+            <a href="#" class="social-btn" aria-label="X / Twitter">X</a>
+            <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+        <nav aria-label="Explore links">
+          <div class="footer-col-title">Explore</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/models/trucks/">Trucks</a></li>
+            <li><a href="/pages/models/corvette/">Corvette</a></li>
+            <li><a href="/pages/models/classics/">Classics</a></li>
+            <li><a href="/pages/models/cars/">Cars</a></li>
+            <li><a href="/pages/models/suvs/">SUVs</a></li>
+            <li><a href="/pages/models/evs/">Electric Vehicles</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Resources links">
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/builds/">Community Builds</a></li>
+            <li><a href="/pages/events/">Events Calendar</a></li>
+            <li><a href="/pages/guides/">Buyer&rsquo;s Guides</a></li>
+            <li><a href="/pages/tools/">Tools Hub</a></li>
+            <li><a href="/pages/ads/">Vintage Ads</a></li>
+            <li><a href="/pages/guides/">Maintenance Guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Site links">
+          <div class="footer-col-title">Site</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/about/">About ChevyRoots</a></li>
+            <li><a href="/pages/about/#contact">Contact</a></li>
+            <li><a href="/pages/about/#submit-build">Submit Your Build</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 ChevyRoots. All rights reserved.</p>
+        <p class="footer-disclaimer">ChevyRoots is an independent enthusiast website and is not affiliated with, endorsed by, or sponsored by General Motors, Chevrolet, or any of their subsidiaries. All model names, trademarks, and logos are the property of their respective owners.</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function() {
+
+  // ===================== TOOL NAV =====================
+  window.showTool = function(id) {
+    document.querySelectorAll('.tool-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tool-nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tool-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  };
+
+  // ===================== VIN DECODER =====================
+  const validVINChars = 'ABCDEFGHJKLMNPRSTUVWXYZ0123456789';
+
+  const countryMap = {
+    '1': 'United States', '4': 'United States', '5': 'United States',
+    '2': 'Canada',
+    '3': 'Mexico',
+    'J': 'Japan', 'K': 'South Korea', 'S': 'United Kingdom',
+    'W': 'Germany', 'Z': 'Italy', 'Y': 'Sweden/Finland'
+  };
+
+  const mfrMap = {
+    'G': 'General Motors',
+    'C': 'Chrysler',
+    'F': 'Ford',
+    'B': 'BMW',
+    'T': 'Toyota'
+  };
+
+  const vehicleTypeMap = {
+    '1': 'Chevrolet (Car)', '2': 'Pontiac', '3': 'Oldsmobile',
+    '4': 'Buick', '6': 'Cadillac', '7': 'GM Canada',
+    '8': 'Saturn', 'C': 'Chevrolet Truck', 'K': 'Chevrolet Truck (4WD)',
+    'T': 'Chevrolet Truck'
+  };
+
+  const yearMap = {};
+  // 1980-2000: A=1980 ... Y=2000
+  const letters80 = 'ABCDEFGHJKLMNPRSTUVWXY';
+  for (let i = 0; i < letters80.length; i++) {
+    yearMap[letters80[i]] = 1980 + i;
+  }
+  // 2001-2009: 1=2001 ... 9=2009
+  for (let i = 1; i <= 9; i++) {
+    yearMap[String(i)] = 2000 + i;
+  }
+  // 2010-2026: A=2010 ... R=2026 (second cycle)
+  const letters10 = 'ABCDEFGHJKLMNPR';
+  for (let i = 0; i < letters10.length; i++) {
+    yearMap[letters10[i]] = yearMap[letters10[i]] || (2010 + i);
+  }
+  // Override for 2010+ cycle disambiguation — position 7 context needed in practice,
+  // but for this tool we note both possibilities
+  // We'll show the more recent year by default (2010+ cycle)
+  const yearMap2 = {};
+  for (let i = 0; i < letters10.length; i++) {
+    yearMap2[letters10[i]] = 2010 + i;
+  }
+
+  const plantMap = {
+    '5': 'Bowling Green, KY',
+    'A': 'Lakewood, GA', 'B': 'Baltimore, MD', 'C': 'Southgate, CA',
+    'D': 'Doraville, GA', 'F': 'Flint, MI', 'G': 'Silao, Mexico',
+    'J': 'Janesville, WI', 'K': 'Leeds, MO', 'L': 'Van Nuys, CA',
+    'N': 'Norwood, OH', 'R': 'Arlington, TX', 'S': 'St. Louis, MO',
+    'T': 'Tarrytown, NY', 'U': 'Hamtramck, MI', 'V': 'Pontiac, MI (GMC)',
+    'W': 'Willow Run, MI', 'X': 'Fairfax, KS', 'Z': 'Fremont, CA (NUMMI)',
+    '1': 'Oshawa, ON', '2': 'Moraine, OH', '3': 'Detroit/Hamtramck, MI',
+    '4': 'Orion, MI', '6': 'Lansing, MI', '7': 'Lordstown, OH',
+    '8': 'Bowling Green, KY', 'P': 'Pontiac, MI',
+    'M': 'Lansing Grand River, MI',
+    'H': 'Flint, MI (Truck)',
+    'E': 'Linden, NJ'
+  };
+
+  // Common Chevy attribute codes (positions 4-8) — simplified
+  const attrMap = {
+    'Y22G9': 'Corvette Coupe',
+    'Y22G0': 'Corvette Coupe',
+    'S186R': 'Camaro Coupe 6.2L V8',
+    'A18CR': 'Silverado 1500 Crew Cab',
+    'C18CR': 'Silverado 1500 Crew Cab 4WD',
+    'E18CR': 'Silverado 1500 Double Cab',
+    'K10CR': 'Tahoe 4WD',
+    'C10CR': 'Tahoe 2WD',
+    'E1CCR': 'Colorado Crew Cab',
+    'E16DR': 'Equinox FWD'
+  };
+
+  window.decodeVIN = function() {
+    const input = document.getElementById('vinInput').value.trim().toUpperCase();
+    const errorEl = document.getElementById('vinError');
+    const resultsEl = document.getElementById('vinResults');
+    const gridEl = document.getElementById('vinGrid');
+
+    errorEl.classList.remove('show');
+    resultsEl.classList.remove('show');
+
+    // Validate
+    if (input.length !== 17) {
+      errorEl.textContent = 'VIN must be exactly 17 characters. You entered ' + input.length + '.';
+      errorEl.classList.add('show');
+      return;
+    }
+
+    for (let i = 0; i < input.length; i++) {
+      if (!validVINChars.includes(input[i])) {
+        errorEl.textContent = 'Invalid character "' + input[i] + '" at position ' + (i + 1) + '. VINs cannot contain I, O, or Q.';
+        errorEl.classList.add('show');
+        return;
+      }
+    }
+
+    // Decode
+    const pos1 = input[0];
+    const pos2 = input[1];
+    const pos3 = input[2];
+    const attrs = input.substring(3, 8);
+    const checkDigit = input[8];
+    const pos10 = input[9];
+    const pos11 = input[10];
+    const seqNum = input.substring(11);
+
+    const country = countryMap[pos1] || 'Other / Unknown (' + pos1 + ')';
+    const mfr = mfrMap[pos2] || 'Unknown (' + pos2 + ')';
+    const vType = vehicleTypeMap[pos3] || 'Unknown (' + pos3 + ')';
+    const attrDesc = attrMap[attrs] || attrs;
+
+    // Year: try 2010+ cycle first for recent vehicles
+    let yearStr;
+    if (yearMap2[pos10]) {
+      const y1 = yearMap[pos10];
+      const y2 = yearMap2[pos10];
+      if (y1 !== y2) {
+        yearStr = y2 + ' (or ' + y1 + ')';
+      } else {
+        yearStr = String(y1);
+      }
+    } else if (yearMap[pos10]) {
+      yearStr = String(yearMap[pos10]);
+    } else {
+      yearStr = 'Unknown (' + pos10 + ')';
+    }
+
+    const plant = plantMap[pos11] || 'Unknown (' + pos11 + ')';
+
+    const items = [
+      { label: 'Country of Origin', value: country },
+      { label: 'Manufacturer', value: mfr },
+      { label: 'Vehicle Type', value: vType },
+      { label: 'Vehicle Attributes (Pos 4-8)', value: attrDesc },
+      { label: 'Check Digit', value: checkDigit },
+      { label: 'Model Year', value: yearStr },
+      { label: 'Assembly Plant', value: plant },
+      { label: 'Sequential Number', value: seqNum }
+    ];
+
+    gridEl.innerHTML = items.map(function(item) {
+      return '<div class="vin-item"><div class="vin-item-label">' + item.label + '</div><div class="vin-item-value">' + item.value + '</div></div>';
+    }).join('');
+
+    resultsEl.classList.add('show');
+  };
+
+  // Enter key support
+  document.getElementById('vinInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') decodeVIN();
+  });
+
+  // ===================== EXPANDABLE =====================
+  window.toggleExpand = function(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('show');
+  };
+
+  // ===================== SPEC COMPARISON =====================
+  const vehicles = {
+    'silverado-2024': { name: '2024 Silverado 1500 LT', engine: '2.7L Turbo I-4', hp: 310, torque: 430, towing: 9500, mpg: '19/23 mpg', price: '$46,900' },
+    'corvette-2024': { name: '2024 Corvette Stingray', engine: '6.2L V8 (LT2)', hp: 490, torque: 465, towing: null, mpg: '16/24 mpg', price: '$69,995' },
+    'camaro-2024': { name: '2024 Camaro SS', engine: '6.2L V8 (LT1)', hp: 455, torque: 455, towing: null, mpg: '16/24 mpg', price: '$42,500' },
+    'tahoe-2024': { name: '2024 Tahoe LS', engine: '5.3L V8 (L84)', hp: 355, torque: 383, towing: 8400, mpg: '16/20 mpg', price: '$57,800' },
+    'colorado-2024': { name: '2024 Colorado LT', engine: '2.7L Turbo I-4', hp: 310, torque: 390, towing: 7700, mpg: '21/27 mpg', price: '$35,995' },
+    'equinox-2024': { name: '2024 Equinox RS', engine: '1.5L Turbo I-4', hp: 175, torque: 203, towing: 1500, mpg: '28/33 mpg', price: '$31,900' },
+    'equinoxev-2025': { name: '2025 Equinox EV', engine: 'Electric Motor', hp: 290, torque: 346, towing: null, mpg: '319 mi range', price: '$33,000' },
+    'chevelle-1970': { name: '1970 Chevelle SS 454', engine: '7.4L V8 (LS6)', hp: 450, torque: 500, towing: null, mpg: '~10 mpg', price: 'Priceless' }
+  };
+
+  // Populate dropdowns
+  const selA = document.getElementById('vehicleA');
+  const selB = document.getElementById('vehicleB');
+  Object.keys(vehicles).forEach(function(key) {
+    const v = vehicles[key];
+    selA.innerHTML += '<option value="' + key + '">' + v.name + '</option>';
+    selB.innerHTML += '<option value="' + key + '">' + v.name + '</option>';
+  });
+
+  window.runComparison = function() {
+    const a = selA.value;
+    const b = selB.value;
+    const table = document.getElementById('compareTable');
+    const tbody = document.getElementById('compareBody');
+
+    if (!a || !b) { table.classList.remove('show'); return; }
+
+    const va = vehicles[a];
+    const vb = vehicles[b];
+
+    document.getElementById('thA').textContent = va.name;
+    document.getElementById('thB').textContent = vb.name;
+
+    const rows = [
+      { label: 'Engine', a: va.engine, b: vb.engine, compare: false },
+      { label: 'Horsepower', a: va.hp + ' hp', b: vb.hp + ' hp', compare: true, aVal: va.hp, bVal: vb.hp },
+      { label: 'Torque', a: va.torque + ' lb-ft', b: vb.torque + ' lb-ft', compare: true, aVal: va.torque, bVal: vb.torque },
+      { label: 'Towing Capacity', a: va.towing ? va.towing.toLocaleString() + ' lbs' : 'N/A', b: vb.towing ? vb.towing.toLocaleString() + ' lbs' : 'N/A', compare: true, aVal: va.towing || 0, bVal: vb.towing || 0 },
+      { label: 'MPG / Range', a: va.mpg, b: vb.mpg, compare: false },
+      { label: 'Starting MSRP', a: va.price, b: vb.price, compare: false }
+    ];
+
+    tbody.innerHTML = rows.map(function(r) {
+      let aClass = '', bClass = '';
+      if (r.compare && r.aVal !== r.bVal) {
+        if (r.aVal > r.bVal) aClass = ' class="winner"';
+        else bClass = ' class="winner"';
+      }
+      return '<tr><td style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--light-gray);">' + r.label + '</td><td' + aClass + '>' + r.a + '</td><td' + bClass + '>' + r.b + '</td></tr>';
+    }).join('');
+
+    table.classList.add('show');
+  };
+
+  // ===================== FITMENT GUIDE =====================
+  const fitmentData = {
+    silverado: {
+      title: 'Silverado 1500',
+      stock: [
+        { trim: 'WT / Custom', wheel: '17" x 8"', tire: '255/70R17', bolt: '6x139.7' },
+        { trim: 'LT / RST', wheel: '18" x 8.5"', tire: '275/65R18', bolt: '6x139.7' },
+        { trim: 'LT Trail Boss', wheel: '18" x 8.5"', tire: '275/65R18 A/T', bolt: '6x139.7' },
+        { trim: 'High Country', wheel: '20" x 9"', tire: '275/60R20', bolt: '6x139.7' },
+        { trim: 'ZR2', wheel: '18" x 8.5"', tire: '275/65R18 A/T', bolt: '6x139.7' }
+      ],
+      upgrades: [
+        { size: '20" x 10"', tire: '275/55R20 or 33x12.5R20', note: 'Stock height or 2" level' },
+        { size: '22" x 9.5"', tire: '285/45R22', note: 'Stock height, may rub at full lock' },
+        { size: '18" x 9"', tire: '285/65R18 (33")', note: '2-3" lift recommended' },
+        { size: '20" x 10"', tire: '35x12.5R20', note: '4-6" lift required' }
+      ],
+      liftNotes: 'A 2" leveling kit opens up 33" tires on most trims. For 35" tires, a 4"+ suspension lift with upper control arm upgrades is recommended. Always check for rubbing at full steering lock and confirm backspacing/offset compatibility.'
+    },
+    colorado: {
+      title: 'Colorado',
+      stock: [
+        { trim: 'WT', wheel: '17" x 8"', tire: '255/65R17', bolt: '6x120' },
+        { trim: 'LT', wheel: '18" x 8.5"', tire: '265/60R18', bolt: '6x120' },
+        { trim: 'Z71', wheel: '18" x 8.5"', tire: '265/60R18 A/T', bolt: '6x120' },
+        { trim: 'ZR2', wheel: '17" x 8"', tire: '265/65R17 A/T', bolt: '6x120' }
+      ],
+      upgrades: [
+        { size: '17" x 8.5"', tire: '265/70R17 (31.5")', note: 'Stock height or 1" level' },
+        { size: '17" x 8.5"', tire: '285/70R17 (33")', note: '2-3" lift recommended' },
+        { size: '20" x 9"', tire: '275/55R20', note: 'Stock height' }
+      ],
+      liftNotes: 'The ZR2 comes with factory Multimatic DSSV shocks and 1.5" additional lift over Z71. Aftermarket lifts of 2-3" pair well with 33" tires. Note the 6x120 bolt pattern is less common than the Silverado\'s 6x139.7.'
+    },
+    tahoe: {
+      title: 'Tahoe',
+      stock: [
+        { trim: 'LS', wheel: '18" x 8.5"', tire: '275/65R18', bolt: '6x139.7' },
+        { trim: 'LT / RST', wheel: '20" x 9"', tire: '275/60R20', bolt: '6x139.7' },
+        { trim: 'Z71', wheel: '20" x 9"', tire: '275/60R20 A/T', bolt: '6x139.7' },
+        { trim: 'Premier / High Country', wheel: '22" x 9"', tire: '285/45R22', bolt: '6x139.7' }
+      ],
+      upgrades: [
+        { size: '22" x 9"', tire: '285/45R22', note: 'Direct fit on most trims' },
+        { size: '24" x 10"', tire: '305/35R24', note: 'Stock height, check clearance' },
+        { size: '20" x 9"', tire: '275/60R20 A/T', note: 'Great all-terrain upgrade for LS/LT' }
+      ],
+      liftNotes: 'The Tahoe shares the T1 platform with the Silverado (6x139.7 bolt pattern). A 2" level kit works well for a more aggressive stance. The air suspension on Premier/High Country trims requires compatible lift solutions.'
+    },
+    corvette: {
+      title: 'Corvette (C8)',
+      stock: [
+        { trim: 'Stingray (Base)', wheel: 'F: 19"x8.5" / R: 20"x11"', tire: 'F: 245/35ZR19 / R: 305/30ZR20', bolt: '5x120' },
+        { trim: 'Stingray (Z51)', wheel: 'F: 19"x8.5" / R: 20"x11"', tire: 'F: 245/35ZR19 / R: 305/30ZR20', bolt: '5x120' },
+        { trim: 'Z06', wheel: 'F: 20"x10" / R: 21"x13"', tire: 'F: 275/30ZR20 / R: 345/25ZR21', bolt: '5x120' }
+      ],
+      upgrades: [
+        { size: 'F: 19"x9" / R: 20"x12"', tire: 'F: 255/35ZR19 / R: 315/30ZR20', note: 'Wider setup for track use' },
+        { size: 'Stock size', tire: 'Michelin Pilot Sport 4S / Cup 2', note: 'Premium tire upgrade, significant grip improvement' }
+      ],
+      liftNotes: 'The C8 Corvette uses a staggered front/rear wheel setup. Do not deviate significantly from stock sizes without professional alignment. The front lift system raises the nose 40mm for driveways and speed bumps. Lowering springs are available for track-focused builds but affect ride quality.'
+    },
+    camaro: {
+      title: 'Camaro',
+      stock: [
+        { trim: 'LT (V6)', wheel: '18" x 8.5"', tire: '245/45R18', bolt: '5x120' },
+        { trim: 'SS', wheel: 'F: 20"x8.5" / R: 20"x9.5"', tire: 'F: 245/40R20 / R: 275/35R20', bolt: '5x120' },
+        { trim: 'ZL1', wheel: 'F: 19"x10" / R: 19"x11"', tire: 'F: 285/30ZR19 / R: 305/30ZR19', bolt: '5x120' },
+        { trim: '1LE (SS)', wheel: 'F: 20"x10" / R: 20"x11"', tire: 'F: 285/30R20 / R: 305/30R20', bolt: '5x120' }
+      ],
+      upgrades: [
+        { size: '20"x9" / 20"x10"', tire: 'F: 265/35R20 / R: 295/30R20', note: 'Popular SS upgrade for wider stance' },
+        { size: '19"x10" / 19"x11"', tire: 'F: 285/30R19 / R: 305/30R19', note: 'Track setup (ZL1 spec on SS)' }
+      ],
+      liftNotes: 'The Camaro shares the Alpha platform with the Cadillac ATS/CT4 (5x120 bolt pattern). Lowering springs (1-1.5") improve handling and aesthetics. For wider wheels, ensure proper offset (20-35mm front, 25-40mm rear) to avoid fender contact.'
+    }
+  };
+
+  window.showFitment = function() {
+    const model = document.getElementById('fitmentModel').value;
+    const container = document.getElementById('fitmentResults');
+
+    if (!model) { container.classList.remove('show'); return; }
+
+    const data = fitmentData[model];
+    let html = '<h3 class="fitment-section-title">' + data.title + ' &mdash; Stock Sizes</h3>';
+    html += '<table class="fitment-table"><thead><tr><th>Trim</th><th>Wheel Size</th><th>Tire Size</th><th>Bolt Pattern</th></tr></thead><tbody>';
+    data.stock.forEach(function(r) {
+      html += '<tr><td>' + r.trim + '</td><td>' + r.wheel + '</td><td>' + r.tire + '</td><td>' + r.bolt + '</td></tr>';
+    });
+    html += '</tbody></table>';
+
+    html += '<h3 class="fitment-section-title">Popular Upgrades</h3>';
+    html += '<table class="fitment-table"><thead><tr><th>Wheel Size</th><th>Tire Size</th><th>Notes</th></tr></thead><tbody>';
+    data.upgrades.forEach(function(r) {
+      html += '<tr><td>' + r.size + '</td><td>' + r.tire + '</td><td>' + r.note + '</td></tr>';
+    });
+    html += '</tbody></table>';
+
+    html += '<div class="fitment-note"><strong>Lift Kit &amp; Fitment Notes:</strong> ' + data.liftNotes + '</div>';
+
+    container.innerHTML = html;
+    container.classList.add('show');
+  };
+
+})();
+</script>
+
+</body>
+</html>

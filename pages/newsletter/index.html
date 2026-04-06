@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Weekly Wrench Newsletter — ChevyRoots</title>
+  <meta name="description" content="New builds, deep dives, and event coverage — every Thursday. Subscribe to The Weekly Wrench from ChevyRoots." />
+  <link rel="canonical" href="https://chevyroots.com/pages/newsletter/" />
+  <meta property="og:title" content="The Weekly Wrench — ChevyRoots Newsletter" />
+  <meta property="og:description" content="New Chevy builds, deep dives, and event coverage every Thursday. Subscribe free to The Weekly Wrench." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/newsletter/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       CSS VARIABLES
+    ============================================================ */
+    :root {
+      --charcoal: #1A1A1A;
+      --gold: #C4A035;
+      --gold-light: #D4B44A;
+      --red: #CC0000;
+      --warm-gray: #2A2A2A;
+      --mid-gray: #3A3A3A;
+      --light-gray: #B0A89A;
+      --off-white: #F0EDE6;
+
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --nav-height: 68px;
+      --section-pad: clamp(3rem, 6vw, 6rem);
+      --max-width: 1280px;
+      --radius: 4px;
+      --radius-lg: 8px;
+      --transition: 200ms ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--charcoal);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2.5rem);
+    }
+
+    .label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--off-white);
+    }
+
+    .gold-line {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .gold { color: var(--gold); }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.75rem;
+      border: 2px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-gold { background: var(--gold); color: var(--charcoal); border-color: var(--gold); }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-outline { background: transparent; color: var(--off-white); border-color: rgba(240,237,230,0.5); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ============================================================
+       ANNOUNCEMENT BAR
+    ============================================================ */
+    .announcement-bar {
+      background: var(--red);
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .announcement-bar span { color: rgba(255,255,255,0.75); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-main {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+    .nav-logo-main em { font-style: normal; color: var(--gold); }
+    .nav-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-top: 1px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover { color: var(--gold); background: rgba(196,160,53,0.08); }
+    .nav-links a.active { color: var(--gold); }
+    .nav-cta { display: flex; align-items: center; gap: 1rem; }
+    .nav-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+    }
+    .nav-menu-toggle span { display: block; width: 22px; height: 2px; background: var(--off-white); transition: var(--transition); }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: var(--warm-gray);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-mobile a:hover { color: var(--gold); background: rgba(196,160,53,0.08); }
+
+    /* ============================================================
+       PAGE HERO
+    ============================================================ */
+    .page-hero {
+      background: linear-gradient(135deg, #1A1A1A 0%, #252520 50%, #1A1A1A 100%);
+      border-bottom: 1px solid rgba(196,160,53,0.15);
+      padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,160,53,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-wrench-icon {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .page-hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .page-hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 900;
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--off-white);
+      margin-bottom: 1.25rem;
+    }
+    .page-hero-title .gold { color: var(--gold); }
+    .page-hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--light-gray);
+      max-width: 540px;
+      margin: 0 auto 2rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+    }
+    .hero-meta-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* ============================================================
+       MAIN SIGNUP SECTION
+    ============================================================ */
+    .signup-section {
+      padding: var(--section-pad) 0;
+      background: var(--warm-gray);
+    }
+    .signup-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    /* Benefits list */
+    .benefits-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .benefits-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+    .benefits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: rgba(196,160,53,0.05);
+      border: 1px solid rgba(196,160,53,0.15);
+      border-radius: var(--radius-lg);
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .benefit-item:hover {
+      border-color: rgba(196,160,53,0.35);
+      background: rgba(196,160,53,0.09);
+    }
+    .benefit-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 0.1rem;
+    }
+    .benefit-content {}
+    .benefit-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 0.2rem;
+    }
+    .benefit-desc {
+      font-size: 0.85rem;
+      color: var(--light-gray);
+      line-height: 1.5;
+    }
+
+    /* Signup box */
+    .signup-box {
+      background: #222;
+      border: 1px solid rgba(196,160,53,0.25);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      position: sticky;
+      top: calc(var(--nav-height) + 1.5rem);
+    }
+    .signup-box-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .signup-box-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+    }
+    .signup-box-sub {
+      font-size: 0.88rem;
+      color: var(--light-gray);
+      line-height: 1.55;
+      margin-bottom: 1.75rem;
+    }
+    .signup-count {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--light-gray);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding: 0.6rem 0.9rem;
+      background: rgba(196,160,53,0.06);
+      border-radius: var(--radius);
+    }
+    .signup-count-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-bottom: 0.4rem;
+    }
+    .form-input {
+      width: 100%;
+      background: #1A1A1A;
+      border: 1px solid rgba(176,168,154,0.3);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--off-white);
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .form-input::placeholder { color: rgba(176,168,154,0.5); }
+    .form-input:focus { border-color: var(--gold); }
+    .form-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      border-radius: var(--radius);
+      padding: 0.9rem 1.5rem;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .form-submit:active { transform: translateY(0); }
+    .signup-disclaimer {
+      font-size: 0.75rem;
+      color: rgba(176,168,154,0.6);
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       SAMPLE ISSUE
+    ============================================================ */
+    .sample-section {
+      padding: var(--section-pad) 0;
+      background: var(--charcoal);
+    }
+    .sample-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .sample-header p { color: var(--light-gray); font-size: 0.95rem; margin-top: 0.75rem; }
+
+    /* Email preview card */
+    .email-preview {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #f5f5f0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      color: #1A1A1A;
+    }
+    /* Email client chrome bar */
+    .email-chrome {
+      background: #e8e8e8;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid #d0d0d0;
+    }
+    .chrome-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .chrome-dot-red   { background: #ff5f57; }
+    .chrome-dot-yellow{ background: #febc2e; }
+    .chrome-dot-green { background: #28c840; }
+    .chrome-subject {
+      margin-left: auto;
+      font-size: 0.72rem;
+      color: #666;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Email header */
+    .email-header {
+      background: #1A1A1A;
+      padding: 1.75rem 2rem;
+      text-align: center;
+    }
+    .email-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #F0EDE6;
+      letter-spacing: 0.04em;
+    }
+    .email-logo em { font-style: normal; color: #C4A035; }
+    .email-issue-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(196,160,53,0.7);
+      margin-top: 0.4rem;
+    }
+    .email-headline-bar {
+      background: #C4A035;
+      padding: 1.25rem 2rem;
+      text-align: center;
+    }
+    .email-headline-bar h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #1A1A1A;
+      line-height: 1.1;
+    }
+    .email-headline-bar p {
+      font-size: 0.78rem;
+      color: rgba(26,26,26,0.7);
+      margin-top: 0.25rem;
+    }
+
+    /* Email body */
+    .email-body {
+      padding: 2rem;
+    }
+    .email-section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #C4A035;
+      border-bottom: 1px solid #e0ddd8;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .email-build-feature {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .email-build-thumb {
+      width: 90px;
+      height: 68px;
+      min-width: 90px;
+      background: #333;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .email-build-thumb span {
+      font-size: 1.4rem;
+    }
+    .email-build-info h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #1A1A1A;
+      margin-bottom: 0.2rem;
+    }
+    .email-build-info p {
+      font-size: 0.78rem;
+      color: #666;
+      line-height: 1.5;
+    }
+    .email-build-info a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #C4A035;
+      text-decoration: none;
+    }
+
+    .email-news-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+    .email-news-item {
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+      font-size: 0.82rem;
+      color: #333;
+      line-height: 1.45;
+    }
+    .email-news-bullet {
+      color: #C4A035;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .email-events {
+      background: #eeebe4;
+      border-radius: 4px;
+      padding: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .email-event-row {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-size: 0.8rem;
+      color: #444;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .email-event-row:last-child { border-bottom: none; }
+    .email-event-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: #C4A035;
+      min-width: 80px;
+    }
+
+    .email-picks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+    .email-pick-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+      color: #333;
+    }
+    .email-pick-icon { font-size: 1rem; flex-shrink: 0; }
+
+    /* Email footer */
+    .email-footer {
+      background: #1A1A1A;
+      padding: 1.25rem 2rem;
+      text-align: center;
+    }
+    .email-footer p {
+      font-size: 0.65rem;
+      color: rgba(240,237,230,0.4);
+      line-height: 1.7;
+    }
+    .email-footer a {
+      color: rgba(196,160,53,0.7);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(196,160,53,0.15);
+      padding: clamp(2.5rem, 5vw, 4rem) 0 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+    .footer-brand-name em { font-style: normal; color: var(--gold); }
+    .footer-brand-tag {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-bottom: 1rem;
+    }
+    .footer-desc {
+      font-size: 0.83rem;
+      color: var(--light-gray);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      max-width: 300px;
+    }
+    .footer-social { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .social-btn {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(176,168,154,0.3);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--light-gray);
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-col-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--light-gray);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid rgba(176,168,154,0.1);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--light-gray); }
+    .footer-disclaimer {
+      font-size: 0.72rem;
+      color: rgba(176,168,154,0.45);
+      line-height: 1.6;
+      max-width: 820px;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-menu-toggle { display: flex; }
+      .signup-grid { grid-template-columns: 1fr; }
+      .signup-box { position: static; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .email-build-feature { flex-direction: column; }
+      .email-build-thumb { width: 100%; height: 100px; }
+    }
+    @media (max-width: 480px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-meta { flex-direction: column; gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       ANNOUNCEMENT BAR
+  ============================================================ -->
+  <div class="announcement-bar">
+    <span>2026 &mdash;</span> Celebrating America&rsquo;s 250th &amp; 115 Years of Chevrolet &mdash; <span>Built in America. Still Running Strong.</span>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="ChevyRoots home">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+
+      <button class="nav-menu-toggle" aria-label="Toggle mobile menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="/pages/models/" onclick="this.closest('.nav-mobile').classList.remove('open')">Models</a>
+    <a href="/pages/guides/" onclick="this.closest('.nav-mobile').classList.remove('open')">Guides</a>
+    <a href="/pages/builds/" onclick="this.closest('.nav-mobile').classList.remove('open')">Builds</a>
+    <a href="/pages/events/" onclick="this.closest('.nav-mobile').classList.remove('open')">Events</a>
+    <a href="/pages/crystals-corner/" onclick="this.closest('.nav-mobile').classList.remove('open')">Crystal's Corner</a>
+    <a href="/pages/news/" onclick="this.closest('.nav-mobile').classList.remove('open')">News</a>
+    <a href="/pages/about/" onclick="this.closest('.nav-mobile').classList.remove('open')">About</a>
+    <a href="/pages/builds/" class="btn btn-gold" style="margin-top:0.5rem;" onclick="this.closest('.nav-mobile').classList.remove('open')">Submit Your Build</a>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         PAGE HERO
+    ============================================================ -->
+    <section class="page-hero" aria-label="Newsletter hero">
+      <div class="container">
+        <span class="hero-wrench-icon" aria-hidden="true">&#128295;</span>
+        <p class="page-hero-eyebrow">Free Weekly Newsletter</p>
+        <h1 class="page-hero-title">
+          The Weekly<br/><span class="gold">Wrench</span>
+        </h1>
+        <p class="page-hero-sub">
+          New builds, deep dives, and event coverage &mdash; every Thursday.
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="hero-meta-dot" aria-hidden="true"></span>
+            Every Thursday
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-dot" aria-hidden="true"></span>
+            100% Free
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-dot" aria-hidden="true"></span>
+            No spam, ever
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-dot" aria-hidden="true"></span>
+            Unsubscribe anytime
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SIGNUP + BENEFITS
+    ============================================================ -->
+    <section class="signup-section" aria-labelledby="signup-heading">
+      <div class="container">
+        <div class="signup-grid">
+
+          <!-- Left: benefits -->
+          <div>
+            <p class="benefits-label">What you get</p>
+            <h2 class="benefits-title" id="signup-heading">
+              One Email.<br/>Every Thursday.<br/><span class="gold">All Signal.</span>
+            </h2>
+            <span class="gold-line" aria-hidden="true"></span>
+
+            <div class="benefits-list" role="list">
+
+              <div class="benefit-item" role="listitem">
+                <span class="benefit-icon" aria-hidden="true">&#127942;</span>
+                <div class="benefit-content">
+                  <div class="benefit-title">Build of the Week</div>
+                  <div class="benefit-desc">One featured community build — full spec breakdown, owner story, and the photo that makes you jealous. Trucks, muscle, restomods, and everything in between.</div>
+                </div>
+              </div>
+
+              <div class="benefit-item" role="listitem">
+                <span class="benefit-icon" aria-hidden="true">&#128240;</span>
+                <div class="benefit-content">
+                  <div class="benefit-title">Chevy News Roundup</div>
+                  <div class="benefit-desc">The Chevy headlines that actually matter — no rehashed press releases, no hype. New model updates, recall notices worth knowing about, and factory announcements.</div>
+                </div>
+              </div>
+
+              <div class="benefit-item" role="listitem">
+                <span class="benefit-icon" aria-hidden="true">&#128197;</span>
+                <div class="benefit-content">
+                  <div class="benefit-title">Event Calendar Highlights</div>
+                  <div class="benefit-desc">Car shows, swap meets, cruise-ins, and track days across the country. Curated picks — not a raw list of everything happening in 47 states.</div>
+                </div>
+              </div>
+
+              <div class="benefit-item" role="listitem">
+                <span class="benefit-icon" aria-hidden="true">&#127991;</span>
+                <div class="benefit-content">
+                  <div class="benefit-title">Exclusive Partner Deals</div>
+                  <div class="benefit-desc">When founding partners come on board, subscribers get first access to special pricing, early product drops, and giveaways. Coming soon.</div>
+                </div>
+              </div>
+
+              <div class="benefit-item" role="listitem">
+                <span class="benefit-icon" aria-hidden="true">&#11088;</span>
+                <div class="benefit-content">
+                  <div class="benefit-title">Crystal&rsquo;s Picks</div>
+                  <div class="benefit-desc">One tool, part, resource, or read I've come across that week that's actually worth your time. No sponsored picks. Just stuff I'd tell a friend.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: signup form -->
+          <div>
+            <div class="signup-box">
+              <p class="signup-box-label">Subscribe free</p>
+              <h2 class="signup-box-title">Join the<br/><span class="gold">Weekly Wrench</span></h2>
+              <p class="signup-box-sub">
+                Real Chevy content, one email a week. No fluff, no affiliate noise, no spam.
+              </p>
+
+              <div class="signup-count" aria-live="polite">
+                <span class="signup-count-dot" aria-hidden="true"></span>
+                Join <span data-subscriber-count>0</span>&nbsp;other Chevy enthusiasts
+              </div>
+
+              <form class="newsletter-form" data-newsletter-form data-signup-source="/pages/newsletter/" aria-label="Newsletter signup">
+                <div class="form-group">
+                  <label class="form-label" for="nl-email">Email address</label>
+                  <input
+                    type="email"
+                    id="nl-email"
+                    name="email"
+                    class="form-input"
+                    placeholder="you@example.com"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+                <button type="submit" class="form-submit">Subscribe — It&rsquo;s Free</button>
+              </form>
+
+              <p class="signup-disclaimer">No spam, no fluff. Unsubscribe anytime. We don&rsquo;t sell or share your email.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SAMPLE ISSUE PREVIEW
+    ============================================================ -->
+    <section class="sample-section" aria-labelledby="sample-heading">
+      <div class="container">
+        <div class="sample-header">
+          <p class="section-eyebrow">Sample issue</p>
+          <h2 class="section-title" id="sample-heading">What a Real Issue Looks Like</h2>
+          <p>Here&rsquo;s an example of a typical Thursday send. This is the actual format, not a marketing mock-up.</p>
+        </div>
+
+        <!-- Email client preview -->
+        <div class="email-preview" role="region" aria-label="Sample newsletter issue">
+
+          <!-- macOS-style chrome -->
+          <div class="email-chrome" aria-hidden="true">
+            <div class="chrome-dot chrome-dot-red"></div>
+            <div class="chrome-dot chrome-dot-yellow"></div>
+            <div class="chrome-dot chrome-dot-green"></div>
+            <span class="chrome-subject">The Weekly Wrench — Issue #12 — April 3, 2026</span>
+          </div>
+
+          <!-- Email header -->
+          <div class="email-header">
+            <div class="email-logo">Chevy<em>Roots</em></div>
+            <div class="email-issue-line">The Weekly Wrench &mdash; Issue 12 &mdash; April 3, 2026</div>
+          </div>
+
+          <!-- Gold bar headline -->
+          <div class="email-headline-bar">
+            <h2>Big-Block Thursday</h2>
+            <p>1970 Chevelle SS feature &bull; 2027 Silverado news &bull; Spring shows &bull; Crystal&rsquo;s pick</p>
+          </div>
+
+          <!-- Body -->
+          <div class="email-body">
+
+            <!-- Build of the Week -->
+            <div class="email-section-label">Build of the Week</div>
+            <div class="email-build-feature">
+              <div class="email-build-thumb" style="background: #333 url('/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg') center/cover no-repeat;">
+              </div>
+              <div class="email-build-info">
+                <h3>1970 Chevelle SS 454 &mdash; &ldquo;Green Machine&rdquo;</h3>
+                <p>Marcus T. spent four years on a frame-off restomod, swapped in a 525-whp big block, and kept the Fathom Green that makes it impossible to ignore. Full spec rundown inside.</p>
+                <a href="#">Read the full build &rarr;</a>
+              </div>
+            </div>
+
+            <!-- News Roundup -->
+            <div class="email-section-label">Chevy News This Week</div>
+            <div class="email-news-items">
+              <div class="email-news-item">
+                <span class="email-news-bullet">&#9656;</span>
+                <span><strong>2027 Silverado HD spy shots surface</strong> — early prototypes show revised front end and updated infotainment. Debut expected at SEMA.</span>
+              </div>
+              <div class="email-news-item">
+                <span class="email-news-bullet">&#9656;</span>
+                <span><strong>C8 Corvette E-Ray production numbers</strong> — GM confirms limited 2026 allocation; dealers already reporting waitlists.</span>
+              </div>
+              <div class="email-news-item">
+                <span class="email-news-bullet">&#9656;</span>
+                <span><strong>Equinox EV range update</strong> — over-the-air software pushed this week bumps estimated range by 14 miles on the 2LT trim.</span>
+              </div>
+            </div>
+
+            <!-- Event Calendar -->
+            <div class="email-section-label">Events Worth Your Weekend</div>
+            <div class="email-events">
+              <div class="email-event-row">
+                <span class="email-event-date">Apr 12</span>
+                <span>Bloomington Gold Corvette Show — Indianapolis Motor Speedway, IN</span>
+              </div>
+              <div class="email-event-row">
+                <span class="email-event-date">Apr 19</span>
+                <span>Spring Carlisle Swap Meet — Carlisle, PA (Chevy section in Lot J)</span>
+              </div>
+              <div class="email-event-row">
+                <span class="email-event-date">Apr 26</span>
+                <span>Texas Classics at Kyle Field — College Station, TX</span>
+              </div>
+            </div>
+
+            <!-- Crystal's Picks -->
+            <div class="email-section-label">Crystal&rsquo;s Picks This Week</div>
+            <div class="email-picks">
+              <div class="email-pick-item">
+                <span class="email-pick-icon">&#128295;</span>
+                <span><strong>Tool:</strong> Gearwrench 80559 flex-head ratcheting wrench — finally bought one after borrowing a friend&rsquo;s for years. Worth every dollar.</span>
+              </div>
+              <div class="email-pick-item">
+                <span class="email-pick-icon">&#128218;</span>
+                <span><strong>Read:</strong> <em>Muscle Car Review</em>&rsquo;s 2026 buyer guide — surprisingly honest about which classics are money pits right now.</span>
+              </div>
+              <div class="email-pick-item">
+                <span class="email-pick-icon">&#128249;</span>
+                <span><strong>Watch:</strong> Matt Farah&rsquo;s latest street drive of the C8 Z06 convertible. If you have 18 minutes, just watch it.</span>
+              </div>
+            </div>
+
+          </div><!-- /email-body -->
+
+          <!-- Email footer -->
+          <div class="email-footer">
+            <p>
+              You&rsquo;re receiving this because you subscribed at chevyroots.com<br/>
+              <a href="#">Unsubscribe</a> &mdash; <a href="#">View in browser</a> &mdash; <a href="#">Manage preferences</a><br/>
+              ChevyRoots is an independent resource. Not affiliated with General Motors or Chevrolet.
+            </p>
+          </div>
+
+        </div><!-- /email-preview -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BOTTOM CTA STRIP
+    ============================================================ -->
+    <section style="background: var(--warm-gray); border-top: 1px solid rgba(196,160,53,0.15); padding: clamp(2.5rem, 5vw, 4rem) 0; text-align: center;" aria-label="Bottom signup">
+      <div class="container" style="max-width: 600px;">
+        <p class="section-eyebrow">Ready to subscribe?</p>
+        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase; margin-bottom: 0.75rem;">
+          First issue hits your inbox <span class="gold">Thursday</span>
+        </h2>
+        <p style="color: var(--light-gray); font-size: 0.9rem; margin-bottom: 2rem;">
+          Join the list. One email a week. Cancel whenever. No fluff, no junk.
+        </p>
+        <form class="newsletter-form" data-newsletter-form data-signup-source="/pages/newsletter/#bottom" style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center;" aria-label="Bottom newsletter signup">
+          <input
+            type="email"
+            name="email"
+            style="flex: 1 1 260px; background:#1A1A1A; border:1px solid rgba(176,168,154,0.3); border-radius:4px; padding:0.75rem 1rem; font-family:var(--font-body); font-size:0.95rem; color:var(--off-white); outline:none;"
+            placeholder="your@email.com"
+            required
+            autocomplete="email"
+          />
+          <button type="submit" class="btn btn-gold">Subscribe</button>
+        </form>
+        <p style="font-size: 0.73rem; color: rgba(176,168,154,0.55); margin-top: 1rem;">No spam, no fluff. Unsubscribe anytime.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div>
+          <div class="footer-brand-name">Chevy<em>Roots</em></div>
+          <div class="footer-brand-tag">Independent Chevrolet Resource</div>
+          <p class="footer-desc">
+            An independent enthusiast resource covering Chevrolet models, builds, events, and buying guides. Run by a Chevy girl from Houston, written for everyone who loves these trucks and cars.
+          </p>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+            <a href="#" class="social-btn" aria-label="YouTube">YT</a>
+            <a href="#" class="social-btn" aria-label="X / Twitter">X</a>
+            <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+
+        <nav aria-label="Explore links">
+          <div class="footer-col-title">Explore</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/models/trucks/">Trucks</a></li>
+            <li><a href="/pages/models/corvette/">Corvette</a></li>
+            <li><a href="/pages/models/classics/">Classics</a></li>
+            <li><a href="/pages/models/cars/">Cars</a></li>
+            <li><a href="/pages/models/suvs/">SUVs</a></li>
+            <li><a href="/pages/models/evs/">Electric Vehicles</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Resources links">
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/builds/">Community Builds</a></li>
+            <li><a href="/pages/events/">Events Calendar</a></li>
+            <li><a href="/pages/guides/">Buyer&rsquo;s Guides</a></li>
+            <li><a href="/pages/newsletter/">The Weekly Wrench</a></li>
+            <li><a href="/pages/partners/">Advertise with Us</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Site links">
+          <div class="footer-col-title">Site</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/about/">About ChevyRoots</a></li>
+            <li><a href="/pages/about/#contact">Contact</a></li>
+            <li><a href="/pages/about/#submit-build">Submit Your Build</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 ChevyRoots. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          ChevyRoots is an independent enthusiast website and is not affiliated with, endorsed by, or sponsored by General Motors, Chevrolet, or any of their subsidiaries. All model names, trademarks, and logos are the property of their respective owners.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="/js/newsletter.js"></script>
+
+</body>
+</html>

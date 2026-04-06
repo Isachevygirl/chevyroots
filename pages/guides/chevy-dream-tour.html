@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Chevy Dream Tour: 12 Historic Sites Every Enthusiast Must Visit | ChevyRoots</title>
+  <meta name="description" content="The ultimate Chevrolet road trip — 12 historic stops from Detroit to Bowling Green, Route 66 to the Corvette Museum. Plan the Chevy Dream Tour and visit them all." />
+  <meta name="keywords" content="chevy dream tour, chevrolet historic sites, corvette museum, route 66 chevy, chevy road trip, GM heritage center, chevy landmarks, car museums" />
+  <meta property="og:title" content="The Chevy Dream Tour: 12 Historic Sites Every Enthusiast Must Visit" />
+  <meta property="og:description" content="From the birthplace of Chevrolet in Detroit to the Corvette Museum in Kentucky — the ultimate Chevy road trip guide." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/chevy-dream-tour.html" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/chevy-dream-tour.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg2:       #222222;
+      --bg3:       #2A2A2A;
+      --gold:      #C4A035;
+      --gold-lt:   #D4B455;
+      --gold-dk:   #9E7F22;
+      --red:       #CC0000;
+      --text:      #F0EDE6;
+      --text-dim:  #B0ADA6;
+      --text-mute: #707070;
+      --border:    #333333;
+      --radius:    6px;
+      --radius-lg: 12px;
+      --trans:     0.25s ease;
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --nav-height: 68px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2.5rem);
+    }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .nav-logo-main {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .nav-logo-main em { font-style: normal; color: var(--gold); }
+
+    .nav-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 1px;
+    }
+
+    .nav-back {
+      margin-left: auto;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(196,160,53,0.35);
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius);
+      transition: background var(--trans);
+    }
+    .nav-back:hover { background: rgba(196,160,53,0.1); }
+
+    /* ─── HERO WITH CANVAS ─── */
+    .tour-hero {
+      position: relative;
+      min-height: min(75vh, 650px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #0d0d0d;
+    }
+
+    .tour-hero canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .tour-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(26,26,26,0.95) 0%,
+        rgba(26,26,26,0.7) 40%,
+        rgba(26,26,26,0.3) 100%
+      );
+      z-index: 1;
+    }
+
+    .tour-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .tour-hero .label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tour-hero .label::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .tour-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .tour-hero h1 .gold { color: var(--gold); }
+    .tour-hero h1 .italic { font-style: italic; }
+
+    .tour-hero-sub {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-dim);
+      max-width: 520px;
+      line-height: 1.6;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .tour-hero-route {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .route-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .route-stat-value {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .route-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 0.25rem;
+    }
+
+    /* ─── ROUTE OVERVIEW ─── */
+    .route-overview {
+      padding: clamp(2rem, 4vw, 3rem) 0;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .route-overview-inner {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .route-path {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      min-width: 280px;
+    }
+
+    .route-city {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .route-arrow {
+      color: var(--text-mute);
+      font-size: 0.7rem;
+    }
+
+    .route-legend {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      white-space: nowrap;
+    }
+
+    /* ─── STOPS ─── */
+    .stops-section {
+      padding: clamp(3rem, 6vw, 6rem) 0;
+    }
+
+    .stops-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .stops-header h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .stops-header h2 .gold { color: var(--gold); }
+
+    .stops-header p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    /* Stop cards with route line */
+    .stops-list {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .stops-list::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), rgba(196,160,53,0.15));
+    }
+
+    .stop-card {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 72px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .stop-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stop number badge */
+    .stop-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 56px;
+      height: 56px;
+      background: var(--bg);
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--gold);
+      z-index: 2;
+    }
+
+    .stop-content {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: border-color var(--trans);
+    }
+
+    .stop-card:hover .stop-content {
+      border-color: rgba(196,160,53,0.3);
+    }
+
+    .stop-location {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .stop-location::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .stop-name {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75rem;
+      line-height: 1.1;
+    }
+
+    .stop-desc {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .stop-highlights {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stop-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid rgba(196,160,53,0.3);
+      border-radius: 2px;
+      color: var(--gold);
+      background: rgba(196,160,53,0.06);
+    }
+
+    .stop-drive {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stop-drive-info {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .stop-drive-info strong {
+      color: var(--text);
+    }
+
+    /* ─── VISIT THEM ALL CHALLENGE ─── */
+    .challenge-section {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .challenge-inner {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .challenge-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(196,160,53,0.1);
+      border: 2px solid rgba(196,160,53,0.4);
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .challenge-badge-inner {
+      text-align: center;
+    }
+
+    .challenge-badge-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .challenge-badge-text {
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .challenge-inner h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .challenge-inner h2 .gold { color: var(--gold); }
+
+    .challenge-inner p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .challenge-checklist {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .checklist-item {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: border-color var(--trans), color var(--trans);
+      user-select: none;
+    }
+
+    .checklist-item:hover {
+      border-color: rgba(196,160,53,0.3);
+      color: var(--gold);
+    }
+
+    .checklist-item.checked {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .checklist-box {
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--border);
+      border-radius: 3px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      transition: all var(--trans);
+    }
+
+    .checklist-item.checked .checklist-box {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--bg);
+    }
+
+    .progress-bar-wrap {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      height: 24px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-dk), var(--gold));
+      border-radius: 20px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+
+    .progress-text {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+    }
+
+    /* ─── PLAN YOUR TRIP ─── */
+    .plan-section {
+      padding: clamp(3rem, 6vw, 6rem) 0;
+    }
+
+    .plan-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .plan-header h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-header h2 .gold { color: var(--gold); }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .plan-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: border-color var(--trans), transform var(--trans);
+    }
+
+    .plan-card:hover {
+      border-color: rgba(196,160,53,0.3);
+      transform: translateY(-3px);
+    }
+
+    .plan-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .plan-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-card p {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* ─── CTA ─── */
+    .tour-cta {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .tour-cta h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .tour-cta h2 .gold { color: var(--gold); }
+
+    .tour-cta p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.75rem;
+      border: 2px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--trans);
+      text-decoration: none;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--bg);
+      border-color: var(--gold);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-lt);
+      border-color: var(--gold-lt);
+      color: var(--bg);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: rgba(240,237,230,0.4);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(176,168,154,0.1);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand em { font-style: normal; color: var(--gold); }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      opacity: 0.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-disclaimer {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+      opacity: 0.4;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .plan-grid { grid-template-columns: 1fr; }
+      .route-path { display: none; }
+      .challenge-checklist { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .tour-hero-route { gap: 1.5rem; }
+      .stop-card { padding-left: 56px; }
+      .stops-list::before { left: 20px; }
+      .stop-number { width: 42px; height: 42px; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Where Chevy Runs Deep</span>
+      </a>
+      <a href="/" class="nav-back">&larr; Back to Home</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO — CANVAS MAP ANIMATION
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tour-hero">
+      <canvas id="tourCanvas"></canvas>
+      <div class="tour-hero-overlay"></div>
+      <div class="tour-hero-content container">
+        <div class="label">ChevyRoots &bull; Dream Tour</div>
+        <h1>
+          The Chevy<br/>
+          <span class="gold">Dream</span><br/>
+          <span class="italic">Tour</span>
+        </h1>
+        <p class="tour-hero-sub">
+          12 historic stops. One epic road trip. Visit every landmark that shaped Chevrolet history &mdash; from the Detroit birthplace to the Corvette Museum and everything in between.
+        </p>
+        <div class="tour-hero-route">
+          <div class="route-stat">
+            <span class="route-stat-value">12</span>
+            <span class="route-stat-label">Stops</span>
+          </div>
+          <div class="route-stat">
+            <span class="route-stat-value">3,200</span>
+            <span class="route-stat-label">Miles</span>
+          </div>
+          <div class="route-stat">
+            <span class="route-stat-value">10</span>
+            <span class="route-stat-label">States</span>
+          </div>
+          <div class="route-stat">
+            <span class="route-stat-value">&#8734;</span>
+            <span class="route-stat-label">Memories</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         ROUTE OVERVIEW BAR
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="route-overview">
+      <div class="container">
+        <div class="route-overview-inner">
+          <div class="route-path">
+            <span class="route-city">Detroit, MI</span>
+            <span class="route-arrow">&rarr;</span>
+            <span class="route-city">Flint, MI</span>
+            <span class="route-arrow">&rarr;</span>
+            <span class="route-city">Dearborn, MI</span>
+            <span class="route-arrow">&rarr;</span>
+            <span class="route-city">Indianapolis, IN</span>
+            <span class="route-arrow">&rarr;</span>
+            <span class="route-city">Bowling Green, KY</span>
+            <span class="route-arrow">&rarr;</span>
+            <span class="route-city">Nashville, TN</span>
+            <span class="route-arrow">&rarr;</span>
+            <span class="route-city">Route 66</span>
+            <span class="route-arrow">&rarr;</span>
+            <span class="route-city">Los Angeles, CA</span>
+          </div>
+          <span class="route-legend">Full Loop Route</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         THE 12 STOPS
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="stops-section">
+      <div class="container">
+        <div class="stops-header">
+          <h2>The <span class="gold">12 Stops</span></h2>
+          <p>Hit them all on one epic road trip, or pick your favorites for a weekend getaway. Each stop is a piece of the Chevrolet story.</p>
+        </div>
+
+        <div class="stops-list">
+
+          <!-- STOP 1 -->
+          <div class="stop-card">
+            <div class="stop-number">01</div>
+            <div class="stop-content">
+              <div class="stop-location">Detroit, Michigan</div>
+              <div class="stop-name">The Birthplace &mdash; Where It All Began</div>
+              <div class="stop-desc">
+                On November 3, 1911, Louis Chevrolet and Billy Durant incorporated the Chevrolet Motor Car Company in Detroit. The original factory at 2934 Grand River Avenue (now demolished) is where the Classic Six was first assembled. While the building is gone, the address is a pilgrimage point for any Chevy fan. Visit the nearby Detroit Historical Museum for early automotive history and the Spirit of Detroit monument.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">Founding Site</span>
+                <span class="stop-tag">Historic Marker</span>
+                <span class="stop-tag">Detroit History Museum</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 2 -->
+          <div class="stop-card">
+            <div class="stop-number">02</div>
+            <div class="stop-content">
+              <div class="stop-location">Flint, Michigan</div>
+              <div class="stop-name">Flint &mdash; The Vehicle City</div>
+              <div class="stop-desc">
+                Flint is where Billy Durant founded General Motors in 1908 and where the first Corvette rolled off the line in 1953. Visit the <strong>Sloan Museum of Discovery</strong> for an outstanding automotive history collection including original Chevrolet prototypes. The <strong>Durant-Dort Carriage Company Office</strong> (a National Historic Landmark) is where Durant's automotive empire began. The GM Heritage Center is relocating to nearby Grand Blanc Township in a massive 300,000 sq ft facility.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">First Corvette Built Here</span>
+                <span class="stop-tag">Sloan Museum</span>
+                <span class="stop-tag">Durant-Dort Landmark</span>
+                <span class="stop-tag">GM Heritage Center (New Location)</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 1: <strong>66 mi &bull; ~1 hr</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 3 -->
+          <div class="stop-card">
+            <div class="stop-number">03</div>
+            <div class="stop-content">
+              <div class="stop-location">Dearborn, Michigan</div>
+              <div class="stop-name">The Henry Ford Museum &amp; Greenfield Village</div>
+              <div class="stop-desc">
+                Yes, it's Ford's museum &mdash; but the <strong>Henry Ford Museum of American Innovation</strong> houses one of the world's finest automobile collections, including significant Chevrolets from every era. The "Driving America" exhibit traces the car's role in American culture. Greenfield Village offers a living history experience. While you're here, cruise <strong>Woodward Avenue</strong> &mdash; home of the annual Woodward Dream Cruise, the world's largest one-day car event (every third Saturday of August).
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">World-Class Museum</span>
+                <span class="stop-tag">Driving America Exhibit</span>
+                <span class="stop-tag">Woodward Dream Cruise</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 2: <strong>68 mi &bull; ~1 hr</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 4 -->
+          <div class="stop-card">
+            <div class="stop-number">04</div>
+            <div class="stop-content">
+              <div class="stop-location">Auburn, Indiana</div>
+              <div class="stop-name">Auburn Cord Duesenberg Automobile Museum</div>
+              <div class="stop-desc">
+                This National Historic Landmark museum in the beautiful 1930 Auburn Automobile Company headquarters showcases over 120 cars from the brass era through modern times. Their collection includes significant Chevrolets and the museum hosts one of the Midwest's best annual car auctions. A must-stop detour on the way south.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">National Historic Landmark</span>
+                <span class="stop-tag">120+ Cars</span>
+                <span class="stop-tag">Annual Auction</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 3: <strong>160 mi &bull; ~2.5 hrs</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 5 -->
+          <div class="stop-card">
+            <div class="stop-number">05</div>
+            <div class="stop-content">
+              <div class="stop-location">Indianapolis, Indiana</div>
+              <div class="stop-name">Indianapolis Motor Speedway Museum</div>
+              <div class="stop-desc">
+                Louis Chevrolet competed in the very first Indy 500 in 1911, finishing 7th. Reopened in 2025 after a $61 million renovation, the <strong>Indianapolis Motor Speedway Museum</strong> houses over 30 Indy 500-winning cars, Chevy-powered champions, and Corvette pace cars. Don't miss the <strong>Louis Chevrolet Memorial</strong> at the entrance &mdash; a bronze bust with four relief panels depicting his greatest accomplishments. Take a lap around the famous 2.5-mile oval on the bus tour.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">Louis Chevrolet Raced Here</span>
+                <span class="stop-tag">Louis Chevrolet Memorial Bust</span>
+                <span class="stop-tag">$61M Renovation</span>
+                <span class="stop-tag">Track Bus Tour</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 4: <strong>130 mi &bull; ~2 hrs</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 6 -->
+          <div class="stop-card">
+            <div class="stop-number">06</div>
+            <div class="stop-content">
+              <div class="stop-location">Bowling Green, Kentucky</div>
+              <div class="stop-name">National Corvette Museum &amp; Assembly Plant</div>
+              <div class="stop-desc">
+                The crown jewel of the Chevy Dream Tour. The <strong>National Corvette Museum</strong> houses over 80 Corvettes in 115,000 sq ft &mdash; from a 1953 original to the latest C8. See mint classics, one-of-a-kind prototypes, rare collectibles, and the famous <strong>Corvette Cave-In</strong> exhibit documenting the 2014 sinkhole that swallowed eight Corvettes. Right next door, the <strong>GM Bowling Green Assembly Plant</strong> is where every Corvette in the world is built &mdash; factory tours available.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">80+ Corvettes</span>
+                <span class="stop-tag">Cave-In Exhibit</span>
+                <span class="stop-tag">Factory Tours</span>
+                <span class="stop-tag">Motorsports Park</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 5: <strong>210 mi &bull; ~3 hrs</strong></div>
+                <div class="stop-drive-info">Admission: <strong>$17 adults</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 7 -->
+          <div class="stop-card">
+            <div class="stop-number">07</div>
+            <div class="stop-content">
+              <div class="stop-location">Nashville, Tennessee</div>
+              <div class="stop-name">Lane Motor Museum</div>
+              <div class="stop-desc">
+                Housing the largest European car collection in the US with over 500 vehicles, the <strong>Lane Motor Museum</strong> is a hidden gem. While it focuses on European rarities, their American section includes significant Chevrolets and the museum offers a fascinating contrast to see what Chevy was competing against globally. The collection includes micro-cars, amphibious vehicles, and prototypes you won't see anywhere else.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">500+ Vehicles</span>
+                <span class="stop-tag">Unique Collection</span>
+                <span class="stop-tag">Hidden Gem</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 6: <strong>65 mi &bull; ~1 hr</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 8 -->
+          <div class="stop-card">
+            <div class="stop-number">08</div>
+            <div class="stop-content">
+              <div class="stop-location">Springfield, Missouri / Tulsa, Oklahoma</div>
+              <div class="stop-name">Route 66 &mdash; The Mother Road</div>
+              <div class="stop-desc">
+                "See the USA in Your Chevrolet" &mdash; and there's no better way than on <strong>Route 66</strong>. The Mother Road and Chevy are inseparable. Stop at the <strong>Route 66 Car Museum</strong> in Springfield, MO for a stunning collection of classic American cars. In Tulsa, visit the <strong>Tulsa Auto Show &amp; Route 66 Historical Village</strong>. Drive the original alignment through small-town America, past neon signs, vintage gas stations, and roadside diners.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">Route 66 Car Museum</span>
+                <span class="stop-tag">Historic Alignment</span>
+                <span class="stop-tag">Roadside Americana</span>
+                <span class="stop-tag">Photo Ops Everywhere</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 7: <strong>400+ mi &bull; ~6 hrs</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 9 -->
+          <div class="stop-card">
+            <div class="stop-number">09</div>
+            <div class="stop-content">
+              <div class="stop-location">Amarillo, Texas</div>
+              <div class="stop-name">Cadillac Ranch</div>
+              <div class="stop-desc">
+                Ten Cadillacs buried nose-first in a Texas field &mdash; <strong>Cadillac Ranch</strong> is GM's most photographed art installation and a Route 66 icon. While they're Cadillacs (not Chevys), they're part of the GM family and an unmissable stop. Bring spray paint &mdash; visitors are encouraged to leave their mark. Drive your Chevy right up to it across the open field.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">GM Art Installation</span>
+                <span class="stop-tag">Route 66 Icon</span>
+                <span class="stop-tag">Bring Spray Paint</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 8: <strong>400 mi &bull; ~6 hrs</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 10 -->
+          <div class="stop-card">
+            <div class="stop-number">10</div>
+            <div class="stop-content">
+              <div class="stop-location">Petaluma / Modesto, California</div>
+              <div class="stop-name">American Graffiti Filming Locations</div>
+              <div class="stop-desc">
+                George Lucas filmed <em>American Graffiti</em> (1973) primarily in <strong>Petaluma, CA</strong> &mdash; the movie that made the '55 Chevy and cruising culture iconic on the big screen. Visit the original filming locations on Petaluma Boulevard. Then head to <strong>Modesto</strong>, Lucas's hometown, for the annual <strong>American Graffiti Festival &amp; Car Show</strong> (held each June) and the George Lucas mural downtown.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">Film Location</span>
+                <span class="stop-tag">'55 Chevy Fame</span>
+                <span class="stop-tag">Annual Car Show</span>
+                <span class="stop-tag">George Lucas Hometown</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 9: <strong>1,300 mi &bull; ~19 hrs (split it up!)</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 11 -->
+          <div class="stop-card">
+            <div class="stop-number">11</div>
+            <div class="stop-content">
+              <div class="stop-location">Los Angeles, California</div>
+              <div class="stop-name">Petersen Automotive Museum</div>
+              <div class="stop-desc">
+                The <strong>Petersen Automotive Museum</strong> on Wilshire Boulevard's Museum Row is one of the world's premier car museums. Their collection includes iconic Chevrolets from lowrider Impalas to race-winning Corvettes. The <strong>Vault</strong> (basement level, guided tour required) houses over 250 additional vehicles. Don't miss the lowrider exhibit &mdash; a celebration of the Impala-driven culture born right here in East LA.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">World-Class Museum</span>
+                <span class="stop-tag">The Vault Tour</span>
+                <span class="stop-tag">Lowrider Exhibit</span>
+                <span class="stop-tag">300+ Vehicles</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 10: <strong>350 mi &bull; ~5.5 hrs</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOP 12 -->
+          <div class="stop-card">
+            <div class="stop-number">12</div>
+            <div class="stop-content">
+              <div class="stop-location">Reno, Nevada</div>
+              <div class="stop-name">National Automobile Museum (The Harrah Collection)</div>
+              <div class="stop-desc">
+                Founded by casino magnate Bill Harrah, the <strong>National Automobile Museum</strong> in Reno houses over 200 vehicles across four galleries set as period street scenes. Their Chevrolet collection includes rare classics, customs, and significant production models. The immersive "street" displays transport you through decades of automotive history. A perfect final stop before heading home &mdash; or looping back east.
+              </div>
+              <div class="stop-highlights">
+                <span class="stop-tag">Harrah Collection</span>
+                <span class="stop-tag">200+ Vehicles</span>
+                <span class="stop-tag">Period Street Scenes</span>
+                <span class="stop-tag">Grand Finale</span>
+              </div>
+              <div class="stop-drive">
+                <div class="stop-drive-info">From Stop 11: <strong>450 mi &bull; ~7 hrs</strong></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         VISIT THEM ALL CHALLENGE
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="challenge-section">
+      <div class="container">
+        <div class="challenge-inner">
+          <div class="challenge-badge">
+            <div class="challenge-badge-inner">
+              <span class="challenge-badge-icon">&#127942;</span>
+              <span class="challenge-badge-text">Dream Tour</span>
+            </div>
+          </div>
+          <h2>Visit Them <span class="gold">All</span></h2>
+          <p>
+            Track your progress on the Chevy Dream Tour. Check off each stop as you visit it. Hit all 12 and you've completed the ultimate Chevrolet pilgrimage. Share your journey with the ChevyRoots community.
+          </p>
+
+          <div class="challenge-checklist" id="checklist">
+            <label class="checklist-item" data-stop="1">
+              <span class="checklist-box"></span>
+              Detroit Birthplace
+            </label>
+            <label class="checklist-item" data-stop="2">
+              <span class="checklist-box"></span>
+              Flint &mdash; Vehicle City
+            </label>
+            <label class="checklist-item" data-stop="3">
+              <span class="checklist-box"></span>
+              Henry Ford Museum
+            </label>
+            <label class="checklist-item" data-stop="4">
+              <span class="checklist-box"></span>
+              Auburn ACD Museum
+            </label>
+            <label class="checklist-item" data-stop="5">
+              <span class="checklist-box"></span>
+              Indianapolis Speedway
+            </label>
+            <label class="checklist-item" data-stop="6">
+              <span class="checklist-box"></span>
+              Corvette Museum
+            </label>
+            <label class="checklist-item" data-stop="7">
+              <span class="checklist-box"></span>
+              Lane Motor Museum
+            </label>
+            <label class="checklist-item" data-stop="8">
+              <span class="checklist-box"></span>
+              Route 66 Stretch
+            </label>
+            <label class="checklist-item" data-stop="9">
+              <span class="checklist-box"></span>
+              Cadillac Ranch
+            </label>
+            <label class="checklist-item" data-stop="10">
+              <span class="checklist-box"></span>
+              American Graffiti Sites
+            </label>
+            <label class="checklist-item" data-stop="11">
+              <span class="checklist-box"></span>
+              Petersen Museum
+            </label>
+            <label class="checklist-item" data-stop="12">
+              <span class="checklist-box"></span>
+              Harrah / Nat'l Auto Museum
+            </label>
+          </div>
+
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <p class="progress-text" id="progressText">0 of 12 stops visited</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PLAN YOUR TRIP
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="plan-section">
+      <div class="container">
+        <div class="plan-header">
+          <h2>Plan Your <span class="gold">Trip</span></h2>
+        </div>
+        <div class="plan-grid">
+          <div class="plan-card">
+            <div class="plan-icon">&#128663;</div>
+            <h3>Best Time to Go</h3>
+            <p>Late spring (May-June) or early fall (Sept-Oct) for perfect driving weather, lighter crowds, and car show season in full swing.</p>
+          </div>
+          <div class="plan-card">
+            <div class="plan-icon">&#128197;</div>
+            <h3>How Long?</h3>
+            <p>Full tour: 10-14 days at a relaxed pace. Michigan loop (stops 1-3): 2-3 days. Southern swing (stops 5-7): 3-4 days. Route 66 leg (stops 8-12): 5-7 days.</p>
+          </div>
+          <div class="plan-card">
+            <div class="plan-icon">&#128247;</div>
+            <h3>Share Your Trip</h3>
+            <p>Tag @ChevyRoots and use #ChevyDreamTour on Instagram. Best photos get featured on the site and in The Weekly Wrench newsletter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CTA — HISTORY LINK
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="tour-cta">
+      <div class="container">
+        <h2>Know the <span class="gold">Story</span> Behind Each Stop</h2>
+        <p>Brush up on 115 years of Chevrolet history before you hit the road.</p>
+        <div class="cta-buttons">
+          <a href="/pages/guides/chevy-history.html" class="btn btn-gold">Read the Full History &rarr;</a>
+          <a href="/" class="btn btn-outline">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">Chevy<em>Roots</em></div>
+      <p class="footer-copy">&copy; 2026 ChevyRoots. All rights reserved.</p>
+      <p class="footer-disclaimer">ChevyRoots is an independent enthusiast website and is not affiliated with, endorsed by, or sponsored by General Motors, Chevrolet, or any of their subsidiaries.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CANVAS — ANIMATED ROUTE MAP WITH CHEVY DRIVING
+  ═══════════════════════════════════════════════════════════ -->
+  <script>
+  (function() {
+    const canvas = document.getElementById('tourCanvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, time = 0;
+
+    function resize() {
+      W = canvas.width = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Route points (relative coordinates)
+    const route = [
+      { x: 0.72, y: 0.30, label: 'Detroit' },
+      { x: 0.70, y: 0.25, label: 'Flint' },
+      { x: 0.68, y: 0.32, label: 'Dearborn' },
+      { x: 0.62, y: 0.42, label: 'Indianapolis' },
+      { x: 0.60, y: 0.55, label: 'Bowling Green' },
+      { x: 0.55, y: 0.52, label: 'Nashville' },
+      { x: 0.42, y: 0.48, label: 'Route 66' },
+      { x: 0.32, y: 0.55, label: 'Amarillo' },
+      { x: 0.18, y: 0.35, label: 'Petaluma' },
+      { x: 0.15, y: 0.48, label: 'Los Angeles' },
+      { x: 0.17, y: 0.30, label: 'Reno' },
+    ];
+
+    // Stars
+    const stars = [];
+    for (let i = 0; i < 80; i++) {
+      stars.push({
+        x: Math.random(),
+        y: Math.random() * 0.5,
+        size: Math.random() * 1.2 + 0.3,
+        flicker: Math.random() * Math.PI * 2
+      });
+    }
+
+    function drawBackground() {
+      // Night sky
+      const skyGrad = ctx.createLinearGradient(0, 0, 0, H);
+      skyGrad.addColorStop(0, '#080818');
+      skyGrad.addColorStop(0.6, '#151525');
+      skyGrad.addColorStop(1, '#1a1a2a');
+      ctx.fillStyle = skyGrad;
+      ctx.fillRect(0, 0, W, H);
+
+      // Stars
+      stars.forEach(s => {
+        const f = 0.4 + 0.6 * Math.sin(time * 0.015 + s.flicker);
+        ctx.fillStyle = `rgba(240, 237, 230, ${0.2 + 0.5 * f})`;
+        ctx.beginPath();
+        ctx.arc(s.x * W, s.y * H, s.size * f, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // USA outline glow (simplified)
+      ctx.strokeStyle = 'rgba(196, 160, 53, 0.08)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(W * 0.1, H * 0.25);
+      ctx.bezierCurveTo(W * 0.2, H * 0.2, W * 0.4, H * 0.18, W * 0.5, H * 0.2);
+      ctx.bezierCurveTo(W * 0.65, H * 0.18, W * 0.75, H * 0.22, W * 0.85, H * 0.3);
+      ctx.bezierCurveTo(W * 0.82, H * 0.45, W * 0.78, H * 0.55, W * 0.65, H * 0.6);
+      ctx.bezierCurveTo(W * 0.5, H * 0.65, W * 0.35, H * 0.62, W * 0.2, H * 0.55);
+      ctx.bezierCurveTo(W * 0.12, H * 0.5, W * 0.1, H * 0.4, W * 0.1, H * 0.25);
+      ctx.stroke();
+    }
+
+    function drawRoute() {
+      // Route line
+      ctx.strokeStyle = 'rgba(196, 160, 53, 0.3)';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([6, 4]);
+      ctx.beginPath();
+      route.forEach((p, i) => {
+        const x = p.x * W;
+        const y = p.y * H;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Animated progress along route
+      const totalSegments = route.length - 1;
+      const progress = (time * 0.003) % 1;
+      const segIndex = Math.floor(progress * totalSegments);
+      const segProgress = (progress * totalSegments) - segIndex;
+
+      if (segIndex < totalSegments) {
+        const p1 = route[segIndex];
+        const p2 = route[segIndex + 1];
+        const carX = (p1.x + (p2.x - p1.x) * segProgress) * W;
+        const carY = (p1.y + (p2.y - p1.y) * segProgress) * H;
+
+        // Glowing trail
+        const trailGrad = ctx.createRadialGradient(carX, carY, 0, carX, carY, 30);
+        trailGrad.addColorStop(0, 'rgba(196, 160, 53, 0.4)');
+        trailGrad.addColorStop(1, 'transparent');
+        ctx.fillStyle = trailGrad;
+        ctx.beginPath();
+        ctx.arc(carX, carY, 30, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Car dot
+        ctx.fillStyle = '#C4A035';
+        ctx.shadowColor = '#C4A035';
+        ctx.shadowBlur = 12;
+        ctx.beginPath();
+        ctx.arc(carX, carY, 5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      // Stop dots
+      route.forEach((p, i) => {
+        const x = p.x * W;
+        const y = p.y * H;
+
+        // Outer ring
+        ctx.strokeStyle = 'rgba(196, 160, 53, 0.5)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(x, y, 8, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Inner dot
+        ctx.fillStyle = 'rgba(196, 160, 53, 0.8)';
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Label (only on larger screens)
+        if (W > 600) {
+          ctx.fillStyle = 'rgba(240, 237, 230, 0.5)';
+          ctx.font = `${Math.max(9, W * 0.008)}px 'JetBrains Mono', monospace`;
+          ctx.textAlign = 'center';
+          ctx.fillText(p.label, x, y - 14);
+        }
+      });
+    }
+
+    function animate() {
+      time++;
+      ctx.clearRect(0, 0, W, H);
+      drawBackground();
+      drawRoute();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  })();
+  </script>
+
+  <!-- SCROLL REVEAL FOR STOPS -->
+  <script>
+  (function() {
+    const cards = document.querySelectorAll('.stop-card');
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      cards.forEach(card => observer.observe(card));
+    } else {
+      cards.forEach(card => card.classList.add('revealed'));
+    }
+  })();
+  </script>
+
+  <!-- CHECKLIST INTERACTIVITY -->
+  <script>
+  (function() {
+    const items = document.querySelectorAll('.checklist-item');
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    const STORAGE_KEY = 'chevyroots-dream-tour';
+
+    // Load saved state
+    let checked = {};
+    try {
+      checked = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    } catch(e) {}
+
+    function updateProgress() {
+      const count = Object.values(checked).filter(Boolean).length;
+      const pct = (count / 12) * 100;
+      progressBar.style.width = pct + '%';
+      if (count === 12) {
+        progressText.textContent = 'ALL 12 STOPS VISITED — YOU DID IT!';
+        progressText.style.color = '#C4A035';
+      } else {
+        progressText.textContent = count + ' of 12 stops visited';
+        progressText.style.color = '';
+      }
+    }
+
+    items.forEach(item => {
+      const stop = item.dataset.stop;
+      if (checked[stop]) item.classList.add('checked');
+
+      item.addEventListener('click', () => {
+        checked[stop] = !checked[stop];
+        item.classList.toggle('checked');
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(checked));
+        updateProgress();
+      });
+    });
+
+    updateProgress();
+  })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Chevy Dream Tour: 12 Historic Sites Every Enthusiast Must Visit",
+    "description": "The ultimate Chevrolet road trip — 12 historic stops from Detroit to Bowling Green, Route 66 to the Corvette Museum.",
+    "url": "https://chevyroots.com/pages/guides/chevy-dream-tour.html",
+    "datePublished": "2024-01-01",
+    "author": { "@type": "Organization", "name": "ChevyRoots", "url": "https://chevyroots.com" },
+    "publisher": { "@type": "Organization", "name": "ChevyRoots", "url": "https://chevyroots.com" }
+  }
+  </script>
+</body>
+</html>

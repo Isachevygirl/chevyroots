@@ -1,0 +1,11 @@
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+
+# Redirect mechanic profile pretty URLs
+[[redirects]]
+  from = "/mechanics/:slug"
+  to = "/pages/mechanics/profile.html?id=:slug"
+  status = 200

@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compare Chevy Models Side by Side | ChevyRoots</title>
+  <meta name="description" content="Pick any 2 or 3 Chevrolet models and compare specs, pricing, towing, horsepower, and trim levels side by side. Silverado vs Colorado, Corvette vs Camaro, and more." />
+  <meta name="keywords" content="compare Chevy models, Silverado vs Colorado, Corvette vs Camaro, Chevy comparison tool, Chevrolet side by side" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/compare.html" />
+  <meta property="og:title" content="Compare Chevy Models Side by Side | ChevyRoots" />
+  <meta property="og:description" content="Pick any 2 or 3 Chevrolet models and compare specs, pricing, towing, and trim levels side by side. The fastest way to find the right Chevy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/compare.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET & BASE ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg2:       #222222;
+      --bg3:       #2A2A2A;
+      --bg4:       #2f2f2f;
+      --gold:      #C4A035;
+      --gold-lt:   #D4B455;
+      --gold-dk:   #9E7F22;
+      --gold-glow: rgba(196,160,53,0.12);
+      --text:      #F0EDE6;
+      --text-dim:  #B0ADA6;
+      --text-mute: #707070;
+      --border:    #333333;
+      --border-lt: #3d3d3d;
+      --green:     #4CAF50;
+      --green-dim: rgba(76,175,80,0.15);
+      --radius:    6px;
+      --radius-lg: 12px;
+      --trans:     0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ───────────────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: 60px;
+      display: flex; align-items: center;
+    }
+
+    .nav-inner {
+      width: 100%; max-width: 1280px;
+      margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+    }
+
+    .nav-logo {
+      display: flex; flex-direction: column; line-height: 1.15;
+      text-decoration: none;
+    }
+    .nav-logo-main {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px; font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .nav-logo-main span { color: var(--gold); }
+    .nav-logo-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-mute);
+    }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 28px; list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-dim); transition: color var(--trans);
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text); border-radius: 2px; transition: var(--trans);
+    }
+
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none; position: fixed; top: 60px; left: 0; right: 0;
+        background: rgba(26,26,26,0.98); flex-direction: column;
+        padding: 24px; gap: 20px; border-bottom: 1px solid var(--border);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 18px; }
+    }
+
+    /* ── HERO ──────────────────────────────────────────────────── */
+    .hero {
+      padding-top: 60px;
+      background: linear-gradient(160deg, #1A1A1A 60%, #1f1a0e 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(196,160,53,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 900px; margin: 0 auto;
+      padding: 72px 24px 56px; text-align: center; position: relative;
+    }
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+    }
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(40px, 7vw, 72px);
+      font-weight: 800; line-height: 1.05;
+      text-transform: uppercase; letter-spacing: 0.02em;
+      margin-bottom: 20px;
+    }
+    .hero-title span { color: var(--gold); }
+    .hero-sub {
+      font-size: 18px; font-weight: 400;
+      color: var(--text-dim); max-width: 540px; margin: 0 auto;
+    }
+
+    /* ── MAIN WRAP ─────────────────────────────────────────────── */
+    .main { max-width: 1280px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* ── SELECTOR PANEL ────────────────────────────────────────── */
+    .selector-panel {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px;
+      margin-bottom: 40px;
+    }
+    .selector-panel-header {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px; margin-bottom: 28px;
+    }
+    .selector-panel-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+
+    .selector-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+
+    .vehicle-col {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+      position: relative;
+    }
+    .vehicle-col-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .vehicle-col-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--gold); color: #111;
+      font-size: 11px; font-weight: 700; font-family: 'Inter', sans-serif;
+    }
+
+    .remove-col-btn {
+      position: absolute; top: 12px; right: 12px;
+      background: none; border: 1px solid var(--border);
+      color: var(--text-mute); width: 24px; height: 24px;
+      border-radius: 50%; cursor: pointer; font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color var(--trans), color var(--trans);
+    }
+    .remove-col-btn:hover { border-color: #c0392b; color: #c0392b; }
+
+    .form-group { margin-bottom: 12px; }
+    .form-group label {
+      display: block; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-mute); margin-bottom: 6px;
+    }
+    .form-group select {
+      width: 100%; background: var(--bg4);
+      border: 1px solid var(--border-lt);
+      color: var(--text); padding: 10px 12px;
+      border-radius: var(--radius); font-family: 'Inter', sans-serif;
+      font-size: 14px; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23B0ADA6' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      cursor: pointer; transition: border-color var(--trans);
+    }
+    .form-group select:focus { outline: none; border-color: var(--gold); }
+    .form-group select:disabled { opacity: 0.4; cursor: not-allowed; }
+    .form-group select option { background: var(--bg3); }
+
+    .add-vehicle-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--bg3); border: 1px dashed var(--border-lt);
+      color: var(--text-dim); padding: 20px;
+      border-radius: var(--radius); cursor: pointer;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; transition: border-color var(--trans), color var(--trans);
+      width: 100%; min-height: 140px;
+    }
+    .add-vehicle-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .add-vehicle-btn .plus { font-size: 22px; font-weight: 300; }
+
+    .selector-actions {
+      display: flex; align-items: center; gap: 16px; margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .btn-compare {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--gold); color: #111;
+      padding: 13px 36px; border: none; border-radius: var(--radius);
+      cursor: pointer; transition: background var(--trans), transform var(--trans);
+    }
+    .btn-compare:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .btn-compare:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+    .btn-reset {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      background: none; border: 1px solid var(--border);
+      color: var(--text-dim); padding: 13px 24px;
+      border-radius: var(--radius); cursor: pointer;
+      transition: border-color var(--trans), color var(--trans);
+    }
+    .btn-reset:hover { border-color: var(--text-dim); color: var(--text); }
+
+    .selector-hint {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-mute); letter-spacing: 0.06em;
+    }
+
+    /* ── COMPARISON TABLE ──────────────────────────────────────── */
+    #comparison-section { display: none; }
+
+    .comparison-header {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px; margin-bottom: 28px;
+    }
+    .comparison-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 26px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+
+    .btn-share {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+      background: none; border: 1px solid var(--border);
+      color: var(--text-dim); padding: 10px 18px;
+      border-radius: var(--radius); cursor: pointer;
+      transition: border-color var(--trans), color var(--trans);
+    }
+    .btn-share:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-share.copied { border-color: var(--green); color: var(--green); }
+
+    /* Table wrapper for horizontal scroll on mobile */
+    .table-scroll { overflow-x: auto; border-radius: var(--radius-lg); }
+
+    .compare-table {
+      width: 100%; border-collapse: collapse;
+      background: var(--bg2); border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 16px 20px; text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    /* Header row — vehicle names */
+    .compare-table thead th {
+      background: var(--bg3); font-weight: 600;
+      border-bottom: 2px solid var(--gold);
+    }
+    .compare-table thead th:first-child {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-mute);
+      width: 160px; min-width: 140px;
+    }
+    .vehicle-header-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 19px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.03em;
+      color: var(--text); margin-bottom: 4px;
+    }
+    .vehicle-header-year-trim {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--gold); letter-spacing: 0.08em;
+    }
+
+    /* Row label cells */
+    .compare-table td:first-child,
+    .compare-table th:first-child {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--text-dim); white-space: nowrap;
+    }
+    .row-icon {
+      font-size: 16px; margin-right: 6px;
+    }
+
+    /* Data cells */
+    .compare-table td.data-cell {
+      font-size: 15px; font-weight: 400; color: var(--text);
+    }
+    .compare-table td.data-cell .val-primary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 700; letter-spacing: 0.02em;
+    }
+    .compare-table td.data-cell .val-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text-mute);
+      letter-spacing: 0.06em; margin-top: 2px;
+    }
+
+    /* Feature list */
+    .feature-list { list-style: none; }
+    .feature-list li {
+      font-size: 13px; color: var(--text-dim);
+      padding: 3px 0; display: flex; align-items: flex-start; gap: 6px;
+    }
+    .feature-list li::before {
+      content: '—'; color: var(--gold); flex-shrink: 0;
+      font-size: 11px; margin-top: 3px;
+    }
+
+    /* Highlights */
+    td.highlight-gold {
+      background: rgba(196,160,53,0.1);
+      border-left: 3px solid var(--gold);
+    }
+    td.highlight-gold .val-primary { color: var(--gold); }
+
+    td.highlight-green {
+      background: rgba(76,175,80,0.08);
+      border-left: 3px solid var(--green);
+    }
+    td.highlight-green .val-primary { color: var(--green); }
+
+    .highlight-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 2px 7px; border-radius: 999px;
+      margin-left: 6px; vertical-align: middle;
+      font-weight: 500;
+    }
+    .badge-gold { background: rgba(196,160,53,0.2); color: var(--gold); }
+    .badge-green { background: rgba(76,175,80,0.2); color: var(--green); }
+
+    /* Zebra */
+    .compare-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .compare-table tbody tr:last-child td { border-bottom: none; }
+
+    /* N/A */
+    .val-na { color: var(--text-mute); font-style: italic; font-size: 13px; }
+
+    /* ── WINNER SUMMARY ────────────────────────────────────────── */
+    .winner-section {
+      margin-top: 40px;
+    }
+    .winner-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+    .winner-title span { color: var(--gold); }
+
+    .winner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .winner-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+      position: relative; overflow: hidden;
+      transition: border-color var(--trans);
+    }
+    .winner-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .winner-card.gold::before { background: linear-gradient(90deg, var(--gold-dk), var(--gold)); }
+    .winner-card.green::before { background: linear-gradient(90deg, #2e7d32, var(--green)); }
+    .winner-card:hover { border-color: var(--border-lt); }
+
+    .winner-card-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-mute);
+      margin-bottom: 8px;
+    }
+    .winner-card-model {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.03em;
+      color: var(--text); margin-bottom: 4px;
+    }
+    .winner-card-detail {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; color: var(--gold); letter-spacing: 0.06em;
+    }
+    .winner-card.green .winner-card-detail { color: var(--green); }
+    .winner-card-icon {
+      font-size: 28px; position: absolute;
+      top: 16px; right: 16px; opacity: 0.25;
+    }
+
+    /* ── DIVIDER ───────────────────────────────────────────────── */
+    .section-divider {
+      border: none; border-top: 1px solid var(--border);
+      margin: 56px 0;
+    }
+
+    /* ── CTA / RELATED ─────────────────────────────────────────── */
+    .cta-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap;
+    }
+    .cta-card-copy {}
+    .cta-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+    }
+    .cta-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 26px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 8px;
+    }
+    .cta-sub { font-size: 15px; color: var(--text-dim); max-width: 480px; }
+    .btn-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--gold); color: #111;
+      padding: 14px 32px; border-radius: var(--radius);
+      display: inline-block; white-space: nowrap;
+      transition: background var(--trans), transform var(--trans);
+    }
+    .btn-cta:hover { background: var(--gold-lt); color: #111; transform: translateY(-1px); }
+
+    .related-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      margin-bottom: 20px; color: var(--text-dim);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .related-link {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 18px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--text-dim); display: block;
+      transition: border-color var(--trans), color var(--trans);
+    }
+    .related-link:hover { border-color: var(--gold); color: var(--gold); }
+    .related-link-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px; font-weight: 400;
+      text-transform: none; letter-spacing: 0; color: var(--text-mute);
+      margin-top: 3px;
+    }
+
+    /* ── FOOTER ────────────────────────────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px; text-align: center;
+    }
+    .footer-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-mute);
+    }
+    .footer-text a { color: var(--text-mute); }
+    .footer-text a:hover { color: var(--gold); }
+
+    /* ── TOAST ─────────────────────────────────────────────────── */
+    .toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: var(--bg3); border: 1px solid var(--gold);
+      color: var(--text); padding: 12px 24px;
+      border-radius: var(--radius); font-size: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      z-index: 9999; transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ── LOADING ───────────────────────────────────────────────── */
+    .loading-state {
+      display: flex; align-items: center; justify-content: center;
+      padding: 60px; flex-direction: column; gap: 16px;
+      color: var(--text-mute);
+    }
+    .loading-spinner {
+      width: 32px; height: 32px;
+      border: 2px solid var(--border);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .empty-state {
+      text-align: center; padding: 60px 24px;
+      color: var(--text-mute);
+    }
+    .empty-state-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.5; }
+    .empty-state-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      margin-bottom: 8px; color: var(--text-dim);
+    }
+    .empty-state-sub { font-size: 14px; }
+
+    /* ── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .hero-inner { padding: 56px 16px 40px; }
+      .selector-panel { padding: 20px 16px; }
+      .main { padding: 32px 16px 64px; }
+      .cta-card { padding: 24px; flex-direction: column; }
+      .compare-table th,
+      .compare-table td { padding: 12px 14px; }
+      .compare-table thead th:first-child { min-width: 110px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────── -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo" aria-label="ChevyRoots home">
+      <span class="nav-logo-main">Chevy<span>Roots</span></span>
+      <span class="nav-logo-sub">Run by a Chevy Girl</span>
+    </a>
+    <button class="nav-hamburger" aria-label="Toggle navigation" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/pages/models/">Models</a></li>
+      <li><a href="/pages/guides/" class="active">Guides</a></li>
+      <li><a href="/pages/builds/">Builds</a></li>
+      <li><a href="/pages/events/">Events</a></li>
+      <li><a href="/pages/news/">News</a></li>
+      <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+      <li><a href="/pages/about/">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────── -->
+<section class="hero" aria-label="Page hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">ChevyRoots &mdash; Guides</p>
+    <h1 class="hero-title">Compare <span>Chevy</span> Models</h1>
+    <p class="hero-sub">Pick 2 or 3 Chevys and see them side-by-side. Specs, pricing, and the real differences.</p>
+  </div>
+</section>
+
+<!-- ── MAIN ──────────────────────────────────────────────────────── -->
+<main class="main" id="main">
+
+  <!-- SELECTOR PANEL -->
+  <section class="selector-panel" aria-label="Vehicle selector">
+    <div class="selector-panel-header">
+      <h2 class="selector-panel-title">Choose Your Vehicles</h2>
+      <span class="selector-hint">Select at least 2 to compare</span>
+    </div>
+
+    <div class="selector-columns" id="selectorColumns">
+      <!-- Columns injected by JS -->
+      <div class="loading-state">
+        <div class="loading-spinner"></div>
+        <span>Loading vehicles&hellip;</span>
+      </div>
+    </div>
+
+    <div class="selector-actions">
+      <button class="btn-compare" id="compareBtn" disabled>Compare Now</button>
+      <button class="btn-reset" id="resetBtn">Reset</button>
+    </div>
+  </section>
+
+  <!-- COMPARISON OUTPUT -->
+  <section id="comparison-section" aria-label="Comparison results" aria-live="polite">
+
+    <div class="comparison-header">
+      <h2 class="comparison-title" id="comparisonTitle">Side-by-Side Comparison</h2>
+      <button class="btn-share" id="shareBtn" aria-label="Copy comparison link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Copy Comparison Link
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-scroll" id="tableWrap">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- Winner Cards -->
+    <div class="winner-section" id="winnerSection">
+      <h3 class="winner-title">The <span>Verdict</span></h3>
+      <div class="winner-grid" id="winnerGrid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- CTA -->
+  <div class="cta-card" aria-label="Buyer's quiz callout">
+    <div class="cta-card-copy">
+      <p class="cta-label">Not sure yet?</p>
+      <h3 class="cta-heading">Take the Buyer's Quiz</h3>
+      <p class="cta-sub">Answer 7 quick questions and we'll match you to the right Chevy — no dealers, no spam, just straight talk.</p>
+    </div>
+    <a href="/pages/guides/quiz.html" class="btn-cta">Start the Quiz &rarr;</a>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- Related Guides -->
+  <div>
+    <p class="related-title">More from the Guides</p>
+    <div class="related-grid" id="relatedGrid">
+      <a href="/pages/guides/c8-corvette-buyers-guide.html" class="related-link">
+        C8 Corvette Buyer's Guide
+        <div class="related-link-sub">Full breakdown of every trim</div>
+      </a>
+      <a href="/pages/guides/chevy-history.html" class="related-link">
+        Chevy History
+        <div class="related-link-sub">100+ years of American metal</div>
+      </a>
+      <a href="/pages/guides/small-block-chevy-history.html" class="related-link">
+        Small Block History
+        <div class="related-link-sub">The engine that changed everything</div>
+      </a>
+      <a href="/pages/guides/known-issues.html" class="related-link">
+        Known Issues Guide
+        <div class="related-link-sub">What to watch before you buy</div>
+      </a>
+      <a href="/pages/guides/quiz.html" class="related-link">
+        Buyer's Quiz
+        <div class="related-link-sub">Find your perfect Chevy match</div>
+      </a>
+      <a href="/pages/guides/index.html" class="related-link">
+        All Guides &rarr;
+        <div class="related-link-sub">Browse the full library</div>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── RELATED TOOLS ──────────────────────────────────────────────── -->
+<section style="max-width:900px;margin:40px auto;padding:0 24px;text-align:center;">
+  <p style="font-family:'Barlow Condensed',sans-serif;font-size:16px;color:#B0ADA6;">Not sure which Chevy to compare? Try the <a href="/pages/guides/quiz.html" style="color:#C4A035;font-weight:700;">Which Chevy Should You Buy? quiz</a> — or browse <a href="/pages/guides/known-issues.html" style="color:#C4A035;font-weight:700;">known issues by model</a> and the <a href="/pages/guides/silverado-buyers-guide.html" style="color:#C4A035;font-weight:700;">Silverado Buyer's Guide</a>.</p>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <p class="footer-text">
+    &copy; 2025 <a href="/index.html">ChevyRoots</a> &mdash;
+    Run by a Chevy Girl. Not affiliated with General Motors.
+  </p>
+</footer>
+
+<!-- ── TOAST ──────────────────────────────────────────────────────── -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ── JAVASCRIPT ─────────────────────────────────────────────────── -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Constants ── */
+  const DATA_PATH = '/data/vehicles.json';
+  const MAX_VEHICLES = 3;
+  const SPEC_ROWS = [
+    { key: 'msrp',             label: 'Starting MSRP',       icon: '💰', format: 'currency',  highlight: 'best-value'   },
+    { key: 'engine',           label: 'Engine',               icon: '🔧', format: 'text'                                 },
+    { key: 'hp',               label: 'Horsepower',           icon: '⚡', format: 'number',   unit: 'hp', highlight: 'highest' },
+    { key: 'torque',           label: 'Torque',               icon: '🔩', format: 'number',   unit: 'lb-ft'              },
+    { key: 'transmission',     label: 'Transmission',         icon: '⚙️',  format: 'text'                                 },
+    { key: 'drivetrain',       label: 'Drivetrain',           icon: '🚗', format: 'text'                                 },
+    { key: 'towing_capacity',  label: 'Towing Capacity',      icon: '🪝', format: 'number',   unit: 'lbs', highlight: 'highest' },
+    { key: 'mpg',              label: 'MPG City / Hwy',       icon: '⛽', format: 'mpg',      highlight: 'highest-mpg'  },
+    { key: 'key_features',     label: 'Key Features',         icon: '✨', format: 'list'                                 },
+  ];
+
+  /* ── State ── */
+  let vehiclesData = [];
+  let columns = [{ id: 0 }, { id: 1 }];
+  let nextId = 2;
+
+  /* ── DOM refs ── */
+  const selectorColumns  = document.getElementById('selectorColumns');
+  const compareBtn       = document.getElementById('compareBtn');
+  const resetBtn         = document.getElementById('resetBtn');
+  const compSection      = document.getElementById('comparison-section');
+  const tableWrap        = document.getElementById('tableWrap');
+  const winnerGrid       = document.getElementById('winnerGrid');
+  const shareBtn         = document.getElementById('shareBtn');
+  const toast            = document.getElementById('toast');
+  const hamburger        = document.getElementById('hamburger');
+  const navLinks         = document.getElementById('navLinks');
+
+  /* ── Nav hamburger ── */
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  /* ── Toast ── */
+  function showToast(msg, duration = 2500) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), duration);
+  }
+
+  /* ── Format helpers ── */
+  function formatVal(row, trim) {
+    if (!trim) return '<span class="val-na">N/A</span>';
+    switch (row.format) {
+      case 'currency':
+        return `<div class="val-primary">${trim.msrp ? '$' + trim.msrp.toLocaleString() : 'N/A'}</div>`;
+      case 'number': {
+        const raw = trim[row.key];
+        if (raw == null) return '<span class="val-na">N/A</span>';
+        return `<div class="val-primary">${raw.toLocaleString()}<span class="val-sub">${row.unit || ''}</span></div>`;
+      }
+      case 'mpg':
+        if (!trim.mpg_city && !trim.mpg_highway) return '<span class="val-na">N/A</span>';
+        return `<div class="val-primary">${trim.mpg_city ?? '—'} / ${trim.mpg_highway ?? '—'}</div><div class="val-sub">city / highway</div>`;
+      case 'text':
+        return `<div>${trim[row.key] || '<span class="val-na">N/A</span>'}</div>`;
+      case 'list': {
+        const features = trim.key_features || [];
+        if (!features.length) return '<span class="val-na">N/A</span>';
+        return `<ul class="feature-list">${features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+      }
+      default:
+        return '<span class="val-na">N/A</span>';
+    }
+  }
+
+  /* ── Get numeric value for a row ── */
+  function numericVal(row, trim) {
+    if (!trim) return null;
+    if (row.key === 'msrp') return trim.msrp || null;
+    if (row.key === 'mpg') {
+      if (trim.mpg_city == null && trim.mpg_highway == null) return null;
+      return ((trim.mpg_city || 0) + (trim.mpg_highway || 0)) / 2;
+    }
+    const v = trim[row.key];
+    return (v != null && !isNaN(v)) ? v : null;
+  }
+
+  /* ── Load data ── */
+  async function loadVehicles() {
+    try {
+      const res = await fetch(DATA_PATH);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+      vehiclesData = json.vehicles || [];
+      initSelectors();
+      parseUrlState();
+    } catch (err) {
+      selectorColumns.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">⚠️</div>
+          <div class="empty-state-text">Could not load vehicle data</div>
+          <div class="empty-state-sub">${err.message}</div>
+        </div>`;
+    }
+  }
+
+  /* ── Build model options ── */
+  function modelOptions() {
+    return vehiclesData.map(v =>
+      `<option value="${v.slug}">${v.model}</option>`
+    ).join('');
+  }
+
+  /* ── Get vehicle by slug ── */
+  function getVehicle(slug) {
+    return vehiclesData.find(v => v.slug === slug) || null;
+  }
+
+  /* ── Get year data ── */
+  function getYearData(slug, year) {
+    const v = getVehicle(slug);
+    if (!v) return null;
+    return v.years.find(y => y.year === Number(year)) || null;
+  }
+
+  /* ── Get trim data ── */
+  function getTrimData(slug, year, trimName) {
+    const yd = getYearData(slug, year);
+    if (!yd) return null;
+    return yd.trims.find(t => t.name === trimName) || null;
+  }
+
+  /* ── Render a single vehicle column ── */
+  function renderColumn(col) {
+    const colId = col.id;
+    const idx = columns.findIndex(c => c.id === colId);
+    const labelNum = idx + 1;
+    const isRemovable = columns.length > 2 && idx === columns.length - 1;
+
+    const div = document.createElement('div');
+    div.className = 'vehicle-col';
+    div.dataset.colId = colId;
+
+    div.innerHTML = `
+      <div class="vehicle-col-label">
+        <span class="vehicle-col-num">${labelNum}</span>
+        Vehicle ${labelNum}
+      </div>
+      ${isRemovable ? `<button class="remove-col-btn" aria-label="Remove vehicle ${labelNum}" title="Remove">&times;</button>` : ''}
+      <div class="form-group">
+        <label for="model-${colId}">Model</label>
+        <select id="model-${colId}" class="sel-model" data-col="${colId}">
+          <option value="">Select Model&hellip;</option>
+          ${modelOptions()}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="year-${colId}">Year</label>
+        <select id="year-${colId}" class="sel-year" data-col="${colId}" disabled>
+          <option value="">Select Year&hellip;</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="trim-${colId}">Trim</label>
+        <select id="trim-${colId}" class="sel-trim" data-col="${colId}" disabled>
+          <option value="">Select Trim&hellip;</option>
+        </select>
+      </div>
+    `;
+
+    // Pre-fill state
+    if (col.model) div.querySelector('.sel-model').value = col.model;
+
+    // Events
+    div.querySelector('.sel-model').addEventListener('change', e => onModelChange(e.target, colId));
+    div.querySelector('.sel-year').addEventListener('change',  e => onYearChange(e.target, colId));
+    div.querySelector('.sel-trim').addEventListener('change',  e => onTrimChange(e.target, colId));
+    if (isRemovable) {
+      div.querySelector('.remove-col-btn').addEventListener('click', () => removeColumn(colId));
+    }
+
+    return div;
+  }
+
+  /* ── Re-render add button ── */
+  function renderAddBtn() {
+    const btn = document.createElement('button');
+    btn.className = 'add-vehicle-btn';
+    btn.id = 'addVehicleBtn';
+    btn.setAttribute('aria-label', 'Add a third vehicle to compare');
+    btn.innerHTML = `<span class="plus">+</span> Add Vehicle`;
+    btn.addEventListener('click', addColumn);
+    return btn;
+  }
+
+  /* ── Init selectors ── */
+  function initSelectors() {
+    selectorColumns.innerHTML = '';
+    columns.forEach(col => selectorColumns.appendChild(renderColumn(col)));
+    if (columns.length < MAX_VEHICLES) selectorColumns.appendChild(renderAddBtn());
+    updateCompareBtn();
+  }
+
+  /* ── Model change ── */
+  function onModelChange(sel, colId) {
+    const slug = sel.value;
+    const col = columns.find(c => c.id === colId);
+    if (!col) return;
+    col.model = slug || null;
+    col.year  = null;
+    col.trim  = null;
+
+    const yearSel = document.querySelector(`#year-${colId}`);
+    const trimSel = document.querySelector(`#trim-${colId}`);
+
+    if (!slug) {
+      yearSel.innerHTML = '<option value="">Select Year&hellip;</option>';
+      yearSel.disabled = true;
+      trimSel.innerHTML = '<option value="">Select Trim&hellip;</option>';
+      trimSel.disabled = true;
+    } else {
+      const v = getVehicle(slug);
+      const years = v ? [...v.years].sort((a, b) => b.year - a.year) : [];
+      yearSel.innerHTML = '<option value="">Select Year&hellip;</option>' +
+        years.map(y => `<option value="${y.year}">${y.year}</option>`).join('');
+      yearSel.disabled = false;
+      trimSel.innerHTML = '<option value="">Select Trim&hellip;</option>';
+      trimSel.disabled = true;
+    }
+    updateCompareBtn();
+  }
+
+  /* ── Year change ── */
+  function onYearChange(sel, colId) {
+    const year = sel.value;
+    const col = columns.find(c => c.id === colId);
+    if (!col) return;
+    col.year = year || null;
+    col.trim = null;
+
+    const trimSel = document.querySelector(`#trim-${colId}`);
+    if (!year) {
+      trimSel.innerHTML = '<option value="">Select Trim&hellip;</option>';
+      trimSel.disabled = true;
+    } else {
+      const yd = getYearData(col.model, year);
+      const trims = yd ? yd.trims : [];
+      trimSel.innerHTML = '<option value="">Select Trim&hellip;</option>' +
+        trims.map(t => `<option value="${t.name}">${t.name} — $${t.msrp.toLocaleString()}</option>`).join('');
+      trimSel.disabled = false;
+    }
+    updateCompareBtn();
+  }
+
+  /* ── Trim change ── */
+  function onTrimChange(sel, colId) {
+    const col = columns.find(c => c.id === colId);
+    if (col) col.trim = sel.value || null;
+    updateCompareBtn();
+  }
+
+  /* ── Add / remove columns ── */
+  function addColumn() {
+    if (columns.length >= MAX_VEHICLES) return;
+    columns.push({ id: nextId++ });
+    initSelectors();
+  }
+
+  function removeColumn(colId) {
+    columns = columns.filter(c => c.id !== colId);
+    initSelectors();
+    updateCompareBtn();
+  }
+
+  /* ── Compare button state ── */
+  function updateCompareBtn() {
+    const readyCols = columns.filter(c => c.model && c.year && c.trim);
+    compareBtn.disabled = readyCols.length < 2;
+  }
+
+  /* ── Build comparison ── */
+  compareBtn.addEventListener('click', buildComparison);
+  resetBtn.addEventListener('click', () => {
+    columns = [{ id: 0 }, { id: 1 }];
+    nextId = 2;
+    initSelectors();
+    compSection.style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  function buildComparison() {
+    const readyCols = columns.filter(c => c.model && c.year && c.trim);
+    if (readyCols.length < 2) return;
+
+    const entries = readyCols.map(col => ({
+      col,
+      vehicle: getVehicle(col.model),
+      trim:    getTrimData(col.model, col.year, col.trim),
+    }));
+
+    renderTable(entries);
+    renderWinners(entries);
+    compSection.style.display = 'block';
+    updateShareUrl(readyCols);
+
+    requestAnimationFrame(() => {
+      compSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  /* ── Render table ── */
+  function renderTable(entries) {
+    // Determine best values per row
+    const highlights = computeHighlights(entries);
+
+    let html = '<table class="compare-table" role="table">';
+
+    // thead
+    html += '<thead><tr>';
+    html += '<th scope="col">Spec</th>';
+    entries.forEach(({ col, vehicle }) => {
+      html += `<th scope="col">
+        <div class="vehicle-header-name">${vehicle ? vehicle.model : 'Unknown'}</div>
+        <div class="vehicle-header-year-trim">${col.year} &mdash; ${col.trim}</div>
+      </th>`;
+    });
+    html += '</tr></thead>';
+
+    // tbody
+    html += '<tbody>';
+    SPEC_ROWS.forEach(row => {
+      html += '<tr>';
+      html += `<td><span class="row-icon" aria-hidden="true">${row.icon}</span>${row.label}</td>`;
+
+      entries.forEach(({ trim }, idx) => {
+        const hlKey = row.key === 'msrp' ? 'best-value' : row.key;
+        const hl = highlights[hlKey];
+        const isBest = hl != null && hl === idx;
+        let hlClass = '';
+        let badge = '';
+
+        if (isBest) {
+          if (row.highlight === 'best-value') {
+            hlClass = 'highlight-gold';
+            badge = '<span class="highlight-badge badge-gold">Best Value</span>';
+          } else if (row.highlight === 'highest') {
+            hlClass = 'highlight-gold';
+            badge = row.key === 'hp'
+              ? '<span class="highlight-badge badge-gold">Most Power</span>'
+              : '<span class="highlight-badge badge-gold">Best</span>';
+          } else if (row.highlight === 'highest-mpg') {
+            hlClass = 'highlight-green';
+            badge = '<span class="highlight-badge badge-green">Best MPG</span>';
+          }
+        }
+
+        html += `<td class="data-cell${hlClass ? ' ' + hlClass : ''}">`;
+        html += formatVal(row, trim);
+        if (badge) html += badge;
+        html += '</td>';
+      });
+
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+
+    tableWrap.innerHTML = html;
+  }
+
+  /* ── Compute highlights ── */
+  function computeHighlights(entries) {
+    const h = {};
+    // Best value (lowest MSRP)
+    const msrps = entries.map(e => e.trim ? e.trim.msrp : null);
+    h['best-value'] = indexOfBest(msrps, 'lowest');
+    // Highest HP
+    const hps = entries.map(e => e.trim ? e.trim.hp : null);
+    h['hp'] = indexOfBest(hps, 'highest');
+    // Best towing
+    const tows = entries.map(e => e.trim ? e.trim.towing_capacity : null);
+    h['towing_capacity'] = indexOfBest(tows, 'highest');
+    // Best MPG (average of city + hwy)
+    const mpgs = entries.map(e => {
+      if (!e.trim) return null;
+      if (e.trim.mpg_city == null && e.trim.mpg_highway == null) return null;
+      return ((e.trim.mpg_city || 0) + (e.trim.mpg_highway || 0)) / 2;
+    });
+    h['mpg'] = indexOfBest(mpgs, 'highest');
+    return h;
+  }
+
+  function indexOfBest(arr, dir) {
+    let best = null, bestIdx = null;
+    arr.forEach((v, i) => {
+      if (v == null) return;
+      if (best === null) { best = v; bestIdx = i; return; }
+      if (dir === 'highest' && v > best) { best = v; bestIdx = i; }
+      if (dir === 'lowest'  && v < best) { best = v; bestIdx = i; }
+    });
+    // If all tied, return null (no highlight)
+    const defined = arr.filter(v => v != null);
+    if (defined.length > 0 && defined.every(v => v === defined[0])) return null;
+    return bestIdx;
+  }
+
+  /* ── Winner summary ── */
+  function renderWinners(entries) {
+    const winners = [
+      {
+        label: 'Best for Performance',
+        icon: '⚡',
+        colorClass: 'gold',
+        idx: indexOfBest(entries.map(e => e.trim ? e.trim.hp : null), 'highest'),
+        detail: e => e.trim ? `${e.trim.hp} hp` : '',
+      },
+      {
+        label: 'Best Value',
+        icon: '💰',
+        colorClass: 'gold',
+        idx: indexOfBest(entries.map(e => e.trim ? e.trim.msrp : null), 'lowest'),
+        detail: e => e.trim ? `$${e.trim.msrp.toLocaleString()} MSRP` : '',
+      },
+      {
+        label: 'Best for Towing',
+        icon: '🪝',
+        colorClass: 'gold',
+        idx: indexOfBest(entries.map(e => e.trim ? e.trim.towing_capacity : null), 'highest'),
+        detail: e => e.trim && e.trim.towing_capacity ? `${e.trim.towing_capacity.toLocaleString()} lbs` : 'N/A',
+      },
+      {
+        label: 'Best Fuel Economy',
+        icon: '⛽',
+        colorClass: 'green',
+        idx: indexOfBest(entries.map(e => {
+          if (!e.trim) return null;
+          if (e.trim.mpg_city == null && e.trim.mpg_highway == null) return null;
+          return ((e.trim.mpg_city || 0) + (e.trim.mpg_highway || 0)) / 2;
+        }), 'highest'),
+        detail: e => e.trim && e.trim.mpg_city ? `${e.trim.mpg_city}/${e.trim.mpg_highway} mpg` : 'N/A',
+      },
+    ];
+
+    winnerGrid.innerHTML = '';
+    winners.forEach(w => {
+      const entry = w.idx != null ? entries[w.idx] : null;
+      const model = entry ? entry.vehicle.model : null;
+
+      const card = document.createElement('div');
+      card.className = `winner-card ${w.colorClass}`;
+      card.innerHTML = `
+        <span class="winner-card-icon" aria-hidden="true">${w.icon}</span>
+        <div class="winner-card-label">${w.label}</div>
+        <div class="winner-card-model">${model || '<span style="color:var(--text-mute);font-size:14px">Tied</span>'}</div>
+        ${entry ? `<div class="winner-card-detail">${w.detail(entry)} &mdash; ${entry.col.year} ${entry.col.trim}</div>` : ''}
+      `;
+      winnerGrid.appendChild(card);
+    });
+  }
+
+  /* ── Share URL ── */
+  function updateShareUrl(cols) {
+    const params = new URLSearchParams();
+    cols.forEach((col, i) => {
+      params.set(`m${i}`, col.model);
+      params.set(`y${i}`, col.year);
+      params.set(`t${i}`, col.trim);
+    });
+    const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    shareBtn._shareUrl = url;
+  }
+
+  shareBtn.addEventListener('click', () => {
+    const url = shareBtn._shareUrl || window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => {
+        shareBtn.classList.add('copied');
+        shareBtn.textContent = '✓ Link Copied!';
+        showToast('Comparison link copied!');
+        setTimeout(() => {
+          shareBtn.classList.remove('copied');
+          shareBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Copy Comparison Link`;
+        }, 2500);
+      });
+    } else {
+      prompt('Copy this link:', url);
+    }
+  });
+
+  /* ── Parse URL state (deep link support) ── */
+  function parseUrlState() {
+    const p = new URLSearchParams(window.location.search);
+    const loaded = [];
+
+    for (let i = 0; i < MAX_VEHICLES; i++) {
+      const m = p.get(`m${i}`);
+      const y = p.get(`y${i}`);
+      const t = p.get(`t${i}`);
+      if (m && y && t) loaded.push({ m, y, t });
+    }
+
+    if (loaded.length >= 2) {
+      columns = loaded.map((item, i) => ({
+        id: i, model: item.m, year: item.y, trim: item.t,
+      }));
+      nextId = columns.length;
+      initSelectors();
+      // Re-populate dropdowns with saved values
+      columns.forEach(col => {
+        const modelSel = document.querySelector(`#model-${col.id}`);
+        if (modelSel && col.model) {
+          modelSel.value = col.model;
+          onModelChange(modelSel, col.id);
+          setTimeout(() => {
+            const yearSel = document.querySelector(`#year-${col.id}`);
+            if (yearSel && col.year) {
+              yearSel.value = col.year;
+              onYearChange(yearSel, col.id);
+              setTimeout(() => {
+                const trimSel = document.querySelector(`#trim-${col.id}`);
+                if (trimSel && col.trim) {
+                  trimSel.value = col.trim;
+                  onTrimChange(trimSel, col.id);
+                }
+              }, 0);
+            }
+          }, 0);
+        }
+      });
+      // Auto-trigger comparison
+      setTimeout(() => {
+        if (!compareBtn.disabled) buildComparison();
+      }, 50);
+    }
+  }
+
+  /* ── Boot ── */
+  loadVehicles();
+
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ChevyRoots Model Comparison Tool",
+  "description": "Compare any 2 or 3 Chevrolet models side by side — specs, pricing, towing capacity, horsepower, and trim levels.",
+  "url": "https://chevyroots.com/pages/guides/compare.html",
+  "applicationCategory": "AutomotiveApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChevyRoots",
+    "url": "https://chevyroots.com"
+  }
+}
+</script>
+
+</body>
+</html>

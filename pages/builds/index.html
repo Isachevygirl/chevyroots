@@ -1,0 +1,4113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Build Engine — ChevyRoots</title>
+  <meta name="description" content="The most detailed Chevy build database ever created. Every mod. Every part. Every dollar. Search, filter, and learn from real Chevy builds." />
+  <link rel="canonical" href="https://chevyroots.com/pages/builds/" />
+  <meta property="og:title" content="The Build Engine — ChevyRoots" />
+  <meta property="og:description" content="The most detailed Chevy build database ever created. Every mod, every part, every dollar — search and filter real Chevrolet builds." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/builds/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg2:       #222222;
+      --bg3:       #2A2A2A;
+      --card:      #242424;
+      --border:    #333333;
+      --gold:      #C4A035;
+      --gold-dim:  #9E7F26;
+      --gold-glow: rgba(196, 160, 53, 0.18);
+      --text:      #F0EDE6;
+      --text-dim:  #A09A90;
+      --text-muted:#6A6460;
+      --green:     #4CAF6A;
+      --blue:      #4A8FD4;
+      --red:       #D45A4A;
+      --orange:    #D4874A;
+      --radius:    10px;
+      --radius-lg: 16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+
+    /* ── Typography helpers ───────────────────────────────────────────────── */
+    .barlow { font-family: 'Barlow Condensed', sans-serif; }
+    .mono   { font-family: 'JetBrains Mono', monospace; }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    /* ── Layout helpers ───────────────────────────────────────────────────── */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+    }
+
+    /* ── Navigation ──────────────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26, 26, 26, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-logo small {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dim);
+      transition: color 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+    .nav-links a.active { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: #111 !important;
+      font-weight: 600 !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #d4b040 !important; color: #111 !important; }
+
+    .nav-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-mobile-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    /* ── Hero ─────────────────────────────────────────────────────────────── */
+    .hero {
+      padding-top: 64px;
+      background: linear-gradient(180deg, #1A1A1A 0%, #1E1C19 100%);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(196,160,53,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196,160,53,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      padding: 80px 0 72px;
+    }
+
+    .hero-content { max-width: 620px; }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-glow);
+      border: 1px solid rgba(196,160,53,0.3);
+      border-radius: 20px;
+      padding: 4px 14px;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .hero-eyebrow span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(52px, 7vw, 88px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dim);
+      line-height: 1.6;
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+    .hero-subtitle strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .hero-stat-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-visual {
+      flex-shrink: 0;
+      width: 420px;
+    }
+
+    .hero-feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+    }
+    .hero-feature-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 24px; right: 24px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 1px;
+    }
+
+    .hfc-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .hfc-icon {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      background: var(--gold-glow);
+      border: 1px solid rgba(196,160,53,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .hfc-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .hfc-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hfc-img {
+      width: 100%; height: 160px;
+      background: #2E2C28;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .hfc-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 4px;
+      border: 1px solid;
+      text-transform: uppercase;
+    }
+    .tag-gold  { color: var(--gold); border-color: rgba(196,160,53,0.35); background: rgba(196,160,53,0.08); }
+    .tag-blue  { color: var(--blue); border-color: rgba(74,143,212,0.35); background: rgba(74,143,212,0.08); }
+    .tag-green { color: var(--green); border-color: rgba(76,175,106,0.35); background: rgba(76,175,106,0.08); }
+    .tag-red   { color: var(--red); border-color: rgba(212,90,74,0.35); background: rgba(212,90,74,0.08); }
+    .tag-grey  { color: var(--text-dim); border-color: var(--border); background: rgba(255,255,255,0.04); }
+    .tag-orange { color: var(--orange); border-color: rgba(212,135,74,0.35); background: rgba(212,135,74,0.08); }
+
+    .hfc-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+    .hfc-row-label { color: var(--text-muted); }
+    .hfc-row-value { color: var(--gold); font-weight: 500; }
+
+    /* ── Filter Bar ───────────────────────────────────────────────────────── */
+    .filter-bar-section {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .filter-search {
+      position: relative;
+      flex: 1;
+      min-width: 220px;
+    }
+    .filter-search-icon {
+      position: absolute;
+      left: 14px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 15px;
+      pointer-events: none;
+    }
+    .filter-input {
+      width: 100%;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 14px 10px 40px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .filter-input::placeholder { color: var(--text-muted); }
+    .filter-input:focus { border-color: var(--gold); }
+
+    .filter-select {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 36px 10px 14px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236A6460' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      transition: border-color 0.2s;
+      min-width: 148px;
+    }
+    .filter-select:focus { border-color: var(--gold); }
+    .filter-select option { background: #2A2A2A; }
+
+    .filter-btn {
+      background: var(--gold);
+      color: #111;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius);
+      padding: 10px 22px;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .filter-btn:hover { background: #d4b040; }
+
+    .filter-reset {
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .filter-reset:hover { color: var(--text); border-color: #555; }
+
+    /* ── Build Gallery ────────────────────────────────────────────────────── */
+    .gallery-section {
+      padding: 64px 0;
+    }
+
+    .gallery-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .gallery-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .gallery-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .gallery-count span { color: var(--gold); }
+
+    .gallery-sort {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .gallery-sort label {
+      font-size: 13px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* ── Build Card Grid ──────────────────────────────────────────────────── */
+    .builds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .build-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .build-card:hover {
+      border-color: rgba(196,160,53,0.45);
+      transform: translateY(-3px);
+    }
+
+    .build-card-img {
+      width: 100%; height: 200px;
+      background: #2E2C28;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .build-card-img-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .build-card-img-vehicle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #555;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .build-card-stage-badge {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: rgba(26,26,26,0.85);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+
+    .build-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .build-card-vehicle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .build-card-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .build-card-owner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .build-card-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: #333;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      flex-shrink: 0;
+    }
+    .build-card-owner-info { line-height: 1.3; }
+    .build-card-handle {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .build-card-location {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .build-card-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+      background: var(--bg3);
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid var(--border);
+    }
+    .build-stat { text-align: center; }
+    .build-stat-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .build-stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .build-stat + .build-stat {
+      border-left: 1px solid var(--border);
+    }
+
+    .build-card-tags {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .build-progress-wrap {
+      margin-bottom: 16px;
+    }
+    .build-progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .build-progress-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .build-progress-pct {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--gold);
+    }
+    .build-progress-bar {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .build-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      border-radius: 2px;
+      transition: width 0.6s ease;
+    }
+
+    .build-card-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+    .build-card-cta-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold);
+      display: flex; align-items: center; gap: 6px;
+      transition: gap 0.2s;
+    }
+    .build-card:hover .build-card-cta-link { gap: 10px; }
+    .build-card-cta-arrow { font-size: 16px; }
+    .build-card-cta-mods {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* ── Build of the Month ──────────────────────────────────────────────── */
+    .botm-section {
+      padding: 56px 0 0;
+      background: var(--bg);
+    }
+
+    .botm-card {
+      background: var(--card);
+      border: 1px solid rgba(196,160,53,0.4);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      box-shadow: 0 0 40px rgba(196,160,53,0.08);
+    }
+    .botm-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 10%; right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .botm-img {
+      position: relative;
+      min-height: 400px;
+      background: #1e1c18;
+      overflow: hidden;
+    }
+    .botm-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .botm-card:hover .botm-img img { transform: scale(1.03); }
+    .botm-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 60%, var(--card) 100%);
+    }
+    .botm-badge {
+      position: absolute;
+      top: 20px; left: 20px;
+      background: var(--gold);
+      color: #111;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 4px;
+    }
+
+    .botm-content {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+    }
+    .botm-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .botm-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .botm-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .botm-owner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .botm-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--gold-glow);
+      border: 1px solid rgba(196,160,53,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .botm-owner-name { font-weight: 600; font-size: 14px; }
+    .botm-owner-loc { font-size: 12px; color: var(--text-muted); }
+
+    .botm-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .botm-stat { text-align: center; }
+    .botm-stat-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .botm-stat-lbl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .botm-mods-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .botm-mods-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+    .botm-mod {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    .botm-mod::before {
+      content: '>';
+      color: var(--gold);
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .botm-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #111;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: background 0.2s, gap 0.2s;
+      margin-top: auto;
+      align-self: flex-start;
+    }
+    .botm-cta:hover { background: #d4b040; gap: 12px; }
+
+    @media (max-width: 860px) {
+      .botm-card { grid-template-columns: 1fr; }
+      .botm-img { min-height: 260px; }
+      .botm-img-overlay { background: linear-gradient(0deg, var(--card) 0%, transparent 60%); }
+    }
+
+    /* ── Build Journals ───────────────────────────────────────────────────── */
+    .journals-section {
+      padding: 80px 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .journals-header {
+      margin-bottom: 48px;
+    }
+    .journals-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .journals-desc {
+      font-size: 17px;
+      color: var(--text-dim);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+    .journals-desc strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .journals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .journal-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .journal-card:hover {
+      border-color: rgba(196,160,53,0.45);
+      transform: translateY(-3px);
+    }
+
+    .journal-card-img {
+      width: 100%; height: 200px;
+      background: #2E2C28;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .journal-card-img-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .journal-card-img-vehicle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #555;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .journal-card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .journal-card-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 2px;
+      color: var(--gold);
+    }
+    .journal-card-vehicle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+    }
+
+    .journal-card-meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .journal-card-meta span { display: flex; align-items: center; gap: 4px; }
+
+    .journal-card-desc {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .journal-mod-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .journal-mod {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: var(--bg3);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .journal-mod-name { color: var(--text); font-weight: 500; }
+    .journal-mod-cost {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--gold);
+    }
+    .journal-mod-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .journal-mod-status.complete { color: var(--green); background: rgba(76,175,106,0.1); border: 1px solid rgba(76,175,106,0.3); }
+    .journal-mod-status.in-progress { color: var(--gold); background: rgba(196,160,53,0.1); border: 1px solid rgba(196,160,53,0.3); }
+    .journal-mod-status.planned { color: var(--text-muted); background: rgba(255,255,255,0.04); border: 1px solid var(--border); }
+
+    .journal-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+    .journal-card-cta {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold);
+      display: flex; align-items: center; gap: 6px;
+      transition: gap 0.2s;
+    }
+    .journal-card:hover .journal-card-cta { gap: 10px; }
+    .journal-card-updated {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* ── Submit CTA ───────────────────────────────────────────────────────── */
+    .submit-section {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 0;
+    }
+
+    .submit-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .submit-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .submit-title span { color: var(--gold); }
+
+    .submit-desc {
+      font-size: 16px;
+      color: var(--text-dim);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .submit-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .submit-checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+    .submit-checklist-icon {
+      color: var(--gold);
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .submit-tagline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .submit-form-preview {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      position: relative;
+    }
+    .submit-form-preview::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 28px; right: 28px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .form-preview-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-row {
+      margin-bottom: 14px;
+    }
+    .form-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .form-fake-input {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: var(--text-muted);
+      width: 100%;
+      font-style: italic;
+    }
+
+    .form-row-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      background: var(--gold);
+      color: #111;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 24px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 6px;
+    }
+    .form-submit-btn:hover { background: #d4b040; }
+
+    /* ── How It Works ─────────────────────────────────────────────────────── */
+    .how-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 0;
+    }
+
+    .how-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .how-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .how-subtitle {
+      font-size: 16px;
+      color: var(--text-dim);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .how-steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: calc(25% / 2 + 20px);
+      right: calc(25% / 2 + 20px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), rgba(196,160,53,0.4), var(--border));
+    }
+
+    .how-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .how-step-num {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+      transition: border-color 0.2s;
+    }
+    .how-step:hover .how-step-num {
+      border-color: var(--gold);
+    }
+
+    .how-step-icon {
+      font-size: 28px;
+    }
+
+    .how-step-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .how-step-desc {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .how-step-detail {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .how-detail-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: center;
+    }
+    .how-detail-item::before {
+      content: '>';
+      color: var(--gold);
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────────────────── */
+    .footer {
+      background: #111111;
+      border-top: 1px solid var(--border);
+      padding: 56px 0 32px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+
+    .footer-brand-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .footer-brand-name span { color: var(--gold); }
+
+    .footer-brand-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 280px;
+      margin-bottom: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    .footer-social-link {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .footer-social-link:hover {
+      background: var(--gold-glow);
+      border-color: rgba(196,160,53,0.4);
+      color: var(--gold);
+    }
+
+    .footer-col-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-copy span { color: var(--gold); }
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-legal a {
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--text); }
+
+    .footer-disclaimer {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    /* ── Build Inspiration ───────────────────────────────────────────────── */
+    .inspiration-section {
+      padding: 80px 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .inspiration-header {
+      margin-bottom: 40px;
+    }
+    .inspiration-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .inspiration-desc {
+      font-size: 16px;
+      color: var(--text-dim);
+      max-width: 620px;
+      line-height: 1.65;
+    }
+    .inspiration-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .inspiration-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .inspiration-card:hover {
+      border-color: rgba(196,160,53,0.45);
+      transform: translateY(-3px);
+    }
+    .inspiration-card-icon {
+      font-size: 36px;
+      line-height: 1;
+    }
+    .inspiration-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .inspiration-card-desc {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .inspiration-card-examples {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .inspiration-card-example {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .inspiration-card-example::before {
+      content: '>';
+      color: var(--gold);
+      font-size: 13px;
+    }
+    .inspiration-card-cta {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .inspiration-card:hover .inspiration-card-cta { gap: 10px; }
+
+    /* ── Most Popular Mods ───────────────────────────────────────────────── */
+    .popular-mods-section {
+      padding: 80px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .popular-mods-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .popular-mods-header { margin-bottom: 36px; }
+    .popular-mods-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .popular-mods-desc {
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.65;
+      max-width: 480px;
+    }
+    .mod-bar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .mod-bar-item {}
+    .mod-bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 7px;
+    }
+    .mod-bar-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text);
+    }
+    .mod-bar-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .mod-bar-track {
+      height: 8px;
+      background: var(--bg3);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .mod-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      transition: width 0.8s ease;
+    }
+    .mod-bar-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 5px;
+      letter-spacing: 0.05em;
+    }
+    .popular-mods-sidebar {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      position: relative;
+    }
+    .popular-mods-sidebar::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 28px; right: 28px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .sidebar-stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .sidebar-stat {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .sidebar-stat-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .sidebar-stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-top: 4px;
+    }
+    .sidebar-insight-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sidebar-insight {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.55;
+    }
+    .sidebar-insight-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ── Build Cost Calculator ───────────────────────────────────────────── */
+    .calculator-section {
+      padding: 80px 0;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+    }
+    .calculator-header {
+      margin-bottom: 40px;
+    }
+    .calculator-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .calculator-desc {
+      font-size: 15px;
+      color: var(--text-dim);
+      max-width: 620px;
+      line-height: 1.65;
+    }
+    .calculator-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .calc-form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      position: relative;
+    }
+    .calc-form::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 28px; right: 28px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .calc-form-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .calc-field {
+      margin-bottom: 18px;
+    }
+    .calc-field label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .calc-select {
+      width: 100%;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 11px 36px 11px 14px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236A6460' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      transition: border-color 0.2s;
+    }
+    .calc-select:focus { border-color: var(--gold); }
+    .calc-select option { background: #2A2A2A; }
+    .calc-btn {
+      width: 100%;
+      background: var(--gold);
+      color: #111;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 24px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 6px;
+    }
+    .calc-btn:hover { background: #d4b040; }
+    .calc-results {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .calc-result-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: none;
+    }
+    .calc-result-card.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .calc-result-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 8px;
+    }
+    .calc-cost-range {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .calc-cost-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .calc-mods-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+    .calc-mods-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+    .calc-mod-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: var(--bg3);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .calc-mod-name { color: var(--text); }
+    .calc-mod-cost {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--gold);
+    }
+    .calc-example-builds-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+    .calc-example-builds {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .calc-example-build {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 13px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+    }
+    .calc-example-build:hover { border-color: rgba(196,160,53,0.45); }
+    .calc-example-build-name { font-weight: 600; color: var(--text); }
+    .calc-example-build-cost {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--gold);
+    }
+    .calc-placeholder {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px 28px;
+      text-align: center;
+      color: var(--text-muted);
+    }
+    .calc-placeholder-icon { font-size: 40px; margin-bottom: 16px; }
+    .calc-placeholder-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1100px) {
+      .inspiration-grid { grid-template-columns: repeat(2, 1fr); }
+      .popular-mods-inner { grid-template-columns: 1fr; gap: 40px; }
+      .calculator-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .inspiration-grid { grid-template-columns: 1fr; }
+      .sidebar-stat-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── Utility ──────────────────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+    }
+
+    .text-gold  { color: var(--gold); }
+    .text-dim   { color: var(--text-dim); }
+    .text-muted { color: var(--text-muted); }
+
+    /* ── Responsive ───────────────────────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .builds-grid { grid-template-columns: repeat(2, 1fr); }
+      .journals-grid { grid-template-columns: repeat(2, 1fr); }
+      .how-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .how-steps::before { display: none; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner { flex-direction: column; padding: 56px 0 48px; }
+      .hero-visual { width: 100%; max-width: 480px; }
+      .submit-inner { grid-template-columns: 1fr; }
+      .journals-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: flex; }
+      .filter-bar { flex-wrap: wrap; }
+      .filter-search { min-width: 100%; order: -1; }
+    }
+
+    @media (max-width: 640px) {
+      .builds-grid { grid-template-columns: 1fr; }
+      .how-steps { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .hero-stats { gap: 20px; }
+      .form-row-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================================================================
+       NAV
+  ================================================================ -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo">
+          Chevy<span>Roots</span>
+          <small>Run by a Chevy Girl</small>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="/pages/models/">Models</a></li>
+          <li><a href="/pages/guides/">Guides</a></li>
+          <li><a href="/pages/builds/" class="active">Builds</a></li>
+          <li><a href="/pages/events/">Events</a></li>
+          <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+          <li><a href="/pages/about/">About</a></li>
+        </ul>
+
+        <a href="#submit-section" class="nav-cta">Submit Your Build</a>
+
+        <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ================================================================
+       HERO
+  ================================================================ -->
+  <section class="hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-inner">
+
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <div class="hero-eyebrow-dot"></div>
+            <span>Chevy Roots — Build Engine</span>
+          </div>
+
+          <h1 class="hero-title barlow">
+            The<br/><em>Build</em><br/>Engine
+          </h1>
+
+          <p class="hero-subtitle">
+            <strong>Every mod. Every part. Every dollar.</strong> The most detailed
+            Chevy build database ever created — structured, searchable, and built
+            by the community that actually turns wrenches.
+          </p>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-value">6</span>
+              <span class="hero-stat-label mono">Builds Live</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">$141K</span>
+              <span class="hero-stat-label mono">Total Documented</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">5+</span>
+              <span class="hero-stat-label mono">Decades Covered</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">0</span>
+              <span class="hero-stat-label mono">Other Sites Like This</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-feature-card">
+            <div class="hfc-header">
+              <div class="hfc-icon">🔧</div>
+              <div>
+                <div class="hfc-title barlow">FEATURED BUILD</div>
+                <div class="hfc-meta mono">Updated 3 days ago</div>
+              </div>
+            </div>
+            <div class="hfc-img" style="background-image: url('/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg'); background-size: cover; background-position: center;">
+              <div class="build-card-img-vehicle">1970 CHEVELLE SS</div>
+            </div>
+            <div class="hfc-tags">
+              <span class="tag tag-gold">Restoration</span>
+              <span class="tag tag-blue">LS Swap</span>
+              <span class="tag tag-red">Muscle</span>
+            </div>
+            <div class="hfc-row">
+              <span class="hfc-row-label mono">Total invested</span>
+              <span class="hfc-row-value mono">$47,200</span>
+            </div>
+            <div class="hfc-row">
+              <span class="hfc-row-label mono">Output</span>
+              <span class="hfc-row-value mono">450 hp</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       FILTER BAR
+  ================================================================ -->
+  <div class="filter-bar-section" role="search" aria-label="Filter builds">
+    <div class="container">
+      <div class="filter-bar">
+
+        <div class="filter-search">
+          <span class="filter-search-icon" aria-hidden="true">&#8981;</span>
+          <input
+            type="search"
+            class="filter-input"
+            placeholder="Search by make, model, owner, mod type..."
+            aria-label="Search builds"
+          />
+        </div>
+
+        <select class="filter-select" aria-label="Filter by model">
+          <option value="">All Models</option>
+          <option>Chevelle</option>
+          <option>Silverado</option>
+          <option>C10</option>
+          <option>Corvette</option>
+          <option>K5 Blazer</option>
+          <option>Camaro</option>
+          <option>Impala</option>
+          <option>El Camino</option>
+        </select>
+
+        <select class="filter-select" aria-label="Filter by year range">
+          <option value="">All Years</option>
+          <option>1955-1969</option>
+          <option>1970-1979</option>
+          <option>1980-1999</option>
+          <option>2000-2014</option>
+          <option>2015-Present</option>
+        </select>
+
+        <select class="filter-select" aria-label="Filter by build type">
+          <option value="">All Build Types</option>
+          <option>Performance</option>
+          <option>Off-Road</option>
+          <option>Restoration</option>
+          <option>Aesthetic</option>
+          <option>Daily Driver</option>
+          <option>Track Build</option>
+        </select>
+
+        <select class="filter-select" aria-label="Filter by budget">
+          <option value="">Any Budget</option>
+          <option>Under $5K</option>
+          <option>$5K-$15K</option>
+          <option>$15K-$30K</option>
+          <option>$30K-$60K</option>
+          <option>$60K+</option>
+        </select>
+
+        <button class="filter-btn" type="button">Search Builds</button>
+        <button class="filter-reset" type="button">Reset</button>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================================================================
+       BUILD OF THE MONTH
+  ================================================================ -->
+  <section class="botm-section" aria-labelledby="botm-heading">
+    <div class="container">
+      <span class="section-label mono" style="margin-bottom:20px; display:block;">April 2026</span>
+      <div class="botm-card">
+        <div class="botm-img">
+          <img src="/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg" alt="1970 Chevelle SS — Build of the Month" loading="lazy" />
+          <div class="botm-img-overlay" aria-hidden="true"></div>
+          <div class="botm-badge">Build of the Month</div>
+        </div>
+        <div class="botm-content">
+          <div class="botm-eyebrow">Featured Build - Classic Muscle Restoration</div>
+          <h2 class="botm-title barlow" id="botm-heading">1970 Chevelle SS</h2>
+          <p class="botm-subtitle">LS3 Swap - Frame-Off Restoration - Stage 3 of 4</p>
+          <div class="botm-owner">
+            <div class="botm-avatar">MW</div>
+            <div>
+              <div class="botm-owner-name">@mike_wrenchworks</div>
+              <div class="botm-owner-loc">Austin, TX - 3-year build</div>
+            </div>
+          </div>
+          <div class="botm-stats" aria-label="Build figures">
+            <div class="botm-stat">
+              <span class="botm-stat-val">$47.2K</span>
+              <span class="botm-stat-lbl">Total</span>
+            </div>
+            <div class="botm-stat">
+              <span class="botm-stat-val">450</span>
+              <span class="botm-stat-lbl">HP</span>
+            </div>
+            <div class="botm-stat">
+              <span class="botm-stat-val">18</span>
+              <span class="botm-stat-lbl">Mods</span>
+            </div>
+            <div class="botm-stat">
+              <span class="botm-stat-val">75%</span>
+              <span class="botm-stat-lbl">Complete</span>
+            </div>
+          </div>
+          <div class="botm-mods-title">Key Modifications</div>
+          <div class="botm-mods-list">
+            <div class="botm-mod">LS3 6.2L V8 engine swap — crate motor + full wiring harness</div>
+            <div class="botm-mod">Frame-off bare-metal restoration - sandblasted + epoxy primed</div>
+            <div class="botm-mod">4L60E automatic with B&amp;M ratchet shifter</div>
+            <div class="botm-mod">12-bolt rear end - 3.73 gears - Auburn limited-slip diff</div>
+            <div class="botm-mod">Wilwood disc brakes all around - Baer slotted rotors</div>
+          </div>
+          <a href="#" class="botm-cta">View Full Build Details &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       BUILD GALLERY
+  ================================================================ -->
+  <section class="gallery-section" style="padding-top:48px;" aria-labelledby="gallery-heading">
+    <div class="container">
+
+      <div class="gallery-header">
+        <div>
+          <span class="section-label mono">Active Builds</span>
+          <h2 class="gallery-title barlow" id="gallery-heading">Community Builds</h2>
+        </div>
+        <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+          <p class="gallery-count mono">Showing <span id="visible-count">12</span> of <span>12</span> builds</p>
+          <div class="gallery-sort">
+            <label for="sort-select" class="text-dim" style="font-size:13px;">Sort by:</label>
+            <select id="sort-select" class="filter-select" style="min-width:130px;" aria-label="Sort builds">
+              <option>Most Recent</option>
+              <option>Highest Budget</option>
+              <option>Highest HP</option>
+              <option>Most Stages</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="builds-grid" role="list" aria-label="Build cards">
+
+        <!-- ── Build 1: 1970 Chevelle SS ──────────────────────── -->
+        <article class="build-card" role="listitem" aria-label="1970 Chevelle SS build by mike_wrenchworks"
+          data-model="chevelle" data-year="1970" data-year-range="1970-1979" data-type="restoration" data-budget="30k-60k"
+          data-search="1970 chevelle ss ls swap frame-off restoration muscle mike_wrenchworks austin">
+          <div class="build-card-img" style="background-image: url('/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg'); background-size: cover; background-position: center;">
+            <div class="build-card-img-vehicle" style="display:none;">1970 CHEVELLE SS</div>
+            <div class="build-card-stage-badge">Stage 3 of 4</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">1970 Chevelle SS</h3>
+            <p class="build-card-subtitle">LS3 Swap - Frame-Off Restoration</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">MW</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@mike_wrenchworks</div>
+                <div class="build-card-location">Austin, TX</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat">
+                <span class="build-stat-value">$47.2K</span>
+                <span class="build-stat-label">Total</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">3 yr</span>
+                <span class="build-stat-label">Build Time</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">450</span>
+                <span class="build-stat-label">HP</span>
+              </div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-gold">Restoration</span>
+              <span class="tag tag-blue">LS Swap</span>
+              <span class="tag tag-red">Muscle</span>
+            </div>
+            <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">
+              Doing an LS swap? Read our
+              <a href="/pages/guides/ls-swap-guide/" style="color:var(--gold); text-decoration:underline;">complete LS Swap Guide &rarr;</a>
+            </p>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">75%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:75%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">18 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 2: 2022 Silverado Trail Boss ─────────────── -->
+        <article class="build-card" role="listitem" aria-label="2022 Silverado 1500 Trail Boss build by dirtroad_dave"
+          data-model="silverado" data-year="2022" data-year-range="2015-present" data-type="off-road" data-budget="5k-15k"
+          data-search="2022 silverado trail boss lifted off-road daily dirtroad_dave fredericksburg">
+          <div class="build-card-img" style="background:#2A2E2A; background-image: url('/photos/silverado/pexels_15338002_silverado.jpeg'); background-size: cover; background-position: center;">
+            <div class="build-card-img-vehicle" style="display:none;">2022 SILVERADO TB</div>
+            <div class="build-card-stage-badge">Stage 2 of 3</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">2022 Silverado 1500</h3>
+            <p class="build-card-subtitle">Trail Boss - Lifted Off-Road Build</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">DD</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@dirtroad_dave</div>
+                <div class="build-card-location">Fredericksburg, VA</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat">
+                <span class="build-stat-value">$12.8K</span>
+                <span class="build-stat-label">Total</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">6 mo</span>
+                <span class="build-stat-label">Build Time</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">355</span>
+                <span class="build-stat-label">HP</span>
+              </div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-green">Off-Road</span>
+              <span class="tag tag-blue">Lifted</span>
+              <span class="tag tag-grey">Daily</span>
+            </div>
+            <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">
+              <a href="/pages/models/silverado/" style="color:var(--gold); text-decoration:underline;">Silverado Model Page</a>
+              &nbsp;|&nbsp;
+              <a href="/pages/guides/lift-kit-guide/" style="color:var(--gold); text-decoration:underline;">Lift Kit Guide &rarr;</a>
+            </p>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">60%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:60%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">9 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 3: 1967 C10 Stepside ─────────────────────── -->
+        <article class="build-card" role="listitem" aria-label="1967 C10 Stepside build by c10collective"
+          data-model="c10" data-year="1967" data-year-range="1955-1969" data-type="restoration" data-budget="15k-30k"
+          data-search="1967 c10 stepside patina shop truck 350 sbc classic c10collective nashville">
+          <div class="build-card-img" style="background:#2A2924; background-image: url('/photos/silverado/pexels_3122814_silverado.jpeg'); background-size: cover; background-position: center;">
+            <div class="build-card-img-vehicle" style="display:none;">1967 C10 STEPSIDE</div>
+            <div class="build-card-stage-badge">Stage 4 of 4</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">1967 C10 Stepside</h3>
+            <p class="build-card-subtitle">Patina Shop Truck - 350 SBC</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">C1</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@c10collective</div>
+                <div class="build-card-location">Nashville, TN</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat">
+                <span class="build-stat-value">$22.5K</span>
+                <span class="build-stat-label">Total</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">18 mo</span>
+                <span class="build-stat-label">Build Time</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">290</span>
+                <span class="build-stat-label">HP</span>
+              </div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-gold">Classic</span>
+              <span class="tag tag-grey">Patina</span>
+              <span class="tag tag-grey">Shop Truck</span>
+            </div>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">100%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:100%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">14 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 4: 2024 Corvette C8 ──────────────────────── -->
+        <article class="build-card" role="listitem" aria-label="2024 Corvette C8 Stingray build by vette_life_kr"
+          data-model="corvette" data-year="2024" data-year-range="2015-present" data-type="performance" data-budget="5k-15k"
+          data-search="2024 corvette c8 stingray bolt-on performance vette_life_kr houston">
+          <div class="build-card-img" style="background:#242230; background-image: url('/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg'); background-size: cover; background-position: center;">
+            <div class="build-card-img-vehicle" style="display:none;">2024 CORVETTE C8</div>
+            <div class="build-card-stage-badge">Stage 2 of 2</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">2024 Corvette C8</h3>
+            <p class="build-card-subtitle">Stingray - Bolt-On Performance</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">VK</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@vette_life_kr</div>
+                <div class="build-card-location">Houston, TX</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat">
+                <span class="build-stat-value">$8.4K</span>
+                <span class="build-stat-label">Total</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">3 mo</span>
+                <span class="build-stat-label">Build Time</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">520</span>
+                <span class="build-stat-label">HP</span>
+              </div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-red">Performance</span>
+              <span class="tag tag-blue">Bolt-On</span>
+              <span class="tag tag-grey">C8</span>
+            </div>
+            <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">
+              <a href="/pages/models/corvette/" style="color:var(--gold); text-decoration:underline;">Corvette C8 Model Page &rarr;</a>
+            </p>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">100%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:100%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">7 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 5: 1972 K5 Blazer ────────────────────────── -->
+        <article class="build-card" role="listitem" aria-label="1972 K5 Blazer full restoration by k5queen"
+          data-model="k5 blazer" data-year="1972" data-year-range="1970-1979" data-type="restoration" data-budget="30k-60k"
+          data-search="1972 k5 blazer full restoration 383 stroker off-road classic k5queen denver">
+          <div class="build-card-img" style="background:#272A27; background-image: url('/photos/colorado/pexels_4595081_colorado.jpeg'); background-size: cover; background-position: center;">
+            <div class="build-card-img-vehicle" style="display:none;">1972 K5 BLAZER</div>
+            <div class="build-card-stage-badge">Stage 3 of 3</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">1972 K5 Blazer</h3>
+            <p class="build-card-subtitle">Full Restoration - 383 Stroker</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">K5</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@k5queen</div>
+                <div class="build-card-location">Denver, CO</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat">
+                <span class="build-stat-value">$35K</span>
+                <span class="build-stat-label">Total</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">2 yr</span>
+                <span class="build-stat-label">Build Time</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">340</span>
+                <span class="build-stat-label">HP</span>
+              </div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-gold">Restoration</span>
+              <span class="tag tag-green">Off-Road</span>
+              <span class="tag tag-gold">Classic</span>
+            </div>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">100%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:100%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">21 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 6: 2023 Camaro ZL1 1LE ──────────────────── -->
+        <article class="build-card" role="listitem" aria-label="2023 Camaro ZL1 1LE track build by trackrat_zl1"
+          data-model="camaro" data-year="2023" data-year-range="2015-present" data-type="track build" data-budget="15k-30k"
+          data-search="2023 camaro zl1 1le track build supercharged lt4 performance trackrat_zl1 atlanta">
+          <div class="build-card-img" style="background:#252222; background-image: url('/photos/camaro/pexels_5511993_camaro.jpeg'); background-size: cover; background-position: center;">
+            <div class="build-card-img-vehicle" style="display:none;">2023 CAMARO ZL1 1LE</div>
+            <div class="build-card-stage-badge">Stage 2 of 3</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">2023 Camaro ZL1 1LE</h3>
+            <p class="build-card-subtitle">Track Build - Supercharged LT4</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">TZ</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@trackrat_zl1</div>
+                <div class="build-card-location">Atlanta, GA</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat">
+                <span class="build-stat-value">$15.6K</span>
+                <span class="build-stat-label">Total</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">8 mo</span>
+                <span class="build-stat-label">Build Time</span>
+              </div>
+              <div class="build-stat">
+                <span class="build-stat-value">680</span>
+                <span class="build-stat-label">HP</span>
+              </div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-red">Track</span>
+              <span class="tag tag-red">Performance</span>
+              <span class="tag tag-grey">Modern Muscle</span>
+            </div>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">65%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:65%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">11 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 7: 1969 Nova SS ──────────────────────────── -->
+        <article class="build-card" role="listitem" aria-label="1969 Nova SS build by nova_nation_greg"
+          data-model="nova" data-year="1969" data-year-range="1955-1969" data-type="performance" data-budget="15k-30k"
+          data-search="1969 nova ss 396 big block drag strip performance nova_nation_greg memphis">
+          <div class="build-card-img" style="background:#26221E;">
+            <div class="build-card-img-vehicle">1969 NOVA SS</div>
+            <div class="build-card-stage-badge">Stage 2 of 3</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">1969 Nova SS</h3>
+            <p class="build-card-subtitle">396 Big Block — Drag Strip Build</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">NG</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@nova_nation_greg</div>
+                <div class="build-card-location">Memphis, TN</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat"><span class="build-stat-value">$19.4K</span><span class="build-stat-label">Total</span></div>
+              <div class="build-stat"><span class="build-stat-value">14 mo</span><span class="build-stat-label">Build Time</span></div>
+              <div class="build-stat"><span class="build-stat-value">420</span><span class="build-stat-label">HP</span></div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-red">Performance</span>
+              <span class="tag tag-gold">Classic</span>
+              <span class="tag tag-orange">Drag</span>
+            </div>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">70%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:70%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">12 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 8: 2021 Colorado ZR2 ─────────────────────── -->
+        <article class="build-card" role="listitem" aria-label="2021 Chevy Colorado ZR2 overlander build by col_overland"
+          data-model="colorado" data-year="2021" data-year-range="2015-present" data-type="off-road" data-budget="15k-30k"
+          data-search="2021 colorado zr2 overlanding roof tent recovery gear off-road col_overland portland">
+          <div class="build-card-img" style="background:#222E28;">
+            <div class="build-card-img-vehicle">2021 COLORADO ZR2</div>
+            <div class="build-card-stage-badge">Stage 3 of 4</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">2021 Colorado ZR2</h3>
+            <p class="build-card-subtitle">Overlander — Expedition Ready</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">CO</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@col_overland</div>
+                <div class="build-card-location">Portland, OR</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat"><span class="build-stat-value">$21.1K</span><span class="build-stat-label">Total</span></div>
+              <div class="build-stat"><span class="build-stat-value">10 mo</span><span class="build-stat-label">Build Time</span></div>
+              <div class="build-stat"><span class="build-stat-value">308</span><span class="build-stat-label">HP</span></div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-green">Off-Road</span>
+              <span class="tag tag-blue">Overlanding</span>
+              <span class="tag tag-grey">ZR2</span>
+            </div>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">80%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:80%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">16 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 9: 1987 Monte Carlo SS ──────────────────── -->
+        <article class="build-card" role="listitem" aria-label="1987 Monte Carlo SS build by monte_tony_d"
+          data-model="monte carlo" data-year="1987" data-year-range="1980-1999" data-type="restoration" data-budget="5k-15k"
+          data-search="1987 monte carlo ss g-body lowrider restoration monte_tony_d detroit">
+          <div class="build-card-img" style="background:#20201E;">
+            <div class="build-card-img-vehicle">1987 MONTE CARLO SS</div>
+            <div class="build-card-stage-badge">Stage 4 of 4</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">1987 Monte Carlo SS</h3>
+            <p class="build-card-subtitle">G-Body — Full Show Restoration</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">TD</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@monte_tony_d</div>
+                <div class="build-card-location">Detroit, MI</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat"><span class="build-stat-value">$9.7K</span><span class="build-stat-label">Total</span></div>
+              <div class="build-stat"><span class="build-stat-value">22 mo</span><span class="build-stat-label">Build Time</span></div>
+              <div class="build-stat"><span class="build-stat-value">210</span><span class="build-stat-label">HP</span></div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-gold">Restoration</span>
+              <span class="tag tag-grey">G-Body</span>
+              <span class="tag tag-grey">Show Car</span>
+            </div>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">100%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:100%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">19 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 10: 2019 Silverado HD 2500 ───────────────── -->
+        <article class="build-card" role="listitem" aria-label="2019 Silverado HD 2500 diesel work truck build by hd_haul_central"
+          data-model="silverado" data-year="2019" data-year-range="2015-present" data-type="off-road" data-budget="15k-30k"
+          data-search="2019 silverado hd 2500 duramax diesel lifted work truck towing hd_haul_central kansas city">
+          <div class="build-card-img" style="background:#242424;">
+            <div class="build-card-img-vehicle">2019 SILVERADO HD 2500</div>
+            <div class="build-card-stage-badge">Stage 2 of 2</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">2019 Silverado HD 2500</h3>
+            <p class="build-card-subtitle">Duramax Diesel — Lifted Work Rig</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">HC</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@hd_haul_central</div>
+                <div class="build-card-location">Kansas City, MO</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat"><span class="build-stat-value">$23.3K</span><span class="build-stat-label">Total</span></div>
+              <div class="build-stat"><span class="build-stat-value">12 mo</span><span class="build-stat-label">Build Time</span></div>
+              <div class="build-stat"><span class="build-stat-value">445</span><span class="build-stat-label">HP</span></div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-green">Off-Road</span>
+              <span class="tag tag-blue">Diesel</span>
+              <span class="tag tag-grey">HD Truck</span>
+            </div>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">100%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:100%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">13 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 11: 2006 Corvette C6 Z06 ────────────────── -->
+        <article class="build-card" role="listitem" aria-label="2006 Corvette C6 Z06 track build by c6_z06_rip"
+          data-model="corvette" data-year="2006" data-year-range="2000-2014" data-type="track build" data-budget="15k-30k"
+          data-search="2006 corvette c6 z06 ls7 track build wilwood brakes borla exhaust c6_z06_rip charlotte">
+          <div class="build-card-img" style="background:#1E2230;">
+            <div class="build-card-img-vehicle">2006 CORVETTE C6 Z06</div>
+            <div class="build-card-stage-badge">Stage 3 of 3</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">2006 Corvette C6 Z06</h3>
+            <p class="build-card-subtitle">LS7 — Full Track Prep</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">ZR</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@c6_z06_rip</div>
+                <div class="build-card-location">Charlotte, NC</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat"><span class="build-stat-value">$28.9K</span><span class="build-stat-label">Total</span></div>
+              <div class="build-stat"><span class="build-stat-value">2 yr</span><span class="build-stat-label">Build Time</span></div>
+              <div class="build-stat"><span class="build-stat-value">560</span><span class="build-stat-label">HP</span></div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-red">Track</span>
+              <span class="tag tag-blue">Wilwood</span>
+              <span class="tag tag-orange">Borla</span>
+            </div>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">100%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:100%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">24 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Build 12: 1964 Impala SS ──────────────────────── -->
+        <article class="build-card" role="listitem" aria-label="1964 Impala SS lowrider build by la_impala_kings"
+          data-model="impala" data-year="1964" data-year-range="1955-1969" data-type="restoration" data-budget="30k-60k"
+          data-search="1964 impala ss lowrider frame off restoration hydraulics 409 la_impala_kings los angeles">
+          <div class="build-card-img" style="background:#1E1A24;">
+            <div class="build-card-img-vehicle">1964 IMPALA SS</div>
+            <div class="build-card-stage-badge">Stage 2 of 3</div>
+          </div>
+          <div class="build-card-body">
+            <h3 class="build-card-vehicle barlow">1964 Impala SS</h3>
+            <p class="build-card-subtitle">Frame-Off Restoration — Show Build</p>
+            <div class="build-card-owner">
+              <div class="build-card-avatar">IK</div>
+              <div class="build-card-owner-info">
+                <div class="build-card-handle">@la_impala_kings</div>
+                <div class="build-card-location">Los Angeles, CA</div>
+              </div>
+            </div>
+            <div class="build-card-stats" aria-label="Build stats">
+              <div class="build-stat"><span class="build-stat-value">$41.5K</span><span class="build-stat-label">Total</span></div>
+              <div class="build-stat"><span class="build-stat-value">3 yr</span><span class="build-stat-label">Build Time</span></div>
+              <div class="build-stat"><span class="build-stat-value">360</span><span class="build-stat-label">HP</span></div>
+            </div>
+            <div class="build-card-tags">
+              <span class="tag tag-gold">Restoration</span>
+              <span class="tag tag-gold">Classic</span>
+              <span class="tag tag-grey">Show Car</span>
+            </div>
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Build Progress</span>
+                <span class="build-progress-pct mono">55%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:55%"></div></div>
+            </div>
+            <div class="build-card-cta">
+              <a href="#" class="build-card-cta-link">View Full Build <span class="build-card-cta-arrow">&rarr;</span></a>
+              <span class="build-card-cta-mods mono">17 mods documented</span>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /builds-grid -->
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       BUILD INSPIRATION
+  ================================================================ -->
+  <section class="inspiration-section" aria-labelledby="inspiration-heading">
+    <div class="container">
+
+      <div class="inspiration-header">
+        <span class="section-label mono">Browse by Vibe</span>
+        <h2 class="inspiration-title barlow" id="inspiration-heading">Build Inspiration</h2>
+        <p class="inspiration-desc">
+          Not sure where to start? Browse builds by the category that fits your situation — your budget,
+          your schedule, or your trophy ambitions.
+        </p>
+      </div>
+
+      <div class="inspiration-grid">
+
+        <a href="/pages/builds/?budget=under-10k" class="inspiration-card" aria-label="Browse Under $10K builds">
+          <div class="inspiration-card-icon">&#128176;</div>
+          <div class="inspiration-card-title">Under $10K</div>
+          <p class="inspiration-card-desc">
+            Proof that you don't need a blank check to build something worth driving.
+            These are the budget builds that punch above their weight — smart parts choices,
+            real results, no trust fund required.
+          </p>
+          <div class="inspiration-card-examples">
+            <span class="inspiration-card-example">2022 Silverado Trail Boss — $12.8K off-road build</span>
+            <span class="inspiration-card-example">2024 Corvette C8 bolt-ons — $8.4K for 520 hp</span>
+            <span class="inspiration-card-example">Daily Z Camaro ZL1 — $12K all-in mods</span>
+          </div>
+          <div class="inspiration-card-cta">Browse these builds <span>&rarr;</span></div>
+        </a>
+
+        <a href="/pages/builds/?vibe=weekend-warrior" class="inspiration-card" aria-label="Browse Weekend Warrior builds">
+          <div class="inspiration-card-icon">&#128295;</div>
+          <div class="inspiration-card-title">Weekend Warrior</div>
+          <p class="inspiration-card-desc">
+            Built over weekends, driven on weekdays. These are the stage-by-stage projects
+            where every Saturday counts. Mid-range budgets, serious results, and every
+            mistake documented so you don't repeat it.
+          </p>
+          <div class="inspiration-card-examples">
+            <span class="inspiration-card-example">1967 C10 Stepside patina restomod — $22.5K</span>
+            <span class="inspiration-card-example">Project Copperhead 1972 C10 — $25K target</span>
+            <span class="inspiration-card-example">2023 Camaro ZL1 1LE track prep — $15.6K</span>
+          </div>
+          <div class="inspiration-card-cta">Browse these builds <span>&rarr;</span></div>
+        </a>
+
+        <a href="/pages/builds/?vibe=show-stopper" class="inspiration-card" aria-label="Browse Show Stopper builds">
+          <div class="inspiration-card-icon">&#127942;</div>
+          <div class="inspiration-card-title">Show Stopper</div>
+          <p class="inspiration-card-desc">
+            Frame-off. Show quality. The kind of build people walk past three times at a car show.
+            These are the full-commitment projects — every dollar documented, every weld
+            photographed, every decision justified.
+          </p>
+          <div class="inspiration-card-examples">
+            <span class="inspiration-card-example">1970 Chevelle SS LS3 frame-off — $47.2K</span>
+            <span class="inspiration-card-example">1972 K5 Blazer full restoration — $35K</span>
+            <span class="inspiration-card-example">Grandpa's Impala '64 frame-off — $35K target</span>
+          </div>
+          <div class="inspiration-card-cta">Browse these builds <span>&rarr;</span></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       MOST POPULAR MODS
+  ================================================================ -->
+  <section class="popular-mods-section" aria-labelledby="popular-mods-heading">
+    <div class="container">
+      <div class="popular-mods-inner">
+
+        <div>
+          <div class="popular-mods-header">
+            <span class="section-label mono">Across 12 Builds</span>
+            <h2 class="popular-mods-title barlow" id="popular-mods-heading">Most Popular Mods</h2>
+            <p class="popular-mods-desc">
+              Based on every build and journal in the database. These are the mods builders
+              keep coming back to — across platform, budget, and build type.
+            </p>
+          </div>
+
+          <div class="mod-bar-list" role="list" aria-label="Popular modifications ranked by frequency">
+
+            <div class="mod-bar-item" role="listitem">
+              <div class="mod-bar-header">
+                <span class="mod-bar-name">Wheels &amp; Tires</span>
+                <span class="mod-bar-count">9 of 12 builds</span>
+              </div>
+              <div class="mod-bar-track" aria-label="75% of builds">
+                <div class="mod-bar-fill" style="width:75%"></div>
+              </div>
+              <div class="mod-bar-note">Most common first mod — instant visual + performance impact</div>
+            </div>
+
+            <div class="mod-bar-item" role="listitem">
+              <div class="mod-bar-header">
+                <span class="mod-bar-name">Exhaust Systems</span>
+                <span class="mod-bar-count">8 of 12 builds</span>
+              </div>
+              <div class="mod-bar-track" aria-label="67% of builds">
+                <div class="mod-bar-fill" style="width:67%"></div>
+              </div>
+              <div class="mod-bar-note">Axle-back, cat-back, and full headers — all platforms</div>
+            </div>
+
+            <div class="mod-bar-item" role="listitem">
+              <div class="mod-bar-header">
+                <span class="mod-bar-name">Suspension / Lift</span>
+                <span class="mod-bar-count">7 of 12 builds</span>
+              </div>
+              <div class="mod-bar-track" aria-label="58% of builds">
+                <div class="mod-bar-fill" style="width:58%"></div>
+              </div>
+              <div class="mod-bar-note">Lift kits, lowering springs, coilovers, and full air ride</div>
+            </div>
+
+            <div class="mod-bar-item" role="listitem">
+              <div class="mod-bar-header">
+                <span class="mod-bar-name">Engine Swap / Tune</span>
+                <span class="mod-bar-count">6 of 12 builds</span>
+              </div>
+              <div class="mod-bar-track" aria-label="50% of builds">
+                <div class="mod-bar-fill" style="width:50%"></div>
+              </div>
+              <div class="mod-bar-note">LS swaps dominate classic builds; tunes rule modern platforms</div>
+            </div>
+
+            <div class="mod-bar-item" role="listitem">
+              <div class="mod-bar-header">
+                <span class="mod-bar-name">Paint &amp; Body</span>
+                <span class="mod-bar-count">5 of 12 builds</span>
+              </div>
+              <div class="mod-bar-track" aria-label="42% of builds">
+                <div class="mod-bar-fill" style="width:42%"></div>
+              </div>
+              <div class="mod-bar-note">Full resprays, patina preservation, vinyl wraps, and body kits</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <div class="popular-mods-sidebar">
+            <span class="section-label mono" style="margin-bottom:16px; display:block;">Database Snapshot</span>
+            <div class="sidebar-stat-grid">
+              <div class="sidebar-stat">
+                <span class="sidebar-stat-value">12</span>
+                <span class="sidebar-stat-label">Total Builds</span>
+              </div>
+              <div class="sidebar-stat">
+                <span class="sidebar-stat-value">$141K</span>
+                <span class="sidebar-stat-label">Documented</span>
+              </div>
+              <div class="sidebar-stat">
+                <span class="sidebar-stat-value">80+</span>
+                <span class="sidebar-stat-label">Mods Logged</span>
+              </div>
+              <div class="sidebar-stat">
+                <span class="sidebar-stat-value">5</span>
+                <span class="sidebar-stat-label">Platforms</span>
+              </div>
+            </div>
+
+            <div class="sidebar-insight-list">
+              <div class="sidebar-insight">
+                <div class="sidebar-insight-dot"></div>
+                <span>LS swaps appear in 4 of the 6 classic builds — the most documented engine mod in the database.</span>
+              </div>
+              <div class="sidebar-insight">
+                <div class="sidebar-insight-dot"></div>
+                <span>Off-road builds average $2,400 more in wheel/tire spend than performance builds.</span>
+              </div>
+              <div class="sidebar-insight">
+                <div class="sidebar-insight-dot"></div>
+                <span>Restoration builds take 2.3x longer on average than bolt-on performance builds.</span>
+              </div>
+              <div class="sidebar-insight">
+                <div class="sidebar-insight-dot"></div>
+                <span>The most-documented single mod category across all builds: exhaust. Every platform, every budget.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       BUILD COST CALCULATOR
+  ================================================================ -->
+  <section class="calculator-section" aria-labelledby="calculator-heading">
+    <div class="container">
+
+      <div class="calculator-header">
+        <span class="section-label mono">Plan Your Build</span>
+        <h2 class="calculator-title barlow" id="calculator-heading">Build Cost Calculator</h2>
+        <p class="calculator-desc">
+          Select your vehicle type, build goal, and budget tier — get a realistic cost range,
+          a typical mod list, and real builds from the gallery that match your profile.
+        </p>
+      </div>
+
+      <div class="calculator-inner">
+
+        <div class="calc-form" aria-label="Build cost calculator inputs">
+          <div class="calc-form-title barlow">Configure Your Build</div>
+
+          <div class="calc-field">
+            <label for="calc-vehicle">Vehicle Type</label>
+            <select id="calc-vehicle" class="calc-select">
+              <option value="">-- Select vehicle type --</option>
+              <option value="classic-muscle">Classic Muscle (Chevelle, Camaro, Impala)</option>
+              <option value="modern-truck">Modern Truck (Silverado, Colorado)</option>
+              <option value="corvette">Corvette (C5–C8)</option>
+              <option value="classic-truck">Classic Truck (C10, K5, Blazer)</option>
+              <option value="suv">SUV (Tahoe, Suburban, TrailBlazer)</option>
+            </select>
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-build-type">Build Type</label>
+            <select id="calc-build-type" class="calc-select">
+              <option value="">-- Select build type --</option>
+              <option value="restoration">Restoration</option>
+              <option value="performance">Performance</option>
+              <option value="off-road">Off-Road</option>
+              <option value="aesthetic">Aesthetic</option>
+              <option value="daily-driver">Daily Driver</option>
+            </select>
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-budget">Budget Tier</label>
+            <select id="calc-budget" class="calc-select">
+              <option value="">-- Select budget tier --</option>
+              <option value="budget">Budget — Under $5K</option>
+              <option value="mid">Mid — $5K to $15K</option>
+              <option value="serious">Serious — $15K to $30K</option>
+              <option value="full">Full Build — $30K+</option>
+            </select>
+          </div>
+
+          <button class="calc-btn" type="button" id="calc-run-btn">Estimate My Build &rarr;</button>
+        </div>
+
+        <div class="calc-results" id="calc-results-panel">
+
+          <div class="calc-placeholder" id="calc-placeholder">
+            <div class="calc-placeholder-icon">&#128295;</div>
+            <p class="calc-placeholder-text">
+              Select your vehicle type, build goal, and budget above — then hit
+              <strong style="color:var(--text);">Estimate My Build</strong> to see a realistic
+              cost breakdown and matching builds from the gallery.
+            </p>
+          </div>
+
+          <div class="calc-result-card" id="calc-cost-card">
+            <div class="calc-result-label">Estimated Cost Range</div>
+            <div class="calc-cost-range" id="calc-cost-output">$0 – $0</div>
+            <p class="calc-cost-note" id="calc-cost-note">Based on real builds in the database.</p>
+            <div class="calc-mods-title">Typical Mod List for This Profile</div>
+            <div class="calc-mods-list" id="calc-mods-output"></div>
+            <div class="calc-example-builds-title">Matching Builds in the Gallery</div>
+            <div class="calc-example-builds" id="calc-examples-output"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       BUILD JOURNALS
+  ================================================================ -->
+  <section class="journals-section" aria-labelledby="journals-heading">
+    <div class="container">
+
+      <div class="journals-header">
+        <span class="section-label mono">Living Documents</span>
+        <h2 class="journals-title barlow" id="journals-heading">Build Journals</h2>
+        <p class="journals-desc">
+          More than a photo gallery. Build journals are <strong>living documents</strong> — every mod,
+          every part number, every dollar, every mistake. The real story of a build, documented as it happens.
+        </p>
+      </div>
+
+      <div class="journals-grid" role="list" aria-label="Build journal entries">
+
+        <!-- ── Journal 1: Project Copperhead ──────────────────── -->
+        <article class="journal-card" role="listitem">
+          <div class="journal-card-img" style="background: linear-gradient(135deg, #2E2418 0%, #3A2A18 100%);">
+            <div class="journal-card-img-label">Build Journal</div>
+            <div class="journal-card-img-vehicle">1972 C10 Restomod</div>
+          </div>
+          <div class="journal-card-body">
+            <div class="journal-card-name">"Project Copperhead"</div>
+            <div class="journal-card-vehicle">1972 C10 Restomod</div>
+
+            <div class="journal-card-meta">
+              <span>Jake M.</span>
+              <span>Austin, TX</span>
+              <span style="color: var(--gold);">65% complete</span>
+              <span>$18,500 of $25,000</span>
+            </div>
+
+            <p class="journal-card-desc">
+              Full restomod build on a barn-find C10. LS3 swap is done, trans is in, now working through
+              the Ridetech suspension. Documenting every bolt, every P/N, every mistake along the way.
+              See also: <a href="/pages/guides/ls-swap-guide/" style="color:var(--gold); text-decoration:underline;">LS Swap Guide</a> &amp; <a href="/pages/models/c10/" style="color:var(--gold); text-decoration:underline;">C10 Model Page</a>.
+            </p>
+
+            <div class="journal-mod-list">
+              <div class="journal-mod">
+                <span class="journal-mod-name">LS3 Engine Swap</span>
+                <span class="journal-mod-status complete">Complete</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">4L60E Transmission</span>
+                <span class="journal-mod-status complete">Complete</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Ridetech Suspension</span>
+                <span class="journal-mod-status in-progress">In Progress</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Custom Bench Interior</span>
+                <span class="journal-mod-status planned">Planned</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Burnt Orange Metallic Paint</span>
+                <span class="journal-mod-status planned">Planned</span>
+              </div>
+            </div>
+
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Overall Progress</span>
+                <span class="build-progress-pct mono">65%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:65%"></div></div>
+            </div>
+
+            <div class="journal-card-footer">
+              <a href="#" class="journal-card-cta">Read Full Journal <span>&rarr;</span></a>
+              <span class="journal-card-updated">Updated Mar 28, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Journal 2: Daily Z ─────────────────────────────── -->
+        <article class="journal-card" role="listitem">
+          <div class="journal-card-img" style="background: linear-gradient(135deg, #1E1E28 0%, #28223A 100%);">
+            <div class="journal-card-img-label">Build Journal</div>
+            <div class="journal-card-img-vehicle">2024 Camaro ZL1</div>
+          </div>
+          <div class="journal-card-body">
+            <div class="journal-card-name">"Daily Z"</div>
+            <div class="journal-card-vehicle">2024 Camaro ZL1</div>
+
+            <div class="journal-card-meta">
+              <span>Sarah K.</span>
+              <span>Atlanta, GA</span>
+              <span style="color: var(--gold);">90% complete</span>
+              <span>$12,000 in mods</span>
+            </div>
+
+            <p class="journal-card-desc">
+              Proving the last-gen Camaro is still the one to beat. Daily driven, track-prepped,
+              and every mod documented with receipts. No garage queens here.
+            </p>
+
+            <div class="journal-mod-list">
+              <div class="journal-mod">
+                <span class="journal-mod-name">Corsa Exhaust</span>
+                <span class="journal-mod-cost">$1,800</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Catch Can + Cold Air Intake</span>
+                <span class="journal-mod-cost">$700</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Lowering Springs</span>
+                <span class="journal-mod-cost">$650</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Wheels &amp; Tires</span>
+                <span class="journal-mod-cost">$3,200</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Ceramic Coating + Tune</span>
+                <span class="journal-mod-cost">$2,300</span>
+              </div>
+            </div>
+
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Overall Progress</span>
+                <span class="build-progress-pct mono">90%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:90%"></div></div>
+            </div>
+
+            <div class="journal-card-footer">
+              <a href="#" class="journal-card-cta">Read Full Journal <span>&rarr;</span></a>
+              <span class="journal-card-updated">Updated Apr 2, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Journal 3: Grandpa's Impala ────────────────────── -->
+        <article class="journal-card" role="listitem">
+          <div class="journal-card-img" style="background: linear-gradient(135deg, #200A08 0%, #2E1818 100%);">
+            <div class="journal-card-img-label">Build Journal</div>
+            <div class="journal-card-img-vehicle">1964 Impala SS</div>
+          </div>
+          <div class="journal-card-body">
+            <div class="journal-card-name">"Grandpa's Impala"</div>
+            <div class="journal-card-vehicle">1964 Impala SS</div>
+
+            <div class="journal-card-meta">
+              <span>Marcus R.</span>
+              <span>Los Angeles, CA</span>
+              <span style="color: var(--gold);">40% complete</span>
+              <span>$35,000 target</span>
+            </div>
+
+            <p class="journal-card-desc">
+              Full frame-off restoration of the car his grandfather bought new in '64.
+              Documenting every step — for the family, for the culture, and for anyone
+              who wants to know what a real restoration looks like.
+            </p>
+
+            <div class="journal-mod-list">
+              <div class="journal-mod">
+                <span class="journal-mod-name">Frame Sandblasting &amp; Coating</span>
+                <span class="journal-mod-status complete">Complete</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">327ci V8 Rebuild</span>
+                <span class="journal-mod-status in-progress">In Progress</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Interior Restoration</span>
+                <span class="journal-mod-status planned">Planned</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Body &amp; Paint</span>
+                <span class="journal-mod-status planned">Planned</span>
+              </div>
+            </div>
+
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Overall Progress</span>
+                <span class="build-progress-pct mono">40%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:40%"></div></div>
+            </div>
+
+            <div class="journal-card-footer">
+              <a href="#" class="journal-card-cta">Read Full Journal <span>&rarr;</span></a>
+              <span class="journal-card-updated">Updated Mar 15, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── Journal 4: Silent Thunder ──────────────────────── -->
+        <article class="journal-card" role="listitem">
+          <div class="journal-card-img" style="background: linear-gradient(135deg, #141E24 0%, #1A2830 100%);">
+            <div class="journal-card-img-label">Build Journal</div>
+            <div class="journal-card-img-vehicle">2025 Silverado EV RST</div>
+          </div>
+          <div class="journal-card-body">
+            <div class="journal-card-name">"Silent Thunder"</div>
+            <div class="journal-card-vehicle">2025 Silverado EV RST</div>
+
+            <div class="journal-card-meta">
+              <span>Crystal A.</span>
+              <span>Northern VA</span>
+              <span style="color: var(--green);">New - Year One</span>
+            </div>
+
+            <p class="journal-card-desc">
+              Documenting the first year of owning Chevy's electric truck. Real-world range
+              tests, towing capacity comparisons, and honest side-by-sides with her dad's '88
+              Silverado. Bridging 37 years of truck heritage with what comes next.
+            </p>
+
+            <div class="journal-mod-list">
+              <div class="journal-mod">
+                <span class="journal-mod-name">Range Test: Highway (70 mph)</span>
+                <span class="journal-mod-status in-progress">Testing</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Towing Test: 5,000 lb trailer</span>
+                <span class="journal-mod-status planned">Planned</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">Cold Weather Range</span>
+                <span class="journal-mod-status planned">Planned</span>
+              </div>
+              <div class="journal-mod">
+                <span class="journal-mod-name">vs. '88 Silverado: Side-by-Side</span>
+                <span class="journal-mod-status planned">Planned</span>
+              </div>
+            </div>
+
+            <div class="build-progress-wrap">
+              <div class="build-progress-header">
+                <span class="build-progress-label mono">Journal Progress</span>
+                <span class="build-progress-pct mono">15%</span>
+              </div>
+              <div class="build-progress-bar"><div class="build-progress-fill" style="width:15%"></div></div>
+            </div>
+
+            <div class="journal-card-footer">
+              <a href="#" class="journal-card-cta">Read Full Journal <span>&rarr;</span></a>
+              <span class="journal-card-updated">Updated Apr 1, 2026</span>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /journals-grid -->
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       SUBMIT YOUR BUILD
+  ================================================================ -->
+  <section class="submit-section" id="submit-section" aria-labelledby="submit-heading">
+    <div class="container">
+      <div class="submit-inner">
+
+        <div>
+          <span class="section-label mono">Submit Your Build</span>
+          <h2 class="submit-title barlow" id="submit-heading">
+            Your Build<br/><span>Belongs Here</span>
+          </h2>
+          <p class="submit-desc">
+            Don't let your build live in a Facebook album or a random forum thread.
+            Structure it. Share it. Let other builders actually learn from it — with
+            every mod itemized, every dollar tracked, and every stage documented.
+          </p>
+
+          <div class="submit-checklist">
+            <div class="submit-checklist-item">
+              <span class="submit-checklist-icon">+</span>
+              <span>Vehicle info — year, model, trim, engine</span>
+            </div>
+            <div class="submit-checklist-item">
+              <span class="submit-checklist-icon">+</span>
+              <span>Mods list with part numbers and costs</span>
+            </div>
+            <div class="submit-checklist-item">
+              <span class="submit-checklist-icon">+</span>
+              <span>Photos — exterior, engine bay, interior, before/after</span>
+            </div>
+            <div class="submit-checklist-item">
+              <span class="submit-checklist-icon">+</span>
+              <span>Your story — why you built it, what you learned</span>
+            </div>
+          </div>
+
+          <p class="submit-tagline">We feature every build — from $500 beaters to $100K restomods.</p>
+        </div>
+
+        <div class="submit-form-preview" aria-label="Build submission form preview">
+          <div class="form-preview-title barlow">Submit a Build</div>
+
+          <div class="form-row">
+            <label class="form-label mono">Your Username / Handle</label>
+            <div class="form-fake-input">@yourhandle</div>
+          </div>
+          <div class="form-row form-row-grid">
+            <div>
+              <label class="form-label mono">Year</label>
+              <div class="form-fake-input">e.g. 1970</div>
+            </div>
+            <div>
+              <label class="form-label mono">Model</label>
+              <div class="form-fake-input">Select model...</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="form-label mono">Trim / Package</label>
+            <div class="form-fake-input">e.g. SS 396, Trail Boss, ZL1 1LE</div>
+          </div>
+          <div class="form-row">
+            <label class="form-label mono">Current Engine</label>
+            <div class="form-fake-input">e.g. LS3 6.2L V8</div>
+          </div>
+          <div class="form-row">
+            <label class="form-label mono">Key Modifications</label>
+            <div class="form-fake-input" style="min-height: 80px; display:flex; align-items:flex-start; padding-top:12px;">List your main mods — one per line...</div>
+          </div>
+          <div class="form-row">
+            <label class="form-label mono">Build Photos</label>
+            <div class="form-fake-input" style="display:flex; align-items:center; gap:8px;">
+              <span style="color:var(--gold);">+</span> Upload photos
+            </div>
+          </div>
+
+          <button class="form-submit-btn" type="button">Submit My Build &rarr;</button>
+          <p style="text-align:center; margin-top:14px; font-size:12px; color:var(--text-muted);">
+            Free to submit. No login required.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       BUILD STATS DASHBOARD
+  ================================================================ -->
+  <section style="padding: 72px 0; background: #111; border-top: 1px solid #333; border-bottom: 1px solid #333;" aria-labelledby="stats-dashboard-heading">
+    <div class="container">
+      <div style="margin-bottom: 48px;">
+        <span class="section-label mono">Aggregated Data</span>
+        <h2 class="barlow" id="stats-dashboard-heading" style="font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:10px;">Build Stats <span style="color:var(--gold);">Dashboard</span></h2>
+        <p style="font-size:15px; color:var(--text-dim); max-width:540px;">Real numbers aggregated from all 12 documented builds in the ChevyRoots database.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px; margin-bottom:40px;">
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; border-top:2px solid var(--gold);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:var(--text-muted); margin-bottom:10px;">Total Builds</div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:48px; font-weight:800; color:var(--gold); line-height:1;">12</div>
+          <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">in the database</div>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; border-top:2px solid var(--blue);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:var(--text-muted); margin-bottom:10px;">Avg Build Cost</div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:48px; font-weight:800; color:var(--blue); line-height:1;">$23.7K</div>
+          <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">across all 12 builds</div>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; border-top:2px solid var(--green);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:var(--text-muted); margin-bottom:10px;">Most Popular Type</div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:32px; font-weight:800; color:var(--green); line-height:1; margin-bottom:4px;">Restoration</div>
+          <div style="font-size:12px; color:var(--text-muted);">5 of 12 builds</div>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; border-top:2px solid var(--orange);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:var(--text-muted); margin-bottom:10px;">Most Built Model</div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:32px; font-weight:800; color:var(--orange); line-height:1; margin-bottom:4px;">Silverado</div>
+          <div style="font-size:12px; color:var(--text-muted);">3 builds documented</div>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; border-top:2px solid var(--red);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:var(--text-muted); margin-bottom:10px;">Cost Range</div>
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:800; color:var(--red); line-height:1; margin-bottom:4px;">$8.4K&ndash;$47.2K</div>
+          <div style="font-size:12px; color:var(--text-muted);">cheapest to most expensive</div>
+        </div>
+
+      </div>
+
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:var(--text-muted); margin-bottom:20px;">Build Type Breakdown</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div>
+            <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; margin-bottom:5px;"><span style="color:var(--text-dim);">Restoration</span><span style="color:var(--gold);">5 builds &mdash; 42%</span></div>
+            <div style="height:6px; background:var(--border); border-radius:3px;"><div style="width:42%; height:100%; background:var(--gold); border-radius:3px;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; margin-bottom:5px;"><span style="color:var(--text-dim);">Off-Road</span><span style="color:var(--green);">3 builds &mdash; 25%</span></div>
+            <div style="height:6px; background:var(--border); border-radius:3px;"><div style="width:25%; height:100%; background:var(--green); border-radius:3px;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; margin-bottom:5px;"><span style="color:var(--text-dim);">Performance</span><span style="color:var(--red);">2 builds &mdash; 17%</span></div>
+            <div style="height:6px; background:var(--border); border-radius:3px;"><div style="width:17%; height:100%; background:var(--red); border-radius:3px;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; margin-bottom:5px;"><span style="color:var(--text-dim);">Track Build</span><span style="color:var(--blue);">2 builds &mdash; 17%</span></div>
+            <div style="height:6px; background:var(--border); border-radius:3px;"><div style="width:17%; height:100%; background:var(--blue); border-radius:3px;"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       POPULAR PARTS
+  ================================================================ -->
+  <section style="padding: 72px 0; background: var(--bg2); border-bottom: 1px solid var(--border);" aria-labelledby="popular-parts-heading">
+    <div class="container">
+      <div style="margin-bottom: 48px;">
+        <span class="section-label mono">Parts Intelligence</span>
+        <h2 class="barlow" id="popular-parts-heading" style="font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:10px;">Popular <span style="color:var(--gold);">Parts</span></h2>
+        <p style="font-size:15px; color:var(--text-dim); max-width:560px;">Parts and brands that appear across multiple builds in the database &mdash; what the community is actually using.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px;">
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:36px; height:36px; border-radius:8px; background:rgba(196,160,53,0.12); border:1px solid rgba(196,160,53,0.3); display:flex; align-items:center; justify-content:center; font-size:16px;">&#x2699;</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">LS Engines</div>
+              <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gold);">LS3 / LS7 / LT4</div>
+            </div>
+          </div>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">Appears in 5 of 12 builds. The LS platform remains the most popular engine choice across classic restorations and performance builds alike.</p>
+          <a href="/pages/guides/ls-swap-guide/" style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em;">Read LS Swap Guide &rarr;</a>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:36px; height:36px; border-radius:8px; background:rgba(212,135,74,0.12); border:1px solid rgba(212,135,74,0.3); display:flex; align-items:center; justify-content:center; font-size:16px;">&#x1F4A8;</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">Borla Exhaust</div>
+              <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--orange);">S-Type / ATAK / Touring</div>
+            </div>
+          </div>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">Shows up on 3 builds &mdash; the C6 Z06, Camaro ZL1, and Chevelle SS. Preferred by track and performance builders for tone and fitment.</p>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em;">3 builds use this brand</span>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:36px; height:36px; border-radius:8px; background:rgba(74,143,212,0.12); border:1px solid rgba(74,143,212,0.3); display:flex; align-items:center; justify-content:center; font-size:16px;">&#x1F6D1;</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">Wilwood Brakes</div>
+              <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--blue);">Big Brake Kits</div>
+            </div>
+          </div>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">Standard on all 3 track-oriented builds. The C6 Z06, Camaro ZL1 1LE, and the &rsquo;69 Nova all spec Wilwood front big brake kits.</p>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em;">3 builds use this brand</span>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:36px; height:36px; border-radius:8px; background:rgba(76,175,106,0.12); border:1px solid rgba(76,175,106,0.3); display:flex; align-items:center; justify-content:center; font-size:16px;">&#x1F6E3;</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">Lift Kits</div>
+              <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--green);">ReadyLift / Rough Country</div>
+            </div>
+          </div>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">Found in all 3 off-road builds. Most common choice: 4&Prime; suspension lifts paired with aftermarket wheels and all-terrain tires.</p>
+          <a href="/pages/guides/lift-kit-guide/" style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em;">Read Lift Kit Guide &rarr;</a>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:36px; height:36px; border-radius:8px; background:rgba(212,90,74,0.12); border:1px solid rgba(212,90,74,0.3); display:flex; align-items:center; justify-content:center; font-size:16px;">&#x1F4C8;</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">Aftermarket Tunes</div>
+              <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--red);">HPTuners / EFI Live</div>
+            </div>
+          </div>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">4 builds include a custom tune as a documented modification. Common across both modern performance builds and LS swap builds.</p>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em;">4 builds include a tune</span>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:36px; height:36px; border-radius:8px; background:rgba(196,160,53,0.12); border:1px solid rgba(196,160,53,0.3); display:flex; align-items:center; justify-content:center; font-size:16px;">&#x1F6DE;</div>
+            <div>
+              <div style="font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em;">Cold Air Intake</div>
+              <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--gold);">K&amp;N / Corsa / Airaid</div>
+            </div>
+          </div>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">The most frequent single bolt-on mod across all 12 builds. Appears in 6 builds &mdash; often a first mod or paired with an exhaust upgrade.</p>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em;">6 builds &mdash; most common mod</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       RELATED BUILDS
+  ================================================================ -->
+  <section style="padding: 64px 0; background: var(--bg); border-bottom: 1px solid var(--border);" aria-labelledby="related-builds-heading">
+    <div class="container">
+      <div style="margin-bottom: 40px;">
+        <span class="section-label mono">Filtered Views</span>
+        <h2 class="barlow" id="related-builds-heading" style="font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; margin-bottom:10px;">Related <span style="color:var(--gold);">Builds</span></h2>
+        <p style="font-size:15px; color:var(--text-dim); max-width:560px;">Jump straight to the builds that match your interests.</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:var(--gold); margin-bottom:6px;">Muscle Car Builds</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; text-transform:uppercase; margin-bottom:4px;">Like muscle cars? See these builds:</div>
+            <p style="font-size:13px; color:var(--text-muted);">1970 Chevelle SS &bull; 2023 Camaro ZL1 1LE &bull; 1969 Nova SS &bull; 1987 Monte Carlo SS</p>
+          </div>
+          <a href="/pages/builds/?type=restoration" style="background:var(--gold); color:#111; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:10px 22px; border-radius:6px; white-space:nowrap; flex-shrink:0;">View Builds &rarr;</a>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:var(--green); margin-bottom:6px;">Off-Road Builds</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; text-transform:uppercase; margin-bottom:4px;">Into trucks and off-road? Start here:</div>
+            <p style="font-size:13px; color:var(--text-muted);">2022 Silverado Trail Boss &bull; 1972 K5 Blazer &bull; 2021 Colorado ZR2 &bull; 2019 Silverado HD 2500</p>
+          </div>
+          <a href="/pages/builds/?type=off-road" style="background:var(--green); color:#111; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:10px 22px; border-radius:6px; white-space:nowrap; flex-shrink:0;">View Builds &rarr;</a>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:var(--red); margin-bottom:6px;">Track &amp; Performance Builds</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; text-transform:uppercase; margin-bottom:4px;">Love the track? Check these out:</div>
+            <p style="font-size:13px; color:var(--text-muted);">2024 Corvette C8 &bull; 2023 Camaro ZL1 1LE &bull; 2006 Corvette C6 Z06 &bull; 1969 Nova SS</p>
+          </div>
+          <a href="/pages/builds/?type=performance" style="background:var(--red); color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:10px 22px; border-radius:6px; white-space:nowrap; flex-shrink:0;">View Builds &rarr;</a>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:var(--blue); margin-bottom:6px;">Budget Builds Under $15K</div>
+            <div style="font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; text-transform:uppercase; margin-bottom:4px;">Building on a budget? These prove it works:</div>
+            <p style="font-size:13px; color:var(--text-muted);">2022 Silverado Trail Boss ($12.8K) &bull; 2024 Corvette C8 ($8.4K) &bull; 1987 Monte Carlo SS ($9.7K)</p>
+          </div>
+          <a href="/pages/builds/?budget=5k-15k" style="background:var(--blue); color:#fff; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:10px 22px; border-radius:6px; white-space:nowrap; flex-shrink:0;">View Builds &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       HOW IT WORKS
+  ================================================================ -->
+  <section class="how-section" aria-labelledby="how-heading">
+    <div class="container">
+
+      <div class="how-header">
+        <span class="section-label mono">The Process</span>
+        <h2 class="how-title barlow" id="how-heading">How It Works</h2>
+        <p class="how-subtitle">
+          Four steps from your garage to the most useful build resource in the Chevy community.
+        </p>
+      </div>
+
+      <div class="how-steps" role="list">
+
+        <div class="how-step" role="listitem">
+          <div class="how-step-num" aria-hidden="true">
+            <span class="how-step-icon">1</span>
+          </div>
+          <h3 class="how-step-title barlow">Submit</h3>
+          <p class="how-step-desc">
+            Fill out your vehicle info, add stages, list your parts with prices,
+            and upload photos. Takes 20 minutes for a basic build.
+          </p>
+          <div class="how-step-detail">
+            <div class="how-detail-item">Vehicle details &amp; specs</div>
+            <div class="how-detail-item">Stage-by-stage mod list</div>
+            <div class="how-detail-item">Parts with prices + links</div>
+            <div class="how-detail-item">Photos &amp; dyno sheets</div>
+          </div>
+        </div>
+
+        <div class="how-step" role="listitem">
+          <div class="how-step-num" aria-hidden="true">
+            <span class="how-step-icon">2</span>
+          </div>
+          <h3 class="how-step-title barlow">We Structure It</h3>
+          <p class="how-step-desc">
+            We normalize, tag, and cross-reference your data — turning a build log
+            into a searchable, filterable record that actually means something.
+          </p>
+          <div class="how-step-detail">
+            <div class="how-detail-item">Part taxonomy tagging</div>
+            <div class="how-detail-item">Build type classification</div>
+            <div class="how-detail-item">Cost normalization</div>
+            <div class="how-detail-item">Cross-build comparison</div>
+          </div>
+        </div>
+
+        <div class="how-step" role="listitem">
+          <div class="how-step-num" aria-hidden="true">
+            <span class="how-step-icon">3</span>
+          </div>
+          <h3 class="how-step-title barlow">Community Learns</h3>
+          <p class="how-step-desc">
+            Other builders find your exact build, see what you spent, see what worked,
+            and use your documented path to inform their own.
+          </p>
+          <div class="how-step-detail">
+            <div class="how-detail-item">Searchable by part number</div>
+            <div class="how-detail-item">Filter by budget &amp; goal</div>
+            <div class="how-detail-item">Build-to-build comparison</div>
+            <div class="how-detail-item">Q&amp;A on specific stages</div>
+          </div>
+        </div>
+
+        <div class="how-step" role="listitem">
+          <div class="how-step-num" aria-hidden="true">
+            <span class="how-step-icon">4</span>
+          </div>
+          <h3 class="how-step-title barlow">Parts Link Out</h3>
+          <p class="how-step-desc">
+            Every part links to verified retailers — Summit Racing, Rock Auto, Holley, and more —
+            so readers can buy the exact thing you used.
+          </p>
+          <div class="how-step-detail">
+            <div class="how-detail-item">Summit Racing integration</div>
+            <div class="how-detail-item">RockAuto part links</div>
+            <div class="how-detail-item">Current pricing pull</div>
+            <div class="how-detail-item">Availability alerts</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name barlow">CHEVY<span>ROOTS</span></div>
+          <p class="footer-brand-desc">
+            The structured Chevy build database. Every mod, every dollar, every story —
+            documented by the community that actually turns wrenches.
+          </p>
+          <div class="footer-social" aria-label="Social links">
+            <a href="#" class="footer-social-link" aria-label="Instagram">&#9633;</a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">&#9633;</a>
+            <a href="#" class="footer-social-link" aria-label="Facebook">&#9633;</a>
+            <a href="#" class="footer-social-link" aria-label="TikTok">&#9633;</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title barlow">Explore</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/models/">Models</a></li>
+            <li><a href="/pages/guides/">Guides</a></li>
+            <li><a href="/pages/builds/">Builds</a></li>
+            <li><a href="/pages/events/">Events</a></li>
+            <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title barlow">Build Types</div>
+          <ul class="footer-links" role="list">
+            <li><a href="#">Performance Builds</a></li>
+            <li><a href="#">Off-Road Builds</a></li>
+            <li><a href="#">Restorations</a></li>
+            <li><a href="#">Track Builds</a></li>
+            <li><a href="#">Daily Drivers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title barlow">Resources</div>
+          <ul class="footer-links" role="list">
+            <li><a href="#submit-section">Submit a Build</a></li>
+            <li><a href="/pages/guides/">Build Guides</a></li>
+            <li><a href="/pages/about/">About ChevyRoots</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2026 <span>ChevyRoots</span>. Built for the community by the community.
+        </p>
+        <nav class="footer-legal" aria-label="Legal links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Sitemap</a>
+        </nav>
+      </div>
+
+      <div class="footer-disclaimer">
+        ChevyRoots is an independent enthusiast site and is not affiliated with, endorsed by, or sponsored by
+        General Motors, Chevrolet, or any of their subsidiaries. All GM, Chevrolet, and model names (Corvette,
+        Camaro, Silverado, Impala, etc.) are registered trademarks of General Motors LLC. All trademarks and
+        brand names are the property of their respective owners. Vehicle images are used for editorial and
+        informational purposes only.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- RELATED GUIDES -->
+  <section style="max-width:1200px;margin:0 auto 40px;padding:0 24px;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:15px;color:#707070;letter-spacing:0.04em;">Looking to build? Also check out the <a href="/pages/guides/ls-swap-guide.html" style="color:#C4A035;font-weight:600;">Complete LS Swap Guide</a>, the <a href="/pages/guides/known-issues.html" style="color:#C4A035;font-weight:600;">Chevy Known Issues Database</a>, and the <a href="/pages/models/" style="color:#C4A035;font-weight:600;">full Chevy model lineup</a>.</p>
+  </section>
+
+  <script>
+    /* ── Mobile nav toggle ─────────────────────────────────── */
+    const toggle = document.querySelector('.nav-mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      if (!expanded) {
+        navLinks.style.cssText = `
+          display: flex; flex-direction: column;
+          position: absolute; top: 64px; left: 0; right: 0;
+          background: rgba(26,26,26,0.98);
+          border-bottom: 1px solid #333;
+          padding: 20px 24px; gap: 16px;
+          backdrop-filter: blur(12px);
+        `;
+      } else {
+        navLinks.removeAttribute('style');
+      }
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.removeAttribute('style');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ── Progress bar animation ────────────────────────────── */
+    const progressFills = document.querySelectorAll('.build-progress-fill');
+    const barObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    progressFills.forEach(fill => {
+      fill.style.opacity = '0';
+      fill.style.transition = 'width 0.8s ease, opacity 0.4s ease';
+      barObserver.observe(fill);
+    });
+
+    /* ── Build Filter / Search ─────────────────────────────── */
+    const cards       = Array.from(document.querySelectorAll('.build-card'));
+    const searchInput = document.querySelector('.filter-input');
+    const modelSel    = document.querySelectorAll('.filter-select')[0];
+    const yearSel     = document.querySelectorAll('.filter-select')[1];
+    const typeSel     = document.querySelectorAll('.filter-select')[2];
+    const budgetSel   = document.querySelectorAll('.filter-select')[3];
+    const filterBtn   = document.querySelector('.filter-btn');
+    const resetBtn    = document.querySelector('.filter-reset');
+    const countEl     = document.getElementById('visible-count');
+
+    const YEAR_MAP = {
+      '1955-1969': '1955-1969',
+      '1970-1979': '1970-1979',
+      '1980-1999': '1980-1999',
+      '2000-2014': '2000-2014',
+      '2015-Present': '2015-present',
+    };
+    const BUDGET_MAP = {
+      'Under $5K':  'under-5k',
+      '$5K-$15K':   '5k-15k',
+      '$15K-$30K':  '15k-30k',
+      '$30K-$60K':  '30k-60k',
+      '$60K+':      '60k-plus',
+    };
+
+    function applyFilters() {
+      const q      = searchInput.value.trim().toLowerCase();
+      const model  = modelSel.value.toLowerCase();
+      const yr     = YEAR_MAP[yearSel.value] || '';
+      const type   = typeSel.value.toLowerCase();
+      const budget = BUDGET_MAP[budgetSel.value] || '';
+
+      let visible = 0;
+      cards.forEach(card => {
+        const ds   = card.dataset;
+        const text = (ds.search || '').toLowerCase();
+
+        const matchSearch = !q || text.includes(q);
+        const matchModel  = !model || ds.model.toLowerCase().includes(model);
+        const matchYear   = !yr || ds.yearRange === yr;
+        const matchType   = !type || ds.type.toLowerCase().includes(type);
+        const matchBudget = !budget || ds.budget === budget;
+
+        const show = matchSearch && matchModel && matchYear && matchType && matchBudget;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      if (countEl) countEl.textContent = visible;
+    }
+
+    filterBtn.addEventListener('click', applyFilters);
+    searchInput.addEventListener('input', applyFilters);
+    modelSel.addEventListener('change', applyFilters);
+    yearSel.addEventListener('change', applyFilters);
+    typeSel.addEventListener('change', applyFilters);
+    budgetSel.addEventListener('change', applyFilters);
+
+    resetBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      modelSel.value = '';
+      yearSel.value = '';
+      typeSel.value = '';
+      budgetSel.value = '';
+      applyFilters();
+    });
+
+    searchInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') applyFilters();
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "ChevyRoots Build Engine",
+    "description": "The most detailed Chevy build database — every mod, every part, every dollar from real Chevrolet builds.",
+    "url": "https://chevyroots.com/pages/builds/",
+    "publisher": { "@type": "Organization", "name": "ChevyRoots", "url": "https://chevyroots.com" }
+  }
+  </script>
+
+  <script>
+    /* ── Build Cost Calculator ─────────────────────────────────────────── */
+    (function () {
+      const DATA = {
+        'classic-muscle': {
+          restoration: {
+            budget:   { range: '$3,000 – $6,000',   note: 'Cosmetic work, carb rebuild, basic tune-up, fresh rubber.', mods: [['Carburetor Rebuild', '$400–$800'], ['Tune-Up + Plugs/Wires', '$200–$400'], ['Wheels & Tires', '$1,200–$2,500'], ['Paint Touch-Up', '$600–$1,500'], ['Interior Detail', '$300–$800']], examples: [{ name: '1972 K5 Blazer (early stage)', cost: '$8K in', href: '#' }] },
+            mid:      { range: '$8,000 – $18,000',  note: 'Bodywork, suspension refresh, mild engine rebuild, full respray.', mods: [['Full Respray', '$3,000–$7,000'], ['Suspension Rebuild', '$1,500–$3,000'], ['Engine Tune + Headers', '$800–$1,800'], ['Brake Upgrade', '$600–$1,200'], ['Interior Refresh', '$1,000–$3,000']], examples: [{ name: '1967 C10 Stepside Patina Build', cost: '$22.5K total', href: '#' }] },
+            serious:  { range: '$18,000 – $35,000', note: 'Frame-off, engine rebuild or mild swap, new interior, full body.', mods: [['Frame-Off Strip & Epoxy Prime', '$3,000–$5,000'], ['Engine Rebuild / Swap', '$4,000–$9,000'], ['Full Respray', '$5,000–$10,000'], ['Interior Restoration', '$2,000–$5,000'], ['12-Bolt Rear Upgrade', '$1,200–$2,500']], examples: [{ name: '1970 Chevelle SS (Stage 1–2)', cost: '$47.2K total', href: '#' }] },
+            full:     { range: '$35,000 – $75,000+', note: 'Concours-level or full restomod. No corners cut.', mods: [['Frame-Off Full Restoration', '$6,000–$12,000'], ['LS3 Crate Swap + Wiring', '$8,000–$14,000'], ['Custom Paint (Show Quality)', '$8,000–$15,000'], ['Full Interior Build', '$4,000–$10,000'], ['Wilwood Disc Brakes All Around', '$2,500–$4,500']], examples: [{ name: '1970 Chevelle SS LS3 Frame-Off', cost: '$47.2K', href: '#' }, { name: '1972 K5 Blazer Full Restoration', cost: '$35K', href: '#' }] },
+          },
+          performance: {
+            budget:   { range: '$1,500 – $4,500',   note: 'Intake, exhaust, tune — bolt-ons only.', mods: [['Cold Air Intake', '$250–$500'], ['Axle-Back Exhaust', '$400–$900'], ['Tune / Chip', '$300–$600'], ['Thermostat + Plugs', '$100–$200'], ['Catch Can', '$80–$180']], examples: [{ name: '2024 Corvette C8 bolt-ons', cost: '$8.4K', href: '#' }] },
+            mid:      { range: '$5,000 – $14,000',  note: 'Headers, cam, heads — real power, still streetable.', mods: [['Headers + Y-Pipe', '$800–$1,800'], ['Cam & Lifter Swap', '$1,200–$2,500'], ['Heads Porting / Upgrade', '$1,500–$3,000'], ['Tune (Dyno)', '$400–$700'], ['Suspension Upgrade', '$1,200–$2,500']], examples: [{ name: '2023 Camaro ZL1 1LE Track Build', cost: '$15.6K', href: '#' }] },
+            serious:  { range: '$15,000 – $30,000', note: 'Stroker kit, forced induction, upgraded drivetrain.', mods: [['Stroker Kit (383 or 427)', '$3,500–$7,000'], ['Supercharger / Turbo', '$3,000–$6,000'], ['Forged Internals', '$2,000–$4,000'], ['Upgraded Trans', '$1,500–$3,500'], ['Full Exhaust', '$1,000–$2,000']], examples: [{ name: '2023 Camaro ZL1 1LE Full Prep', cost: '$15.6K mods', href: '#' }] },
+            full:     { range: '$30,000 – $60,000+', note: 'Race-ready. Track suspension, 600+ hp, built drivetrain.', mods: [['Built Engine (600+ hp)', '$10,000–$18,000'], ['Pro Suspension / Coilovers', '$4,000–$8,000'], ['Roll Cage (track use)', '$2,500–$5,000'], ['Trans / Rear Built', '$3,000–$6,000'], ['Aero / Body Kit', '$2,000–$5,000']], examples: [] },
+          },
+          'off-road': {
+            budget:   { range: '$1,000 – $3,500',   note: 'Leveling kit, tires, basic skids.', mods: [['Leveling Kit', '$300–$700'], ['All-Terrain Tires', '$600–$1,200'], ['Skid Plates', '$200–$500'], ['Tow Hooks', '$60–$150']], examples: [] },
+            mid:      { range: '$4,000 – $12,000',  note: '4" lift, lockers, armor — capable build on real trails.', mods: [['4–6" Lift Kit', '$1,200–$3,000'], ['Mud-Terrain Tires (35s)', '$900–$1,800'], ['Front Locker', '$800–$1,600'], ['Rock Sliders', '$600–$1,200'], ['LED Lighting', '$400–$900']], examples: [{ name: '2022 Silverado Trail Boss', cost: '$12.8K', href: '#' }] },
+            serious:  { range: '$12,000 – $28,000', note: 'Long-travel, portals, serious trail rig.', mods: [['Long-Travel Suspension', '$4,000–$8,000'], ['37–40" Tires + Beadlocks', '$2,000–$4,500'], ['Differential Lockers (F+R)', '$2,000–$4,000'], ['Winch + Bumper', '$1,800–$3,500'], ['Armor + Cage', '$2,000–$5,000']], examples: [{ name: '1972 K5 Blazer Off-Road Restoration', cost: '$35K', href: '#' }] },
+            full:     { range: '$28,000 – $60,000+', note: 'Prerunner or full-send crawler.', mods: [['Trophy-Truck Suspension', '$8,000–$18,000'], ['Built Axles', '$4,000–$8,000'], ['LS Swap (for torque)', '$6,000–$12,000'], ['Full Armor Package', '$4,000–$8,000'], ['42" Tires / Portal Axles', '$5,000–$10,000']], examples: [] },
+          },
+          aesthetic: {
+            budget:   { range: '$800 – $3,000',     note: 'Wheels, window tint, vinyl badges.', mods: [['Aftermarket Wheels', '$600–$1,500'], ['Window Tint', '$200–$400'], ['Vinyl Accents', '$150–$400'], ['LED Lighting', '$200–$500']], examples: [] },
+            mid:      { range: '$3,000 – $10,000',  note: 'Custom paint, body kit, full wheel/tire setup.', mods: [['Custom Respray', '$3,000–$6,000'], ['Wheel/Tire Package', '$1,500–$3,500'], ['Lowering Springs', '$400–$900'], ['Body Molding / Trim', '$300–$700']], examples: [] },
+            serious:  { range: '$10,000 – $22,000', note: 'Show prep, air suspension, custom interior.', mods: [['Air Ride Suspension', '$3,000–$6,000'], ['Show-Quality Paint', '$5,000–$10,000'], ['Custom Interior', '$2,500–$6,000'], ['Billet / Polished Accessories', '$800–$2,000']], examples: [] },
+            full:     { range: '$22,000 – $50,000+', note: 'Pro touring / concours show build.', mods: [['Frame-Off Paint Prep', '$4,000–$8,000'], ['SEMA-Level Paint', '$8,000–$18,000'], ['Full Custom Interior', '$5,000–$12,000'], ['Air Ride + Billet Chassis', '$5,000–$10,000']], examples: [] },
+          },
+          'daily-driver': {
+            budget:   { range: '$500 – $2,500',     note: 'Maintenance + safety basics. Keep it reliable.', mods: [['Brakes (pads + rotors)', '$300–$700'], ['Tune-Up', '$150–$350'], ['Tires', '$600–$1,200'], ['Alignment', '$80–$150']], examples: [] },
+            mid:      { range: '$2,500 – $8,000',   note: 'Comfort + reliability upgrades for daily use.', mods: [['Exhaust Upgrade', '$500–$1,200'], ['Cold Air Intake', '$300–$600'], ['Brake Upgrade', '$500–$1,000'], ['Wheels & Tires', '$1,200–$2,500'], ['Tune', '$300–$600']], examples: [] },
+            serious:  { range: '$8,000 – $18,000',  note: 'Daily that impresses on weekends too.', mods: [['Suspension Upgrade', '$1,500–$3,000'], ['Full Exhaust', '$800–$1,800'], ['Headers', '$700–$1,500'], ['Tune + Intake', '$600–$1,000'], ['Wheel/Tire Package', '$1,500–$3,500']], examples: [{ name: '"Daily Z" Camaro ZL1', cost: '$12K mods', href: '#' }] },
+            full:     { range: '$18,000 – $35,000', note: 'Sleeper daily. Performance build with comfort.', mods: [['Built Engine', '$6,000–$12,000'], ['Pro Suspension', '$3,000–$6,000'], ['Full Exhaust System', '$1,200–$2,500'], ['Big Brake Kit', '$1,500–$3,000'], ['Interior Refresh', '$2,000–$5,000']], examples: [] },
+          }
+        },
+        'modern-truck': {
+          'off-road': {
+            budget:   { range: '$1,200 – $4,000',   note: 'Leveling kit, wheels, tires — most popular mod combo.', mods: [['Leveling Kit', '$200–$500'], ['All-Terrain Tires (33s)', '$700–$1,500'], ['Skid Plates', '$200–$400'], ['Running Boards', '$200–$500']], examples: [{ name: '2022 Silverado Trail Boss', cost: '$12.8K', href: '#' }] },
+            mid:      { range: '$5,000 – $14,000',  note: '4" lift, 35s, light bar — ready for trails.', mods: [['4" Lift Kit', '$1,200–$2,800'], ['35" Mud-Terrains', '$900–$1,800'], ['LED Light Bar', '$300–$700'], ['Rear Differential Locker', '$800–$1,500'], ['Winch + Steel Bumper', '$1,500–$3,000']], examples: [{ name: '2022 Silverado Trail Boss', cost: '$12.8K total', href: '#' }] },
+            serious:  { range: '$14,000 – $30,000', note: 'Long-travel, locked front & rear, serious armor.', mods: [['6–8" Long-Travel Suspension', '$4,000–$8,000'], ['37" Tires + Method Wheels', '$2,500–$4,500'], ['Front + Rear Lockers', '$2,000–$4,000'], ['Winch + Full Armor', '$3,000–$6,000'], ['Aux Lighting Package', '$800–$1,800']], examples: [] },
+            full:     { range: '$30,000+',           note: 'Purpose-built prerunner or overlander.', mods: [['Trophy Suspension', '$8,000–$16,000'], ['42" Tires + Beadlocks', '$4,000–$8,000'], ['Built Axles', '$3,500–$7,000'], ['Full Armor + Cage', '$5,000–$10,000'], ['LS Swap or LT Upgrade', '$5,000–$12,000']], examples: [] },
+          },
+          performance: {
+            budget:   { range: '$800 – $3,000',     note: 'Tune, intake, exhaust — bolt-ons for daily gains.', mods: [['Cold Air Intake', '$250–$500'], ['Exhaust (cat-back)', '$600–$1,200'], ['Tune', '$400–$700'], ['Throttle Body Spacer', '$80–$200']], examples: [] },
+            mid:      { range: '$3,500 – $10,000',  note: 'Serious tow/haul performance: trans cooler, headers, cam.', mods: [['Headers + Full Exhaust', '$1,200–$2,500'], ['Transmission Cooler', '$400–$800'], ['Cam Upgrade', '$1,000–$2,200'], ['Tune (Dyno)', '$400–$700'], ['Intake Manifold', '$500–$1,100']], examples: [] },
+            serious:  { range: '$10,000 – $22,000', note: 'Supercharger or built engine for serious output.', mods: [['Supercharger', '$4,000–$8,000'], ['Forged Bottom End', '$3,000–$6,000'], ['Trans Upgrade', '$2,000–$4,000'], ['Tune', '$600–$1,000'], ['Big Brake Kit', '$1,500–$3,000']], examples: [] },
+            full:     { range: '$22,000+',           note: '600+ hp truck — built drivetrain.', mods: [['Built Engine (600+ hp)', '$8,000–$16,000'], ['Pro-Charged or Twin-Turbo', '$5,000–$10,000'], ['Transmission Build', '$3,000–$6,000'], ['Axle / Diff Upgrade', '$2,000–$4,000'], ['Full Exhaust + Tune', '$1,500–$3,000']], examples: [] },
+          },
+          restoration: {
+            budget:   { range: '$1,000 – $4,000',   note: 'Detail, touch-up, and basic refreshes.', mods: [['Detail / Ceramic Coat', '$300–$700'], ['Bed Liner', '$400–$900'], ['Minor Dent Repair', '$200–$600'], ['New Wheels', '$600–$1,500']], examples: [] },
+            mid:      { range: '$4,000 – $12,000',  note: 'Mild restomod: fresh paint, upgraded interior, performance basics.', mods: [['Respray', '$3,000–$6,000'], ['Interior Refresh', '$1,000–$2,500'], ['Exhaust', '$600–$1,200'], ['Wheels & Tires', '$1,200–$2,500']], examples: [] },
+            serious:  { range: '$12,000 – $28,000', note: 'Full restomod: frame clean, body work, engine refresh.', mods: [['Full Respray', '$4,000–$8,000'], ['Engine Rebuild', '$3,000–$6,000'], ['Interior Build-Out', '$2,000–$5,000'], ['Suspension Overhaul', '$1,500–$3,500'], ['Brakes All Around', '$1,000–$2,000']], examples: [] },
+            full:     { range: '$28,000+',           note: 'Show-quality restomod truck.', mods: [['Frame-Off Restoration', '$6,000–$12,000'], ['LS Engine Swap', '$6,000–$12,000'], ['Show Paint', '$6,000–$12,000'], ['Full Custom Interior', '$4,000–$8,000'], ['Air Ride Suspension', '$3,000–$6,000']], examples: [] },
+          },
+          aesthetic: {
+            budget:   { range: '$600 – $2,500',     note: 'Window tint, decals, basic wheels.', mods: [['Window Tint', '$200–$400'], ['Wheel Upgrade', '$600–$1,500'], ['Chrome Delete', '$150–$350'], ['Step Bars', '$200–$500']], examples: [] },
+            mid:      { range: '$2,500 – $9,000',   note: 'Custom look: lift, big wheels, LED lights.', mods: [['Leveling + Big Wheels', '$1,500–$3,500'], ['LED Light Bar', '$400–$900'], ['Grille Replacement', '$300–$800'], ['Vinyl Wrap Accents', '$400–$1,000']], examples: [] },
+            serious:  { range: '$9,000 – $20,000',  note: 'Custom full truck — wrap or paint, interior, lights.', mods: [['Full Vinyl Wrap', '$3,000–$6,000'], ['Custom Interior', '$2,500–$5,000'], ['Full LED Package', '$1,000–$2,500'], ['Exhaust Tips + Stance', '$800–$2,000']], examples: [] },
+            full:     { range: '$20,000+',           note: 'SEMA-style show truck.', mods: [['Custom Paint', '$5,000–$12,000'], ['Air Ride + Wheels', '$5,000–$10,000'], ['Full Interior Build', '$4,000–$8,000'], ['Custom Bed', '$2,000–$5,000']], examples: [] },
+          },
+          'daily-driver': {
+            budget:   { range: '$500 – $2,000',     note: 'Reliability and safety basics.', mods: [['Brakes', '$300–$700'], ['Tires', '$600–$1,200'], ['Oil / Filter Service', '$60–$120'], ['Alignment', '$80–$150']], examples: [] },
+            mid:      { range: '$2,000 – $7,000',   note: 'Daily comfort and performance upgrades.', mods: [['Exhaust', '$600–$1,200'], ['Tune', '$400–$700'], ['Leveling Kit', '$300–$600'], ['Tires', '$700–$1,500'], ['Running Boards', '$300–$700']], examples: [] },
+            serious:  { range: '$7,000 – $18,000',  note: 'Capable daily: performance, handling, looks.', mods: [['Suspension Upgrade', '$1,500–$3,000'], ['Headers + Tune', '$1,200–$2,500'], ['Wheel/Tire Upgrade', '$1,500–$3,500'], ['Exhaust System', '$800–$1,600'], ['Brake Upgrade', '$600–$1,200']], examples: [] },
+            full:     { range: '$18,000 – $35,000', note: 'Weekend warrior masquerading as a daily.', mods: [['Supercharger', '$4,000–$8,000'], ['Suspension', '$3,000–$6,000'], ['Exhaust + Headers', '$1,500–$3,000'], ['Trans Upgrade', '$2,000–$4,000'], ['Full Tire Package', '$2,000–$4,000']], examples: [] },
+          }
+        },
+        'corvette': {
+          performance: {
+            budget:   { range: '$1,000 – $4,000',   note: 'Bolt-ons: intake, tune, exhaust. Max value per dollar.', mods: [['Cold Air Intake', '$350–$700'], ['Tune (Dyno)', '$400–$700'], ['Axle-Back Exhaust', '$600–$1,200'], ['Oil Cooler', '$200–$500']], examples: [{ name: '2024 Corvette C8 Stingray', cost: '$8.4K mods', href: '#' }] },
+            mid:      { range: '$5,000 – $15,000',  note: 'Cat-back, headers, cam, coilovers — big gains.', mods: [['Long-Tube Headers', '$1,200–$2,500'], ['Cat-Back Exhaust', '$800–$1,800'], ['Cam & Valvetrain', '$1,500–$3,500'], ['Tune (Dyno)', '$600–$900'], ['Coilovers', '$1,200–$2,500']], examples: [{ name: '2024 Corvette C8 — 520 hp build', cost: '$8.4K', href: '#' }] },
+            serious:  { range: '$15,000 – $35,000', note: 'Supercharged or built — track-ready Corvette.', mods: [['Supercharger Kit', '$6,000–$12,000'], ['Forged Internals', '$3,000–$6,000'], ['Upgraded Cooling', '$1,500–$3,000'], ['Pro Brake Kit', '$2,000–$4,500'], ['Track Suspension', '$2,500–$5,000']], examples: [] },
+            full:     { range: '$35,000+',           note: '700+ hp Corvette. Racing slicks optional.', mods: [['Built Engine (700+ hp)', '$12,000–$22,000'], ['Forced Induction', '$6,000–$12,000'], ['Sequential Trans', '$5,000–$10,000'], ['Aero Package', '$3,000–$7,000'], ['Race Harness + Cage', '$3,000–$6,000']], examples: [] },
+          },
+          aesthetic: {
+            budget:   { range: '$500 – $2,500',     note: 'Ceramic coat, tint, carbon accents.', mods: [['Ceramic Coating', '$800–$1,500'], ['Window Tint', '$200–$400'], ['Carbon Fiber Accents', '$300–$800']], examples: [] },
+            mid:      { range: '$3,000 – $10,000',  note: 'Vinyl wrap, carbon hood, full wheel package.', mods: [['Vinyl Wrap', '$2,500–$5,000'], ['Carbon Fiber Hood', '$800–$2,000'], ['Wheel Upgrade', '$1,500–$3,500']], examples: [] },
+            serious:  { range: '$10,000 – $25,000', note: 'Custom paint, full carbon kit, custom interior.', mods: [['Custom Paint', '$5,000–$10,000'], ['Full Carbon Fiber Kit', '$3,000–$7,000'], ['Interior Upgrade', '$2,000–$5,000'], ['Track Wheels + Slicks', '$2,000–$5,000']], examples: [] },
+            full:     { range: '$25,000+',           note: 'One-of-one Corvette. Show quality.', mods: [['SEMA-Level Custom Paint', '$8,000–$18,000'], ['Full Aero Package', '$5,000–$12,000'], ['Custom Interior', '$5,000–$10,000']], examples: [] },
+          },
+          restoration: {
+            budget:   { range: '$2,000 – $6,000',   note: 'C5/C6 detail, brakes, tune-up.', mods: [['Brake Fluid Flush + Pads', '$300–$600'], ['Tune-Up', '$300–$700'], ['Detail / Polish', '$400–$900'], ['Tires', '$700–$1,500']], examples: [] },
+            mid:      { range: '$6,000 – $18,000',  note: 'Mid-era Corvette refresh: paint, suspension, brakes.', mods: [['Respray', '$4,000–$8,000'], ['Suspension Rebuild', '$1,500–$3,500'], ['Brake Upgrade', '$800–$1,800'], ['Interior Refresh', '$800–$2,000']], examples: [] },
+            serious:  { range: '$18,000 – $40,000', note: 'Full C3/C4 restoration: engine, body, interior.', mods: [['Full Respray', '$5,000–$10,000'], ['Engine Rebuild', '$4,000–$8,000'], ['Interior Restoration', '$3,000–$7,000'], ['Suspension Overhaul', '$2,000–$4,500'], ['Chrome Work', '$1,500–$3,500']], examples: [] },
+            full:     { range: '$40,000+',           note: 'Concours or pro-touring C3/C4.', mods: [['Frame-Off Restoration', '$8,000–$15,000'], ['LS Swap', '$6,000–$12,000'], ['Show Paint', '$8,000–$15,000'], ['Custom Interior', '$5,000–$10,000'], ['Wilwood Brakes', '$2,500–$4,500']], examples: [] },
+          },
+          'off-road': { budget: { range: 'N/A', note: 'Corvettes are not typically built for off-road use.', mods: [['Note', 'Consider a different build type for Corvette']], examples: [] }, mid: { range: 'N/A', note: 'Corvettes are not typically built for off-road use.', mods: [], examples: [] }, serious: { range: 'N/A', note: '', mods: [], examples: [] }, full: { range: 'N/A', note: '', mods: [], examples: [] } },
+          'daily-driver': {
+            budget:   { range: '$500 – $2,000',     note: 'Keep it running like new.', mods: [['Brake Service', '$300–$700'], ['Tires', '$700–$1,500'], ['Oil / Coolant Service', '$100–$250']], examples: [] },
+            mid:      { range: '$2,000 – $7,000',   note: 'Daily mods that also perform on weekend runs.', mods: [['Exhaust', '$600–$1,400'], ['Tune', '$400–$700'], ['Intake', '$350–$700'], ['Tires + Alignment', '$800–$1,800']], examples: [{ name: '2024 Corvette C8 bolt-on build', cost: '$8.4K', href: '#' }] },
+            serious:  { range: '$7,000 – $18,000',  note: 'Daily that demolishes on the on-ramp.', mods: [['Cat-Back Exhaust', '$800–$1,800'], ['Headers + Tune', '$1,500–$3,000'], ['Coilovers', '$1,200–$2,500'], ['Intake', '$400–$800'], ['Brake Upgrade', '$800–$1,800']], examples: [] },
+            full:     { range: '$18,000+',           note: 'Supercharged daily. Warranty: void.', mods: [['Supercharger', '$6,000–$12,000'], ['Forged Internals', '$3,000–$6,000'], ['Tune', '$600–$1,000'], ['Suspension', '$2,000–$4,500'], ['Brakes', '$2,000–$4,500']], examples: [] },
+          }
+        },
+        'classic-truck': {
+          restoration: {
+            budget:   { range: '$2,000 – $6,000',   note: 'Tires, carb rebuild, brakes, and a basic clean-up.', mods: [['Carb Rebuild', '$300–$700'], ['Brakes (drums or discs)', '$400–$900'], ['Tires', '$600–$1,400'], ['Paint Touch-Up', '$400–$900']], examples: [] },
+            mid:      { range: '$7,000 – $20,000',  note: 'Driver-quality restore: suspension, engine refresh, paint.', mods: [['Suspension Rebuild', '$1,500–$3,500'], ['Engine Tune / Minor Rebuild', '$800–$2,500'], ['Respray', '$3,000–$7,000'], ['Interior Refresh', '$800–$2,000'], ['Disc Brake Conversion', '$600–$1,400']], examples: [{ name: '1967 C10 Stepside', cost: '$22.5K total', href: '#' }] },
+            serious:  { range: '$20,000 – $40,000', note: 'Frame-off restomod — drive it like you mean it.', mods: [['Frame-Off Strip + Epoxy', '$3,000–$6,000'], ['LS3 Swap', '$6,000–$12,000'], ['Full Respray', '$4,000–$9,000'], ['Ridetech Suspension', '$3,000–$6,000'], ['Custom Interior', '$2,000–$5,000']], examples: [{ name: '"Project Copperhead" 1972 C10', cost: '$18.5K so far', href: '#' }] },
+            full:     { range: '$40,000 – $80,000+', note: 'Pro-touring or show truck. Everything done right.', mods: [['Frame-Off Full Restoration', '$8,000–$15,000'], ['LS Swap + Wiring', '$8,000–$14,000'], ['Show-Quality Paint', '$8,000–$16,000'], ['Air Ride Suspension', '$4,000–$8,000'], ['Full Custom Interior', '$5,000–$10,000']], examples: [{ name: '1972 K5 Blazer Full Restoration', cost: '$35K', href: '#' }] },
+          },
+          'off-road': {
+            budget:   { range: '$1,500 – $4,500',   note: 'Lift, tires, basic skids — trail-ready basics.', mods: [['Lift Kit (2–3")', '$400–$900'], ['All-Terrain Tires', '$600–$1,400'], ['Skid Plates', '$200–$500'], ['Shackles + Shock Upgrade', '$300–$700']], examples: [] },
+            mid:      { range: '$5,000 – $15,000',  note: 'Solid axle swap, lockers, armor — real wheeling.', mods: [['Solid Axle Swap', '$2,000–$5,000'], ['Locker (F+R)', '$1,500–$3,000'], ['Rock Sliders', '$600–$1,200'], ['40" Tires + Beadlocks', '$2,000–$4,500'], ['High-Steer Kit', '$500–$1,000']], examples: [{ name: '1972 K5 Blazer Off-Road', cost: '$35K full', href: '#' }] },
+            serious:  { range: '$15,000 – $35,000', note: 'Purpose-built rock crawler or trail rig.', mods: [['Long-Travel Suspension', '$5,000–$10,000'], ['Built Dana 60 Axles', '$4,000–$8,000'], ['LS Swap for Torque', '$6,000–$12,000'], ['Full Armor Package', '$3,000–$6,000'], ['42" Tires + Portals', '$5,000–$10,000']], examples: [] },
+            full:     { range: '$35,000+',           note: 'Competition crawler or pro trail rig.', mods: [['Trophy Suspension', '$10,000–$20,000'], ['Fabricated Axles', '$5,000–$12,000'], ['LS Built Engine', '$8,000–$16,000'], ['Full Cage', '$4,000–$8,000'], ['Winch + Full Armor', '$4,000–$8,000']], examples: [] },
+          },
+          performance: {
+            budget:   { range: '$800 – $3,000',     note: 'Carb, headers, exhaust for a classic truck.', mods: [['Headers', '$300–$700'], ['Carb Upgrade', '$400–$900'], ['Exhaust', '$300–$800'], ['Ignition Upgrade', '$150–$400']], examples: [] },
+            mid:      { range: '$3,000 – $12,000',  note: 'Cam, heads, intake — the classic SBC formula.', mods: [['Cam + Lifters', '$800–$2,000'], ['Edelbrock Heads', '$1,200–$2,500'], ['Intake Manifold', '$400–$900'], ['4-Barrel Carb', '$400–$900'], ['Headers + Exhaust', '$700–$1,500']], examples: [] },
+            serious:  { range: '$12,000 – $25,000', note: 'LS swap — the forever mod for classic trucks.', mods: [['LS3 Crate Motor', '$5,000–$9,000'], ['Wiring Harness + ECM', '$1,500–$3,000'], ['Transmission Swap', '$1,500–$3,500'], ['Radiator + Cooling', '$600–$1,200'], ['Headers + Exhaust', '$800–$1,800']], examples: [{ name: '"Project Copperhead" 1972 C10 LS3', cost: '$25K target', href: '#' }] },
+            full:     { range: '$25,000+',           note: 'Built LS, hot cam, supercharged classic truck.', mods: [['Built LS (500+ hp)', '$8,000–$16,000'], ['Supercharger', '$4,000–$8,000'], ['Trans Upgrade', '$2,000–$4,500'], ['Tubular Control Arms', '$1,500–$3,500'], ['Wilwood Brakes', '$1,500–$3,500']], examples: [] },
+          },
+          aesthetic: {
+            budget:   { range: '$500 – $2,500',     note: 'Clean the patina or embrace it.', mods: [['Detail + Polish', '$200–$500'], ['Wheels', '$600–$1,500'], ['Emblems / Trim', '$150–$400']], examples: [] },
+            mid:      { range: '$2,500 – $10,000',  note: 'Patina preserve or mild respray.', mods: [['Patina Preservation Coat', '$400–$900'], ['Wheel/Tire Package', '$1,200–$2,500'], ['Two-Tone Pinstripe', '$400–$900'], ['Interior Refresh', '$800–$2,000']], examples: [{ name: '1967 C10 Stepside Patina', cost: '$22.5K', href: '#' }] },
+            serious:  { range: '$10,000 – $25,000', note: 'Show-ready classic truck.', mods: [['Full Respray', '$5,000–$10,000'], ['Air Ride', '$3,000–$6,000'], ['Custom Interior', '$2,500–$5,000'], ['Billet Accents', '$800–$2,000']], examples: [] },
+            full:     { range: '$25,000+',           note: 'Primo show truck.', mods: [['SEMA-Level Build', '$10,000–$20,000'], ['Air Bag Suspension', '$4,000–$8,000'], ['Custom Paint', '$6,000–$12,000'], ['Full Interior Build', '$5,000–$10,000']], examples: [] },
+          },
+          'daily-driver': {
+            budget:   { range: '$500 – $2,000',     note: 'Safety and reliability for your classic daily.', mods: [['Brakes', '$400–$900'], ['Tires', '$600–$1,400'], ['Tune-Up', '$150–$400']], examples: [] },
+            mid:      { range: '$2,000 – $8,000',   note: 'Reliable daily with some personality.', mods: [['Exhaust', '$400–$900'], ['Disc Brake Conversion', '$600–$1,400'], ['Power Steering Conversion', '$600–$1,200'], ['AC Retrofit', '$800–$2,000'], ['Seat Upgrade', '$500–$1,200']], examples: [] },
+            serious:  { range: '$8,000 – $22,000',  note: 'Restomod daily driver.', mods: [['LS Swap', '$6,000–$12,000'], ['AC + Heat', '$1,500–$3,500'], ['Disc Brakes All Around', '$800–$1,800'], ['Power Windows + Locks', '$600–$1,500']], examples: [] },
+            full:     { range: '$22,000+',           note: 'Full restomod comfort + performance daily.', mods: [['LS Swap + Auto Trans', '$8,000–$16,000'], ['Air Ride', '$3,000–$6,000'], ['Full AC/Heat System', '$2,000–$4,000'], ['Custom Interior', '$3,000–$7,000']], examples: [] },
+          }
+        },
+        'suv': {
+          'off-road': {
+            budget:   { range: '$1,000 – $3,500',   note: 'Leveling kit, tires, skids.', mods: [['Leveling Kit', '$300–$700'], ['All-Terrain Tires', '$700–$1,500'], ['Skid Plates', '$200–$500']], examples: [] },
+            mid:      { range: '$4,000 – $12,000',  note: '4" lift, 35s, skids, winch.', mods: [['4" Lift Kit', '$1,200–$2,800'], ['35" Tires + Wheels', '$1,500–$3,000'], ['Winch + Bumper', '$1,500–$3,000'], ['Rock Sliders', '$600–$1,200'], ['LED Lights', '$400–$900']], examples: [] },
+            serious:  { range: '$12,000 – $28,000', note: 'Long-travel, locked, serious SUV rig.', mods: [['Long-Travel Suspension', '$4,000–$8,000'], ['Lockers F+R', '$2,000–$4,000'], ['37–40" Tires', '$2,500–$5,000'], ['Full Armor', '$3,000–$6,000'], ['LS Swap', '$5,000–$10,000']], examples: [] },
+            full:     { range: '$28,000+',           note: 'Overland build or dedicated trail SUV.', mods: [['Trophy Suspension', '$8,000–$15,000'], ['Built Axles', '$3,500–$7,000'], ['42" Tires', '$4,000–$8,000'], ['Full Armor + Cage', '$4,000–$8,000'], ['Roof Tent + Gear', '$2,000–$5,000']], examples: [] },
+          },
+          performance: {
+            budget:   { range: '$800 – $3,000',     note: 'Tune, intake, exhaust for a quick SUV.', mods: [['Cold Air Intake', '$300–$600'], ['Tune', '$400–$700'], ['Exhaust', '$500–$1,200']], examples: [] },
+            mid:      { range: '$3,500 – $10,000',  note: 'Headers, cam, suspension for serious SUV performance.', mods: [['Headers + Exhaust', '$1,200–$2,500'], ['Cam Upgrade', '$1,000–$2,200'], ['Tune', '$400–$700'], ['Suspension Upgrade', '$1,200–$2,500']], examples: [] },
+            serious:  { range: '$10,000 – $22,000', note: 'Supercharged SUV.', mods: [['Supercharger', '$4,000–$8,000'], ['Forged Internals', '$3,000–$6,000'], ['Trans Upgrade', '$2,000–$4,000'], ['Big Brake Kit', '$1,500–$3,500']], examples: [] },
+            full:     { range: '$22,000+',           note: 'Built SUV that runs with sports cars.', mods: [['Built Engine 600+ hp', '$8,000–$16,000'], ['Supercharger', '$5,000–$10,000'], ['Trans Build', '$3,000–$6,000'], ['Pro Suspension', '$3,000–$6,000']], examples: [] },
+          },
+          restoration: {
+            budget:   { range: '$1,500 – $5,000',   note: 'Detail, fresh rubber, basic refreshes.', mods: [['Tires', '$700–$1,500'], ['Detail + Ceramic', '$500–$1,200'], ['Touch-Up Paint', '$400–$900']], examples: [] },
+            mid:      { range: '$5,000 – $16,000',  note: 'Driver restore: paint, interior, suspension.', mods: [['Respray', '$3,000–$6,000'], ['Interior Refresh', '$1,000–$2,500'], ['Suspension Rebuild', '$1,200–$2,500']], examples: [] },
+            serious:  { range: '$16,000 – $35,000', note: 'Full restomod SUV.', mods: [['Frame-Off Strip', '$3,000–$6,000'], ['Full Respray', '$5,000–$10,000'], ['Engine Rebuild / Swap', '$4,000–$9,000'], ['Custom Interior', '$3,000–$7,000']], examples: [] },
+            full:     { range: '$35,000+',           note: 'Show-quality classic SUV.', mods: [['Full Frame-Off', '$8,000–$15,000'], ['LS Swap', '$6,000–$12,000'], ['Show Paint', '$6,000–$12,000'], ['Air Ride', '$3,000–$6,000'], ['Custom Interior', '$5,000–$10,000']], examples: [] },
+          },
+          aesthetic: {
+            budget:   { range: '$600 – $2,500',     note: 'Tint, wheels, chrome delete.', mods: [['Window Tint', '$250–$500'], ['Wheel Upgrade', '$700–$1,800'], ['Chrome Delete / Vinyl', '$200–$500']], examples: [] },
+            mid:      { range: '$2,500 – $9,000',   note: 'Full look: lift, big wheels, lights.', mods: [['Leveling + Big Wheels', '$1,800–$3,500'], ['LED Lights', '$500–$1,200'], ['Vinyl Accents', '$400–$1,000']], examples: [] },
+            serious:  { range: '$9,000 – $20,000',  note: 'Custom SUV — wrap, stance, interior.', mods: [['Full Wrap', '$3,000–$6,000'], ['Air Ride / Stance', '$3,000–$6,000'], ['Custom Interior', '$2,500–$5,000']], examples: [] },
+            full:     { range: '$20,000+',           note: 'One-of-one show SUV.', mods: [['Custom Paint', '$5,000–$12,000'], ['Air Ride Build', '$4,000–$8,000'], ['Full Interior', '$5,000–$10,000']], examples: [] },
+          },
+          'daily-driver': {
+            budget:   { range: '$500 – $2,000',     note: 'Safety and reliability essentials.', mods: [['Brakes', '$400–$900'], ['Tires', '$700–$1,500'], ['Oil Service', '$80–$160']], examples: [] },
+            mid:      { range: '$2,000 – $7,000',   note: 'Comfort upgrades for the family hauler.', mods: [['Exhaust', '$500–$1,200'], ['Tune', '$400–$700'], ['Leveling', '$300–$600'], ['Tires', '$800–$1,800']], examples: [] },
+            serious:  { range: '$7,000 – $18,000',  note: 'Performance daily: headers, cam, suspension.', mods: [['Headers + Tune', '$1,200–$2,500'], ['Suspension Upgrade', '$1,500–$3,000'], ['Wheel/Tire Package', '$1,800–$3,500'], ['Exhaust', '$700–$1,500']], examples: [] },
+            full:     { range: '$18,000+',           note: 'Sleeper family SUV.', mods: [['Supercharger', '$4,000–$8,000'], ['Suspension', '$2,500–$5,000'], ['Trans', '$2,000–$4,000'], ['Full Exhaust', '$1,000–$2,200']], examples: [] },
+          }
+        }
+      };
+
+      const runBtn = document.getElementById('calc-run-btn');
+      const placeholder = document.getElementById('calc-placeholder');
+      const costCard = document.getElementById('calc-cost-card');
+
+      runBtn.addEventListener('click', function () {
+        const vehicle = document.getElementById('calc-vehicle').value;
+        const buildType = document.getElementById('calc-build-type').value;
+        const budget = document.getElementById('calc-budget').value;
+
+        if (!vehicle || !buildType || !budget) {
+          runBtn.textContent = 'Please select all three options';
+          setTimeout(function () { runBtn.textContent = 'Estimate My Build →'; }, 2000);
+          return;
+        }
+
+        const vehicleData = DATA[vehicle];
+        const buildData = vehicleData && vehicleData[buildType];
+        const result = buildData && buildData[budget];
+
+        if (!result) {
+          document.getElementById('calc-cost-output').textContent = 'Data not available';
+          document.getElementById('calc-cost-note').textContent = 'This combo is not yet in the database.';
+          document.getElementById('calc-mods-output').innerHTML = '';
+          document.getElementById('calc-examples-output').innerHTML = '';
+          placeholder.style.display = 'none';
+          costCard.classList.add('active');
+          return;
+        }
+
+        document.getElementById('calc-cost-output').textContent = result.range;
+        document.getElementById('calc-cost-note').textContent = result.note;
+
+        const modsList = document.getElementById('calc-mods-output');
+        modsList.innerHTML = result.mods.map(function (m) {
+          return '<div class="calc-mod-item"><span class="calc-mod-name">' + m[0] + '</span><span class="calc-mod-cost">' + m[1] + '</span></div>';
+        }).join('');
+
+        const examplesEl = document.getElementById('calc-examples-output');
+        if (result.examples && result.examples.length > 0) {
+          examplesEl.innerHTML = result.examples.map(function (e) {
+            return '<a href="' + e.href + '" class="calc-example-build"><span class="calc-example-build-name">' + e.name + '</span><span class="calc-example-build-cost">' + e.cost + '</span></a>';
+          }).join('');
+          document.querySelector('.calc-example-builds-title').style.display = '';
+          examplesEl.style.display = '';
+        } else {
+          document.querySelector('.calc-example-builds-title').style.display = 'none';
+          examplesEl.style.display = 'none';
+        }
+
+        placeholder.style.display = 'none';
+        costCard.classList.add('active');
+      });
+
+      /* Re-show placeholder if selects change after a result */
+      ['calc-vehicle', 'calc-build-type', 'calc-budget'].forEach(function (id) {
+        document.getElementById(id).addEventListener('change', function () {
+          costCard.classList.remove('active');
+          placeholder.style.display = '';
+        });
+      });
+    }());
+  </script>
+</body>
+</html>

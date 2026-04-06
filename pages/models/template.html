@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Dynamic meta — filled by JS -->
+  <title id="page-title">Loading... — ChevyRoots</title>
+  <meta name="description" id="page-description" content="Chevrolet model guide — specs, trims, known issues, and owner builds." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" id="page-canonical" href="" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ChevyRoots" />
+  <meta property="og:title" id="og-title" content="" />
+  <meta property="og:description" id="og-description" content="" />
+
+  <!-- JSON-LD structured data placeholder — filled by JS -->
+  <script type="application/ld+json" id="json-ld-schema"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES
+    ============================================================ */
+    :root {
+      --charcoal: #1A1A1A;
+      --gold: #C4A035;
+      --gold-light: #D4B44A;
+      --red: #CC0000;
+      --warm-gray: #2A2A2A;
+      --mid-gray: #3A3A3A;
+      --light-gray: #B0A89A;
+      --off-white: #F0EDE6;
+
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --nav-height: 68px;
+      --section-pad: clamp(3rem, 6vw, 5rem);
+      --max-width: 1280px;
+      --radius: 4px;
+      --radius-lg: 8px;
+      --transition: 200ms ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--charcoal);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2.5rem);
+    }
+
+    /* Shared label */
+    .label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: var(--off-white);
+    }
+
+    .section-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--charcoal);
+      border-color: var(--gold);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--off-white);
+      border-color: rgba(240, 237, 230, 0.4);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ============================================================
+       ANNOUNCEMENT BAR
+    ============================================================ */
+    .announcement-bar {
+      background: var(--red);
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .announcement-bar span { color: rgba(255,255,255,0.75); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .nav-logo-main {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+    .nav-logo-main em { font-style: normal; color: var(--gold); }
+    .nav-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-top: 1px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+    }
+    .nav-menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--off-white);
+      transition: var(--transition);
+    }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: var(--warm-gray);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-mobile a:hover {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+
+    /* ============================================================
+       MODEL HERO
+    ============================================================ */
+    .model-hero {
+      background: var(--warm-gray);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+    .model-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .model-breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-bottom: 0.75rem;
+    }
+    .model-breadcrumb a { color: var(--gold); }
+    .model-breadcrumb a:hover { text-decoration: underline; }
+    .model-breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+    .model-year-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(196,160,53,0.12);
+      border: 1px solid rgba(196,160,53,0.3);
+      padding: 0.2rem 0.75rem;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 0.6rem;
+    }
+    .model-name {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--off-white);
+      margin-bottom: 0.5rem;
+    }
+    .model-name em { font-style: normal; color: var(--gold); }
+    .model-tagline {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--light-gray);
+      margin-bottom: 1.25rem;
+      max-width: 540px;
+    }
+    .model-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .hero-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+    }
+    .hero-stat-value {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--off-white);
+    }
+    .hero-stat-value em { font-style: normal; color: var(--gold); }
+
+    /* Year switcher */
+    .model-year-switcher {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.75rem;
+    }
+    .year-switcher-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+    }
+    .year-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .year-btn {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1rem;
+      border: 2px solid rgba(196,160,53,0.3);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--light-gray);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .year-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .year-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--charcoal);
+    }
+
+    /* ============================================================
+       MAIN LAYOUT — content + sidebar
+    ============================================================ */
+    .page-body {
+      padding: var(--section-pad) 0;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ============================================================
+       SECTION WRAPPER
+    ============================================================ */
+    .content-section {
+      margin-bottom: 3.5rem;
+    }
+    .content-section:last-child { margin-bottom: 0; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid rgba(196,160,53,0.2);
+    }
+    .section-header .label { flex-shrink: 0; }
+
+    /* ============================================================
+       TRIM COMPARISON TABLE
+    ============================================================ */
+    .trim-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(196,160,53,0.15);
+    }
+    .trim-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+    .trim-table thead {
+      background: var(--warm-gray);
+    }
+    .trim-table thead th {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      border-bottom: 2px solid rgba(196,160,53,0.25);
+    }
+    .trim-table thead th:first-child {
+      color: var(--gold);
+      min-width: 130px;
+    }
+    .trim-table tbody tr {
+      border-bottom: 1px solid rgba(240,237,230,0.06);
+      transition: background var(--transition);
+    }
+    .trim-table tbody tr:last-child { border-bottom: none; }
+    .trim-table tbody tr:hover { background: rgba(196,160,53,0.04); }
+    .trim-table tbody td {
+      padding: 0.75rem 1rem;
+      color: var(--off-white);
+      vertical-align: top;
+    }
+    .trim-table tbody td:first-child {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(196,160,53,0.05);
+    }
+    .trim-table .spec-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+    .trim-table .spec-value {
+      font-weight: 500;
+    }
+    .trim-table .msrp-cell {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--off-white);
+    }
+
+    /* ============================================================
+       FEATURES LIST
+    ============================================================ */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.5rem;
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--warm-gray);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--gold);
+      font-size: 0.85rem;
+    }
+    .feature-item::before {
+      content: '—';
+      color: var(--gold);
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+    }
+
+    /* Trim selector tabs */
+    .trim-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .trim-tab {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border: 2px solid rgba(196,160,53,0.25);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--light-gray);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .trim-tab:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .trim-tab.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--charcoal);
+    }
+
+    /* Trim detail panel */
+    .trim-detail {
+      display: none;
+    }
+    .trim-detail.visible { display: block; }
+    .trim-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .spec-card {
+      background: var(--warm-gray);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(196,160,53,0.1);
+    }
+    .spec-card-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-bottom: 0.25rem;
+    }
+    .spec-card-value {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--off-white);
+    }
+    .spec-card-value em { font-style: normal; color: var(--gold); }
+    .spec-card-sub {
+      font-size: 0.78rem;
+      color: var(--light-gray);
+      margin-top: 0.1rem;
+    }
+
+    /* ============================================================
+       KNOWN ISSUES
+    ============================================================ */
+    .issues-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .issue-card {
+      background: var(--warm-gray);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(240,237,230,0.08);
+      overflow: hidden;
+    }
+    .issue-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    .issue-card-header:hover { background: rgba(196,160,53,0.05); }
+    .severity-badge {
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      font-weight: 500;
+    }
+    .severity-minor {
+      background: rgba(196,160,53,0.15);
+      color: var(--gold);
+      border: 1px solid rgba(196,160,53,0.3);
+    }
+    .severity-moderate {
+      background: rgba(204,128,0,0.15);
+      color: #E09020;
+      border: 1px solid rgba(204,128,0,0.3);
+    }
+    .severity-major {
+      background: rgba(204,0,0,0.15);
+      color: #E05050;
+      border: 1px solid rgba(204,0,0,0.3);
+    }
+    .issue-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      flex: 1;
+    }
+    .issue-toggle {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--light-gray);
+      transition: color var(--transition);
+    }
+    .issue-card.open .issue-toggle { color: var(--gold); }
+    .issue-body {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+      border-top: 1px solid rgba(240,237,230,0.06);
+    }
+    .issue-card.open .issue-body { display: block; }
+    .issue-description {
+      font-size: 0.9rem;
+      color: var(--light-gray);
+      line-height: 1.7;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .issue-meta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .issue-meta-block {
+      background: rgba(26,26,26,0.5);
+      border-radius: var(--radius);
+      padding: 0.75rem;
+    }
+    .issue-meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .issue-meta-text {
+      font-size: 0.83rem;
+      color: var(--off-white);
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       YEAR RANGE TABS (issues section)
+    ============================================================ */
+    .year-range-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .year-range-tab {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid rgba(196,160,53,0.25);
+      border-radius: 2px;
+      background: transparent;
+      color: var(--light-gray);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .year-range-tab:hover,
+    .year-range-tab.active {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(196,160,53,0.06);
+    }
+
+    /* ============================================================
+       PLACEHOLDER SECTIONS
+    ============================================================ */
+    .placeholder-block {
+      background: var(--warm-gray);
+      border: 1px dashed rgba(196,160,53,0.3);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .placeholder-icon {
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      color: rgba(196,160,53,0.3);
+      margin-bottom: 0.75rem;
+    }
+    .placeholder-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-bottom: 0.5rem;
+    }
+    .placeholder-sub {
+      font-size: 0.85rem;
+      color: rgba(176,168,154,0.6);
+      max-width: 380px;
+      margin-inline: auto;
+    }
+    .placeholder-cta {
+      margin-top: 1.25rem;
+    }
+
+    /* ============================================================
+       AFFILIATE CTA
+    ============================================================ */
+    .affiliate-cta {
+      background: linear-gradient(135deg, var(--warm-gray) 0%, rgba(196,160,53,0.08) 100%);
+      border: 1px solid rgba(196,160,53,0.3);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .affiliate-cta-text {
+      flex: 1;
+    }
+    .affiliate-cta-pretitle {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+    .affiliate-cta-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 0.35rem;
+    }
+    .affiliate-cta-desc {
+      font-size: 0.85rem;
+      color: var(--light-gray);
+    }
+    .affiliate-disclaimer {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: rgba(176,168,154,0.5);
+      margin-top: 0.75rem;
+    }
+
+    /* Crystal's Take */
+    .crystals-take {
+      background: var(--warm-gray);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--gold);
+      padding: 1.75rem 2rem;
+    }
+    .take-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .take-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(196,160,53,0.15);
+      border: 2px solid rgba(196,160,53,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .take-byline {
+      display: flex;
+      flex-direction: column;
+    }
+    .take-name {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+    .take-role {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .take-body {
+      font-size: 0.9rem;
+      color: var(--light-gray);
+      line-height: 1.7;
+      font-style: italic;
+    }
+    .take-placeholder {
+      color: rgba(176,168,154,0.5);
+      font-style: italic;
+    }
+
+    /* ============================================================
+       SIDEBAR
+    ============================================================ */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .sidebar-card {
+      background: var(--warm-gray);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(240,237,230,0.08);
+      overflow: hidden;
+    }
+    .sidebar-card-header {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid rgba(240,237,230,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sidebar-card-title {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+    .sidebar-card-body {
+      padding: 1rem 1.25rem;
+    }
+    .related-model-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(240,237,230,0.05);
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      transition: color var(--transition);
+    }
+    .related-model-link:last-child { border-bottom: none; }
+    .related-model-link:hover { color: var(--gold); }
+    .related-model-link .arrow { opacity: 0.5; font-size: 0.8rem; }
+    .related-model-link:hover .arrow { opacity: 1; }
+
+    /* Quick stats sidebar card */
+    .quick-stats-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .quick-stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(240,237,230,0.05);
+      font-size: 0.83rem;
+    }
+    .quick-stat-row:last-child { border-bottom: none; }
+    .quick-stat-row-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+    }
+    .quick-stat-row-value {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--off-white);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--warm-gray);
+      border-top: 1px solid rgba(196,160,53,0.15);
+      padding: 3rem 0 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(240,237,230,0.08);
+    }
+    .footer-brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 0.25rem;
+    }
+    .footer-brand-name em { font-style: normal; color: var(--gold); }
+    .footer-brand-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-bottom: 0.75rem;
+    }
+    .footer-desc {
+      font-size: 0.83rem;
+      color: var(--light-gray);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .footer-social {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius);
+      background: rgba(240,237,230,0.06);
+      border: 1px solid rgba(240,237,230,0.1);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--light-gray);
+      transition: all var(--transition);
+    }
+    .social-btn:hover {
+      background: rgba(196,160,53,0.12);
+      border-color: rgba(196,160,53,0.4);
+      color: var(--gold);
+    }
+    .footer-col-title {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--light-gray);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--light-gray);
+    }
+    .footer-disclaimer {
+      font-size: 0.75rem;
+      color: rgba(176,168,154,0.6);
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       ERROR STATE
+    ============================================================ */
+    .error-state {
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 0.75rem;
+    }
+    .error-sub {
+      color: var(--light-gray);
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-inline: auto;
+    }
+
+    /* Loading state */
+    .loading-state {
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .loading-pulse {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-menu-toggle { display: flex; }
+
+      .model-hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .model-year-switcher {
+        align-items: flex-start;
+      }
+
+      .trim-detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .issue-meta-row {
+        grid-template-columns: 1fr;
+      }
+
+      .affiliate-cta {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .sidebar { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .model-hero-meta { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span>2026 &mdash;</span> Celebrating America&rsquo;s 250th &amp; 115 Years of Chevrolet &mdash; <span>Built in America. Still Running Strong.</span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="ChevyRoots home">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/" class="active">Models</a></li>
+        <li><a href="/pages/guides/">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+      <button class="nav-menu-toggle" aria-label="Toggle mobile menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="/pages/models/" onclick="this.closest('.nav-mobile').classList.remove('open')">Models</a>
+    <a href="/pages/guides/" onclick="this.closest('.nav-mobile').classList.remove('open')">Guides</a>
+    <a href="/pages/builds/" onclick="this.closest('.nav-mobile').classList.remove('open')">Builds</a>
+    <a href="/pages/events/" onclick="this.closest('.nav-mobile').classList.remove('open')">Events</a>
+    <a href="/pages/crystals-corner/" onclick="this.closest('.nav-mobile').classList.remove('open')">Crystal's Corner</a>
+    <a href="/pages/news/" onclick="this.closest('.nav-mobile').classList.remove('open')">News</a>
+    <a href="/pages/about/" onclick="this.closest('.nav-mobile').classList.remove('open')">About</a>
+    <a href="/pages/builds/" class="btn btn-gold" style="margin-top:0.5rem;" onclick="this.closest('.nav-mobile').classList.remove('open')">Submit Your Build</a>
+  </div>
+
+  <!-- Main content (rendered by JS) -->
+  <div id="app">
+    <div class="loading-state">
+      <p class="loading-pulse">Loading model data&hellip;</p>
+    </div>
+  </div>
+
+  <!-- Footer (static, always visible) -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Chevy<em>Roots</em></div>
+          <div class="footer-brand-tag">Independent Chevrolet Resource</div>
+          <p class="footer-desc">
+            An independent enthusiast resource covering Chevrolet models, builds, events, and buying guides. Not affiliated with General Motors.
+          </p>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+            <a href="#" class="social-btn" aria-label="YouTube">YT</a>
+            <a href="#" class="social-btn" aria-label="X / Twitter">X</a>
+            <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+        <nav aria-label="Explore links">
+          <div class="footer-col-title">Explore</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/models/trucks/">Trucks</a></li>
+            <li><a href="/pages/models/corvette/">Corvette</a></li>
+            <li><a href="/pages/models/cars/">Cars</a></li>
+            <li><a href="/pages/models/suvs/">SUVs</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Resources links">
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/builds/">Community Builds</a></li>
+            <li><a href="/pages/events/">Events Calendar</a></li>
+            <li><a href="/pages/guides/">Buyer&rsquo;s Guides</a></li>
+            <li><a href="/pages/guides/maintenance/">Maintenance Guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Site links">
+          <div class="footer-col-title">Site</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/about/">About ChevyRoots</a></li>
+            <li><a href="/pages/about/#contact">Contact</a></li>
+            <li><a href="/pages/about/#submit-build">Submit Your Build</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 ChevyRoots. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          ChevyRoots is an independent enthusiast website and is not affiliated with, endorsed by, or sponsored by General Motors, Chevrolet, or any of their subsidiaries. All model names, trademarks, and logos are the property of their respective owners. Affiliate links may earn a commission at no cost to you.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ============================================================
+       CHEVYROOTS — MODEL/YEAR TEMPLATE ENGINE
+       Reads ?model=<slug>&year=<year> from URL params,
+       fetches vehicles.json and known-issues.json, renders the page.
+    ============================================================ */
+
+    const ROOT = '/';
+    const DATA_BASE = `${ROOT}data/`;
+
+    // --- URL parsing ---
+    const params = new URLSearchParams(window.location.search);
+    const modelSlug = (params.get('model') || '').toLowerCase().trim();
+    const requestedYear = parseInt(params.get('year'), 10) || null;
+
+    // --- Helpers ---
+    function fmt(num) {
+      if (num == null) return '—';
+      return new Intl.NumberFormat('en-US').format(num);
+    }
+    function fmtMSRP(num) {
+      if (!num) return '—';
+      return '$' + new Intl.NumberFormat('en-US').format(num);
+    }
+    function capitalize(str) {
+      return str ? str.charAt(0).toUpperCase() + str.slice(1) : '';
+    }
+    function titleCase(str) {
+      return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+    }
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // --- Summit Racing search URL ---
+    function summitUrl(modelName) {
+      const query = encodeURIComponent('Chevrolet ' + modelName);
+      return `https://www.summitracing.com/search?keyword=${query}&parttype=all`;
+    }
+
+    // --- Related models (excluding current) ---
+    function getRelated(allVehicles, currentSlug, max = 6) {
+      return allVehicles
+        .filter(v => v.slug !== currentSlug)
+        .slice(0, max);
+    }
+
+    // --- Find matching issues ---
+    function getIssuesForModel(issuesData, slug) {
+      return issuesData.find(d => d.slug === slug) || null;
+    }
+
+    // --- Render error ---
+    function renderError(msg) {
+      document.getElementById('app').innerHTML = `
+        <div class="container error-state">
+          <p class="error-code">// 404 — Model Not Found</p>
+          <h1 class="error-title">We Don't Have That One</h1>
+          <p class="error-sub">${escHtml(msg)}</p>
+          <a href="/pages/models/" class="btn btn-gold">Browse All Models</a>
+          <br><br>
+          <a href="/pages/models/generate-static.html" class="btn btn-outline">View All Model Pages</a>
+        </div>
+      `;
+      document.title = 'Model Not Found — ChevyRoots';
+    }
+
+    // --- Build trim comparison table ---
+    function buildTrimTable(trims) {
+      const headerCells = trims.map(t =>
+        `<th>${escHtml(t.name)}</th>`
+      ).join('');
+
+      const rows = [
+        { label: 'MSRP', key: t => `<span class="msrp-cell">${fmtMSRP(t.msrp)}</span>` },
+        { label: 'Engine', key: t => escHtml(t.engine) },
+        { label: 'Horsepower', key: t => `${fmt(t.hp)} hp` },
+        { label: 'Torque', key: t => `${fmt(t.torque)} lb-ft` },
+        { label: 'Transmission', key: t => escHtml(t.transmission) },
+        { label: 'Drivetrain', key: t => escHtml(t.drivetrain) },
+        { label: 'Towing', key: t => t.towing_capacity > 0 ? `${fmt(t.towing_capacity)} lbs` : 'N/A' },
+        { label: 'MPG City', key: t => t.mpg_city ? `${t.mpg_city} mpg` : '—' },
+        { label: 'MPG Hwy', key: t => t.mpg_highway ? `${t.mpg_highway} mpg` : '—' },
+      ];
+
+      const bodyRows = rows.map(row => {
+        const cells = trims.map(t => `<td>${row.key(t)}</td>`).join('');
+        return `<tr><td><span class="spec-label">—</span>${escHtml(row.label)}</td>${cells}</tr>`;
+      }).join('');
+
+      return `
+        <div class="trim-table-wrap">
+          <table class="trim-table" aria-label="Trim comparison">
+            <thead>
+              <tr>
+                <th>Spec</th>
+                ${headerCells}
+              </tr>
+            </thead>
+            <tbody>
+              ${bodyRows}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    // --- Build trim detail panels ---
+    function buildTrimDetails(trims) {
+      const tabs = trims.map((t, i) =>
+        `<button class="trim-tab${i === 0 ? ' active' : ''}" onclick="selectTrim(${i})" id="trim-tab-${i}">${escHtml(t.name)}</button>`
+      ).join('');
+
+      const panels = trims.map((t, i) => {
+        const features = t.key_features.map(f =>
+          `<div class="feature-item">${escHtml(f)}</div>`
+        ).join('');
+
+        return `
+          <div class="trim-detail${i === 0 ? ' visible' : ''}" id="trim-panel-${i}">
+            <div class="trim-detail-grid">
+              <div class="spec-card">
+                <div class="spec-card-label">Starting MSRP</div>
+                <div class="spec-card-value"><em>${fmtMSRP(t.msrp)}</em></div>
+                <div class="spec-card-sub">Before destination &amp; handling</div>
+              </div>
+              <div class="spec-card">
+                <div class="spec-card-label">Engine</div>
+                <div class="spec-card-value" style="font-size:1rem;">${escHtml(t.engine)}</div>
+              </div>
+              <div class="spec-card">
+                <div class="spec-card-label">Horsepower</div>
+                <div class="spec-card-value"><em>${fmt(t.hp)}</em> <span style="font-size:0.85rem;color:var(--light-gray);">hp</span></div>
+              </div>
+              <div class="spec-card">
+                <div class="spec-card-label">Torque</div>
+                <div class="spec-card-value"><em>${fmt(t.torque)}</em> <span style="font-size:0.85rem;color:var(--light-gray);">lb-ft</span></div>
+              </div>
+              <div class="spec-card">
+                <div class="spec-card-label">Transmission</div>
+                <div class="spec-card-value" style="font-size:0.95rem;">${escHtml(t.transmission)}</div>
+              </div>
+              <div class="spec-card">
+                <div class="spec-card-label">Drivetrain</div>
+                <div class="spec-card-value" style="font-size:0.95rem;">${escHtml(t.drivetrain)}</div>
+              </div>
+              ${t.towing_capacity > 0 ? `
+              <div class="spec-card">
+                <div class="spec-card-label">Max Towing</div>
+                <div class="spec-card-value"><em>${fmt(t.towing_capacity)}</em> <span style="font-size:0.85rem;color:var(--light-gray);">lbs</span></div>
+                <div class="spec-card-sub">With proper equipment</div>
+              </div>` : ''}
+              <div class="spec-card">
+                <div class="spec-card-label">Fuel Economy</div>
+                <div class="spec-card-value" style="font-size:1rem;">
+                  ${t.mpg_city || '—'}<span style="font-size:0.7rem;color:var(--light-gray);"> city</span>
+                  &nbsp;/&nbsp;
+                  ${t.mpg_highway || '—'}<span style="font-size:0.7rem;color:var(--light-gray);"> hwy</span>
+                </div>
+                <div class="spec-card-sub">EPA estimated mpg</div>
+              </div>
+            </div>
+            <div class="label" style="margin-bottom:0.75rem;">Key Features — ${escHtml(t.name)}</div>
+            <div class="features-grid">${features}</div>
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <div class="trim-tabs" role="tablist" aria-label="Select trim">${tabs}</div>
+        ${panels}
+      `;
+    }
+
+    // --- Known issues section ---
+    function buildIssuesSection(issuesEntry) {
+      if (!issuesEntry) {
+        return `
+          <div class="placeholder-block">
+            <div class="placeholder-icon">!</div>
+            <div class="placeholder-title">Issues Data Coming Soon</div>
+            <p class="placeholder-sub">We're compiling known issues and TSB coverage for this model. Check back soon.</p>
+          </div>
+        `;
+      }
+
+      const groups = issuesEntry.issues_by_year;
+      if (!groups || groups.length === 0) return '';
+
+      const tabs = groups.map((g, i) =>
+        `<button class="year-range-tab${i === 0 ? ' active' : ''}" onclick="selectIssueGroup(${i})">${escHtml(g.year_range)}</button>`
+      ).join('');
+
+      const panels = groups.map((g, i) => {
+        const cards = g.issues.map((issue, j) => {
+          const sevClass = `severity-${issue.severity}`;
+          return `
+            <div class="issue-card" id="issue-${i}-${j}">
+              <div class="issue-card-header" onclick="toggleIssue(${i}, ${j})" role="button" aria-expanded="false">
+                <span class="severity-badge ${sevClass}">${capitalize(issue.severity)}</span>
+                <span class="issue-title">${escHtml(issue.title)}</span>
+                <span class="issue-toggle" aria-hidden="true">+</span>
+              </div>
+              <div class="issue-body" role="region">
+                <p class="issue-description">${escHtml(issue.description)}</p>
+                <div class="issue-meta-row">
+                  <div class="issue-meta-block">
+                    <div class="issue-meta-label">Affected Trims</div>
+                    <div class="issue-meta-text">${issue.affected_trims.map(t => escHtml(t)).join(', ')}</div>
+                  </div>
+                  <div class="issue-meta-block">
+                    <div class="issue-meta-label">Estimated Cost</div>
+                    <div class="issue-meta-text">${escHtml(issue.estimated_cost)}</div>
+                  </div>
+                  <div class="issue-meta-block" style="grid-column:1/-1;">
+                    <div class="issue-meta-label">Fix / Resolution</div>
+                    <div class="issue-meta-text">${escHtml(issue.fix_description)}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="issues-group" id="issues-group-${i}" style="${i !== 0 ? 'display:none;' : ''}">
+            <div class="issues-list">${cards}</div>
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <div class="year-range-tabs" role="tablist">${tabs}</div>
+        ${panels}
+        <p style="margin-top:1.25rem; font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.1em; color:rgba(176,168,154,0.55);">
+          DISCLAIMER: Known issues are based on NHTSA complaint data, TSBs, and common owner-reported problems. Always verify with a qualified mechanic. Severity and frequency vary by vehicle history and use.
+        </p>
+      `;
+    }
+
+    // --- Related models ---
+    function buildRelatedModels(allVehicles, currentSlug) {
+      const related = getRelated(allVehicles, currentSlug);
+      const links = related.map(v => {
+        const latestYear = v.years[v.years.length - 1].year;
+        return `
+          <a href="/pages/models/template.html?model=${encodeURIComponent(v.slug)}&year=${latestYear}" class="related-model-link">
+            ${escHtml(v.model)}
+            <span class="arrow">&#8594;</span>
+          </a>
+        `;
+      }).join('');
+      return `<div>${links}</div>`;
+    }
+
+    // --- Render full page ---
+    function renderPage(vehicle, yearData, allVehicles, issuesData) {
+      const year = yearData.year;
+      const modelName = vehicle.model;
+      const lowestTrim = yearData.trims[0];
+      const topTrim = yearData.trims[yearData.trims.length - 1];
+      const issuesEntry = getIssuesForModel(issuesData, vehicle.slug);
+      const otherYears = vehicle.years.filter(y => y.year !== year);
+      const summitLink = summitUrl(modelName);
+
+      // --- Meta tags ---
+      const pageTitle = `${year} Chevy ${modelName} — Specs, Trims, Problems & Mods | ChevyRoots`;
+      const metaDesc = `Complete ${year} Chevy ${modelName} guide: all trim specs and MSRP from ${fmtMSRP(yearData.starting_msrp)}, known issues, owner mods, and buying tips. Independent resource — no fluff.`;
+
+      document.getElementById('page-title').textContent = pageTitle;
+      document.title = pageTitle;
+      document.getElementById('page-description').setAttribute('content', metaDesc);
+      document.getElementById('og-title').setAttribute('content', pageTitle);
+      document.getElementById('og-description').setAttribute('content', metaDesc);
+
+      const canonicalUrl = `https://chevyroots.com/pages/models/template.html?model=${encodeURIComponent(vehicle.slug)}&year=${year}`;
+      document.getElementById('page-canonical').setAttribute('href', canonicalUrl);
+
+      // --- JSON-LD Car schema ---
+      const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Car",
+        "name": `${year} Chevrolet ${modelName}`,
+        "brand": {
+          "@type": "Brand",
+          "name": "Chevrolet"
+        },
+        "model": modelName,
+        "modelDate": String(year),
+        "vehicleConfiguration": yearData.trims.map(t => t.name).join(', '),
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "USD",
+          "lowPrice": yearData.starting_msrp,
+          "highPrice": topTrim.msrp,
+          "offerCount": yearData.trims.length
+        },
+        "description": metaDesc,
+        "url": canonicalUrl
+      };
+      document.getElementById('json-ld-schema').textContent = JSON.stringify(jsonLd, null, 2);
+
+      // --- Year switcher ---
+      const yearSwitcherBtns = vehicle.years.map(y =>
+        `<button class="year-btn${y.year === year ? ' active' : ''}" onclick="switchYear('${vehicle.slug}', ${y.year})">${y.year}</button>`
+      ).join('');
+
+      // --- Camaro note ---
+      const camaroNote = vehicle.slug === 'camaro'
+        ? `<div style="background:rgba(204,0,0,0.1);border:1px solid rgba(204,0,0,0.3);border-radius:4px;padding:0.75rem 1rem;margin-bottom:1.5rem;font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;color:#E05050;">PRODUCTION ENDED &mdash; The ${year} Camaro is the final production year. GM has confirmed the Camaro nameplate is on hiatus.</div>`
+        : '';
+
+      // --- Quick stats sidebar ---
+      const quickStats = [
+        { label: 'Starting MSRP', value: fmtMSRP(yearData.starting_msrp) },
+        { label: 'Top Trim', value: topTrim.name },
+        { label: 'Top MSRP', value: fmtMSRP(topTrim.msrp) },
+        { label: 'Base Engine', value: lowestTrim.engine },
+        { label: 'Base Power', value: `${lowestTrim.hp} hp` },
+        { label: 'Trims Available', value: String(yearData.trims.length) },
+      ];
+      const quickStatsHtml = quickStats.map(s =>
+        `<div class="quick-stat-row"><span class="quick-stat-row-label">${escHtml(s.label)}</span><span class="quick-stat-row-value">${escHtml(s.value)}</span></div>`
+      ).join('');
+
+      // --- Main HTML ---
+      const html = `
+        <!-- Model Hero -->
+        <section class="model-hero" aria-label="${escHtml(year + ' ' + modelName)} overview">
+          <div class="container">
+            <div class="model-hero-inner">
+              <div>
+                <nav class="model-breadcrumb" aria-label="Breadcrumb">
+                  <a href="/">ChevyRoots</a><span>/</span>
+                  <a href="/pages/models/">Models</a><span>/</span>
+                  <span aria-current="page">${escHtml(year + ' ' + modelName)}</span>
+                </nav>
+                <div class="model-year-badge">${year} Model Year</div>
+                <h1 class="model-name">Chevy <em>${escHtml(modelName)}</em></h1>
+                <p class="model-tagline">Complete guide — specs, trims, known issues, and community builds.</p>
+                <div class="model-hero-meta">
+                  <div class="hero-stat">
+                    <span class="hero-stat-label">Starting MSRP</span>
+                    <span class="hero-stat-value"><em>${fmtMSRP(yearData.starting_msrp)}</em></span>
+                  </div>
+                  <div class="hero-stat">
+                    <span class="hero-stat-label">Trims</span>
+                    <span class="hero-stat-value">${yearData.trims.length}</span>
+                  </div>
+                  <div class="hero-stat">
+                    <span class="hero-stat-label">Base Power</span>
+                    <span class="hero-stat-value">${lowestTrim.hp}<span style="font-size:1rem;color:var(--light-gray);font-weight:400;"> hp</span></span>
+                  </div>
+                  ${topTrim.towing_capacity > 0 ? `
+                  <div class="hero-stat">
+                    <span class="hero-stat-label">Max Towing</span>
+                    <span class="hero-stat-value">${fmt(topTrim.towing_capacity)}<span style="font-size:0.85rem;color:var(--light-gray);font-weight:400;"> lbs</span></span>
+                  </div>` : ''}
+                </div>
+              </div>
+              <div class="model-year-switcher">
+                <span class="year-switcher-label">Year</span>
+                <div class="year-buttons">${yearSwitcherBtns}</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Page Body -->
+        <div class="page-body">
+          <div class="container">
+            <div class="content-grid">
+
+              <!-- Main Content Column -->
+              <main>
+
+                ${camaroNote}
+
+                <!-- Trim Comparison Table -->
+                <section class="content-section" aria-labelledby="trim-compare-heading">
+                  <div class="section-header">
+                    <span class="label">Trims</span>
+                    <h2 class="section-title" id="trim-compare-heading">Trim <em>Comparison</em></h2>
+                  </div>
+                  ${buildTrimTable(yearData.trims)}
+                </section>
+
+                <!-- Key Specs / Trim Details -->
+                <section class="content-section" aria-labelledby="trim-details-heading">
+                  <div class="section-header">
+                    <span class="label">Specs</span>
+                    <h2 class="section-title" id="trim-details-heading">Trim <em>Details</em></h2>
+                  </div>
+                  ${buildTrimDetails(yearData.trims)}
+                </section>
+
+                <!-- Known Issues -->
+                <section class="content-section" aria-labelledby="issues-heading">
+                  <div class="section-header">
+                    <span class="label">Reliability</span>
+                    <h2 class="section-title" id="issues-heading">Known <em>Issues</em></h2>
+                  </div>
+                  ${buildIssuesSection(issuesEntry)}
+                </section>
+
+                <!-- Best Mods -->
+                <section class="content-section" aria-labelledby="mods-heading">
+                  <div class="section-header">
+                    <span class="label">Modifications</span>
+                    <h2 class="section-title" id="mods-heading">Best <em>Mods</em></h2>
+                  </div>
+                  <div class="placeholder-block">
+                    <div class="placeholder-icon">[M]</div>
+                    <div class="placeholder-title">Coming Soon</div>
+                    <p class="placeholder-sub">Top recommended modifications for the ${year} ${escHtml(modelName)} — exhaust, suspension, intakes, and appearance upgrades — are in progress.</p>
+                    <div class="placeholder-cta">
+                      <a href="${summitLink}" target="_blank" rel="noopener sponsored" class="btn btn-gold">
+                        Browse ${escHtml(modelName)} Parts at Summit Racing &#8599;
+                      </a>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Owner Builds -->
+                <section class="content-section" aria-labelledby="builds-heading">
+                  <div class="section-header">
+                    <span class="label">Community</span>
+                    <h2 class="section-title" id="builds-heading">Owner <em>Builds</em></h2>
+                  </div>
+                  <div class="placeholder-block">
+                    <div class="placeholder-icon">[B]</div>
+                    <div class="placeholder-title">Browse ${escHtml(modelName)} Builds</div>
+                    <p class="placeholder-sub">Filter the build engine by model to see how other owners have built their ${escHtml(modelName)}s.</p>
+                    <div class="placeholder-cta">
+                      <a href="/pages/builds/?model=${encodeURIComponent(vehicle.slug)}" class="btn btn-outline">
+                        View ${escHtml(modelName)} Builds &#8594;
+                      </a>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Affiliate CTA -->
+                <div class="content-section">
+                  <div class="affiliate-cta">
+                    <div class="affiliate-cta-text">
+                      <p class="affiliate-cta-pretitle">Parts &amp; Accessories</p>
+                      <p class="affiliate-cta-title">Shop ${escHtml(modelName)} Parts</p>
+                      <p class="affiliate-cta-desc">Summit Racing carries an extensive catalog of performance and replacement parts for the ${escHtml(modelName)}. Filters, exhaust, suspension, brakes, and more.</p>
+                      <p class="affiliate-disclaimer">Affiliate link — ChevyRoots may earn a commission at no cost to you. We only link to products we'd actually recommend.</p>
+                    </div>
+                    <div>
+                      <a href="${summitLink}" target="_blank" rel="noopener sponsored" class="btn btn-gold">
+                        Shop at Summit Racing &#8599;
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Crystal's Take -->
+                <section class="content-section" aria-labelledby="take-heading">
+                  <div class="section-header">
+                    <span class="label">Editorial</span>
+                    <h2 class="section-title" id="take-heading">Crystal's <em>Take</em></h2>
+                  </div>
+                  <div class="crystals-take">
+                    <div class="take-header">
+                      <div class="take-avatar">CR</div>
+                      <div class="take-byline">
+                        <span class="take-name">Crystal</span>
+                        <span class="take-role">Founder, ChevyRoots</span>
+                      </div>
+                    </div>
+                    <p class="take-body take-placeholder">
+                      Editorial content for the ${year} ${escHtml(modelName)} is coming soon. Crystal's take will include real-world impressions, who this vehicle is really for, and what she'd actually option — from a Chevy girl's perspective, not a press release.
+                    </p>
+                  </div>
+                </section>
+
+              </main>
+
+              <!-- Sidebar -->
+              <aside class="sidebar" aria-label="Model information sidebar">
+
+                <!-- Quick Stats -->
+                <div class="sidebar-card">
+                  <div class="sidebar-card-header">
+                    <span class="sidebar-card-title">${year} Quick Stats</span>
+                    <span class="label">${escHtml(modelName)}</span>
+                  </div>
+                  <div class="sidebar-card-body">
+                    <div class="quick-stats-list">${quickStatsHtml}</div>
+                  </div>
+                </div>
+
+                <!-- Other Model Years -->
+                ${otherYears.length > 0 ? `
+                <div class="sidebar-card">
+                  <div class="sidebar-card-header">
+                    <span class="sidebar-card-title">Other Years</span>
+                  </div>
+                  <div class="sidebar-card-body">
+                    ${otherYears.map(y => `
+                      <a href="/pages/models/template.html?model=${encodeURIComponent(vehicle.slug)}&year=${y.year}" class="related-model-link">
+                        ${y.year} ${escHtml(modelName)}
+                        <span class="arrow">&#8594;</span>
+                      </a>
+                    `).join('')}
+                  </div>
+                </div>` : ''}
+
+                <!-- Related Models -->
+                <div class="sidebar-card">
+                  <div class="sidebar-card-header">
+                    <span class="sidebar-card-title">Related Models</span>
+                  </div>
+                  <div class="sidebar-card-body">
+                    ${buildRelatedModels(allVehicles, vehicle.slug)}
+                  </div>
+                </div>
+
+                <!-- NHTSA Link -->
+                <div class="sidebar-card">
+                  <div class="sidebar-card-header">
+                    <span class="sidebar-card-title">Safety Research</span>
+                  </div>
+                  <div class="sidebar-card-body">
+                    <p style="font-size:0.82rem;color:var(--light-gray);margin-bottom:1rem;line-height:1.5;">Check NHTSA for complaints, recalls, and TSBs specific to your VIN.</p>
+                    <a href="https://www.nhtsa.gov/vehicle/lookup" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%;justify-content:center;">
+                      NHTSA Lookup &#8599;
+                    </a>
+                  </div>
+                </div>
+
+                <!-- All Models Link -->
+                <div class="sidebar-card">
+                  <div class="sidebar-card-header">
+                    <span class="sidebar-card-title">All Models</span>
+                  </div>
+                  <div class="sidebar-card-body">
+                    <a href="/pages/models/generate-static.html" class="btn btn-outline" style="width:100%;justify-content:center;">
+                      Browse All Model Pages &#8594;
+                    </a>
+                  </div>
+                </div>
+
+              </aside>
+
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('app').innerHTML = html;
+    }
+
+    // --- Tab / toggle interaction ---
+    window.selectTrim = function(idx) {
+      document.querySelectorAll('.trim-tab').forEach((btn, i) => {
+        btn.classList.toggle('active', i === idx);
+      });
+      document.querySelectorAll('.trim-detail').forEach((panel, i) => {
+        panel.classList.toggle('visible', i === idx);
+      });
+    };
+
+    window.toggleIssue = function(groupIdx, issueIdx) {
+      const card = document.getElementById(`issue-${groupIdx}-${issueIdx}`);
+      if (!card) return;
+      const isOpen = card.classList.toggle('open');
+      const toggle = card.querySelector('.issue-toggle');
+      const header = card.querySelector('.issue-card-header');
+      if (toggle) toggle.textContent = isOpen ? '−' : '+';
+      if (header) header.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+
+    window.selectIssueGroup = function(idx) {
+      document.querySelectorAll('.year-range-tab').forEach((btn, i) => {
+        btn.classList.toggle('active', i === idx);
+      });
+      document.querySelectorAll('.issues-group').forEach((group, i) => {
+        group.style.display = i === idx ? '' : 'none';
+      });
+    };
+
+    window.switchYear = function(slug, year) {
+      window.location.href = `/pages/models/template.html?model=${encodeURIComponent(slug)}&year=${year}`;
+    };
+
+    // --- Bootstrap ---
+    async function init() {
+      if (!modelSlug) {
+        renderError('No model specified. Use ?model=equinox&year=2024 in the URL.');
+        return;
+      }
+
+      let vehicles, issues;
+
+      try {
+        const [vRes, iRes] = await Promise.all([
+          fetch(`${DATA_BASE}vehicles.json`),
+          fetch(`${DATA_BASE}known-issues.json`)
+        ]);
+        if (!vRes.ok) throw new Error(`Failed to load vehicles.json (${vRes.status})`);
+        if (!iRes.ok) throw new Error(`Failed to load known-issues.json (${iRes.status})`);
+        const vData = await vRes.json();
+        const iData = await iRes.json();
+        vehicles = vData.vehicles;
+        issues = iData.known_issues;
+      } catch (err) {
+        renderError(`Could not load data: ${err.message}. If opening locally, use a local server (e.g. Live Server in VS Code).`);
+        return;
+      }
+
+      const vehicle = vehicles.find(v => v.slug === modelSlug);
+      if (!vehicle) {
+        renderError(`Model "${modelSlug}" not found in vehicles.json. Check the model slug.`);
+        return;
+      }
+
+      // Resolve year — use requested, or latest available
+      let yearData = vehicle.years.find(y => y.year === requestedYear);
+      if (!yearData) {
+        yearData = vehicle.years[vehicle.years.length - 1];
+      }
+
+      renderPage(vehicle, yearData, vehicles, issues);
+    }
+
+    init();
+  </script>
+
+</body>
+</html>

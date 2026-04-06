@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chevrolet Owner Guides | ChevyRoots</title>
+  <meta name="description" content="Chevrolet owner guides: known issues database, buyer's quiz, model comparison tool, Silverado &amp; C8 buyer's guides, LS swap guide, best mods, Chevy history, and road trip planning." />
+  <meta name="keywords" content="Chevrolet guides, Chevy owner resources, Silverado buyer guide, LS swap, Chevy known issues" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/" />
+  <meta property="og:title" content="Chevrolet Owner Guides | ChevyRoots" />
+  <meta property="og:description" content="In-depth Chevrolet guides: known issues database, buyer's guides, LS swap guide, model comparisons, and the Chevy buyer's quiz." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --charcoal:   #1A1A1A;
+      --warm-gray:  #2A2A2A;
+      --mid-gray:   #333333;
+      --gold:       #C4A035;
+      --gold-light: #D4B44A;
+      --red:        #CC0000;
+      --off-white:  #F0EDE6;
+      --light-gray: #B0A89A;
+      --muted:      #707070;
+
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
+
+      --radius: 4px;
+      --radius-lg: 8px;
+      --transition: 200ms ease;
+      --max-width: 1280px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--charcoal);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 64px;
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      height: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.55rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      line-height: 1;
+    }
+    .nav-logo em { font-style: normal; color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+
+    .nav-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+    }
+    .nav-menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--off-white);
+    }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0; right: 0;
+      background: var(--warm-gray);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+    }
+    .nav-mobile a:hover { color: var(--gold); background: rgba(196,160,53,0.08); }
+
+    /* ── PAGE HERO ───────────────────────────────────────── */
+    .page-hero {
+      background: linear-gradient(135deg, #1A1A1A 0%, #1e1c16 60%, #1A1A1A 100%);
+      border-bottom: 1px solid rgba(196,160,53,0.15);
+      padding: clamp(3.5rem, 7vw, 6rem) clamp(1rem, 4vw, 2.5rem) clamp(3rem, 5vw, 4.5rem);
+      text-align: center;
+    }
+
+    .page-hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+      color: var(--off-white);
+      margin-bottom: 1.25rem;
+    }
+    .page-hero h1 em { font-style: normal; color: var(--gold); }
+
+    .page-hero p {
+      max-width: 540px;
+      margin: 0 auto;
+      color: var(--light-gray);
+      font-size: 1rem;
+    }
+
+    /* ── GUIDE GRID ──────────────────────────────────────── */
+    .guides-section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 2.5rem) clamp(3rem, 6vw, 5rem);
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--off-white);
+      margin-bottom: 2rem;
+    }
+
+    .gold-line {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0.75rem 0 2rem;
+    }
+
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ── GUIDE CARD ──────────────────────────────────────── */
+    .guide-card {
+      background: var(--warm-gray);
+      border: 1px solid var(--mid-gray);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition);
+      position: relative;
+    }
+    .guide-card:not(.coming-soon):hover {
+      border-color: rgba(196,160,53,0.4);
+      transform: translateY(-3px);
+    }
+    .guide-card.coming-soon {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .guide-card-accent {
+      height: 4px;
+      background: var(--gold);
+    }
+    .guide-card.coming-soon .guide-card-accent {
+      background: var(--mid-gray);
+    }
+
+    .guide-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 1.5rem 1.5rem 0;
+      background: rgba(196,160,53,0.1);
+      border: 1px solid rgba(196,160,53,0.2);
+      flex-shrink: 0;
+    }
+    .guide-card.coming-soon .guide-card-icon {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    .guide-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .guide-card-tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .guide-card.coming-soon .guide-card-tag { color: var(--muted); }
+
+    .guide-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      color: var(--off-white);
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-card-desc {
+      font-size: 0.88rem;
+      color: var(--light-gray);
+      line-height: 1.55;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .guide-card-meta {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-pill {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--mid-gray);
+      color: var(--light-gray);
+    }
+
+    .guide-card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius);
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      transition: all var(--transition);
+      align-self: flex-start;
+    }
+    .guide-card-action:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      background: rgba(196,160,53,0.18);
+      border: 1px solid rgba(196,160,53,0.45);
+      color: var(--gold);
+    }
+
+    .coming-soon-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--muted);
+    }
+
+    .new-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      background: rgba(204,0,0,0.15);
+      border: 1px solid rgba(204,0,0,0.4);
+      color: #e05555;
+    }
+
+    /* ── FEATURED CARD ───────────────────────────────────── */
+    .guide-card.featured {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .guide-card.featured .guide-card-accent {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
+    .guide-card.featured .guide-card-icon {
+      width: 80px;
+      height: 80px;
+      font-size: 2.2rem;
+      margin: 2rem 0 2rem 2rem;
+      align-self: flex-start;
+    }
+
+    .guide-card.featured .guide-card-body {
+      padding: 2rem;
+    }
+
+    .guide-card.featured .guide-card-title {
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+    }
+
+    /* ── DIVIDER ─────────────────────────────────────────── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--mid-gray);
+      margin: 3rem 0;
+    }
+
+    /* ── BOTTOM STRIP ────────────────────────────────────── */
+    .bottom-strip {
+      background: var(--warm-gray);
+      border-top: 1px solid var(--mid-gray);
+      border-bottom: 1px solid var(--mid-gray);
+      padding: 2rem clamp(1rem, 4vw, 2.5rem);
+    }
+
+    .bottom-strip-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .strip-text h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+    .strip-text p {
+      font-size: 0.85rem;
+      color: var(--light-gray);
+    }
+
+    .strip-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .strip-link {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(196,160,53,0.3);
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+    .strip-link:hover {
+      background: rgba(196,160,53,0.1);
+      border-color: var(--gold);
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(196,160,53,0.1);
+      padding: 2.5rem clamp(1rem, 4vw, 2.5rem);
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--off-white);
+      margin-bottom: 0.5rem;
+    }
+    .footer-logo em { font-style: normal; color: var(--gold); }
+    .footer-note {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .guide-card.featured {
+        flex-direction: column;
+        grid-column: auto;
+      }
+      .guide-card.featured .guide-card-icon {
+        margin: 1.5rem 1.5rem 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-menu-toggle { display: flex; }
+      .guides-grid { grid-template-columns: 1fr; }
+      .bottom-strip-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <em>Chevy</em>Roots
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/" class="active">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+      <button class="nav-menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile navigation">
+    <a href="/pages/models/">Models</a>
+    <a href="/pages/guides/">Guides</a>
+    <a href="/pages/builds/">Builds</a>
+    <a href="/pages/events/">Events</a>
+    <a href="/pages/crystals-corner/">Crystal's Corner</a>
+    <a href="/pages/news/">News</a>
+    <a href="/pages/about/">About</a>
+    <a href="/pages/builds/" style="margin-top:0.5rem;">Submit Your Build</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <p class="page-hero-eyebrow">// ChevyRoots</p>
+    <h1>Owner <em>Guides</em></h1>
+    <p>Practical resources for Chevrolet owners and buyers. No fluff, no dealer speak — just real information from a community that lives and breathes these trucks and cars.</p>
+  </section>
+
+  <!-- GUIDES GRID -->
+  <section class="guides-section">
+
+    <!-- ── TOOLS ─────────────────────────────────────────── -->
+    <p class="section-eyebrow">// Tools</p>
+    <h2 class="section-title">Tools</h2>
+    <span class="gold-line"></span>
+
+    <div class="guides-grid">
+
+      <!-- FEATURED: Known Issues -->
+      <a href="known-issues.html" class="guide-card featured" aria-label="Known Issues Database">
+        <div class="guide-card-accent"></div>
+        <span class="popular-badge">&#9733; Most Popular</span>
+        <div class="guide-card-icon" aria-hidden="true">&#9888;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">Tools &mdash; Always Updated</span>
+          <h3 class="guide-card-title">Known Issues Database</h3>
+          <p class="guide-card-desc">13 documented, real-world issues across 6 Chevrolet models — sourced from NHTSA complaints, technical service bulletins, and verified owner forums. Search by model, severity, or symptom. Know what you're buying or driving before it costs you.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">13 Issues</span>
+            <span class="meta-pill">6 Models</span>
+            <span class="meta-pill">2018–2025</span>
+            <span class="meta-pill">NHTSA + TSB Sourced</span>
+          </div>
+          <span class="guide-card-action">Open Database &#8594;</span>
+        </div>
+      </a>
+
+      <!-- Buyer's Quiz -->
+      <a href="quiz.html" class="guide-card" aria-label="Chevy Buyer's Quiz">
+        <div class="guide-card-accent"></div>
+        <span class="popular-badge">&#9733; Most Popular</span>
+        <div class="guide-card-icon" aria-hidden="true">&#10067;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">Tools</span>
+          <h3 class="guide-card-title">Chevy Buyer's Quiz</h3>
+          <p class="guide-card-desc">Answer 7 questions and get a personalized Chevrolet model recommendation. Built for real buyers — covers budget, use case, towing needs, and lifestyle. No email required, no dealer hand-off.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">7 Questions</span>
+            <span class="meta-pill">All Budgets</span>
+            <span class="meta-pill">Instant Results</span>
+          </div>
+          <span class="guide-card-action">Take the Quiz &#8594;</span>
+        </div>
+      </a>
+
+      <!-- Model Comparison Tool -->
+      <a href="compare.html" class="guide-card" aria-label="Chevy Model Comparison Tool">
+        <div class="guide-card-accent"></div>
+        <div class="guide-card-icon" aria-hidden="true">&#9878;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">Tools</span>
+          <h3 class="guide-card-title">Model Comparison Tool</h3>
+          <p class="guide-card-desc">Compare any two Chevrolet models side-by-side — specs, pricing, towing capacity, cargo room, and more. Cut through the marketing and see the real differences at a glance.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Side-by-Side</span>
+            <span class="meta-pill">All Current Models</span>
+          </div>
+          <span class="guide-card-action">Compare Models &#8594;</span>
+        </div>
+      </a>
+
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- ── BUYER'S GUIDES ──────────────────────────────────── -->
+    <p class="section-eyebrow">// Buyer's Guides</p>
+    <h2 class="section-title">Buyer's Guides</h2>
+    <span class="gold-line"></span>
+
+    <div class="guides-grid">
+
+      <!-- Silverado Buyer's Guide -->
+      <a href="silverado-buyers-guide.html" class="guide-card" aria-label="Silverado Buyer's Guide">
+        <div class="guide-card-accent"></div>
+        <span class="popular-badge">&#9733; Most Popular</span>
+        <div class="guide-card-icon" aria-hidden="true">&#128663;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">Buyer's Guide</span>
+          <h3 class="guide-card-title">Silverado Buyer's Guide</h3>
+          <p class="guide-card-desc">Everything you need to know before buying a Silverado — trim levels, engine options, tow ratings, off-road packages, and what owners actually wish they'd known at the dealership.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Silverado 1500</span>
+            <span class="meta-pill">All Trims</span>
+            <span class="meta-pill">New &amp; Used</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+      <!-- C8 Buyer's Guide -->
+      <a href="c8-corvette-buyers-guide.html" class="guide-card" aria-label="C8 Corvette Buyer's Guide">
+        <div class="guide-card-accent"></div>
+        <div class="guide-card-icon" aria-hidden="true">&#127950;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">Buyer's Guide</span>
+          <h3 class="guide-card-title">C8 Corvette Buyer's Guide</h3>
+          <p class="guide-card-desc">Everything you need to know before buying a C8 — trims, options, common issues, used market pricing, and the real differences between Stingray, Z06, and E-Ray.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">C8 Generation</span>
+            <span class="meta-pill">2020–Present</span>
+            <span class="meta-pill">New &amp; Used</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+      <!-- C8 Best Year to Buy Used -->
+      <a href="c8-corvette-best-year-to-buy.html" class="guide-card" aria-label="C8 Best Year to Buy Used">
+        <div class="guide-card-accent"></div>
+        <span class="new-badge">&#10022; New</span>
+        <div class="guide-card-icon" aria-hidden="true">&#127950;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">Buyer's Guide</span>
+          <h3 class="guide-card-title">C8 Best Year to Buy Used</h3>
+          <p class="guide-card-desc">Which model year C8 gives you the best value on the used market — depreciation curves, production changes, known first-year issues, and the sweet-spot years to target right now.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">C8 Corvette</span>
+            <span class="meta-pill">Used Market</span>
+            <span class="meta-pill">Value Analysis</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- ── HOW-TO & MODS ───────────────────────────────────── -->
+    <p class="section-eyebrow">// How-To / Technical</p>
+    <h2 class="section-title">How-To &amp; Mods</h2>
+    <span class="gold-line"></span>
+
+    <div class="guides-grid">
+
+      <!-- LS Swap Guide -->
+      <a href="ls-swap-guide.html" class="guide-card" aria-label="LS Swap Guide">
+        <div class="guide-card-accent"></div>
+        <span class="popular-badge">&#9733; Most Popular</span>
+        <div class="guide-card-icon" aria-hidden="true">&#128295;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">How-To &amp; Mods</span>
+          <h3 class="guide-card-title">LS Swap Guide</h3>
+          <p class="guide-card-desc">The complete walkthrough for dropping an LS engine into almost anything — which LS variant to pick, wiring basics, transmission options, mounts, and what the swap actually costs in the real world.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">LS Series</span>
+            <span class="meta-pill">Engine Swap</span>
+            <span class="meta-pill">All Skill Levels</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+      <!-- Silverado Transmission Shudder Fix -->
+      <a href="silverado-transmission-shudder-fix.html" class="guide-card" aria-label="Silverado 10-Speed Transmission Shudder Fix">
+        <div class="guide-card-accent"></div>
+        <span class="popular-badge">&#9733; Most Popular</span>
+        <div class="guide-card-icon" aria-hidden="true">&#9881;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">How-To &amp; Technical</span>
+          <h3 class="guide-card-title">Silverado 10-Speed Transmission Shudder Fix</h3>
+          <p class="guide-card-desc">The definitive guide to diagnosing and fixing the notorious 10L80/10L90 shudder — causes, fluid flush procedure, TSB details, and when to push for a warranty repair instead.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Silverado</span>
+            <span class="meta-pill">10-Speed</span>
+            <span class="meta-pill">TSB Covered</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+      <!-- 5.3 vs 6.2 Engine Comparison -->
+      <a href="silverado-5.3-vs-6.2.html" class="guide-card" aria-label="5.3L vs 6.2L: Which Engine?">
+        <div class="guide-card-accent"></div>
+        <span class="popular-badge">&#9733; Most Popular</span>
+        <div class="guide-card-icon" aria-hidden="true">&#128295;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">How-To &amp; Technical</span>
+          <h3 class="guide-card-title">5.3L vs 6.2L: Which Engine?</h3>
+          <p class="guide-card-desc">Real-world breakdown of the EcoTec3 5.3L vs the 6.2L V8 — fuel economy, towing capacity, performance feel, and whether the upgrade cost is worth it for your use case.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Silverado</span>
+            <span class="meta-pill">Engine Comparison</span>
+            <span class="meta-pill">Real-World Data</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+      <!-- Best Mods for Silverado -->
+      <a href="best-mods-silverado.html" class="guide-card" aria-label="Best Mods for Silverado">
+        <div class="guide-card-accent"></div>
+        <div class="guide-card-icon" aria-hidden="true">&#128295;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">How-To &amp; Mods</span>
+          <h3 class="guide-card-title">Best Mods for Silverado</h3>
+          <p class="guide-card-desc">The top modifications Silverado owners actually do — from leveling kits and exhaust to programmer tunes and bed accessories. Ranked by bang-for-buck and real-world impact.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Silverado</span>
+            <span class="meta-pill">Performance &amp; Style</span>
+            <span class="meta-pill">Budget-Ranked</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+      <!-- Complete Chevy Towing Guide -->
+      <a href="chevy-towing-guide.html" class="guide-card" aria-label="Complete Chevy Towing Guide">
+        <div class="guide-card-accent"></div>
+        <span class="new-badge">&#10022; New</span>
+        <div class="guide-card-icon" aria-hidden="true">&#128667;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">How-To &amp; Technical</span>
+          <h3 class="guide-card-title">Complete Chevy Towing Guide</h3>
+          <p class="guide-card-desc">Tow ratings, weight distribution, hitch classes, brake controllers, and real-world tips for every Chevrolet truck and SUV. Know your numbers before you hook up.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Trucks &amp; SUVs</span>
+            <span class="meta-pill">Towing &amp; Hauling</span>
+            <span class="meta-pill">All Models</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- ── HISTORY & CULTURE ───────────────────────────────── -->
+    <p class="section-eyebrow">// Culture &amp; History</p>
+    <h2 class="section-title">History &amp; Culture</h2>
+    <span class="gold-line"></span>
+
+    <div class="guides-grid">
+
+      <!-- Small Block History -->
+      <a href="small-block-chevy-history.html" class="guide-card" aria-label="Small Block Chevy History">
+        <div class="guide-card-accent"></div>
+        <div class="guide-card-icon" aria-hidden="true">&#128295;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">History &amp; Culture</span>
+          <h3 class="guide-card-title">Small Block Chevy History</h3>
+          <p class="guide-card-desc">From the original 265 cu in in 1955 to the modern LS and LT families — the complete history of the engine that changed American performance forever.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Engine History</span>
+            <span class="meta-pill">1955–Present</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+      <!-- Impala Cultural History -->
+      <a href="chevy-impala-cultural-history.html" class="guide-card" aria-label="Chevy Impala Cultural History">
+        <div class="guide-card-accent"></div>
+        <div class="guide-card-icon" aria-hidden="true">&#127909;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">History &amp; Culture</span>
+          <h3 class="guide-card-title">Impala Cultural History</h3>
+          <p class="guide-card-desc">The Impala's journey from 1958 dream car to lowrider icon, hip-hop legend, and American cultural touchstone. More than a car — a symbol with decades of meaning behind every trim level.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Impala</span>
+            <span class="meta-pill">1958–Present</span>
+            <span class="meta-pill">Pop Culture</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+      <!-- Chevy History -->
+      <a href="chevy-history.html" class="guide-card" aria-label="Chevy History">
+        <div class="guide-card-accent"></div>
+        <div class="guide-card-icon" aria-hidden="true">&#127941;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">History &amp; Culture</span>
+          <h3 class="guide-card-title">Chevy History</h3>
+          <p class="guide-card-desc">Over a century of Chevrolet — from Louis Chevrolet's first racer to the modern EV lineup. The milestones, the legends, and the moments that shaped America's favorite brand.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Brand History</span>
+            <span class="meta-pill">1911–Present</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- ── ROAD TRIPS & EVENTS ─────────────────────────────── -->
+    <p class="section-eyebrow">// Culture &amp; History (continued)</p>
+    <h2 class="section-title">Road Trips &amp; Events</h2>
+    <span class="gold-line"></span>
+
+    <div class="guides-grid">
+
+      <!-- America 250 Road Trip -->
+      <a href="america-250-chevy-road-trip.html" class="guide-card" aria-label="America 250 Chevy Road Trip Guide">
+        <div class="guide-card-accent"></div>
+        <div class="guide-card-icon" aria-hidden="true">&#127981;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">Road Trips &amp; Events</span>
+          <h3 class="guide-card-title">America 250 Road Trip</h3>
+          <p class="guide-card-desc">Celebrating 250 years of America the right way — behind the wheel of a Chevy. Curated stops, iconic routes, and the best Chevrolets for the journey.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Road Trip</span>
+            <span class="meta-pill">America 250</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+      <!-- Chevy Dream Tour -->
+      <a href="chevy-dream-tour.html" class="guide-card" aria-label="Chevy Dream Tour">
+        <div class="guide-card-accent"></div>
+        <div class="guide-card-icon" aria-hidden="true">&#127775;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">Road Trips &amp; Events</span>
+          <h3 class="guide-card-title">Chevy Dream Tour</h3>
+          <p class="guide-card-desc">The ultimate Chevy enthusiast road trip — hitting the factories, museums, racetracks, and legendary roads that define what Chevrolet is all about. A bucket-list itinerary for the serious Chevy fan.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Road Trip</span>
+            <span class="meta-pill">Enthusiast Route</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+      <!-- MLB Partnership Guide -->
+      <a href="chevy-mlb-partnership.html" class="guide-card" aria-label="Chevy &amp; MLB Partnership Guide">
+        <div class="guide-card-accent"></div>
+        <div class="guide-card-icon" aria-hidden="true">&#9918;</div>
+        <div class="guide-card-body">
+          <span class="guide-card-tag">Road Trips &amp; Events</span>
+          <h3 class="guide-card-title">Chevy &amp; MLB: The Partnership</h3>
+          <p class="guide-card-desc">The full story of Chevrolet's long-running Major League Baseball sponsorship — official vehicle deals, ballpark activations, and what it means for the brand.</p>
+          <div class="guide-card-meta">
+            <span class="meta-pill">Brand History</span>
+            <span class="meta-pill">Sponsorship</span>
+          </div>
+          <span class="guide-card-action">Read Guide &#8594;</span>
+        </div>
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- BOTTOM STRIP -->
+  <div class="bottom-strip">
+    <div class="bottom-strip-inner">
+      <div class="strip-text">
+        <h3>Not sure where to start?</h3>
+        <p>The Known Issues Database and Buyer's Quiz are the most-used tools on ChevyRoots — or compare models side-by-side before you buy.</p>
+      </div>
+      <div class="strip-links">
+        <a href="known-issues.html" class="strip-link">Known Issues &#8594;</a>
+        <a href="quiz.html" class="strip-link">Buyer's Quiz &#8594;</a>
+        <a href="compare.html" class="strip-link">Compare Models &#8594;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo"><em>Chevy</em>Roots</div>
+    <p class="footer-note">Independent Chevrolet enthusiast resource &mdash; Not affiliated with General Motors &copy; 2025</p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    document.querySelector('.nav-menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chevy Community Hub | ChevyRoots</title>
+  <meta name="description" content="The Chevy Community Hub — Ride of the Month, build journals, regional meetups, forums, and more. Connect with Chevrolet enthusiasts nationwide." />
+  <link rel="canonical" href="https://chevyroots.com/pages/community/" />
+  <meta property="og:title" content="Chevy Community Hub | ChevyRoots" />
+  <meta property="og:description" content="Connect with Chevrolet enthusiasts — Ride of the Month, build journals, regional meetups, and community forums." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/community/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --gold:      #C4A035;
+      --gold-light:#D4B550;
+      --text:      #F0EDE6;
+      --muted:     #9A9590;
+      --surface:   #242424;
+      --surface2:  #2E2E2E;
+      --border:    rgba(196,160,53,0.2);
+      --font-head: 'Barlow Condensed', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Nav ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,26,26,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav__logo {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .nav__logo span { color: var(--text); }
+
+    .nav__logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav__links a {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .nav__links a:hover,
+    .nav__links a.active {
+      color: var(--gold);
+    }
+
+    .nav__links .nav__corner-link {
+      color: var(--gold);
+      position: relative;
+    }
+
+    .nav__links .nav__corner-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+    }
+
+    .nav__cta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg) !important;
+      background: var(--gold);
+      padding: 7px 16px;
+      border-radius: 3px;
+      transition: background 0.2s !important;
+    }
+
+    .nav__cta:hover {
+      background: var(--gold-light);
+      color: var(--bg) !important;
+    }
+
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav__hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.25s;
+    }
+
+    /* Mobile nav */
+    .nav__mobile {
+      display: none;
+      flex-direction: column;
+      background: rgba(26,26,26,0.98);
+      border-top: 1px solid var(--border);
+      padding: 20px 24px 28px;
+      gap: 4px;
+    }
+
+    .nav__mobile.open { display: flex; }
+
+    .nav__mobile a {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: color 0.2s;
+    }
+
+    .nav__mobile a:hover,
+    .nav__mobile a.active { color: var(--gold); }
+
+    .nav__mobile .nav__corner-link { color: var(--gold); }
+
+    .nav__mobile .nav__cta {
+      margin-top: 12px;
+      text-align: center;
+      padding: 10px;
+      border-bottom: none;
+    }
+
+    @media (max-width: 860px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: flex; }
+    }
+
+    /* ── Utilities ── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section--alt {
+      background: var(--surface);
+    }
+
+    .section--dark {
+      background: #111;
+    }
+
+    .section__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .section__title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .section__title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .section__desc {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.7;
+    }
+
+    .section__header {
+      margin-bottom: 56px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding-top: 64px;
+      background: linear-gradient(180deg, #0f0f0f 0%, #1A1A1A 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__bg-stripe {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -60deg,
+        transparent,
+        transparent 60px,
+        rgba(196,160,53,0.025) 60px,
+        rgba(196,160,53,0.025) 61px
+      );
+      pointer-events: none;
+    }
+
+    .hero__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 100px 24px 88px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-block;
+      border: 1px solid var(--border);
+      padding: 6px 18px;
+      border-radius: 2px;
+      margin-bottom: 32px;
+    }
+
+    .hero__title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 0.93;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 32px;
+    }
+
+    .hero__title em {
+      font-style: normal;
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero__sub {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 48px;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 3px;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn--primary {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    .btn--primary:hover {
+      background: var(--gold-light);
+    }
+
+    .btn--outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn--outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero__stat-row {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .hero__stat {
+      text-align: center;
+    }
+
+    .hero__stat-num {
+      font-family: var(--font-head);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .hero__stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ── Platform Cards ── */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2px;
+    }
+
+    .platform-card {
+      background: var(--surface);
+      border: 1px solid transparent;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+
+    .platform-card:hover {
+      border-color: var(--border);
+      background: var(--surface2);
+    }
+
+    .platform-card__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .platform-card__icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .icon--reddit { background: rgba(255,69,0,0.12); }
+    .icon--reddit svg { fill: #FF4500; }
+    .icon--tiktok { background: rgba(18,18,18,0.85); border: 1px solid rgba(105,201,208,0.25); }
+    .icon--tiktok svg { fill: #69C9D0; }
+    .icon--instagram { background: rgba(228,64,95,0.1); }
+    .icon--instagram svg { fill: #E4405F; }
+    .icon--youtube { background: rgba(255,0,0,0.1); }
+    .icon--youtube svg { fill: #FF0000; }
+    .icon--facebook { background: rgba(24,119,242,0.1); }
+    .icon--facebook svg { fill: #1877F2; }
+    .icon--discord { background: rgba(88,101,242,0.1); }
+    .icon--discord svg { fill: #5865F2; }
+
+    /* Platform card brand accent borders */
+    .platform-card--reddit  { border-top: 3px solid #FF4500; }
+    .platform-card--tiktok  { border-top: 3px solid #010101; background: #111; }
+    .platform-card--tiktok .platform-card__name { color: #69C9D0; }
+    .platform-card--instagram { border-top: 3px solid #E4405F; }
+    .platform-card--youtube { border-top: 3px solid #FF0000; }
+    .platform-card--facebook { border-top: 3px solid #1877F2; }
+    .platform-card--discord { border-top: 3px solid #5865F2; }
+
+    .platform-card__name {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    .platform-card__handle {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-top: -8px;
+    }
+
+    .platform-card__count {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .platform-card__desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .platform-card__subs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .platform-card__sub-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: #FF4500;
+      background: rgba(255,69,0,0.08);
+      border: 1px solid rgba(255,69,0,0.15);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    .platform-card__note {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 2px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .platform-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .platform-card__follow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .platform-card:hover .platform-card__follow {
+      color: var(--gold-light);
+    }
+
+    /* ── Contribute Cards ── */
+    .contribute-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .contribute-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 32px 28px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color 0.25s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .contribute-card:hover {
+      border-color: var(--border);
+      transform: translateY(-3px);
+    }
+
+    .contribute-card__icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .contribute-card__title {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    .contribute-card__desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .contribute-card__link {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .contribute-card:hover .contribute-card__link {
+      color: var(--gold-light);
+    }
+
+    /* ── Spotlight ── */
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .spotlight-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .spotlight-card:hover {
+      border-color: var(--border);
+    }
+
+    .spotlight-card__img {
+      width: 100%;
+      height: 200px;
+      background: repeating-linear-gradient(
+        45deg,
+        #242424,
+        #242424 10px,
+        #202020 10px,
+        #202020 20px
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .spotlight-card__img-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(196,160,53,0.4);
+      border: 1px dashed rgba(196,160,53,0.2);
+      padding: 8px 16px;
+      border-radius: 2px;
+    }
+
+    .spotlight-card__body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .spotlight-card__title {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    .spotlight-card__sub {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(154,149,144,0.8);
+      line-height: 1.5;
+    }
+
+    .spotlight-card__cta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-top: 6px;
+      width: fit-content;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .spotlight-card__cta:hover {
+      background: var(--gold);
+      color: var(--bg);
+      border-color: var(--gold);
+    }
+
+    /* ── Ride of the Month ── */
+    .rotm__featured {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 48px;
+    }
+
+    .rotm__featured-img {
+      background: repeating-linear-gradient(45deg, #242424, #242424 10px, #202020 10px, #202020 20px);
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .rotm__featured-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+
+    .rotm__featured-img-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(196,160,53,0.4);
+      border: 1px dashed rgba(196,160,53,0.2);
+      padding: 8px 16px;
+      border-radius: 2px;
+    }
+
+    .rotm__featured-body {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .rotm__featured-month {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .rotm__featured-title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .rotm__featured-owner {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .rotm__featured-owner strong { color: var(--text); font-weight: 500; }
+
+    .rotm__featured-mods {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .rotm__featured-mods li {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .rotm__featured-mods li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 1px;
+    }
+
+    .rotm__featured-story {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
+      font-style: italic;
+      border-left: 2px solid var(--border);
+      padding-left: 16px;
+    }
+
+    .rotm__past-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .rotm__past-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .rotm__past-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .rotm__past-card:hover { border-color: var(--border); }
+
+    .rotm__past-img {
+      height: 140px;
+      background: repeating-linear-gradient(45deg, #242424, #242424 10px, #1e1e1e 10px, #1e1e1e 20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .rotm__past-img span {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: rgba(196,160,53,0.3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .rotm__past-body {
+      padding: 16px;
+    }
+
+    .rotm__past-month {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .rotm__past-name {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .rotm__past-owner {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .rotm__submit {
+      text-align: center;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: 4px;
+      padding: 40px 24px;
+    }
+
+    .rotm__submit-title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .rotm__submit-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 500px;
+      margin: 0 auto 8px;
+    }
+
+    .rotm__submit-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .rotm__submit-list li {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 6px 14px;
+      border-radius: 2px;
+    }
+
+    /* ── Build Journals ── */
+    .builds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .build-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 4px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .build-card:hover { border-color: var(--border); }
+
+    .build-card__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .build-card__project {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .build-card__status {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .build-card__status--active {
+      background: rgba(76,175,80,0.12);
+      color: #4CAF50;
+      border: 1px solid rgba(76,175,80,0.2);
+    }
+
+    .build-card__status--paused {
+      background: rgba(255,152,0,0.1);
+      color: #FF9800;
+      border: 1px solid rgba(255,152,0,0.2);
+    }
+
+    .build-card__vehicle {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    .build-card__owner {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .build-card__progress {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .build-card__progress-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .build-card__progress-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 3px;
+      transition: width 0.3s;
+    }
+
+    .build-card__progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .build-card__progress-pct {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+
+    .build-card__progress-date {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .build-card__desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .build-card__link {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: color 0.2s;
+    }
+
+    .build-card:hover .build-card__link { color: var(--gold-light); }
+
+    .builds__cta-wrap {
+      text-align: center;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: 4px;
+      padding: 36px 24px;
+    }
+
+    .builds__cta-title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .builds__cta-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.6;
+      max-width: 520px;
+      margin: 0 auto 20px;
+    }
+
+    /* ── Regional Meetups ── */
+    .meetups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .meetup-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 4px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.2s;
+      border-left: 3px solid var(--gold);
+    }
+
+    .meetup-card:hover { border-color: var(--border); border-left-color: var(--gold-light); }
+
+    .meetup-card__region {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    .meetup-card__members {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .meetup-card__event {
+      background: rgba(196,160,53,0.06);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meetup-card__event-label {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .meetup-card__event-name {
+      font-family: var(--font-head);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+    }
+
+    .meetup-card__event-date {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+
+    .meetup-card__join {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: color 0.2s;
+    }
+
+    .meetup-card:hover .meetup-card__join { color: var(--gold-light); }
+
+    /* ── Forum Preview ── */
+    .forum-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 32px;
+    }
+
+    .forum-row {
+      background: var(--surface);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    .forum-row:hover { background: var(--surface2); }
+
+    .forum-row__left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .forum-row__title {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+    }
+
+    .forum-row__tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .forum-row__tag {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 2px;
+      background: rgba(196,160,53,0.08);
+      color: var(--gold);
+      border: 1px solid var(--border);
+    }
+
+    .forum-row__tag--hot {
+      background: rgba(255,69,0,0.1);
+      color: #FF6B35;
+      border-color: rgba(255,69,0,0.2);
+    }
+
+    .forum-row__right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    .forum-row__replies {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .forum-row__replies strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .forum-row__arrow {
+      font-size: 1.2rem;
+      color: var(--gold);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .forum-row:hover .forum-row__arrow { opacity: 1; }
+
+    .forum-coming-soon {
+      text-align: center;
+      background: rgba(196,160,53,0.04);
+      border: 1px dashed var(--border);
+      border-radius: 4px;
+      padding: 32px 24px;
+    }
+
+    .forum-coming-soon__title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .forum-coming-soon__desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto 20px;
+    }
+
+    /* ── Manifesto ── */
+    .manifesto {
+      padding: 96px 0;
+      background: linear-gradient(180deg, #0f0f0f 0%, #111 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .manifesto__bg {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -60deg,
+        transparent,
+        transparent 60px,
+        rgba(196,160,53,0.015) 60px,
+        rgba(196,160,53,0.015) 61px
+      );
+      pointer-events: none;
+    }
+
+    .manifesto__inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .manifesto__quote {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 36px;
+      padding-left: 24px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .manifesto__quote em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .manifesto__body {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+
+    .manifesto__body p + p {
+      margin-top: 20px;
+    }
+
+    .manifesto__body strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .manifesto__actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Newsletter ── */
+    .newsletter {
+      padding: 80px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .newsletter__inner {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .newsletter__title {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .newsletter__title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .newsletter__sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .newsletter__form {
+      display: flex;
+      gap: 0;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .newsletter__input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-right: none;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 14px 18px;
+      border-radius: 3px 0 0 3px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter__input::placeholder { color: var(--muted); }
+
+    .newsletter__input:focus {
+      border-color: var(--gold);
+    }
+
+    .newsletter__btn {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--bg);
+      border: none;
+      padding: 14px 24px;
+      border-radius: 0 3px 3px 0;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .newsletter__btn:hover { background: var(--gold-light); }
+
+    .newsletter__note {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(196,160,53,0.1);
+      padding: 64px 0 36px;
+    }
+
+    .footer__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer__brand-name {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .footer__brand-name span { color: var(--text); }
+
+    .footer__brand-sub {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .footer__brand-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 260px;
+    }
+
+    .footer__col-title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .footer__links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer__links a {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .footer__links a:hover { color: var(--text); }
+
+    .footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer__copy {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer__disclaimer {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.06em;
+      color: rgba(154,149,144,0.4);
+      max-width: 600px;
+      line-height: 1.5;
+      text-align: center;
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .footer__tagline {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(154,149,144,0.5);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+
+      .platform-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contribute-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .spotlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rotm__featured {
+        grid-template-columns: 1fr;
+      }
+
+      .rotm__featured-img {
+        min-height: 220px;
+      }
+
+      .rotm__past-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .builds-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .meetups-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .forum-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .forum-row__right {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .newsletter__form {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .newsletter__input {
+        border-right: 1px solid rgba(255,255,255,0.08);
+        border-radius: 3px;
+      }
+
+      .newsletter__btn {
+        border-radius: 3px;
+        padding: 14px;
+      }
+
+      .hero__stat-row {
+        gap: 32px;
+      }
+
+      .meme-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo-wrap">
+        <div class="nav__logo">Chevy<span>Roots</span></div>
+        <div class="nav__logo-sub">Run by a Chevy Girl</div>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/" class="nav__corner-link">Crystal's Corner</a></li>
+        <li><a href="/pages/about/">About</a></li>
+        <li><a href="/pages/community/" class="active nav__cta">Community</a></li>
+      </ul>
+
+      <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="/pages/models/">Models</a>
+      <a href="/pages/guides/">Guides</a>
+      <a href="/pages/builds/">Builds</a>
+      <a href="/pages/events/">Events</a>
+      <a href="/pages/crystals-corner/" class="nav__corner-link">Crystal's Corner</a>
+      <a href="/pages/about/">About</a>
+      <a href="/pages/community/" class="active nav__cta">Community</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero__bg-stripe"></div>
+    <div class="hero__inner">
+      <div class="hero__label">ChevyRoots Community</div>
+      <h1 class="hero__title">
+        The Chevy
+        <em>Community Hub</em>
+      </h1>
+      <p class="hero__sub">Connecting Chevy people everywhere. Builds, meetups, ride features, forums, and the people who keep the bowtie alive.</p>
+      <div class="hero__actions">
+        <a href="#ride-of-the-month" class="btn btn--primary">Ride of the Month &darr;</a>
+        <a href="#find-us" class="btn btn--outline">Find Us Online</a>
+        <a href="#forums" class="btn btn--outline">Forum Preview</a>
+      </div>
+
+      <div class="hero__stat-row">
+        <div class="hero__stat">
+          <div class="hero__stat-num">6+</div>
+          <div class="hero__stat-label">Platforms</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num">6</div>
+          <div class="hero__stat-label">Regions</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num">1</div>
+          <div class="hero__stat-label">Mission</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num">&#8734;</div>
+          <div class="hero__stat-label">Builds to Share</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FIND US ── -->
+  <section class="section" id="find-us">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Where We Live</div>
+        <h2 class="section__title">Find <em>Us</em></h2>
+        <p class="section__desc">We're building the ChevyRoots community across every major platform. Pick your home base and follow along.</p>
+      </div>
+
+      <div class="platform-grid">
+
+        <!-- Reddit -->
+        <div class="platform-card platform-card--reddit">
+          <div class="platform-card__icon icon--reddit">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="platform-card__name">Reddit</div>
+            <div class="platform-card__handle">r/ChevyRoots + more</div>
+          </div>
+          <div class="platform-card__subs">
+            <span class="platform-card__sub-tag">r/Chevrolet</span>
+            <span class="platform-card__sub-tag">r/ChevyTrucks</span>
+            <span class="platform-card__sub-tag">r/Corvette</span>
+            <span class="platform-card__sub-tag">r/ChevyRoots</span>
+          </div>
+          <p class="platform-card__desc">Our dedicated subreddit plus the communities we're active in. Builds, questions, events, and everything Chevy. Join early and help shape the community.</p>
+          <div class="platform-card__footer">
+            <span></span>
+            <a href="#" class="platform-card__follow">
+              Join Subreddit &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- TikTok -->
+        <div class="platform-card platform-card--tiktok">
+          <div class="platform-card__icon icon--tiktok">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="platform-card__name">TikTok</div>
+            <div class="platform-card__handle">@chevyroots</div>
+          </div>
+          <div class="platform-card__count">Just getting started</div>
+          <p class="platform-card__desc">Short-form content: quick tips, build highlights, model history clips, and behind-the-scenes from the garage.</p>
+          <div class="platform-card__footer">
+            <span></span>
+            <a href="#" class="platform-card__follow">Follow &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="platform-card platform-card--instagram">
+          <div class="platform-card__icon icon--instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="platform-card__name">Instagram</div>
+            <div class="platform-card__handle">@chevyroots</div>
+          </div>
+          <div class="platform-card__count">Just getting started</div>
+          <p class="platform-card__desc">Build photos, model spotlights, community submissions, and stories from Chevy owners across the country.</p>
+          <div class="platform-card__footer">
+            <span></span>
+            <a href="#" class="platform-card__follow">Follow &rarr;</a>
+          </div>
+        </div>
+
+        <!-- YouTube -->
+        <div class="platform-card platform-card--youtube">
+          <div class="platform-card__icon icon--youtube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="platform-card__name">YouTube</div>
+            <div class="platform-card__handle">ChevyRoots</div>
+          </div>
+          <div class="platform-card__count">Just getting started</div>
+          <p class="platform-card__desc">Long-form content: full build walkthroughs, model deep-dives, buyer's guides, and interviews with Chevy enthusiasts.</p>
+          <div class="platform-card__footer">
+            <span></span>
+            <a href="#" class="platform-card__follow">Subscribe &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Facebook -->
+        <div class="platform-card platform-card--facebook">
+          <div class="platform-card__icon icon--facebook">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="platform-card__name">Facebook</div>
+            <div class="platform-card__handle">ChevyRoots Community</div>
+          </div>
+          <div class="platform-card__count">Just getting started</div>
+          <p class="platform-card__desc">A private Facebook Group for builds, event coordination, and connecting with Chevy owners in your region.</p>
+          <div class="platform-card__note">Coming soon</div>
+          <div class="platform-card__footer">
+            <span></span>
+            <a href="#" class="platform-card__follow">Join Group &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Discord -->
+        <div class="platform-card platform-card--discord">
+          <div class="platform-card__icon icon--discord">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.04.03.05a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="platform-card__name">Discord</div>
+            <div class="platform-card__handle">ChevyRoots Server</div>
+          </div>
+          <div class="platform-card__count">Just getting started</div>
+          <p class="platform-card__desc">Real-time chat for builds in progress, quick questions, and organized channels by model, era, and mod type.</p>
+          <div class="platform-card__note">Coming soon</div>
+          <div class="platform-card__footer">
+            <span></span>
+            <a href="#" class="platform-card__follow">Join Server &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REDDIT STRATEGY ── -->
+  <section class="section" id="reddit-strategy">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Where the Real Conversations Happen</div>
+        <h2 class="section__title">Reddit <em>Strategy</em></h2>
+        <p class="section__desc">We're building the Chevy community on Reddit that it actually deserves — active, helpful, and moderated by people who actually own Chevys.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;">
+
+        <a href="https://reddit.com/r/Chevy" target="_blank" rel="noopener" style="display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 24px; text-decoration: none; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(196,160,53,0.5)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+            <span style="font-family: var(--font-head); font-size: 22px; font-weight: 800; color: #FF4500;">r/</span>
+            <span style="font-family: var(--font-head); font-size: 22px; font-weight: 800; text-transform: uppercase; color: var(--text);">Chevy</span>
+          </div>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 14px;">The general Chevy hub. Builds, questions, memes, news — all models welcome. One of the most active Chevy communities on the platform.</p>
+          <span style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold);">Join Subreddit →</span>
+        </a>
+
+        <a href="https://reddit.com/r/Silverado" target="_blank" rel="noopener" style="display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 24px; text-decoration: none; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(196,160,53,0.5)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+            <span style="font-family: var(--font-head); font-size: 22px; font-weight: 800; color: #FF4500;">r/</span>
+            <span style="font-family: var(--font-head); font-size: 22px; font-weight: 800; text-transform: uppercase; color: var(--text);">Silverado</span>
+          </div>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 14px;">Silverado owners helping Silverado owners. Mods, towing, builds, and that one noise you can't figure out — all covered here.</p>
+          <span style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold);">Join Subreddit →</span>
+        </a>
+
+        <a href="https://reddit.com/r/Corvette" target="_blank" rel="noopener" style="display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 24px; text-decoration: none; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(196,160,53,0.5)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+            <span style="font-family: var(--font-head); font-size: 22px; font-weight: 800; color: #FF4500;">r/</span>
+            <span style="font-family: var(--font-head); font-size: 22px; font-weight: 800; text-transform: uppercase; color: var(--text);">Corvette</span>
+          </div>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 14px;">From C1 to C8, this is where Vette people live. Spec debates, track days, driver mods, and show prep. One of the most passionate model communities on Reddit.</p>
+          <span style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold);">Join Subreddit →</span>
+        </a>
+
+        <a href="https://reddit.com/r/Camaro" target="_blank" rel="noopener" style="display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 24px; text-decoration: none; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(196,160,53,0.5)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+            <span style="font-family: var(--font-head); font-size: 22px; font-weight: 800; color: #FF4500;">r/</span>
+            <span style="font-family: var(--font-head); font-size: 22px; font-weight: 800; text-transform: uppercase; color: var(--text);">Camaro</span>
+          </div>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 14px;">Gen 1 through Gen 6, the Camaro community keeps the muscle car flame burning. Builds, events, and the ongoing "is the Camaro coming back?" thread.</p>
+          <span style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold);">Join Subreddit →</span>
+        </a>
+
+      </div>
+
+      <div style="background: linear-gradient(135deg, #1A1510 0%, #221D12 100%); border: 1px solid rgba(196,160,53,0.35); border-radius: 6px; padding: 32px; display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 260px;">
+          <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">Under Construction</div>
+          <h3 style="font-family: var(--font-head); font-size: 28px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; color: var(--text); margin-bottom: 12px;">Reviving r/Chevrolet</h3>
+          <p style="font-size: 15px; color: var(--muted); line-height: 1.7;">r/Chevrolet is one of the most under-utilized brand subreddits on the platform. We're working to breathe life back into it — better moderation, structured content, and a community that's actually active. If you're a Chevy person on Reddit, <a href="https://reddit.com/r/Chevrolet" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: underline; text-underline-offset: 3px;">r/Chevrolet</a> is where we want to build something worth having.</p>
+        </div>
+        <a href="https://reddit.com/r/Chevrolet" target="_blank" rel="noopener" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1A1A1A; background: var(--gold); padding: 12px 22px; border-radius: 3px; align-self: center;">Visit r/Chevrolet →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTENT CREATOR COLLAB ── -->
+  <section class="section section--alt" id="creator-collab">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <div class="section__eyebrow" style="margin-bottom: 14px;">Let's Work Together</div>
+        <h2 class="section__title" style="margin-bottom: 20px;">Are You a Chevy <em>Content Creator?</em></h2>
+        <p style="font-size: 1.1rem; font-weight: 300; color: var(--muted); line-height: 1.7; max-width: 620px; margin: 0 auto 40px;">We're actively looking to collaborate with Chevy creators — YouTube, TikTok, Instagram, blogs, podcasts. If your content is about Chevys and it's good, we want to amplify it, link to it, and build something together.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto 48px;">
+        <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 24px; text-align: center;">
+          <div style="font-family: var(--font-head); font-size: 32px; font-weight: 800; color: var(--gold); margin-bottom: 8px;">Feature</div>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">We feature quality Chevy creators in our community section and newsletter.</p>
+        </div>
+        <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 24px; text-align: center;">
+          <div style="font-family: var(--font-head); font-size: 32px; font-weight: 800; color: var(--gold); margin-bottom: 8px;">Link</div>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">Build guides and model pages link out to the best creator content on each topic.</p>
+        </div>
+        <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 24px; text-align: center;">
+          <div style="font-family: var(--font-head); font-size: 32px; font-weight: 800; color: var(--gold); margin-bottom: 8px;">Collab</div>
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">Long-form partnerships for guides, event coverage, and community content.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="mailto:hello@chevyroots.com?subject=Creator%20Collab%20Inquiry" style="display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1A1A1A; background: var(--gold); padding: 14px 32px; border-radius: 3px;">Email Us: hello@chevyroots.com</a>
+        <p style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.08em; margin-top: 14px; text-transform: uppercase;">We read every email and respond within 48 hours</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RIDE OF THE MONTH ── -->
+  <section class="section section--alt" id="ride-of-the-month">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Monthly Showcase</div>
+        <h2 class="section__title">Ride of the <em>Month</em></h2>
+        <p class="section__desc">Every month we feature one standout Chevy from the community. Your build. Your story. Front and center.</p>
+      </div>
+
+      <!-- Current Winner -->
+      <div class="rotm__featured">
+        <div class="rotm__featured-img" style="background-image: url('/photos/camaro/pexels_11756442_camaro.jpeg'); background-size: cover; background-position: center;">
+          <div class="rotm__featured-badge">April 2026 Winner</div>
+        </div>
+        <div class="rotm__featured-body">
+          <div class="rotm__featured-month">April 2026</div>
+          <h3 class="rotm__featured-title">Mike's 1969 Camaro Z/28</h3>
+          <p class="rotm__featured-owner">Owned by <strong>Mike T.</strong> &mdash; Richmond, VA</p>
+          <ul class="rotm__featured-mods">
+            <li>302 DZ block, rebuilt to spec</li>
+            <li>Muncie M21 4-speed close-ratio</li>
+            <li>JL Audio stealth install behind rear seat</li>
+            <li>Rally Green respray, factory correct</li>
+          </ul>
+          <p class="rotm__featured-story">"Bought it as a roller in 2019 and spent three years making it right. No shortcuts. Every bolt torqued to spec. This car earned every mile."</p>
+        </div>
+      </div>
+
+      <!-- Past Winners -->
+      <div class="rotm__past-label">Past Winners</div>
+      <div class="rotm__past-grid">
+        <div class="rotm__past-card">
+          <div class="rotm__past-img"><span>Photo</span></div>
+          <div class="rotm__past-body">
+            <div class="rotm__past-month">March 2026</div>
+            <div class="rotm__past-name">Sarah's 1972 C10 Stepside</div>
+            <div class="rotm__past-owner">Sarah K. &mdash; Austin, TX</div>
+          </div>
+        </div>
+        <div class="rotm__past-card">
+          <div class="rotm__past-img"><span>Photo</span></div>
+          <div class="rotm__past-body">
+            <div class="rotm__past-month">February 2026</div>
+            <div class="rotm__past-name">James's 2024 Corvette E-Ray</div>
+            <div class="rotm__past-owner">James R. &mdash; San Diego, CA</div>
+          </div>
+        </div>
+        <div class="rotm__past-card">
+          <div class="rotm__past-img"><span>Photo</span></div>
+          <div class="rotm__past-body">
+            <div class="rotm__past-month">January 2026</div>
+            <div class="rotm__past-name">Tony's 1987 Monte Carlo SS</div>
+            <div class="rotm__past-owner">Tony M. &mdash; Detroit, MI</div>
+          </div>
+        </div>
+        <div class="rotm__past-card">
+          <div class="rotm__past-img"><span>Photo</span></div>
+          <div class="rotm__past-body">
+            <div class="rotm__past-month">December 2025</div>
+            <div class="rotm__past-name">Lisa's 2023 Silverado ZR2</div>
+            <div class="rotm__past-owner">Lisa W. &mdash; Denver, CO</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit CTA -->
+      <div class="rotm__submit">
+        <h3 class="rotm__submit-title">Submit Your Ride</h3>
+        <p class="rotm__submit-desc">Think your Chevy deserves the spotlight? Send us what we need:</p>
+        <ul class="rotm__submit-list">
+          <li>Photo(s)</li>
+          <li>Year / Model</li>
+          <li>Mods List</li>
+          <li>Your Story</li>
+        </ul>
+        <a href="mailto:hello@chevyroots.com?subject=Ride of the Month Submission" class="btn btn--primary">Submit Your Ride &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BUILD JOURNALS ── -->
+  <section class="section" id="build-journals">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Ongoing Projects</div>
+        <h2 class="section__title">Build <em>Journals</em></h2>
+        <p class="section__desc">Document your build from start to finish. Every mod, every dollar, every lesson.</p>
+      </div>
+
+      <div class="builds-grid">
+
+        <div class="build-card">
+          <div class="build-card__header">
+            <div class="build-card__project">Project "Copperhead"</div>
+            <span class="build-card__status build-card__status--active">Active</span>
+          </div>
+          <div class="build-card__vehicle">1971 Chevelle SS 454</div>
+          <div class="build-card__owner">by Derek M. &mdash; Charlotte, NC</div>
+          <div class="build-card__progress">
+            <div class="build-card__progress-bar">
+              <div class="build-card__progress-fill" style="width: 68%;"></div>
+            </div>
+            <div class="build-card__progress-info">
+              <span class="build-card__progress-pct">68% Complete</span>
+              <span class="build-card__progress-date">Updated Mar 28, 2026</span>
+            </div>
+          </div>
+          <p class="build-card__desc">Full frame-off restoration with a modern LS3 swap. Currently wiring the dash harness and finalizing the exhaust routing.</p>
+          <a href="#" class="build-card__link">Read Journal &rarr;</a>
+        </div>
+
+        <div class="build-card">
+          <div class="build-card__header">
+            <div class="build-card__project">The Daily C10</div>
+            <span class="build-card__status build-card__status--active">Active</span>
+          </div>
+          <div class="build-card__vehicle">1968 C10 Short Bed</div>
+          <div class="build-card__owner">by Alicia S. &mdash; Nashville, TN</div>
+          <div class="build-card__progress">
+            <div class="build-card__progress-bar">
+              <div class="build-card__progress-fill" style="width: 42%;"></div>
+            </div>
+            <div class="build-card__progress-info">
+              <span class="build-card__progress-pct">42% Complete</span>
+              <span class="build-card__progress-date">Updated Apr 1, 2026</span>
+            </div>
+          </div>
+          <p class="build-card__desc">Building a reliable daily driver out of a barn find. 350 SBC rebuild, disc brake conversion, and a Crown Vic front clip swap.</p>
+          <a href="#" class="build-card__link">Read Journal &rarr;</a>
+        </div>
+
+        <div class="build-card">
+          <div class="build-card__header">
+            <div class="build-card__project">Square Body Revival</div>
+            <span class="build-card__status build-card__status--paused">Paused</span>
+          </div>
+          <div class="build-card__vehicle">1985 K10 Silverado</div>
+          <div class="build-card__owner">by Marcus J. &mdash; Phoenix, AZ</div>
+          <div class="build-card__progress">
+            <div class="build-card__progress-bar">
+              <div class="build-card__progress-fill" style="width: 25%;"></div>
+            </div>
+            <div class="build-card__progress-info">
+              <span class="build-card__progress-pct">25% Complete</span>
+              <span class="build-card__progress-date">Updated Feb 14, 2026</span>
+            </div>
+          </div>
+          <p class="build-card__desc">4x4 trail rig build. Lift kit installed, waiting on transfer case rebuild parts. Documenting every step for first-timers.</p>
+          <a href="#" class="build-card__link">Read Journal &rarr;</a>
+        </div>
+
+      </div>
+
+      <div class="builds__cta-wrap">
+        <h3 class="builds__cta-title">Start Your Build Journal</h3>
+        <p class="builds__cta-desc">Got a project in progress? Document every step, share your lessons, and inspire the next builder.</p>
+        <a href="mailto:hello@chevyroots.com?subject=Build Journal Submission" class="btn btn--primary">Start Your Journal &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REGIONAL MEETUPS ── -->
+  <section class="section section--alt" id="meetups">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Local Connections</div>
+        <h2 class="section__title">Regional <em>Meetups</em></h2>
+        <p class="section__desc">Find Chevy people near you. Every region has its own crew, its own events, and its own flavor.</p>
+      </div>
+
+      <div class="meetups-grid">
+
+        <div class="meetup-card">
+          <div class="meetup-card__region">Northeast</div>
+          <div class="meetup-card__members">48 Members</div>
+          <div class="meetup-card__event">
+            <div class="meetup-card__event-label">Next Event</div>
+            <div class="meetup-card__event-name">Cars & Coffee — Hershey, PA</div>
+            <div class="meetup-card__event-date">May 17, 2026</div>
+          </div>
+          <a href="#" class="meetup-card__join">Join Region &rarr;</a>
+        </div>
+
+        <div class="meetup-card">
+          <div class="meetup-card__region">Southeast</div>
+          <div class="meetup-card__members">72 Members</div>
+          <div class="meetup-card__event">
+            <div class="meetup-card__event-label">Next Event</div>
+            <div class="meetup-card__event-name">Bowtie BBQ Cruise-In — Atlanta, GA</div>
+            <div class="meetup-card__event-date">May 3, 2026</div>
+          </div>
+          <a href="#" class="meetup-card__join">Join Region &rarr;</a>
+        </div>
+
+        <div class="meetup-card">
+          <div class="meetup-card__region">Midwest</div>
+          <div class="meetup-card__members">63 Members</div>
+          <div class="meetup-card__event">
+            <div class="meetup-card__event-label">Next Event</div>
+            <div class="meetup-card__event-name">Lakefront Chevy Show — Chicago, IL</div>
+            <div class="meetup-card__event-date">June 7, 2026</div>
+          </div>
+          <a href="#" class="meetup-card__join">Join Region &rarr;</a>
+        </div>
+
+        <div class="meetup-card">
+          <div class="meetup-card__region">Texas</div>
+          <div class="meetup-card__members">89 Members</div>
+          <div class="meetup-card__event">
+            <div class="meetup-card__event-label">Next Event</div>
+            <div class="meetup-card__event-name">Lone Star Chevy Meet — San Antonio, TX</div>
+            <div class="meetup-card__event-date">April 26, 2026</div>
+          </div>
+          <a href="#" class="meetup-card__join">Join Region &rarr;</a>
+        </div>
+
+        <div class="meetup-card">
+          <div class="meetup-card__region">Southwest</div>
+          <div class="meetup-card__members">37 Members</div>
+          <div class="meetup-card__event">
+            <div class="meetup-card__event-label">Next Event</div>
+            <div class="meetup-card__event-name">Desert Cruise Night — Scottsdale, AZ</div>
+            <div class="meetup-card__event-date">May 10, 2026</div>
+          </div>
+          <a href="#" class="meetup-card__join">Join Region &rarr;</a>
+        </div>
+
+        <div class="meetup-card">
+          <div class="meetup-card__region">West Coast</div>
+          <div class="meetup-card__members">55 Members</div>
+          <div class="meetup-card__event">
+            <div class="meetup-card__event-label">Next Event</div>
+            <div class="meetup-card__event-name">PCH Bowtie Run — Malibu, CA</div>
+            <div class="meetup-card__event-date">May 24, 2026</div>
+          </div>
+          <a href="#" class="meetup-card__join">Join Region &rarr;</a>
+        </div>
+
+      </div>
+
+      <div style="text-align: center;">
+        <a href="mailto:hello@chevyroots.com?subject=Organize a Meetup" class="btn btn--primary">Organize a Meetup &rarr;</a>
+        <a href="/pages/events/" class="btn btn--outline">View All Events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FORUM PREVIEW ── -->
+  <section class="section" id="forums">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Discussions</div>
+        <h2 class="section__title">Forum <em>Preview</em></h2>
+        <p class="section__desc">A taste of what the community is talking about. Full forums are coming soon.</p>
+      </div>
+
+      <div class="forum-list">
+
+        <div class="forum-row">
+          <div class="forum-row__left">
+            <div class="forum-row__title">Best exhaust for 6th gen Camaro?</div>
+            <div class="forum-row__tags">
+              <span class="forum-row__tag">Camaro</span>
+              <span class="forum-row__tag">Exhaust</span>
+              <span class="forum-row__tag forum-row__tag--hot">Hot</span>
+            </div>
+          </div>
+          <div class="forum-row__right">
+            <div class="forum-row__replies"><strong>47</strong> replies</div>
+            <span class="forum-row__arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <div class="forum-row">
+          <div class="forum-row__left">
+            <div class="forum-row__title">AFM delete — worth it?</div>
+            <div class="forum-row__tags">
+              <span class="forum-row__tag">Silverado</span>
+              <span class="forum-row__tag">Engine</span>
+              <span class="forum-row__tag forum-row__tag--hot">Hot</span>
+            </div>
+          </div>
+          <div class="forum-row__right">
+            <div class="forum-row__replies"><strong>83</strong> replies</div>
+            <span class="forum-row__arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <div class="forum-row">
+          <div class="forum-row__left">
+            <div class="forum-row__title">C10 vs Square Body for first project?</div>
+            <div class="forum-row__tags">
+              <span class="forum-row__tag">Trucks</span>
+              <span class="forum-row__tag">Buyer's Guide</span>
+            </div>
+          </div>
+          <div class="forum-row__right">
+            <div class="forum-row__replies"><strong>31</strong> replies</div>
+            <span class="forum-row__arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <div class="forum-row">
+          <div class="forum-row__left">
+            <div class="forum-row__title">Equinox EV road trip report</div>
+            <div class="forum-row__tags">
+              <span class="forum-row__tag">EV</span>
+              <span class="forum-row__tag">Equinox</span>
+            </div>
+          </div>
+          <div class="forum-row__right">
+            <div class="forum-row__replies"><strong>19</strong> replies</div>
+            <span class="forum-row__arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <div class="forum-row">
+          <div class="forum-row__left">
+            <div class="forum-row__title">Show us your garage setup</div>
+            <div class="forum-row__tags">
+              <span class="forum-row__tag">Garage</span>
+              <span class="forum-row__tag">Community</span>
+              <span class="forum-row__tag forum-row__tag--hot">Hot</span>
+            </div>
+          </div>
+          <div class="forum-row__right">
+            <div class="forum-row__replies"><strong>64</strong> replies</div>
+            <span class="forum-row__arrow">&rarr;</span>
+          </div>
+        </div>
+
+        <div class="forum-row">
+          <div class="forum-row__left">
+            <div class="forum-row__title">LS swap into a 2nd gen Camaro — wiring tips?</div>
+            <div class="forum-row__tags">
+              <span class="forum-row__tag">Camaro</span>
+              <span class="forum-row__tag">LS Swap</span>
+            </div>
+          </div>
+          <div class="forum-row__right">
+            <div class="forum-row__replies"><strong>28</strong> replies</div>
+            <span class="forum-row__arrow">&rarr;</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="forum-coming-soon">
+        <h3 class="forum-coming-soon__title">Full Forums — Coming Soon</h3>
+        <p class="forum-coming-soon__desc">We're building a modern forum experience that doesn't look like it's from 2005. Structured, searchable, and mobile-first. Sign up for the newsletter to get notified when it launches.</p>
+        <a href="#newsletter" class="btn btn--primary">Get Notified &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WAYS TO CONTRIBUTE ── -->
+  <section class="section section--alt" id="contribute">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Get Involved</div>
+        <h2 class="section__title">Ways to <em>Contribute</em></h2>
+        <p class="section__desc">ChevyRoots is built by the community. Here's how you can add to it.</p>
+      </div>
+
+      <div class="contribute-grid">
+
+        <a href="/pages/builds/" class="contribute-card">
+          <div class="contribute-card__icon">&#x1F527;</div>
+          <div class="contribute-card__title">Submit Your Build</div>
+          <p class="contribute-card__desc">Got a Chevy you've been wrenching on? Share your build — modifications, specs, photos, and the story behind it.</p>
+          <div class="contribute-card__link">Submit Build &rarr;</div>
+        </a>
+
+        <a href="/pages/events/" class="contribute-card">
+          <div class="contribute-card__icon">&#x1F4C5;</div>
+          <div class="contribute-card__title">Submit an Event</div>
+          <p class="contribute-card__desc">Know about a Chevy show, cruise-in, or car meet near you? Add it to the ChevyRoots event calendar.</p>
+          <div class="contribute-card__link">Submit Event &rarr;</div>
+        </a>
+
+        <a href="/pages/guides/known-issues.html" class="contribute-card">
+          <div class="contribute-card__icon">&#x26A0;&#xFE0F;</div>
+          <div class="contribute-card__title">Report a Known Issue</div>
+          <p class="contribute-card__desc">Found a common problem that should be documented? Help other owners by reporting TSBs, recalls, and recurring faults.</p>
+          <div class="contribute-card__link">Report Issue &rarr;</div>
+        </a>
+
+        <a href="mailto:hello@chevyroots.com" class="contribute-card">
+          <div class="contribute-card__icon">&#x270D;&#xFE0F;</div>
+          <div class="contribute-card__title">Write for ChevyRoots</div>
+          <p class="contribute-card__desc">Deep knowledge on a specific model, era, or mod? We want to hear from you. Guest writers and contributors welcome.</p>
+          <div class="contribute-card__link">Get in Touch &rarr;</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMMUNITY SPOTLIGHT ── -->
+  <section class="section" id="spotlight">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Featured Builds &amp; Stories</div>
+        <h2 class="section__title">Community <em>Spotlight</em></h2>
+        <p class="section__desc">Every week we feature community members' builds, stories, and photos. Submit yours to be considered.</p>
+      </div>
+
+      <div class="spotlight-grid">
+
+        <div class="spotlight-card">
+          <div class="spotlight-card__img" style="background-image: url('/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg'); background-size: cover; background-position: center;">
+          </div>
+          <div class="spotlight-card__body">
+            <div class="spotlight-card__title">Your Build Could Be Here</div>
+            <p class="spotlight-card__sub">We feature real builds from real Chevy owners. Whether it's a daily driver, a show car, or a work in progress — share it.</p>
+            <a href="/pages/builds/" class="spotlight-card__cta">Submit Your Build &rarr;</a>
+          </div>
+        </div>
+
+        <div class="spotlight-card">
+          <div class="spotlight-card__img" style="background-image: url('/photos/silverado/pexels_12624306_silverado.jpeg'); background-size: cover; background-position: center;">
+          </div>
+          <div class="spotlight-card__body">
+            <div class="spotlight-card__title">Your Story Could Be Here</div>
+            <p class="spotlight-card__sub">Got a story about your Chevy — how you found it, built it, or how it's been with you through it all? We want to tell it.</p>
+            <a href="mailto:hello@chevyroots.com" class="spotlight-card__cta">Share Your Story &rarr;</a>
+          </div>
+        </div>
+
+        <div class="spotlight-card">
+          <div class="spotlight-card__img" style="background-image: url('/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg'); background-size: cover; background-position: center;">
+          </div>
+          <div class="spotlight-card__body">
+            <div class="spotlight-card__title">Your Photo Could Be Here</div>
+            <p class="spotlight-card__sub">Tag <strong style="color: var(--gold);">@chevyroots</strong> on Instagram or TikTok for a chance to be featured on the site and social channels.</p>
+            <a href="#find-us" class="spotlight-card__cta">Find Us Online &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CHEVY MEME OF THE WEEK ── -->
+  <section class="section section--alt" id="meme-of-the-week">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Shareable &amp; Stupid Funny</div>
+        <h2 class="section__title">Chevy Meme <em>of the Week</em></h2>
+        <p class="section__desc">Every week we drop a fresh Chevy meme. Tag <strong style="color: var(--gold);">@chevyroots</strong> with yours to get featured.</p>
+      </div>
+
+      <div class="meme-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;">
+
+        <!-- Featured meme placeholder -->
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 4px; overflow: hidden;">
+          <div style="background: url('/photos/camaro/pexels_11756442_camaro.jpeg') center/cover no-repeat; aspect-ratio: 1/1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 20px; position: relative;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85) 100%);"></div>
+            <p style="font-family: var(--font-head); font-weight: 800; font-size: clamp(1.1rem, 2.5vw, 1.8rem); text-transform: uppercase; letter-spacing: 0.04em; color: #fff; text-align: center; line-height: 1.2; position: relative; z-index: 1; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Me: "I'll just look at Chevys online for 5 minutes"<br><span style="color: var(--gold);">Me, 3 hours later:</span> researching a C10 build budget</p>
+          </div>
+          <div style="padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase;">Week of April 5, 2026</span>
+            <a href="https://instagram.com/chevyroots" target="_blank" rel="noopener" style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold);">Share this &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Submit a meme + archive -->
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 28px 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Got a good one?</div>
+            <h3 style="font-family: var(--font-head); font-weight: 800; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text); margin-bottom: 12px;">Submit Your Meme</h3>
+            <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 20px;">Tag <strong style="color: var(--gold);">@chevyroots</strong> on TikTok or Instagram, or email it to us. If it's funny and it's Chevy, it's getting posted.</p>
+            <a href="mailto:hello@chevyroots.com?subject=ChevyRoots Meme Submission" style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1A1A1A; background: var(--gold); padding: 10px 18px; border-radius: 3px;">Email Us Your Meme &rarr;</a>
+          </div>
+
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 20px 24px;">
+            <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;">The vibe we're going for</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+              <li style="font-size: 0.88rem; color: var(--muted); padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold);">&bull;</span> Ford owners who got lost and ended up here</li>
+              <li style="font-size: 0.88rem; color: var(--muted); padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold);">&bull;</span> The Tahoe vs. Suburban family dinner argument</li>
+              <li style="font-size: 0.88rem; color: var(--muted); padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold);">&bull;</span> LS swap everything, always, no exceptions</li>
+              <li style="font-size: 0.88rem; color: var(--muted); padding-left: 16px; position: relative;"><span style="position: absolute; left: 0; color: var(--gold);">&bull;</span> "It's not stock" said with pride, not shame</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ENGAGEMENT STATS ── -->
+  <section class="section section--dark" id="engagement-stats">
+    <div class="container">
+      <div class="section__header" style="text-align: center; margin-bottom: 48px;">
+        <div class="section__eyebrow">Community by the Numbers</div>
+        <h2 class="section__title">We're <em>Growing</em></h2>
+        <p class="section__desc" style="margin: 0 auto;">Early days, real numbers. We're transparent about where we are — and where we're headed.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto 40px;" id="stats-grid">
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 28px 24px; text-align: center;">
+          <div id="stat-newsletter" style="font-family: var(--font-head); font-size: clamp(2.4rem, 5vw, 3.4rem); font-weight: 800; color: var(--gold); line-height: 1;">—</div>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 8px;">Newsletter Signups</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 6px; opacity: 0.7;">local count</div>
+        </div>
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 28px 24px; text-align: center;">
+          <div style="font-family: var(--font-head); font-size: clamp(2.4rem, 5vw, 3.4rem); font-weight: 800; color: var(--gold); line-height: 1;">6+</div>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 8px;">Platforms Active</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 6px; opacity: 0.7;">Reddit, TikTok, IG &amp; more</div>
+        </div>
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 28px 24px; text-align: center;">
+          <div style="font-family: var(--font-head); font-size: clamp(2.4rem, 5vw, 3.4rem); font-weight: 800; color: var(--gold); line-height: 1;">2026</div>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 8px;">Launch Year</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 6px; opacity: 0.7;">building in public</div>
+        </div>
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 28px 24px; text-align: center;">
+          <div id="stat-pageviews" style="font-family: var(--font-head); font-size: clamp(2.4rem, 5vw, 3.4rem); font-weight: 800; color: var(--gold); line-height: 1;">—</div>
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 8px;">Your Visits</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 6px; opacity: 0.7;">this session (local)</div>
+        </div>
+
+      </div>
+
+      <p style="text-align: center; font-size: 13px; color: var(--muted); opacity: 0.7; font-family: var(--font-mono); letter-spacing: 0.06em;">Newsletter signup count pulled from your browser's local storage. Numbers reset per device — not a global tracker.</p>
+    </div>
+  </section>
+
+  <!-- ── CONTENT CALENDAR ── -->
+  <section class="section" id="content-calendar">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">What's Coming</div>
+        <h2 class="section__title">April <em>Content Calendar</em></h2>
+        <p class="section__desc">Here's what ChevyRoots has in the pipeline this month across the site and social channels.</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:40px;">
+
+        <div style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-left:3px solid var(--gold); border-radius:4px; padding:20px 24px; display:flex; align-items:flex-start; gap:20px; flex-wrap:wrap;">
+          <div style="min-width:80px; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold);">Week 1</div>
+            <div style="font-family:var(--font-mono); font-size:0.62rem; color:var(--muted);">Apr 1&ndash;7</div>
+          </div>
+          <div style="flex:1;">
+            <div style="font-family:var(--font-head); font-size:1.1rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text); margin-bottom:4px;">2025 Camaro ZL1 Full Review</div>
+            <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">A comprehensive owner&rsquo;s review of the final-year Camaro ZL1 before the model gets retired again. Real driving impressions, track numbers, and honest thoughts on what GM got right and what they didn&rsquo;t.</p>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; background:rgba(196,160,53,0.1); color:var(--gold); border:1px solid var(--border); padding:4px 10px; border-radius:2px; white-space:nowrap; flex-shrink:0;">Crystal&rsquo;s Corner</span>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-left:3px solid #FF4500; border-radius:4px; padding:20px 24px; display:flex; align-items:flex-start; gap:20px; flex-wrap:wrap;">
+          <div style="min-width:80px; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:#FF4500;">Week 2</div>
+            <div style="font-family:var(--font-mono); font-size:0.62rem; color:var(--muted);">Apr 8&ndash;14</div>
+          </div>
+          <div style="flex:1;">
+            <div style="font-family:var(--font-head); font-size:1.1rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text); margin-bottom:4px;">610 Cruisers Feature</div>
+            <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">A spotlight on the 610 Cruisers car club &mdash; their history, their builds, and what keeps classic Chevy culture alive in their community. Club features are a core part of what ChevyRoots wants to build.</p>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; background:rgba(255,69,0,0.08); color:#FF4500; border:1px solid rgba(255,69,0,0.15); padding:4px 10px; border-radius:2px; white-space:nowrap; flex-shrink:0;">Community Feature</span>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-left:3px solid #4A8FD4; border-radius:4px; padding:20px 24px; display:flex; align-items:flex-start; gap:20px; flex-wrap:wrap;">
+          <div style="min-width:80px; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:#4A8FD4;">Week 3</div>
+            <div style="font-family:var(--font-mono); font-size:0.62rem; color:var(--muted);">Apr 15&ndash;21</div>
+          </div>
+          <div style="flex:1;">
+            <div style="font-family:var(--font-head); font-size:1.1rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text); margin-bottom:4px;">Skyline Drive Corvette Rental: The Experience</div>
+            <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Crystal&rsquo;s first-person account of renting a C8 Corvette for a run up Skyline Drive in Shenandoah. The route, the car, the moments &mdash; and why everyone who loves Chevys should do this at least once.</p>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; background:rgba(74,143,212,0.08); color:#4A8FD4; border:1px solid rgba(74,143,212,0.15); padding:4px 10px; border-radius:2px; white-space:nowrap; flex-shrink:0;">Crystal&rsquo;s Corner</span>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-left:3px solid #4CAF6A; border-radius:4px; padding:20px 24px; display:flex; align-items:flex-start; gap:20px; flex-wrap:wrap;">
+          <div style="min-width:80px; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:#4CAF6A;">Week 4</div>
+            <div style="font-family:var(--font-mono); font-size:0.62rem; color:var(--muted);">Apr 22&ndash;30</div>
+          </div>
+          <div style="flex:1;">
+            <div style="font-family:var(--font-head); font-size:1.1rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text); margin-bottom:4px;">Build Engine Expansion: 12 Builds Now Live</div>
+            <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">Announcing the expanded Build Engine database with 12 documented builds, new stats dashboards, Popular Parts intelligence, and filtered views. Social push across Reddit, TikTok, and Instagram.</p>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; background:rgba(76,175,106,0.08); color:#4CAF6A; border:1px solid rgba(76,175,106,0.15); padding:4px 10px; border-radius:2px; white-space:nowrap; flex-shrink:0;">Site Update</span>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;">
+        <a href="/pages/newsletter/" class="btn btn--outline">Get Notified When Content Drops &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── REDDIT STRATEGY ── -->
+  <section class="section section--alt" id="reddit-strategy">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Where Chevy People Actually Are</div>
+        <h2 class="section__title">ChevyRoots on <em>Reddit</em></h2>
+        <p class="section__desc">Reddit is where the most engaged Chevy conversations happen. ChevyRoots is actively building a presence there &mdash; participating, contributing, and connecting with existing communities.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; margin-bottom:40px;">
+
+        <a href="https://reddit.com/r/Chevy" target="_blank" rel="noopener" style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-top:3px solid #FF4500; border-radius:4px; padding:24px; display:flex; flex-direction:column; gap:10px; transition:border-color 0.2s; text-decoration:none; color:inherit;">
+          <div style="font-family:var(--font-mono); font-size:0.68rem; font-weight:500; letter-spacing:0.08em; color:#FF4500;">r/Chevy</div>
+          <div style="font-family:var(--font-head); font-size:1.1rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text);">General Chevy</div>
+          <p style="font-size:0.85rem; color:var(--muted); line-height:1.6; flex:1;">The main hub for all Chevrolet discussions. News, questions, builds, and culture across every model and era. Broad audience, highly active.</p>
+          <span style="font-family:var(--font-mono); font-size:0.68rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#FF4500;">Visit Subreddit &rarr;</span>
+        </a>
+
+        <a href="https://reddit.com/r/Silverado" target="_blank" rel="noopener" style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-top:3px solid #FF4500; border-radius:4px; padding:24px; display:flex; flex-direction:column; gap:10px; transition:border-color 0.2s; text-decoration:none; color:inherit;">
+          <div style="font-family:var(--font-mono); font-size:0.68rem; font-weight:500; letter-spacing:0.08em; color:#FF4500;">r/Silverado</div>
+          <div style="font-family:var(--font-head); font-size:1.1rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text);">Silverado Owners</div>
+          <p style="font-size:0.85rem; color:var(--muted); line-height:1.6; flex:1;">Mods, towing, off-road builds, and real talk from Silverado owners. Where the Trail Boss and ZR2 builds get posted first.</p>
+          <span style="font-family:var(--font-mono); font-size:0.68rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#FF4500;">Visit Subreddit &rarr;</span>
+        </a>
+
+        <a href="https://reddit.com/r/Corvette" target="_blank" rel="noopener" style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-top:3px solid #FF4500; border-radius:4px; padding:24px; display:flex; flex-direction:column; gap:10px; transition:border-color 0.2s; text-decoration:none; color:inherit;">
+          <div style="font-family:var(--font-mono); font-size:0.68rem; font-weight:500; letter-spacing:0.08em; color:#FF4500;">r/Corvette</div>
+          <div style="font-family:var(--font-head); font-size:1.1rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text);">Corvette Enthusiasts</div>
+          <p style="font-size:0.85rem; color:var(--muted); line-height:1.6; flex:1;">C2 through C8 &mdash; builds, buyer guides, rental reviews, and the most passionate Chevy fanbase on Reddit. Active every day.</p>
+          <span style="font-family:var(--font-mono); font-size:0.68rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#FF4500;">Visit Subreddit &rarr;</span>
+        </a>
+
+        <a href="https://reddit.com/r/ChevyTrucks" target="_blank" rel="noopener" style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-top:3px solid #FF4500; border-radius:4px; padding:24px; display:flex; flex-direction:column; gap:10px; transition:border-color 0.2s; text-decoration:none; color:inherit;">
+          <div style="font-family:var(--font-mono); font-size:0.68rem; font-weight:500; letter-spacing:0.08em; color:#FF4500;">r/ChevyTrucks</div>
+          <div style="font-family:var(--font-head); font-size:1.1rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text);">Chevy Trucks</div>
+          <p style="font-size:0.85rem; color:var(--muted); line-height:1.6; flex:1;">Dedicated to full-size and midsize Chevy trucks. Square body restorations, modern builds, towing setups, and off-road rigs.</p>
+          <span style="font-family:var(--font-mono); font-size:0.68rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#FF4500;">Visit Subreddit &rarr;</span>
+        </a>
+
+      </div>
+
+      <div style="background:rgba(255,69,0,0.04); border:1px solid rgba(255,69,0,0.15); border-radius:4px; padding:28px 32px;">
+        <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:#FF4500; margin-bottom:10px;">The Strategy</div>
+        <p style="font-size:0.95rem; color:var(--muted); line-height:1.75; max-width:680px;">ChevyRoots isn&rsquo;t just building its own subreddit &mdash; we&rsquo;re showing up in the communities where Chevy people already live. When we post a build, write a guide, or drop new content, it goes to Reddit first. The goal is to be a genuinely useful resource in conversations that are already happening, not to pull people away from the communities they love.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── FAQ ── -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__eyebrow">Common Questions</div>
+        <h2 class="section__title">Frequently Asked <em>Questions</em></h2>
+        <p class="section__desc">Quick answers to the questions we get most.</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:2px; max-width:860px;">
+
+        <div style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-radius:4px; padding:28px 32px;">
+          <div style="font-family:var(--font-head); font-size:1.15rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text); margin-bottom:10px;">Is ChevyRoots affiliated with GM or Chevrolet?</div>
+          <p style="font-size:0.92rem; color:var(--muted); line-height:1.7;">No. ChevyRoots is a fully independent enthusiast site. We have no affiliation with, endorsement from, or sponsorship by General Motors, Chevrolet, or any GM subsidiary. All trademarks belong to their respective owners. We&rsquo;re just Chevy people who love these cars.</p>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-radius:4px; padding:28px 32px;">
+          <div style="font-family:var(--font-head); font-size:1.15rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text); margin-bottom:10px;">Can I submit my build?</div>
+          <p style="font-size:0.92rem; color:var(--muted); line-height:1.7;">Yes &mdash; absolutely. We feature every build, from $500 beaters to $100K restorations. Head to the <a href="/pages/builds/" style="color:var(--gold);">Build Engine</a> to submit yours. All you need is your vehicle info, a mod list, photos, and your story. No login required, always free.</p>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-radius:4px; padding:28px 32px;">
+          <div style="font-family:var(--font-head); font-size:1.15rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text); margin-bottom:10px;">Is ChevyRoots free to use?</div>
+          <p style="font-size:0.92rem; color:var(--muted); line-height:1.7;">Yes. The site is completely free. Guides, build database, model pages, event calendar, community features &mdash; all free, no account required. We&rsquo;re building the resource that should have always existed for the Chevy community, not a paywall.</p>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid rgba(255,255,255,0.04); border-radius:4px; padding:28px 32px;">
+          <div style="font-family:var(--font-head); font-size:1.15rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--text); margin-bottom:10px;">How do I contact Crystal?</div>
+          <p style="font-size:0.92rem; color:var(--muted); line-height:1.7;">The best place to reach Crystal directly is through <a href="/pages/crystals-corner/" style="color:var(--gold);">Crystal&rsquo;s Corner</a> &mdash; her personal section of the site where she shares reviews, drives, and stories. You can also email <a href="mailto:hello@chevyroots.com" style="color:var(--gold);">hello@chevyroots.com</a> for general inquiries.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── MANIFESTO ── -->
+  <section class="manifesto" id="about-community">
+    <div class="manifesto__bg"></div>
+    <div class="manifesto__inner">
+      <div class="section__eyebrow" style="margin-bottom: 28px;">Why ChevyRoots Exists</div>
+      <div class="manifesto__quote">
+        The Forums Are Dead.<br>
+        <em>We're Building What's Next.</em>
+      </div>
+      <div class="manifesto__body">
+        <p>Every Chevy forum online runs on software from 2005. <strong>Broken image links.</strong> No mobile support. No structured data. Threads where the only answer is "fixed it" with no explanation. Search results that surface a 17-year-old post that ends in silence.</p>
+        <p>We're not here to complain about it. We're here to replace it.</p>
+        <p>ChevyRoots is the modern Chevy community those forums deserved to become. <strong>Structured guides. Searchable builds. A real event calendar.</strong> Organized knowledge that stays findable five years from now. A place where your experience helps the next owner instead of disappearing into page 47 of a dead thread.</p>
+        <p>The Chevy community has always been here. We're just giving it a home it deserves.</p>
+      </div>
+      <div class="manifesto__actions">
+        <a href="/pages/newsletter/" class="btn btn--primary">Be a Founding Member</a>
+        <a href="/pages/about/" class="btn btn--outline">About ChevyRoots</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEWSLETTER ── -->
+  <section class="newsletter" id="newsletter">
+    <div class="newsletter__inner">
+      <div class="section__eyebrow" style="margin-bottom: 14px;">Stay in the Loop</div>
+      <h2 class="newsletter__title">Join the <em>List</em></h2>
+      <p class="newsletter__sub">New builds, guides, events, and community news — delivered to your inbox. No spam. Just Chevy content worth reading.</p>
+      <form class="newsletter__form" onsubmit="return false;">
+        <input class="newsletter__input" type="email" placeholder="your@email.com" aria-label="Email address" />
+        <button class="newsletter__btn" type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter__note">No spam &mdash; unsubscribe anytime</p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">Chevy<span>Roots</span></div>
+          <div class="footer__brand-sub">Run by a Chevy Girl</div>
+          <p class="footer__brand-desc">The modern home for Chevy enthusiasts. Builds, guides, events, and community — all in one place.</p>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Explore</div>
+          <ul class="footer__links">
+            <li><a href="/pages/models/">Models</a></li>
+            <li><a href="/pages/guides/">Guides</a></li>
+            <li><a href="/pages/builds/">Builds</a></li>
+            <li><a href="/pages/events/">Events</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Community</div>
+          <ul class="footer__links">
+            <li><a href="/pages/community/">Community Hub</a></li>
+            <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+            <li><a href="/pages/newsletter/">Newsletter</a></li>
+            <li><a href="/pages/about/">About</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Connect</div>
+          <ul class="footer__links">
+            <li><a href="#">Reddit</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="footer__copy">&copy; 2026 ChevyRoots &mdash; All rights reserved</div>
+        <div class="footer__tagline">Built by a Chevy Girl, for Chevy people</div>
+      </div>
+      <p class="footer__disclaimer">ChevyRoots is an independent enthusiast site and is not affiliated with, endorsed by, or sponsored by General Motors, Chevrolet, or any of their subsidiaries. All trademarks, logos, and brand names are the property of their respective owners.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* ── ENGAGEMENT STATS from localStorage ─────────────────────── */
+    (function() {
+      // Newsletter signup count — incremented by the newsletter form submit
+      var signups = parseInt(localStorage.getItem('cr_newsletter_signups') || '0', 10);
+      var newsletterEl = document.getElementById('stat-newsletter');
+      if (newsletterEl) newsletterEl.textContent = signups > 0 ? signups : '—';
+
+      // Page visit counter — simple session-level tracking
+      var visits = parseInt(localStorage.getItem('cr_page_visits') || '0', 10) + 1;
+      localStorage.setItem('cr_page_visits', visits);
+      var pageviewEl = document.getElementById('stat-pageviews');
+      if (pageviewEl) pageviewEl.textContent = visits;
+
+      // Hook newsletter form to increment count
+      var form = document.querySelector('.newsletter__form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          var email = form.querySelector('input[type="email"]');
+          if (email && email.value.trim()) {
+            var count = parseInt(localStorage.getItem('cr_newsletter_signups') || '0', 10) + 1;
+            localStorage.setItem('cr_newsletter_signups', count);
+            if (newsletterEl) newsletterEl.textContent = count;
+          }
+        });
+      }
+    })();
+
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

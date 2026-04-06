@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Which Chevy Should You Buy? | ChevyRoots</title>
+  <meta name="description" content="Answer 7 questions and find your perfect Chevrolet match. Truck, sports car, SUV, or EV — real models, real advice, no spam, no dealers." />
+  <meta name="keywords" content="which Chevy should I buy, Chevrolet quiz, best Chevy for me, find my Chevy, Silverado vs Colorado quiz" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/quiz.html" />
+  <meta property="og:title" content="Which Chevy Should You Buy? | ChevyRoots" />
+  <meta property="og:description" content="Answer 7 questions and find your perfect Chevrolet match. Truck, sports car, SUV, or EV — no spam, no dealers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/quiz.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg2:       #222222;
+      --bg3:       #2A2A2A;
+      --gold:      #C4A035;
+      --gold-lt:   #D4B455;
+      --gold-dk:   #9E7F22;
+      --text:      #F0EDE6;
+      --text-dim:  #B0ADA6;
+      --text-mute: #707070;
+      --border:    #333333;
+      --green:     #4CAF50;
+      --radius:    6px;
+      --radius-lg: 12px;
+      --trans:     0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+
+    img { display: block; max-width: 100%; }
+
+    /* ─── NAV ──────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      transition: color var(--trans);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+
+    .nav-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #111;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      transition: background var(--trans), transform var(--trans);
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover { background: var(--gold-lt); color: #111; transform: translateY(-1px); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: var(--trans);
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    .hero {
+      padding-top: 60px;
+      background: linear-gradient(160deg, #1A1A1A 60%, #1f1a0e 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,160,53,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 72px 24px 56px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(40px, 7vw, 72px);
+      font-weight: 800;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dim);
+      max-width: 520px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    .badge strong { color: var(--gold); font-weight: 500; }
+
+    /* ─── QUIZ SHELL ───────────────────────────────────────── */
+    .quiz-shell {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Progress */
+    .progress-wrap {
+      margin-bottom: 40px;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .progress-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+
+    .progress-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--gold);
+    }
+
+    .progress-bar-bg {
+      height: 4px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-dk), var(--gold));
+      border-radius: 4px;
+      transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+      width: 0%;
+    }
+
+    /* Question card */
+    .question-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 40px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .question-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-dk), var(--gold));
+    }
+
+    .question-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .question-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 700;
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 32px;
+    }
+
+    /* Answer options */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .option-btn {
+      background: var(--bg3);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color var(--trans), background var(--trans), transform var(--trans);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      position: relative;
+    }
+
+    .option-btn:hover {
+      border-color: var(--gold-dk);
+      background: #2e2e2e;
+      transform: translateY(-2px);
+    }
+
+    .option-btn.selected {
+      border-color: var(--gold);
+      background: rgba(196,160,53,0.1);
+    }
+
+    .option-icon {
+      font-size: 20px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .option-text {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .option-check {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 18px;
+      height: 18px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .option-check svg { width: 10px; height: 10px; }
+
+    .option-btn.selected .option-check { display: flex; }
+
+    /* Nav buttons */
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+      gap: 16px;
+    }
+
+    .btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--radius);
+      padding: 12px 28px;
+      cursor: pointer;
+      transition: background var(--trans), transform var(--trans), opacity var(--trans);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .btn-gold:hover:not(:disabled) {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover:not(:disabled) {
+      color: var(--text);
+      border-color: var(--text-mute);
+    }
+
+    .btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    /* Slide transitions */
+    .slide-enter {
+      animation: slideIn 0.35s cubic-bezier(0.25,0.8,0.25,1) forwards;
+    }
+
+    .slide-exit {
+      animation: slideOut 0.25s ease forwards;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideOut {
+      from { opacity: 1; transform: translateX(0); }
+      to   { opacity: 0; transform: translateX(-40px); }
+    }
+
+    @keyframes slideInReverse {
+      from { opacity: 0; transform: translateX(-40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .slide-enter-reverse {
+      animation: slideInReverse 0.35s cubic-bezier(0.25,0.8,0.25,1) forwards;
+    }
+
+    /* ─── RESULTS ──────────────────────────────────────────── */
+    #results-section { display: none; }
+
+    .results-hero {
+      text-align: center;
+      padding: 48px 24px 40px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .results-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+
+    .results-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+
+    .results-title .match-name { color: var(--gold); }
+
+    .results-sub {
+      font-size: 16px;
+      color: var(--text-dim);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Result cards */
+    .results-grid {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .result-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      transition: border-color var(--trans);
+      animation: fadeUp 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .result-card:nth-child(1) { animation-delay: 0.05s; }
+    .result-card:nth-child(2) { animation-delay: 0.15s; }
+    .result-card:nth-child(3) { animation-delay: 0.25s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-card:hover { border-color: var(--gold-dk); }
+
+    .result-card.top-pick {
+      border-color: var(--gold);
+      position: relative;
+    }
+
+    .top-pick-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #111;
+      padding: 4px 10px;
+      border-radius: 999px;
+      z-index: 2;
+    }
+
+    .result-img-wrap {
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-img-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--text-mute);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .result-img-placeholder .car-emoji {
+      font-size: 48px;
+      line-height: 1;
+    }
+
+    .result-img-placeholder span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .result-body {
+      padding: 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .result-rank {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-bottom: 6px;
+    }
+
+    .result-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .result-msrp {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .result-why {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .result-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .spec-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .result-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--trans), color var(--trans);
+    }
+
+    .result-cta:hover { gap: 10px; color: var(--gold-lt); }
+
+    /* Share & Engage section */
+    .post-results {
+      max-width: 760px;
+      margin: 40px auto 0;
+      padding: 0 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .share-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .share-text h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .share-text p {
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    .share-btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .share-copied-msg {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--green);
+      opacity: 0;
+      transition: opacity 0.3s;
+      letter-spacing: 0.08em;
+    }
+
+    .share-copied-msg.show { opacity: 1; }
+
+    .engage-box {
+      background: linear-gradient(135deg, var(--bg2) 0%, rgba(196,160,53,0.05) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .engage-box h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+    }
+
+    .engage-box p {
+      font-size: 15px;
+      color: var(--text-dim);
+      max-width: 440px;
+      margin: 0 auto 24px;
+    }
+
+    .engage-form {
+      display: flex;
+      gap: 10px;
+      max-width: 520px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .engage-input {
+      flex: 1;
+      min-width: 200px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color var(--trans);
+    }
+
+    .engage-input:focus { border-color: var(--gold-dk); }
+    .engage-input::placeholder { color: var(--text-mute); }
+
+    .retake-row {
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .retake-row button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      transition: color var(--trans);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .retake-row button:hover { color: var(--text-dim); }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    footer {
+      background: #111;
+      border-top: 1px solid var(--border);
+      padding: 48px 24px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand .nav-logo {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: var(--text-mute);
+      line-height: 1.65;
+      max-width: 260px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-col ul a {
+      font-size: 14px;
+      color: var(--text-mute);
+      transition: color var(--trans);
+    }
+
+    .footer-col ul a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: 12px;
+      color: var(--text-mute);
+    }
+
+    .footer-bottom a { color: var(--text-mute); }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    /* ─── LOADING SCREEN ───────────────────────────────────── */
+    .calculating-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26,26,26,0.96);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .calculating-overlay.active { display: flex; }
+
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 3px solid var(--border);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .calculating-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    .calculating-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-mute);
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 680px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .question-card { padding: 28px 20px 24px; }
+
+      .options-grid { grid-template-columns: 1fr; }
+
+      .result-card { grid-template-columns: 1fr; }
+
+      .result-img-wrap { min-height: 120px; }
+
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+
+      .footer-brand { grid-column: 1 / -1; }
+
+      .share-box { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .hero-badges { display: none; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* Utility */
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      Chevy<span>Roots</span>
+      <small class="nav-logo-sub">Run by a Chevy Girl</small>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/pages/models/">Models</a></li>
+      <li><a href="/pages/guides/" class="active">Guides</a></li>
+      <li><a href="/pages/builds/">Builds</a></li>
+      <li><a href="/pages/events/">Events</a></li>
+      <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+      <li><a href="/pages/news/">News</a></li>
+      <li><a href="/pages/about/">About</a></li>
+    </ul>
+    <a href="/pages/builds/" class="nav-cta">Submit Your Build</a>
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">// ChevyRoots Buyer's Tool</p>
+    <h1 class="hero-title">Which <span>Chevy</span><br>Is Right For You?</h1>
+    <p class="hero-sub">Answer 7 questions. We'll match you with your perfect Chevrolet. Real models, real data — no fluff, no dealer pitches.</p>
+    <div class="hero-badges">
+      <span class="badge"><strong>16</strong> current models scored</span>
+      <span class="badge"><strong>7</strong> questions</span>
+      <span class="badge"><strong>3</strong> personalized matches</span>
+      <span class="badge">No email required</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ QUIZ ═══════════ -->
+<section id="quiz-section">
+  <div class="quiz-shell">
+
+    <!-- Progress bar -->
+    <div class="progress-wrap" id="progress-wrap">
+      <div class="progress-meta">
+        <span class="progress-label">Your Progress</span>
+        <span class="progress-count" id="progress-count">Question 1 of 7</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- Question card (rendered by JS) -->
+    <div id="question-container"></div>
+
+    <!-- Navigation buttons -->
+    <div class="quiz-nav" id="quiz-nav">
+      <button class="btn btn-ghost" id="btn-back" onclick="goBack()" disabled>
+        ← Back
+      </button>
+      <button class="btn btn-gold" id="btn-next" onclick="goNext()" disabled>
+        Next →
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ CALCULATING OVERLAY ═══════════ -->
+<div class="calculating-overlay" id="calculating-overlay">
+  <div class="spinner"></div>
+  <p class="calculating-text">Scoring Your Matches…</p>
+  <p class="calculating-sub">// analyzing 16 models against your answers</p>
+</div>
+
+<!-- ═══════════ RESULTS ═══════════ -->
+<section id="results-section">
+
+  <div class="results-hero">
+    <p class="results-eyebrow">// Match Complete</p>
+    <h2 class="results-title">Your Top Match: <span class="match-name" id="top-match-name">—</span></h2>
+    <p class="results-sub">Based on your answers, here are the three Chevrolets best suited for you — ranked by fit score.</p>
+  </div>
+
+  <div class="results-grid" id="results-grid">
+    <!-- injected by JS -->
+  </div>
+
+  <div class="post-results">
+
+    <!-- Share -->
+    <div class="share-box">
+      <div class="share-text" style="flex:1;min-width:0;">
+        <h3>Share Your Results</h3>
+        <p>Send this to someone shopping for a Chevy — or start the argument about what they should really buy.</p>
+        <p id="share-preview" style="margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);background:rgba(196,160,53,0.07);border:1px solid rgba(196,160,53,0.2);border-radius:6px;padding:10px 14px;line-height:1.5;word-break:break-word;"></p>
+      </div>
+      <div style="flex-shrink:0;">
+        <div class="share-btns">
+          <button class="btn btn-gold" onclick="copyShareLink()">Copy Text</button>
+          <button class="btn btn-ghost" onclick="shareNative()" id="btn-share-native" style="display:none;">Share →</button>
+        </div>
+        <p class="share-copied-msg" id="copied-msg">✓ Copied to clipboard</p>
+      </div>
+    </div>
+
+    <!-- Retake -->
+    <div class="retake-row">
+      <button onclick="retakeQuiz()">↺ Retake the Quiz</button>
+    </div>
+
+    <!-- Engage -->
+    <div class="engage-box">
+      <h3>Disagree With Your Match?</h3>
+      <p>Tell us what you actually drive and why. We read every response — and the best takes end up in our guides.</p>
+      <form class="engage-form" onsubmit="submitEngage(event)">
+        <input
+          class="engage-input"
+          type="text"
+          id="engage-input"
+          placeholder="e.g. '2019 Silverado — because nothing else tows my fifth wheel'"
+          maxlength="200"
+          autocomplete="off"
+        />
+        <button type="submit" class="btn btn-gold">Send It</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo">Chevy<span style="color:var(--gold)">Roots</span></div>
+      <p>The enthusiast's guide to all things Chevrolet — from Trax to Corvette, daily drivers to classics.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/pages/models/">All Models</a></li>
+        <li><a href="/pages/guides/">Buyer's Guides</a></li>
+        <li><a href="/pages/builds/">Community Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="/pages/guides/quiz.html">Find My Chevy Quiz</a></li>
+        <li><a href="/pages/guides/compare.html">Model Comparison</a></li>
+        <li><a href="/pages/guides/towing.html">Towing Guide</a></li>
+        <li><a href="/about/">About ChevyRoots</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ChevyRoots. Not affiliated with General Motors or Chevrolet.</p>
+    <p><a href="/privacy.html">Privacy</a> · <a href="/about/">About</a></p>
+  </div>
+</footer>
+
+<!-- ═══════════ JAVASCRIPT ═══════════ -->
+<script>
+'use strict';
+
+// ─── QUIZ DATA ──────────────────────────────────────────────────────────────
+
+const QUESTIONS = [
+  {
+    id: 'use',
+    text: "What's your primary use?",
+    options: [
+      { label: 'Daily commuter',        icon: '🛣️',  value: 'commuter'   },
+      { label: 'Family hauler',          icon: '👨‍👩‍👧‍👦', value: 'family'     },
+      { label: 'Work / towing',          icon: '🔧',  value: 'work'       },
+      { label: 'Weekend fun',            icon: '🏁',  value: 'fun'        },
+      { label: 'Off-road / adventure',   icon: '🏔️',  value: 'offroad'    },
+      { label: 'All of the above',       icon: '⚡',  value: 'all'        },
+    ]
+  },
+  {
+    id: 'budget',
+    text: "What's your budget?",
+    options: [
+      { label: 'Under $25K',             icon: '💵',  value: 'sub25'      },
+      { label: '$25K – $35K',            icon: '💳',  value: '25to35'     },
+      { label: '$35K – $50K',            icon: '💰',  value: '35to50'     },
+      { label: '$50K – $75K',            icon: '🏦',  value: '50to75'     },
+      { label: '$75K+ (treat yourself)', icon: '🥂',  value: '75plus'     },
+    ]
+  },
+  {
+    id: 'age',
+    text: "New, used, or either?",
+    options: [
+      { label: 'Brand new',                      icon: '✨',  value: 'new'      },
+      { label: 'Certified pre-owned / recent used', icon: '🔍', value: 'cpo'   },
+      { label: 'Classic / vintage',              icon: '🏛️',  value: 'classic'  },
+      { label: "Whatever's the best value",      icon: '📊',  value: 'any'      },
+    ]
+  },
+  {
+    id: 'ev',
+    text: "How do you feel about electric?",
+    options: [
+      { label: 'All-in on EV',           icon: '🔋',  value: 'ev'         },
+      { label: 'Hybrid sounds smart',    icon: '⚡',  value: 'hybrid'     },
+      { label: 'Gas only, thanks',       icon: '⛽',  value: 'gas'        },
+      { label: 'Open to anything',       icon: '🤷',  value: 'open'       },
+    ]
+  },
+  {
+    id: 'passengers',
+    text: "How many passengers?",
+    options: [
+      { label: 'Just me (or me + 1)',                    icon: '🧍', value: 'solo'   },
+      { label: 'Family of 4–5',                          icon: '👪', value: 'small'  },
+      { label: 'Need 3 rows (6+)',                       icon: '🚌', value: 'big'    },
+      { label: "Don't care about passengers, care about cargo", icon: '📦', value: 'cargo' },
+    ]
+  },
+  {
+    id: 'tow',
+    text: "Do you need to tow?",
+    options: [
+      { label: 'No towing',                                   icon: '🚫', value: 'none'  },
+      { label: 'Light towing (under 5,000 lbs)',              icon: '🚤', value: 'light' },
+      { label: 'Heavy towing (5,000+ lbs)',                   icon: '🚛', value: 'heavy' },
+      { label: 'I need to tow a house',                       icon: '🏠', value: 'max'   },
+    ]
+  },
+  {
+    id: 'priority',
+    text: "What matters most?",
+    options: [
+      { label: 'Performance and speed',     icon: '🏎️',  value: 'perf'    },
+      { label: 'Comfort and tech',          icon: '🛋️',  value: 'comfort' },
+      { label: 'Capability and toughness',  icon: '💪',  value: 'tough'   },
+      { label: 'Value for money',           icon: '🎯',  value: 'value'   },
+      { label: 'Looking cool (no judgment)',icon: '😎',  value: 'cool'    },
+    ]
+  },
+];
+
+// ─── MODEL DATA ──────────────────────────────────────────────────────────────
+// Each model has a score function and metadata.
+
+const MODEL_IMAGES = {
+  trax:          '/photos/tahoe/pexels_10391270_tahoe.jpeg',
+  trailblazer:   '/photos/tahoe/pexels_10667269_tahoe.jpeg',
+  equinox:       '/photos/tahoe/pexels_11091622_tahoe.jpeg',
+  equinox_ev:    '/photos/tahoe/pexels_16586234_tahoe.jpeg',
+  blazer:        '/photos/tahoe/pexels_18633031_tahoe.jpeg',
+  blazer_ev:     '/photos/tahoe/pexels_18743842_tahoe.jpeg',
+  traverse:      '/photos/tahoe/pexels_19939609_tahoe.jpeg',
+  tahoe:         '/photos/tahoe/pexels_35004984_tahoe.jpeg',
+  suburban:      '/photos/tahoe/pexels_35004985_tahoe.jpeg',
+  colorado:      '/photos/colorado/pexels_15370045_colorado.jpeg',
+  silverado_1500:'/photos/silverado/pexels_12624306_silverado.jpeg',
+  silverado_hd:  '/photos/silverado/New_2020_Chevrolet_Silverado_HD_at_Toronto_International_Autoshow.jpg',
+  silverado_ev:  '/photos/silverado/2024_Chevrolet_Silverado_EV_RST.jpg',
+  corvette:      '/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg',
+  corvette_z06:  '/photos/corvette/pexels_17508919_corvette.jpeg',
+  corvette_eray: '/photos/corvette/pexels_9808_corvette.jpeg',
+};
+
+const MODELS = [
+  {
+    id: 'trax',
+    name: 'Chevrolet Trax',
+    msrp: 'From $20,400',
+    emoji: '🚗',
+    category: 'Small SUV',
+    why: 'The Trax punches well above its price tag — refreshed exterior, a 137-hp turbocharged engine, and a genuinely usable back seat. It\'s the best entry-level Chevy on the market right now.',
+    specs: ['137 HP Turbo', 'Up to 32 MPG Hwy', 'Apple CarPlay standard', 'Starting ~$20K'],
+    guideSlug: 'trax',
+    score: (a) => {
+      let s = 0;
+      if (['commuter','all'].includes(a.use))    s += 25;
+      if (['sub25','25to35'].includes(a.budget)) s += 30;
+      if (['new','cpo','any'].includes(a.age))   s += 10;
+      if (['gas','open'].includes(a.ev))         s += 10;
+      if (['solo','small'].includes(a.passengers)) s += 15;
+      if (a.tow === 'none')                      s += 10;
+      if (['value','comfort'].includes(a.priority)) s += 15;
+      return s;
+    }
+  },
+  {
+    id: 'trailblazer',
+    name: 'Chevrolet Trailblazer',
+    msrp: 'From $22,500',
+    emoji: '🚙',
+    category: 'Small SUV',
+    why: 'Sportier than the Trax with sharper styling and more powertrain options. The RS trim is a genuinely cool-looking daily driver that doesn\'t cost a fortune.',
+    specs: ['155 HP (RS)', 'AWD available', 'Up to 31 MPG Hwy', 'Wireless CarPlay'],
+    guideSlug: 'trailblazer',
+    score: (a) => {
+      let s = 0;
+      if (['commuter','offroad','all'].includes(a.use)) s += 20;
+      if (['sub25','25to35'].includes(a.budget))        s += 28;
+      if (['new','any'].includes(a.age))                s += 10;
+      if (['gas','open'].includes(a.ev))                s += 10;
+      if (['solo','small'].includes(a.passengers))      s += 12;
+      if (a.tow === 'none')                             s += 8;
+      if (['cool','value'].includes(a.priority))        s += 18;
+      return s;
+    }
+  },
+  {
+    id: 'equinox',
+    name: 'Chevrolet Equinox',
+    msrp: 'From $28,700',
+    emoji: '🚗',
+    category: 'Compact SUV',
+    why: 'The bestselling compact SUV in America for good reason. Comfortable, efficient, family-friendly, and comes with a strong warranty. The boring choice that\'s rarely the wrong choice.',
+    specs: ['175 HP Turbo', 'Up to 32 MPG Hwy', 'AWD optional', 'Top Safety Pick+'],
+    guideSlug: 'equinox',
+    score: (a) => {
+      let s = 0;
+      if (['commuter','family','all'].includes(a.use)) s += 25;
+      if (['25to35','35to50'].includes(a.budget))      s += 28;
+      if (['new','cpo','any'].includes(a.age))         s += 12;
+      if (['gas','open'].includes(a.ev))               s += 12;
+      if (['small','solo'].includes(a.passengers))     s += 18;
+      if (['none','light'].includes(a.tow))            s += 8;
+      if (['value','comfort'].includes(a.priority))    s += 20;
+      return s;
+    }
+  },
+  {
+    id: 'equinox_ev',
+    name: 'Equinox EV',
+    msrp: 'From $34,995',
+    emoji: '⚡',
+    category: 'Electric SUV',
+    why: 'The smart bet for EV family buyers. Up to 319 miles of range, practical packaging, and a price point that makes federal tax credits actually stack well. One of the best EV values in any segment.',
+    specs: ['Up to 319 mi range', 'DC Fast Charge', 'AWD available', 'From ~$35K'],
+    guideSlug: 'equinox-ev',
+    score: (a) => {
+      let s = 0;
+      if (['commuter','family','all'].includes(a.use)) s += 22;
+      if (['35to50','25to35'].includes(a.budget))      s += 25;
+      if (['new','any'].includes(a.age))               s += 12;
+      if (['ev','open'].includes(a.ev))                s += 35;
+      if (['small','solo'].includes(a.passengers))     s += 15;
+      if (a.tow === 'none')                            s += 8;
+      if (['value','comfort'].includes(a.priority))    s += 18;
+      return s;
+    }
+  },
+  {
+    id: 'blazer',
+    name: 'Chevrolet Blazer',
+    msrp: 'From $36,500',
+    emoji: '🚘',
+    category: 'Midsize SUV',
+    why: 'The stylish step up. More road presence, sharper interior, and available V6 power. If you want something that looks good in the driveway and feels premium without crossing into Tahoe territory.',
+    specs: ['228–308 HP', 'AWD available', 'Bose audio available', 'Wireless charging'],
+    guideSlug: 'blazer',
+    score: (a) => {
+      let s = 0;
+      if (['commuter','fun','all'].includes(a.use))    s += 20;
+      if (['35to50','25to35'].includes(a.budget))      s += 25;
+      if (['new','any'].includes(a.age))               s += 10;
+      if (['gas','open'].includes(a.ev))               s += 12;
+      if (['small','solo'].includes(a.passengers))     s += 15;
+      if (['none','light'].includes(a.tow))            s += 8;
+      if (['cool','comfort','perf'].includes(a.priority)) s += 22;
+      return s;
+    }
+  },
+  {
+    id: 'blazer_ev',
+    name: 'Blazer EV',
+    msrp: 'From $44,995',
+    emoji: '⚡',
+    category: 'Electric SUV',
+    why: 'GM\'s high-design EV hits 557 HP in SS trim. More attitude than the Equinox EV, more range than most competitors. For buyers who want the electric future to look aggressive.',
+    specs: ['Up to 320 mi range', '557 HP (SS)', 'Super Cruise available', 'DC Fast Charge'],
+    guideSlug: 'blazer-ev',
+    score: (a) => {
+      let s = 0;
+      if (['commuter','fun','all'].includes(a.use))    s += 18;
+      if (['35to50','50to75'].includes(a.budget))      s += 25;
+      if (['new','any'].includes(a.age))               s += 10;
+      if (['ev','open'].includes(a.ev))                s += 32;
+      if (['small','solo'].includes(a.passengers))     s += 14;
+      if (a.tow === 'none')                            s += 8;
+      if (['cool','perf','comfort'].includes(a.priority)) s += 20;
+      return s;
+    }
+  },
+  {
+    id: 'traverse',
+    name: 'Chevrolet Traverse',
+    msrp: 'From $37,700',
+    emoji: '🚐',
+    category: 'Midsize SUV (3-row)',
+    why: 'The family command center. Three proper rows, 98.2 cu ft of cargo space behind row 1, and enough tech to keep everyone happy on road trips. The Traverse is what family SUVs aspire to be.',
+    specs: ['328 HP V6', 'Up to 8 seats', '5,000 lb tow rating', 'Rear camera mirror'],
+    guideSlug: 'traverse',
+    score: (a) => {
+      let s = 0;
+      if (['family','all'].includes(a.use))            s += 28;
+      if (['35to50','25to35'].includes(a.budget))      s += 22;
+      if (['new','cpo','any'].includes(a.age))         s += 10;
+      if (['gas','open'].includes(a.ev))               s += 10;
+      if (['big','small'].includes(a.passengers))      s += 28;
+      if (['none','light'].includes(a.tow))            s += 10;
+      if (['comfort','value','tough'].includes(a.priority)) s += 18;
+      return s;
+    }
+  },
+  {
+    id: 'tahoe',
+    name: 'Chevrolet Tahoe',
+    msrp: 'From $57,500',
+    emoji: '🚙',
+    category: 'Full-Size SUV',
+    why: 'When the Traverse isn\'t enough. Body-on-frame capability, 8,400-lb tow rating, available diesel, and three legitimate rows. The Tahoe is the benchmark full-size SUV.',
+    specs: ['355 HP V8 (base)', '8,400 lb tow cap', 'Independent rear suspension', 'Up to 28 MPG Hwy (diesel)'],
+    guideSlug: 'tahoe',
+    score: (a) => {
+      let s = 0;
+      if (['family','work','all'].includes(a.use))     s += 25;
+      if (['50to75','35to50'].includes(a.budget))      s += 28;
+      if (['new','any'].includes(a.age))               s += 10;
+      if (['gas','open'].includes(a.ev))               s += 12;
+      if (['big','small'].includes(a.passengers))      s += 22;
+      if (['light','heavy'].includes(a.tow))           s += 20;
+      if (['tough','comfort'].includes(a.priority))    s += 16;
+      return s;
+    }
+  },
+  {
+    id: 'suburban',
+    name: 'Chevrolet Suburban',
+    msrp: 'From $62,200',
+    emoji: '🚌',
+    category: 'Full-Size SUV',
+    why: 'The original American family hauler, now in its most refined form. 144.7 cu ft of max cargo, 8,300-lb tow, and a 130-inch wheelbase that swallows road trips without complaint.',
+    specs: ['355 HP V8', '8,300 lb tow cap', '144.7 cu ft cargo', 'Up to 9 passengers'],
+    guideSlug: 'suburban',
+    score: (a) => {
+      let s = 0;
+      if (['family','work','all'].includes(a.use))     s += 22;
+      if (['50to75','75plus'].includes(a.budget))      s += 30;
+      if (['new','any'].includes(a.age))               s += 10;
+      if (['gas','open'].includes(a.ev))               s += 12;
+      if (['big','cargo'].includes(a.passengers))      s += 30;
+      if (['heavy','max','light'].includes(a.tow))     s += 18;
+      if (['comfort','tough'].includes(a.priority))    s += 14;
+      return s;
+    }
+  },
+  {
+    id: 'colorado',
+    name: 'Chevrolet Colorado',
+    msrp: 'From $32,500',
+    emoji: '🛻',
+    category: 'Midsize Truck',
+    why: 'The 2023+ redesigned Colorado is a genuinely excellent midsize truck — 310 HP, 7,700-lb tow, and a ZR2 trim that laughs at off-road challenges. All without the full-size price tag.',
+    specs: ['310 HP Turbo-4', '7,700 lb tow cap', 'ZR2 available', 'Multimatic DSSV shocks (ZR2)'],
+    guideSlug: 'colorado',
+    score: (a) => {
+      let s = 0;
+      if (['work','offroad','all'].includes(a.use))    s += 28;
+      if (['25to35','35to50'].includes(a.budget))      s += 25;
+      if (['new','any'].includes(a.age))               s += 10;
+      if (['gas','open'].includes(a.ev))               s += 12;
+      if (['solo','cargo','small'].includes(a.passengers)) s += 16;
+      if (['light','heavy'].includes(a.tow))           s += 20;
+      if (['tough','cool'].includes(a.priority))       s += 18;
+      return s;
+    }
+  },
+  {
+    id: 'silverado_1500',
+    name: 'Silverado 1500',
+    msrp: 'From $38,700',
+    emoji: '🛻',
+    category: 'Full-Size Truck',
+    why: 'America\'s truck. Ten engine options, 13,300-lb tow cap, more configurations than most people know what to do with. If you need a truck that does everything, the Silverado is the answer.',
+    specs: ['Up to 420 HP V8', '13,300 lb tow cap', 'Up to 24 MPG Hwy', '10 powertrain options'],
+    guideSlug: 'silverado-1500',
+    score: (a) => {
+      let s = 0;
+      if (['work','commuter','all'].includes(a.use))   s += 26;
+      if (['35to50','25to35','50to75'].includes(a.budget)) s += 22;
+      if (['new','cpo','any'].includes(a.age))         s += 10;
+      if (['gas','open'].includes(a.ev))               s += 12;
+      if (['cargo','solo','small'].includes(a.passengers)) s += 16;
+      if (['light','heavy'].includes(a.tow))           s += 26;
+      if (['tough','value','cool'].includes(a.priority)) s += 18;
+      return s;
+    }
+  },
+  {
+    id: 'silverado_hd',
+    name: 'Silverado HD',
+    msrp: 'From $43,500',
+    emoji: '🚛',
+    category: 'Heavy-Duty Truck',
+    why: 'When the half-ton isn\'t enough. The 2500 HD Duramax diesel makes 910 lb-ft of torque and hauls up to 36,000 lbs in 3500 gooseneck spec. This is the working truck for people who actually work.',
+    specs: ['470 HP / 910 lb-ft Duramax', 'Up to 36,000 lb tow', 'B&W hitch prep', 'Allison 10-spd auto'],
+    guideSlug: 'silverado-hd',
+    score: (a) => {
+      let s = 0;
+      if (['work','all'].includes(a.use))              s += 28;
+      if (['50to75','35to50','75plus'].includes(a.budget)) s += 22;
+      if (['new','any'].includes(a.age))               s += 8;
+      if (['gas','open'].includes(a.ev))               s += 10;
+      if (['cargo','solo'].includes(a.passengers))     s += 12;
+      if (['heavy','max'].includes(a.tow))             s += 40;
+      if (['tough','value'].includes(a.priority))      s += 18;
+      return s;
+    }
+  },
+  {
+    id: 'silverado_ev',
+    name: 'Silverado EV',
+    msrp: 'From $75,000',
+    emoji: '⚡',
+    category: 'Electric Truck',
+    why: 'GM\'s electric truck answer is legitimately impressive: up to 400 miles of range, 664 HP WT spec, and a multi-flex midgate that opens the cab to the bed. The future of the work truck.',
+    specs: ['Up to 400 mi range', '664 HP', 'Multi-Flex midgate', '10,000 lb tow (WT)'],
+    guideSlug: 'silverado-ev',
+    score: (a) => {
+      let s = 0;
+      if (['work','commuter','all'].includes(a.use))   s += 22;
+      if (['75plus','50to75'].includes(a.budget))      s += 30;
+      if (['new','any'].includes(a.age))               s += 10;
+      if (['ev','open'].includes(a.ev))                s += 35;
+      if (['cargo','solo'].includes(a.passengers))     s += 12;
+      if (['light','heavy'].includes(a.tow))           s += 20;
+      if (['tough','cool','perf'].includes(a.priority)) s += 16;
+      return s;
+    }
+  },
+  {
+    id: 'corvette',
+    name: 'Corvette Stingray',
+    msrp: 'From $68,900',
+    emoji: '🏎️',
+    category: 'Sports Car',
+    why: 'The mid-engine revolution. 495 HP, 0–60 in under 3 seconds, and a soundtrack that makes grown adults weep. The Stingray is the greatest performance value in the American market.',
+    specs: ['495 HP LT2 V8', '0–60 in 2.9s', 'Mid-engine layout', 'Z51 Performance Pkg available'],
+    guideSlug: 'corvette-stingray',
+    score: (a) => {
+      let s = 0;
+      if (['fun','all'].includes(a.use))               s += 28;
+      if (['50to75','75plus'].includes(a.budget))      s += 28;
+      if (['new','any'].includes(a.age))               s += 10;
+      if (['gas','open'].includes(a.ev))               s += 14;
+      if (['solo'].includes(a.passengers))             s += 20;
+      if (a.tow === 'none')                            s += 12;
+      if (['perf','cool'].includes(a.priority))        s += 30;
+      return s;
+    }
+  },
+  {
+    id: 'corvette_z06',
+    name: 'Corvette Z06',
+    msrp: 'From $112,000',
+    emoji: '🏁',
+    category: 'Supercar',
+    why: '670 HP flat-plane V8, 8,600 RPM redline, and a howl that makes Italian cars question their life choices. The Z06 is a supercar that happens to carry a Chevy badge.',
+    specs: ['670 HP LT6 V8', '8,600 RPM redline', '0–60 in 2.6s', 'Carbon ceramic brakes available'],
+    guideSlug: 'corvette-z06',
+    score: (a) => {
+      let s = 0;
+      if (['fun','all'].includes(a.use))               s += 20;
+      if (['75plus'].includes(a.budget))               s += 40;
+      if (['new','any'].includes(a.age))               s += 10;
+      if (['gas','open'].includes(a.ev))               s += 12;
+      if (a.passengers === 'solo')                     s += 18;
+      if (a.tow === 'none')                            s += 12;
+      if (['perf','cool'].includes(a.priority))        s += 35;
+      return s;
+    }
+  },
+  {
+    id: 'corvette_eray',
+    name: 'Corvette E-Ray',
+    msrp: 'From $109,000',
+    emoji: '⚡',
+    category: 'Hybrid Sports Car',
+    why: 'AWD Corvette. That alone would be enough, but the E-Ray also does 0–60 in 2.5 seconds, runs a 10.5-second quarter mile, and operates on EV-only mode in your neighborhood. Peak Corvette.',
+    specs: ['655 HP Hybrid', 'AWD (first ever)', '0–60 in 2.5s', 'EV stealth mode'],
+    guideSlug: 'corvette-eray',
+    score: (a) => {
+      let s = 0;
+      if (['fun','all'].includes(a.use))               s += 22;
+      if (['75plus'].includes(a.budget))               s += 38;
+      if (['new','any'].includes(a.age))               s += 10;
+      if (['ev','hybrid','open'].includes(a.ev))       s += 28;
+      if (a.passengers === 'solo')                     s += 18;
+      if (a.tow === 'none')                            s += 12;
+      if (['perf','cool'].includes(a.priority))        s += 30;
+      return s;
+    }
+  },
+];
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+
+let currentQ   = 0;
+let answers    = {};
+let direction  = 1; // 1 = forward, -1 = backward
+
+// ─── RENDER ──────────────────────────────────────────────────────────────────
+
+function renderQuestion(idx, animClass) {
+  const q = QUESTIONS[idx];
+  const container = document.getElementById('question-container');
+  const existing  = container.querySelector('.question-card');
+
+  if (existing) {
+    existing.classList.add('slide-exit');
+    setTimeout(() => {
+      container.innerHTML = '';
+      insertCard(q, idx, animClass);
+    }, 230);
+  } else {
+    insertCard(q, idx, animClass);
+  }
+
+  updateProgress(idx);
+  updateNavButtons(idx);
+}
+
+function insertCard(q, idx, animClass) {
+  const container = document.getElementById('question-container');
+
+  const card = document.createElement('div');
+  card.className = 'question-card ' + (animClass || 'slide-enter');
+
+  const num = document.createElement('p');
+  num.className = 'question-number';
+  num.textContent = `// Question ${idx + 1} of ${QUESTIONS.length}`;
+  card.appendChild(num);
+
+  const text = document.createElement('h2');
+  text.className = 'question-text';
+  text.textContent = q.text;
+  card.appendChild(text);
+
+  const grid = document.createElement('div');
+  grid.className = 'options-grid';
+
+  q.options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn' + (answers[q.id] === opt.value ? ' selected' : '');
+    btn.setAttribute('data-value', opt.value);
+    btn.setAttribute('role', 'radio');
+    btn.setAttribute('aria-checked', answers[q.id] === opt.value ? 'true' : 'false');
+
+    btn.innerHTML = `
+      <span class="option-icon" aria-hidden="true">${opt.icon}</span>
+      <span class="option-text">${opt.label}</span>
+      <span class="option-check" aria-hidden="true">
+        <svg viewBox="0 0 10 8" fill="none"><path d="M1 4L4 7L9 1" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>`;
+
+    btn.addEventListener('click', () => selectAnswer(q.id, opt.value));
+    grid.appendChild(btn);
+  });
+
+  card.appendChild(grid);
+  container.appendChild(card);
+}
+
+function selectAnswer(qId, value) {
+  answers[qId] = value;
+
+  // Update UI
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach(b => {
+    const isSelected = b.getAttribute('data-value') === value;
+    b.classList.toggle('selected', isSelected);
+    b.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+  });
+
+  updateNavButtons(currentQ);
+
+  // Auto-advance after short delay for UX feel
+  if (currentQ < QUESTIONS.length - 1) {
+    setTimeout(() => goNext(), 420);
+  }
+}
+
+function updateProgress(idx) {
+  const pct = ((idx) / QUESTIONS.length) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-count').textContent = `Question ${idx + 1} of ${QUESTIONS.length}`;
+}
+
+function updateNavButtons(idx) {
+  const btnBack = document.getElementById('btn-back');
+  const btnNext = document.getElementById('btn-next');
+  const qId     = QUESTIONS[idx].id;
+
+  btnBack.disabled = idx === 0;
+
+  if (idx === QUESTIONS.length - 1) {
+    btnNext.textContent = ''; // clear
+    btnNext.innerHTML = 'See My Matches <span style="font-size:18px">→</span>';
+    btnNext.disabled = !answers[qId];
+  } else {
+    btnNext.textContent = '';
+    btnNext.innerHTML = 'Next →';
+    btnNext.disabled = !answers[qId];
+  }
+}
+
+function goNext() {
+  if (!answers[QUESTIONS[currentQ].id]) return;
+
+  if (currentQ === QUESTIONS.length - 1) {
+    showResults();
+    return;
+  }
+
+  direction = 1;
+  currentQ++;
+  renderQuestion(currentQ, 'slide-enter');
+}
+
+function goBack() {
+  if (currentQ === 0) return;
+  direction = -1;
+  currentQ--;
+  renderQuestion(currentQ, 'slide-enter-reverse');
+}
+
+// ─── SCORING ─────────────────────────────────────────────────────────────────
+
+function computeResults() {
+  return MODELS
+    .map(m => ({ ...m, totalScore: m.score(answers) }))
+    .sort((a, b) => b.totalScore - a.totalScore)
+    .slice(0, 3);
+}
+
+// ─── RESULTS ─────────────────────────────────────────────────────────────────
+
+function showResults() {
+  // Brief loading overlay
+  const overlay = document.getElementById('calculating-overlay');
+  overlay.classList.add('active');
+
+  setTimeout(() => {
+    overlay.classList.remove('active');
+
+    const top3 = computeResults();
+
+    document.getElementById('quiz-section').style.display = 'none';
+    document.getElementById('results-section').style.display = 'block';
+
+    document.getElementById('top-match-name').textContent = top3[0].name;
+
+    const grid = document.getElementById('results-grid');
+    grid.innerHTML = '';
+
+    const rankLabels = ['Best Match', '2nd Pick', '3rd Pick'];
+
+    top3.forEach((m, i) => {
+      const card = document.createElement('div');
+      card.className = 'result-card' + (i === 0 ? ' top-pick' : '');
+
+      if (i === 0) {
+        const badge = document.createElement('div');
+        badge.className = 'top-pick-badge';
+        badge.textContent = '★ Best Match';
+        card.appendChild(badge);
+      }
+
+      const modelImg = MODEL_IMAGES[m.id];
+      card.innerHTML += `
+        <div class="result-img-wrap">
+          <div class="result-img-placeholder" ${modelImg ? `style="background: #333 url('${modelImg}') center/cover no-repeat;"` : ''}>
+            ${modelImg ? '' : `<span class="car-emoji">${m.emoji}</span><span>${m.name}</span>`}
+          </div>
+        </div>
+        <div class="result-body">
+          <p class="result-rank">${rankLabels[i]} · ${m.category}</p>
+          <h3 class="result-name">${m.name}</h3>
+          <p class="result-msrp">${m.msrp}</p>
+          <p class="result-why">${m.why}</p>
+          <div class="result-specs">
+            ${m.specs.map(s => `<span class="spec-chip">${s}</span>`).join('')}
+          </div>
+          <a class="result-cta" href="/pages/guides/${m.guideSlug}.html">Read Full Guide →</a>
+        </div>`;
+
+      grid.appendChild(card);
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Show native share if available
+    if (navigator.share) {
+      document.getElementById('btn-share-native').style.display = 'inline-flex';
+    }
+
+    // Store result for share
+    window._quizResult = top3[0].name;
+
+    // Populate share preview
+    const preview = document.getElementById('share-preview');
+    if (preview) preview.textContent = buildShareText();
+
+  }, 1800);
+}
+
+// ─── SHARE ───────────────────────────────────────────────────────────────────
+
+function buildShareText() {
+  const match = window._quizResult || 'a Chevrolet';
+  return `ChevyRoots matched me with the ${match}! Take the quiz: chevyroots.com/pages/guides/quiz.html`;
+}
+
+function copyShareLink() {
+  const text = buildShareText();
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => showCopied());
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showCopied();
+  }
+}
+
+function showCopied() {
+  const msg = document.getElementById('copied-msg');
+  msg.classList.add('show');
+  setTimeout(() => msg.classList.remove('show'), 2800);
+}
+
+function shareNative() {
+  const match = window._quizResult || 'a Chevrolet';
+  navigator.share({
+    title: 'My ChevyRoots Quiz Result',
+    text: buildShareText(),
+    url: window.location.href,
+  }).catch(() => {});
+}
+
+// ─── ENGAGE FORM ─────────────────────────────────────────────────────────────
+
+function submitEngage(e) {
+  e.preventDefault();
+  const input = document.getElementById('engage-input');
+  const val = input.value.trim();
+  if (!val) return;
+
+  // In a real implementation this would POST to an API.
+  // For now, gracefully thank the user.
+  const box = e.target.closest('.engage-box');
+  box.innerHTML = `
+    <h3>Thanks — we'll read it.</h3>
+    <p style="color:var(--text-dim);font-size:15px;max-width:420px;margin:10px auto 0;">
+      Real feedback from real owners is what makes ChevyRoots useful. Your input helps.<br>
+      <em style="color:var(--text-mute);font-size:13px;">"${val}"</em>
+    </p>`;
+}
+
+// ─── RETAKE ───────────────────────────────────────────────────────────────────
+
+function retakeQuiz() {
+  answers   = {};
+  currentQ  = 0;
+  direction = 1;
+
+  document.getElementById('results-section').style.display = 'none';
+  document.getElementById('quiz-section').style.display = 'block';
+
+  const container = document.getElementById('question-container');
+  container.innerHTML = '';
+  renderQuestion(0, 'slide-enter');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderQuestion(0, 'slide-enter');
+});
+
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Which Chevy Should You Buy? — ChevyRoots Quiz",
+  "description": "Answer 7 questions and find your perfect Chevrolet match. Truck, sports car, SUV, or EV — real models, real advice.",
+  "url": "https://chevyroots.com/pages/guides/quiz.html",
+  "applicationCategory": "AutomotiveApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "ChevyRoots", "url": "https://chevyroots.com" }
+}
+</script>
+</body>
+</html>

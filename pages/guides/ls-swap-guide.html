@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Complete LS Swap Guide: Everything You Need to Know | ChevyRoots</title>
+  <meta name="description" content="The definitive LS swap guide — engine family breakdown, best donor vehicles, junkyard buying tips, full cost breakdown, most popular swap recipients, and the mistakes you can't afford to make." />
+  <meta name="keywords" content="LS swap guide, LS engine swap, LS1 swap, LS3 swap, LS engine family, junkyard LS, LS swap cost, C10 LS swap" />
+  <meta property="og:title" content="The Complete LS Swap Guide: Everything You Need to Know" />
+  <meta property="og:description" content="Engine breakdown, donor vehicles, junkyard tips, cost guide, and the most popular LS swap recipients — all in one place." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/ls-swap-guide.html" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/ls-swap-guide.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg2:       #222222;
+      --bg3:       #2A2A2A;
+      --gold:      #C4A035;
+      --gold-lt:   #D4B455;
+      --gold-dk:   #9E7F22;
+      --text:      #F0EDE6;
+      --text-dim:  #B0ADA6;
+      --text-mute: #707070;
+      --border:    #333333;
+      --radius:    6px;
+      --radius-lg: 12px;
+      --trans:     0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-logo-main {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav-logo-main span { color: var(--gold); }
+
+    .nav-logo-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--text-mute);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      transition: color var(--trans);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+
+    .nav-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #111;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      transition: background var(--trans), transform var(--trans);
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover { background: var(--gold-lt); color: #111; transform: translateY(-1px); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+    }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding-top: 60px;
+      background: linear-gradient(160deg, #1A1A1A 60%, #1f1a0e 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,160,53,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .article-header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px 48px;
+      position: relative;
+    }
+
+    .article-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .article-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+    }
+
+    .article-title span { color: var(--gold); }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+
+    .article-meta-item .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .article-hero-img {
+      width: 100%;
+      height: 380px;
+      background: #333;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    /* LAYOUT */
+    .article-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* ARTICLE BODY */
+    .article-body h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin: 48px 0 16px;
+      padding-top: 8px;
+      border-top: 2px solid var(--gold);
+    }
+
+    .article-body h2:first-child { margin-top: 0; }
+
+    .article-body h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      margin: 32px 0 10px;
+      text-transform: uppercase;
+    }
+
+    .article-body p {
+      margin-bottom: 20px;
+      color: var(--text-dim);
+      font-size: 16px;
+    }
+
+    .article-body p strong { color: var(--text); font-weight: 600; }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 24px;
+      color: var(--text-dim);
+    }
+
+    .article-body li { margin-bottom: 8px; }
+
+    .spec-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+
+    .spec-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .spec-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-bottom: 2px;
+    }
+
+    .spec-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .inline-img {
+      width: 100%;
+      height: 260px;
+      background: #2e2e2e;
+      border-radius: var(--radius);
+      margin: 28px 0;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .pullquote {
+      border-left: 4px solid var(--gold);
+      padding: 16px 24px;
+      margin: 32px 0;
+      background: rgba(196,160,53,0.06);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .pullquote p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text) !important;
+      margin: 0 !important;
+      letter-spacing: 0.01em;
+    }
+
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+
+    .cost-table th {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--bg2);
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .cost-table td {
+      padding: 10px 14px;
+      color: var(--text-dim);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cost-table tr:last-child td {
+      color: var(--text);
+      font-weight: 600;
+      background: rgba(196,160,53,0.05);
+    }
+
+    .cost-table tr:hover td { background: var(--bg2); }
+
+    .affiliate-cta {
+      background: linear-gradient(135deg, #222 0%, #1f1a0e 100%);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 36px 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .affiliate-cta-text { flex: 1; min-width: 180px; }
+
+    .affiliate-cta-text p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text);
+      margin: 0 0 4px;
+    }
+
+    .affiliate-cta-text span {
+      font-size: 13px;
+      color: var(--text-mute);
+    }
+
+    .affiliate-btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #111;
+      padding: 12px 22px;
+      border-radius: var(--radius);
+      transition: background var(--trans), transform var(--trans);
+      white-space: nowrap;
+    }
+
+    .affiliate-btn:hover { background: var(--gold-lt); color: #111; transform: translateY(-1px); }
+
+    /* SIDEBAR */
+    .sidebar {
+      position: sticky;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .sidebar-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+
+    .sidebar-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc-list a {
+      font-size: 13px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+    }
+
+    .toc-list a::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+      transition: background var(--trans);
+    }
+
+    .toc-list a:hover::before { background: var(--gold); }
+    .toc-list a:hover { color: var(--text); }
+
+    .related-article {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .related-article:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .related-thumb {
+      width: 64px;
+      height: 48px;
+      background: #333;
+      border-radius: var(--radius);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .related-thumb span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      color: var(--text-mute);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .related-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
+    .related-title:hover { color: var(--gold); }
+
+    .related-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-mute);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+
+    /* NEWSLETTER */
+    .newsletter-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px;
+    }
+
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .newsletter-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .newsletter-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+
+    .newsletter-sub {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color var(--trans);
+    }
+
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form input::placeholder { color: var(--text-mute); }
+
+    .newsletter-form button {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #111;
+      border: none;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--trans), transform var(--trans);
+      white-space: nowrap;
+    }
+
+    .newsletter-form button:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+    .newsletter-note {
+      font-size: 12px;
+      color: var(--text-mute);
+      margin-top: 12px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      border-top: 1px solid var(--border);
+      padding: 48px 24px 32px;
+    }
+
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand { flex: 1; min-width: 200px; }
+
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--text-mute);
+      max-width: 240px;
+      line-height: 1.5;
+    }
+
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-col ul a {
+      font-size: 13px;
+      color: var(--text-mute);
+      transition: color var(--trans);
+    }
+
+    .footer-col ul a:hover { color: var(--text); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy { font-size: 12px; color: var(--text-mute); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .sidebar { position: static; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .newsletter-form { flex-direction: column; }
+      .article-hero-img { height: 220px; }
+      .affiliate-cta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-main">Chevy<span>Roots</span></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/" class="active">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+      <a href="/pages/builds/" class="nav-cta">Submit Your Build</a>
+      <button class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-eyebrow">Engine Swaps &nbsp;/&nbsp; Complete Guide</div>
+      <h1 class="article-title">The Complete <span>LS Swap</span> Guide: Everything You Need to Know</h1>
+      <div class="article-meta">
+        <div class="article-meta-item"><span class="dot"></span>By ChevyRoots Staff</div>
+        <div class="article-meta-item"><span class="dot"></span>Updated April 2026</div>
+        <div class="article-meta-item"><span class="dot"></span>10 min read</div>
+        <div class="article-meta-item"><span class="dot"></span>~2,000 words</div>
+      </div>
+      <div class="article-hero-img" style="background: #333 url('/photos/camaro/pexels_12601543_camaro.jpeg') center/cover no-repeat;"></div>
+    </div>
+  </header>
+
+  <!-- ARTICLE LAYOUT -->
+  <div class="article-layout">
+
+    <!-- MAIN CONTENT -->
+    <article class="article-body">
+
+      <p>There are engine swaps, and then there is the <strong>LS swap</strong>. No other powertrain modification in the modern era has so thoroughly captured the imagination of the enthusiast world. From C10 pickups to Mazda Miatas, from first-gen Camaros to Jeep Wranglers, the LS engine has found a home in virtually every vehicle chassis imaginable — and for good reason. It is light, powerful, reliable, and available for cheap at every junkyard in America. This is the complete guide to making it happen.</p>
+
+      <h2 id="what-is">What Is an LS Swap — and Why Is It So Popular?</h2>
+
+      <p>An LS swap is the process of removing a vehicle's original engine and replacing it with one of GM's Gen III or Gen IV "LS" family V8s. The term "LS" broadly refers to the small block Chevy engines produced from 1997 onward, though enthusiasts often use it to describe everything from the LS1 through the truck-based LQ4 and LQ9 iron-block motors.</p>
+
+      <p>The reasons for the LS swap's dominance are not mysterious. The engine family offers an almost unbeatable combination of <strong>power density, weight, parts availability, and cost</strong>. A Gen III or IV LS motor weighs roughly the same as a traditional small block Chevy — around 460 lbs for an aluminum unit, closer to 550 for the iron truck blocks — yet makes dramatically more power with far less mechanical drama. The architecture is over-engineered from the factory, meaning the engines absorb enormous horsepower increases with basic supporting modifications.</p>
+
+      <p>The aftermarket has also responded to LS swap popularity in a way it has for no other engine. Mount kits exist for hundreds of vehicle applications. Standalone wiring harnesses eliminate the headaches of modern PCM integration. Cam packages, cylinder heads, intake manifolds, and forced induction systems are available at every price point. The LS is not just an engine swap — it's an ecosystem.</p>
+
+      <div class="pullquote">
+        <p>"The LS swap isn't popular because it's trendy. It's popular because it works — every time, in everything."</p>
+      </div>
+
+      <h2 id="engine-family">The LS Engine Family Breakdown</h2>
+
+      <p>Understanding which LS you actually want is the first critical step. Not all LS engines are created equal, and the differences in displacement, block material, and output are significant.</p>
+
+      <h3>LS1 — 5.7L / 345 hp</h3>
+      <p>The original. Debuted in the 1997 C5 Corvette and later appeared in the 1998–2002 Camaro and Firebird. The LS1 is an <strong>all-aluminum block</strong>, making it the lightest of the common LS engines. It's a 5.7L (346 ci) engine rated at 345 hp in Corvette form and 305–325 hp in the F-body cars. The LS1 is an excellent swap candidate: light, compact, and with a huge aftermarket. Corvette LS1s command a premium; F-body examples are more affordable but still very strong.</p>
+
+      <h3>LS2 — 6.0L / 400 hp</h3>
+      <p>The LS2 (2005–2007) appeared in the C6 Corvette, GTO, and Trailblazer SS. It's a 6.0L aluminum engine rated at <strong>400 hp</strong> in Corvette spec. The extra displacement over the LS1 is immediately felt in torque — 400 lb-ft from the factory. The GTO and Trailblazer SS versions are slightly less powerful but still excellent, and these donor vehicles are becoming increasingly affordable.</p>
+
+      <h3>LS3 — 6.2L / 430 hp</h3>
+      <p>Introduced in the 2008 C6 Corvette, the LS3 is the most powerful naturally aspirated production LS engine available in high volume. Its <strong>6.2L displacement and 430 hp</strong> output (slightly detuned in the Camaro SS at 426 hp) make it the top choice for builds where maximum naturally aspirated power is the goal. The LS3's larger bore and improved rectangle-port cylinder heads also make it the ideal foundation for big-power builds.</p>
+
+      <h3>LS6 — 5.7L / 405 hp</h3>
+      <p>The LS6 was GM's first performance-tuned variant of the LS platform, appearing in the 2001–2004 C5 Z06 Corvette and 2004 Cadillac CTS-V. Like the LS1, it's a 5.7L aluminum engine, but with revised cylinder heads, a higher-lift camshaft, improved intake manifold, and tighter tolerances throughout. At <strong>405 hp</strong>, it's meaningfully more powerful than the LS1 and considered by many to be the best 5.7L LS available. Z06 sourced examples are rare but worth finding.</p>
+
+      <h3>LS7 — 7.0L / 505 hp</h3>
+      <p>The hand-built C6 Z06 engine. At <strong>7.0L and 505 hp</strong>, with titanium connecting rods and CNC-ported heads, the LS7 is in a different league. It's expensive (expect to pay $5,000–$10,000 or more for a running example), complex to install and maintain, and overkill for most builds — but if you want the absolute pinnacle of naturally aspirated LS performance, nothing short of custom builds matches it.</p>
+
+      <h3>LS9 — 6.2L Supercharged / 638 hp</h3>
+      <p>The C6 ZR1's engine. A supercharged 6.2L producing <strong>638 hp and 604 lb-ft of torque</strong>, the LS9 uses a Roots-type 2.3L TVS supercharger, forged internals, and dry-sump oiling. These are extraordinarily rare in junkyards and cost serious money. Not a typical swap candidate, but it exists — and complete crate versions are available from GM Performance.</p>
+
+      <h3>LSA — 6.2L Supercharged / 556 hp</h3>
+      <p>The LSA is the more accessible supercharged LS, found in the 2009–2015 Cadillac CTS-V and 2012–2015 Camaro ZL1. With <strong>556 hp from a 1.9L TVS supercharger</strong>, it offers most of the LS9's drama at a fraction of the cost. ZL1 Camaros are the most common donor, and as those cars age into the used market, LSA swaps are becoming more viable.</p>
+
+      <h3>Truck LS: LQ4 / LQ9 / L92 — Iron Block Value Kings</h3>
+      <p>Don't overlook the truck motors. The <strong>LQ4 (6.0L iron block, ~315 hp)</strong> and <strong>LQ9 (6.0L iron block, ~345 hp)</strong> are among the most common LS engines in junkyards, pulled from Silverados, Tahoes, Suburbans, and Escalades. They're heavy (iron block), but incredibly strong, cheap, and respond extremely well to basic modifications. The <strong>L92 and L99 (6.2L aluminum)</strong> from trucks and SUVs offer displacement near the LS3 at lower cost.</p>
+
+      <div class="spec-card">
+        <div class="spec-card-title">LS Engine Family Quick Reference</div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:4px;">
+          <div style="display:grid; grid-template-columns:60px 80px 1fr; gap:8px; font-size:13px; color:var(--text-mute); font-family:'JetBrains Mono',monospace; text-transform:uppercase; font-size:10px; letter-spacing:0.08em; padding-bottom:6px; border-bottom:1px solid var(--border);">
+            <span>Engine</span><span>Displace.</span><span>Power / Notes</span>
+          </div>
+          <div style="display:grid; grid-template-columns:60px 80px 1fr; gap:8px; font-size:13px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;"><span style="color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:12px;">LS1</span><span>5.7L</span><span>345 hp — C5 Corvette, F-body</span></div>
+          <div style="display:grid; grid-template-columns:60px 80px 1fr; gap:8px; font-size:13px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;"><span style="color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:12px;">LS2</span><span>6.0L</span><span>400 hp — C6 Corvette, GTO</span></div>
+          <div style="display:grid; grid-template-columns:60px 80px 1fr; gap:8px; font-size:13px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;"><span style="color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:12px;">LS3</span><span>6.2L</span><span>430 hp — C6/C7 Corvette, 5th-gen Camaro</span></div>
+          <div style="display:grid; grid-template-columns:60px 80px 1fr; gap:8px; font-size:13px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;"><span style="color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:12px;">LS6</span><span>5.7L</span><span>405 hp — C5 Z06, CTS-V</span></div>
+          <div style="display:grid; grid-template-columns:60px 80px 1fr; gap:8px; font-size:13px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;"><span style="color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:12px;">LS7</span><span>7.0L</span><span>505 hp — C6 Z06 (hand-built)</span></div>
+          <div style="display:grid; grid-template-columns:60px 80px 1fr; gap:8px; font-size:13px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;"><span style="color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:12px;">LSA</span><span>6.2L SC</span><span>556 hp — CTS-V, ZL1 Camaro</span></div>
+          <div style="display:grid; grid-template-columns:60px 80px 1fr; gap:8px; font-size:13px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;"><span style="color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:12px;">LS9</span><span>6.2L SC</span><span>638 hp — C6 ZR1</span></div>
+          <div style="display:grid; grid-template-columns:60px 80px 1fr; gap:8px; font-size:13px; color:var(--text-dim);"><span style="color:var(--gold); font-family:'JetBrains Mono',monospace; font-size:12px;">LQ4/9</span><span>6.0L</span><span>315–345 hp — Trucks, iron block value</span></div>
+        </div>
+      </div>
+
+      <h2 id="donors">Best Donor Vehicles</h2>
+
+      <p>Knowing which LS you want is only half the equation. You also need to know <strong>where to find it</strong>. The best donor vehicles balance engine quality, parts availability (you'll often want the wiring harness, ECU, and accessories), and cost.</p>
+
+      <h3>For the LS1 / LS6</h3>
+      <p><strong>1998–2002 Camaro Z28 or SS</strong> — The most popular LS1 donor. These cars are cheap, common in salvage yards, and come with complete engine, harness, and trans packages. The 6-speed T56 manual is a bonus. <strong>2001–2004 C5 Z06</strong> for the LS6 — significantly more expensive but worth it for the power bump.</p>
+
+      <h3>For the LS2</h3>
+      <p><strong>2004–2006 Pontiac GTO</strong> — Underrated donor. The GTO came with a complete LS2 package including the T56 6-speed. These cars have depreciated heavily, and complete running examples can be parted out affordably. <strong>2006–2009 Trailblazer SS</strong> is another solid source.</p>
+
+      <h3>For the LS3 / L92</h3>
+      <p><strong>2008–2013 Chevrolet Corvette</strong> — The definitive LS3 donor, but prices remain high. The more economical route is the <strong>2007–2014 Silverado/Tahoe with the L92 6.2L</strong> — you get essentially LS3-level displacement with better availability and lower cost.</p>
+
+      <h3>For Budget Builds: The Truck LS</h3>
+      <p><strong>1999–2007 Silverado 1500/2500, Tahoe, Suburban, Escalade</strong> with the 5.3L (LM7) or 6.0L (LQ4/LQ9). These are the most common LS engines in American junkyards. A 5.3L truck engine with accessories will often run $400–$800 pulled. They're iron block (heavier), but indestructible and make excellent swap candidates for anything that isn't weight-sensitive. (Wondering about the 5.3L vs 6.2L for your swap? See our <a href="/pages/guides/silverado-5.3-vs-6.2.html">engine comparison guide</a>.)</p>
+
+      <div class="inline-img" style="background: #333 url('/photos/trucks-modern/pexels_29239234_trucks-modern.jpeg') center/cover no-repeat;"></div>
+
+      <h2 id="junkyard">Junkyard LS Buying Guide</h2>
+
+      <p>Pulling an LS from a junkyard is one of the best value propositions in automotive performance. Here's how to do it right.</p>
+
+      <h3>What to Look For</h3>
+      <ul>
+        <li><strong>Compression test first.</strong> Before you pay, insist on a compression reading. All cylinders should be within 10% of each other. Numbers below 150 psi indicate worn rings or valve issues.</li>
+        <li><strong>Oil condition.</strong> Pull the dipstick. Milky or foamy oil means coolant contamination — a blown head gasket at minimum, often worse. Walk away.</li>
+        <li><strong>Crank the engine if possible.</strong> Many self-service yards have battery carts. Listen for knocking, rattling, or hydrolocking.</li>
+        <li><strong>Inspect the valley.</strong> Remove the intake to inspect the valley cover area for sludge or excessive oil buildup — a sign of neglected maintenance.</li>
+        <li><strong>Check the harmonic balancer.</strong> LS balancers separate at the rubber isolator layer over time. A wobbling or offset outer ring means the balancer needs replacement before startup.</li>
+        <li><strong>Grab everything.</strong> Pull the wiring harness, PCM, throttle body, sensors, and accessories. Trying to source these individually later costs far more.</li>
+      </ul>
+
+      <h3>What to Avoid</h3>
+      <ul>
+        <li><strong>Active Fuel Management (AFM) lifters</strong> in Gen IV engines (2005+). The AFM system uses collapsing lifters that are notorious for failure, often resulting in catastrophic cam/lifter damage. Plan to delete the AFM system with a delete kit and non-AFM camshaft during the swap if using a Gen IV motor.</li>
+        <li><strong>High-mileage 5.3L truck engines over 200,000 miles</strong> without verification. These often have worn timing chains and guides — not a dealbreaker, but factor the repair into your budget.</li>
+        <li><strong>Engines from flood vehicles.</strong> Hydrolocked engines often have bent connecting rods that aren't immediately obvious. Check vehicle history if possible.</li>
+        <li><strong>Missing PCM or wiring.</strong> The LS's modern electronics are its one complication. Without the original harness and PCM, you'll spend more sourcing replacements than you saved on the engine.</li>
+      </ul>
+
+      <h2 id="cost">LS Swap Cost Breakdown</h2>
+
+      <p>The most common question about LS swaps is also the most loaded: <em>how much will it cost?</em> The honest answer is: it depends entirely on your vehicle, your mechanical skill, and how complete a package you source. Here's a realistic breakdown for a typical swap into a popular recipient vehicle:</p>
+
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Budget Range</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Engine (junkyard LS)</td>
+            <td>$500 – $3,000</td>
+            <td>5.3L truck: $500–$900. LS1: $1,200–$2,500. LS3: $2,000–$3,500+</td>
+          </tr>
+          <tr>
+            <td>Transmission</td>
+            <td>$300 – $1,500</td>
+            <td>T56 6-speed: $800–$1,500. 4L60E auto: $300–$700</td>
+          </tr>
+          <tr>
+            <td>Standalone Wiring Harness</td>
+            <td>$200 – $500</td>
+            <td>Painless, PSI Conversion, or LS1 Tech harness kits</td>
+          </tr>
+          <tr>
+            <td>Motor Mounts / Crossmember</td>
+            <td>$150 – $400</td>
+            <td>Application-specific kits (ICT Billet, Hedman, Dirty Dingo)</td>
+          </tr>
+          <tr>
+            <td>Headers / Exhaust</td>
+            <td>$200 – $600</td>
+            <td>Long-tube headers recommended; budget for collector and connection pipes</td>
+          </tr>
+          <tr>
+            <td>ECU / Tune</td>
+            <td>$300 – $800</td>
+            <td>Reuse donor ECU with HPTuners license; or use aftermarket standalone</td>
+          </tr>
+          <tr>
+            <td>Miscellaneous</td>
+            <td>$500 – $1,000</td>
+            <td>Oil pan, fuel system upgrades, driveshaft, coolant lines, throttle cable/DBW</td>
+          </tr>
+          <tr>
+            <td><strong>Total (DIY)</strong></td>
+            <td><strong>$3,000 – $8,000</strong></td>
+            <td>Add $2,000–$5,000+ for shop labor if you're not wrenching yourself</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The $3,000 number assumes a junkyard iron-block 5.3L into a common recipient (like a C10 or S10) using an existing automatic transmission, doing all labor yourself. The $8,000 number reflects a cleaner build with an LS1 or LS3, a rebuilt 6-speed, and quality mount/header/harness kits. Either way, you're getting a 400+ horsepower engine for what you'd spend on a set of stock replacement coilovers.</p>
+
+      <div class="affiliate-cta">
+        <div class="affiliate-cta-text">
+          <p>Shop LS Swap Parts at Summit Racing</p>
+          <span>Motor mounts, headers, harness kits, and more — everything for your LS swap</span>
+        </div>
+        <a href="https://www.summitracing.com/search?keyword=ls+swap" target="_blank" rel="noopener" class="affiliate-btn">Shop Summit Racing</a>
+      </div>
+
+      <div class="affiliate-cta">
+        <div class="affiliate-cta-text">
+          <p>LS Swap Kits at JEGS</p>
+          <span>Engine mounts, swap headers, and standalone harnesses — all in one place</span>
+        </div>
+        <a href="https://www.jegs.com/p/JEGS/LS-Engine-Swap/ls+swap/" target="_blank" rel="noopener" class="affiliate-btn">Shop JEGS</a>
+      </div>
+
+      <h2 id="recipients">Most Popular LS Swap Recipients</h2>
+
+      <p>The LS fits almost everything, but some vehicles have become so popular as swap targets that the aftermarket has evolved to make them nearly plug-and-play.</p>
+
+      <h3>C10 / C/K Pickup (1967–1972)</h3>
+      <p>The most popular LS swap platform in existence. The C10's generous engine bay, simple chassis, and enormous customization community make it the default choice. Complete bolt-in mount kits from ICT Billet and Dirty Dingo require minimal fabrication. A C10 with a 5.3L or LS3 is the quintessential American build.</p>
+
+      <h3>Chevrolet S10 / GMC S15</h3>
+      <p>The compact Chevy pickup is a natural LS candidate. The S10's light weight combined with an LS motor creates an almost unfair power-to-weight ratio. Swap kits abound. The 4-cylinder to LS conversion is one of the most popular budget-performance builds in the country.</p>
+
+      <h3>Nissan 240SX (S13/S14)</h3>
+      <p>The 240SX's front-engine, rear-wheel-drive layout and near-perfect weight distribution make it a drift and performance platform icon. The LS swap (often called the "LSX") transforms it from a modestly powered coupe into a 500+ hp monster with the right build. Extensive mount kits and adapter solutions exist.</p>
+
+      <h3>Mazda Miata (NA/NB)</h3>
+      <p>The LS/Miata swap sounds like a joke until you see one run. A tube-frame or built-standard Miata with an aluminum LS weighs barely 2,400 lbs. The result is one of the most entertaining track cars imaginable. Harder to execute than truck swaps, but the dedicated LS/Miata community has documented every obstacle.</p>
+
+      <h3>BMW E36 / E46</h3>
+      <p>European chassis with American muscle. The LS motor's compact dimensions and light weight fit surprisingly well in BMW engine bays, and the inline-six-to-V8 swap has become a dedicated niche. The result is a handling-focused sports car with 400+ hp and running costs far below the M3's premium parts.</p>
+
+      <h3>Jeep Wrangler (YJ/TJ/JK)</h3>
+      <p>Off-road enthusiasts love the LS swap for the Wrangler because it replaces the anemic 4.0L or 3.8L with serious torque. The 5.3L iron truck block's reliability and torque curve are ideal for trail use, and the Jeep's open engine bay makes fitment less painful than most swaps.</p>
+
+      <h2 id="mistakes">Common Mistakes to Avoid</h2>
+
+      <ul>
+        <li><strong>Skipping the AFM delete on Gen IV engines.</strong> This is not optional. The Active Fuel Management lifters fail. Delete the system before the first startup.</li>
+        <li><strong>Using the stock oil pan without checking clearances.</strong> Most recipient vehicles require a custom or swap-specific oil pan. The stock car pans won't clear the front crossmember in most truck applications, and vice versa.</li>
+        <li><strong>Buying a harness before you know your year/engine.</strong> LS wiring changed significantly between Gen III (1997–2004) and Gen IV (2005+). Drive-by-wire versus cable throttle, 24x vs 58x reluctor wheels — these are not interchangeable without additional parts.</li>
+        <li><strong>Forgetting the fuel system.</strong> LS engines require a <strong>returnless, high-pressure (58 psi) fuel system</strong>. Many older vehicles run return-style systems at lower pressure. A new in-tank pump and FPR are almost always required.</li>
+        <li><strong>Overlooking cooling system capacity.</strong> The LS produces more heat than the engine it replaces. Upgrade the radiator when doing the swap — not after the first overheat.</li>
+        <li><strong>No tune.</strong> Swapping an LS without a proper tune leaves significant power on the table and often causes drivability issues. Budget for an HPTuners license and either a custom tune or a reputable mail-order tune from a shop familiar with your donor engine.</li>
+        <li><strong>Underestimating the driveshaft.</strong> New motor mounts often change the transmission position enough to require a custom driveshaft. Measure twice, order once.</li>
+      </ul>
+
+      <h2 id="conclusion">The Bottom Line</h2>
+
+      <p>The LS swap's popularity is self-reinforcing: because so many people have done it, the aftermarket is deep, the forums are thorough, and the mistakes have already been made and documented by someone else. For $3,000–$8,000 in parts and your own labor, you can put 400+ horsepower into nearly any rear-wheel-drive platform that matters — reliably, cheaply, and with endless room to grow.</p>
+
+      <p>The hardest part of an LS swap isn't the engine. It's the planning. Know your engine, know your recipient vehicle, source a complete donor package, and use quality mounting hardware from a reputable LS swap kit manufacturer. The rest will follow.</p>
+
+      <p>There's a reason the LS swap has become the default answer to "what engine should I put in it?" It earned that reputation one junkyard motor at a time.</p>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">In This Article</div>
+        <ul class="toc-list">
+          <li><a href="#what-is">What Is an LS Swap?</a></li>
+          <li><a href="#engine-family">Engine Family Breakdown</a></li>
+          <li><a href="#donors">Best Donor Vehicles</a></li>
+          <li><a href="#junkyard">Junkyard Buying Guide</a></li>
+          <li><a href="#cost">Full Cost Breakdown</a></li>
+          <li><a href="#recipients">Best Swap Recipients</a></li>
+          <li><a href="#mistakes">Common Mistakes</a></li>
+          <li><a href="#conclusion">The Bottom Line</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">LS Engine at a Glance</div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">Weight</span><span>460–550 lbs</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">Budget build</span><span>~$3,000 DIY</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">Clean build</span><span>$5,000–$8,000</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim); border-bottom:1px solid var(--border); padding-bottom:6px;">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">Fuel pressure</span><span>58 psi (returnless)</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-dim);">
+            <span style="font-family:'JetBrains Mono',monospace; color:var(--gold);">Tune required?</span><span>Yes — always</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Related Articles</div>
+
+        <div class="related-article">
+          <div class="related-thumb" style="background: #222 url('/photos/camaro/pexels_10590576_camaro.jpeg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/small-block-chevy-history.html" class="related-title">The Complete History of the Small Block Chevy</a>
+            <div class="related-meta">Engine History · 12 min read</div>
+          </div>
+        </div>
+
+        <div class="related-article">
+          <div class="related-thumb"><span>Mods</span></div>
+          <div>
+            <a href="/pages/guides/best-mods-silverado.html" class="related-title">The 15 Best Mods for Your Silverado 1500</a>
+            <div class="related-meta">Mods Guide · 8 min read</div>
+          </div>
+        </div>
+
+        <div class="related-article">
+          <div class="related-thumb"><span>Issues</span></div>
+          <div>
+            <a href="/pages/guides/known-issues.html" class="related-title">Known Chevy Issues — The Honest List</a>
+            <div class="related-meta">Reference · 6 min read</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card" style="background: linear-gradient(135deg, #222 0%, #1f1a0e 100%); border-color: var(--gold);">
+        <div class="sidebar-card-title">Parts Sources</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <a href="https://www.summitracing.com/search?keyword=ls+swap" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; padding:10px 12px; background:rgba(196,160,53,0.08); border-radius:var(--radius); border:1px solid rgba(196,160,53,0.2); color:var(--text); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.04em;">
+            Summit Racing <span style="color:var(--gold); font-size:18px;">→</span>
+          </a>
+          <a href="https://www.jegs.com" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; padding:10px 12px; background:rgba(196,160,53,0.08); border-radius:var(--radius); border:1px solid rgba(196,160,53,0.2); color:var(--text); font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.04em;">
+            JEGS <span style="color:var(--gold); font-size:18px;">→</span>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- RELATED GUIDES -->
+  <section style="max-width:860px;margin:0 auto 48px;padding:0 24px;">
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#C4A035;margin-bottom:14px;">Keep Digging</h2>
+    <ul style="list-style:none;display:flex;flex-wrap:wrap;gap:12px;">
+      <li><a href="/pages/guides/small-block-chevy-history.html" style="color:#C4A035;font-weight:600;">Small Block Chevy History</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/guides/silverado-5.3-vs-6.2.html" style="color:#C4A035;font-weight:600;">5.3L vs 6.2L: Choosing Your Donor Engine</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/guides/known-issues.html" style="color:#C4A035;font-weight:600;">Chevy Known Issues Database</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/builds/" style="color:#C4A035;font-weight:600;">Real LS Swap Builds</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/guides/silverado-buyers-guide.html" style="color:#C4A035;font-weight:600;">Silverado Buyer's Guide</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/models/" style="color:#C4A035;font-weight:600;">Browse Chevy Models</a></li>
+    </ul>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-eyebrow">ChevyRoots Newsletter</div>
+      <h2 class="newsletter-title">Build Guides, Swap Diaries<br>Straight to Your Inbox</h2>
+      <p class="newsletter-sub">Deep dives like this one, plus build features, buyer's guides, and events. No filler, no spam — just Chevy.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="your@email.com" aria-label="Email address" />
+        <button type="submit">Subscribe Free</button>
+      </form>
+      <p class="newsletter-note">Free. No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Chevy<span>Roots</span></div>
+          <p class="footer-tagline">The independent home for Chevrolet enthusiasts. No dealers. No filler. Just Chevy.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/pages/models/">Models</a></li>
+            <li><a href="/pages/builds/">Builds</a></li>
+            <li><a href="/pages/guides/">Guides</a></li>
+            <li><a href="/pages/events/">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/pages/guides/ls-swap-guide.html">LS Swap Guide</a></li>
+            <li><a href="/pages/guides/small-block-chevy-history.html">SBC History</a></li>
+            <li><a href="/pages/guides/silverado-buyers-guide.html">Silverado Buyer's Guide</a></li>
+            <li><a href="/pages/guides/best-mods-silverado.html">Top 15 Silverado Mods</a></li>
+            <li><a href="/pages/guides/chevy-vs-ford-trucks.html">Silverado vs F-150</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ChevyRoots</h4>
+          <ul>
+            <li><a href="/pages/about/">About</a></li>
+            <li><a href="/pages/newsletter/">Newsletter</a></li>
+            <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 ChevyRoots. Independent. Not affiliated with General Motors. Some links may be affiliate links.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Complete LS Swap Guide: Everything You Need to Know",
+    "description": "The definitive LS swap guide — engine family breakdown, best donor vehicles, junkyard buying tips, full cost breakdown, most popular swap recipients, and the mistakes you can't afford to make.",
+    "url": "https://chevyroots.com/pages/guides/ls-swap-guide.html",
+    "datePublished": "2024-01-01",
+    "dateModified": "2026-01-01",
+    "author": {
+      "@type": "Organization",
+      "name": "ChevyRoots",
+      "url": "https://chevyroots.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ChevyRoots",
+      "url": "https://chevyroots.com"
+    },
+    "keywords": ["LS swap", "LS engine", "LS1", "LS3", "engine swap", "junkyard LS", "C10 swap"]
+  }
+  </script>
+</body>
+</html>

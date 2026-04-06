@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chevy Maintenance Schedule: When to Service Your Silverado, Tahoe & More | ChevyRoots</title>
+  <meta name="description" content="Exact maintenance intervals for every major Chevy service item — oil, transmission fluid, spark plugs, coolant, brakes, differentials. Critical 10-speed transmission info included." />
+  <meta name="keywords" content="Chevy maintenance schedule, Silverado oil change interval, Silverado transmission fluid, Tahoe maintenance, Chevy 10-speed transmission fluid, Dexos1 oil, Chevy service intervals" />
+  <meta property="og:title" content="Chevy Maintenance Schedule: When to Service Your Silverado, Tahoe & More" />
+  <meta property="og:description" content="Don't skip the transmission fluid on your 10-speed — and other maintenance facts every Chevy owner needs. Full interval chart for oil, plugs, coolant, differentials, and more." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/chevy-maintenance-schedule.html" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/chevy-maintenance-schedule.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg2:       #222222;
+      --bg3:       #2A2A2A;
+      --gold:      #C4A035;
+      --gold-lt:   #D4B455;
+      --gold-dk:   #9E7F22;
+      --text:      #F0EDE6;
+      --text-dim:  #B0ADA6;
+      --text-mute: #707070;
+      --border:    #333333;
+      --radius:    6px;
+      --radius-lg: 12px;
+      --trans:     0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; min-height: 100vh; }
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,26,26,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); height: 60px; display: flex; align-items: center; }
+    .nav-inner { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-main { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; color: var(--text); letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+    .nav-logo-main span { color: var(--gold); }
+    .nav-logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--text-mute); letter-spacing: 0.1em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); transition: color var(--trans); }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--gold); color: #111; padding: 8px 18px; border-radius: var(--radius); transition: background var(--trans), transform var(--trans); white-space: nowrap; }
+    .nav-cta:hover { background: var(--gold-lt); color: #111; transform: translateY(-1px); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    .article-header { padding-top: 60px; background: linear-gradient(160deg, #1A1A1A 60%, #1f1a0e 100%); position: relative; overflow: hidden; }
+    .article-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,160,53,0.07) 0%, transparent 70%); pointer-events: none; }
+    .article-header-inner { max-width: 860px; margin: 0 auto; padding: 64px 24px 48px; position: relative; }
+    .article-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .article-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 24px; }
+    .article-title span { color: var(--gold); }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 32px; }
+    .article-meta-item { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mute); }
+    .article-meta-item .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+    .article-hero-img { width: 100%; height: 380px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+
+    .article-layout { max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px; display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start; }
+
+    .article-body h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text); margin: 48px 0 16px; padding-top: 8px; border-top: 2px solid var(--gold); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.04em; color: var(--gold); margin: 32px 0 10px; text-transform: uppercase; }
+    .article-body p { margin-bottom: 20px; color: var(--text-dim); font-size: 16px; }
+    .article-body p strong { color: var(--text); font-weight: 600; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 24px; color: var(--text-dim); }
+    .article-body li { margin-bottom: 8px; }
+    .article-body li strong { color: var(--text); }
+
+    /* Master schedule table */
+    .maint-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .maint-table th { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); text-align: left; padding: 10px 14px; background: var(--bg2); border-bottom: 2px solid var(--gold); }
+    .maint-table td { padding: 10px 14px; color: var(--text-dim); border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+    .maint-table tr:hover td { background: var(--bg2); }
+    .maint-table .item-name { color: var(--text); font-weight: 600; white-space: nowrap; }
+    .maint-table .interval { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); white-space: nowrap; }
+    .maint-table .critical { color: #d4854a; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* Interval cards */
+    .interval-card { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; }
+    .interval-card.urgent { border-left-color: #d4854a; }
+    .interval-card-header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 10px; flex-wrap: wrap; }
+    .interval-card-name { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text); }
+    .interval-card-miles { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--gold); letter-spacing: 0.06em; }
+    .interval-card.urgent .interval-card-miles { color: #d4854a; }
+    .interval-card-body { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+    .interval-card-body strong { color: var(--text); }
+
+    /* Cost table */
+    .cost-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .cost-table th { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); text-align: left; padding: 10px 14px; background: var(--bg2); border-bottom: 2px solid var(--gold); }
+    .cost-table td { padding: 10px 14px; color: var(--text-dim); border-bottom: 1px solid var(--border); }
+    .cost-table tr:hover td { background: var(--bg2); }
+    .cost-table .model { color: var(--text); font-weight: 600; }
+    .cost-table .cost-val { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--gold); }
+
+    .spec-card { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--radius); padding: 20px 24px; margin: 28px 0; }
+    .spec-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 12px; }
+    .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+    .spec-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 2px; }
+    .spec-value { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); }
+
+    .inline-img { width: 100%; height: 260px; border-radius: var(--radius); margin: 28px 0; border: 1px solid var(--border); overflow: hidden; }
+
+    .pullquote { border-left: 4px solid var(--gold); padding: 16px 24px; margin: 32px 0; background: rgba(196,160,53,0.06); border-radius: 0 var(--radius) var(--radius) 0; }
+    .pullquote p { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 600; line-height: 1.3; color: var(--text) !important; margin: 0 !important; letter-spacing: 0.01em; }
+
+    .crystal-take { background: linear-gradient(135deg, #1f1a0e 0%, #222 100%); border: 2px solid var(--gold); border-radius: var(--radius-lg); padding: 28px; margin: 36px 0; }
+    .crystal-take-header { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .crystal-take p { color: var(--text-dim); margin-bottom: 12px; font-style: italic; }
+    .crystal-take p:last-child { margin-bottom: 0; }
+    .crystal-take strong { color: var(--text); }
+
+    .tip-box { background: var(--bg3); border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: var(--radius); padding: 18px 20px; margin: 20px 0; }
+    .tip-box-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .tip-box p { font-size: 14px; color: var(--text-dim); margin: 0; }
+    .tip-box p strong { color: var(--text); }
+
+    .warning-box { background: rgba(196,100,50,0.07); border: 1px solid rgba(196,100,50,0.3); border-radius: var(--radius); padding: 18px 20px; margin: 20px 0; }
+    .warning-box-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #d4854a; margin-bottom: 8px; }
+    .warning-box p { font-size: 14px; color: var(--text-dim); margin: 0; }
+    .warning-box p strong { color: var(--text); }
+
+    .affiliate-box { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin: 32px 0; }
+    .affiliate-box-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 14px; }
+    .affiliate-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text); margin-bottom: 8px; }
+    .affiliate-box p { font-size: 13px; color: var(--text-dim); margin-bottom: 14px; }
+    .affiliate-btn { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--gold); color: #111; padding: 10px 20px; border-radius: var(--radius); transition: background var(--trans), transform var(--trans); margin-right: 8px; margin-bottom: 8px; }
+    .affiliate-btn:hover { background: var(--gold-lt); color: #111; transform: translateY(-1px); }
+    .affiliate-btn.outline { background: transparent; border: 1px solid var(--gold); color: var(--gold); }
+    .affiliate-btn.outline:hover { background: rgba(196,160,53,0.1); color: var(--gold-lt); transform: translateY(-1px); }
+
+    /* Sidebar */
+    .sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 28px; }
+    .sidebar-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
+    .sidebar-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list a { font-size: 13px; color: var(--text-dim); display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+    .toc-list a::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; transition: background var(--trans); }
+    .toc-list a:hover::before { background: var(--gold); }
+    .toc-list a:hover { color: var(--text); }
+    .related-article { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .related-article:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-thumb { width: 64px; height: 48px; background: #333; border-radius: var(--radius); flex-shrink: 0; overflow: hidden; }
+    .related-title { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--text); letter-spacing: 0.02em; }
+    .related-title:hover { color: var(--gold); }
+    .related-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+    /* Newsletter */
+    .newsletter-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 24px; }
+    .newsletter-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .newsletter-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .newsletter-title { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 12px; }
+    .newsletter-sub { color: var(--text-dim); font-size: 15px; margin-bottom: 32px; }
+    .newsletter-form { display: flex; gap: 10px; max-width: 480px; margin: 0 auto; }
+    .newsletter-form input { flex: 1; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: border-color var(--trans); }
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form input::placeholder { color: var(--text-mute); }
+    .newsletter-form button { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--gold); color: #111; border: none; padding: 12px 24px; border-radius: var(--radius); cursor: pointer; transition: background var(--trans), transform var(--trans); white-space: nowrap; }
+    .newsletter-form button:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .newsletter-note { font-size: 12px; color: var(--text-mute); margin-top: 12px; }
+
+    /* Footer */
+    footer { background: #111; border-top: 1px solid var(--border); padding: 48px 24px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-bottom: 40px; }
+    .footer-brand { flex: 1; min-width: 200px; }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); margin-bottom: 10px; }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline { font-size: 13px; color: var(--text-mute); max-width: 240px; line-height: 1.5; }
+    .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 13px; color: var(--text-mute); transition: color var(--trans); }
+    .footer-col ul a:hover { color: var(--text); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 12px; color: var(--text-mute); }
+
+    @media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; gap: 40px; } .sidebar { position: static; } }
+    @media (max-width: 640px) { .nav-links, .nav-cta { display: none; } .nav-hamburger { display: flex; } .newsletter-form { flex-direction: column; } .article-hero-img { height: 220px; } .maint-table { font-size: 12px; } .maint-table th, .maint-table td { padding: 8px 10px; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-main">Chevy<span>Roots</span></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/" class="active">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+      <a href="/pages/builds/" class="nav-cta">Submit Your Build</a>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-eyebrow">Maintenance Guide &nbsp;/&nbsp; All Models</div>
+      <h1 class="article-title">Chevy <span>Maintenance Schedule:</span> When to Service Your Silverado, Tahoe &amp; More</h1>
+      <div class="article-meta">
+        <div class="article-meta-item"><span class="dot"></span>By Crystal &amp; ChevyRoots Staff</div>
+        <div class="article-meta-item"><span class="dot"></span>Updated April 2026</div>
+        <div class="article-meta-item"><span class="dot"></span>7 min read</div>
+        <div class="article-meta-item"><span class="dot"></span>~1,200 words</div>
+      </div>
+      <div class="article-hero-img" style="background: #2a2a2a url('/photos/silverado/pexels_12485970_silverado.jpeg') center/cover no-repeat;"></div>
+    </div>
+  </header>
+
+  <!-- ARTICLE LAYOUT -->
+  <div class="article-layout">
+    <article class="article-body">
+
+      <p>Modern Chevys are more maintenance-friendly than ever — but "more friendly" doesn't mean "maintenance-free." The Oil Life Monitor system tells you when to change oil. What it doesn't do is remind you about transmission fluid, differential fluid, or spark plugs — the items that cause expensive failures when neglected. This guide covers every major service interval for current Chevy trucks and SUVs, with the honest context your owner's manual buries in fine print.</p>
+
+      <h2 id="master-schedule">Master Maintenance Schedule</h2>
+
+      <p>These intervals apply to current Chevrolet trucks and SUVs (2019–present) under normal driving conditions. Severe conditions — frequent towing, off-road use, extreme temperatures, commercial use — shorten every interval significantly.</p>
+
+      <table class="maint-table">
+        <thead>
+          <tr>
+            <th>Service Item</th>
+            <th>Interval</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-name">Engine Oil &amp; Filter</td>
+            <td class="interval">7,500 – 10,000 mi or 1 yr</td>
+            <td>Follow Oil Life Monitor; Dexos1 Gen 3 full synthetic required</td>
+          </tr>
+          <tr>
+            <td class="item-name">Tire Rotation</td>
+            <td class="interval">7,500 mi</td>
+            <td>Every oil change; free at most Chevy dealers with service plan</td>
+          </tr>
+          <tr>
+            <td class="item-name">Air Filter (Engine)</td>
+            <td class="interval">15,000 – 30,000 mi</td>
+            <td>Inspect at 15K; dusty environments shorten significantly</td>
+          </tr>
+          <tr>
+            <td class="item-name">Cabin Air Filter</td>
+            <td class="interval">15,000 – 25,000 mi</td>
+            <td>Easy DIY; often skipped — don't skip it</td>
+          </tr>
+          <tr>
+            <td class="item-name">Brake Fluid</td>
+            <td class="interval">45,000 mi or 3 yrs</td>
+            <td>DOT 3 spec; moisture absorption over time reduces boiling point</td>
+          </tr>
+          <tr>
+            <td class="item-name">Transmission Fluid (Auto)</td>
+            <td class="interval">45,000 – 60,000 mi</td>
+            <td class="critical">Critical on 10-speed — see section below</td>
+          </tr>
+          <tr>
+            <td class="item-name">Transfer Case Fluid (4WD)</td>
+            <td class="interval">45,000 mi</td>
+            <td>Autotrack II or DEXRON VI; inspect annually</td>
+          </tr>
+          <tr>
+            <td class="item-name">Front Differential Fluid</td>
+            <td class="interval">45,000 mi</td>
+            <td>75W-90 GL-5; more frequent if wading or off-road use</td>
+          </tr>
+          <tr>
+            <td class="item-name">Rear Differential Fluid</td>
+            <td class="interval">45,000 mi</td>
+            <td>Limited-slip axles require friction modifier additive</td>
+          </tr>
+          <tr>
+            <td class="item-name">Spark Plugs (Iridium)</td>
+            <td class="interval">97,500 mi</td>
+            <td>Factory iridium tip; do not swap to copper</td>
+          </tr>
+          <tr>
+            <td class="item-name">Engine Coolant (DEXCOOL)</td>
+            <td class="interval">150,000 mi or 5 yrs</td>
+            <td>First change at 5 yrs regardless of mileage</td>
+          </tr>
+          <tr>
+            <td class="item-name">Fuel Filter (EFI)</td>
+            <td class="interval">150,000 mi</td>
+            <td>In-tank filter; usually replaced with fuel pump assembly</td>
+          </tr>
+          <tr>
+            <td class="item-name">Serpentine Belt</td>
+            <td class="interval">Inspect at 60K, replace by 100K</td>
+            <td>Visual inspection; cracking or glazing = replace now</td>
+          </tr>
+          <tr>
+            <td class="item-name">Battery Test</td>
+            <td class="interval">Every 3 yrs or 36,000 mi</td>
+            <td>Load test; cold-cranking amp drop is a failure indicator</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="oil">Oil Changes: Dexos1 Gen 3 and the OLM</h2>
+
+      <div class="interval-card">
+        <div class="interval-card-header">
+          <div class="interval-card-name">Engine Oil</div>
+          <div class="interval-card-miles">7,500 – 10,000 miles</div>
+        </div>
+        <div class="interval-card-body">
+          Modern Chevy trucks with the 5.3L, 6.2L, or 2.7L turbo are factory-filled with <strong>Dexos1 Gen 3 full synthetic</strong> — GM's licensed spec oil. Do not substitute a non-Dexos1 oil without understanding what you're giving up. The specification matters for the AFM/DFM (cylinder deactivation) system and for GDI engine deposit control. 0W-20 is the spec for most current Silverados and SUVs; verify your specific engine spec in the owner's manual or door jamb sticker. The Oil Life Monitor calculates remaining oil life based on engine temperature cycles, short trips, and operating conditions — it's more accurate than a fixed mileage interval. Follow it. But never go past 10,000 miles or one year, whichever comes first.
+        </div>
+      </div>
+
+      <div class="affiliate-box">
+        <div class="affiliate-box-label">Affiliate Pick</div>
+        <div class="affiliate-box-title">Mobil 1 Extended Performance 0W-20 — Dexos1 Gen 3 Approved</div>
+        <p>This is what we run. Genuine Dexos1 Gen 3 certified, 20,000-mile rated in ideal conditions (though we change at 7,500–10,000 miles on trucks). Protects the AFM lifters and keeps the turbo in the 2.7L clean.</p>
+        <a href="https://amzn.to/chevyroots-mobil1-0w20" class="affiliate-btn" rel="nofollow sponsored" target="_blank">Shop Mobil 1 0W-20 on Amazon</a>
+        <a href="https://amzn.to/chevyroots-oil-filter-chevy" class="affiliate-btn outline" rel="nofollow sponsored" target="_blank">AC Delco PF63E Filter</a>
+      </div>
+
+      <h2 id="transmission">Transmission Fluid: The 10-Speed Problem</h2>
+
+      <div class="warning-box">
+        <div class="warning-box-label">Critical: Read This Before You Skip It</div>
+        <p><strong>The Hydra-Matic 10L80 and 10L90 10-speed automatics in Silverado 1500, Tahoe, Suburban, and Camaro are extremely sensitive to transmission fluid degradation.</strong> GM's owner's manual calls the fluid "filled for life" under normal conditions — this is one of the most misunderstood statements in modern vehicle ownership. It does not mean the fluid never degrades. It means GM believes it won't need changing under perfectly ideal driving. Real-world driving is not ideal.</p>
+      </div>
+
+      <div class="interval-card urgent">
+        <div class="interval-card-header">
+          <div class="interval-card-name">Transmission Fluid (10-Speed)</div>
+          <div class="interval-card-miles">45,000 – 60,000 miles</div>
+        </div>
+        <div class="interval-card-body">
+          We recommend changing the fluid in any 10-speed Chevy by <strong>45,000–60,000 miles</strong> regardless of what the owner's manual says. The 10-speed's complex clutch pack behavior is sensitive to fluid quality — degraded fluid is a primary contributor to the well-documented transmission shudder complaints that plague high-mileage 10-speed trucks. Use only <strong>DEXRON HP</strong> (the correct spec for the 10L80/10L90) — not DEXRON VI, which is an older spec that does not meet the friction requirements of these transmissions. Many shops still use DEXRON VI because it's cheaper and more available. Make sure yours uses the right fluid. A transmission fluid service runs $150–$300 at a dealer and is cheap insurance against a potential $4,000–$8,000 transmission rebuild.
+        </div>
+      </div>
+
+      <div class="pullquote">
+        <p>"Skipping the 10-speed's transmission fluid is the single most common expensive mistake we see from Silverado owners past 80,000 miles."</p>
+      </div>
+
+      <h2 id="plugs">Spark Plugs: Leave the Iridiums Alone (Until 97,500)</h2>
+
+      <div class="interval-card">
+        <div class="interval-card-header">
+          <div class="interval-card-name">Spark Plugs</div>
+          <div class="interval-card-miles">97,500 miles</div>
+        </div>
+        <div class="interval-card-body">
+          The factory iridium-tip plugs in current Chevy V8s (5.3L, 6.2L) and the 2.7L turbo are rated to <strong>97,500 miles</strong>. Do not replace them early with copper plugs — the iridium tip's fine electrode allows for optimal ignition at the higher compression ratios of modern engines. A misfiring plug before 97,500 miles is usually a sign of something else wrong (oil consumption, a bad coil, injector issue) — don't automatically reach for the plug box first. When you do replace them, use the OE spec iridium plug for your engine. ACDelco, NGK Iridium, and Denso Iridium are all acceptable brands for the service replacement. Labor note: the 6.2L V8's rear bank plugs are a tight reach and may require specialized extensions — factor in extra shop labor or a full day if doing it yourself.
+        </div>
+      </div>
+
+      <h2 id="coolant">Coolant: Long Life Doesn't Mean Forever</h2>
+
+      <div class="interval-card">
+        <div class="interval-card-header">
+          <div class="interval-card-name">Engine Coolant (DEXCOOL)</div>
+          <div class="interval-card-miles">150,000 miles or 5 years</div>
+        </div>
+        <div class="interval-card-body">
+          GM's DEXCOOL orange coolant is an OAT (Organic Acid Technology) formulation rated for <strong>150,000 miles or 5 years</strong> from new — but the time-based interval matters. If you bought a 4-year-old truck and haven't changed the coolant, change it now regardless of mileage. Degraded DEXCOOL turns acidic and corrodes aluminum components — water pump housing, heater core fittings, and cylinder head gasket surfaces are all at risk. Do not mix DEXCOOL with green conventional coolant; the chemical incompatibility creates a gel-like precipitate that blocks coolant passages. Full flush, distilled water, and fresh DEXCOOL concentrate mixed 50/50 is the correct service.
+        </div>
+      </div>
+
+      <h2 id="driveline">4WD Driveline Fluids: The Interval Most Owners Miss</h2>
+
+      <p>Transfer case fluid, front differential fluid, and rear differential fluid are all <strong>45,000-mile service items</strong> on 4WD trucks. These are frequently missed because there's no warning light, no Oil Life Monitor, and no reminder. The consequence of neglect is accelerating wear in components that are expensive to replace — a rear differential rebuild on a Silverado runs $1,500–$3,000 at a dealer.</p>
+
+      <h3>Rear Differential: One Extra Step for Limited Slip</h3>
+      <p>Silverados with the Eaton G80 Gov-Lock or the available electronic locking rear differential require <strong>friction modifier additive</strong> in the differential fluid — typically 4 oz of GM Limited Slip Additive mixed with the gear lube. Without it, the clutch packs in the limited-slip unit will chatter and wear prematurely. This is easy to overlook if you're having the service done at a non-dealer shop that doesn't check for the limited-slip specification.</p>
+
+      <div class="tip-box">
+        <div class="tip-box-label">DIY Tip</div>
+        <p>Transfer case fluid and differential fluid changes are straightforward DIY jobs on Silverados with basic tools — a drain plug, fill plug, and a fluid pump. <strong>Motul Gear 300 75W-90</strong> and <strong>ACDelco Autotrack II</strong> for the transfer case are popular OEM-quality choices. Just be certain to fill to the bottom of the fill port, not all the way to the top.</p>
+      </div>
+
+      <div class="inline-img" style="background: #2a2a2a url('/photos/silverado/pexels_12644976_silverado.jpeg') center/cover no-repeat;"></div>
+
+      <h2 id="costs">Maintenance Cost Estimates by Model</h2>
+
+      <p>Dealer pricing as of 2025–2026. Independent shops run 20–40% less. DIY costs are parts only.</p>
+
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Silverado 1500</th>
+            <th>Silverado HD</th>
+            <th>Tahoe / Suburban</th>
+            <th>Colorado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Oil Change (full synthetic)</td>
+            <td class="cost-val">$90 – $130</td>
+            <td class="cost-val">$100 – $150</td>
+            <td class="cost-val">$90 – $130</td>
+            <td class="cost-val">$70 – $100</td>
+          </tr>
+          <tr>
+            <td>Transmission Fluid Service</td>
+            <td class="cost-val">$180 – $300</td>
+            <td class="cost-val">$200 – $350</td>
+            <td class="cost-val">$180 – $300</td>
+            <td class="cost-val">$150 – $250</td>
+          </tr>
+          <tr>
+            <td>Spark Plugs (V8)</td>
+            <td class="cost-val">$250 – $450</td>
+            <td class="cost-val">$300 – $500</td>
+            <td class="cost-val">$250 – $450</td>
+            <td class="cost-val">$120 – $220</td>
+          </tr>
+          <tr>
+            <td>Coolant Flush</td>
+            <td class="cost-val">$150 – $200</td>
+            <td class="cost-val">$175 – $250</td>
+            <td class="cost-val">$150 – $200</td>
+            <td class="cost-val">$120 – $180</td>
+          </tr>
+          <tr>
+            <td>Differential Fluid (both)</td>
+            <td class="cost-val">$180 – $300</td>
+            <td class="cost-val">$200 – $350</td>
+            <td class="cost-val">$180 – $300</td>
+            <td class="cost-val">$120 – $200</td>
+          </tr>
+          <tr>
+            <td>Transfer Case Fluid</td>
+            <td class="cost-val">$80 – $150</td>
+            <td class="cost-val">$100 – $175</td>
+            <td class="cost-val">$80 – $150</td>
+            <td class="cost-val">$80 – $140</td>
+          </tr>
+          <tr>
+            <td>Air Filter (engine)</td>
+            <td class="cost-val">$30 – $60 DIY</td>
+            <td class="cost-val">$30 – $60 DIY</td>
+            <td class="cost-val">$30 – $60 DIY</td>
+            <td class="cost-val">$20 – $45 DIY</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="common-mistakes">The Most Common Maintenance Mistakes</h2>
+
+      <ul>
+        <li><strong>Treating "filled for life" transmission fluid as literally true.</strong> Change your 10-speed fluid by 45,000–60,000 miles. The service interval exists because real-world driving isn't "normal conditions."</li>
+        <li><strong>Using DEXRON VI in the 10L80/10L90.</strong> It is the wrong spec. Use DEXRON HP only in these transmissions.</li>
+        <li><strong>Skipping the differential fluid on limited-slip axles.</strong> Forgetting the friction modifier additive on an Eaton G80 will cause chatter and early wear.</li>
+        <li><strong>Running non-Dexos1 oil.</strong> Third-party synthetics that haven't earned the GM Dexos1 Gen 3 license may not meet the deposit control requirements for direct-injection and cylinder deactivation engines.</li>
+        <li><strong>Ignoring the brake fluid interval.</strong> It absorbs moisture over time, lowering its boiling point. Every 45,000 miles or 3 years is the correct rhythm — especially on tow vehicles where brake temperatures run higher.</li>
+        <li><strong>Delaying coolant service on used vehicles.</strong> If you don't have documentation of a coolant change, change it. The cost of a heater core or water pump on a truck with acidic degraded coolant is far higher than a flush.</li>
+      </ul>
+
+      <div class="affiliate-box">
+        <div class="affiliate-box-label">Gear We Recommend</div>
+        <div class="affiliate-box-title">Everything for a DIY Service Day</div>
+        <p>Oil, filter, transmission fluid, and the drain plug tools to do it right at home. We use these on our own trucks.</p>
+        <a href="https://amzn.to/chevyroots-mobil1-0w20" class="affiliate-btn" rel="nofollow sponsored" target="_blank">Mobil 1 0W-20 Dexos1</a>
+        <a href="https://amzn.to/chevyroots-acdelco-filter" class="affiliate-btn outline" rel="nofollow sponsored" target="_blank">ACDelco PF63E Oil Filter</a>
+        <a href="https://amzn.to/chevyroots-dexron-hp" class="affiliate-btn outline" rel="nofollow sponsored" target="_blank">DEXRON HP Trans Fluid</a>
+        <a href="https://amzn.to/chevyroots-fluid-pump" class="affiliate-btn outline" rel="nofollow sponsored" target="_blank">Fluid Transfer Pump</a>
+      </div>
+
+      <div class="crystal-take">
+        <div class="crystal-take-header">Crystal's Take</div>
+        <p>I've been around Chevy trucks my whole life and the thing that breaks them isn't miles — it's deferred maintenance. The transmission fluid thing keeps me up at night when I see someone post in a forum about their 10-speed shuddering at 95,000 miles. Nine times out of ten the fluid has never been touched.</p>
+        <p><strong>Spend the $250 on a transmission service at 50,000 miles.</strong> It is the best money you will spend on your Silverado all year. Full stop.</p>
+        <p>And get the differential and transfer case done at the same time. You're already under there, the shop is already scheduled, and you'll reset all three driveline service items in one visit. That's the kind of bundled service day that saves you money per hour of shop time and keeps everything fresh simultaneously.</p>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">In This Guide</div>
+        <ul class="toc-list">
+          <li><a href="#master-schedule">Master Schedule Table</a></li>
+          <li><a href="#oil">Oil Changes &amp; Dexos1</a></li>
+          <li><a href="#transmission">10-Speed Transmission Fluid</a></li>
+          <li><a href="#plugs">Spark Plugs at 97,500</a></li>
+          <li><a href="#coolant">Coolant Intervals</a></li>
+          <li><a href="#driveline">4WD Driveline Fluids</a></li>
+          <li><a href="#costs">Cost Estimates by Model</a></li>
+          <li><a href="#common-mistakes">Common Mistakes</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card" style="background:rgba(196,100,50,0.05);border-color:rgba(196,100,50,0.3);">
+        <div class="sidebar-card-title" style="color:#d4854a;">Don't Miss These</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;">10-Speed Trans Fluid</div>
+            <div style="font-size:13px;color:var(--text-dim);">Change by 45K–60K miles. Use DEXRON HP only.</div>
+          </div>
+          <div style="border-top:1px solid var(--border);padding-top:12px;">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;">Limited Slip Additive</div>
+            <div style="font-size:13px;color:var(--text-dim);">Required with rear diff fluid on G80 / eLocker equipped trucks.</div>
+          </div>
+          <div style="border-top:1px solid var(--border);padding-top:12px;">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;">Coolant on Used Trucks</div>
+            <div style="font-size:13px;color:var(--text-dim);">No documentation = change it now, regardless of mileage.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Related Guides</div>
+        <div class="related-article">
+          <div class="related-thumb" style="background:#333 url('/photos/silverado/pexels_12485956_silverado.jpeg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/known-issues.html" class="related-title">Chevy Known Issues &amp; Common TSBs</a>
+            <div class="related-meta">Reliability</div>
+          </div>
+        </div>
+        <div class="related-article">
+          <div class="related-thumb" style="background:#333 url('/photos/silverado/New_2020_Chevrolet_Silverado_HD_at_Toronto_International_Autoshow.jpg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/chevy-towing-guide.html" class="related-title">Complete Chevy Towing Guide: Every Model's Capacity</a>
+            <div class="related-meta">Towing</div>
+          </div>
+        </div>
+        <div class="related-article">
+          <div class="related-thumb" style="background:#333 url('/photos/silverado/pexels_10085134_silverado.jpeg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/silverado-buyers-guide.html" class="related-title">Silverado 1500 Buyer's Guide</a>
+            <div class="related-meta">Buyers Guide</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card" style="background:linear-gradient(135deg,#1f1a0e,#222);border-color:var(--gold);">
+        <div class="sidebar-card-title">DIY Service Supplies</div>
+        <p style="font-size:13px;color:var(--text-dim);margin-bottom:16px;">Dexos1 oil, correct filters, DEXRON HP trans fluid, and gear oil for a full service day.</p>
+        <a href="https://amzn.to/chevyroots-mobil1-0w20" class="affiliate-btn" rel="nofollow sponsored" target="_blank" style="display:block;text-align:center;margin-bottom:8px;">Shop Mobil 1 Dexos1 Oil</a>
+        <a href="https://amzn.to/chevyroots-dexron-hp" class="affiliate-btn outline" rel="nofollow sponsored" target="_blank" style="display:block;text-align:center;">DEXRON HP Trans Fluid</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-eyebrow">ChevyRoots Newsletter</div>
+      <h2 class="newsletter-title">Stay in the Know</h2>
+      <p class="newsletter-sub">New guides, recall alerts, and build features — delivered to your inbox. No spam. Just Chevy content worth reading.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="submit">Subscribe</button>
+      </div>
+      <p class="newsletter-note">No spam. Unsubscribe at any time.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Chevy<span>Roots</span></div>
+          <p class="footer-tagline">Run by a Chevy Girl. Built for Chevy people who actually use their trucks.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/pages/guides/silverado-buyers-guide.html">Silverado Buyer's Guide</a></li>
+            <li><a href="/pages/guides/chevy-towing-guide.html">Towing Guide</a></li>
+            <li><a href="/pages/guides/chevy-maintenance-schedule.html">Maintenance Schedule</a></li>
+            <li><a href="/pages/guides/best-mods-silverado.html">Best Silverado Mods</a></li>
+            <li><a href="/pages/guides/known-issues.html">Known Issues</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Models</h4>
+          <ul>
+            <li><a href="/pages/models/silverado/">Silverado</a></li>
+            <li><a href="/pages/models/colorado/">Colorado</a></li>
+            <li><a href="/pages/models/tahoe/">Tahoe</a></li>
+            <li><a href="/pages/models/suburban/">Suburban</a></li>
+            <li><a href="/pages/models/corvette/">Corvette</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="/pages/builds/">Submit Your Build</a></li>
+            <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+            <li><a href="/pages/about/">About ChevyRoots</a></li>
+            <li><a href="/pages/contact/">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 ChevyRoots. All rights reserved. Some links are affiliate links — we may earn a commission at no cost to you.</span>
+        <span class="footer-copy"><a href="/pages/privacy/">Privacy</a> &nbsp;&middot;&nbsp; <a href="/pages/disclaimer/">Disclaimer</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

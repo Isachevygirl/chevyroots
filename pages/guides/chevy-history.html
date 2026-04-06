@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Complete History of Chevrolet: 1911 to Today | ChevyRoots</title>
+  <meta name="description" content="From Louis Chevrolet and Billy Durant's 1911 founding to today's electric revolution — explore 115 years of Chevrolet history through an interactive timeline of iconic models, innovations, and cultural milestones." />
+  <meta name="keywords" content="chevrolet history, chevy timeline, history of chevrolet, louis chevrolet, billy durant, chevy milestones, corvette history, camaro history, impala history" />
+  <meta property="og:title" content="The Complete History of Chevrolet: 1911 to Today" />
+  <meta property="og:description" content="115 years of American muscle, innovation, and culture. The definitive Chevrolet history timeline." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/chevy-history.html" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/chevy-history.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg2:       #222222;
+      --bg3:       #2A2A2A;
+      --gold:      #C4A035;
+      --gold-lt:   #D4B455;
+      --gold-dk:   #9E7F22;
+      --red:       #CC0000;
+      --text:      #F0EDE6;
+      --text-dim:  #B0ADA6;
+      --text-mute: #707070;
+      --border:    #333333;
+      --radius:    6px;
+      --radius-lg: 12px;
+      --trans:     0.25s ease;
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --nav-height: 68px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2.5rem);
+    }
+
+    /* --- NAV --- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-main {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .nav-logo-main em { font-style: normal; color: var(--gold); }
+
+    .nav-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      margin-left: auto;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      transition: color var(--trans);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* --- HERO --- */
+    .history-hero {
+      position: relative;
+      min-height: min(80vh, 700px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 40%, #111 100%);
+    }
+
+    /* Atmospheric road/horizon CSS motif */
+    .hero-atmosphere {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    /* Horizon glow */
+    .hero-atmosphere::before {
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 300px;
+      background: radial-gradient(ellipse at center, rgba(196,160,53,0.12) 0%, rgba(196,160,53,0.04) 40%, transparent 70%);
+    }
+
+    /* Vanishing road lines */
+    .hero-atmosphere::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 35%;
+      background: linear-gradient(to top, rgba(196,160,53,0.25), transparent);
+    }
+
+    .hero-road-left,
+    .hero-road-right {
+      position: absolute;
+      bottom: 0;
+      width: 1px;
+      height: 40%;
+      background: linear-gradient(to top, rgba(240,237,230,0.08), transparent);
+    }
+
+    .hero-road-left {
+      left: 50%;
+      transform-origin: bottom center;
+      transform: translateX(-50%) rotate(12deg);
+    }
+
+    .hero-road-right {
+      left: 50%;
+      transform-origin: bottom center;
+      transform: translateX(-50%) rotate(-12deg);
+    }
+
+    /* Subtle bowtie watermark */
+    .hero-bowtie {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 320px;
+      height: 200px;
+      opacity: 0.04;
+    }
+
+    .hero-bowtie::before,
+    .hero-bowtie::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 45%;
+      height: 60%;
+      background: var(--gold);
+      transform: translateY(-50%);
+    }
+
+    .hero-bowtie::before {
+      left: 0;
+      clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    }
+
+    .hero-bowtie::after {
+      right: 0;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+    }
+
+    /* Horizontal pinstripe */
+    .hero-pinstripe {
+      position: absolute;
+      bottom: 28%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(196,160,53,0.15) 20%, rgba(196,160,53,0.15) 80%, transparent);
+    }
+
+    .history-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .history-hero .label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .history-hero .label::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .history-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .history-hero h1 .gold { color: var(--gold); }
+    .history-hero h1 .italic { font-style: italic; }
+
+    .history-hero-sub {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-dim);
+      max-width: 560px;
+      line-height: 1.6;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .history-hero-stats {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-value {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 0.3rem;
+    }
+
+    /* --- FOUNDING STORY --- */
+    .founding {
+      padding: clamp(3rem, 6vw, 6rem) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .founding-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .founding-text h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.05;
+    }
+
+    .founding-text h2 .gold { color: var(--gold); }
+
+    .founding-text p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .founding-portrait {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .portrait-card {
+      flex: 1;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 1.25rem;
+    }
+
+    .portrait-img {
+      aspect-ratio: 3/4;
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .portrait-img span {
+      font-family: var(--font-mono);
+      font-size: 2.5rem;
+      opacity: 0.3;
+    }
+
+    .portrait-name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+
+    .portrait-role {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.25rem;
+    }
+
+    /* --- TIMELINE --- */
+    .timeline-section {
+      padding: clamp(3rem, 6vw, 6rem) 0;
+    }
+
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .timeline-header h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-header h2 .gold { color: var(--gold); }
+
+    .timeline-header p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Decade filter */
+    .decade-filter {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .decade-btn {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all var(--trans);
+    }
+
+    .decade-btn:hover,
+    .decade-btn.active {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+
+    /* Timeline line */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), rgba(196,160,53,0.2));
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 0 2.5rem 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .timeline-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+      padding-right: 3rem;
+      padding-left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+      padding-left: 3rem;
+      padding-right: 0;
+    }
+
+    /* Dot on timeline */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 0.5rem;
+      width: 14px;
+      height: 14px;
+      background: var(--bg);
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      right: -7px;
+    }
+
+    .timeline-item:nth-child(even)::before {
+      left: -7px;
+    }
+
+    .timeline-year {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+      line-height: 1.15;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .timeline-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid rgba(196,160,53,0.3);
+      border-radius: 2px;
+      color: var(--gold);
+      background: rgba(196,160,53,0.06);
+      margin-top: 0.5rem;
+    }
+
+    /* --- EV-TO-HERITAGE BRIDGE --- */
+    .bridge-section {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bridge-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(196,160,53,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .bridge-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bridge-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .bridge-label::before,
+    .bridge-label::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(196,160,53,0.4);
+    }
+
+    .bridge-line {
+      font-family: var(--font-heading);
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      font-weight: 600;
+      color: var(--text-dim);
+      line-height: 1.5;
+      margin-bottom: 2rem;
+      letter-spacing: 0.01em;
+    }
+
+    .bridge-line .gold {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .bridge-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .bridge-divider {
+      width: 30px;
+      height: 1px;
+      background: rgba(196,160,53,0.3);
+      margin: 0 auto 2rem;
+    }
+
+    /* --- CULTURAL IMPACT --- */
+    .culture-section {
+      padding: clamp(3rem, 6vw, 6rem) 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .culture-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .culture-header h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .culture-header h2 .gold { color: var(--gold); }
+
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .culture-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      transition: border-color var(--trans), transform var(--trans);
+    }
+
+    .culture-card:hover {
+      border-color: rgba(196,160,53,0.4);
+      transform: translateY(-3px);
+    }
+
+    .culture-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .culture-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .culture-card p {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .culture-card .culture-examples {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .culture-example {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .culture-example::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    /* --- RACING HERITAGE --- */
+    .racing-section {
+      padding: clamp(3rem, 6vw, 6rem) 0;
+    }
+
+    .racing-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+
+    .racing-text h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.05;
+    }
+
+    .racing-text h2 .gold { color: var(--gold); }
+
+    .racing-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .racing-stat {
+      background: var(--bg);
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .racing-stat-value {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .racing-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 0.3rem;
+    }
+
+    .racing-text p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .racing-milestones {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .racing-milestone {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color var(--trans);
+    }
+
+    .racing-milestone:hover {
+      border-color: rgba(196,160,53,0.3);
+    }
+
+    .racing-milestone-year {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--gold);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .racing-milestone-text h4 {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .racing-milestone-text p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* --- CTA BANNER --- */
+    .history-cta {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .history-cta h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .history-cta h2 .gold { color: var(--gold); }
+
+    .history-cta p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.75rem;
+      border: 2px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--trans);
+      text-decoration: none;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--bg);
+      border-color: var(--gold);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-lt);
+      border-color: var(--gold-lt);
+      color: var(--bg);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: rgba(240,237,230,0.4);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(176,168,154,0.1);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand em { font-style: normal; color: var(--gold); }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      opacity: 0.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-disclaimer {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+      opacity: 0.4;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .founding-inner { grid-template-columns: 1fr; }
+      .culture-grid { grid-template-columns: 1fr; }
+      .racing-inner { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+
+      .timeline::before { left: 20px; }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        text-align: left !important;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+      }
+
+      .timeline-item::before {
+        left: 13px !important;
+        right: auto !important;
+      }
+
+      .hero-bowtie { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .founding-portrait { flex-direction: column; }
+      .history-hero-stats { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO — CSS ATMOSPHERIC ROAD/HORIZON MOTIF -->
+    <section class="history-hero">
+      <div class="hero-atmosphere">
+        <div class="hero-road-left"></div>
+        <div class="hero-road-right"></div>
+        <div class="hero-pinstripe"></div>
+      </div>
+      <div class="hero-bowtie"></div>
+      <div class="history-hero-content container">
+        <div class="label">ChevyRoots &bull; History</div>
+        <h1>
+          115 Years of<br/>
+          <span class="gold">Chevrolet</span><br/>
+          <span class="italic">History</span>
+        </h1>
+        <p class="history-hero-sub">
+          From a Swiss-born racer's dream in a Detroit garage to the world's most recognized bowtie &mdash; the complete story of how Chevrolet became America's heartbeat.
+        </p>
+        <div class="history-hero-stats">
+          <div class="stat-block">
+            <span class="stat-value">1911</span>
+            <span class="stat-label">Founded</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-value">115</span>
+            <span class="stat-label">Years Strong</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-value">200M+</span>
+            <span class="stat-label">Vehicles Built</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE FOUNDING STORY -->
+    <section class="founding">
+      <div class="container">
+        <div class="founding-inner">
+          <div class="founding-text">
+            <h2>Two Men, One <span class="gold">Dream</span></h2>
+            <p>
+              On November 3, 1911, in Detroit, Michigan, race car driver <strong>Louis Chevrolet</strong> and ousted General Motors founder <strong>William C. "Billy" Durant</strong> incorporated the Chevrolet Motor Car Company. Louis brought the racing pedigree and engineering genius; Durant brought the business savvy and burning ambition to reclaim his automotive empire.
+            </p>
+            <p>
+              Their first car &mdash; the <strong>Classic Six</strong> &mdash; debuted in 1912 as a luxury touring car priced at $2,150 (about $68,000 today). But it was Durant's pivot to affordable, reliable cars for everyday Americans that would define Chevrolet's soul. By 1917, Durant had used Chevrolet stock to regain control of General Motors, and the Chevy brand was folded into the GM family.
+            </p>
+            <p>
+              Louis Chevrolet, frustrated by Durant's shift away from performance, left the company that bore his name. But his legacy &mdash; speed, innovation, and the iconic bowtie &mdash; would endure for over a century.
+            </p>
+          </div>
+          <div class="founding-portrait">
+            <div class="portrait-card">
+              <div class="portrait-img"><span>LC</span></div>
+              <div class="portrait-name">Louis Chevrolet</div>
+              <div class="portrait-role">Co-Founder &bull; Racer &bull; Engineer</div>
+            </div>
+            <div class="portrait-card">
+              <div class="portrait-img"><span>WD</span></div>
+              <div class="portrait-name">Billy Durant</div>
+              <div class="portrait-role">Co-Founder &bull; Businessman</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE TIMELINE -->
+    <section class="timeline-section">
+      <div class="container">
+        <div class="timeline-header">
+          <h2>The <span class="gold">Timeline</span></h2>
+          <p>Every milestone, model debut, and moment that shaped the Chevrolet legacy.</p>
+        </div>
+
+        <div class="decade-filter" role="tablist" aria-label="Filter timeline by decade">
+          <button class="decade-btn active" data-decade="all">All</button>
+          <button class="decade-btn" data-decade="1910">1910s</button>
+          <button class="decade-btn" data-decade="1920">1920s</button>
+          <button class="decade-btn" data-decade="1930">1930s</button>
+          <button class="decade-btn" data-decade="1940">1940s</button>
+          <button class="decade-btn" data-decade="1950">1950s</button>
+          <button class="decade-btn" data-decade="1960">1960s</button>
+          <button class="decade-btn" data-decade="1970">1970s</button>
+          <button class="decade-btn" data-decade="1980">1980s</button>
+          <button class="decade-btn" data-decade="1990">1990s</button>
+          <button class="decade-btn" data-decade="2000">2000s+</button>
+        </div>
+
+        <div class="timeline" id="timeline">
+
+          <div class="timeline-item" data-decade="1910">
+            <div class="timeline-year">1911</div>
+            <div class="timeline-title">Chevrolet Motor Car Company Founded</div>
+            <div class="timeline-desc">Louis Chevrolet and William C. Durant incorporate the company in Detroit, Michigan on November 3rd.</div>
+            <span class="timeline-tag">Founding</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1910">
+            <div class="timeline-year">1912</div>
+            <div class="timeline-title">The Classic Six Debuts</div>
+            <div class="timeline-desc">Chevy's first production car &mdash; a luxury touring car with a 299 cubic-inch six-cylinder engine producing 40 horsepower. Price: $2,150.</div>
+            <span class="timeline-tag">First Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1910">
+            <div class="timeline-year">1913</div>
+            <div class="timeline-title">The Bowtie Is Born</div>
+            <div class="timeline-desc">The iconic Chevrolet bowtie logo first appears. Its origin remains debated &mdash; Durant claimed he was inspired by a wallpaper pattern in a Paris hotel; his wife said it came from a newspaper ad.</div>
+            <span class="timeline-tag">Branding</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1910">
+            <div class="timeline-year">1914</div>
+            <div class="timeline-title">Baby Grand &amp; Royal Mail</div>
+            <div class="timeline-desc">Chevrolet introduces the affordable Baby Grand touring car and Royal Mail roadster, priced under $1,000. Durant's strategy to compete with Ford's Model T begins to take shape.</div>
+            <span class="timeline-tag">Model Launch</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1910">
+            <div class="timeline-year">1917</div>
+            <div class="timeline-title">Chevrolet Joins General Motors</div>
+            <div class="timeline-desc">Durant uses Chevrolet stock to regain control of GM. Chevrolet becomes a division of General Motors, beginning a partnership that would last over a century.</div>
+            <span class="timeline-tag">Milestone</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1920">
+            <div class="timeline-year">1923</div>
+            <div class="timeline-title">Copper-Cooled Engine Experiment</div>
+            <div class="timeline-desc">Chevrolet briefly experiments with an air-cooled "copper-cooled" engine. The project fails commercially but demonstrates Chevy's willingness to push engineering boundaries early on.</div>
+            <span class="timeline-tag">Innovation</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1920">
+            <div class="timeline-year">1927</div>
+            <div class="timeline-title">Chevy Outsells Ford for the First Time</div>
+            <div class="timeline-desc">The Capitol and National series help Chevrolet surpass Ford in annual sales for the first time, producing over one million vehicles. The rivalry that would define American auto history begins.</div>
+            <span class="timeline-tag">Sales Milestone</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1920">
+            <div class="timeline-year">1929</div>
+            <div class="timeline-title">The "Stovebolt Six" Arrives</div>
+            <div class="timeline-desc">Chevrolet introduces its overhead-valve inline-six engine, nicknamed the "Stovebolt" for its slotted-head bolts. Affordable, reliable, and smooth &mdash; it kept Chevy competitive through the Depression.</div>
+            <span class="timeline-tag">Innovation</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1930">
+            <div class="timeline-year">1935</div>
+            <div class="timeline-title">Chevrolet Suburban Introduced</div>
+            <div class="timeline-desc">The Suburban Carryall debuts as one of the first production all-steel station wagons &mdash; and the longest-running nameplate in automotive history, still in production 90+ years later.</div>
+            <span class="timeline-tag">Iconic Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1930">
+            <div class="timeline-year">1937</div>
+            <div class="timeline-title">Chevy Becomes America's #1</div>
+            <div class="timeline-desc">Chevrolet solidifies its position as the best-selling car brand in America with refined styling, knee-action independent front suspension, and prices everyday families could afford.</div>
+            <span class="timeline-tag">Sales Milestone</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1940">
+            <div class="timeline-year">1942</div>
+            <div class="timeline-title">Civilian Production Halted for WWII</div>
+            <div class="timeline-desc">Chevrolet ceases all civilian car production and converts its factories to build military trucks, aircraft engines, shells, and gun parts. Over the next three years, Chevy plants produce more war materiel than any other GM division.</div>
+            <span class="timeline-tag">WWII</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1940">
+            <div class="timeline-year">1945</div>
+            <div class="timeline-title">Post-War Production Resumes</div>
+            <div class="timeline-desc">With the war over, Chevrolet restarts civilian production. Pent-up demand creates massive waitlists. The '46 Fleetmaster and Stylemaster sedans fly off lots as America returns to peacetime.</div>
+            <span class="timeline-tag">Milestone</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1940">
+            <div class="timeline-year">1948</div>
+            <div class="timeline-title">Advance Design Trucks</div>
+            <div class="timeline-desc">Chevy introduces the Advance Design truck line &mdash; the first major post-war truck redesign. With rounded fenders and improved cabs, they become the best-selling trucks in America and remain popular restoration builds today.</div>
+            <span class="timeline-tag">Trucks</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1950">
+            <div class="timeline-year">1950</div>
+            <div class="timeline-title">Bel Air Nameplate Debuts</div>
+            <div class="timeline-desc">The Bel Air arrives as a premium hardtop, soon to become the quintessential symbol of 1950s American car culture. The '55, '56, and '57 Tri-Five models are now among the most collected classics ever.</div>
+            <span class="timeline-tag">Iconic Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1950">
+            <div class="timeline-year">1953</div>
+            <div class="timeline-title">Corvette &mdash; America's Sports Car Is Born</div>
+            <div class="timeline-desc">The first Corvette rolls off the line in Flint, Michigan &mdash; a two-seat roadster with a fiberglass body and Blue Flame six-cylinder engine. Only 300 are built in the first year, all in Polo White.</div>
+            <span class="timeline-tag">Legendary Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1950">
+            <div class="timeline-year">1955</div>
+            <div class="timeline-title">The Small-Block V8 Revolution</div>
+            <div class="timeline-desc">Chevy introduces the 265 cubic-inch small-block V8 &mdash; arguably the most important engine in automotive history. Lightweight, powerful, and endlessly modifiable, it transformed Chevy's image overnight from "stodgy" to performance leader and became the most produced engine architecture in history.</div>
+            <span class="timeline-tag">Innovation</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1950">
+            <div class="timeline-year">1957</div>
+            <div class="timeline-title">The '57 Chevy &mdash; An Icon Is Made</div>
+            <div class="timeline-desc">The 1957 Bel Air becomes one of the most recognizable cars ever built. With fuel injection available for the first time on a production Chevy, the '57 is fast, beautiful, and destined for eternal cool.</div>
+            <span class="timeline-tag">Iconic Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1950">
+            <div class="timeline-year">1958</div>
+            <div class="timeline-title">Impala Takes the Stage</div>
+            <div class="timeline-desc">The Impala debuts as a top-of-the-line Bel Air trim, becoming its own model in 1959. It would become the best-selling car in America and a pillar of lowrider culture for generations.</div>
+            <span class="timeline-tag">Iconic Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1960">
+            <div class="timeline-year">1959</div>
+            <div class="timeline-title">El Camino &mdash; Car or Truck?</div>
+            <div class="timeline-desc">Chevy answers Ford's Ranchero with the El Camino, a car-truck hybrid built on the full-size platform. Discontinued in 1960, it returned in 1964 on the Chevelle platform and became a cult classic.</div>
+            <span class="timeline-tag">Iconic Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1960">
+            <div class="timeline-year">1963</div>
+            <div class="timeline-title">Corvette Sting Ray Split-Window</div>
+            <div class="timeline-desc">The C2 Corvette Sting Ray arrives with independent rear suspension and the legendary split-window coupe design. Produced for one year only, the '63 split-window is now one of the most valuable Corvettes ever made.</div>
+            <span class="timeline-tag">Legendary Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1960">
+            <div class="timeline-year">1964</div>
+            <div class="timeline-title">Chevelle &amp; the Muscle Car Era</div>
+            <div class="timeline-desc">The Chevelle SS launches as Chevy's entry into the muscle car wars. The 1970 Chevelle SS 454 with its LS6 engine (450 hp) is considered one of the greatest muscle cars ever built.</div>
+            <span class="timeline-tag">Muscle Era</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1960">
+            <div class="timeline-year">1966</div>
+            <div class="timeline-title">See the USA in Your Chevrolet</div>
+            <div class="timeline-desc">Dinah Shore's iconic TV jingle becomes one of the most recognized advertising slogans in American history, cementing Chevrolet's place in pop culture and the American road trip dream.</div>
+            <span class="timeline-tag">Cultural</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1960">
+            <div class="timeline-year">1967</div>
+            <div class="timeline-title">Camaro &mdash; Ford Has a Problem</div>
+            <div class="timeline-desc">Chevrolet's answer to the Ford Mustang arrives: the Camaro. With options from inline-six economy to the legendary Z/28 and SS 396, it instantly becomes a pony car icon. First-gen Camaros are among the most valuable muscle cars today.</div>
+            <span class="timeline-tag">Legendary Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1960">
+            <div class="timeline-year">1969</div>
+            <div class="timeline-title">COPO Camaro &mdash; The Underground Legend</div>
+            <div class="timeline-desc">Chevy dealers use the Central Office Production Order system to install the 427 V8 in Camaros &mdash; creating the COPO 9560, one of the rarest and most sought-after muscle cars in history. Only 1,015 were built.</div>
+            <span class="timeline-tag">Rare &amp; Collectible</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1970">
+            <div class="timeline-year">1970</div>
+            <div class="timeline-title">Monte Carlo &amp; the Personal Luxury Era</div>
+            <div class="timeline-desc">The Monte Carlo arrives as Chevy's personal luxury coupe. Through six generations (1970-2007), it becomes a NASCAR icon and a staple of American driveways.</div>
+            <span class="timeline-tag">Iconic Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1970">
+            <div class="timeline-year">1973</div>
+            <div class="timeline-title">C/K Trucks Dominate</div>
+            <div class="timeline-desc">Chevy's "Square Body" C/K trucks (1973-1987) begin production. Rugged, reliable, and now highly collectible, they defined the American truck for a generation and remain some of the most popular restoration projects.</div>
+            <span class="timeline-tag">Trucks</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1970">
+            <div class="timeline-year">1976</div>
+            <div class="timeline-title">Chevette &mdash; Chevy Goes Small</div>
+            <div class="timeline-desc">In the wake of the oil crisis, Chevrolet introduces the Chevette &mdash; a small, fuel-efficient hatchback. It sells over 2.8 million units and proves Chevy can adapt to changing times.</div>
+            <span class="timeline-tag">Model Launch</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1980">
+            <div class="timeline-year">1982</div>
+            <div class="timeline-title">Third-Gen Camaro Arrives</div>
+            <div class="timeline-desc">The sleek, aerodynamic third-generation Camaro launches with a dramatic wedge shape. The Z28 returns as the performance flagship, and the car is selected as the Indianapolis 500 pace car in its debut year.</div>
+            <span class="timeline-tag">Iconic Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1980">
+            <div class="timeline-year">1985</div>
+            <div class="timeline-title">IROC-Z &mdash; Peak '80s Muscle</div>
+            <div class="timeline-desc">The Camaro IROC-Z debuts with tuned suspension, 305 V8 power, and aggressive styling that defines a decade. Named after the International Race of Champions series, the IROC-Z becomes the muscle car of the 1980s.</div>
+            <span class="timeline-tag">Muscle Era</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1980">
+            <div class="timeline-year">1983</div>
+            <div class="timeline-title">Monte Carlo SS Returns</div>
+            <div class="timeline-desc">After a brief hiatus, the Monte Carlo SS comes back with a 180-hp 305 V8 and aero body kit. It dominates NASCAR with 23 wins in its first season and becomes a street icon with its black-and-silver styling.</div>
+            <span class="timeline-tag">Muscle Era</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1980">
+            <div class="timeline-year">1988</div>
+            <div class="timeline-title">C/K 1500 &mdash; The GMT400 Era</div>
+            <div class="timeline-desc">Chevy launches the GMT400 full-size truck platform with improved aerodynamics, fuel injection, and a more refined interior. It modernizes the American pickup and sets the stage for the Silverado nameplate.</div>
+            <span class="timeline-tag">Trucks</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1990">
+            <div class="timeline-year">1990</div>
+            <div class="timeline-title">454 SS &mdash; The Hot Rod Pickup</div>
+            <div class="timeline-desc">Chevy drops the 454 big-block V8 into the C1500 short-bed, creating the 454 SS &mdash; a factory hot rod truck. Low production numbers and raw muscle make it a collector favorite today.</div>
+            <span class="timeline-tag">Trucks</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1990">
+            <div class="timeline-year">1997</div>
+            <div class="timeline-title">C5 Corvette &mdash; World-Class at Last</div>
+            <div class="timeline-desc">The C5 Corvette arrives with an all-new hydroformed frame, rear-mounted transaxle, and the LS1 V8. It delivers genuine supercar handling at an American price and launches the LS engine dynasty.</div>
+            <span class="timeline-tag">Legendary Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="1990">
+            <div class="timeline-year">1999</div>
+            <div class="timeline-title">Silverado Nameplate Launches</div>
+            <div class="timeline-desc">The Silverado name &mdash; previously a trim level &mdash; becomes its own model. It quickly rises to become one of the best-selling vehicles in America, rivaling the Ford F-150 for truck supremacy.</div>
+            <span class="timeline-tag">Trucks</span>
+          </div>
+
+          <div class="timeline-item" data-decade="2000">
+            <div class="timeline-year">2006</div>
+            <div class="timeline-title">Corvette Z06 &mdash; Track Weapon</div>
+            <div class="timeline-desc">The C6 Z06 arrives with a 505-hp LS7 7.0L V8, aluminum frame, and carbon fiber fenders. It demolishes European exotics costing three times as much and proves the Corvette belongs on the world stage.</div>
+            <span class="timeline-tag">Performance</span>
+          </div>
+
+          <div class="timeline-item" data-decade="2000">
+            <div class="timeline-year">2010</div>
+            <div class="timeline-title">Chevrolet Volt &mdash; Electric Pioneer</div>
+            <div class="timeline-desc">The Volt plug-in hybrid launches as one of the first mass-market electric vehicles from a major automaker, signaling Chevy's commitment to electrification years before the EV boom.</div>
+            <span class="timeline-tag">Innovation</span>
+          </div>
+
+          <div class="timeline-item" data-decade="2000">
+            <div class="timeline-year">2014</div>
+            <div class="timeline-title">Colorado Returns</div>
+            <div class="timeline-desc">After a four-year absence, the Chevy Colorado returns as a right-sized midsize truck. It wins Motor Trend Truck of the Year and proves there's still a massive market for trucks that aren't full-size.</div>
+            <span class="timeline-tag">Trucks</span>
+          </div>
+
+          <div class="timeline-item" data-decade="2000">
+            <div class="timeline-year">2017</div>
+            <div class="timeline-title">Chevrolet Bolt EV</div>
+            <div class="timeline-desc">The all-electric Bolt EV arrives with 238 miles of range at under $37,500 &mdash; making affordable long-range EVs a reality for everyday drivers, years before many competitors.</div>
+            <span class="timeline-tag">Electric</span>
+          </div>
+
+          <div class="timeline-item" data-decade="2000">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-title">C8 Corvette &mdash; Mid-Engine Revolution</div>
+            <div class="timeline-desc">After nearly 70 years, the Corvette goes mid-engine. The C8 Stingray delivers supercar performance starting under $60K, shattering the price-to-performance barrier and earning universal acclaim.</div>
+            <span class="timeline-tag">Legendary Model</span>
+          </div>
+
+          <div class="timeline-item" data-decade="2000">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">Silverado EV &amp; Equinox EV</div>
+            <div class="timeline-desc">Chevy goes all-in on electric with the Silverado EV (up to 400+ miles of range) and the affordable Equinox EV starting around $33,000. The Ultium platform powers a new generation.</div>
+            <span class="timeline-tag">Electric Future</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SAME SOUL, NEW SPARK — EV-TO-HERITAGE BRIDGE -->
+    <section class="bridge-section">
+      <div class="container">
+        <div class="bridge-inner">
+          <div class="bridge-label">Same Soul, New Spark</div>
+
+          <p class="bridge-line">
+            <span class="gold">1955:</span> The small-block V8 changed everything.<br/>
+            <span class="gold">2024:</span> The Ultium battery changes everything again.
+          </p>
+
+          <div class="bridge-divider"></div>
+
+          <p class="bridge-line">
+            Your grandpa's Bel Air and your kid's Equinox EV have the same thing in common &mdash; <span class="gold">a bowtie on the hood.</span>
+          </p>
+
+          <div class="bridge-divider"></div>
+
+          <p class="bridge-line">
+            Every generation of Chevy owner thought the last generation had it best.<br/>
+            Every generation was right.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHEVY IN CULTURE -->
+    <section class="culture-section">
+      <div class="container">
+        <div class="culture-header">
+          <h2>Chevy in <span class="gold">American Culture</span></h2>
+        </div>
+        <div class="culture-grid">
+
+          <div class="culture-card">
+            <div class="culture-icon">&#127916;</div>
+            <h3>On the Big Screen</h3>
+            <p>From the yellow '55 Chevy in <em>American Graffiti</em> to Bumblebee's Camaro in <em>Transformers</em>, Chevrolets have been movie stars for decades.</p>
+            <div class="culture-examples">
+              <div class="culture-example">American Graffiti (1973) &mdash; '55 Chevy 150</div>
+              <div class="culture-example">Transformers (2007) &mdash; Camaro SS</div>
+              <div class="culture-example">Drive (2011) &mdash; Chevy Chevelle Malibu</div>
+              <div class="culture-example">Days of Thunder (1990) &mdash; Chevy Lumina</div>
+            </div>
+          </div>
+
+          <div class="culture-card">
+            <div class="culture-icon">&#127925;</div>
+            <h3>In the Music</h3>
+            <p>Don McLean drove his Chevy to the levee. Prince had a Little Red Corvette. Chevy is woven into the soundtrack of American life.</p>
+            <div class="culture-examples">
+              <div class="culture-example">"American Pie" &mdash; Don McLean (1971)</div>
+              <div class="culture-example">"Little Red Corvette" &mdash; Prince (1983)</div>
+              <div class="culture-example">"Little Deuce Coupe" &mdash; Beach Boys (1963)</div>
+              <div class="culture-example">"Chevy Van" &mdash; Sammy Johns (1975)</div>
+            </div>
+          </div>
+
+          <div class="culture-card">
+            <div class="culture-icon">&#127944;</div>
+            <h3>Lowrider Culture</h3>
+            <p>The Chevrolet Impala &mdash; especially the '58-'64 models &mdash; became the foundation of lowrider culture, from East LA to car shows worldwide.</p>
+            <div class="culture-examples">
+              <div class="culture-example">1964 Impala "Gypsy Rose" &mdash; icon</div>
+              <div class="culture-example">Lowrider Magazine &mdash; Est. 1977</div>
+              <div class="culture-example">Chevy Impala = most popular lowrider</div>
+              <div class="culture-example">Hydraulics, candy paint, wire wheels</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RACING HERITAGE -->
+    <section class="racing-section">
+      <div class="container">
+        <div class="racing-inner">
+          <div class="racing-text">
+            <h2>Born to <span class="gold">Race</span></h2>
+            <div class="racing-stats">
+              <div class="racing-stat">
+                <div class="racing-stat-value">40+</div>
+                <div class="racing-stat-label">NASCAR Championships</div>
+              </div>
+              <div class="racing-stat">
+                <div class="racing-stat-value">8</div>
+                <div class="racing-stat-label">Le Mans Class Wins</div>
+              </div>
+              <div class="racing-stat">
+                <div class="racing-stat-value">115</div>
+                <div class="racing-stat-label">Years of Racing</div>
+              </div>
+              <div class="racing-stat">
+                <div class="racing-stat-value">C8.R</div>
+                <div class="racing-stat-label">Current Race Car</div>
+              </div>
+            </div>
+            <p>
+              Louis Chevrolet was a racer before he was an automaker. That DNA &mdash; speed, competition, pushing limits &mdash; has been in Chevrolet's blood since day one. From early board track racing to dominating NASCAR, IMSA, and the 24 Hours of Le Mans, Chevrolet has always raced.
+            </p>
+          </div>
+
+          <div class="racing-milestones">
+            <div class="racing-milestone">
+              <div class="racing-milestone-year">1911</div>
+              <div class="racing-milestone-text">
+                <h4>Louis Chevrolet at Indy</h4>
+                <p>Louis Chevrolet competed in the inaugural Indianapolis 500, finishing 7th. Racing was in the brand's DNA from the very start.</p>
+              </div>
+            </div>
+            <div class="racing-milestone">
+              <div class="racing-milestone-year">1963</div>
+              <div class="racing-milestone-text">
+                <h4>Corvette Grand Sport</h4>
+                <p>Zora Arkus-Duntov builds five lightweight Grand Sport Corvettes to take on Ferrari and Shelby at Le Mans. GM killed the program, but the legend lives on.</p>
+              </div>
+            </div>
+            <div class="racing-milestone">
+              <div class="racing-milestone-year">1970</div>
+              <div class="racing-milestone-text">
+                <h4>NASCAR Dominance</h4>
+                <p>Chevy Monte Carlos and Chevelles dominate NASCAR through the 1970s and 80s, with drivers like Dale Earnhardt and Darrell Waltrip.</p>
+              </div>
+            </div>
+            <div class="racing-milestone">
+              <div class="racing-milestone-year">2001</div>
+              <div class="racing-milestone-text">
+                <h4>Corvette Wins at Le Mans</h4>
+                <p>The Corvette C5-R wins its class at the 24 Hours of Le Mans, beginning a dynasty of GTE/GTLM class victories that continues through the C8.R era.</p>
+              </div>
+            </div>
+            <div class="racing-milestone">
+              <div class="racing-milestone-year">2023</div>
+              <div class="racing-milestone-text">
+                <h4>Corvette Z06 GT3.R</h4>
+                <p>The Corvette Z06 GT3.R enters the new era of GT racing, carrying Chevy's racing legacy into the future with customer racing programs worldwide.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA — DREAM TOUR LINK -->
+    <section class="history-cta">
+      <div class="container">
+        <h2>Walk Where <span class="gold">History</span> Happened</h2>
+        <p>Now that you know the story, visit the places where it all went down. Take the Chevy Dream Tour.</p>
+        <div class="cta-buttons">
+          <a href="/pages/guides/chevy-dream-tour.html" class="btn btn-gold">Take the Dream Tour &rarr;</a>
+          <a href="/" class="btn btn-outline">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">Chevy<em>Roots</em></div>
+      <p class="footer-copy">&copy; 2026 ChevyRoots. All rights reserved.</p>
+      <p class="footer-disclaimer">ChevyRoots is an independent enthusiast website and is not affiliated with, endorsed by, or sponsored by General Motors, Chevrolet, or any of their subsidiaries. All trademarks, logos, and brand names are the property of their respective owners.</p>
+    </div>
+  </footer>
+
+  <!-- TIMELINE SCROLL REVEAL + DECADE FILTER -->
+  <script>
+  (function() {
+    const items = document.querySelectorAll('.timeline-item');
+    const buttons = document.querySelectorAll('.decade-btn');
+
+    // Scroll reveal
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      items.forEach(item => observer.observe(item));
+    } else {
+      items.forEach(item => item.classList.add('revealed'));
+    }
+
+    // Decade filter
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const decade = btn.dataset.decade;
+
+        items.forEach(item => {
+          if (decade === 'all' || item.dataset.decade === decade) {
+            item.style.display = '';
+            // Re-trigger reveal
+            setTimeout(() => item.classList.add('revealed'), 50);
+          } else {
+            item.style.display = 'none';
+            item.classList.remove('revealed');
+          }
+        });
+      });
+    });
+  })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Complete History of Chevrolet: 1911 to Today",
+    "description": "From Louis Chevrolet and Billy Durant's 1911 founding to today's electric revolution — 115 years of Chevrolet history.",
+    "url": "https://chevyroots.com/pages/guides/chevy-history.html",
+    "datePublished": "2024-01-01",
+    "author": { "@type": "Organization", "name": "ChevyRoots", "url": "https://chevyroots.com" },
+    "publisher": { "@type": "Organization", "name": "ChevyRoots", "url": "https://chevyroots.com" }
+  }
+  </script>
+</body>
+</html>

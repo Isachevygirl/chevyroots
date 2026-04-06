@@ -1,0 +1,448 @@
+{
+  "specialties_taxonomy": [
+    { "id": "ls-swap", "label": "LS Swap" },
+    { "id": "classic-restoration", "label": "Classic Restoration" },
+    { "id": "transmission", "label": "Transmission" },
+    { "id": "performance-tuning", "label": "Performance Tuning" },
+    { "id": "diesel", "label": "Diesel / Duramax" },
+    { "id": "bodywork", "label": "Body & Paint" },
+    { "id": "electrical", "label": "Electrical / Wiring" },
+    { "id": "suspension", "label": "Suspension & Lift Kits" },
+    { "id": "exhaust", "label": "Exhaust Systems" },
+    { "id": "general-maintenance", "label": "General Maintenance" },
+    { "id": "ev-hybrid", "label": "EV / Hybrid" },
+    { "id": "engine-rebuild", "label": "Engine Rebuild" }
+  ],
+  "mechanics": [
+    {
+      "id": "lone-star-chevy-works-houston",
+      "name": "Lone Star Chevy Works",
+      "slug": "lone-star-chevy-works-houston",
+      "address": {
+        "street": "4820 Harrisburg Blvd",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77011",
+        "lat": 29.7434,
+        "lng": -95.3230
+      },
+      "phone": "(713) 555-0142",
+      "website": "https://lonestarchevyworks.example.com",
+      "photo": "",
+      "specialties": ["ls-swap", "classic-restoration", "engine-rebuild", "performance-tuning"],
+      "chevy_models_served": ["silverado-1500", "camaro", "corvette", "c10"],
+      "years_in_business": 18,
+      "certified": true,
+      "verified": true,
+      "featured": true,
+      "description": "Family-owned Houston shop known for LS swaps and classic Chevy restorations. Three generations of Chevy expertise under one roof.",
+      "hours": {
+        "mon_fri": "7:30 AM - 6:00 PM",
+        "sat": "8:00 AM - 2:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.8,
+        "chevyroots_count": 24,
+        "yelp_avg": 4.5,
+        "yelp_count": 112,
+        "google_avg": 4.7,
+        "google_count": 289,
+        "composite_score": 4.67
+      },
+      "added_date": "2026-01-10",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "southern-bow-tie-garage-dallas",
+      "name": "Southern Bow Tie Garage",
+      "slug": "southern-bow-tie-garage-dallas",
+      "address": {
+        "street": "2910 Commerce St",
+        "city": "Dallas",
+        "state": "TX",
+        "zip": "75226",
+        "lat": 32.7825,
+        "lng": -96.7780
+      },
+      "phone": "(214) 555-0278",
+      "website": "https://southernbowtie.example.com",
+      "photo": "",
+      "specialties": ["diesel", "suspension", "performance-tuning", "exhaust"],
+      "chevy_models_served": ["silverado-1500", "silverado-hd", "tahoe", "suburban"],
+      "years_in_business": 12,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Dallas truck specialists focused on Duramax diesel, lift kits, and exhaust systems. If it's a Chevy truck, they've worked on it.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 15,
+        "yelp_avg": 4.3,
+        "yelp_count": 78,
+        "google_avg": 4.5,
+        "google_count": 195,
+        "composite_score": 4.46
+      },
+      "added_date": "2026-01-15",
+      "last_updated": "2026-03-28"
+    },
+    {
+      "id": "dmv-chevy-clinic-arlington",
+      "name": "DMV Chevy Clinic",
+      "slug": "dmv-chevy-clinic-arlington",
+      "address": {
+        "street": "1450 S Glebe Rd",
+        "city": "Arlington",
+        "state": "VA",
+        "zip": "22204",
+        "lat": 38.8462,
+        "lng": -77.0907
+      },
+      "phone": "(703) 555-0391",
+      "website": "https://dmvchevyclinic.example.com",
+      "photo": "",
+      "specialties": ["general-maintenance", "electrical", "transmission", "engine-rebuild"],
+      "chevy_models_served": ["equinox", "traverse", "tahoe", "silverado-1500", "trax"],
+      "years_in_business": 8,
+      "certified": true,
+      "verified": true,
+      "featured": true,
+      "description": "Northern Virginia's go-to Chevy clinic. Bumper-to-bumper service for modern Chevys, from Equinox oil changes to Tahoe transmission rebuilds.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 31,
+        "yelp_avg": 4.6,
+        "yelp_count": 64,
+        "google_avg": 4.7,
+        "google_count": 158,
+        "composite_score": 4.73
+      },
+      "added_date": "2026-02-01",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "peach-state-performance-atlanta",
+      "name": "Peach State Performance",
+      "slug": "peach-state-performance-atlanta",
+      "address": {
+        "street": "780 Northside Dr NW",
+        "city": "Atlanta",
+        "state": "GA",
+        "zip": "30318",
+        "lat": 33.7823,
+        "lng": -84.4100
+      },
+      "phone": "(404) 555-0517",
+      "website": "https://peachstateperformance.example.com",
+      "photo": "",
+      "specialties": ["performance-tuning", "ls-swap", "exhaust", "suspension"],
+      "chevy_models_served": ["camaro", "corvette", "silverado-1500"],
+      "years_in_business": 15,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Atlanta's premier Chevy performance shop. Dyno tuning, forced induction, and race-prep for Camaros and Corvettes.",
+      "hours": {
+        "mon_fri": "9:00 AM - 6:00 PM",
+        "sat": "10:00 AM - 4:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.7,
+        "chevyroots_count": 19,
+        "yelp_avg": 4.4,
+        "yelp_count": 93,
+        "google_avg": 4.6,
+        "google_count": 241,
+        "composite_score": 4.56
+      },
+      "added_date": "2026-01-20",
+      "last_updated": "2026-03-30"
+    },
+    {
+      "id": "midwest-bowtie-auto-chicago",
+      "name": "Midwest Bowtie Auto",
+      "slug": "midwest-bowtie-auto-chicago",
+      "address": {
+        "street": "3215 S Halsted St",
+        "city": "Chicago",
+        "state": "IL",
+        "zip": "60608",
+        "lat": 41.8351,
+        "lng": -87.6462
+      },
+      "phone": "(312) 555-0684",
+      "website": "https://midwestbowtie.example.com",
+      "photo": "",
+      "specialties": ["classic-restoration", "bodywork", "electrical", "engine-rebuild"],
+      "chevy_models_served": ["camaro", "corvette", "chevelle", "impala", "c10"],
+      "years_in_business": 25,
+      "certified": true,
+      "verified": true,
+      "featured": true,
+      "description": "Chicago's classic Chevy restoration authority. Full frame-off restorations, rust repair, and concours-quality bodywork since 2001.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 28,
+        "yelp_avg": 4.7,
+        "yelp_count": 56,
+        "google_avg": 4.8,
+        "google_count": 172,
+        "composite_score": 4.80
+      },
+      "added_date": "2026-01-12",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "desert-chevy-specialists-phoenix",
+      "name": "Desert Chevy Specialists",
+      "slug": "desert-chevy-specialists-phoenix",
+      "address": {
+        "street": "5501 E Washington St",
+        "city": "Phoenix",
+        "state": "AZ",
+        "zip": "85034",
+        "lat": 33.4484,
+        "lng": -111.9430
+      },
+      "phone": "(602) 555-0823",
+      "website": "https://desertchevy.example.com",
+      "photo": "",
+      "specialties": ["general-maintenance", "suspension", "diesel", "ev-hybrid"],
+      "chevy_models_served": ["silverado-1500", "colorado", "bolt", "equinox", "blazer"],
+      "years_in_business": 6,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Phoenix shop bridging old and new — servicing everything from Silverado lift kits to Bolt EV battery diagnostics.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 9,
+        "yelp_avg": 4.1,
+        "yelp_count": 42,
+        "google_avg": 4.4,
+        "google_count": 87,
+        "composite_score": 4.30
+      },
+      "added_date": "2026-02-10",
+      "last_updated": "2026-03-25"
+    },
+    {
+      "id": "golden-state-gm-garage-la",
+      "name": "Golden State GM Garage",
+      "slug": "golden-state-gm-garage-la",
+      "address": {
+        "street": "9120 S Broadway",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "90003",
+        "lat": 33.9522,
+        "lng": -118.2781
+      },
+      "phone": "(323) 555-0956",
+      "website": "https://goldenstategm.example.com",
+      "photo": "",
+      "specialties": ["performance-tuning", "exhaust", "ls-swap", "transmission"],
+      "chevy_models_served": ["camaro", "corvette", "silverado-1500", "tahoe"],
+      "years_in_business": 20,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "LA's longest-running Chevy performance shop. From street Camaros to weekend Corvettes — dyno-proven builds and honest service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 17,
+        "yelp_avg": 4.2,
+        "yelp_count": 134,
+        "google_avg": 4.5,
+        "google_count": 312,
+        "composite_score": 4.42
+      },
+      "added_date": "2026-01-25",
+      "last_updated": "2026-03-29"
+    },
+    {
+      "id": "carolina-chevy-customs-charlotte",
+      "name": "Carolina Chevy Customs",
+      "slug": "carolina-chevy-customs-charlotte",
+      "address": {
+        "street": "620 Tuckaseegee Rd",
+        "city": "Charlotte",
+        "state": "NC",
+        "zip": "28208",
+        "lat": 35.2271,
+        "lng": -80.8731
+      },
+      "phone": "(704) 555-0137",
+      "website": "https://carolinachevycustoms.example.com",
+      "photo": "",
+      "specialties": ["bodywork", "classic-restoration", "suspension", "exhaust"],
+      "chevy_models_served": ["c10", "silverado-1500", "camaro", "chevelle"],
+      "years_in_business": 11,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Charlotte-based custom shop specializing in show trucks and classic muscle. Paint, body mods, and stance work done right.",
+      "hours": {
+        "mon_fri": "8:30 AM - 5:30 PM",
+        "sat": "10:00 AM - 2:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 11,
+        "yelp_avg": 4.4,
+        "yelp_count": 47,
+        "google_avg": 4.5,
+        "google_count": 103,
+        "composite_score": 4.50
+      },
+      "added_date": "2026-02-05",
+      "last_updated": "2026-03-27"
+    },
+    {
+      "id": "motor-city-chevy-shop-detroit",
+      "name": "Motor City Chevy Shop",
+      "slug": "motor-city-chevy-shop-detroit",
+      "address": {
+        "street": "14200 Livernois Ave",
+        "city": "Detroit",
+        "state": "MI",
+        "zip": "48238",
+        "lat": 42.3834,
+        "lng": -83.1400
+      },
+      "phone": "(313) 555-0742",
+      "website": "https://motorcitychevyshop.example.com",
+      "photo": "",
+      "specialties": ["engine-rebuild", "transmission", "classic-restoration", "performance-tuning"],
+      "chevy_models_served": ["camaro", "corvette", "impala", "chevelle", "silverado-1500"],
+      "years_in_business": 30,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Detroit institution since 1996. Small-block and big-block rebuilds, 4L60E/4L80E transmission work, and a deep love for the bowtie.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.8,
+        "chevyroots_count": 35,
+        "yelp_avg": 4.6,
+        "yelp_count": 89,
+        "google_avg": 4.7,
+        "google_count": 267,
+        "composite_score": 4.70
+      },
+      "added_date": "2026-01-08",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "sunshine-chevy-repair-miami",
+      "name": "Sunshine Chevy Repair",
+      "slug": "sunshine-chevy-repair-miami",
+      "address": {
+        "street": "3350 NW 79th St",
+        "city": "Miami",
+        "state": "FL",
+        "zip": "33147",
+        "lat": 25.8400,
+        "lng": -80.2500
+      },
+      "phone": "(305) 555-0468",
+      "website": "https://sunshinechevyrepair.example.com",
+      "photo": "",
+      "specialties": ["general-maintenance", "electrical", "ev-hybrid", "bodywork"],
+      "chevy_models_served": ["equinox", "blazer", "trailblazer", "bolt", "traverse"],
+      "years_in_business": 5,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Miami's modern Chevy specialist. Expert service for Equinox, Blazer, Trailblazer, and the full EV lineup.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 2:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.4,
+        "chevyroots_count": 7,
+        "yelp_avg": 4.2,
+        "yelp_count": 31,
+        "google_avg": 4.3,
+        "google_count": 64,
+        "composite_score": 4.30
+      },
+      "added_date": "2026-03-01",
+      "last_updated": "2026-04-01"
+    }
+  ]
+}

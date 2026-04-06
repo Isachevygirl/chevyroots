@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chevy Model Lineup | ChevyRoots</title>
+  <meta name="description" content="Explore the complete Chevrolet lineup — from trucks and SUVs to sports cars and EVs. Find specs, pricing, and buying guides for every current and classic Chevy model." />
+  <link rel="canonical" href="https://chevyroots.com/pages/models/" />
+  <meta property="og:title" content="Chevy Model Lineup | ChevyRoots" />
+  <meta property="og:description" content="Explore the complete Chevrolet lineup — trucks, SUVs, sports cars, and EVs. Specs, pricing, and buyer's guides for every current and classic Chevy model." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/models/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg-card:   #242424;
+      --bg-card2:  #2C2C2C;
+      --gold:      #C4A035;
+      --gold-dim:  #9E8228;
+      --text:      #F0EDE6;
+      --text-muted:#A8A49E;
+      --border:    #333333;
+      --radius:    8px;
+      --transition: 0.22s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26, 26, 26, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: 64px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-primary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .nav-logo-secondary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+      background: rgba(196, 160, 53, 0.1);
+    }
+
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: #1A1A1A !important;
+      font-weight: 600 !important;
+      padding: 7px 16px !important;
+    }
+
+    .nav-cta:hover {
+      background: #d4b040 !important;
+      color: #1A1A1A !important;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ─── PAGE HEADER ─────────────────────────────────── */
+    .page-header {
+      margin-top: 64px;
+      padding: 72px 24px 56px;
+      text-align: center;
+      background: linear-gradient(180deg, #222 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 800px 300px at 50% 0%, rgba(196,160,53,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-header-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .page-header h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .page-header h1 span {
+      color: var(--gold);
+    }
+
+    .page-header-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    /* ─── MAIN CONTENT ────────────────────────────────── */
+    .main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ─── FILTER TABS ─────────────────────────────────── */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 32px 0 40px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .filter-bar::-webkit-scrollbar { display: none; }
+
+    .filter-tab {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 8px 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color var(--transition), background var(--transition), border-color var(--transition);
+      user-select: none;
+    }
+
+    .filter-tab:hover {
+      color: var(--text);
+      border-color: #555;
+    }
+
+    .filter-tab.active {
+      color: #1A1A1A;
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* ─── SECTION HEADER ──────────────────────────────── */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.75rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .section-header h2 span {
+      color: var(--gold);
+    }
+
+    .section-header .section-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    .lineup-section {
+      margin-bottom: 64px;
+    }
+
+    /* ─── MODEL CARDS GRID ────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .model-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+    }
+
+    .model-card:hover {
+      border-color: var(--gold-dim);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .card-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40px;
+      background: linear-gradient(transparent, rgba(26,26,26,0.6));
+      pointer-events: none;
+    }
+
+    .card-image-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #888;
+      line-height: 1.5;
+      z-index: 1;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .badge-ev {
+      background: rgba(80, 200, 120, 0.2);
+      color: #6de0a0;
+      border: 1px solid rgba(80, 200, 120, 0.3);
+    }
+
+    .badge-new {
+      background: rgba(196, 160, 53, 0.2);
+      color: var(--gold);
+      border: 1px solid rgba(196, 160, 53, 0.3);
+    }
+
+    .badge-note {
+      background: rgba(180, 100, 60, 0.2);
+      color: #d48060;
+      border: 1px solid rgba(180, 100, 60, 0.3);
+    }
+
+    .badge-hybrid {
+      background: rgba(80, 160, 200, 0.2);
+      color: #70c0e0;
+      border: 1px solid rgba(80, 160, 200, 0.3);
+    }
+
+    .card-body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 8px;
+    }
+
+    .card-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .card-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .card-price {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card-price span {
+      font-weight: 400;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .card-tagline {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .card-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #d48060;
+      padding: 5px 8px;
+      background: rgba(180, 100, 60, 0.08);
+      border-left: 2px solid rgba(180, 100, 60, 0.4);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: gap var(--transition), opacity var(--transition);
+    }
+
+    .card-link:hover {
+      gap: 10px;
+      opacity: 0.85;
+    }
+
+    /* ─── CLASSICS SECTION ────────────────────────────── */
+    .classics-intro {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .classics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .classics-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+
+    .classics-category:hover {
+      border-color: var(--gold-dim);
+    }
+
+    .classics-cat-header {
+      padding: 16px 20px 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .classics-cat-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(196, 160, 53, 0.12);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .classics-cat-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .classics-models {
+      padding: 14px 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .classic-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .classic-item-img {
+      width: 56px;
+      height: 40px;
+      background: #2e2e2e;
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .classic-item-img-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      color: #666;
+      text-align: center;
+      line-height: 1.3;
+      padding: 2px 4px;
+    }
+
+    .classic-item-info {}
+
+    .classic-item-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    .classic-item-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-top: 1px;
+    }
+
+    .classic-item-link {
+      font-size: 0.75rem;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .classic-item-link:hover { text-decoration: underline; }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    .footer {
+      background: #111;
+      border-top: 1px solid var(--border);
+      padding: 56px 24px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {}
+
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .footer-tagline {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 260px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+    .footer-col ul a {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-col ul a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-legal {
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .footer-legal a { color: #777; text-decoration: none; }
+    .footer-legal a:hover { color: var(--text-muted); }
+
+    .footer-disclaimer {
+      font-size: 0.75rem;
+      color: #555;
+      max-width: 560px;
+      text-align: right;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 64px; left: 0; right: 0;
+        background: rgba(26,26,26,0.98);
+        border-bottom: 1px solid var(--border);
+        padding: 16px;
+        z-index: 99;
+      }
+      .nav-toggle { display: flex; }
+
+      .page-header { padding: 48px 16px 40px; }
+
+      .filter-bar { padding: 24px 0 32px; }
+
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-disclaimer { text-align: left; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+
+      .cards-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    }
+
+    @media (max-width: 440px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .classics-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── HIDDEN FILTER STATE ─────────────────────────── */
+    .lineup-section[data-hidden] {
+      display: none;
+    }
+
+    /* ─── ENHANCED PLACEHOLDER ───────────────────────── */
+    .card-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      z-index: 1;
+    }
+
+    .card-placeholder-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(196, 160, 53, 0.55);
+      line-height: 1;
+    }
+
+    .card-placeholder-icon {
+      width: 64px;
+      height: 28px;
+      opacity: 0.18;
+    }
+
+    .card-placeholder-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    /* ─── BUYER'S QUIZ TEASER ─────────────────────────── */
+    .quiz-teaser {
+      margin: 0 0 64px;
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(196,160,53,0.06) 100%);
+      border: 1px solid rgba(196,160,53,0.25);
+      border-radius: 10px;
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .quiz-teaser-text {}
+
+    .quiz-teaser-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .quiz-teaser-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .quiz-teaser-sub {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .quiz-teaser-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #1A1A1A;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      transition: opacity var(--transition);
+      white-space: nowrap;
+    }
+
+    .quiz-teaser-btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="ChevyRoots home">
+        <span class="nav-logo-primary">ChevyRoots</span>
+        <span class="nav-logo-secondary">Run by a Chevy Girl</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="/pages/models/" class="active">Models</a></li>
+        <li><a href="/pages/guides/">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/about/">About</a></li>
+        <li><a href="/pages/builds/" class="nav-cta">Submit Your Build</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HEADER
+  ═══════════════════════════════════════════ -->
+  <header class="page-header">
+    <p class="page-header-label">2025–2026 Model Year</p>
+    <h1>The Complete <span>Chevy</span> Lineup</h1>
+    <p class="page-header-sub">Every current Chevrolet model — trucks, SUVs, sports cars, EVs, and the classics that started it all.</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN
+  ═══════════════════════════════════════════ -->
+  <main class="main">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" role="tablist" aria-label="Filter by vehicle category">
+      <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-tab" data-filter="trucks" role="tab" aria-selected="false">Trucks</button>
+      <button class="filter-tab" data-filter="suvs" role="tab" aria-selected="false">SUVs</button>
+      <button class="filter-tab" data-filter="cars" role="tab" aria-selected="false">Cars</button>
+      <button class="filter-tab" data-filter="sports" role="tab" aria-selected="false">Sports</button>
+      <button class="filter-tab" data-filter="evs" role="tab" aria-selected="false">EVs</button>
+      <button class="filter-tab" data-filter="classics" role="tab" aria-selected="false">Classics</button>
+    </div>
+
+    <!-- ── TRUCKS ──────────────────────────────── -->
+    <section class="lineup-section" data-category="trucks" aria-labelledby="section-trucks">
+      <div class="section-header">
+        <h2 id="section-trucks"><span>Trucks</span></h2>
+        <span class="section-count">3 models</span>
+      </div>
+      <div class="cards-grid">
+
+        <!-- Silverado 1500 -->
+        <article class="model-card">
+          <div class="card-image" style="background: #2e2e2e; background-image: url('/photos/silverado/pexels_12624306_silverado.jpeg'); background-size: cover; background-position: center;">
+            <div class="card-image-label" style="display:none;">Photo placeholder<br>2025 Chevy Silverado 1500<br>Crew Cab — exterior 3/4 front</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Truck</span>
+            <h3 class="card-name">Silverado 1500</h3>
+            <p class="card-price">From $37,200 <span>MSRP</span></p>
+            <p class="card-tagline">America's best-selling full-size truck. Available with a 2.7L Turbo-4, 5.3L V8, 6.2L V8, or available 3.0L Duramax diesel. Tows up to 13,300 lbs.</p>
+            <a href="/pages/guides/silverado-1500/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Silverado HD -->
+        <article class="model-card">
+          <div class="card-image" style="background: #2a2a2a; background-image: url('/photos/silverado/New_2020_Chevrolet_Silverado_HD_at_Toronto_International_Autoshow.jpg'); background-size: cover; background-position: center;">
+            <div class="card-image-label" style="display:none;">Photo placeholder<br>2025 Chevy Silverado HD 2500<br>Dually or crew cab — work/tow setup</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Truck</span>
+            <h3 class="card-name">Silverado HD 2500/3500</h3>
+            <p class="card-price">From $46,200 <span>MSRP</span></p>
+            <p class="card-tagline">Heavy-duty muscle built for serious work. Available 6.6L V8 gas or 6.6L Duramax diesel. Max towing up to 36,000 lbs on 3500 dually.</p>
+            <a href="/pages/guides/silverado-hd/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Colorado -->
+        <article class="model-card">
+          <div class="card-image" style="background: #2c2c2c; background-image: url('/photos/colorado/pexels_15370045_colorado.jpeg'); background-size: cover; background-position: center;">
+            <div class="card-image-label" style="display:none;">Photo placeholder<br>2025 Chevy Colorado<br>ZR2 or Trail Boss — off-road trim</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Truck</span>
+            <h3 class="card-name">Colorado</h3>
+            <p class="card-price">From $31,995 <span>MSRP</span></p>
+            <p class="card-tagline">Midsize truck, redesigned for 2023. 2.7L Turbo-4 across all trims. ZR2 brings serious off-road capability with Multimatic DSSV dampers.</p>
+            <a href="/pages/guides/colorado/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── SUVS ────────────────────────────────── -->
+    <section class="lineup-section" data-category="suvs" aria-labelledby="section-suvs">
+      <div class="section-header">
+        <h2 id="section-suvs"><span>SUVs</span></h2>
+        <span class="section-count">7 models</span>
+      </div>
+      <div class="cards-grid">
+
+        <!-- Tahoe -->
+        <article class="model-card">
+          <div class="card-image" style="background: #2e2e2e; background-image: url('/photos/tahoe/pexels_35004984_tahoe.jpeg'); background-size: cover; background-position: center;">
+            <div class="card-image-label" style="display:none;">Photo placeholder<br>2025 Chevy Tahoe<br>Full-size SUV — exterior 3/4 front</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">SUV</span>
+            <h3 class="card-name">Tahoe</h3>
+            <p class="card-price">From $58,500 <span>MSRP</span></p>
+            <p class="card-tagline">Full-size SUV on a truck-based platform. 5.3L V8 standard, available 3.0L Duramax diesel. Three rows, 8,400-lb tow rating, available Super Cruise.</p>
+            <a href="/pages/guides/tahoe/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Suburban -->
+        <article class="model-card">
+          <div class="card-image" style="background: #252525;">
+            <div class="card-placeholder">
+              <div class="card-placeholder-name">Suburban</div>
+              <svg class="card-placeholder-icon" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="16" width="110" height="16" rx="3" fill="#C4A035"/><rect x="18" y="8" width="76" height="14" rx="3" fill="#C4A035"/><circle cx="28" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/><circle cx="92" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/></svg>
+              <div class="card-placeholder-note">Photo coming soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">SUV</span>
+            <h3 class="card-name">Suburban</h3>
+            <p class="card-price">From $62,500 <span>MSRP</span></p>
+            <p class="card-tagline">The longest-running nameplate in automotive history. Shares Tahoe underpinnings with 22 additional inches of cargo space. The ultimate family hauler.</p>
+            <a href="/pages/guides/suburban/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Traverse -->
+        <article class="model-card">
+          <div class="card-image" style="background: #252525;">
+            <div class="card-placeholder">
+              <div class="card-placeholder-name">Traverse</div>
+              <svg class="card-placeholder-icon" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="16" width="110" height="16" rx="3" fill="#C4A035"/><rect x="18" y="8" width="76" height="14" rx="3" fill="#C4A035"/><circle cx="28" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/><circle cx="92" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/></svg>
+              <div class="card-placeholder-note">Photo coming soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">SUV</span>
+            <h3 class="card-name">Traverse</h3>
+            <p class="card-price">From $38,995 <span>MSRP</span></p>
+            <p class="card-tagline">Redesigned for 2024. Three-row crossover with a turbocharged 2.5L or available 2.0L turbo. Family-sized interior, up to 98.2 cu ft of cargo space.</p>
+            <a href="/pages/guides/traverse/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Equinox -->
+        <article class="model-card">
+          <div class="card-image" style="background: #252525;">
+            <div class="card-placeholder">
+              <div class="card-placeholder-name">Equinox</div>
+              <svg class="card-placeholder-icon" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="16" width="110" height="16" rx="3" fill="#C4A035"/><rect x="18" y="8" width="76" height="14" rx="3" fill="#C4A035"/><circle cx="28" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/><circle cx="92" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/></svg>
+              <div class="card-placeholder-note">Photo coming soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">SUV</span>
+            <h3 class="card-name">Equinox</h3>
+            <p class="card-price">From $33,000 <span>MSRP</span></p>
+            <p class="card-tagline">Chevy's best-selling crossover. 1.5L turbocharged 4-cylinder, available FWD or AWD. Practical, fuel-efficient, and packed with standard tech.</p>
+            <a href="/pages/guides/equinox/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Blazer -->
+        <article class="model-card">
+          <div class="card-image" style="background: #252525;">
+            <div class="card-placeholder">
+              <div class="card-placeholder-name">Blazer</div>
+              <svg class="card-placeholder-icon" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="16" width="110" height="16" rx="3" fill="#C4A035"/><rect x="18" y="8" width="76" height="14" rx="3" fill="#C4A035"/><circle cx="28" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/><circle cx="92" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/></svg>
+              <div class="card-placeholder-note">Photo coming soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">SUV</span>
+            <h3 class="card-name">Blazer</h3>
+            <p class="card-price">From $41,000 <span>MSRP</span></p>
+            <p class="card-tagline">Sport-forward midsize SUV with sharp styling. 2.0L turbocharged 4-cylinder or available 3.6L V6. Available AWD across all trims.</p>
+            <a href="/pages/guides/blazer/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Trailblazer -->
+        <article class="model-card">
+          <div class="card-image" style="background: #252525;">
+            <div class="card-placeholder">
+              <div class="card-placeholder-name">Trailblazer</div>
+              <svg class="card-placeholder-icon" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="16" width="110" height="16" rx="3" fill="#C4A035"/><rect x="18" y="8" width="76" height="14" rx="3" fill="#C4A035"/><circle cx="28" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/><circle cx="92" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/></svg>
+              <div class="card-placeholder-note">Photo coming soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">SUV</span>
+            <h3 class="card-name">Trailblazer</h3>
+            <p class="card-price">From $24,200 <span>MSRP</span></p>
+            <p class="card-tagline">Subcompact SUV with youthful styling and available AWD. 1.2L or 1.3L turbocharged 3-cylinder. Activ trim adds off-road-inspired looks.</p>
+            <a href="/pages/guides/trailblazer/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Trax -->
+        <article class="model-card">
+          <div class="card-image" style="background: #252525;">
+            <div class="card-placeholder">
+              <div class="card-placeholder-name">Trax</div>
+              <svg class="card-placeholder-icon" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="16" width="110" height="16" rx="3" fill="#C4A035"/><rect x="18" y="8" width="76" height="14" rx="3" fill="#C4A035"/><circle cx="28" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/><circle cx="92" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/></svg>
+              <div class="card-placeholder-note">Photo coming soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">SUV</span>
+            <h3 class="card-name">Trax</h3>
+            <p class="card-price">From $21,000 <span>MSRP</span></p>
+            <p class="card-tagline">Completely redesigned for 2024. The most affordable Chevy SUV with bold, angular styling. 1.2L turbocharged engine, FWD standard.</p>
+            <a href="/pages/guides/trax/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── CARS ────────────────────────────────── -->
+    <section class="lineup-section" data-category="cars" aria-labelledby="section-cars">
+      <div class="section-header">
+        <h2 id="section-cars"><span>Cars</span></h2>
+        <span class="section-count">1 model</span>
+      </div>
+      <div class="cards-grid">
+
+        <!-- Malibu -->
+        <article class="model-card">
+          <div class="card-image" style="background: #252525;">
+            <div class="card-badge badge-note">Discontinued</div>
+            <div class="card-placeholder">
+              <div class="card-placeholder-name">Malibu</div>
+              <svg class="card-placeholder-icon" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="18" width="104" height="13" rx="3" fill="#C4A035"/><rect x="22" y="10" width="70" height="13" rx="3" fill="#C4A035"/><circle cx="30" cy="32" r="6" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/><circle cx="90" cy="32" r="6" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/></svg>
+              <div class="card-placeholder-note">Photo coming soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Sedan</span>
+            <h3 class="card-name">Malibu</h3>
+            <p class="card-price">From $25,300 <span>MSRP</span></p>
+            <p class="card-tagline">Chevy's midsize sedan — a nameplate with deep history in the lineup. Turbocharged 1.5L engine, available hybrid powertrain.</p>
+            <p class="card-note">Production ends 2025. The Malibu nameplate dates to 1964.</p>
+            <a href="/pages/guides/malibu/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── SPORTS ──────────────────────────────── -->
+    <section class="lineup-section" data-category="sports" aria-labelledby="section-sports">
+      <div class="section-header">
+        <h2 id="section-sports"><span>Sports</span></h2>
+        <span class="section-count">4 models</span>
+      </div>
+      <div class="cards-grid">
+
+        <!-- Corvette Stingray -->
+        <article class="model-card">
+          <div class="card-image" style="background: #222; background-image: url('/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg'); background-size: cover; background-position: center;">
+            <div class="card-image-label" style="display:none;">Photo placeholder<br>2025 Corvette C8 Stingray<br>Low front angle — studio or track setting</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Sports Car</span>
+            <h3 class="card-name">Corvette Stingray</h3>
+            <p class="card-price">From $71,995 <span>MSRP</span></p>
+            <p class="card-tagline">Mid-engine C8 generation. 6.2L LT2 V8 producing 490 hp (495 with performance exhaust). 0–60 in under 3 seconds. American supercar value.</p>
+            <a href="/pages/guides/corvette-stingray/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Corvette Z06 -->
+        <article class="model-card">
+          <div class="card-image" style="background: #1e1e1e; background-image: url('/photos/corvette/pexels_17508919_corvette.jpeg'); background-size: cover; background-position: center;">
+            <div class="card-image-label" style="display:none;">Photo placeholder<br>2025 Corvette Z06<br>Track action shot — wide body visible</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Sports Car</span>
+            <h3 class="card-name">Corvette Z06</h3>
+            <p class="card-price">From $115,000 <span>MSRP</span></p>
+            <p class="card-tagline">5.5L flat-plane crank LT6 V8 — 670 hp, 8,600 rpm redline. Race-derived naturally aspirated engine. Available Z07 track package. Wider body, carbon fiber bodywork.</p>
+            <a href="/pages/guides/corvette-z06/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Corvette E-Ray -->
+        <article class="model-card">
+          <div class="card-image" style="background: #202020; background-image: url('/photos/corvette/pexels_9808_corvette.jpeg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-hybrid">Hybrid AWD</div>
+            <div class="card-image-label" style="display:none;">Photo placeholder<br>2025 Corvette E-Ray<br>Exterior shot highlighting AWD stance</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Sports Car</span>
+            <h3 class="card-name">Corvette E-Ray</h3>
+            <p class="card-price">From $110,000 <span>MSRP</span></p>
+            <p class="card-tagline">First-ever all-wheel drive Corvette. Combines 6.2L LT2 V8 with a front electric motor — 655 hp combined. 0–60 in 2.5 seconds. First Corvette hybrid production model.</p>
+            <a href="/pages/guides/corvette-e-ray/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Camaro -->
+        <article class="model-card">
+          <div class="card-image" style="background: #242424; background-image: url('/photos/camaro/pexels_2797720_camaro.jpeg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-note">Production Ended</div>
+            <div class="card-image-label" style="display:none;">Photo placeholder<br>2024 Chevy Camaro<br>6th gen final year — ZL1 or SS trim</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Sports Car / Legacy</span>
+            <h3 class="card-name">Camaro</h3>
+            <p class="card-price">From $29,995 <span>MSRP (last MSRP)</span></p>
+            <p class="card-tagline">Six generations of American muscle. Available 2.0T, 3.6L V6, 6.2L V8 (SS/ZL1). The ZL1 supercharged 650 hp was the final high point.</p>
+            <p class="card-note">Production ended Feb 2024. Future revival expected — stay tuned.</p>
+            <a href="/pages/guides/camaro/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── EVs ────────────────────────────────── -->
+    <section class="lineup-section" data-category="evs" aria-labelledby="section-evs">
+      <div class="section-header">
+        <h2 id="section-evs"><span>Electric Vehicles</span></h2>
+        <span class="section-count">3 models</span>
+      </div>
+      <div class="cards-grid">
+
+        <!-- Equinox EV -->
+        <article class="model-card">
+          <div class="card-image" style="background: #1e2420;">
+            <div class="card-badge badge-ev">EV</div>
+            <div class="card-placeholder">
+              <div class="card-placeholder-name">Equinox EV</div>
+              <svg class="card-placeholder-icon" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="16" width="110" height="16" rx="3" fill="#C4A035"/><rect x="18" y="8" width="76" height="14" rx="3" fill="#C4A035"/><circle cx="28" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/><circle cx="92" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/></svg>
+              <div class="card-placeholder-note">Photo coming soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Electric SUV</span>
+            <h3 class="card-name">Equinox EV</h3>
+            <p class="card-price">From $34,995 <span>MSRP</span></p>
+            <p class="card-tagline">Built on GM's Ultium platform. Up to 319 miles of estimated range. Available FWD or AWD. One of the most affordable long-range EVs on the market.</p>
+            <a href="/pages/guides/equinox-ev/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Blazer EV -->
+        <article class="model-card">
+          <div class="card-image" style="background: #1e201e;">
+            <div class="card-badge badge-ev">EV</div>
+            <div class="card-placeholder">
+              <div class="card-placeholder-name">Blazer EV</div>
+              <svg class="card-placeholder-icon" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="16" width="110" height="16" rx="3" fill="#C4A035"/><rect x="18" y="8" width="76" height="14" rx="3" fill="#C4A035"/><circle cx="28" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/><circle cx="92" cy="33" r="7" fill="#1A1A1A" stroke="#C4A035" stroke-width="2"/></svg>
+              <div class="card-placeholder-note">Photo coming soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Electric SUV</span>
+            <h3 class="card-name">Blazer EV</h3>
+            <p class="card-price">From $52,000 <span>MSRP</span></p>
+            <p class="card-tagline">Performance-focused EV on the Ultium platform. SS trim delivers 557 hp AWD. Up to 320 miles estimated range. DC fast charging standard.</p>
+            <a href="/pages/guides/blazer-ev/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+        <!-- Silverado EV -->
+        <article class="model-card">
+          <div class="card-image" style="background: #1a201e; background-image: url('/photos/silverado/2024_Chevrolet_Silverado_EV_RST.jpg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-ev">EV</div>
+            <div class="card-image-label" style="display:none;">Photo placeholder<br>2025 Chevy Silverado EV<br>Work truck or RST trim — outdoor/worksite</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Electric Truck</span>
+            <h3 class="card-name">Silverado EV</h3>
+            <p class="card-price">From $74,800 <span>MSRP</span></p>
+            <p class="card-tagline">Purpose-built electric truck on the Ultium platform. RST edition: 754 hp, 400+ miles estimated range. Multi-Flex Midgate, 10.2 kW bidirectional charging capability.</p>
+            <a href="/pages/guides/silverado-ev/" class="card-link">View Guide →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── CLASSICS ────────────────────────────── -->
+    <section class="lineup-section" data-category="classics" id="classics" aria-labelledby="section-classics">
+      <div class="section-header">
+        <h2 id="section-classics">The <span>Classics</span></h2>
+        <span class="section-count">The heritage models</span>
+      </div>
+
+      <p class="classics-intro">Before the trucks sold millions and before mid-engine supercars, Chevrolet built legends. These are the models that cemented the bow tie's place in American culture — on drag strips, in driveways, and at every car show worth attending.</p>
+
+      <div class="classics-grid">
+
+        <!-- Muscle Cars -->
+        <div class="classics-category">
+          <div class="classics-cat-header">
+            <div class="classics-cat-icon">💪</div>
+            <span class="classics-cat-name">Muscle Cars</span>
+          </div>
+          <div class="classics-models">
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">Chevelle SS</div>
+                <div class="classic-item-desc">1964–1977. The SS 396 and SS 454 variants are among the most coveted muscle cars ever built. LS6 454 in 1970 produced 450 hp from the factory.</div>
+                <a href="/pages/guides/chevelle/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/camaro/pexels_3076824_camaro.jpeg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">Camaro (Gen 1 & 2)</div>
+                <div class="classic-item-desc">1967–1981. The original pony car. Z/28, SS, and COPO variants are icons. '69 COPO Camaros with the ZL1 427 are among the rarest factory muscle cars.</div>
+                <a href="/pages/guides/camaro-classic/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/impala/pexels_17113349_impala.jpeg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">Nova SS</div>
+                <div class="classic-item-desc">1962–1979. Lightweight A-body sleeper. Available with 396 and 427 big-blocks, the Nova became a drag strip weapon hiding in plain sight.</div>
+                <a href="/pages/guides/nova/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Full-Size -->
+        <div class="classics-category">
+          <div class="classics-cat-header">
+            <div class="classics-cat-icon">🏛️</div>
+            <span class="classics-cat-name">Full-Size Icons</span>
+          </div>
+          <div class="classics-models">
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/belair/1957_Chevrolet_Bel_Air_-_Cruisin_for_a_Cure.jpg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">Bel Air</div>
+                <div class="classic-item-desc">1950–1981. The 1957 Bel Air is one of the most recognized cars in history. Tri-Five body styling (1955–57) remains the gold standard of 1950s American design.</div>
+                <a href="/pages/guides/bel-air/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/impala/1964_Chevrolet_Impala_lowrider_5409593989.jpg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">Impala</div>
+                <div class="classic-item-desc">1958–present. From the 409 muscle era to the lowrider scene, the Impala is woven into American car culture across every generation and coast.</div>
+                <a href="/pages/guides/impala-classic/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/impala/pexels_1170935_impala.jpeg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">Caprice Classic</div>
+                <div class="classic-item-desc">1965–1996. The pinnacle of American full-size luxury. The B-body 1971–76 and the boxy 1977–90 generations both have devoted followings today.</div>
+                <a href="/pages/guides/caprice/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Classic Trucks -->
+        <div class="classics-category">
+          <div class="classics-cat-header">
+            <div class="classics-cat-icon">🛻</div>
+            <span class="classics-cat-name">Classic Trucks</span>
+          </div>
+          <div class="classics-models">
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/silverado/pexels_3122814_silverado.jpeg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">C10 / C/K Series</div>
+                <div class="classic-item-desc">1960–1998. The square-body generation (1973–87) is one of the most popular classic truck platforms today — endlessly customizable and parts-abundant.</div>
+                <a href="/pages/guides/c10/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/colorado/pexels_4595081_colorado.jpeg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">K5 Blazer</div>
+                <div class="classic-item-desc">1969–1994. Full-size removable-top SUV with real off-road credibility. The 1969–72 first gen commands serious money on the collector market.</div>
+                <a href="/pages/guides/k5-blazer/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/silverado/pexels_845598_silverado.jpeg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">Square Body (1973–87)</div>
+                <div class="classic-item-desc">The definitive generation of Chevy trucks. C10, C20, Fleetside, Stepside — the square-body era built Chevy's truck reputation for a generation.</div>
+                <a href="/pages/guides/square-body/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Classic Sports -->
+        <div class="classics-category">
+          <div class="classics-cat-header">
+            <div class="classics-cat-icon">🏁</div>
+            <span class="classics-cat-name">Early Corvettes</span>
+          </div>
+          <div class="classics-models">
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/corvette/Chevrolet_Corvette_BAS_24_Brussels_P1170425-RR.jpg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">C1 Corvette (1953–62)</div>
+                <div class="classic-item-desc">America's sports car begins. The 1953 original is one of only 300 produced. Fuel injection arrived in 1957 — the "Fuelie" is a landmark car.</div>
+                <a href="/pages/guides/corvette-c1/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/corvette/Chevrolet_Corvette_C4_Kulmbach_17RM0343.jpg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">C2 Sting Ray (1963–67)</div>
+                <div class="classic-item-desc">The split-window 1963 coupe is the most recognizable Corvette ever made. Introduced independent rear suspension and the iconic hidden headlights.</div>
+                <a href="/pages/guides/corvette-c2/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+            <div class="classic-item">
+              <div class="classic-item-img" style="background: #2e2e2e url('/photos/corvette/Chevrolet_Corvette_C5_1997-2004.jpg') center/cover no-repeat;">
+              </div>
+              <div class="classic-item-info">
+                <div class="classic-item-name">C3 Corvette (1968–82)</div>
+                <div class="classic-item-desc">The Shark-era Corvette. LT1, L88, ZR1 — factory race engines in a road car. The 1969–72 big-block cars are the performance peak of the generation.</div>
+                <a href="/pages/guides/corvette-c3/" class="classic-item-link">Explore →</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Buyer's Quiz Teaser -->
+    <div class="quiz-teaser" role="complementary" aria-label="Buyer's Quiz promotion">
+      <div class="quiz-teaser-text">
+        <p class="quiz-teaser-label">Not sure where to start?</p>
+        <p class="quiz-teaser-heading">Can't decide? Try our Buyer's Quiz</p>
+        <p class="quiz-teaser-sub">Answer a few quick questions about how you'll use it — truck or SUV, daily driver or weekend warrior — and we'll point you at the right Chevy.</p>
+      </div>
+      <a href="/pages/guides/quiz.html" class="quiz-teaser-btn">Take the Quiz →</a>
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">ChevyRoots</a>
+          <p class="footer-tagline">Independent Chevrolet resource for owners, enthusiasts, and collectors. Not affiliated with General Motors or Chevrolet.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Current Models</h4>
+          <ul>
+            <li><a href="/pages/guides/silverado-1500/">Silverado 1500</a></li>
+            <li><a href="/pages/guides/silverado-hd/">Silverado HD</a></li>
+            <li><a href="/pages/guides/colorado/">Colorado</a></li>
+            <li><a href="/pages/guides/tahoe/">Tahoe</a></li>
+            <li><a href="/pages/guides/suburban/">Suburban</a></li>
+            <li><a href="/pages/guides/corvette-stingray/">Corvette</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Electric</h4>
+          <ul>
+            <li><a href="/pages/guides/equinox-ev/">Equinox EV</a></li>
+            <li><a href="/pages/guides/blazer-ev/">Blazer EV</a></li>
+            <li><a href="/pages/guides/silverado-ev/">Silverado EV</a></li>
+          </ul>
+          <br />
+          <h4>Classics</h4>
+          <ul>
+            <li><a href="/pages/guides/c10/">C10 Trucks</a></li>
+            <li><a href="/pages/guides/chevelle/">Chevelle SS</a></li>
+            <li><a href="/pages/guides/corvette-c2/">C2 Corvette</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/pages/guides/">Buying Guides</a></li>
+            <li><a href="/pages/builds/">Builds Gallery</a></li>
+            <li><a href="/pages/events/">Events</a></li>
+            <li><a href="/pages/about/">About ChevyRoots</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          &copy; 2025 ChevyRoots.com &mdash; Independent resource, not affiliated with GM or Chevrolet.
+          &nbsp;&nbsp;<a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a>
+        </p>
+        <p class="footer-disclaimer">Pricing shown is approximate base MSRP and may not reflect current dealer pricing, destination charges, or available incentives. Verify with your local Chevrolet dealer.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script>
+    // ── Mobile nav toggle ──────────────────────
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close nav when a link is clicked on mobile
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Filter tabs ────────────────────────────
+    const filterTabs     = document.querySelectorAll('.filter-tab');
+    const lineupSections = document.querySelectorAll('.lineup-section');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.dataset.filter;
+
+        // Update active tab
+        filterTabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        // Show/hide sections
+        lineupSections.forEach(section => {
+          const cat = section.dataset.category;
+          if (filter === 'all' || cat === filter) {
+            section.removeAttribute('data-hidden');
+          } else {
+            section.setAttribute('data-hidden', '');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

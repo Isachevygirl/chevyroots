@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silverado 10-Speed Transmission Shudder: Complete Fix Guide | ChevyRoots</title>
+  <meta name="description" content="The definitive fix guide for the 2019+ Silverado 10-speed transmission shudder. Causes, TSB 18-NA-355, fluid flush vs torque converter replacement, warranty coverage, and what to tell your dealer." />
+  <meta name="keywords" content="Silverado transmission shudder fix, 10L80 shudder, 10-speed automatic shudder, TSB 18-NA-355, Silverado torque converter replacement, Mobil 1 LV ATF HP flush, 2019 Silverado transmission problem" />
+  <meta property="og:title" content="Silverado 10-Speed Transmission Shudder: Complete Fix Guide" />
+  <meta property="og:description" content="The #1 complaint on 2019+ Silverados explained and fixed — torque converter clutch shudder causes, three repair options, GM warranty coverage, and exactly what to say at the dealer." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/silverado-transmission-shudder-fix.html" />
+  <meta property="og:image" content="https://chevyroots.com/photos/silverado/pexels_14099251_silverado.jpeg" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/silverado-transmission-shudder-fix.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg2:       #222222;
+      --bg3:       #2A2A2A;
+      --gold:      #C4A035;
+      --gold-lt:   #D4B455;
+      --gold-dk:   #9E7F22;
+      --text:      #F0EDE6;
+      --text-dim:  #B0ADA6;
+      --text-mute: #707070;
+      --border:    #333333;
+      --radius:    6px;
+      --radius-lg: 12px;
+      --trans:     0.25s ease;
+      --red:       #C0392B;
+      --amber:     #D4A017;
+      --green:     #2E7D52;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; min-height: 100vh; }
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,26,26,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); height: 60px; display: flex; align-items: center; }
+    .nav-inner { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-logo-main { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; color: var(--text); letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+    .nav-logo-main span { color: var(--gold); }
+    .nav-logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--text-mute); letter-spacing: 0.1em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); transition: color var(--trans); }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--gold); color: #111; padding: 8px 18px; border-radius: var(--radius); transition: background var(--trans), transform var(--trans); white-space: nowrap; }
+    .nav-cta:hover { background: var(--gold-lt); color: #111; transform: translateY(-1px); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    /* ARTICLE HEADER */
+    .article-header { padding-top: 60px; background: linear-gradient(160deg, #1A1A1A 60%, #1a100e 100%); position: relative; overflow: hidden; }
+    .article-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,160,53,0.07) 0%, transparent 70%); pointer-events: none; }
+    .article-header-inner { max-width: 860px; margin: 0 auto; padding: 64px 24px 48px; position: relative; }
+    .article-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .article-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(34px, 6vw, 60px); font-weight: 800; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 24px; }
+    .article-title span { color: var(--gold); }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 32px; }
+    .article-meta-item { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mute); }
+    .article-meta-item .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+    .article-hero-img { width: 100%; height: 380px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+
+    /* LAYOUT */
+    .article-layout { max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px; display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start; }
+
+    /* ARTICLE BODY */
+    .article-body h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text); margin: 48px 0 16px; padding-top: 8px; border-top: 2px solid var(--gold); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.04em; color: var(--gold); margin: 32px 0 10px; text-transform: uppercase; }
+    .article-body p { margin-bottom: 20px; color: var(--text-dim); font-size: 16px; }
+    .article-body p strong { color: var(--text); font-weight: 600; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 24px; color: var(--text-dim); }
+    .article-body li { margin-bottom: 8px; }
+    .article-body li strong { color: var(--text); }
+
+    /* INLINE IMG */
+    .inline-img { width: 100%; height: 260px; border-radius: var(--radius); margin: 28px 0; border: 1px solid var(--border); overflow: hidden; background-size: cover; background-position: center; }
+
+    /* PULLQUOTE */
+    .pullquote { border-left: 4px solid var(--gold); padding: 16px 24px; margin: 32px 0; background: rgba(196,160,53,0.06); border-radius: 0 var(--radius) var(--radius) 0; }
+    .pullquote p { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 600; line-height: 1.3; color: var(--text) !important; margin: 0 !important; letter-spacing: 0.01em; }
+
+    /* CRYSTAL TAKE */
+    .crystal-take { background: linear-gradient(135deg, #1f1a0e 0%, #222 100%); border: 2px solid var(--gold); border-radius: var(--radius-lg); padding: 28px; margin: 36px 0; }
+    .crystal-take-header { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .crystal-take p { color: var(--text-dim); margin-bottom: 12px; font-style: italic; }
+    .crystal-take p:last-child { margin-bottom: 0; }
+    .crystal-take strong { color: var(--text); font-style: normal; }
+
+    /* FIX OPTION CARDS */
+    .fix-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px 28px; margin: 24px 0; position: relative; }
+    .fix-card.recommended { border-color: var(--gold); }
+    .fix-card.nuclear { border-color: #555; }
+    .fix-badge { position: absolute; top: -11px; right: 16px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 12px; border-radius: 3px; }
+    .fix-badge.gold { background: var(--gold); color: #111; }
+    .fix-badge.blue { background: #2A5FAC; color: #fff; }
+    .fix-badge.gray { background: #444; color: var(--text-dim); }
+    .fix-number { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 6px; }
+    .fix-title { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text); margin-bottom: 4px; }
+    .fix-cost { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 16px; }
+    .fix-body { color: var(--text-dim); font-size: 15px; line-height: 1.65; }
+    .fix-body p { margin-bottom: 12px; color: var(--text-dim); }
+    .fix-body p strong { color: var(--text); }
+    .fix-verdict { display: inline-block; margin-top: 14px; background: rgba(196,160,53,0.1); border: 1px solid rgba(196,160,53,0.3); border-radius: 4px; padding: 5px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); }
+
+    /* TSB CALLOUT */
+    .tsb-callout { background: var(--bg2); border: 1px solid var(--border); border-left: 4px solid #2A5FAC; border-radius: var(--radius); padding: 20px 24px; margin: 28px 0; }
+    .tsb-callout-header { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6FA0E8; margin-bottom: 8px; }
+    .tsb-callout p { color: var(--text-dim); font-size: 14px; margin-bottom: 8px; }
+    .tsb-callout p:last-child { margin-bottom: 0; }
+    .tsb-callout strong { color: var(--text); }
+
+    /* WARNING BOX */
+    .warning-box { background: rgba(192,57,43,0.08); border: 1px solid rgba(192,57,43,0.35); border-radius: var(--radius); padding: 16px 20px; margin: 24px 0; }
+    .warning-box p { color: var(--text-dim); font-size: 14px; margin: 0; }
+    .warning-box p strong { color: #E07070; }
+
+    /* AFFECTED MODELS TABLE */
+    .models-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .models-table th { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); text-align: left; padding: 10px 14px; background: var(--bg2); border-bottom: 2px solid var(--gold); }
+    .models-table td { padding: 10px 14px; color: var(--text-dim); border-bottom: 1px solid var(--border); }
+    .models-table tr:hover td { background: var(--bg2); }
+    .models-table td strong { color: var(--text); }
+
+    /* DEALER SCRIPT */
+    .dealer-script { background: #0f1a0f; border: 1px solid #2E5E2E; border-radius: var(--radius-lg); padding: 24px 28px; margin: 28px 0; }
+    .dealer-script-header { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #5DBF5D; margin-bottom: 14px; }
+    .dealer-script blockquote { font-family: 'Inter', sans-serif; font-size: 15px; font-style: italic; color: var(--text-dim); line-height: 1.7; border-left: 3px solid #2E5E2E; padding-left: 18px; }
+
+    /* AFFILIATE CTA */
+    .affiliate-strip { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin: 36px 0; }
+    .affiliate-strip-title { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 16px; }
+    .affiliate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+    .aff-item { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 8px; transition: border-color var(--trans); }
+    .aff-item:hover { border-color: var(--gold); }
+    .aff-item-name { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text); }
+    .aff-item-note { font-size: 12px; color: var(--text-mute); line-height: 1.4; }
+    .aff-item-link { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-top: auto; display: inline-flex; align-items: center; gap: 4px; }
+    .aff-item-link::after { content: '→'; }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 28px; }
+    .sidebar-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
+    .sidebar-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list a { font-size: 13px; color: var(--text-dim); display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+    .toc-list a::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; transition: background var(--trans); }
+    .toc-list a:hover::before { background: var(--gold); }
+    .toc-list a:hover { color: var(--text); }
+    .related-article { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .related-article:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-thumb { width: 64px; height: 48px; background: #333; border-radius: var(--radius); flex-shrink: 0; overflow: hidden; background-size: cover; background-position: center; }
+    .related-title { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--text); letter-spacing: 0.02em; }
+    .related-title:hover { color: var(--gold); }
+    .related-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+    /* QUICK VERDICT BOX */
+    .verdict-box { background: var(--bg2); border: 2px solid var(--gold); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 16px; }
+    .verdict-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 12px; }
+    .verdict-row { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .verdict-row:last-child { border-bottom: none; }
+    .verdict-label { color: var(--text-mute); font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .verdict-val { color: var(--text); font-weight: 600; font-size: 13px; text-align: right; max-width: 60%; }
+    .verdict-val.gold { color: var(--gold); }
+    .verdict-val.red { color: #E07070; }
+
+    /* NEWSLETTER */
+    .newsletter-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 24px; }
+    .newsletter-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .newsletter-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .newsletter-title { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 12px; }
+    .newsletter-sub { color: var(--text-dim); font-size: 15px; margin-bottom: 32px; }
+    .newsletter-form { display: flex; gap: 10px; max-width: 480px; margin: 0 auto; }
+    .newsletter-form input { flex: 1; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: border-color var(--trans); }
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form input::placeholder { color: var(--text-mute); }
+    .newsletter-form button { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--gold); color: #111; border: none; padding: 12px 24px; border-radius: var(--radius); cursor: pointer; transition: background var(--trans), transform var(--trans); white-space: nowrap; }
+    .newsletter-form button:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .newsletter-note { font-size: 12px; color: var(--text-mute); margin-top: 12px; }
+
+    /* FOOTER */
+    footer { background: #111; border-top: 1px solid var(--border); padding: 48px 24px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-bottom: 40px; }
+    .footer-brand { flex: 1; min-width: 200px; }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); margin-bottom: 10px; }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline { font-size: 13px; color: var(--text-mute); max-width: 240px; line-height: 1.5; }
+    .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 13px; color: var(--text-mute); transition: color var(--trans); }
+    .footer-col ul a:hover { color: var(--text); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 12px; color: var(--text-mute); }
+    .footer-affiliate-note { font-size: 11px; color: var(--text-mute); line-height: 1.5; max-width: 500px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; gap: 40px; } .sidebar { position: static; } }
+    @media (max-width: 640px) { .nav-links, .nav-cta { display: none; } .nav-hamburger { display: flex; } .newsletter-form { flex-direction: column; } .article-hero-img { height: 220px; } .affiliate-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-main">Chevy<span>Roots</span></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/" class="active">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+      <a href="/pages/builds/" class="nav-cta">Submit Your Build</a>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-eyebrow">Repair Guide &nbsp;/&nbsp; Silverado 1500 &nbsp;/&nbsp; Drivetrain</div>
+      <h1 class="article-title">Silverado <span>10-Speed Transmission</span> Shudder: Complete Fix Guide</h1>
+      <div class="article-meta">
+        <div class="article-meta-item"><span class="dot"></span>By Crystal &amp; ChevyRoots Staff</div>
+        <div class="article-meta-item"><span class="dot"></span>Updated April 2026</div>
+        <div class="article-meta-item"><span class="dot"></span>9 min read</div>
+        <div class="article-meta-item"><span class="dot"></span>~1,800 words</div>
+      </div>
+      <div class="article-hero-img" style="background: #333 url('/photos/silverado/pexels_14099251_silverado.jpeg') center/cover no-repeat;"></div>
+    </div>
+  </header>
+
+  <!-- ARTICLE LAYOUT -->
+  <div class="article-layout">
+
+    <!-- MAIN BODY -->
+    <article class="article-body">
+
+      <h2 id="intro">The #1 Silverado Complaint — And Nobody's Talking About It Right</h2>
+
+      <p>You're cruising down the highway at 35 mph and your truck starts vibrating. Not a shimmy — more like you drove over a rumble strip that never ends. You lift off the throttle and it goes away. You reapply and it's back. You pull over, nothing looks wrong. You go to the dealer and they tell you "that's normal."</p>
+
+      <p><strong>It is not normal.</strong> What you're feeling is torque converter clutch shudder in the 10L80 10-speed automatic transmission — and it's the single most common complaint from 2019+ Silverado and Sierra 1500 owners. There are thousands of forum threads about it, multiple Technical Service Bulletins from GM, and exactly zero complete fix guides on the internet explaining all three repair paths, warranty coverage, and what to actually say to your dealer.</p>
+
+      <p>This is that guide.</p>
+
+      <div class="pullquote">
+        <p>"Feels like driving over rumble strips at 35 mph — and GM knows exactly why."</p>
+      </div>
+
+      <h2 id="cause">What Actually Causes the Shudder</h2>
+
+      <p>The 10-speed automatic (GM/Ford co-developed, also known as the 10L80) uses a torque converter with a clutch pack that locks up at low speeds to improve fuel economy. In normal operation, this clutch engages smoothly and you never feel it.</p>
+
+      <p>The problem: the friction material on the torque converter clutch (TCC) degrades over time — often accelerated by heat cycles, aggressive driving, or simply bad luck in early production. As it wears, the clutch develops an inconsistent grip pattern. Instead of locking smoothly, it grabs and releases in rapid succession. That micro-slipping is the shudder you feel.</p>
+
+      <p><strong>The degraded friction material also contaminates the transmission fluid.</strong> Those fine particles spread through the hydraulic circuit and can accelerate wear on valve body components. This is why early intervention matters — a fluid flush that catches the problem at Stage 1 costs $400. Waiting until the valve body is compromised can push you into a full rebuild.</p>
+
+      <div class="tsb-callout">
+        <div class="tsb-callout-header">Technical Service Bulletin — TSB 18-NA-355</div>
+        <p>GM issued TSB 18-NA-355 in 2018, acknowledging the torque converter clutch shudder condition in 10-speed automatic transmissions across multiple platforms. The bulletin has been revised multiple times since, with subsequent updates expanding covered model years and refining the recommended repair procedure. If your dealer claims they've never heard of this TSB, print it and bring it in — it is real, it is documented, and it entitles you to a specific repair path under warranty when applicable.</p>
+        <p><strong>Search term for the current revision:</strong> "PIP5557" or "TSB 18-NA-355" at any GM dealer service department.</p>
+      </div>
+
+      <h2 id="affected">Affected Models</h2>
+
+      <p>The 10L80 transmission is shared across multiple GM truck and SUV platforms. If your vehicle has the 10-speed automatic and any of the following engines, you are potentially affected:</p>
+
+      <table class="models-table">
+        <thead>
+          <tr>
+            <th>Model Year</th>
+            <th>Vehicle</th>
+            <th>Engine</th>
+            <th>Transmission</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>2019–2024</strong></td><td>Chevrolet Silverado 1500</td><td>5.3L V8, 6.2L V8</td><td>10L80</td></tr>
+          <tr><td><strong>2019–2024</strong></td><td>GMC Sierra 1500</td><td>5.3L V8, 6.2L V8</td><td>10L80</td></tr>
+          <tr><td><strong>2021–2024</strong></td><td>Chevrolet Tahoe / Suburban</td><td>5.3L V8, 6.2L V8</td><td>10L80</td></tr>
+          <tr><td><strong>2021–2024</strong></td><td>GMC Yukon / Yukon XL</td><td>5.3L V8, 6.2L V8</td><td>10L80</td></tr>
+        </tbody>
+      </table>
+
+      <p>The 4-cylinder turbocharged models use a different transmission variant and are <strong>not</strong> affected by this specific shudder issue. The 3.0L Duramax diesel also uses a different transmission and does not exhibit this condition.</p>
+
+      <div class="inline-img" style="background: url('/photos/silverado/pexels_9535033_silverado.jpeg') center/cover no-repeat;"></div>
+
+      <h2 id="symptoms">Recognizing the Symptoms</h2>
+
+      <p>The shudder has a specific character that distinguishes it from other drivetrain problems. Knowing exactly what you're dealing with helps you communicate clearly with your service advisor and avoid being brushed off.</p>
+
+      <ul>
+        <li><strong>Speed range:</strong> Typically occurs between 30–50 mph, occasionally extending to 55 mph. Almost never present below 20 mph or above 65 mph.</li>
+        <li><strong>Throttle sensitivity:</strong> The shudder is worst under light throttle (steady cruise). It usually disappears with aggressive acceleration or coast-down. This is the key diagnostic tell — it confirms TCC engagement is the trigger.</li>
+        <li><strong>Feel:</strong> Rapid, rhythmic vibration. Some owners describe it as driving over washboard road. Others feel it as a momentary flutter in the steering wheel or floorboard.</li>
+        <li><strong>Frequency:</strong> Can be intermittent at first, especially in cold weather, then becomes more consistent as the clutch material continues to degrade.</li>
+        <li><strong>No warning lights:</strong> In most cases, no Check Engine light, no transmission fault codes. This is a mechanical wear issue, not an electronic one, which is why many dealer technicians initially dismiss it.</li>
+      </ul>
+
+      <div class="warning-box">
+        <p><strong>Do not confuse this with driveshaft vibration.</strong> Driveshaft vibration is typically present at a specific RPM regardless of throttle position and does not respond to small throttle inputs. TCC shudder is directly throttle-sensitive. If yours continues under hard acceleration or at highway cruise above 65 mph, have your driveshaft balance checked as well.</p>
+      </div>
+
+      <h2 id="fix1">Fix Option 1: Transmission Fluid Flush with Mobil 1 Synthetic LV ATF HP</h2>
+
+      <div class="fix-card recommended">
+        <div class="fix-badge gold">Start Here</div>
+        <div class="fix-number">Option 01 of 03</div>
+        <div class="fix-title">Transmission Fluid Flush</div>
+        <div class="fix-cost">Estimated Cost: $400 – $600</div>
+        <div class="fix-body">
+          <p>This is the first repair procedure called out in TSB 18-NA-355 and the right starting point for most owners. The procedure involves a complete drain-and-fill of the transmission fluid — not just a pan drop, but a full flush to exchange as much of the contaminated fluid as possible.</p>
+          <p>The key is the fluid itself. <strong>Mobil 1 Synthetic LV ATF HP</strong> is the GM-specified fluid for this repair and the one overwhelmingly recommended by independent transmission shops that work on these trucks regularly. Its friction modifier package is specifically formulated to resurface the TCC clutch material and restore consistent engagement. Generic ATF or even other Dexron VI fluids will not produce the same result.</p>
+          <p>Some owners experience complete elimination of the shudder after a single flush. Others see improvement that reverts within 10,000–20,000 miles as the underlying clutch wear reasserts itself. A second flush occasionally resolves cases where one wasn't enough.</p>
+          <p><strong>This fix is temporary for some, permanent for others.</strong> If your shudder returns within a year or 15,000 miles of a proper flush with the correct fluid, the torque converter itself is compromised and you need Option 2.</p>
+          <span class="fix-verdict">Works for mild-to-moderate TCC wear</span>
+        </div>
+      </div>
+
+      <h2 id="fix2">Fix Option 2: Torque Converter Replacement</h2>
+
+      <div class="fix-card">
+        <div class="fix-badge blue">Real Fix</div>
+        <div class="fix-number">Option 02 of 03</div>
+        <div class="fix-title">Torque Converter Replacement</div>
+        <div class="fix-cost">Estimated Cost: $1,500 – $2,500</div>
+        <div class="fix-body">
+          <p>If the fluid flush didn't hold, or if your shudder is severe from the start, this is the correct repair. The faulty torque converter comes out, a new (or remanufactured OEM-spec) unit goes in, fresh transmission fluid fills the system, and the condition is resolved at the source.</p>
+          <p>This is what GM authorizes under warranty when the flush fails or the vehicle presents with advanced shudder. Independent transmission shops with experience on the 10L80 can perform this repair at lower cost than the dealer while using the same quality components — often the same remanufactured units GM itself installs.</p>
+          <p><strong>Labor is the dominant cost here.</strong> The transmission has to come partially out to replace the torque converter, which is roughly 5–8 hours at shop rates. Parts for a quality remanufactured converter run $300–$600. If your truck is out of warranty, getting multiple quotes matters.</p>
+          <p>When a new converter goes in, always insist on a transmission fluid flush as part of the same job — the old contaminated fluid should never go back into a fresh converter.</p>
+          <span class="fix-verdict">Permanent fix for most cases</span>
+        </div>
+      </div>
+
+      <h2 id="fix3">Fix Option 3: Full Transmission Rebuild</h2>
+
+      <div class="fix-card nuclear">
+        <div class="fix-badge gray">Nuclear Option</div>
+        <div class="fix-number">Option 03 of 03</div>
+        <div class="fix-title">Full Transmission Rebuild</div>
+        <div class="fix-cost">Estimated Cost: $3,500 – $5,000</div>
+        <div class="fix-body">
+          <p>Reserved for trucks where the TCC contamination has spread through the hydraulic circuit and degraded other internal components — valve body, clutch packs, solenoids. This typically happens when the shudder has been present for a long time without treatment, or when a fluid flush was done with incorrect fluid that didn't arrest the degradation.</p>
+          <p>Signs that you're beyond a converter swap: harsh or delayed shifts in addition to the shudder, transmission fault codes (DTC P0741 or similar), or a qualified transmission shop that pulls the pan and finds significant debris.</p>
+          <p><strong>If you're in this situation, get at least three quotes.</strong> A full rebuild includes complete disassembly, new seals and clutch packs throughout, valve body inspection and remanufacture as needed, new torque converter, and a complete refill with correct fluid. Some shops will also install an upgraded transmission cooler at this point, which is worth the small additional cost.</p>
+          <span class="fix-verdict">For severe or long-neglected cases</span>
+        </div>
+      </div>
+
+      <div class="inline-img" style="background: url('/photos/silverado/pexels_17429097_silverado.jpeg') center/cover no-repeat;"></div>
+
+      <h2 id="warranty">Warranty Coverage: What GM Extended</h2>
+
+      <p>This is the section most owners don't know about — and it can save you thousands.</p>
+
+      <p>GM extended the powertrain warranty coverage for torque converter replacement on certain 2019–2020 model year Silverado and Sierra 1500 trucks to <strong>7 years / 100,000 miles</strong> from the original in-service date. This extension was issued as a result of the volume of warranty claims related to the 10L80 shudder condition.</p>
+
+      <p>Coverage eligibility depends on your VIN, your original in-service date, and your current mileage. Not every truck in the affected range qualifies — production date and build configuration matter. Your dealer can confirm coverage by running your VIN against active warranty enhancements. You can also check myGMC.com or mychevrolet.com under the warranty section with your VIN.</p>
+
+      <p><strong>What the extended warranty covers:</strong> Torque converter replacement and associated labor when the shudder condition is verified by the dealer as matching the TSB 18-NA-355 condition. It typically also covers the transmission fluid as part of the repair.</p>
+
+      <p><strong>What it does not cover:</strong> Fluid-only flushes (though these may be covered under the standard powertrain warranty if performed at a GM dealer), or damage caused by the use of incorrect fluids, aftermarket additives, or deferred maintenance.</p>
+
+      <h2 id="dealer">Dealer vs Independent Shop</h2>
+
+      <p>If your truck is within warranty coverage — use the dealer. Full stop. The repair is free, the parts are OEM, and the work is documented in your vehicle history.</p>
+
+      <p>If you're out of warranty, the calculation changes. Dealer transmission labor rates run $150–$200/hour in most markets. An independent transmission specialist with a solid reputation on GM products can do the same quality repair for $100–$130/hour. On a converter swap with 6 hours of labor, that's a $300–$400 difference before parts.</p>
+
+      <p>The risk with independent shops is experience with the 10L80 specifically. This is a complex transmission with a specific fluid requirement and a specific break-in procedure after converter replacement. Ask directly: "How many 10-speed GM truck transmissions have you worked on?" If they can't answer with a number, keep looking.</p>
+
+      <h2 id="dealer-script">What to Tell Your Dealer</h2>
+
+      <p>Dealer service advisors field a lot of complaints. Vague descriptions get vague responses. Specific, documented complaints get warranty repairs. Here's exactly what to say:</p>
+
+      <div class="dealer-script">
+        <div class="dealer-script-header">Recommended Service Advisor Script</div>
+        <blockquote>
+          "I'm experiencing a transmission shudder between 30 and 50 miles per hour under light throttle. It feels like the truck is driving over rumble strips and goes away when I accelerate harder or let off the gas completely. I've researched this and I believe it's the torque converter clutch shudder condition covered under TSB 18-NA-355. I'd like you to run my VIN for any open warranty enhancements related to the 10-speed transmission before we discuss repair options."
+        </blockquote>
+      </div>
+
+      <p>Document every visit. Keep the repair orders. If a dealer tells you the shudder is "normal operating characteristics" after you've specifically cited TSB 18-NA-355, ask for that in writing and contact GM Customer Assistance at 1-800-222-1020. Escalation to a Regional Service Manager has resolved numerous warranty denials on this issue.</p>
+
+      <h2 id="prevention">Prevention: Regular Fluid Changes Are the Best Insurance</h2>
+
+      <p>GM's factory service interval for the 10L80 is listed as "fill-for-life" under normal conditions — meaning no scheduled changes. In practice, this is aggressive for a truck that sees towing, hot climates, or stop-and-go driving, and it's one reason the shudder issue is as prevalent as it is.</p>
+
+      <p>The independent consensus from transmission specialists who work on these trucks: <strong>change the fluid every 30,000–40,000 miles</strong> using Mobil 1 Synthetic LV ATF HP or an equivalent GM-approved Dexron HP fluid. A drain-and-fill (not a full flush) costs roughly $120–$160 at an independent shop and is the single best thing you can do to extend the life of this transmission.</p>
+
+      <p>If you tow regularly — especially at or near the truck's maximum tow rating — add an auxiliary transmission cooler to the maintenance equation. The stock cooler is adequate for normal driving; repeated heavy tow cycles generate heat that accelerates clutch material wear. A quality add-on cooler ($200–$350 installed) reduces operating temperatures meaningfully. See our <a href="/pages/guides/chevy-towing-guide.html">complete Chevy towing guide</a> for capacity tables and towing package details.</p>
+
+      <!-- AFFILIATE CTA -->
+      <div class="affiliate-strip">
+        <div class="affiliate-strip-title">Parts & Tools for This Repair</div>
+        <div class="affiliate-grid">
+          <div class="aff-item">
+            <div class="aff-item-name">Mobil 1 LV ATF HP</div>
+            <div class="aff-item-note">The correct fluid for TSB 18-NA-355. Use nothing else for this repair.</div>
+            <a href="https://amzn.to/chevyroots-mobil1-atf" class="aff-item-link" rel="nofollow sponsored" target="_blank">Check Price</a>
+          </div>
+          <div class="aff-item">
+            <div class="aff-item-name">Aux Transmission Cooler</div>
+            <div class="aff-item-note">Reduces operating temps on tow-heavy trucks. Best prevention investment.</div>
+            <a href="https://amzn.to/chevyroots-trans-cooler" class="aff-item-link" rel="nofollow sponsored" target="_blank">Check Price</a>
+          </div>
+          <div class="aff-item">
+            <div class="aff-item-name">OBD2 Scanner (Full System)</div>
+            <div class="aff-item-note">Read transmission fault codes before you go to the dealer. Knowledge is leverage.</div>
+            <a href="https://amzn.to/chevyroots-obd2-pro" class="aff-item-link" rel="nofollow sponsored" target="_blank">Check Price</a>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: var(--text-mute); margin-top: 16px; margin-bottom: 0;">Affiliate links — we may earn a commission at no cost to you. We only recommend products we've actually used or would use ourselves.</p>
+      </div>
+
+      <h2 id="crystal">Crystal's Note</h2>
+
+      <div class="crystal-take">
+        <div class="crystal-take-header">Crystal's Take — ChevyRoots</div>
+        <p>I've been fielding questions about this shudder from Silverado owners for years and the pattern is always the same: owner feels it, dealer says it's normal, owner finds forum threads confirming it's not, owner doesn't know what to do next. That's why I wrote this.</p>
+        <p>The fluid flush works for a lot of people — especially if you catch it early. But if you've already had one flush and the shudder came back within 15,000 miles, don't waste another $500. Go straight to the torque converter conversation with your dealer, cite the TSB, ask about warranty enhancement coverage on your VIN, and don't leave without a repair order that documents what was found and what was done.</p>
+        <p><strong>If you're shopping used:</strong> ask the seller directly about transmission shudder, and pull the CarFax service history. If you see a transmission fluid service at a GM dealer between 40,000–80,000 miles with no follow-up visit, that's a good sign — they caught it early and addressed it. If you see no transmission service in that mileage range at all, budget for a fluid flush immediately after purchase and consider it a normal part of buying a used 10-speed GM truck.</p>
+        <p>These trucks are great — the 10L80 is genuinely capable when it's healthy. Don't let this issue scare you off the platform. Just go in informed.</p>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- QUICK VERDICT -->
+      <div class="verdict-box">
+        <div class="verdict-box-title">Quick Reference</div>
+        <div class="verdict-row">
+          <span class="verdict-label">Affected Models</span>
+          <span class="verdict-val">2019+ Silverado/Sierra 1500 V8</span>
+        </div>
+        <div class="verdict-row">
+          <span class="verdict-label">Transmission</span>
+          <span class="verdict-val">10L80 10-Speed Automatic</span>
+        </div>
+        <div class="verdict-row">
+          <span class="verdict-label">TSB</span>
+          <span class="verdict-val gold">18-NA-355 / PIP5557</span>
+        </div>
+        <div class="verdict-row">
+          <span class="verdict-label">Fix #1 (Flush)</span>
+          <span class="verdict-val">$400–$600</span>
+        </div>
+        <div class="verdict-row">
+          <span class="verdict-label">Fix #2 (Converter)</span>
+          <span class="verdict-val">$1,500–$2,500</span>
+        </div>
+        <div class="verdict-row">
+          <span class="verdict-label">Fix #3 (Rebuild)</span>
+          <span class="verdict-val red">$3,500–$5,000</span>
+        </div>
+        <div class="verdict-row">
+          <span class="verdict-label">Warranty Extended</span>
+          <span class="verdict-val gold">7yr / 100K (some models)</span>
+        </div>
+        <div class="verdict-row">
+          <span class="verdict-label">Correct Fluid</span>
+          <span class="verdict-val">Mobil 1 Synthetic LV ATF HP</span>
+        </div>
+      </div>
+
+      <!-- TABLE OF CONTENTS -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">In This Guide</div>
+        <ul class="toc-list">
+          <li><a href="#intro">What No One Explains Right</a></li>
+          <li><a href="#cause">Root Cause: TCC Degradation</a></li>
+          <li><a href="#affected">Affected Models</a></li>
+          <li><a href="#symptoms">Recognizing the Symptoms</a></li>
+          <li><a href="#fix1">Fix 1: Fluid Flush ($400–$600)</a></li>
+          <li><a href="#fix2">Fix 2: Converter Replacement ($1,500–$2,500)</a></li>
+          <li><a href="#fix3">Fix 3: Full Rebuild ($3,500–$5,000)</a></li>
+          <li><a href="#warranty">Warranty Coverage</a></li>
+          <li><a href="#dealer">Dealer vs Independent</a></li>
+          <li><a href="#dealer-script">What to Tell Your Dealer</a></li>
+          <li><a href="#prevention">Prevention</a></li>
+          <li><a href="#crystal">Crystal's Note</a></li>
+        </ul>
+      </div>
+
+      <!-- RELATED GUIDES -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Related Guides</div>
+        <div class="related-article">
+          <div class="related-thumb" style="background: url('/photos/silverado/pexels_9182736_silverado.jpeg') center/cover;"></div>
+          <div>
+            <a href="/pages/guides/silverado-buyers-guide.html" class="related-title">2024–2025 Silverado 1500 Buyer's Guide</a>
+            <div class="related-meta">Buyer's Guide</div>
+          </div>
+        </div>
+        <div class="related-article">
+          <div class="related-thumb" style="background: url('/photos/silverado/pexels_15955202_silverado.jpeg') center/cover;"></div>
+          <div>
+            <a href="/pages/guides/best-mods-silverado.html" class="related-title">Best Mods for Your Silverado</a>
+            <div class="related-meta">Mods Guide</div>
+          </div>
+        </div>
+        <div class="related-article">
+          <div class="related-thumb" style="background: url('/photos/silverado/pexels_9268550_silverado.jpeg') center/cover;"></div>
+          <div>
+            <a href="/pages/guides/known-issues.html" class="related-title">Silverado Known Issues &amp; TSB Tracker</a>
+            <div class="related-meta">Service Guide</div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div><!-- /article-layout -->
+
+  <!-- RELATED GUIDES -->
+  <section style="max-width:860px;margin:0 auto 48px;padding:0 24px;">
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#C4A035;margin-bottom:14px;">Related Silverado Resources</h2>
+    <ul style="list-style:none;display:flex;flex-wrap:wrap;gap:12px;">
+      <li><a href="/pages/guides/known-issues.html" style="color:#C4A035;font-weight:600;">Silverado Known Issues Database</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/guides/silverado-buyers-guide.html" style="color:#C4A035;font-weight:600;">2024–2025 Silverado Buyer's Guide</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/guides/chevy-towing-guide.html" style="color:#C4A035;font-weight:600;">Chevy Towing Guide</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/guides/silverado-5.3-vs-6.2.html" style="color:#C4A035;font-weight:600;">5.3L vs 6.2L Engine Comparison</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/guides/compare.html" style="color:#C4A035;font-weight:600;">Compare Chevy Models</a></li>
+    </ul>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-eyebrow">ChevyRoots Newsletter</div>
+      <h2 class="newsletter-title">Stay Ahead of the Issues</h2>
+      <p class="newsletter-sub">TSB alerts, ownership guides, and real talk from a Chevy Girl — straight to your inbox. No fluff, no filler.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="your@email.com" />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note">No spam. Unsubscribe any time.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Chevy<span>Roots</span></div>
+          <p class="footer-tagline">Independent Chevy coverage, run by a Chevy Girl since day one.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/pages/guides/silverado-buyers-guide.html">Silverado Buyer's Guide</a></li>
+            <li><a href="/pages/guides/best-mods-silverado.html">Best Silverado Mods</a></li>
+            <li><a href="/pages/guides/ls-swap-guide.html">LS Swap Guide</a></li>
+            <li><a href="/pages/guides/known-issues.html">Known Issues</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/pages/models/">Models</a></li>
+            <li><a href="/pages/builds/">Builds</a></li>
+            <li><a href="/pages/events/">Events</a></li>
+            <li><a href="/pages/news/">News</a></li>
+            <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ChevyRoots</h4>
+          <ul>
+            <li><a href="/pages/about/">About</a></li>
+            <li><a href="/pages/contact/">Contact</a></li>
+            <li><a href="/pages/privacy/">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 ChevyRoots. Not affiliated with General Motors.</p>
+        <p class="footer-affiliate-note">Some links on this page are affiliate links. ChevyRoots may earn a commission on qualifying purchases at no additional cost to you.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Silverado 10-Speed Transmission Shudder: Complete Fix Guide",
+    "description": "The definitive fix guide for the 2019+ Silverado 10-speed transmission shudder — causes, TSB 18-NA-355, fluid flush vs torque converter replacement, and warranty coverage.",
+    "url": "https://chevyroots.com/pages/guides/silverado-transmission-shudder-fix.html",
+    "datePublished": "2025-01-01",
+    "author": { "@type": "Organization", "name": "ChevyRoots", "url": "https://chevyroots.com" },
+    "publisher": { "@type": "Organization", "name": "ChevyRoots", "url": "https://chevyroots.com" }
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advertise with ChevyRoots — Partner & Media Kit</title>
+  <meta name="description" content="Reach a dedicated community of Chevrolet enthusiasts. Sponsorships, banner ads, newsletter features, and product reviews. Now accepting founding partners." />
+  <link rel="canonical" href="https://chevyroots.com/pages/partners/" />
+  <meta property="og:title" content="Advertise with ChevyRoots — Partner &amp; Media Kit" />
+  <meta property="og:description" content="Reach dedicated Chevrolet enthusiasts. Sponsorships, banner ads, newsletter features, and product reviews. Now accepting founding partners." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/partners/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       CSS VARIABLES
+    ============================================================ */
+    :root {
+      --charcoal: #1A1A1A;
+      --gold: #C4A035;
+      --gold-light: #D4B44A;
+      --red: #CC0000;
+      --warm-gray: #2A2A2A;
+      --mid-gray: #3A3A3A;
+      --light-gray: #B0A89A;
+      --off-white: #F0EDE6;
+
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --nav-height: 68px;
+      --section-pad: clamp(3rem, 6vw, 6rem);
+      --max-width: 1280px;
+      --radius: 4px;
+      --radius-lg: 8px;
+      --transition: 200ms ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--charcoal);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2.5rem);
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--off-white);
+    }
+
+    .gold-line {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .gold { color: var(--gold); }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.75rem;
+      border: 2px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-gold { background: var(--gold); color: var(--charcoal); border-color: var(--gold); }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-outline { background: transparent; color: var(--off-white); border-color: rgba(240,237,230,0.5); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ============================================================
+       ANNOUNCEMENT BAR
+    ============================================================ */
+    .announcement-bar {
+      background: var(--red);
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .announcement-bar span { color: rgba(255,255,255,0.75); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo-main {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+    .nav-logo-main em { font-style: normal; color: var(--gold); }
+    .nav-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-top: 1px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover { color: var(--gold); background: rgba(196,160,53,0.08); }
+    .nav-cta { display: flex; align-items: center; gap: 1rem; }
+    .nav-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+    }
+    .nav-menu-toggle span { display: block; width: 22px; height: 2px; background: var(--off-white); transition: var(--transition); }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: var(--warm-gray);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-mobile a:hover { color: var(--gold); background: rgba(196,160,53,0.08); }
+
+    /* ============================================================
+       PAGE HERO
+    ============================================================ */
+    .page-hero {
+      background: linear-gradient(135deg, #1A1A1A 0%, #252520 60%, #1A1A1A 100%);
+      border-bottom: 1px solid rgba(196,160,53,0.15);
+      padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 100% 50%, rgba(196,160,53,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(196,160,53,0.12);
+      border: 1px solid rgba(196,160,53,0.4);
+      border-radius: 2px;
+      padding: 0.35rem 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.63rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin-bottom: 1.25rem;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--light-gray);
+      font-weight: 300;
+      line-height: 1.6;
+      max-width: 480px;
+      margin-bottom: 2rem;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* Hero right: stat cards */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .hero-stat-card {
+      background: rgba(196,160,53,0.06);
+      border: 1px solid rgba(196,160,53,0.2);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-card-value {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-card-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      line-height: 1.4;
+    }
+
+    /* ============================================================
+       FOUNDING PARTNER BANNER
+    ============================================================ */
+    .founding-banner {
+      background: var(--gold);
+      padding: 1rem;
+      text-align: center;
+    }
+    .founding-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .founding-banner-text {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
+    .founding-badge {
+      background: var(--charcoal);
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+    }
+
+    /* ============================================================
+       AUDIENCE SECTION
+    ============================================================ */
+    .audience-section {
+      padding: var(--section-pad) 0;
+      background: var(--warm-gray);
+    }
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+    .audience-stat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .audience-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 1.25rem;
+      background: rgba(196,160,53,0.05);
+      border: 1px solid rgba(196,160,53,0.15);
+      border-radius: var(--radius);
+    }
+    .audience-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+    }
+    .audience-stat-value {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    /* Profile bullets */
+    .profile-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .profile-card {
+      background: #222;
+      border: 1px solid rgba(196,160,53,0.15);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+    }
+    .profile-card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .profile-card-title {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--off-white);
+      margin-bottom: 0.35rem;
+    }
+    .profile-card-desc {
+      font-size: 0.8rem;
+      color: var(--light-gray);
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       PARTNERSHIP OPTIONS
+    ============================================================ */
+    .options-section {
+      padding: var(--section-pad) 0;
+      background: var(--charcoal);
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .option-card {
+      background: var(--warm-gray);
+      border: 1px solid rgba(196,160,53,0.15);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .option-card:hover {
+      border-color: rgba(196,160,53,0.45);
+      transform: translateY(-2px);
+    }
+    .option-card.featured {
+      border-color: var(--gold);
+      background: #252520;
+      position: relative;
+    }
+    .option-featured-badge {
+      position: absolute;
+      top: -1px;
+      right: 1.5rem;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+    .option-icon {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    .option-name {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+    .option-price {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+    .option-desc {
+      font-size: 0.85rem;
+      color: var(--light-gray);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+    .option-includes {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      border-top: 1px solid rgba(196,160,53,0.12);
+      padding-top: 1rem;
+    }
+    .option-include-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--light-gray);
+    }
+    .include-check {
+      color: var(--gold);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    /* ============================================================
+       WHY CHEVYROOTS
+    ============================================================ */
+    .why-section {
+      padding: var(--section-pad) 0;
+      background: var(--warm-gray);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .why-item {
+      padding: 0;
+    }
+    .why-item-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: rgba(196,160,53,0.18);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .why-item-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--off-white);
+      margin-bottom: 0.5rem;
+    }
+    .why-item-desc {
+      font-size: 0.85rem;
+      color: var(--light-gray);
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       CONTACT / CTA
+    ============================================================ */
+    .contact-section {
+      padding: var(--section-pad) 0;
+      background: var(--charcoal);
+    }
+    .contact-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-inner p { color: var(--light-gray); font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.65; }
+    .contact-email-block {
+      background: var(--warm-gray);
+      border: 1px solid rgba(196,160,53,0.25);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .contact-email-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-bottom: 0.5rem;
+    }
+    .contact-email-address {
+      font-family: var(--font-heading);
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+    .contact-email-address a {
+      color: inherit;
+      border-bottom: 1px solid rgba(196,160,53,0.4);
+      transition: border-color var(--transition);
+    }
+    .contact-email-address a:hover { border-color: var(--gold); }
+    .contact-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      text-align: left;
+      margin: 1.5rem 0 2rem;
+    }
+    .contact-bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--light-gray);
+    }
+    .contact-bullet-dot {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(196,160,53,0.15);
+      padding: clamp(2.5rem, 5vw, 4rem) 0 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+    .footer-brand-name em { font-style: normal; color: var(--gold); }
+    .footer-brand-tag {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-bottom: 1rem;
+    }
+    .footer-desc {
+      font-size: 0.83rem;
+      color: var(--light-gray);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      max-width: 300px;
+    }
+    .footer-social { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .social-btn {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(176,168,154,0.3);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--light-gray);
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-col-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--light-gray);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid rgba(176,168,154,0.1);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--light-gray); }
+    .footer-disclaimer {
+      font-size: 0.72rem;
+      color: rgba(176,168,154,0.45);
+      line-height: 1.6;
+      max-width: 820px;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .options-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-menu-toggle { display: flex; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-stats { order: -1; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .options-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .profile-cards { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       ANNOUNCEMENT BAR
+  ============================================================ -->
+  <div class="announcement-bar">
+    <span>2026 &mdash;</span> Celebrating America&rsquo;s 250th &amp; 115 Years of Chevrolet &mdash; <span>Built in America. Still Running Strong.</span>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="ChevyRoots home">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+
+      <button class="nav-menu-toggle" aria-label="Toggle mobile menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="/pages/models/" onclick="this.closest('.nav-mobile').classList.remove('open')">Models</a>
+    <a href="/pages/guides/" onclick="this.closest('.nav-mobile').classList.remove('open')">Guides</a>
+    <a href="/pages/builds/" onclick="this.closest('.nav-mobile').classList.remove('open')">Builds</a>
+    <a href="/pages/events/" onclick="this.closest('.nav-mobile').classList.remove('open')">Events</a>
+    <a href="/pages/crystals-corner/" onclick="this.closest('.nav-mobile').classList.remove('open')">Crystal's Corner</a>
+    <a href="/pages/news/" onclick="this.closest('.nav-mobile').classList.remove('open')">News</a>
+    <a href="/pages/about/" onclick="this.closest('.nav-mobile').classList.remove('open')">About</a>
+    <a href="/pages/builds/" class="btn btn-gold" style="margin-top:0.5rem;" onclick="this.closest('.nav-mobile').classList.remove('open')">Submit Your Build</a>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="page-hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-grid">
+
+          <!-- Left copy -->
+          <div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot" aria-hidden="true"></span>
+              Media Kit &mdash; Now Accepting Founding Partners
+            </div>
+
+            <h1 class="hero-title" id="hero-heading">
+              Advertise<br/>
+              with <span class="gold">Chevy</span><span class="gold">Roots</span>
+            </h1>
+
+            <p class="hero-sub">
+              Reach a dedicated, purchase-ready community of Chevrolet owners and enthusiasts. Zero casual scrollers — just people who live and breathe these trucks and cars.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#options" class="btn btn-gold">View Partnership Options</a>
+              <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            </div>
+          </div>
+
+          <!-- Right: stats -->
+          <div class="hero-stats" role="list" aria-label="Audience statistics">
+            <div class="hero-stat-card" role="listitem">
+              <div class="stat-card-value">100%</div>
+              <div class="stat-card-label">Chevrolet-focused audience</div>
+            </div>
+            <div class="hero-stat-card" role="listitem">
+              <div class="stat-card-value">US</div>
+              <div class="stat-card-label">Based &mdash; primary audience</div>
+            </div>
+            <div class="hero-stat-card" role="listitem">
+              <div class="stat-card-value">18&ndash;55</div>
+              <div class="stat-card-label">Core age demographic</div>
+            </div>
+            <div class="hero-stat-card" role="listitem">
+              <div class="stat-card-value">5+</div>
+              <div class="stat-card-label">Content channels &amp; formats</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOUNDING PARTNER BANNER
+    ============================================================ -->
+    <div class="founding-banner" role="banner" aria-label="Founding partner offer">
+      <div class="founding-banner-inner">
+        <span class="founding-badge">Limited Offer</span>
+        <span class="founding-banner-text">Currently accepting founding partners &mdash; locked-in early-mover pricing for life of the campaign</span>
+        <a href="#contact" style="font-family:'Barlow Condensed',sans-serif; font-size:0.9rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--charcoal); border-bottom:1.5px solid rgba(26,26,26,0.4); padding-bottom:1px;">Inquire Now &rarr;</a>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         AUDIENCE PROFILE
+    ============================================================ -->
+    <section class="audience-section" aria-labelledby="audience-heading">
+      <div class="container">
+        <div class="audience-grid">
+
+          <!-- Left: headline + stats -->
+          <div>
+            <p class="section-eyebrow">Audience profile</p>
+            <h2 class="section-title" id="audience-heading">Who We Reach</h2>
+            <span class="gold-line" aria-hidden="true"></span>
+            <p style="color: var(--light-gray); font-size: 0.9rem; line-height: 1.65; margin-bottom: 1.5rem;">
+              ChevyRoots is a growing community of Chevy enthusiasts &mdash; people who own, build, restore, and buy Chevrolets. Not a general automotive audience. Not a brand deal audience. Actual Chevy people.
+            </p>
+
+            <div class="audience-stat-list" role="list" aria-label="Audience statistics">
+              <div class="audience-stat" role="listitem">
+                <span class="audience-stat-label">Geography</span>
+                <span class="audience-stat-value">US-Based</span>
+              </div>
+              <div class="audience-stat" role="listitem">
+                <span class="audience-stat-label">Age Range</span>
+                <span class="audience-stat-value">18&ndash;55</span>
+              </div>
+              <div class="audience-stat" role="listitem">
+                <span class="audience-stat-label">Vehicle Ownership</span>
+                <span class="audience-stat-value">Chevy Owners &amp; Intenders</span>
+              </div>
+              <div class="audience-stat" role="listitem">
+                <span class="audience-stat-label">Top Content</span>
+                <span class="audience-stat-value">Builds, Buyers Guides, Known Issues</span>
+              </div>
+              <div class="audience-stat" role="listitem">
+                <span class="audience-stat-label">Model Coverage</span>
+                <span class="audience-stat-value">20 Profiles &mdash; Silverado to Corvette</span>
+              </div>
+              <div class="audience-stat" role="listitem">
+                <span class="audience-stat-label">Site Content</span>
+                <span class="audience-stat-value">10 Guides &bull; 12 Builds &bull; 16 Events</span>
+              </div>
+              <div class="audience-stat" role="listitem">
+                <span class="audience-stat-label">Launch</span>
+                <span class="audience-stat-value">April 2026 &mdash; Founding Partner Window Open</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: profile cards -->
+          <div>
+            <p class="section-eyebrow" style="margin-bottom: 1.5rem;">Who's in the community</p>
+            <div class="profile-cards" role="list">
+
+              <div class="profile-card" role="listitem">
+                <div class="profile-card-icon" aria-hidden="true">&#128295;</div>
+                <div class="profile-card-title">The Builder</div>
+                <div class="profile-card-desc">Actively wrenching &mdash; buys parts regularly from Summit Racing, JEGS, Classic Industries. Reads every build feature start to finish.</div>
+              </div>
+
+              <div class="profile-card" role="listitem">
+                <div class="profile-card-icon" aria-hidden="true">&#128664;</div>
+                <div class="profile-card-title">The Owner</div>
+                <div class="profile-card-desc">Owns 1&ndash;3 Chevrolets. Maintenance-focused, event-goer, buys accessories and upgrades. Refers friends before they buy.</div>
+              </div>
+
+              <div class="profile-card" role="listitem">
+                <div class="profile-card-icon" aria-hidden="true">&#128247;</div>
+                <div class="profile-card-title">The Enthusiast</div>
+                <div class="profile-card-desc">Deep into the culture &mdash; car shows, online communities, model history. Influence-heavy within their social circle.</div>
+              </div>
+
+              <div class="profile-card" role="listitem">
+                <div class="profile-card-icon" aria-hidden="true">&#128722;</div>
+                <div class="profile-card-title">The Buyer</div>
+                <div class="profile-card-desc">Using ChevyRoots to research their next Chevy purchase. Pre-sale, high-intent, reading model guides and comparisons.</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHAT CHEVYROOTS OFFERS
+    ============================================================ -->
+    <section class="why-section" aria-labelledby="why-heading">
+      <div class="container">
+        <div style="max-width: 640px; margin-bottom: 0;">
+          <p class="section-eyebrow">Why partner with us</p>
+          <h2 class="section-title" id="why-heading">Why Partner With ChevyRoots?</h2>
+          <span class="gold-line" aria-hidden="true"></span>
+          <p style="color: var(--light-gray); font-size: 0.95rem; line-height: 1.65; margin-bottom: 0;">There are a lot of automotive sites. There is exactly one modern, Chevy-only platform with real editorial depth, real tools, and a real person behind every word.</p>
+        </div>
+
+        <div class="why-grid" role="list">
+
+          <div class="why-item" role="listitem">
+            <div class="why-item-number" aria-hidden="true">01</div>
+            <div class="why-item-title">100% Topical Authority</div>
+            <div class="why-item-desc">Every page, every guide, every build — it&rsquo;s all Chevrolet. No diluted multi-brand audience. Visitors arrive because they searched for something Chevy-specific, and found exactly that. That&rsquo;s topical authority you can&rsquo;t buy elsewhere.</div>
+          </div>
+
+          <div class="why-item" role="listitem">
+            <div class="why-item-number" aria-hidden="true">02</div>
+            <div class="why-item-title">Crystal as Brand Ambassador</div>
+            <div class="why-item-desc">ChevyRoots is built and run by Crystal &mdash; a Houston-raised, Virginia-living Chevy loyalist. When she recommends a product or partner, readers listen. That&rsquo;s not influencer theater. It&rsquo;s genuine trust built over years of being in the community.</div>
+          </div>
+
+          <div class="why-item" role="listitem">
+            <div class="why-item-number" aria-hidden="true">03</div>
+            <div class="why-item-title">Only Chevy-Focused Modern Platform</div>
+            <div class="why-item-desc">Old forums are outdated and scattered. Generic car sites spread attention across every make. ChevyRoots is the only platform built from scratch in 2026 to serve the Chevy community with structured data, real tools, and a modern editorial voice.</div>
+          </div>
+
+          <div class="why-item" role="listitem">
+            <div class="why-item-number" aria-hidden="true">04</div>
+            <div class="why-item-title">Real Engagement, Not Passive Browsing</div>
+            <div class="why-item-desc">Buyers guide readers, known-issues researchers, build planners &mdash; these visitors have intent. They&rsquo;re not scrolling. They&rsquo;re deciding. Getting your brand in front of someone reading a Silverado buyers guide is not the same as a banner impression on a general news site.</div>
+          </div>
+
+          <div class="why-item" role="listitem">
+            <div class="why-item-number" aria-hidden="true">05</div>
+            <div class="why-item-title">Ground-Floor Pricing</div>
+            <div class="why-item-desc">We&rsquo;re building the audience now. Founding partners lock in early-mover rates that won&rsquo;t be available once the community scales. First movers get the best deal, always.</div>
+          </div>
+
+          <div class="why-item" role="listitem">
+            <div class="why-item-number" aria-hidden="true">06</div>
+            <div class="why-item-title">Flexible Formats</div>
+            <div class="why-item-desc">From full sponsored build features to newsletter text blurbs, we can work with your budget and goals. No one-size-fits-all packages &mdash; let&rsquo;s build something that actually fits.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PARTNER STORIES / SOCIAL PROOF
+    ============================================================ -->
+    <section style="padding: var(--section-pad) 0; background: var(--warm-gray); border-top: 1px solid rgba(196,160,53,0.15); border-bottom: 1px solid rgba(196,160,53,0.15);" aria-labelledby="stories-heading">
+      <div class="container">
+        <div style="max-width: 640px; margin-bottom: 3rem;">
+          <p class="section-eyebrow">Partner spotlight</p>
+          <h2 class="section-title" id="stories-heading">Our First Sponsors Could Be Here</h2>
+          <span class="gold-line" aria-hidden="true"></span>
+          <p style="color: var(--light-gray); font-size: 0.95rem; line-height: 1.65; margin-bottom: 0;">We&rsquo;re at the ground floor. The Chevy community is real and engaged — the founding partner slot is open and the rate locks in now.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+          <div style="background: var(--charcoal); border: 1px dashed rgba(196,160,53,0.35); border-radius: var(--radius-lg); padding: 2rem; position: relative;">
+            <div style="font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">Founding Partner — Slot 1</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; text-transform: uppercase; color: rgba(176,168,154,0.3); margin-bottom: 0.75rem;">Your Brand Here</div>
+            <p style="font-size: 0.82rem; color: rgba(176,168,154,0.45); line-height: 1.55;">A parts supplier, shop, or Chevy-adjacent brand that got in first. Locked-in founding rate, first-right-of-renewal, and Crystal&rsquo;s personal endorsement in every build feature.</p>
+            <a href="mailto:partnerships@chevyroots.com" style="display: inline-block; margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: underline; text-underline-offset: 3px;">Claim this spot &rarr;</a>
+          </div>
+
+          <div style="background: var(--charcoal); border: 1px dashed rgba(196,160,53,0.35); border-radius: var(--radius-lg); padding: 2rem; position: relative;">
+            <div style="font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">Founding Partner — Slot 2</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; text-transform: uppercase; color: rgba(176,168,154,0.3); margin-bottom: 0.75rem;">Your Brand Here</div>
+            <p style="font-size: 0.82rem; color: rgba(176,168,154,0.45); line-height: 1.55;">An event organizer, apparel brand, or tool company reaching Chevy enthusiasts in the moment they&rsquo;re most engaged — mid-build, mid-research, mid-decision.</p>
+            <a href="mailto:partnerships@chevyroots.com" style="display: inline-block; margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: underline; text-underline-offset: 3px;">Claim this spot &rarr;</a>
+          </div>
+
+          <div style="background: var(--charcoal); border: 1px dashed rgba(196,160,53,0.35); border-radius: var(--radius-lg); padding: 2rem; position: relative;">
+            <div style="font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">Founding Partner — Slot 3</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; text-transform: uppercase; color: rgba(176,168,154,0.3); margin-bottom: 0.75rem;">Your Brand Here</div>
+            <p style="font-size: 0.82rem; color: rgba(176,168,154,0.45); line-height: 1.55;">The brand that understands why getting in front of 100% Chevy-loyal readers during the site&rsquo;s growth phase is an opportunity that doesn&rsquo;t come back around.</p>
+            <a href="mailto:partnerships@chevyroots.com" style="display: inline-block; margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: underline; text-underline-offset: 3px;">Claim this spot &rarr;</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         PARTNERSHIP OPTIONS
+    ============================================================ -->
+    <section class="options-section" id="options" aria-labelledby="options-heading">
+      <div class="container">
+        <div style="max-width: 640px;">
+          <p class="section-eyebrow">Partnership options</p>
+          <h2 class="section-title" id="options-heading">Find the Right Fit</h2>
+          <span class="gold-line" aria-hidden="true"></span>
+          <p style="color: var(--light-gray); font-size: 0.9rem; line-height: 1.65; margin-bottom: 0;">
+            All pricing listed is placeholder &mdash; we&rsquo;ll build a custom proposal based on your goals and budget. Founding partners receive locked-in rates for the duration of their first campaign.
+          </p>
+        </div>
+
+        <div class="options-grid" role="list">
+
+          <!-- Sponsored Build Feature -->
+          <div class="option-card featured" role="listitem" aria-label="Sponsored Build Feature">
+            <span class="option-featured-badge">Most Impactful</span>
+            <div class="option-icon" aria-hidden="true">&#128295;</div>
+            <div class="option-name">Sponsored Build Feature</div>
+            <div class="option-price">Starting at $X / month</div>
+            <div class="option-desc">
+              Your brand featured alongside a full build writeup &mdash; the most-read content format on ChevyRoots. Native placement, not banner advertising. Readers stay engaged for 4&ndash;8 minutes per build.
+            </div>
+            <div class="option-includes">
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Brand mention throughout the build article</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Logo placement in build header</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Product link in spec section (if applicable)</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Newsletter callout in that week&rsquo;s issue</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Social post tagging sponsor</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter Sponsorship -->
+          <div class="option-card" role="listitem" aria-label="Newsletter Sponsorship">
+            <div class="option-icon" aria-hidden="true">&#128240;</div>
+            <div class="option-name">Newsletter Sponsorship</div>
+            <div class="option-price">Starting at $X / issue</div>
+            <div class="option-desc">
+              The Weekly Wrench goes out to subscribers every Thursday. A dedicated sponsor slot in the email body &mdash; not a tiny footer ad, but a real placement the reader actually sees.
+            </div>
+            <div class="option-includes">
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Branded sponsor block inside the email</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Your copy or ours (we can write it)</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Tracked affiliate link with click reporting</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Available per-issue or multi-issue blocks</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Banner Advertising -->
+          <div class="option-card" role="listitem" aria-label="Banner Advertising">
+            <div class="option-icon" aria-hidden="true">&#128444;</div>
+            <div class="option-name">Display Advertising</div>
+            <div class="option-price">Starting at $X / month</div>
+            <div class="option-desc">
+              Sitewide banner placement on high-traffic pages &mdash; model guides, build pages, and the events calendar. Designed to match ChevyRoots&rsquo; aesthetic so it doesn&rsquo;t look like a blinking billboard.
+            </div>
+            <div class="option-includes">
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Leaderboard and sidebar placements</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Mobile-responsive ad units</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Monthly impression and click reporting</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>We can design your creative if needed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Review -->
+          <div class="option-card" role="listitem" aria-label="Product Review">
+            <div class="option-icon" aria-hidden="true">&#11088;</div>
+            <div class="option-name">Product Review</div>
+            <div class="option-price">Contact for pricing</div>
+            <div class="option-desc">
+              Send us your product, we test it. We write an honest review &mdash; meaning we say what works and what doesn&rsquo;t. Readers trust this content because we don&rsquo;t do fake five-star reviews. Great for parts brands and tool companies.
+            </div>
+            <div class="option-includes">
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Full written review article (500&ndash;1,200 words)</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>SEO-optimized with product schema</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Newsletter feature in the week of publish</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Honest editorial &mdash; no guaranteed star rating</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Coverage Sponsorship -->
+          <div class="option-card" role="listitem" aria-label="Event Coverage Sponsorship">
+            <div class="option-icon" aria-hidden="true">&#127937;</div>
+            <div class="option-name">Event Coverage Sponsorship</div>
+            <div class="option-price">Contact for pricing</div>
+            <div class="option-desc">
+              When ChevyRoots covers a car show, swap meet, or major Chevy event, your brand can be part of that coverage. Pre-event promos, on-the-ground content, and post-event recap articles.
+            </div>
+            <div class="option-includes">
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Pre-event brand mention in event preview</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Sponsor callout in post-event recap</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Social coverage tagging</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Newsletter event roundup mention</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom / Founding -->
+          <div class="option-card" role="listitem" aria-label="Custom Partnership">
+            <div class="option-icon" aria-hidden="true">&#9881;</div>
+            <div class="option-name">Custom Partnership</div>
+            <div class="option-price">Let&rsquo;s build it together</div>
+            <div class="option-desc">
+              Have a specific goal or budget in mind? We can put together a package that actually fits. Founding partners get priority calendar placement and locked-in rates before pricing scales with the audience.
+            </div>
+            <div class="option-includes">
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Mix-and-match from any format above</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Founding partner rate locked in for campaign</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>First right of renewal at same rate</span>
+              </div>
+              <div class="option-include-item">
+                <span class="include-check">&#10003;</span>
+                <span>Direct line to Crystal for campaign management</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT / CTA
+    ============================================================ -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading" style="background: var(--warm-gray); border-top: 2px solid var(--gold);">
+      <div class="container">
+        <div class="contact-inner">
+
+          <p class="section-eyebrow">Ready to partner?</p>
+          <h2 class="section-title" id="contact-heading" style="margin-bottom: 1.25rem; font-size: clamp(2rem, 4vw, 3.25rem);">
+            Let&rsquo;s Talk Partnerships
+          </h2>
+
+          <p>
+            No RFP forms, no automated sales funnels. You&rsquo;re talking directly to Crystal — the person who built this site and will run your campaign. Send one email, tell me what you&rsquo;re trying to accomplish, and I&rsquo;ll come back to you with a straight answer within 48 hours.
+          </p>
+
+          <div class="contact-email-block" style="border-color: var(--gold); background: rgba(196,160,53,0.08);">
+            <div class="contact-email-label">Email Crystal directly</div>
+            <div class="contact-email-address" style="font-size: clamp(1.25rem, 2.5vw, 1.75rem);">
+              <a href="mailto:partnerships@chevyroots.com">partnerships@chevyroots.com</a>
+            </div>
+          </div>
+
+          <div class="contact-bullets" role="list" aria-label="What to include in your email">
+            <p style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;">What to include in your email</p>
+            <div class="contact-bullet" role="listitem">
+              <span class="contact-bullet-dot" aria-hidden="true">&#9656;</span>
+              <span>Your brand name and what you sell or do</span>
+            </div>
+            <div class="contact-bullet" role="listitem">
+              <span class="contact-bullet-dot" aria-hidden="true">&#9656;</span>
+              <span>Which partnership option(s) interest you (or just say &ldquo;I&rsquo;m not sure, let&rsquo;s talk&rdquo;)</span>
+            </div>
+            <div class="contact-bullet" role="listitem">
+              <span class="contact-bullet-dot" aria-hidden="true">&#9656;</span>
+              <span>A rough budget range if you have one</span>
+            </div>
+            <div class="contact-bullet" role="listitem">
+              <span class="contact-bullet-dot" aria-hidden="true">&#9656;</span>
+              <span>Best way to follow up with you</span>
+            </div>
+          </div>
+
+          <a href="mailto:partnerships@chevyroots.com" class="btn btn-gold" style="font-size: 1.15rem; padding: 1rem 2.5rem; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 10px;">
+            Email partnerships@chevyroots.com
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <p style="font-size: 0.82rem; color: rgba(176,168,154,0.6); margin-top: 1.25rem;">
+            Typical response time: 24&ndash;48 hours. Every email goes directly to Crystal.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div>
+          <div class="footer-brand-name">Chevy<em>Roots</em></div>
+          <div class="footer-brand-tag">Independent Chevrolet Resource</div>
+          <p class="footer-desc">
+            An independent enthusiast resource covering Chevrolet models, builds, events, and buying guides. Run by a Chevy girl from Houston, written for everyone who loves these trucks and cars.
+          </p>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+            <a href="#" class="social-btn" aria-label="YouTube">YT</a>
+            <a href="#" class="social-btn" aria-label="X / Twitter">X</a>
+            <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+
+        <nav aria-label="Explore links">
+          <div class="footer-col-title">Explore</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/models/trucks/">Trucks</a></li>
+            <li><a href="/pages/models/corvette/">Corvette</a></li>
+            <li><a href="/pages/models/classics/">Classics</a></li>
+            <li><a href="/pages/models/cars/">Cars</a></li>
+            <li><a href="/pages/models/suvs/">SUVs</a></li>
+            <li><a href="/pages/models/evs/">Electric Vehicles</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Resources links">
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/builds/">Community Builds</a></li>
+            <li><a href="/pages/events/">Events Calendar</a></li>
+            <li><a href="/pages/guides/">Buyer&rsquo;s Guides</a></li>
+            <li><a href="/pages/newsletter/">The Weekly Wrench</a></li>
+            <li><a href="/pages/partners/">Advertise with Us</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Site links">
+          <div class="footer-col-title">Site</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/about/">About ChevyRoots</a></li>
+            <li><a href="/pages/about/#contact">Contact</a></li>
+            <li><a href="/pages/about/#submit-build">Submit Your Build</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 ChevyRoots. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          ChevyRoots is an independent enthusiast website and is not affiliated with, endorsed by, or sponsored by General Motors, Chevrolet, or any of their subsidiaries. All model names, trademarks, and logos are the property of their respective owners.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

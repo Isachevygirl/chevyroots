@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chevy News — ChevyRoots</title>
+  <meta name="description" content="Curated Chevrolet news from across the bowtie world. New models, recalls, racing, EV updates, and culture — handpicked by ChevyRoots." />
+  <link rel="canonical" href="https://chevyroots.com/pages/news/" />
+  <meta property="og:title" content="Chevy News | ChevyRoots" />
+  <meta property="og:description" content="Curated Chevrolet news: new models, recalls, racing, EV updates, and culture — handpicked by ChevyRoots." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/news/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       CSS VARIABLES
+    ============================================================ */
+    :root {
+      --charcoal: #1A1A1A;
+      --gold: #C4A035;
+      --gold-light: #D4B44A;
+      --red: #CC0000;
+      --warm-gray: #2A2A2A;
+      --mid-gray: #3A3A3A;
+      --light-gray: #B0A89A;
+      --off-white: #F0EDE6;
+
+      --cat-new-models:    #2563EB;
+      --cat-recalls:       #DC2626;
+      --cat-racing:        #7C3AED;
+      --cat-culture:       #C4A035;
+      --cat-ev:            #059669;
+      --cat-deals:         #D97706;
+
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --nav-height: 68px;
+      --section-pad: clamp(3rem, 6vw, 6rem);
+      --max-width: 1280px;
+      --radius: 4px;
+      --radius-lg: 8px;
+      --transition: 200ms ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--charcoal);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2.5rem);
+    }
+
+    .label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--off-white);
+    }
+
+    .gold-line {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .img-placeholder {
+      background: linear-gradient(135deg, #2a2a2a 0%, #333 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      width: 100%;
+    }
+
+    .img-placeholder span {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      max-width: 200px;
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.75rem;
+      border: 2px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--charcoal);
+      border-color: var(--gold);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--off-white);
+      border-color: rgba(240,237,230,0.4);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ============================================================
+       ANNOUNCEMENT BAR
+    ============================================================ */
+    .announcement-bar {
+      background: var(--red);
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .announcement-bar span { color: rgba(255,255,255,0.75); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .nav-logo-main {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+    .nav-logo-main em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .nav-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+    }
+    .nav-menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--off-white);
+      transition: var(--transition);
+    }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: var(--warm-gray);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-mobile a:hover { color: var(--gold); background: rgba(196,160,53,0.08); }
+
+    /* ============================================================
+       PAGE HERO
+    ============================================================ */
+    .page-hero {
+      background: var(--warm-gray);
+      border-bottom: 1px solid rgba(196,160,53,0.15);
+      padding: 4rem 0 3rem;
+    }
+
+    .page-hero-inner {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .page-hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .page-hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .page-hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--off-white);
+    }
+
+    .page-hero-sub {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--light-gray);
+      margin-top: 1rem;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .page-hero-meta {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(176,168,154,0.6);
+      margin-top: 1.5rem;
+    }
+
+    .page-hero-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.25rem;
+    }
+    .page-hero-stat-num {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .page-hero-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+    }
+
+    /* ============================================================
+       FILTER BAR
+    ============================================================ */
+    .filter-bar {
+      background: var(--charcoal);
+      border-bottom: 1px solid rgba(196,160,53,0.12);
+      padding: 1rem 0;
+      position: sticky;
+      top: var(--nav-height);
+      z-index: 90;
+    }
+
+    .filter-bar-inner {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(176,168,154,0.25);
+      background: transparent;
+      color: var(--light-gray);
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .filter-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--charcoal);
+    }
+
+    /* ============================================================
+       MAIN CONTENT LAYOUT
+    ============================================================ */
+    .news-main {
+      padding: var(--section-pad) 0;
+    }
+
+    /* ============================================================
+       FEATURED STORY
+    ============================================================ */
+    .featured-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .featured-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: var(--warm-gray);
+      border: 1px solid rgba(196,160,53,0.2);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 3.5rem;
+      transition: border-color var(--transition);
+    }
+    .featured-card:hover {
+      border-color: rgba(196,160,53,0.5);
+    }
+
+    .featured-image {
+      height: 420px;
+    }
+    .featured-image .img-placeholder {
+      height: 100%;
+      min-height: 420px;
+    }
+
+    .featured-body {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cat-badge {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      color: #fff;
+    }
+    .cat-new-models { background: var(--cat-new-models); }
+    .cat-recalls    { background: var(--cat-recalls); }
+    .cat-racing     { background: var(--cat-racing); }
+    .cat-culture    { background: var(--cat-culture); color: var(--charcoal); }
+    .cat-ev         { background: var(--cat-ev); }
+    .cat-deals      { background: var(--cat-deals); }
+
+    .news-source {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+    }
+
+    .news-date {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: rgba(176,168,154,0.55);
+    }
+
+    .featured-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--off-white);
+      margin-bottom: 1rem;
+    }
+
+    .featured-summary {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--light-gray);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: gap var(--transition), color var(--transition);
+    }
+    .read-link:hover {
+      color: var(--gold-light);
+      gap: 0.65rem;
+    }
+
+    .speculative-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(196,160,53,0.1);
+      border: 1px solid rgba(196,160,53,0.25);
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      margin-top: 0.75rem;
+    }
+    .speculative-note::before { content: '⚠'; font-size: 0.65rem; }
+
+    /* ============================================================
+       NEWS GRID
+    ============================================================ */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .news-card {
+      background: var(--warm-gray);
+      border: 1px solid rgba(176,168,154,0.1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .news-card:hover {
+      border-color: rgba(196,160,53,0.35);
+      transform: translateY(-2px);
+    }
+
+    .card-image {
+      height: 180px;
+    }
+    .card-image .img-placeholder {
+      height: 100%;
+      min-height: 180px;
+    }
+
+    .card-body {
+      padding: 1.25rem 1.4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--off-white);
+      margin-bottom: 0.6rem;
+      transition: color var(--transition);
+    }
+    .news-card:hover .card-title { color: var(--gold); }
+
+    .card-summary {
+      font-size: 0.875rem;
+      color: var(--light-gray);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(176,168,154,0.1);
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       SOURCES SECTION
+    ============================================================ */
+    .sources-section {
+      background: var(--warm-gray);
+      border-top: 1px solid rgba(196,160,53,0.12);
+      border-bottom: 1px solid rgba(196,160,53,0.12);
+      padding: 3rem 0;
+      margin-bottom: 3.5rem;
+    }
+
+    .sources-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .sources-heading .section-eyebrow { margin-bottom: 0.5rem; }
+
+    .sources-heading-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--off-white);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .sources-tagline {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.75rem;
+    }
+
+    .sources-groups {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .source-group-title {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+    }
+
+    .source-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .source-list li {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--light-gray);
+      padding-left: 0.75rem;
+      position: relative;
+    }
+    .source-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: rgba(196,160,53,0.4);
+      font-size: 0.75rem;
+    }
+
+    /* ============================================================
+       NEWSLETTER CTA
+    ============================================================ */
+    .newsletter-cta {
+      background: linear-gradient(135deg, #1e1e1e 0%, #242424 100%);
+      border: 1px solid rgba(196,160,53,0.25);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      margin-bottom: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .newsletter-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .newsletter-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--off-white);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter-desc {
+      font-size: 0.9rem;
+      color: var(--light-gray);
+      max-width: 480px;
+      line-height: 1.65;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-input {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(176,168,154,0.25);
+      border-radius: var(--radius);
+      color: var(--off-white);
+      width: 260px;
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .newsletter-input::placeholder { color: rgba(176,168,154,0.4); }
+    .newsletter-input:focus { border-color: var(--gold); }
+
+    /* ============================================================
+       SUBMIT TIP
+    ============================================================ */
+    .tip-section {
+      background: var(--warm-gray);
+      border: 1px solid rgba(196,160,53,0.15);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .tip-icon {
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .tip-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .tip-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 0.35rem;
+    }
+
+    .tip-desc {
+      font-size: 0.875rem;
+      color: var(--light-gray);
+      max-width: 440px;
+      line-height: 1.6;
+    }
+
+    .tip-email {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--gold);
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
+
+    /* ============================================================
+       DISCLAIMER BLOCK
+    ============================================================ */
+    .disclaimer-block {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(176,168,154,0.1);
+      border-left: 3px solid rgba(196,160,53,0.4);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .disclaimer-block p {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: rgba(176,168,154,0.65);
+      line-height: 1.7;
+    }
+
+    .disclaimer-block p + p {
+      margin-top: 0.5rem;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(196,160,53,0.15);
+      padding: var(--section-pad) 0 2rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(176,168,154,0.1);
+    }
+
+    .footer-brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-bottom: 0.25rem;
+    }
+    .footer-brand-name em { font-style: normal; color: var(--gold); }
+
+    .footer-brand-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .footer-desc {
+      font-size: 0.875rem;
+      color: var(--light-gray);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      max-width: 320px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .social-btn {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      padding: 0.45rem 0.7rem;
+      border: 1px solid rgba(176,168,154,0.25);
+      border-radius: var(--radius);
+      color: var(--light-gray);
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    .footer-col-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: var(--light-gray);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(176,168,154,0.5);
+      white-space: nowrap;
+    }
+
+    .footer-disclaimer {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.04em;
+      color: rgba(176,168,154,0.4);
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       BREAKING NEWS BANNER
+    ============================================================ */
+    .breaking-news-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+      animation: flash 2s infinite;
+    }
+
+    .breaking-news-banner::before {
+      content: '●';
+      font-size: 0.55rem;
+    }
+
+    @keyframes flash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.75; }
+    }
+
+    /* ============================================================
+       SOCIAL SHARE BUTTONS
+    ============================================================ */
+    .share-btns {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.55rem;
+      border-radius: 3px;
+      border: 1px solid rgba(176,168,154,0.2);
+      color: var(--light-gray);
+      cursor: pointer;
+      background: transparent;
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+      white-space: nowrap;
+    }
+
+    .share-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .share-btn.copied {
+      border-color: #059669;
+      color: #059669;
+    }
+
+    .share-btn-x:hover {
+      border-color: var(--off-white);
+      color: var(--off-white);
+    }
+
+    /* Featured social row */
+    .featured-share-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .featured-share-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(176,168,154,0.5);
+    }
+
+    /* Cross-link note */
+    .cross-link-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+      border: 1px solid rgba(196,160,53,0.2);
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      margin-top: 0.5rem;
+      transition: background var(--transition);
+    }
+    .cross-link-note:hover {
+      background: rgba(196,160,53,0.15);
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-image { height: 280px; }
+      .featured-image .img-placeholder { min-height: 280px; }
+
+      .news-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .sources-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .sources-groups { grid-template-columns: repeat(3, 1fr); }
+
+      .newsletter-cta { grid-template-columns: 1fr; }
+
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links,
+      .nav-cta { display: none; }
+      .nav-menu-toggle { display: flex; }
+
+      .page-hero-inner { flex-direction: column; align-items: flex-start; }
+      .page-hero-stat { align-items: flex-start; }
+
+      .news-grid { grid-template-columns: 1fr; }
+
+      .sources-groups { grid-template-columns: 1fr 1fr; }
+
+      .newsletter-cta { padding: 2rem 1.5rem; }
+      .newsletter-input { width: 100%; }
+
+      .tip-section { flex-direction: column; }
+
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
+      .sources-groups { grid-template-columns: 1fr; }
+      .filter-bar-inner { gap: 0.35rem; }
+      .filter-btn { font-size: 0.78rem; padding: 0.35rem 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       ANNOUNCEMENT BAR
+  ============================================================ -->
+  <div class="announcement-bar">
+    <span>2026 &mdash;</span> Celebrating America&rsquo;s 250th &amp; 115 Years of Chevrolet &mdash; <span>Built in America. Still Running Strong.</span>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="ChevyRoots home">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/news/" class="active" aria-current="page">News</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+
+      <button class="nav-menu-toggle" aria-label="Toggle mobile menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="/pages/models/" onclick="this.closest('.nav-mobile').classList.remove('open')">Models</a>
+    <a href="/pages/guides/" onclick="this.closest('.nav-mobile').classList.remove('open')">Guides</a>
+    <a href="/pages/builds/" onclick="this.closest('.nav-mobile').classList.remove('open')">Builds</a>
+    <a href="/pages/events/" onclick="this.closest('.nav-mobile').classList.remove('open')">Events</a>
+    <a href="/pages/crystals-corner/" onclick="this.closest('.nav-mobile').classList.remove('open')">Crystal's Corner</a>
+    <a href="/pages/news/" onclick="this.closest('.nav-mobile').classList.remove('open')">News</a>
+    <a href="/pages/about/" onclick="this.closest('.nav-mobile').classList.remove('open')">About</a>
+    <a href="/pages/builds/" class="btn btn-gold" style="margin-top:0.5rem;" onclick="this.closest('.nav-mobile').classList.remove('open')">Submit Your Build</a>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         PAGE HERO
+    ============================================================ -->
+    <section class="page-hero" aria-label="Chevy News header">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div>
+            <div class="page-hero-eyebrow">ChevyRoots &mdash; Curated Coverage</div>
+            <h1 class="page-hero-title">Chevy News</h1>
+            <p class="page-hero-sub">
+              The latest from the bowtie world, curated by ChevyRoots. New models, recalls,
+              racing headlines, EV updates, and everything in between &mdash; handpicked, not algorithmically generated.
+            </p>
+            <p class="page-hero-meta">Last Updated: <span id="lastUpdated">April 5, 2026</span> &mdash; Curated by ChevyRoots</p>
+          </div>
+          <div class="page-hero-stat">
+            <span class="page-hero-stat-num">10</span>
+            <span class="page-hero-stat-label">Stories This Round</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FILTER BAR
+    ============================================================ -->
+    <div class="filter-bar" role="navigation" aria-label="Filter news by category">
+      <div class="container">
+        <div class="filter-bar-inner">
+          <button class="filter-btn active" data-filter="all" onclick="filterNews('all', this)">All</button>
+          <button class="filter-btn" data-filter="new-models" onclick="filterNews('new-models', this)">New Models</button>
+          <button class="filter-btn" data-filter="recalls" onclick="filterNews('recalls', this)">Recalls &amp; Safety</button>
+          <button class="filter-btn" data-filter="racing" onclick="filterNews('racing', this)">Racing</button>
+          <button class="filter-btn" data-filter="culture" onclick="filterNews('culture', this)">Culture</button>
+          <button class="filter-btn" data-filter="ev" onclick="filterNews('ev', this)">EV News</button>
+          <button class="filter-btn" data-filter="deals" onclick="filterNews('deals', this)">Deals</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         NEWS CONTENT
+    ============================================================ -->
+    <section class="news-main" aria-label="News stories">
+      <div class="container">
+
+        <!-- FEATURED STORY -->
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;">
+          <div class="featured-label" style="margin-bottom:0;">Featured Story</div>
+          <div class="breaking-news-banner">Breaking News</div>
+        </div>
+
+        <article class="featured-card" data-category="new-models">
+          <div class="featured-image">
+            <div class="img-placeholder">
+              <span>2026 Corvette ZR1<br/>Image placeholder</span>
+            </div>
+          </div>
+          <div class="featured-body">
+            <div class="featured-meta">
+              <span class="cat-badge cat-new-models">New Models</span>
+              <span class="news-source">Official Chevrolet Announcement</span>
+              <span class="news-date">2025</span>
+            </div>
+            <h2 class="featured-title">2026 Corvette ZR1: Chevy's 1,064-HP Twin-Turbo Monster Is Here</h2>
+            <p class="featured-summary">
+              The C8 ZR1 packs a twin-turbocharged 5.5L LT7 flat-plane-crank V8 making 1,064 horsepower &mdash; the most powerful production Corvette ever built. Available in both coupe and convertible body styles, it represents the pinnacle of what Chevrolet's engineering team has achieved. Starting price comes in around $150,000, making it the most capable mid-engine Vette to ever wear a bow tie.
+            </p>
+            <div>
+              <a href="https://www.chevrolet.com/performance/corvette" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+            </div>
+            <div class="speculative-note">
+              Some production details and final pricing may shift prior to dealer availability. See Chevrolet's official site for the latest.
+            </div>
+            <a href="/pages/guides/corvette-buyers-guide.html" class="cross-link-note">📖 ChevyRoots: Corvette Buyer's Guide &rarr;</a>
+            <div class="featured-share-row">
+              <span class="featured-share-label">Share:</span>
+              <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy Link</button>
+              <a href="https://twitter.com/intent/tweet?text=2026+Corvette+ZR1%3A+1%2C064+HP+%E2%80%94+Chevy%27s+most+powerful+production+Corvette+ever.+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; Share on X</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- NEWS GRID -->
+        <div id="newsGrid" class="news-grid">
+
+          <!-- Card A: Culture -->
+          <article class="news-card" data-category="culture">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#2a2a1a,#3a3a1a);">
+                <span>See the USA Campaign<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-culture">Culture</span>
+                <span class="news-source">Chevrolet Media</span>
+              </div>
+              <h3 class="card-title">Chevy Launches 'See the USA' Campaign for America's 250th</h3>
+              <p class="card-summary">
+                Chevy revives the iconic 1951 Dinah Shore jingle for a sweeping year-long campaign celebrating both America's 250th birthday and 115 years of Chevrolet. The campaign spans television, social, and in-person events from coast to coast throughout 2026.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2026</span>
+                <a href="https://media.chevrolet.com" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=Chevy+revives+the+%27See+the+USA%27+jingle+for+America%27s+250th+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card B: EV News -->
+          <article class="news-card" data-category="ev">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#1a2a1e,#1e3526);">
+                <span>Silverado EV Extended Range<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-ev">EV News</span>
+                <span class="news-source">GM Authority</span>
+              </div>
+              <h3 class="card-title">2026 Silverado EV Gets Extended Range: 450+ Miles</h3>
+              <p class="card-summary">
+                The Silverado EV RST receives an updated battery pack pushing estimated range past 450 miles, which would make it the longest-range electric pickup currently on the market. GM continues to push the envelope on electric truck capability with this update.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2025&ndash;2026</span>
+                <a href="https://gmauthority.com" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="speculative-note">Range figures pending final EPA certification.</div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=2026+Silverado+EV+hits+450%2B+miles+range+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card C: Recalls & Safety -->
+          <article class="news-card" data-category="recalls">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#2a1a1a,#351e1e);">
+                <span>NHTSA Corvette Investigation<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-recalls">Recalls &amp; Safety</span>
+                <span class="news-source">NHTSA</span>
+              </div>
+              <h3 class="card-title">NHTSA Opens Investigation Into C8 Corvette Engine Failures</h3>
+              <p class="card-summary">
+                The National Highway Traffic Safety Administration is investigating reports of LT2 engine failures in 2020&ndash;2024 Corvette Stingrays. Approximately 150 complaints have been filed. C8 owners should monitor nhtsa.gov for updates and any resulting recall.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2025&ndash;2026</span>
+                <a href="https://www.nhtsa.gov" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=NHTSA+opens+investigation+into+C8+Corvette+engine+failures+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card D: Racing -->
+          <article class="news-card" data-category="racing">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#1e1a2a,#28204a);">
+                <span>Hendrick Motorsports Daytona<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-racing">Racing</span>
+                <span class="news-source">NASCAR</span>
+              </div>
+              <h3 class="card-title">Hendrick Motorsports Dominates Daytona &mdash; Chevy Sweeps Top 3</h3>
+              <p class="card-summary">
+                William Byron leads a Chevrolet 1-2-3 finish at Daytona, continuing Hendrick Motorsports' remarkable dominance in the NASCAR Cup Series. The sweep reinforces Chevy's position as the premier nameplate in stock car racing heading into the rest of the season.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2025</span>
+                <a href="https://www.nascar.com" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=Hendrick+Motorsports+sweeps+Daytona%2C+Chevy+takes+Top+3+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card E: New Models -->
+          <article class="news-card" data-category="new-models">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#1a2028,#1e2a38);">
+                <span>2026 Equinox EV<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-new-models">New Models</span>
+                <span class="news-source">Consumer Reports</span>
+              </div>
+              <h3 class="card-title">2026 Equinox EV Named Best Value EV by Consumer Reports</h3>
+              <p class="card-summary">
+                The Equinox EV's combination of a $33,900 starting price, 319-mile estimated range, and robust standard features package earned top marks from Consumer Reports. It continues Chevy's push to make electric vehicles accessible at mainstream price points.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2025&ndash;2026</span>
+                <a href="https://www.consumerreports.org" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <a href="/pages/models/evs/" class="cross-link-note">&#9889; See All Chevy EVs on ChevyRoots &rarr;</a>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=2026+Equinox+EV+named+Best+Value+EV+by+Consumer+Reports+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card F: Recalls -->
+          <article class="news-card" data-category="recalls">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#2a1a1a,#351e1e);">
+                <span>Traverse Airbag Recall<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-recalls">Recalls &amp; Safety</span>
+                <span class="news-source">NHTSA</span>
+              </div>
+              <h3 class="card-title">Chevrolet Recalls 2024&ndash;2025 Traverse Over Airbag Issue</h3>
+              <p class="card-summary">
+                Approximately 45,000 Traverse SUVs have been recalled for a potential front airbag deployment issue. Dealers will update the airbag control module software at no cost. Owners should check nhtsa.gov/recalls with their VIN to confirm if their vehicle is affected.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2025&ndash;2026</span>
+                <a href="https://www.nhtsa.gov/recalls" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=Chevy+recalls+45%2C000+Traverse+SUVs+over+airbag+issue+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card G: Culture -->
+          <article class="news-card" data-category="culture">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#2a2216,#3a3020);">
+                <span>Barrett-Jackson 1970 Chevelle<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-culture">Culture</span>
+                <span class="news-source">Barrett-Jackson</span>
+              </div>
+              <h3 class="card-title">Barrett-Jackson Sells 1970 Chevelle SS 454 LS6 for $198,000</h3>
+              <p class="card-summary">
+                A numbers-matching 1970 Chevelle SS 454 LS6 in Cranberry Red with a 4-speed manual transmission sold at Scottsdale for nearly $200,000. The result underscores the continued demand for top-condition, documented muscle cars among serious collectors.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2025</span>
+                <a href="https://www.barrett-jackson.com" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=1970+Chevelle+SS+LS6+sells+for+%24198%2C000+at+Barrett-Jackson+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card H: New Models (speculative) -->
+          <article class="news-card" data-category="new-models">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#1a1e28,#20263a);">
+                <span>Camaro EV Return<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-new-models">New Models</span>
+                <span class="news-source">GM Authority</span>
+              </div>
+              <h3 class="card-title">Chevy Confirms Camaro Return as Electric Four-Door</h3>
+              <p class="card-summary">
+                GM has confirmed that the Camaro nameplate will return as an electric four-door performance sedan, with a production window targeting 2026&ndash;2027. While details remain limited, the move signals Chevy's intent to preserve its performance icons into the electric era.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2025&ndash;2026</span>
+                <a href="https://gmauthority.com" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="speculative-note">Details unconfirmed. Styling, specs, and timeline subject to change.</div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=Chevy+confirms+Camaro+return+as+electric+four-door+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card I: Deals -->
+          <article class="news-card" data-category="deals">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#1c2018,#242a1e);">
+                <span>Gas Prices Drop<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-deals">Deals</span>
+                <span class="news-source">AAA</span>
+              </div>
+              <h3 class="card-title">Gas Prices Drop Below $3 National Average &mdash; Road Trip Season Begins</h3>
+              <p class="card-summary">
+                The national average gas price fell to $2.89 per gallon, the lowest level in 18 months. With summer approaching, it's ideal timing for planning long-haul road trips in your Silverado, Suburban, or any other full-size hauler that deserves to stretch its legs.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2025</span>
+                <a href="https://gasprices.aaa.com" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=Gas+prices+drop+below+%243+national+average+%E2%80%94+road+trip+season+is+here+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card J: New Models -->
+          <article class="news-card" data-category="new-models">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#1a1e2e,#222a40);">
+                <span>2027 Silverado<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-new-models">New Models</span>
+                <span class="news-source">GM Authority</span>
+              </div>
+              <h3 class="card-title">Chevy Unveils 2027 Silverado Redesign Teasers</h3>
+              <p class="card-summary">
+                General Motors has released official teaser images of the next-generation Silverado, hinting at a more aggressive exterior stance, a refined interior, and expanded powertrain options. The full reveal is expected later in 2026 ahead of a 2027 model year launch.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2026</span>
+                <a href="https://gmauthority.com" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=Chevy+unveils+2027+Silverado+redesign+teasers+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card K: Culture -->
+          <article class="news-card" data-category="culture">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#1e1a2a,#2a2040);">
+                <span>LS Fest 2026<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-culture">Culture</span>
+                <span class="news-source">Holley</span>
+              </div>
+              <h3 class="card-title">LS Fest 2026 Dates Announced: September in Bowling Green</h3>
+              <p class="card-summary">
+                Holley has confirmed LS Fest 2026 will return to Beech Bend Raceway in Bowling Green, KY this September. The annual celebration of LS-powered everything — autocross, drag racing, drifting, and a massive car show — is already drawing early registration from teams across the country.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">2026</span>
+                <a href="https://lsfest.com" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=LS+Fest+2026+dates+announced+%E2%80%94+September+in+Bowling+Green+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card L: Deals -->
+          <article class="news-card" data-category="deals">
+            <div class="card-image">
+              <div class="img-placeholder" style="background:linear-gradient(135deg,#1c2018,#2a3020);">
+                <span>Equinox 0% APR<br/>Image placeholder</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="cat-badge cat-deals">Deals</span>
+                <span class="news-source">Chevrolet Media</span>
+              </div>
+              <h3 class="card-title">Chevy Offers 0% APR on 2025 Equinox Through June</h3>
+              <p class="card-summary">
+                Chevrolet is offering 0% APR financing for up to 60 months on all 2025 Equinox models through the end of June. The promotion applies to both the standard Equinox and the Equinox EV, making it one of the most competitive offers on any crossover in its segment this spring.
+              </p>
+              <div class="card-footer">
+                <span class="news-date">Spring 2026</span>
+                <a href="https://www.chevrolet.com" target="_blank" rel="noopener noreferrer" class="read-link">Read Full Story &rarr;</a>
+              </div>
+              <div class="share-btns" style="margin-top:0.75rem;">
+                <button class="share-btn" onclick="copyLink(this, 'https://chevyroots.com/pages/news/')">&#128279; Copy</button>
+                <a href="https://twitter.com/intent/tweet?text=Chevy+offers+0%25+APR+on+2025+Equinox+through+June+%40ChevyRoots&url=https%3A%2F%2Fchevyroots.com%2Fpages%2Fnews%2F" target="_blank" rel="noopener noreferrer" class="share-btn share-btn-x">&#120143; X</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <!-- /news-grid -->
+
+        <!-- MOST READ -->
+        <div style="background: var(--warm-gray); border: 1px solid rgba(196,160,53,0.2); border-radius: 8px; padding: 2rem 2rem 1.75rem; margin-top: 3rem;">
+          <div style="font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;">Trending</div>
+          <h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; color: var(--off-white); margin-bottom: 1.5rem;">Most Read</h2>
+          <ol style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; align-items: flex-start; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.07);">
+              <span style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--gold); line-height: 1; min-width: 2rem; text-align: center;">1</span>
+              <div>
+                <div style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; color: var(--off-white); margin-bottom: 0.25rem;">Chevy Confirms Camaro Return as Electric Four-Door</div>
+                <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light-gray);">New Models &nbsp;&bull;&nbsp; GM Authority</div>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.07);">
+              <span style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: rgba(196,160,53,0.55); line-height: 1; min-width: 2rem; text-align: center;">2</span>
+              <div>
+                <div style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; color: var(--off-white); margin-bottom: 0.25rem;">Chevy Unveils 2027 Silverado Redesign Teasers</div>
+                <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light-gray);">New Models &nbsp;&bull;&nbsp; GM Authority</div>
+              </div>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 1rem;">
+              <span style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: rgba(196,160,53,0.35); line-height: 1; min-width: 2rem; text-align: center;">3</span>
+              <div>
+                <div style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; color: var(--off-white); margin-bottom: 0.25rem;">LS Fest 2026 Dates Announced: September in Bowling Green</div>
+                <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--light-gray);">Culture &nbsp;&bull;&nbsp; Holley</div>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- No results message (hidden by default) -->
+        <div id="noResults" style="display:none; text-align:center; padding:3rem 0;">
+          <p style="font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--light-gray);">
+            No stories in this category right now. Check back soon.
+          </p>
+        </div>
+
+        <!-- ============================================================
+             DISCLAIMER
+        ============================================================ -->
+        <div class="disclaimer-block" role="note" aria-label="Content disclaimer">
+          <p>
+            News items are curated from public sources including manufacturer announcements, automotive press, NHTSA filings, and industry outlets. ChevyRoots is not affiliated with General Motors, Chevrolet, or any of their subsidiaries. All stories link to original sources &mdash; always read the primary source for full details.
+          </p>
+          <p>
+            Items marked with a warning indicator are based on credible reports but contain unconfirmed or speculative details. Production timelines, specifications, and pricing may change before official announcement.
+          </p>
+        </div>
+
+        <!-- ============================================================
+             NEWS SOURCES WE WATCH
+        ============================================================ -->
+        <div class="sources-section">
+          <div class="container">
+            <div class="sources-inner">
+              <div class="sources-heading">
+                <div class="section-eyebrow">Where We Look</div>
+                <div class="sources-heading-title">News Sources<br/>We Watch</div>
+                <p style="font-size:0.875rem;color:var(--light-gray);line-height:1.65;margin-top:0.75rem;max-width:260px;">
+                  We read it all so you don&rsquo;t have to. These are the outlets we monitor to bring you curated Chevy coverage.
+                </p>
+                <div class="sources-tagline">Curated, not aggregated.</div>
+              </div>
+              <div class="sources-groups">
+                <div>
+                  <div class="source-group-title">Chevy &amp; GM</div>
+                  <ul class="source-list">
+                    <li>GM Authority</li>
+                    <li>Chevrolet Media</li>
+                    <li>CorvetteBlogger</li>
+                    <li>ChevyHardcore</li>
+                  </ul>
+                </div>
+                <div>
+                  <div class="source-group-title">Safety &amp; Consumer</div>
+                  <ul class="source-list">
+                    <li>NHTSA</li>
+                    <li>Consumer Reports</li>
+                    <li>Car and Driver</li>
+                    <li>MotorTrend</li>
+                  </ul>
+                </div>
+                <div>
+                  <div class="source-group-title">Racing &amp; Culture</div>
+                  <ul class="source-list">
+                    <li>NASCAR</li>
+                    <li>Barrett-Jackson</li>
+                    <li>AAA</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             NEWSLETTER CTA
+        ============================================================ -->
+        <div class="newsletter-cta" role="complementary" aria-label="Newsletter signup">
+          <div>
+            <div class="newsletter-eyebrow">The Weekly Wrench</div>
+            <div class="newsletter-title">Get the Weekly News Roundup</div>
+            <p class="newsletter-desc">
+              Every week, the biggest Chevy headlines curated into one clean email. No spam, no fluff &mdash; just the news that matters to Chevy people.
+            </p>
+          </div>
+          <div>
+            <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)" aria-label="Newsletter signup form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="your@email.com"
+                required
+                aria-label="Email address"
+              />
+              <button type="submit" class="btn btn-gold">Subscribe</button>
+            </form>
+            <p style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;color:rgba(176,168,154,0.45);margin-top:0.6rem;">
+              No spam. Unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             SUBMIT A TIP
+        ============================================================ -->
+        <div class="tip-section" role="complementary" aria-label="Submit a tip">
+          <div>
+            <div class="tip-icon">&#128273;</div>
+            <div class="tip-eyebrow">Got a lead?</div>
+            <div class="tip-title">Submit a Tip</div>
+            <p class="tip-desc">
+              Got Chevy news we should cover? Spotted a recall that hasn&rsquo;t hit the radar yet? Know about an upcoming model or dealer event? Send it our way &mdash; we read every tip.
+            </p>
+            <div class="tip-email">news@chevyroots.com</div>
+          </div>
+          <a href="mailto:news@chevyroots.com" class="btn btn-outline">Send a Tip &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <!-- Brand -->
+        <div>
+          <div class="footer-brand-name">Chevy<em>Roots</em></div>
+          <div class="footer-brand-tag">Independent Chevrolet Resource</div>
+          <p class="footer-desc">
+            An independent enthusiast resource covering Chevrolet models, builds, events, and buying guides. Run by a Chevy girl from Houston, written for everyone who loves these trucks and cars.
+          </p>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+            <a href="#" class="social-btn" aria-label="YouTube">YT</a>
+            <a href="#" class="social-btn" aria-label="X / Twitter">X</a>
+            <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+
+        <!-- Explore -->
+        <nav aria-label="Explore links">
+          <div class="footer-col-title">Explore</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/models/trucks/">Trucks</a></li>
+            <li><a href="/pages/models/corvette/">Corvette</a></li>
+            <li><a href="/pages/models/classics/">Classics</a></li>
+            <li><a href="/pages/models/cars/">Cars</a></li>
+            <li><a href="/pages/models/suvs/">SUVs</a></li>
+            <li><a href="/pages/models/evs/">Electric Vehicles</a></li>
+          </ul>
+        </nav>
+
+        <!-- Resources -->
+        <nav aria-label="Resources links">
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/builds/">Community Builds</a></li>
+            <li><a href="/pages/events/">Events Calendar</a></li>
+            <li><a href="/pages/guides/">Buyer&rsquo;s Guides</a></li>
+            <li><a href="/pages/news/">Chevy News</a></li>
+            <li><a href="/pages/newsletter/">The Weekly Wrench</a></li>
+          </ul>
+        </nav>
+
+        <!-- Site -->
+        <nav aria-label="Site links">
+          <div class="footer-col-title">Site</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/pages/about/">About ChevyRoots</a></li>
+            <li><a href="/pages/about/#contact">Contact</a></li>
+            <li><a href="mailto:news@chevyroots.com">Submit a News Tip</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/terms/">Terms of Use</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 ChevyRoots. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          ChevyRoots is an independent enthusiast website and is not affiliated with, endorsed by, or sponsored by General Motors, Chevrolet, or any of their subsidiaries. News items are curated from public sources and link to original reporting. All model names, trademarks, and logos are the property of their respective owners.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // Filter functionality
+    function filterNews(category, btn) {
+      // Update active button
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('#newsGrid .news-card');
+      const featured = document.querySelector('.featured-card');
+      let visibleCount = 0;
+
+      // Handle featured story
+      if (category === 'all' || featured.dataset.category === category) {
+        featured.style.display = '';
+      } else {
+        featured.style.display = 'none';
+      }
+
+      // Handle grid cards
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Show/hide no-results message
+      const noResults = document.getElementById('noResults');
+      const featuredVisible = category === 'all' || featured.dataset.category === category;
+      if (visibleCount === 0 && !featuredVisible) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
+    }
+
+    // Copy link to clipboard
+    function copyLink(btn, url) {
+      var text = url || window.location.href;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function() {
+          var original = btn.innerHTML;
+          btn.innerHTML = '&#10003; Copied!';
+          btn.classList.add('copied');
+          setTimeout(function() {
+            btn.innerHTML = original;
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      } else {
+        // Fallback
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.innerHTML = '&#10003; Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.innerHTML = '&#128279; Copy'; btn.classList.remove('copied'); }, 2000);
+      }
+    }
+
+    // Newsletter form
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input[type="email"]');
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'You\'re in!';
+      btn.disabled = true;
+      input.disabled = true;
+      btn.style.background = '#059669';
+      btn.style.borderColor = '#059669';
+    }
+  </script>
+
+</body>
+</html>

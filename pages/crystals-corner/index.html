@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crystal's Corner — ChevyRoots</title>
+  <meta name="description" content="Crystal's Corner: Reviews, hot takes, Chevy adventures, and the unfiltered voice behind ChevyRoots. Run by a Chevy Girl." />
+  <link rel="canonical" href="https://chevyroots.com/pages/crystals-corner/" />
+  <meta property="og:title" content="Crystal's Corner | ChevyRoots" />
+  <meta property="og:description" content="Reviews, hot takes, Chevy adventures, and the unfiltered voice behind ChevyRoots. Run by a Chevy Girl." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/crystals-corner/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #1A1A1A;
+      --gold:       #C4A035;
+      --gold-light: #D4B550;
+      --gold-dim:   rgba(196,160,53,0.12);
+      --text:       #F0EDE6;
+      --muted:      #9A9590;
+      --surface:    #242424;
+      --surface2:   #2E2E2E;
+      --border:     rgba(196,160,53,0.2);
+      --font-head:  'Barlow Condensed', sans-serif;
+      --font-body:  'Inter', sans-serif;
+      --font-mono:  'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Nav ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26,26,26,0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav__logo span { color: var(--text); }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav__links a {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav__links a:hover { color: var(--gold); }
+    .nav__links a.active { color: var(--gold); }
+
+    .nav__cta {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg) !important;
+      background: var(--gold);
+      padding: 8px 18px;
+      border-radius: 3px;
+      transition: background 0.2s !important;
+    }
+    .nav__cta:hover { background: var(--gold-light); color: var(--bg) !important; }
+
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.25s;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding-top: 64px;
+      background: linear-gradient(160deg, #1A1A1A 0%, #0f0f0f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__bg-stripe {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 60px,
+        rgba(196,160,53,0.025) 60px,
+        rgba(196,160,53,0.025) 61px
+      );
+      pointer-events: none;
+    }
+
+    .hero__gold-bar {
+      position: absolute;
+      top: 64px; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.5;
+    }
+
+    .hero__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px 72px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 72px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__content {}
+
+    .hero__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border);
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+    .hero__eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .hero__title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero__tagline {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .hero__intro {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: #c8c4bc;
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    .hero__socials {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--surface2);
+      padding: 9px 16px;
+      border-radius: 3px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-pill:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .social-pill svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .hero__photo-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .hero__photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #2a2a2a;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .hero__photo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(196,160,53,0.06) 0%,
+        transparent 60%
+      );
+    }
+
+    .hero__photo-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__photo-caption {
+      margin-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+
+    /* ── Section base ── */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 88px 24px;
+    }
+
+    .section--alt {
+      background: #161616;
+    }
+    .section--alt .section { padding: 88px 24px; }
+
+    .section__header {
+      margin-bottom: 48px;
+    }
+
+    .section__label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section__title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .section__sub {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 540px;
+    }
+
+    /* ── Content Cards ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--surface2);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .card__thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .card__thumb-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 8px;
+    }
+
+    .card__type {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    .card__type--review   { background: #C4A035; color: #1A1A1A; }
+    .card__type--hot-take { background: #c44535; color: #F0EDE6; }
+    .card__type--adventure{ background: #357bc4; color: #F0EDE6; }
+    .card__type--culture  { background: #5a35c4; color: #F0EDE6; }
+
+    .card__body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card__title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .card__preview {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+
+    .card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--surface2);
+      padding-top: 14px;
+    }
+
+    .card__date {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .card__cta {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+    .card:hover .card__cta { gap: 10px; }
+
+    /* ── Rank Section ── */
+    .rank-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .rank-item {
+      background: var(--surface);
+      border: 1px solid var(--surface2);
+      border-radius: 4px;
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      transition: border-color 0.2s;
+    }
+    .rank-item:hover { border-color: var(--gold); }
+
+    .rank-item--tease {
+      opacity: 0.45;
+      border-style: dashed;
+    }
+
+    .rank-item__info {}
+
+    .rank-item__label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .rank-item__name {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .rank-item__quote {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .rank-item__score-wrap {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .rank-item__score {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 3rem;
+      letter-spacing: 0.02em;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .rank-item__score span {
+      font-size: 1.1rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .rank-item__bar-wrap {
+      margin-top: 8px;
+      width: 80px;
+      height: 4px;
+      background: var(--surface2);
+      border-radius: 2px;
+      margin-left: auto;
+      overflow: hidden;
+    }
+
+    .rank-item__bar {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    /* ── Ask Crystal Form ── */
+    .ask-wrap {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .ask__pitch {}
+
+    .ask__pitch-title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .ask__pitch-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .ask__pitch-body {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .ask__note {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      padding: 10px 14px;
+      border-left: 2px solid var(--gold);
+      background: var(--gold-dim);
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form__group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form__label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form__input,
+    .form__textarea {
+      background: var(--surface);
+      border: 1px solid var(--surface2);
+      border-radius: 3px;
+      padding: 12px 14px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form__input::placeholder,
+    .form__textarea::placeholder { color: #555; }
+    .form__input:focus,
+    .form__textarea:focus { border-color: var(--gold); }
+
+    .form__textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form__btn {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      border: none;
+      border-radius: 3px;
+      padding: 14px 24px;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .form__btn:hover { background: var(--gold-light); }
+
+    /* ── Social embeds ── */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .social-block {
+      background: var(--surface);
+      border: 1px solid var(--surface2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .social-block__header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--surface2);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-block__icon {
+      width: 32px;
+      height: 32px;
+      background: var(--gold-dim);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .social-block__icon svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--gold);
+    }
+
+    .social-block__handle {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+    .social-block__platform {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .social-block__embed {
+      width: 100%;
+      aspect-ratio: 9/16;
+      background: #2a2a2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-block__embed-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .social-block__embed-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--surface2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .social-block__embed-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--muted);
+    }
+
+    .social-block__footer {
+      padding: 14px 20px;
+      border-top: 1px solid var(--surface2);
+    }
+    .social-block__follow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: opacity 0.2s;
+    }
+    .social-block__follow:hover { opacity: 0.75; }
+
+    /* ── Newsletter ── */
+    .newsletter-band {
+      background: #111;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .newsletter-band .section {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .newsletter__copy {}
+    .newsletter__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .newsletter__title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .newsletter__title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .newsletter__sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .newsletter__form {
+      display: flex;
+      gap: 0;
+      flex-shrink: 0;
+    }
+    .newsletter__input {
+      background: var(--surface);
+      border: 1px solid var(--surface2);
+      border-right: none;
+      border-radius: 3px 0 0 3px;
+      padding: 12px 18px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      width: 260px;
+      transition: border-color 0.2s;
+    }
+    .newsletter__input::placeholder { color: #555; }
+    .newsletter__input:focus { border-color: var(--gold); }
+    .newsletter__btn {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      border: none;
+      border-radius: 0 3px 3px 0;
+      padding: 12px 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .newsletter__btn:hover { background: var(--gold-light); }
+
+    /* ── Footer ── */
+    .footer {
+      background: #111;
+      border-top: 1px solid var(--border);
+      padding: 56px 24px 32px;
+    }
+
+    .footer__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 32px;
+    }
+
+    .footer__brand-name {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .footer__brand-name span { color: var(--text); }
+
+    .footer__tagline {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .footer__col-title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .footer__col-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .footer__col-links a {
+      font-size: 0.88rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .footer__col-links a:hover { color: var(--text); }
+
+    .footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer__copy {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .footer__legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer__legal a {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .footer__legal a:hover { color: var(--text); }
+
+    /* ── Mobile ── */
+    @media (max-width: 1000px) {
+      .hero__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .hero__photo-wrap {
+        max-width: 360px;
+        margin: 0 auto;
+        order: -1;
+      }
+      .ask-wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .newsletter-band .section {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .newsletter__input { width: 100%; }
+      .newsletter__form { width: 100%; }
+    }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 64px; left: 0; right: 0;
+        background: rgba(26,26,26,0.98);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav__hamburger { display: flex; }
+
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer__top {
+        grid-template-columns: 1fr 1fr;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .form__row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer__top {
+        grid-template-columns: 1fr;
+      }
+      .hero__socials {
+        flex-direction: column;
+      }
+    }
+
+    /* ── First Review Article ── */
+    .first-review {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .first-review__hero {
+      width: 100%;
+      aspect-ratio: 21/9;
+      background: #333 url('/photos/camaro/pexels_2797720_camaro.jpeg') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .first-review__hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 55%);
+    }
+
+    .first-review__hero-meta {
+      position: relative;
+      z-index: 1;
+      padding: 28px 36px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .first-review__badge {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: #1A1A1A;
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+
+    .first-review__date {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: rgba(240,237,230,0.7);
+    }
+
+    .first-review__body {
+      padding: 40px 40px 36px;
+    }
+
+    .first-review__title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+
+    .first-review__subtitle {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .first-review__prose {
+      font-size: 1.02rem;
+      line-height: 1.82;
+      color: #c8c4bc;
+      max-width: 800px;
+    }
+
+    .first-review__prose p {
+      margin-bottom: 18px;
+    }
+
+    .first-review__prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    .first-review__prose strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .first-review__verdict {
+      margin-top: 32px;
+      padding: 24px 28px;
+      background: var(--gold-dim);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .first-review__verdict-score {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .first-review__verdict-score span {
+      font-size: 1.4rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .first-review__verdict-text {}
+
+    .first-review__verdict-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .first-review__verdict-quote {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    /* ── Driving This Month ── */
+    .driving-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .driving-card {
+      background: var(--surface);
+      border: 1px solid var(--surface2);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .driving-card:hover { border-color: var(--gold); }
+
+    .driving-card__thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #2a2a2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .driving-card__thumb-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--muted);
+      letter-spacing: 0.07em;
+      text-align: center;
+      padding: 8px;
+      text-transform: uppercase;
+    }
+
+    .driving-card__role-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    .driving-card__role-tag--daily   { background: #357bc4; color: #fff; }
+    .driving-card__role-tag--next    { background: var(--gold); color: #1A1A1A; }
+    .driving-card__role-tag--dream   { background: #5a35c4; color: #fff; }
+
+    .driving-card__body {
+      padding: 18px 20px;
+    }
+
+    .driving-card__name {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .driving-card__detail {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 768px) {
+      .driving-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Playlist ── */
+    .playlist-card {
+      background: var(--surface);
+      border: 1px solid var(--surface2);
+      border-radius: 4px;
+      overflow: hidden;
+      max-width: 680px;
+    }
+
+    .playlist-card__header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a1a 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .playlist-card__art {
+      width: 72px;
+      height: 72px;
+      background: var(--gold-dim);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.8rem;
+    }
+
+    .playlist-card__info {}
+
+    .playlist-card__title {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .playlist-card__meta {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .playlist-card__tracks {
+      list-style: none;
+    }
+
+    .playlist-track {
+      display: grid;
+      grid-template-columns: 32px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.15s;
+    }
+    .playlist-track:last-child { border-bottom: none; }
+    .playlist-track:hover { background: rgba(196,160,53,0.06); }
+
+    .playlist-track__num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .playlist-track__info {}
+
+    .playlist-track__song {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .playlist-track__artist {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .playlist-track__vibe {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.75;
+      white-space: nowrap;
+    }
+
+    /* ── Content Calendar ── */
+    .cal-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cal-item {
+      background: var(--surface);
+      border: 1px solid var(--surface2);
+      border-radius: 4px;
+      padding: 18px 24px;
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      gap: 20px;
+      align-items: center;
+      transition: border-color 0.2s;
+    }
+    .cal-item:hover { border-color: var(--gold); }
+
+    .cal-item--live {
+      border-color: var(--gold);
+      background: var(--gold-dim);
+    }
+
+    .cal-item__date {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .cal-item__name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .cal-item__status {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .cal-item__status--live     { background: var(--gold); color: #1A1A1A; }
+    .cal-item__status--upcoming { background: var(--surface2); color: var(--muted); border: 1px solid #3a3a3a; }
+    .cal-item__status--event    { background: #357bc4; color: #fff; }
+
+    @media (max-width: 600px) {
+      .cal-item { grid-template-columns: 80px 1fr; }
+      .cal-item__status { display: none; }
+      .first-review__body { padding: 24px 20px; }
+      .first-review__verdict { flex-direction: column; gap: 16px; }
+    }
+
+    /* ── Divider ── */
+    .divider {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .divider hr {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        Chevy<span>Roots</span>
+        <small class="nav__logo-sub">Run by a Chevy Girl</small>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/" class="active">Crystal's Corner</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+      <a href="/pages/builds/" class="nav__cta">Submit Your Build</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" aria-label="Crystal's Corner hero">
+    <div class="hero__bg-stripe"></div>
+    <div class="hero__gold-bar"></div>
+    <div class="hero__inner">
+
+      <div class="hero__content">
+        <div class="hero__eyebrow">Crystal's Corner</div>
+        <h1 class="hero__title">Crystal's<br>Corner</h1>
+        <p class="hero__tagline">Run by a Chevy Girl</p>
+        <p class="hero__intro">
+          Houston born. Virginia living. Chevy driving. This is where I talk about what I love — every Chevy I drive, every show I hit, every hot take I can't keep to myself.
+        </p>
+        <div class="hero__socials">
+          <!-- TikTok -->
+          <a href="https://tiktok.com/@chevyroots" target="_blank" rel="noopener" class="social-pill" aria-label="TikTok @chevyroots">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+            @chevyroots
+          </a>
+          <!-- Instagram -->
+          <a href="https://instagram.com/chevyroots" target="_blank" rel="noopener" class="social-pill" aria-label="Instagram @chevyroots">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            @chevyroots
+          </a>
+          <!-- YouTube -->
+          <a href="https://youtube.com/@chevyroots" target="_blank" rel="noopener" class="social-pill" aria-label="YouTube ChevyRoots">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            ChevyRoots
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__photo-wrap">
+        <div class="hero__photo" role="img" aria-label="Photo placeholder for Crystal">
+          <p class="hero__photo-label">[ Crystal's photo<br>goes here ]</p>
+        </div>
+        <p class="hero__photo-caption">The Chevy girl behind all of this.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── LATEST FROM CRYSTAL ── -->
+  <section aria-labelledby="latest-heading">
+    <div class="section">
+      <div class="section__header">
+        <p class="section__label">// latest posts</p>
+        <h2 class="section__title" id="latest-heading">Latest from Crystal</h2>
+        <p class="section__sub">Reviews, hot takes, culture, and pure Chevy chaos — all from one girl with a lot of opinions.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Card 1: Review -->
+        <article class="card">
+          <div class="card__thumb" style="background: #333 url('/photos/camaro/pexels_2797720_camaro.jpeg') center/cover no-repeat;">
+            <span class="card__type card__type--review">First Drive / Review</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">I Rented a Camaro for a Day — Here's What Happened</h3>
+            <p class="card__preview">We grabbed a Camaro from the rental lot and spent the day finding out if it lives up to the hype. Spoiler: yes.</p>
+            <div class="card__footer">
+              <span class="card__date">April 5, 2026</span>
+              <span class="card__cta">Read it &rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Hot Take -->
+        <article class="card">
+          <div class="card__thumb" style="background: #333 url('/photos/tahoe/pexels_35004984_tahoe.jpeg') center/cover no-repeat;">
+            <span class="card__type card__type--hot-take">Hot Take</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">The Tahoe Is the Most Underrated Chevy — Fight Me</h3>
+            <p class="card__preview">Everyone talks about the Silverado and the Corvette. Nobody gives the Tahoe the respect it deserves. Let me fix that.</p>
+            <div class="card__footer">
+              <span class="card__date">Coming Soon</span>
+              <span class="card__cta" style="opacity:0.4;">Stay tuned</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Adventure -->
+        <article class="card">
+          <div class="card__thumb" style="background: #333 url('/photos/belair/1955-1957_Chevrolet_Bel_Air_in_the_SunRice_Festival_parade_in_Pine_Ave.jpg') center/cover no-repeat;">
+            <span class="card__type card__type--adventure">Event / Adventure</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">610 Cruisers: My First Chevy Meet in Virginia</h3>
+            <p class="card__preview">I showed up to a Saturday cruise-in in Stafford, VA and found my people. Here's what went down.</p>
+            <div class="card__footer">
+              <span class="card__date">Coming Soon</span>
+              <span class="card__cta" style="opacity:0.4;">Stay tuned</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Culture -->
+        <article class="card">
+          <div class="card__thumb" style="background: #333 url('/photos/impala/1964_Chevrolet_Impala_lowrider_5409593989.jpg') center/cover no-repeat;">
+            <span class="card__type card__type--culture">Culture</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Why Houston Girls Love Chevys (It's in the Water)</h3>
+            <p class="card__preview">Growing up in Houston, Chevys were everywhere — Impalas on swangas, Silverados in every driveway. It wasn't a choice, it was just how it was.</p>
+            <div class="card__footer">
+              <span class="card__date">Coming Soon</span>
+              <span class="card__cta" style="opacity:0.4;">Stay tuned</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: Adventure (Coming Soon) -->
+        <article class="card">
+          <div class="card__thumb" style="background: #333 url('/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg') center/cover no-repeat;">
+            <span class="card__type card__type--adventure">Adventure</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Skyline Drive in a Corvette — Our Next Rental Adventure</h3>
+            <p class="card__preview">Shenandoah's most scenic stretch of road. A C8 Corvette. What could go wrong? We're planning it and I'm documenting every turn.</p>
+            <div class="card__footer">
+              <span class="card__date">Coming Soon</span>
+              <span class="card__cta" style="opacity:0.4;">Stay tuned</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: Hot Take (Coming Soon) -->
+        <article class="card">
+          <div class="card__thumb" style="background: #333 url('/photos/camaro/pexels_11532597_camaro.jpeg') center/cover no-repeat;">
+            <span class="card__type card__type--hot-take">Hot Take</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Camaro vs Mustang: Why This Isn't Even a Debate</h3>
+            <p class="card__preview">Every year someone asks me. Every year I give the same answer. Here it is in writing, with receipts, so we can stop having this conversation.</p>
+            <div class="card__footer">
+              <span class="card__date">Coming Soon</span>
+              <span class="card__cta" style="opacity:0.4;">Stay tuned</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ── FIRST REVIEW: CAMARO ── -->
+  <section aria-labelledby="camaro-review-heading">
+    <div class="section">
+      <div class="section__header">
+        <p class="section__label">// first review &mdash; april 5, 2026</p>
+        <h2 class="section__title" id="camaro-review-heading">Crystal's First Review</h2>
+        <p class="section__sub">This is the first real piece of editorial content on ChevyRoots. Unfiltered, from the driver's seat.</p>
+      </div>
+
+      <article class="first-review" aria-label="Camaro rental review by Crystal">
+
+        <div class="first-review__hero" role="img" aria-label="2024 Camaro SS in Rapid Blue">
+          <div class="first-review__hero-overlay"></div>
+          <div class="first-review__hero-meta">
+            <span class="first-review__badge">First Drive / Review</span>
+            <span class="first-review__date">April 5, 2026</span>
+          </div>
+        </div>
+
+        <div class="first-review__body">
+          <h3 class="first-review__title">I Rented a Camaro for a Day</h3>
+          <p class="first-review__subtitle">2024 Camaro SS &mdash; Rapid Blue &mdash; 6.2L V8 &mdash; One Very Good Day</p>
+
+          <div class="first-review__prose">
+            <p>
+              Let me set the scene. It's a Tuesday. I show up to the rental counter fully expecting to walk out with a beige Nissan Altima and go on with my life. Instead, the guy behind the desk says they're out of midsize sedans and asks if I'd be okay with &mdash; and I quote &mdash; "something a little sportier." Reader, it was a 2024 Camaro SS in <strong>Rapid Blue</strong>. I said yes before he finished the sentence.
+            </p>
+            <p>
+              First impression the second you lay eyes on it in the lot: it's low. Like, <em>actually</em> low. Squatted, wide-shouldered, aggressive in a way that reads less "sports car" and more "I will absolutely do something your insurance doesn't cover." The Rapid Blue popped in the morning light &mdash; this deep metallic blue that shifts almost purple depending on the angle. I stood next to it for probably two minutes before I even got in.
+            </p>
+            <p>
+              Then I started it. Oh. The V8 fires up with this deep, rumbly exhale &mdash; not a scream, not a bark, just a confident growl that says <em>I've been waiting</em>. Pulling out of the lot, I kept the windows down even though it was a little chilly because I needed to hear every single thing going on under that hood. First corner at normal speed and the steering already feels connected and direct in a way my daily just doesn't. It's communicating with you. You can feel the road.
+            </p>
+            <p>
+              The best moment of the day came somewhere on a back highway with no one around. I got on it. Not stupid-fast, just &mdash; let it breathe. The exhaust opened up, the whole car flattened out, and for about ten seconds I completely understood why people build their lives around these things. It wasn't just speed. It was the whole experience: the sound, the pull, the way the seat is holding you while everything around you starts moving faster. That's the Camaro. It's theater and it's performance at the same time.
+            </p>
+            <p>
+              The interior is fine &mdash; nothing fancy, comfortable enough, visibility out the back is basically a joke (you're living by your mirrors), and the rear seat exists mostly as a conversation piece. But none of that matters because you're not buying this car for cargo room. You're buying it because sometimes you need life to feel a little bit alive.
+            </p>
+            <p>
+              Would I rent it again? <strong>Yes. Immediately. Without thinking about it.</strong> Would I want to own one? That's a conversation for another day, but I'll say this &mdash; it made my daily feel very boring on the drive back. That's the Camaro effect. It recalibrates you.
+            </p>
+          </div>
+
+          <div class="first-review__verdict" aria-label="Review verdict">
+            <div class="first-review__verdict-score" aria-label="Rating: 8.5 out of 10">8.5<span>/10</span></div>
+            <div class="first-review__verdict-text">
+              <p class="first-review__verdict-label">Crystal's Verdict</p>
+              <p class="first-review__verdict-quote">"Made me feel like a different person.<br>Would rent again. No hesitation."</p>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ── WHAT I'M DRIVING THIS MONTH ── -->
+  <section class="section--alt" aria-labelledby="driving-heading">
+    <div class="section">
+      <div class="section__header">
+        <p class="section__label">// april 2026</p>
+        <h2 class="section__title" id="driving-heading">What I'm Driving This Month</h2>
+        <p class="section__sub">The daily, the next rental target, and the truck I think about way too often.</p>
+      </div>
+
+      <div class="driving-grid">
+
+        <div class="driving-card">
+          <div class="driving-card__thumb" role="img" aria-label="Chevy truck placeholder photo">
+            <span class="driving-card__role-tag driving-card__role-tag--daily">Daily Driver</span>
+            <p class="driving-card__thumb-label">[ Truck photo<br>goes here ]</p>
+          </div>
+          <div class="driving-card__body">
+            <h3 class="driving-card__name">Her Chevy Truck</h3>
+            <p class="driving-card__detail">The ride-or-die. Does everything, complains about nothing. Gets me where I'm going and looks good doing it.</p>
+          </div>
+        </div>
+
+        <div class="driving-card">
+          <div class="driving-card__thumb" style="background: #2a2a2a url('/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg') center/cover no-repeat; position: relative;">
+            <span class="driving-card__role-tag driving-card__role-tag--next">Next Rental</span>
+          </div>
+          <div class="driving-card__body">
+            <h3 class="driving-card__name">Corvette C8</h3>
+            <p class="driving-card__detail">Skyline Drive in Shenandoah. Mid-engine. Winding mountain roads. April 18th. I'm not ready but I'm doing it.</p>
+          </div>
+        </div>
+
+        <div class="driving-card">
+          <div class="driving-card__thumb" role="img" aria-label="Classic C10 dream truck placeholder">
+            <span class="driving-card__role-tag driving-card__role-tag--dream">Dream Drive</span>
+            <p class="driving-card__thumb-label">[ C10 photo<br>goes here ]</p>
+          </div>
+          <div class="driving-card__body">
+            <h3 class="driving-card__name">Classic C10 &mdash; Route 66</h3>
+            <p class="driving-card__detail">Square body. Patina. Small-block V8. Windows down on Route 66. This is the dream drive. One day.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ── CHEVY GIRL PLAYLIST ── -->
+  <section aria-labelledby="playlist-heading">
+    <div class="section">
+      <div class="section__header">
+        <p class="section__label">// the soundtrack</p>
+        <h2 class="section__title" id="playlist-heading">Chevy Girl Playlist</h2>
+        <p class="section__sub">The songs I'm actually listening to. On-brand, no-skip, windows-down certified.</p>
+      </div>
+
+      <div class="playlist-card" role="region" aria-label="Chevy Girl Playlist">
+        <div class="playlist-card__header">
+          <div class="playlist-card__art" aria-hidden="true">&#9835;</div>
+          <div class="playlist-card__info">
+            <p class="playlist-card__title">Chevy Girl Playlist</p>
+            <p class="playlist-card__meta">By Crystal &bull; 7 songs &bull; ChevyRoots official</p>
+          </div>
+        </div>
+        <ol class="playlist-card__tracks" aria-label="Playlist tracks">
+          <li class="playlist-track">
+            <span class="playlist-track__num">1</span>
+            <div class="playlist-track__info">
+              <p class="playlist-track__song">Ridin'</p>
+              <p class="playlist-track__artist">Chamillionaire ft. Krayzie Bone</p>
+            </div>
+            <span class="playlist-track__vibe">Houston classic</span>
+          </li>
+          <li class="playlist-track">
+            <span class="playlist-track__num">2</span>
+            <div class="playlist-track__info">
+              <p class="playlist-track__song">Chevrolet</p>
+              <p class="playlist-track__artist">Suga Free</p>
+            </div>
+            <span class="playlist-track__vibe">West coast</span>
+          </li>
+          <li class="playlist-track">
+            <span class="playlist-track__num">3</span>
+            <div class="playlist-track__info">
+              <p class="playlist-track__song">Drive It Like You Stole It</p>
+              <p class="playlist-track__artist">Squirrel Nut Zippers</p>
+            </div>
+            <span class="playlist-track__vibe">No notes</span>
+          </li>
+          <li class="playlist-track">
+            <span class="playlist-track__num">4</span>
+            <div class="playlist-track__info">
+              <p class="playlist-track__song">Lowrider</p>
+              <p class="playlist-track__artist">War</p>
+            </div>
+            <span class="playlist-track__vibe">Impala energy</span>
+          </li>
+          <li class="playlist-track">
+            <span class="playlist-track__num">5</span>
+            <div class="playlist-track__info">
+              <p class="playlist-track__song">Cruise</p>
+              <p class="playlist-track__artist">Florida Georgia Line</p>
+            </div>
+            <span class="playlist-track__vibe">Truck anthem</span>
+          </li>
+          <li class="playlist-track">
+            <span class="playlist-track__num">6</span>
+            <div class="playlist-track__info">
+              <p class="playlist-track__song">Old Chevy</p>
+              <p class="playlist-track__artist">Matt Stell</p>
+            </div>
+            <span class="playlist-track__vibe">Country nostalgia</span>
+          </li>
+          <li class="playlist-track">
+            <span class="playlist-track__num">7</span>
+            <div class="playlist-track__info">
+              <p class="playlist-track__song">Something to Ride To</p>
+              <p class="playlist-track__artist">Nipsey Hussle</p>
+            </div>
+            <span class="playlist-track__vibe">Late night miles</span>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ── THIS MONTH'S SCHEDULE ── -->
+  <section aria-labelledby="schedule-heading">
+    <div class="section">
+      <div class="section__header">
+        <p class="section__label">// content calendar</p>
+        <h2 class="section__title" id="schedule-heading">This Month's Schedule</h2>
+        <p class="section__sub">April is packed. Here's everything I'm covering &mdash; reviews, events, and the adventures in between.</p>
+      </div>
+
+      <div class="cal-grid" role="list" aria-label="April 2026 content calendar">
+
+        <div class="cal-item cal-item--live" role="listitem">
+          <span class="cal-item__date">Apr 5</span>
+          <span class="cal-item__name">Camaro Rental Review</span>
+          <span class="cal-item__status cal-item__status--live">Live Now</span>
+        </div>
+
+        <div class="cal-item" role="listitem">
+          <span class="cal-item__date">Apr 11</span>
+          <span class="cal-item__name">610 Cruisers Cruise-In &mdash; Stafford, VA</span>
+          <span class="cal-item__status cal-item__status--event">Event</span>
+        </div>
+
+        <div class="cal-item" role="listitem">
+          <span class="cal-item__date">Apr 18</span>
+          <span class="cal-item__name">Corvette C8 Rental + Skyline Drive</span>
+          <span class="cal-item__status cal-item__status--upcoming">Upcoming</span>
+        </div>
+
+        <div class="cal-item" role="listitem">
+          <span class="cal-item__date">Apr 25</span>
+          <span class="cal-item__name">Tahoe / Silverado Rental Day</span>
+          <span class="cal-item__status cal-item__status--upcoming">Upcoming</span>
+        </div>
+
+        <div class="cal-item" role="listitem">
+          <span class="cal-item__date">Apr 28&ndash;30</span>
+          <span class="cal-item__name">Orioles vs Astros &mdash; Camden Yards, Baltimore</span>
+          <span class="cal-item__status cal-item__status--event">Event</span>
+        </div>
+
+        <div class="cal-item" role="listitem">
+          <span class="cal-item__date">Apr 30</span>
+          <span class="cal-item__name">Cruisin' Ocean City</span>
+          <span class="cal-item__status cal-item__status--event">Event</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ── CRYSTAL'S CHEVY RANK ── -->
+  <section class="section--alt" aria-labelledby="rank-heading">
+    <div class="section">
+      <div class="section__header">
+        <p class="section__label">// the rankings</p>
+        <h2 class="section__title" id="rank-heading">Crystal's Chevy Rank</h2>
+        <p class="section__sub">Every Chevy I get behind the wheel of gets scored. No PR fluff — just honest takes from a girl who actually drives them.</p>
+      </div>
+
+      <div class="rank-grid">
+
+        <div class="rank-item">
+          <div class="rank-item__info">
+            <p class="rank-item__label">Daily driver &bull; My truck</p>
+            <h3 class="rank-item__name">Her Truck</h3>
+            <p class="rank-item__quote">"My ride or die. No debate."</p>
+          </div>
+          <div class="rank-item__score-wrap">
+            <div class="rank-item__score">9.0<span>/10</span></div>
+            <div class="rank-item__bar-wrap">
+              <div class="rank-item__bar" style="width:90%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rank-item">
+          <div class="rank-item__info">
+            <p class="rank-item__label">Rental &bull; April 2026</p>
+            <h3 class="rank-item__name">Camaro</h3>
+            <p class="rank-item__quote">"Made me feel like a different person."</p>
+          </div>
+          <div class="rank-item__score-wrap">
+            <div class="rank-item__score">8.5<span>/10</span></div>
+            <div class="rank-item__bar-wrap">
+              <div class="rank-item__bar" style="width:85%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rank-item rank-item--tease">
+          <div class="rank-item__info">
+            <p class="rank-item__label">More coming &bull; Stay tuned</p>
+            <h3 class="rank-item__name">Next Up: ???</h3>
+            <p class="rank-item__quote">"The list is growing. Check back."</p>
+          </div>
+          <div class="rank-item__score-wrap">
+            <div class="rank-item__score">—<span>/10</span></div>
+            <div class="rank-item__bar-wrap">
+              <div class="rank-item__bar" style="width:0%;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ── CRYSTAL'S CHEVY WISHLIST ── -->
+  <section aria-labelledby="wishlist-heading">
+    <div class="section">
+      <div class="section__header">
+        <p class="section__label">// bucket list</p>
+        <h2 class="section__title" id="wishlist-heading">Crystal's Chevy Wishlist</h2>
+        <p class="section__sub">The Chevys I haven't driven yet but fully intend to. Some have a plan. Some are just dreams right now.</p>
+      </div>
+
+      <div class="rank-grid">
+
+        <div class="rank-item">
+          <div class="rank-item__info">
+            <p class="rank-item__label">Next rental target &bull; C8 Mid-Engine</p>
+            <h3 class="rank-item__name">Corvette C8</h3>
+            <p class="rank-item__quote">"The most American supercar. I need a whole day with this thing."</p>
+          </div>
+          <div class="rank-item__score-wrap">
+            <div class="rank-item__score" style="font-size:1.6rem; padding-top: 8px;">ON<br>LIST</div>
+          </div>
+        </div>
+
+        <div class="rank-item">
+          <div class="rank-item__info">
+            <p class="rank-item__label">Family SUV done right &bull; Off-road trim</p>
+            <h3 class="rank-item__name">Tahoe Z71</h3>
+            <p class="rank-item__quote">"I want to take this thing somewhere with no cell service and zero regrets."</p>
+          </div>
+          <div class="rank-item__score-wrap">
+            <div class="rank-item__score" style="font-size:1.6rem; padding-top: 8px;">ON<br>LIST</div>
+          </div>
+        </div>
+
+        <div class="rank-item">
+          <div class="rank-item__info">
+            <p class="rank-item__label">The classic &bull; C10 Stepside or Fleetside</p>
+            <h3 class="rank-item__name">Classic C10</h3>
+            <p class="rank-item__quote">"Square body, patina finish, small-block V8. The dream truck. This is the one I actually want to own."</p>
+          </div>
+          <div class="rank-item__score-wrap">
+            <div class="rank-item__score" style="font-size:1.6rem; padding-top: 8px;">THE<br>DREAM</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ── ASK CRYSTAL ── -->
+  <section aria-labelledby="ask-heading">
+    <div class="section">
+      <div class="ask-wrap">
+
+        <div class="ask__pitch">
+          <p class="section__label">// hit me up</p>
+          <h2 class="ask__pitch-title" id="ask-heading">Ask<br><em>Crystal</em></h2>
+          <p class="ask__pitch-body">
+            Got a Chevy question? Want me to review something? Found a meet I should know about? Drop it here.
+          </p>
+          <p class="ask__pitch-body">
+            I read everything. I might even make a video about it.
+          </p>
+          <div class="ask__note">
+            The best questions end up in content. Just saying.
+          </div>
+        </div>
+
+        <form class="form" id="ask-crystal-form" action="#" method="post" aria-label="Ask Crystal a question">
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" for="ask-name">Name</label>
+              <input class="form__input" type="text" id="ask-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="ask-email">Email</label>
+              <input class="form__input" type="email" id="ask-email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="ask-question">Your question or request</label>
+            <textarea class="form__textarea" id="ask-question" name="question" placeholder="Ask me anything Chevy — a model question, a review request, a hot take you need validated..." required></textarea>
+          </div>
+          <button class="form__btn" type="submit">Send it &rarr;</button>
+          <p id="ask-confirm" style="display:none; font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold); margin-top: 4px; letter-spacing: 0.06em;">Got it. I'll read it. Might even respond.</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ── FOLLOW THE JOURNEY ── -->
+  <section class="section--alt" aria-labelledby="social-heading">
+    <div class="section">
+      <div class="section__header">
+        <p class="section__label">// follow along</p>
+        <h2 class="section__title" id="social-heading">Follow the Journey</h2>
+        <p class="section__sub">Chevy content, hot takes, and the occasional steering wheel selfie. Come hang.</p>
+      </div>
+
+      <div class="social-grid">
+
+        <!-- TikTok -->
+        <div class="social-block">
+          <div class="social-block__header">
+            <div class="social-block__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+            </div>
+            <div>
+              <p class="social-block__handle">@chevyroots</p>
+              <p class="social-block__platform">TikTok</p>
+            </div>
+          </div>
+          <div class="social-block__embed" role="img" aria-label="TikTok feed placeholder">
+            <div class="social-block__embed-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+            </div>
+            <p class="social-block__embed-label">TikTok feed<br>embed goes here</p>
+          </div>
+          <div class="social-block__footer" style="display:flex; align-items:center; justify-content:space-between;">
+            <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--muted);letter-spacing:0.06em;">Building &bull; Follow along</span>
+            <a href="https://tiktok.com/@chevyroots" target="_blank" rel="noopener" class="social-block__follow">
+              Follow @chevyroots &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="social-block">
+          <div class="social-block__header">
+            <div class="social-block__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </div>
+            <div>
+              <p class="social-block__handle">@chevyroots</p>
+              <p class="social-block__platform">Instagram</p>
+            </div>
+          </div>
+          <div class="social-block__embed" role="img" aria-label="Instagram feed placeholder">
+            <div class="social-block__embed-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </div>
+            <p class="social-block__embed-label">Instagram feed<br>embed goes here</p>
+          </div>
+          <div class="social-block__footer" style="display:flex; align-items:center; justify-content:space-between;">
+            <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--muted);letter-spacing:0.06em;">Building &bull; Follow along</span>
+            <a href="https://instagram.com/chevyroots" target="_blank" rel="noopener" class="social-block__follow">
+              Follow @chevyroots &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- YouTube -->
+        <div class="social-block">
+          <div class="social-block__header">
+            <div class="social-block__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <div>
+              <p class="social-block__handle">ChevyRoots</p>
+              <p class="social-block__platform">YouTube</p>
+            </div>
+          </div>
+          <div class="social-block__embed" role="img" aria-label="YouTube feed placeholder">
+            <div class="social-block__embed-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <p class="social-block__embed-label">YouTube latest video<br>embed goes here</p>
+          </div>
+          <div class="social-block__footer" style="display:flex; align-items:center; justify-content:space-between;">
+            <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--muted);letter-spacing:0.06em;">Building &bull; Subscribe now</span>
+            <a href="https://youtube.com/@chevyroots" target="_blank" rel="noopener" class="social-block__follow">
+              Subscribe @chevyroots &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEWSLETTER ── -->
+  <div class="newsletter-band">
+    <div class="section">
+      <div class="newsletter__copy">
+        <p class="newsletter__eyebrow">// every thursday</p>
+        <h2 class="newsletter__title">Get Crystal's picks in<br><em>The Weekly Wrench</em></h2>
+        <p class="newsletter__sub">New Chevy content, event drops, and whatever's on my mind — every Thursday, no filler.</p>
+      </div>
+      <form class="newsletter__form" action="#" method="post" aria-label="Newsletter signup">
+        <label for="nl-email" class="sr-only">Email address</label>
+        <input class="newsletter__input" type="email" id="nl-email" name="email" placeholder="your@email.com" required />
+        <button class="newsletter__btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+
+        <div>
+          <p class="footer__brand-name">Chevy<span>Roots</span></p>
+          <p class="footer__tagline">Run by a Chevy Girl</p>
+          <p style="font-size:0.85rem; color: var(--muted); line-height:1.65;">The community resource for Chevy owners, builders, and fans — built by someone who actually drives one.</p>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Explore</p>
+          <ul class="footer__col-links">
+            <li><a href="/pages/models/">Models</a></li>
+            <li><a href="/pages/guides/">Guides</a></li>
+            <li><a href="/pages/builds/">Builds</a></li>
+            <li><a href="/pages/events/">Events</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Crystal's Corner</p>
+          <ul class="footer__col-links">
+            <li><a href="/pages/crystals-corner/">The Column</a></li>
+            <li><a href="/pages/crystals-corner/#ask">Ask Crystal</a></li>
+            <li><a href="/pages/crystals-corner/#rank">Chevy Rankings</a></li>
+            <li><a href="/pages/newsletter/">Weekly Wrench</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Connect</p>
+          <ul class="footer__col-links">
+            <li><a href="https://tiktok.com/@chevyroots" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://instagram.com/chevyroots" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://youtube.com/@chevyroots" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="/pages/about/">About</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 ChevyRoots. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ── -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <script>
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    // Close nav on outside click
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Smooth form submit feedback (no actual submission)
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const original = btn.textContent;
+        btn.textContent = 'Sent!';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.disabled = false;
+          form.reset();
+        }, 2500);
+      });
+    });
+  </script>
+
+  <script>
+    // Ask Crystal form — save submissions to localStorage
+    (function() {
+      var form = document.getElementById('ask-crystal-form');
+      var confirm = document.getElementById('ask-confirm');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var submission = {
+          name: document.getElementById('ask-name').value.trim(),
+          email: document.getElementById('ask-email').value.trim(),
+          question: document.getElementById('ask-question').value.trim(),
+          submittedAt: new Date().toISOString()
+        };
+        try {
+          var stored = JSON.parse(localStorage.getItem('chevyroots_ask_crystal') || '[]');
+          stored.push(submission);
+          localStorage.setItem('chevyroots_ask_crystal', JSON.stringify(stored));
+        } catch(err) { /* storage unavailable */ }
+        form.reset();
+        if (confirm) {
+          confirm.style.display = 'block';
+          setTimeout(function() { confirm.style.display = 'none'; }, 4000);
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

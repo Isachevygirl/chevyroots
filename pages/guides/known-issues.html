@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chevrolet Known Issues Database | ChevyRoots</title>
+  <meta name="description" content="Real, documented Chevrolet known issues by model and year — Silverado, Corvette, Camaro, and more. Sourced from NHTSA complaints, TSBs, and owner forums." />
+  <meta name="keywords" content="Chevrolet known issues, Silverado problems, Chevy TSB, NHTSA complaints Chevy, Corvette known issues, Chevy recall database" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/known-issues.html" />
+  <meta property="og:title" content="Chevrolet Known Issues Database | ChevyRoots" />
+  <meta property="og:description" content="Real, documented Chevy known issues by model and year — Silverado, Corvette, Camaro, and more. Sourced from NHTSA complaints, TSBs, and owner forums." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/known-issues.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --charcoal:   #1A1A1A;
+      --warm-gray:  #2A2A2A;
+      --mid-gray:   #333333;
+      --gold:       #C4A035;
+      --gold-light: #D4B44A;
+      --gold-dk:    #9E7F22;
+      --red:        #CC0000;
+      --off-white:  #F0EDE6;
+      --light-gray: #B0A89A;
+      --muted:      #707070;
+
+      --sev-major:   #CC3333;
+      --sev-moderate: #C4A035;
+      --sev-minor:   #4A9E6B;
+
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
+
+      --radius: 4px;
+      --radius-lg: 8px;
+      --transition: 200ms ease;
+      --max-width: 1280px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--charcoal);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--gold-light); }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 64px;
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      height: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.55rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      line-height: 1;
+    }
+    .nav-logo em { font-style: normal; color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+
+    .nav-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+    }
+    .nav-menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--off-white);
+    }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0; right: 0;
+      background: var(--warm-gray);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+    }
+    .nav-mobile a:hover { color: var(--gold); background: rgba(196,160,53,0.08); }
+
+    /* ── PAGE HERO ──────────────────────────────────────── */
+    .page-hero {
+      background: linear-gradient(135deg, #1A1A1A 0%, #222 50%, #1e1a12 100%);
+      border-bottom: 1px solid rgba(196,160,53,0.15);
+      padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2.5rem);
+      text-align: center;
+    }
+
+    .page-hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.05;
+      color: var(--off-white);
+      margin-bottom: 1rem;
+    }
+
+    .page-hero h1 em { font-style: normal; color: var(--gold); }
+
+    .page-hero p {
+      max-width: 580px;
+      margin: 0 auto 2rem;
+      color: var(--light-gray);
+      font-size: 1rem;
+    }
+
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-top: 0.25rem;
+    }
+
+    /* ── CONTROLS ───────────────────────────────────────── */
+    .controls-section {
+      background: var(--warm-gray);
+      border-bottom: 1px solid var(--mid-gray);
+      padding: 1.5rem clamp(1rem, 4vw, 2.5rem);
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+
+    .controls-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--charcoal);
+      border: 1px solid var(--mid-gray);
+      border-radius: var(--radius);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 0.65rem 1rem 0.65rem 2.4rem;
+      transition: border-color var(--transition);
+      outline: none;
+    }
+    .search-input::placeholder { color: var(--muted); }
+    .search-input:focus { border-color: var(--gold); }
+
+    .filter-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--mid-gray);
+      background: var(--charcoal);
+      color: var(--light-gray);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .filter-btn.active-model { border-color: var(--gold); color: var(--gold); background: rgba(196,160,53,0.1); }
+    .filter-btn.active-sev-major { border-color: var(--sev-major); color: var(--sev-major); background: rgba(204,51,51,0.1); }
+    .filter-btn.active-sev-moderate { border-color: var(--sev-moderate); color: var(--sev-moderate); background: rgba(196,160,53,0.1); }
+    .filter-btn.active-sev-minor { border-color: var(--sev-minor); color: var(--sev-minor); background: rgba(74,158,107,0.1); }
+
+    .results-count {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* ── MAIN CONTENT ───────────────────────────────────── */
+    .main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem clamp(1rem, 4vw, 2.5rem) 5rem;
+    }
+
+    /* ── MODEL SECTION ──────────────────────────────────── */
+    .model-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .model-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid rgba(196,160,53,0.2);
+    }
+
+    .model-name {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--off-white);
+    }
+
+    .model-years {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      border: 1px solid rgba(196,160,53,0.3);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius);
+    }
+
+    .model-issue-count {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-left: auto;
+    }
+
+    /* ── ISSUE CARDS GRID ───────────────────────────────── */
+    .issues-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* ── ISSUE CARD ─────────────────────────────────────── */
+    .issue-card {
+      background: var(--warm-gray);
+      border: 1px solid var(--mid-gray);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .issue-card:hover {
+      border-color: rgba(196,160,53,0.35);
+      transform: translateY(-2px);
+    }
+
+    .issue-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 1.25rem 1.25rem 0.75rem;
+    }
+
+    .issue-card-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      flex: 1;
+    }
+
+    .issue-model-tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .issue-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--off-white);
+      line-height: 1.2;
+    }
+
+    .sev-badge {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.65rem;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .sev-badge.major    { background: rgba(204,51,51,0.15);  color: #e85555; border: 1px solid rgba(204,51,51,0.35); }
+    .sev-badge.moderate { background: rgba(196,160,53,0.15); color: var(--gold-light); border: 1px solid rgba(196,160,53,0.35); }
+    .sev-badge.minor    { background: rgba(74,158,107,0.15); color: #6ec48a; border: 1px solid rgba(74,158,107,0.35); }
+
+    .issue-card-body {
+      padding: 0 1.25rem 1.25rem;
+    }
+
+    .issue-description {
+      font-size: 0.88rem;
+      color: var(--light-gray);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+
+    .issue-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .detail-block {
+      background: rgba(0,0,0,0.2);
+      border-radius: var(--radius);
+      padding: 0.6rem 0.75rem;
+    }
+
+    .detail-label {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .detail-value {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--off-white);
+      line-height: 1.35;
+    }
+
+    .detail-value.cost { color: var(--gold); font-family: var(--font-mono); }
+    .detail-value.free { color: #6ec48a; font-family: var(--font-mono); }
+
+    .issue-tsb {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+    .issue-tsb span { color: var(--light-gray); }
+
+    .issue-card-footer {
+      border-top: 1px solid var(--mid-gray);
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .model-page-link {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      border: 1px solid var(--mid-gray);
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+    .model-page-link:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.25);
+      color: var(--off-white);
+    }
+
+    /* ── REPORT NEW ISSUE CTA ───────────────────────────────── */
+    .report-cta {
+      background: var(--warm-gray);
+      border: 1px solid rgba(196,160,53,0.25);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .report-cta h3 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--off-white);
+      margin-bottom: 0.6rem;
+    }
+    .report-cta p {
+      font-size: 0.9rem;
+      color: var(--light-gray);
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+    .report-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.75rem 2rem;
+      border-radius: var(--radius);
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .report-cta-btn:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+    }
+
+    .report-link {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(196,160,53,0.3);
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+    .report-link:hover {
+      background: rgba(196,160,53,0.1);
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    /* ── NO RESULTS ─────────────────────────────────────── */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .no-results-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      opacity: 0.4;
+    }
+    .no-results h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-bottom: 0.5rem;
+    }
+    .no-results p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── DISCLAIMER ─────────────────────────────────────── */
+    .disclaimer {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--mid-gray);
+      border-left: 3px solid rgba(196,160,53,0.4);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .disclaimer p {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    .footer {
+      background: #111;
+      border-top: 1px solid rgba(196,160,53,0.15);
+      padding: 2.5rem clamp(1rem, 4vw, 2.5rem);
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--off-white);
+      margin-bottom: 0.5rem;
+    }
+    .footer-logo em { font-style: normal; color: var(--gold); }
+    .footer-note {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-menu-toggle { display: flex; }
+      .issues-grid { grid-template-columns: 1fr; }
+      .controls-section { top: 64px; }
+      .issue-details { grid-template-columns: 1fr; }
+      .stats-row { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <em>Chevy</em>Roots
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/" class="active">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/news/">News</a></li>
+        <li><a href="/pages/about/">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+      <button class="nav-menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile navigation">
+    <a href="/pages/models/">Models</a>
+    <a href="/pages/guides/">Guides</a>
+    <a href="/pages/builds/">Builds</a>
+    <a href="/pages/events/">Events</a>
+    <a href="/pages/crystals-corner/">Crystal's Corner</a>
+    <a href="/pages/news/">News</a>
+    <a href="/pages/about/">About</a>
+    <a href="/pages/builds/" style="margin-top:0.5rem;">Submit Your Build</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <p class="page-hero-eyebrow">// ChevyRoots — Guides</p>
+    <h1>Known <em>Issues</em> Database</h1>
+    <p>Real, documented problems sourced from NHTSA complaints, technical service bulletins, and owner forums. Know before you buy — or before you ignore that warning light.</p>
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num" id="totalIssues">29</div>
+        <div class="stat-label">Documented Issues</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10</div>
+        <div class="stat-label">Models Covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2018–2025</div>
+        <div class="stat-label">Year Range</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTROLS -->
+  <div class="controls-section">
+    <div class="controls-inner">
+      <div class="search-wrap">
+        <span class="search-icon">&#128269;</span>
+        <input
+          type="search"
+          class="search-input"
+          id="searchInput"
+          placeholder="Search issues, models, symptoms..."
+          autocomplete="off"
+          aria-label="Search known issues"
+        />
+      </div>
+      <div class="filter-group" id="modelFilters">
+        <button class="filter-btn active-model" data-filter="all" onclick="setModelFilter('all', this)">All Models</button>
+        <button class="filter-btn" data-filter="silverado" onclick="setModelFilter('silverado', this)">Silverado</button>
+        <button class="filter-btn" data-filter="equinox" onclick="setModelFilter('equinox', this)">Equinox</button>
+        <button class="filter-btn" data-filter="traverse" onclick="setModelFilter('traverse', this)">Traverse</button>
+        <button class="filter-btn" data-filter="corvette" onclick="setModelFilter('corvette', this)">Corvette C8</button>
+        <button class="filter-btn" data-filter="colorado" onclick="setModelFilter('colorado', this)">Colorado</button>
+        <button class="filter-btn" data-filter="tahoe" onclick="setModelFilter('tahoe', this)">Tahoe/Suburban</button>
+        <button class="filter-btn" data-filter="camaro" onclick="setModelFilter('camaro', this)">Camaro</button>
+        <button class="filter-btn" data-filter="blazer" onclick="setModelFilter('blazer', this)">Blazer</button>
+        <button class="filter-btn" data-filter="trax" onclick="setModelFilter('trax', this)">Trax</button>
+        <button class="filter-btn" data-filter="malibu" onclick="setModelFilter('malibu', this)">Malibu</button>
+      </div>
+      <div class="filter-group" id="sevFilters">
+        <button class="filter-btn" data-sev="all" onclick="setSevFilter('all', this)">All Severity</button>
+        <button class="filter-btn" data-sev="major" onclick="setSevFilter('major', this)">Major</button>
+        <button class="filter-btn" data-sev="moderate" onclick="setSevFilter('moderate', this)">Moderate</button>
+        <button class="filter-btn" data-sev="minor" onclick="setSevFilter('minor', this)">Minor</button>
+      </div>
+      <span class="results-count" id="resultsCount">29 issues</span>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="main" id="mainContent">
+
+    <div class="disclaimer">
+      <p>&#9888; Information compiled from NHTSA complaints, technical service bulletins, and owner forums. Not affiliated with General Motors. Always consult a certified mechanic before making repair decisions. Costs are estimated ranges and may vary by region and shop.</p>
+    </div>
+
+    <!-- SILVERADO 1500 -->
+    <section class="model-section" data-model="silverado">
+      <div class="model-header">
+        <h2 class="model-name">Silverado 1500</h2>
+        <span class="model-years">2019–2024</span>
+        <span class="model-issue-count">6 issues</span>
+      </div>
+      <div class="issues-grid">
+
+        <article class="issue-card" data-model="silverado" data-sev="major" data-search="silverado afm dfm lifter failure active fuel management 5.3l v8 ticking noise misfire check engine" id="silverado-afm-lifter">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Silverado 1500 &middot; 2019–2024</span>
+              <h3 class="issue-title">AFM/DFM Lifter Failure</h3>
+            </div>
+            <span class="sev-badge major">Major</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">Active Fuel Management (AFM) and Dynamic Fuel Management (DFM) lifters collapse prematurely, especially on 5.3L V8 engines. One of the most widespread and costly issues affecting this generation.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Ticking/tapping noise, engine misfire, check engine light (P0300s), rough idle</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Lifter replacement + cam inspection; AFM delete kit recommended</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$3,000 – $5,000</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Affected Engine</div>
+                <div class="detail-value">5.3L V8 (L84/L87)</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=silverado-1500&year=2021" class="model-page-link">View Silverado 1500 &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2021/CHEVROLET/SILVERADO%201500/PU/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="silverado" data-sev="moderate" data-search="silverado 8-speed transmission shudder torque converter 30-50 mph 8l90 tsb 18-na-355">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Silverado 1500 &middot; 2019–2024</span>
+              <h3 class="issue-title">8-Speed Transmission Shudder</h3>
+            </div>
+            <span class="sev-badge moderate">Moderate</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">Torque converter shudder at 30–50 mph under light throttle, primarily in the 8L90 8-speed automatic. Feels like driving over rumble strips. GM issued TSB 18-NA-355 addressing the condition.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Vibration/shudder at 30–50 mph, light throttle, feels like rough road</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Transmission fluid flush with updated fluid; torque converter replacement if severe</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$400 – $2,500</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">TSB Reference</div>
+                <div class="detail-value">18-NA-355</div>
+              </div>
+            </div>
+            <p class="issue-tsb">TSB: <span>18-NA-355</span></p>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=silverado-1500&year=2021" class="model-page-link">View Silverado 1500 &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2021/CHEVROLET/SILVERADO%201500/PU/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="silverado" data-sev="minor" data-search="silverado brake rotor warping premature 2019 2020 2021 pads">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Silverado 1500 &middot; 2019–2021</span>
+              <h3 class="issue-title">Brake Rotor Warping</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">Brake rotors warp prematurely — often well before the 30,000-mile mark — leading to pedal pulsation and vibration under braking. More common on 2019–2021 models. May be related to OEM rotor metallurgy.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Brake pedal pulsation, steering wheel vibration when braking, squealing</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Replace rotors and brake pads; consider upgraded aftermarket rotors</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$400 – $800</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Peak Incidence</div>
+                <div class="detail-value">2019–2021 models</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=silverado-1500&year=2020" class="model-page-link">View Silverado 1500 &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2020/CHEVROLET/SILVERADO%201500/PU/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="silverado" data-sev="minor" data-search="silverado steering intermediate shaft clunk popping noise low speed turning 2019 2020 2021 2022 2023 tsb 19-na-240">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Silverado 1500 &middot; 2019–2023</span>
+              <h3 class="issue-title">Steering Intermediate Shaft Clunk</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">A clunking or popping noise when turning at low speeds is a widespread complaint on 2019–2023 Silverados. The intermediate steering shaft u-joint develops play and produces audible clunks during parking maneuvers and slow turns. GM issued TSB 19-NA-240.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Clunk or pop from steering column area during slow turns, parking, U-turns</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Replacement of steering intermediate shaft per TSB 19-NA-240</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$300 – $600</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">TSB Reference</div>
+                <div class="detail-value">19-NA-240</div>
+              </div>
+            </div>
+            <p class="issue-tsb">TSB: <span>19-NA-240</span></p>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=silverado-1500&year=2021" class="model-page-link">View Silverado 1500 &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2021/CHEVROLET/SILVERADO%201500/PU/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="silverado" data-sev="minor" data-search="silverado dashboard cracking dash crack defrost vents 2019 2020 2021 heat uv">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Silverado 1500 &middot; 2019–2021</span>
+              <h3 class="issue-title">Dashboard Cracking Near Defrost Vents</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">Dashboards on 2019–2021 Silverados crack and split near the defroster vent openings, especially in high-heat or high-UV climates. The hard plastic material used around the vent area is prone to stress fractures and is a documented cosmetic concern.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Visible cracks or splitting in dash plastic around defroster vents</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Dashboard replacement; often covered under warranty or goodwill</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$1,500 – $2,500</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Peak Incidence</div>
+                <div class="detail-value">2019–2021 models, hot/sunny climates</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=silverado-1500&year=2020" class="model-page-link">View Silverado 1500 &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2020/CHEVROLET/SILVERADO%201500/PU/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="silverado" data-sev="major" data-search="silverado fuel pump failure di direct injection no start hard start 5.3l 6.2l 2019 2020 2021 2022 ticking">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Silverado 1500 &middot; 2019–2022 (5.3L/6.2L)</span>
+              <h3 class="issue-title">DI Fuel Pump Failure</h3>
+            </div>
+            <span class="sev-badge major">Major</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The direct-injection high-pressure fuel pump on 2019–2022 5.3L and 6.2L V8 engines can fail, causing hard starts, no-start conditions, and loss of power under acceleration. Failure is sometimes preceded by a ticking noise near the top of the engine.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Hard start or no-start, loss of power, ticking from top of engine, P0087/P00C6 codes</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">High-pressure fuel pump replacement</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$800 – $1,400</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Affected Engines</div>
+                <div class="detail-value">5.3L L84, 6.2L L87 (2019–2022)</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=silverado-1500&year=2021" class="model-page-link">View Silverado 1500 &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2021/CHEVROLET/SILVERADO%201500/PU/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EQUINOX -->
+    <section class="model-section" data-model="equinox">
+      <div class="model-header">
+        <h2 class="model-name">Equinox</h2>
+        <span class="model-years">2018–2024</span>
+        <span class="model-issue-count">2 issues</span>
+      </div>
+      <div class="issues-grid">
+
+        <article class="issue-card" data-model="equinox" data-sev="major" data-search="equinox oil consumption 1.5t turbo piston ring engine rebuild excessive">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Equinox &middot; 2018–2024</span>
+              <h3 class="issue-title">Excessive Oil Consumption (1.5T)</h3>
+            </div>
+            <span class="sev-badge major">Major</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The 1.5L turbocharged 4-cylinder consumes abnormal amounts of oil between changes — some owners report needing to add a quart every 1,000–2,000 miles. Root cause traced to piston ring design allowing oil to burn off into combustion.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Low oil light between changes, blue-tinged exhaust smoke, oil burning smell</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Piston ring replacement; severe cases may require short block or engine rebuild</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$2,000 – $4,000</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Affected Engine</div>
+                <div class="detail-value">1.5L Turbo-4 (LYX/LFV)</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=equinox&year=2019" class="model-page-link">View Equinox &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2019/CHEVROLET/EQUINOX/SUV/AWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="equinox" data-sev="moderate" data-search="equinox infotainment screen black blank unresponsive touchscreen 2018 2019 2020">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Equinox &middot; 2018–2020</span>
+              <h3 class="issue-title">Infotainment Screen Failure</h3>
+            </div>
+            <span class="sev-badge moderate">Moderate</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The center touchscreen goes completely black, freezes, or becomes unresponsive — sometimes mid-drive. Most prevalent on 2018–2020 models. Tied to the Bosch head unit used in that generation.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Black screen, frozen display, touch unresponsive, intermittent reboot loops</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Head unit / screen module replacement</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$500 – $1,200</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Peak Incidence</div>
+                <div class="detail-value">2018–2020 models</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=equinox&year=2019" class="model-page-link">View Equinox &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2019/CHEVROLET/EQUINOX/SUV/AWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- TRAVERSE -->
+    <section class="model-section" data-model="traverse">
+      <div class="model-header">
+        <h2 class="model-name">Traverse</h2>
+        <span class="model-years">2018–2024</span>
+        <span class="model-issue-count">2 issues</span>
+      </div>
+      <div class="issues-grid">
+
+        <article class="issue-card" data-model="traverse" data-sev="major" data-search="traverse timing chain stretch 3.6l v6 rattle cold start check engine premature">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Traverse &middot; 2018–2024</span>
+              <h3 class="issue-title">Timing Chain Stretch</h3>
+            </div>
+            <span class="sev-badge major">Major</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The 3.6L V6 LGX engine is known for timing chain guides wearing and chains stretching prematurely. Left unaddressed, a jumped timing chain can cause catastrophic engine damage. Earlier oil change intervals are strongly recommended.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Rattling on cold start (first few seconds), check engine light (cam timing codes), rough idle</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Full timing chain, guides, and tensioner replacement</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$1,500 – $3,000</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Affected Engine</div>
+                <div class="detail-value">3.6L V6 (LGX)</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=traverse&year=2019" class="model-page-link">View Traverse &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2019/CHEVROLET/TRAVERSE/SUV/AWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="traverse" data-sev="moderate" data-search="traverse transmission harsh shifting 9-speed 1-2 2-3 valve body reprogram">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Traverse &middot; 2018–2024</span>
+              <h3 class="issue-title">Transmission Harsh Shifting</h3>
+            </div>
+            <span class="sev-badge moderate">Moderate</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The 9-speed automatic can exhibit harsh, clunky shifts especially on 1-2 and 2-3 gear changes. Some owners describe it as feeling like being rear-ended at low speeds. Both software and hardware paths exist for resolution.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Hard clunk on 1-2 and 2-3 shifts, especially from a stop in cold weather</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Transmission control module reprogram; valve body replacement if reprogram fails</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$200 – $2,000</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Transmission</div>
+                <div class="detail-value">9T65 9-speed automatic</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=traverse&year=2019" class="model-page-link">View Traverse &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2019/CHEVROLET/TRAVERSE/SUV/AWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CORVETTE C8 -->
+    <section class="model-section" data-model="corvette">
+      <div class="model-header">
+        <h2 class="model-name">Corvette C8</h2>
+        <span class="model-years">2020–2024</span>
+        <span class="model-issue-count">2 issues</span>
+      </div>
+      <div class="issues-grid">
+
+        <article class="issue-card" data-model="corvette" data-sev="minor" data-search="corvette c8 frunk latch failure front trunk recall nhtsa 22v-573">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Corvette C8 &middot; 2020–2023</span>
+              <h3 class="issue-title">Frunk Latch Failure</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The front trunk (frunk) latch can fail to open or close properly, sometimes leaving the frunk unlatched during driving. NHTSA issued a formal recall covering this defect — repairs are fully covered under the recall at no cost.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Frunk won't open, won't latch closed, or pops open unexpectedly while driving</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Frunk latch assembly replacement — covered under NHTSA Recall 22V-573</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value free">$0 (Recall)</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recall Reference</div>
+                <div class="detail-value">NHTSA 22V-573</div>
+              </div>
+            </div>
+            <p class="issue-tsb">Recall: <span>NHTSA 22V-573</span></p>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=corvette-c8&year=2022" class="model-page-link">View Corvette C8 &#8594;</a>
+            <a href="https://www.nhtsa.gov/recalls?nhtsaId=22V573" class="report-link" target="_blank" rel="noopener">View Recall &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="corvette" data-sev="moderate" data-search="corvette c8 z51 clutch overheating dual clutch dct performance limited message spirited driving">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Corvette C8 Z51 &middot; 2020–2024</span>
+              <h3 class="issue-title">Z51 Clutch Overheating</h3>
+            </div>
+            <span class="sev-badge moderate">Moderate</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The dual-clutch automatic (DCT) in Z51-equipped C8s can overheat during aggressive or track driving, triggering a "Performance Limited" dashboard message and reducing power output. Software updates have partially addressed thermal management.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">"Performance Limited" message, reduced power, smell of clutch material under hard use</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Software/ECU update; allow cooldown periods; proper track prep for repeated use</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$0 – $500</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Transmission</div>
+                <div class="detail-value">8DCT Tremec dual-clutch</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=corvette-c8&year=2022" class="model-page-link">View Corvette C8 &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2022/CHEVROLET/CORVETTE/COUPE/RWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- COLORADO -->
+    <section class="model-section" data-model="colorado">
+      <div class="model-header">
+        <h2 class="model-name">Colorado</h2>
+        <span class="model-years">2023–2025</span>
+        <span class="model-issue-count">3 issues</span>
+      </div>
+      <div class="issues-grid">
+
+        <article class="issue-card" data-model="colorado" data-sev="minor" data-search="colorado turbo lag hesitation 2.7l turbo-4 acceleration ecu recalibration">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Colorado &middot; 2023–2025</span>
+              <h3 class="issue-title">Turbo Lag / Acceleration Hesitation</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The 2.7L Turbo-4 exhibits a noticeable hesitation or stumble when accelerating from a complete stop, particularly in lower power tunes. Most pronounced in base and LT trims. ECU calibration updates have improved but not fully resolved the behavior for all owners.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Stumble or hesitation 0–20 mph from stop, most noticeable in lower trim levels</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Dealer ECU recalibration / software update</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$0 – $200</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Affected Engine</div>
+                <div class="detail-value">2.7L Turbo-4 (L3B, base tune)</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=colorado&year=2023" class="model-page-link">View Colorado &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2023/CHEVROLET/COLORADO/PU/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="colorado" data-sev="moderate" data-search="colorado 8-speed transmission shudder torque converter highway speed vibration 2023 2024 2025">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Colorado &middot; 2023–2025</span>
+              <h3 class="issue-title">8-Speed Transmission Shudder</h3>
+            </div>
+            <span class="sev-badge moderate">Moderate</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">Similar to the Silverado's torque converter shudder, the 8-speed automatic in the 2023+ Colorado exhibits shudder or vibration at highway cruise speeds under light throttle — most noticeable in the 45–65 mph range. The condition is caused by torque converter clutch slip.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Vibration/shudder at 45–65 mph under light throttle, similar to driving on rumble strips</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Transmission fluid flush with Dexron HP; torque converter replacement if severe</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$400 – $2,500</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Transmission</div>
+                <div class="detail-value">8L45 8-speed automatic</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=colorado&year=2023" class="model-page-link">View Colorado &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2023/CHEVROLET/COLORADO/PU/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="colorado" data-sev="minor" data-search="colorado electrical gremlins phantom warnings infotainment reset warning lights bcm ground wire 2023 2024">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Colorado &middot; 2023–2025</span>
+              <h3 class="issue-title">Electrical Gremlins / Phantom Warnings</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">A subset of 2023+ Colorado owners report intermittent electrical issues including phantom warning lights, infotainment system resets, and unexplained error messages that clear on their own. Ground wire integrity and software calibration are the most commonly identified culprits.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Intermittent dash warnings, infotainment resets, errors that self-clear on restart</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Software update first; if persistent, inspect/clean ground wire connections or BCM reprogram</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$0 – $500</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">First Step</div>
+                <div class="detail-value">Dealer software update / ground inspection</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=colorado&year=2023" class="model-page-link">View Colorado &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2023/CHEVROLET/COLORADO/PU/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- TAHOE/SUBURBAN -->
+    <section class="model-section" data-model="tahoe">
+      <div class="model-header">
+        <h2 class="model-name">Tahoe / Suburban</h2>
+        <span class="model-years">2021–2024</span>
+        <span class="model-issue-count">5 issues</span>
+      </div>
+      <div class="issues-grid">
+
+        <article class="issue-card" data-model="tahoe" data-sev="moderate" data-search="tahoe suburban air ride suspension compressor failure magnetic ride control MRC premature">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Tahoe / Suburban &middot; 2021–2024</span>
+              <h3 class="issue-title">Air Ride Suspension Compressor Failure</h3>
+            </div>
+            <span class="sev-badge moderate">Moderate</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The air compressor for the optional Magnetic Ride Control / air ride suspension fails prematurely on many 2021+ Tahoe and Suburban units. Warning lights illuminate and the vehicle may default to a firm, non-adjustable ride height.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Suspension warning light, vehicle sitting low or uneven, compressor noise or silence</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Air suspension compressor replacement</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$1,200 – $2,500</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Affected Option</div>
+                <div class="detail-value">Magnetic Ride Control / air ride packages</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=tahoe&year=2022" class="model-page-link">View Tahoe &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2022/CHEVROLET/TAHOE/SUV/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="tahoe" data-sev="minor" data-search="tahoe suburban rear window leak water intrusion seal reseal">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Tahoe / Suburban &middot; 2021–2024</span>
+              <h3 class="issue-title">Rear Window Water Leak</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">Water intrudes around the rear window seal, leading to wet cargo areas, potential mold growth, and electrical issues in the hatch area. The factory sealant application around the fixed rear glass is inconsistent on many units.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Wet carpet in rear cargo area, musty smell, fogged rear glass interior surface</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Reseal rear window with OEM-approved urethane sealant; replace weatherstripping if needed</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$300 – $600</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Location</div>
+                <div class="detail-value">Fixed rear window / third-row glass</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=tahoe&year=2022" class="model-page-link">View Tahoe &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2022/CHEVROLET/TAHOE/SUV/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="tahoe" data-sev="moderate" data-search="tahoe suburban 10-speed transmission clunk deceleration braking 10l80 valve body reflash 2021 2022 2023 2024">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Tahoe / Suburban &middot; 2021–2024</span>
+              <h3 class="issue-title">10-Speed Transmission Clunk on Deceleration</h3>
+            </div>
+            <span class="sev-badge moderate">Moderate</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The 10L80 10-speed automatic produces a noticeable clunk or thud when slowing down or braking at low speeds. The condition is traced to the valve body calibration and torque converter behavior. Multiple NHTSA complaints filed across 2021–2024 production.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Clunk or thud from drivetrain area during deceleration, light braking, or coasting to a stop</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">TCM reflash or valve body replacement; severity determines which path is needed</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$500 – $2,000</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Transmission</div>
+                <div class="detail-value">10L80 10-speed automatic</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=tahoe&year=2022" class="model-page-link">View Tahoe &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2022/CHEVROLET/TAHOE/SUV/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="tahoe" data-sev="minor" data-search="tahoe suburban rear ac not cooling hvac warm air refrigerant expansion valve 2021 2022">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Tahoe / Suburban &middot; 2021–2022</span>
+              <h3 class="issue-title">Rear A/C Not Cooling</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">A common complaint on 2021–2022 Tahoes and Suburbans is the rear HVAC zone blowing warm or insufficiently cool air. Often caused by low refrigerant charge from the factory or a faulty rear expansion valve restricting refrigerant flow to the rear evaporator.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Rear vents blowing warm air, rear passengers complain of inadequate cooling even on max AC</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Refrigerant recharge or rear expansion valve replacement; check rear evaporator drain</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$200 – $800</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Peak Incidence</div>
+                <div class="detail-value">2021–2022 model years</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=tahoe&year=2022" class="model-page-link">View Tahoe &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2022/CHEVROLET/TAHOE/SUV/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="tahoe" data-sev="minor" data-search="tahoe suburban power running board malfunction stuck not deploying motor linkage corrosion 2021 2022 2023 2024">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Tahoe / Suburban &middot; 2021–2024</span>
+              <h3 class="issue-title">Power Running Board Malfunction</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">Auto-deploying power running boards on optioned Tahoes and Suburbans stick in the deployed position, fail to retract, or fail to deploy at all. The electric motor and linkage assembly are susceptible to corrosion and debris intrusion, especially in northern states where road salt is used.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Running boards stuck out, won't retract when door closes, or fail to deploy when door opens</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Motor and linkage inspection, lubrication, or per-side replacement</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$600 – $1,200 per side</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Worst In</div>
+                <div class="detail-value">Salt-belt states; winter climates</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=tahoe&year=2022" class="model-page-link">View Tahoe &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2022/CHEVROLET/TAHOE/SUV/4WD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CAMARO -->
+    <section class="model-section" data-model="camaro">
+      <div class="model-header">
+        <h2 class="model-name">Camaro</h2>
+        <span class="model-years">2016–2024</span>
+        <span class="model-issue-count">3 issues</span>
+      </div>
+      <div class="issues-grid">
+
+        <article class="issue-card" data-model="camaro" data-sev="minor" data-search="camaro alpha platform creaks structural creak bump body mount bushing weatherstripping 2016 2017 2018 2019 2020 2021 2022 2023 2024">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Camaro &middot; 2016–2024</span>
+              <h3 class="issue-title">Alpha Platform Structural Creaks</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">A common complaint across all 6th-gen Camaro body styles is structural creaking and groaning over bumps and rough pavement. Body mount bushings and door/roof weatherstripping are the most common noise sources, and the issue appears across trims and model years.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Creaking, groaning, or squeaking from body/chassis area over bumps or during cornering</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Body mount bushing replacement; weatherstripping lubrication or replacement</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$200 – $600</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Platform</div>
+                <div class="detail-value">GM Alpha (shared with ATS/CTS)</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=camaro&year=2020" class="model-page-link">View Camaro &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2020/CHEVROLET/CAMARO/COUPE/RWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="camaro" data-sev="moderate" data-search="camaro magnetic ride control mrc shock failure leaking 1LE SS ZL1 suspension warning 2016 2017 2018 2019 2020 2021 2022 2023 2024">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Camaro SS / 1LE / ZL1 &middot; 2016–2024</span>
+              <h3 class="issue-title">Magnetic Ride Control Shock Failure</h3>
+            </div>
+            <span class="sev-badge moderate">Moderate</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">MRC-equipped Camaros can develop leaking or failed magnetorheological shocks, especially after track use or at higher mileage. Failed shocks produce a harsh, uncontrolled ride and may trigger a suspension warning message. The fluid-filled MRC shocks are not rebuildable and must be replaced.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Harsh ride, oil leaking from shock body, suspension warning light, handling degradation</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">MRC shock replacement; all four commonly replaced together for balanced handling</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$1,500 – $3,000 (all four)</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Affected Trims</div>
+                <div class="detail-value">SS w/ MRC option, 1LE, ZL1</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=camaro&year=2020" class="model-page-link">View Camaro &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2020/CHEVROLET/CAMARO/COUPE/RWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="camaro" data-sev="minor" data-search="camaro oil consumption lt1 6.2l pcv valve catch can track use ss 2016 2017 2018 2019 2020 2021 2022 2023 2024">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Camaro SS / ZL1 &middot; 2016–2024</span>
+              <h3 class="issue-title">Oil Consumption (LT1 6.2L)</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The LT1 6.2L V8 in SS and higher trims can consume notable oil under hard driving or track use. The PCV system design allows oil mist ingestion at sustained high RPM, and some owners report losing 1 quart per 3,000–5,000 miles under spirited street or track driving.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Oil level drops between changes, especially with track or spirited driving</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">PCV valve replacement and/or install oil catch can; check oil level regularly</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$100 – $400</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Affected Engine</div>
+                <div class="detail-value">LT1 6.2L V8 (SS, ZL1)</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=camaro&year=2020" class="model-page-link">View Camaro &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2020/CHEVROLET/CAMARO/COUPE/RWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- TRAX -->
+    <section class="model-section" data-model="trax">
+      <div class="model-header">
+        <h2 class="model-name">Trax</h2>
+        <span class="model-years">2024–2025</span>
+        <span class="model-issue-count">2 issues</span>
+      </div>
+      <div class="issues-grid">
+
+        <article class="issue-card" data-model="trax" data-sev="minor" data-search="trax turbo lag 1.2l 3-cylinder hesitation off the line low rpm ecu reprogram 2024 2025">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Trax &middot; 2024–2025</span>
+              <h3 class="issue-title">Turbo Lag at Low RPM</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The 1.2L 3-cylinder turbo in the new Trax has a noticeable hesitation and flat spot when pulling away from stops, especially before the turbocharger spools up. Owners describe it as sluggish off the line. GM has addressed this with ECU calibration updates.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Sluggish acceleration from a stop; flat spot under 2,000 RPM before boost builds</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">ECU calibration reprogram at dealer — most resolved under warranty with software update</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$0 – $200</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Affected Engine</div>
+                <div class="detail-value">1.2L Turbo 3-cylinder</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=trax&year=2024" class="model-page-link">View Trax &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2024/CHEVROLET/TRAX/SUV/FWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="trax" data-sev="minor" data-search="trax rear seat cramped legroom adults comfort 2024 2025 packaging">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Trax &middot; 2024–2025</span>
+              <h3 class="issue-title">Rear Seat Comfort (Cramped for Adults)</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">Widely noted by owners and reviewers: the rear seat on the 2024+ Trax is cramped for adult passengers, with limited legroom and high floor intrusion from the battery and chassis packaging. Not a defect — it is a known platform trade-off at this price point and body size.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Insufficient rear legroom for tall adults; high floor tunnel limits foot space</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Slide front seats forward to improve rear legroom; no mechanical fix available</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value free">$0 (design limitation)</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Nature of Issue</div>
+                <div class="detail-value">Platform packaging — not a defect</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=trax&year=2024" class="model-page-link">View Trax &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2024/CHEVROLET/TRAX/SUV/FWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- BLAZER -->
+    <section class="model-section" data-model="blazer">
+      <div class="model-header">
+        <h2 class="model-name">Blazer</h2>
+        <span class="model-years">2019–2024</span>
+        <span class="model-issue-count">2 issues</span>
+      </div>
+      <div class="issues-grid">
+
+        <article class="issue-card" data-model="blazer" data-sev="moderate" data-search="blazer 9-speed transmission gear hunting moderate acceleration 45 65 mph tcm reprogram 2019 2020 2021 2022 2023 2024">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Blazer &middot; 2019–2024</span>
+              <h3 class="issue-title">9-Speed Transmission Gear Hunting</h3>
+            </div>
+            <span class="sev-badge moderate">Moderate</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The 9-speed automatic in the Blazer frequently cycles through multiple gears during moderate highway acceleration before settling, and can't decide on a gear during partial throttle at 45–65 mph. Distinct from low-speed hesitation, this is a shift calibration issue.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Transmission cycles between gears at highway speeds; indecisive shifting during partial throttle</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Transmission control module (TCM) reprogram per GM TSB</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$0 – $300</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Transmission</div>
+                <div class="detail-value">9T65 9-speed automatic</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=blazer&year=2022" class="model-page-link">View Blazer &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2022/CHEVROLET/BLAZER/SUV/AWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="blazer" data-sev="minor" data-search="blazer auto start stop rough engaging failing battery module reprogram 2019 2020 2021 2022 2023 2024">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Blazer &middot; 2019–2024</span>
+              <h3 class="issue-title">Auto Start-Stop System Issues</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The auto start-stop system on Blazers can engage and disengage roughly, causing a noticeable shudder when the engine restarts at stoplights. Some owners also report the system failing to re-enable after manual shutoff, or not shutting the engine off when conditions should allow it.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Shudder or lurch when engine restarts at stop; system fails to engage or fails to stay disabled</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Battery test and replacement if weak; start-stop module reprogram if battery is healthy</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$200 – $500</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">First Step</div>
+                <div class="detail-value">Test 12V battery before any other diagnosis</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=blazer&year=2022" class="model-page-link">View Blazer &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2022/CHEVROLET/BLAZER/SUV/AWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MALIBU -->
+    <section class="model-section" data-model="malibu">
+      <div class="model-header">
+        <h2 class="model-name">Malibu</h2>
+        <span class="model-years">2016–2024</span>
+        <span class="model-issue-count">2 issues</span>
+      </div>
+      <div class="issues-grid">
+
+        <article class="issue-card" data-model="malibu" data-sev="major" data-search="malibu excessive oil consumption 1.5t turbo piston rings 2016 2017 2018 2019 2020 2021 2022 2023 2024 extended warranty">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Malibu &middot; 2016–2024 (1.5T)</span>
+              <h3 class="issue-title">Excessive Oil Consumption (1.5T)</h3>
+            </div>
+            <span class="sev-badge major">Major</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">The 1.5L turbocharged four-cylinder in the Malibu shares its architecture with the Equinox 1.5T and carries the same well-documented excessive oil consumption problem. Affected engines consume up to 1 quart per 2,000 miles. GM extended warranty coverage on this engine family after widespread complaints.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Oil level drops between changes; low oil warning light; timing chain rattle if oil runs low</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">GM extended warranty oil consumption test; piston ring or short block replacement if confirmed</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$2,000 – $4,000</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Affected Engine</div>
+                <div class="detail-value">1.5L Turbo (LFV/LYX) — shared with Equinox</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=malibu&year=2019" class="model-page-link">View Malibu &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2019/CHEVROLET/MALIBU/SEDAN/FWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+        <article class="issue-card" data-model="malibu" data-sev="minor" data-search="malibu trunk water leak intrusion wet carpet weatherstripping seam sealer 2016 2017 2018 2019 2020">
+          <div class="issue-card-header">
+            <div class="issue-card-meta">
+              <span class="issue-model-tag">Malibu &middot; 2016–2020</span>
+              <h3 class="issue-title">Trunk Water Intrusion</h3>
+            </div>
+            <span class="sev-badge minor">Minor</span>
+          </div>
+          <div class="issue-card-body">
+            <p class="issue-description">Water enters the trunk on 2016–2020 Malibus through degraded trunk weatherstripping and seam sealer at the rear body panel joints. Owners discover a wet spare tire well, damp trunk carpeting, and sometimes mold growth after heavy rain or car washes.</p>
+            <div class="issue-details">
+              <div class="detail-block">
+                <div class="detail-label">Symptoms</div>
+                <div class="detail-value">Wet trunk carpet or spare tire well after rain; musty smell; potential mold in trunk lining</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Recommended Fix</div>
+                <div class="detail-value">Reseal trunk weatherstripping; inspect and reseal body seam sealer at trunk lid perimeter</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Estimated Cost</div>
+                <div class="detail-value cost">$100 – $400</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label">Peak Incidence</div>
+                <div class="detail-value">2016–2020 model years</div>
+              </div>
+            </div>
+          </div>
+          <div class="issue-card-footer">
+            <a href="/pages/models/template.html?model=malibu&year=2018" class="model-page-link">View Malibu &#8594;</a>
+            <a href="https://www.nhtsa.gov/vehicle/2018/CHEVROLET/MALIBU/SEDAN/FWD" class="report-link" target="_blank" rel="noopener">Report This Issue &#8599;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- NO RESULTS -->
+    <div class="no-results" id="noResults">
+      <div class="no-results-icon">&#128270;</div>
+      <h3>No Issues Found</h3>
+      <p>Try a different search term or clear your filters.</p>
+    </div>
+
+    <!-- REPORT NEW ISSUE CTA -->
+    <div class="report-cta">
+      <h3>Know a Issue We Missed?</h3>
+      <p>This database is only as good as the community behind it. If you've experienced a documented issue on your Chevrolet — backed by a TSB, NHTSA complaint, or dealer confirmation — let us know.</p>
+      <a href="mailto:issues@chevyroots.com?subject=New%20Known%20Issue%20Submission" class="report-cta-btn">&#43; Report a New Issue</a>
+    </div>
+
+  </main>
+
+  <!-- RELATED GUIDES -->
+  <section style="max-width:900px;margin:48px auto;padding:0 24px;">
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#C4A035;margin-bottom:16px;">Related Guides</h2>
+    <ul style="list-style:none;display:flex;flex-wrap:wrap;gap:12px;">
+      <li><a href="/pages/guides/silverado-buyers-guide.html" style="color:#C4A035;font-weight:600;">2024–2025 Silverado Buyer's Guide</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/guides/c8-corvette-buyers-guide.html" style="color:#C4A035;font-weight:600;">C8 Corvette Buyer's Guide</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/guides/compare.html" style="color:#C4A035;font-weight:600;">Compare Chevy Models</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/guides/quiz.html" style="color:#C4A035;font-weight:600;">Find Your Chevy (Quiz)</a></li>
+      <li style="color:#707070;">·</li>
+      <li><a href="/pages/models/" style="color:#C4A035;font-weight:600;">Full Model Lineup</a></li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo"><em>Chevy</em>Roots</div>
+    <p class="footer-note">Independent Chevrolet enthusiast resource &mdash; Not affiliated with General Motors &copy; 2025</p>
+  </footer>
+
+  <script>
+    let currentModel = 'all';
+    let currentSev = 'all';
+    let currentSearch = '';
+
+    const cards = document.querySelectorAll('.issue-card');
+    const sections = document.querySelectorAll('.model-section');
+
+    function setModelFilter(model, btn) {
+      currentModel = model;
+      document.querySelectorAll('#modelFilters .filter-btn').forEach(b => b.classList.remove('active-model'));
+      btn.classList.add('active-model');
+      applyFilters();
+    }
+
+    function setSevFilter(sev, btn) {
+      currentSev = sev;
+      document.querySelectorAll('#sevFilters .filter-btn').forEach(b => {
+        b.classList.remove('active-sev-major', 'active-sev-moderate', 'active-sev-minor');
+      });
+      if (sev !== 'all') btn.classList.add('active-sev-' + sev);
+      applyFilters();
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function() {
+      currentSearch = this.value.toLowerCase().trim();
+      applyFilters();
+    });
+
+    function applyFilters() {
+      let visible = 0;
+
+      cards.forEach(card => {
+        const modelMatch = currentModel === 'all' || card.dataset.model === currentModel;
+        const sevMatch   = currentSev === 'all'   || card.dataset.sev === currentSev;
+        const searchStr  = (card.dataset.search || '') + ' ' + (card.textContent || '').toLowerCase();
+        const searchMatch = !currentSearch || searchStr.includes(currentSearch);
+
+        const show = modelMatch && sevMatch && searchMatch;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      // Show/hide section headers based on visible cards
+      sections.forEach(section => {
+        const anyVisible = Array.from(section.querySelectorAll('.issue-card')).some(c => c.style.display !== 'none');
+        section.style.display = anyVisible ? '' : 'none';
+      });
+
+      document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+      document.getElementById('resultsCount').textContent = visible + ' issue' + (visible !== 1 ? 's' : '');
+    }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Chevrolet Known Issues Database",
+    "description": "Real, documented Chevrolet known issues by model and year — sourced from NHTSA complaints, TSBs, and owner forums.",
+    "url": "https://chevyroots.com/pages/guides/known-issues.html",
+    "creator": {
+      "@type": "Organization",
+      "name": "ChevyRoots",
+      "url": "https://chevyroots.com"
+    },
+    "keywords": ["Chevrolet", "known issues", "NHTSA", "TSB", "Silverado", "Corvette", "Camaro"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the most common Silverado 1500 problems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common Silverado 1500 issues include AFM/DFM lifter failures on 5.3L V8s, transmission shudder on 8-speed automatics, and paint delamination on certain cab colors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I find Chevy technical service bulletins?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chevy TSBs are published by NHTSA and can be found on the NHTSA website or through this ChevyRoots Known Issues Database, which aggregates TSB data by model and year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Chevrolet known issues covered under warranty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Issues covered by a Technical Service Bulletin (TSB) or recall are typically repaired at no charge under warranty. Once out of warranty, costs vary by issue and dealer."
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

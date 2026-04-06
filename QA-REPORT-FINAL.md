@@ -190,10 +190,29 @@ All 5 image paths verified to exist on disk:
 
 ---
 
-## FIXES APPLIED (Top 5 Issues)
+## FIXES APPLIED
 
-1. **CR-01:** Rebuilt `best-mods-silverado.html` with full content (was 0 bytes)
-2. **CR-02:** Added 5 missing guide cards to `guides/index.html` (best-cold-air-intake, best-exhaust, best-tonneau-covers, chevy-maintenance-schedule, tahoe-vs-suburban)
-3. **CR-03:** Updated nav in `best-exhaust`, `best-cold-air-intake`, and `best-tonneau-covers` to full standard nav with Crystal's Corner and News
-4. **CR-04:** Added News link to `builds/index.html` nav and newsletter CTA section
-5. **CR-05/06:** Added GM non-affiliation disclaimer to `crystals-corner/index.html` and `chevy-towing-guide.html` footers
+### Fix 1 — CR-01: Rebuilt empty best-mods-silverado.html (CRITICAL)
+`/pages/guides/best-mods-silverado.html` was 0 bytes. Rebuilt as a complete 32KB article with:
+- Full standard nav (Crystal's Corner, News, all links)
+- Hero header, article content (8 mods ranked with specs and affiliate links)
+- Newsletter CTA section
+- Footer with GM non-affiliation disclaimer
+
+### Fix 2 — CR-02: Added 7 missing guide cards to guides/index.html (HIGH)
+The guides hub was missing 7 articles that existed on disk. Added cards to their appropriate sections:
+- **Buyer's Guides section:** `chevy-dealer-negotiation.html`, `used-chevy-truck-guide.html`, `tahoe-vs-suburban.html`
+- **How-To & Mods section:** `best-cold-air-intake-silverado.html`, `best-exhaust-silverado.html`, `best-tonneau-covers-silverado.html`, `chevy-maintenance-schedule.html`
+- All 24 guide article files now have matching cards in the index.
+
+### Fix 3 — CR-03: Updated nav on 3 guide pages (HIGH)
+`best-exhaust-silverado.html`, `best-cold-air-intake-silverado.html`, and `best-tonneau-covers-silverado.html` had an old stripped nav (linking to `/index.html` instead of `/`, missing Crystal's Corner and News). Updated to full standard nav on all three.
+
+### Fix 4 — CR-04: Added News link and newsletter CTA to builds/index.html (HIGH)
+- Added `<li><a href="/pages/news/">News</a></li>` to nav
+- Added a complete newsletter signup section before the footer
+
+### Fix 5 — CR-05/06: Added GM non-affiliation disclaimer to 2 pages (HIGH)
+- `crystals-corner/index.html`: Added disclaimer paragraph to footer bottom
+- `chevy-towing-guide.html`: Added disclaimer paragraph to footer-bottom section
+- Also updated footer disclaimer text on `best-exhaust`, `best-cold-air-intake`, and `best-tonneau-covers` to explicitly state non-affiliation with GM (previously said "independent" without the explicit non-affiliation language)

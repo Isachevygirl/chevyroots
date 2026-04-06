@@ -731,6 +731,213 @@
       margin-top: 2px;
     }
 
+    /* ─── CHEVY TIMELINE ─────────────────────────────── */
+    .timeline-wrap {
+      padding: 40px 0 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+
+    .timeline-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .timeline-scroll {
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+      padding-bottom: 12px;
+      cursor: grab;
+    }
+
+    .timeline-scroll:active { cursor: grabbing; }
+    .timeline-scroll::-webkit-scrollbar { height: 4px; }
+    .timeline-scroll::-webkit-scrollbar-track { background: transparent; }
+    .timeline-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .timeline-track {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      position: relative;
+      min-width: max-content;
+      padding: 12px 0 4px;
+    }
+
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--border) 4%, var(--border) 96%, transparent 100%);
+    }
+
+    .timeline-milestone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 120px;
+      flex-shrink: 0;
+      text-align: center;
+      position: relative;
+      padding: 0 8px;
+    }
+
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--bg-card2);
+      border: 2px solid var(--border);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+      transition: border-color var(--transition), background var(--transition);
+    }
+
+    .timeline-milestone:hover .timeline-dot {
+      border-color: var(--gold);
+      background: var(--gold);
+    }
+
+    .timeline-milestone.highlight .timeline-dot {
+      border-color: var(--gold);
+      background: rgba(196, 160, 53, 0.25);
+      width: 14px;
+      height: 14px;
+    }
+
+    .timeline-year {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 5px;
+      line-height: 1;
+    }
+
+    .timeline-event {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+      max-width: 104px;
+    }
+
+    .timeline-milestone:hover .timeline-event {
+      color: var(--text);
+    }
+
+    .timeline-milestone.highlight .timeline-event {
+      color: var(--text);
+    }
+
+    /* ─── CLASSIC VS MODERN DIVIDER ──────────────────── */
+    .era-divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 64px 0 0;
+    }
+
+    .era-divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .era-divider-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+      padding: 6px 16px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--bg);
+    }
+
+    .era-divider.gold .era-divider-badge {
+      color: var(--gold);
+      border-color: rgba(196, 160, 53, 0.35);
+      background: rgba(196, 160, 53, 0.05);
+    }
+
+    /* ─── CLASSIC MODEL CARDS ─────────────────────────── */
+    .classic-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .classic-card:hover {
+      border-color: var(--gold-dim);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .classic-card .card-image {
+      position: relative;
+    }
+
+    .badge-classic {
+      background: rgba(196, 160, 53, 0.18);
+      color: var(--gold);
+      border: 1px solid rgba(196, 160, 53, 0.35);
+    }
+
+    .classic-card .card-body {
+      gap: 6px;
+    }
+
+    .classic-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      padding: 4px 8px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .classic-value-label {
+      color: var(--gold);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .classic-cultural {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      font-style: italic;
+      border-left: 2px solid rgba(196, 160, 53, 0.3);
+      padding-left: 10px;
+      flex: 1;
+    }
+
     /* ─── BUYER'S QUIZ TEASER ─────────────────────────── */
     .quiz-teaser {
       margin: 0 0 64px;
@@ -790,6 +997,214 @@
     }
 
     .quiz-teaser-btn:hover { opacity: 0.85; }
+  
+    /* ============================================================
+       ANNOUNCEMENT BAR
+    ============================================================ */
+    .announcement-bar {
+      background: var(--red);
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .announcement-bar span { color: rgba(255,255,255,0.75); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .nav-logo-main {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+    .nav-logo-main em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .nav-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-top: 1px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+    .nav-more {
+      position: relative;
+    }
+    .nav-more-btn {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color var(--transition), background var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .nav-more-btn:hover {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+    .nav-more-arrow {
+      font-size: 0.6rem;
+      transition: transform 0.2s;
+    }
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 200px;
+      background: #2A2A2A;
+      border: 1px solid #3A3A3A;
+      border-top: 2px solid var(--gold);
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      padding: 0.5rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      z-index: 200;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .nav-more:hover .nav-dropdown,
+    .nav-more.open .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-more:hover .nav-more-arrow {
+      transform: rotate(180deg);
+    }
+    .nav-dropdown a {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.5rem 1.25rem;
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-dropdown a:hover,
+    .nav-dropdown a.active {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+    }
+    .nav-menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--off-white);
+      transition: var(--transition);
+    }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: var(--warm-gray);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-mobile a:hover,
+    .nav-mobile a.active {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+    .nav-mobile-divider {
+      height: 1px;
+      background: rgba(196,160,53,0.2);
+      margin: 0.5rem 0;
+    }
   </style>
 </head>
 <body>
@@ -797,48 +1212,173 @@
   <!-- ═══════════════════════════════════════════
        NAV
   ═══════════════════════════════════════════ -->
-  <nav class="nav" aria-label="Main navigation">
-    <div class="nav-inner">
+    <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span>2026 &mdash;</span> Celebrating America&rsquo;s 250th &amp; 115 Years of Chevrolet &mdash; <span>Built in America. Still Running Strong.</span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+
       <a href="/" class="nav-logo" aria-label="ChevyRoots home">
-        <span class="nav-logo-primary">ChevyRoots</span>
-        <span class="nav-logo-secondary">Run by a Chevy Girl</span>
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="/pages/models/" class="active">Models</a></li>
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/" class="active" aria-current="page">Models</a></li>
         <li><a href="/pages/guides/">Guides</a></li>
         <li><a href="/pages/builds/">Builds</a></li>
         <li><a href="/pages/events/">Events</a></li>
         <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
-        <li><a href="/pages/news/">News</a></li>
         <li><a href="/pages/about/">About</a></li>
-        <li><a href="/pages/community/">Community</a></li>
-        <li><a href="/pages/marketplace/">Marketplace</a></li>
-        <li><a href="/pages/tools/">Tools</a></li>
-        <li><a href="/pages/builds/" class="nav-cta">Submit Your Build</a></li>
+        <li class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false" aria-haspopup="true">More <span class="nav-more-arrow">&#9662;</span></button>
+          <div class="nav-dropdown">
+            <a href="/pages/community/">Community</a>
+            <a href="/pages/marketplace/">Marketplace</a>
+            <a href="/pages/tools/">Tools</a>
+            <a href="/pages/mechanics/">Mechanics</a>
+            <a href="/pages/news/">News</a>
+            <a href="/pages/ads/">Vintage Ads</a>
+            <a href="/pages/newsletter/">Newsletter</a>
+            <a href="/pages/partners/">Partners</a>
+          </div>
+        </li>
       </ul>
+
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+
+      <button class="nav-menu-toggle" aria-label="Toggle mobile menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════════
+  <!-- Mobile Nav -->
+  <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="/pages/models/" class="active" onclick="this.closest('.nav-mobile').classList.remove('open')">Models</a>
+    <a href="/pages/guides/" onclick="this.closest('.nav-mobile').classList.remove('open')">Guides</a>
+    <a href="/pages/builds/" onclick="this.closest('.nav-mobile').classList.remove('open')">Builds</a>
+    <a href="/pages/events/" onclick="this.closest('.nav-mobile').classList.remove('open')">Events</a>
+    <a href="/pages/crystals-corner/" onclick="this.closest('.nav-mobile').classList.remove('open')">Crystal's Corner</a>
+    <a href="/pages/about/" onclick="this.closest('.nav-mobile').classList.remove('open')">About</a>
+    <div class="nav-mobile-divider"></div>
+    <a href="/pages/community/" onclick="this.closest('.nav-mobile').classList.remove('open')">Community</a>
+    <a href="/pages/marketplace/" onclick="this.closest('.nav-mobile').classList.remove('open')">Marketplace</a>
+    <a href="/pages/tools/" onclick="this.closest('.nav-mobile').classList.remove('open')">Tools</a>
+    <a href="/pages/mechanics/" onclick="this.closest('.nav-mobile').classList.remove('open')">Mechanics</a>
+    <a href="/pages/news/" onclick="this.closest('.nav-mobile').classList.remove('open')">News</a>
+    <a href="/pages/ads/" onclick="this.closest('.nav-mobile').classList.remove('open')">Vintage Ads</a>
+    <a href="/pages/newsletter/" onclick="this.closest('.nav-mobile').classList.remove('open')">Newsletter</a>
+    <a href="/pages/partners/" onclick="this.closest('.nav-mobile').classList.remove('open')">Partners</a>
+    <a href="/pages/builds/" class="btn btn-gold" style="margin-top:0.5rem;" onclick="this.closest('.nav-mobile').classList.remove('open')">Submit Your Build</a>
+  </div>
+
+<!-- ═══════════════════════════════════════════
        PAGE HEADER
   ═══════════════════════════════════════════ -->
   <header class="page-header">
-    <p class="page-header-label">2025–2026 Model Year</p>
+    <p class="page-header-label">Current Models · Heritage Classics · 1911 to Present</p>
     <h1>The Complete <span>Chevy</span> Lineup</h1>
-    <p class="page-header-sub">Every current Chevrolet model — trucks, SUVs, sports cars, EVs, and the classics that started it all.</p>
+    <p class="page-header-sub">Every Chevrolet model — trucks, SUVs, sports cars, EVs, and the classics that built the legend.</p>
   </header>
 
   <!-- ═══════════════════════════════════════════
        MAIN
   ═══════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       CHEVY TIMELINE
+  ═══════════════════════════════════════════ -->
+  <div class="main" style="padding-top:0; padding-bottom:0;">
+    <div class="timeline-wrap">
+      <p class="timeline-label">Chevrolet — Key Milestones Since 1911</p>
+      <div class="timeline-scroll" id="timelineScroll">
+        <div class="timeline-track">
+
+          <div class="timeline-milestone">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1911</div>
+            <div class="timeline-event">Chevrolet Motor Co. founded by Louis Chevrolet &amp; William Durant</div>
+          </div>
+
+          <div class="timeline-milestone">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1955</div>
+            <div class="timeline-event">Small-block V8 debuts — the most influential engine in American history</div>
+          </div>
+
+          <div class="timeline-milestone highlight">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1957</div>
+            <div class="timeline-event">Bel Air becomes an American icon. Fuel-injected 283 — 1hp per cubic inch</div>
+          </div>
+
+          <div class="timeline-milestone highlight">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1963</div>
+            <div class="timeline-event">Corvette Sting Ray introduced — split-window coupe, independent rear suspension</div>
+          </div>
+
+          <div class="timeline-milestone highlight">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1967</div>
+            <div class="timeline-event">Camaro launches as Chevy's answer to the Mustang. Z/28 &amp; SS define the pony car era</div>
+          </div>
+
+          <div class="timeline-milestone highlight">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1970</div>
+            <div class="timeline-event">Chevelle SS 454 LS6 — 450 hp factory muscle car, peak of the muscle car era</div>
+          </div>
+
+          <div class="timeline-milestone">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1997</div>
+            <div class="timeline-event">LS1 engine debuts in C5 Corvette — modern V8 architecture still dominant today</div>
+          </div>
+
+          <div class="timeline-milestone">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2005</div>
+            <div class="timeline-event">Chevy becomes Official Vehicle of MLB — deepening ties to American culture</div>
+          </div>
+
+          <div class="timeline-milestone highlight">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2020</div>
+            <div class="timeline-event">C8 Corvette goes mid-engine — first in Corvette's 67-year history</div>
+          </div>
+
+          <div class="timeline-milestone">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024</div>
+            <div class="timeline-event">Equinox EV arrives — Ultium platform brings long-range EV under $35K</div>
+          </div>
+
+          <div class="timeline-milestone highlight">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2026</div>
+            <div class="timeline-event">America 250 — Chevy part of the nation's semiquincentennial celebration</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main class="main">
+
+    <!-- Era Divider: Modern -->
+    <div class="era-divider" style="margin-top:32px; margin-bottom:0;">
+      <div class="era-divider-line"></div>
+      <div class="era-divider-badge">Modern Lineup — 2024/2025/2026</div>
+      <div class="era-divider-line"></div>
+    </div>
 
     <!-- Filter Bar -->
     <div class="filter-bar" role="tablist" aria-label="Filter by vehicle category">
@@ -1202,180 +1742,163 @@
       </div>
     </section>
 
+    <!-- Classic vs Modern Divider -->
+    <div class="era-divider gold">
+      <div class="era-divider-line"></div>
+      <div class="era-divider-badge">The Classics — Heritage Models</div>
+      <div class="era-divider-line"></div>
+    </div>
+
     <!-- ── CLASSICS ────────────────────────────── -->
-    <section class="lineup-section" data-category="classics" id="classics" aria-labelledby="section-classics">
+    <section class="lineup-section" data-category="classics" id="classics" aria-labelledby="section-classics" style="margin-top:40px;">
       <div class="section-header">
         <h2 id="section-classics">The <span>Classics</span></h2>
-        <span class="section-count">The heritage models</span>
+        <span class="section-count">10 heritage models</span>
       </div>
 
       <p class="classics-intro">Before the trucks sold millions and before mid-engine supercars, Chevrolet built legends. These are the models that cemented the bow tie's place in American culture — on drag strips, in driveways, and at every car show worth attending.</p>
 
-      <div class="classics-grid">
+      <div class="cards-grid">
 
-        <!-- Muscle Cars -->
-        <div class="classics-category">
-          <div class="classics-cat-header">
-            <div class="classics-cat-icon">💪</div>
-            <span class="classics-cat-name">Muscle Cars</span>
+        <!-- Chevelle SS -->
+        <article class="classic-card">
+          <div class="card-image" style="background: #2a2010; background-image: url('/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-classic">1970 · Muscle</div>
           </div>
-          <div class="classics-models">
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">Chevelle SS</div>
-                <div class="classic-item-desc">1964–1977. The SS 396 and SS 454 variants are among the most coveted muscle cars ever built. LS6 454 in 1970 produced 450 hp from the factory.</div>
-                <a href="/pages/guides/chevelle/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/camaro/pexels_3076824_camaro.jpeg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">Camaro (Gen 1 & 2)</div>
-                <div class="classic-item-desc">1967–1981. The original pony car. Z/28, SS, and COPO variants are icons. '69 COPO Camaros with the ZL1 427 are among the rarest factory muscle cars.</div>
-                <a href="/pages/guides/camaro-classic/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/impala/pexels_17113349_impala.jpeg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">Nova SS</div>
-                <div class="classic-item-desc">1962–1979. Lightweight A-body sleeper. Available with 396 and 427 big-blocks, the Nova became a drag strip weapon hiding in plain sight.</div>
-                <a href="/pages/guides/nova/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
+          <div class="card-body">
+            <span class="card-category">Chevelle SS</span>
+            <h3 class="card-name">Chevelle SS 454</h3>
+            <span class="classic-value"><span class="classic-value-label">Today's Value</span> $40,000–$200,000+ (LS6)</span>
+            <p class="classic-cultural">The pinnacle of the muscle car era. The LS6 454 variant — 450 hp, solid-lifter cam, 11.25:1 compression — is one of the most sought-after factory muscle cars ever built.</p>
+            <a href="/pages/models/template.html?model=chevelle-ss&year=1970" class="card-link">Explore Model →</a>
           </div>
-        </div>
+        </article>
 
-        <!-- Full-Size -->
-        <div class="classics-category">
-          <div class="classics-cat-header">
-            <div class="classics-cat-icon">🏛️</div>
-            <span class="classics-cat-name">Full-Size Icons</span>
+        <!-- 1969 Camaro -->
+        <article class="classic-card">
+          <div class="card-image" style="background: #1e2028; background-image: url('/photos/camaro/pexels_3076824_camaro.jpeg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-classic">1969 · Muscle</div>
           </div>
-          <div class="classics-models">
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/belair/1957_Chevrolet_Bel_Air_-_Cruisin_for_a_Cure.jpg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">Bel Air</div>
-                <div class="classic-item-desc">1950–1981. The 1957 Bel Air is one of the most recognized cars in history. Tri-Five body styling (1955–57) remains the gold standard of 1950s American design.</div>
-                <a href="/pages/guides/bel-air/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/impala/1964_Chevrolet_Impala_lowrider_5409593989.jpg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">Impala</div>
-                <div class="classic-item-desc">1958–present. From the 409 muscle era to the lowrider scene, the Impala is woven into American car culture across every generation and coast.</div>
-                <a href="/pages/guides/impala-classic/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/impala/pexels_1170935_impala.jpeg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">Caprice Classic</div>
-                <div class="classic-item-desc">1965–1996. The pinnacle of American full-size luxury. The B-body 1971–76 and the boxy 1977–90 generations both have devoted followings today.</div>
-                <a href="/pages/guides/caprice/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
+          <div class="card-body">
+            <span class="card-category">Camaro</span>
+            <h3 class="card-name">'69 Camaro Z/28 · SS · ZL1</h3>
+            <span class="classic-value"><span class="classic-value-label">Today's Value</span> $35,000–$800,000+ (ZL1)</span>
+            <p class="classic-cultural">The most iconic first-gen Camaro. The COPO ZL1 — 69 units built with an all-aluminum 427 — remains one of the rarest and most valuable American muscle cars ever made.</p>
+            <a href="/pages/models/template.html?model=camaro-1969&year=1969" class="card-link">Explore Model →</a>
           </div>
-        </div>
+        </article>
 
-        <!-- Classic Trucks -->
-        <div class="classics-category">
-          <div class="classics-cat-header">
-            <div class="classics-cat-icon">🛻</div>
-            <span class="classics-cat-name">Classic Trucks</span>
+        <!-- 1964 Impala -->
+        <article class="classic-card">
+          <div class="card-image" style="background: #1c1c2a; background-image: url('/photos/impala/1964_Chevrolet_Impala_lowrider_5409593989.jpg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-classic">1964 · Full-Size</div>
           </div>
-          <div class="classics-models">
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/silverado/pexels_3122814_silverado.jpeg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">C10 / C/K Series</div>
-                <div class="classic-item-desc">1960–1998. The square-body generation (1973–87) is one of the most popular classic truck platforms today — endlessly customizable and parts-abundant.</div>
-                <a href="/pages/guides/c10/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/colorado/pexels_4595081_colorado.jpeg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">K5 Blazer</div>
-                <div class="classic-item-desc">1969–1994. Full-size removable-top SUV with real off-road credibility. The 1969–72 first gen commands serious money on the collector market.</div>
-                <a href="/pages/guides/k5-blazer/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/silverado/pexels_845598_silverado.jpeg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">Square Body (1973–87)</div>
-                <div class="classic-item-desc">The definitive generation of Chevy trucks. C10, C20, Fleetside, Stepside — the square-body era built Chevy's truck reputation for a generation.</div>
-                <a href="/pages/guides/square-body/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
+          <div class="card-body">
+            <span class="card-category">Impala</span>
+            <h3 class="card-name">'64 Impala SS</h3>
+            <span class="classic-value"><span class="classic-value-label">Today's Value</span> $20,000–$80,000+</span>
+            <p class="classic-cultural">The cornerstone of lowrider culture, immortalized in West Coast hip-hop and Chicano art. Its long hood and smooth lines made it the canvas for generations of custom builders.</p>
+            <a href="/pages/models/template.html?model=impala-1964&year=1964" class="card-link">Explore Model →</a>
           </div>
-        </div>
+        </article>
 
-        <!-- Classic Sports -->
-        <div class="classics-category">
-          <div class="classics-cat-header">
-            <div class="classics-cat-icon">🏁</div>
-            <span class="classics-cat-name">Early Corvettes</span>
+        <!-- 1957 Bel Air -->
+        <article class="classic-card">
+          <div class="card-image" style="background: #1a1a22; background-image: url('/photos/belair/1957_Chevrolet_Bel_Air_-_Cruisin_for_a_Cure.jpg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-classic">1957 · Full-Size</div>
           </div>
-          <div class="classics-models">
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/corvette/Chevrolet_Corvette_BAS_24_Brussels_P1170425-RR.jpg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">C1 Corvette (1953–62)</div>
-                <div class="classic-item-desc">America's sports car begins. The 1953 original is one of only 300 produced. Fuel injection arrived in 1957 — the "Fuelie" is a landmark car.</div>
-                <a href="/pages/guides/corvette-c1/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/corvette/Chevrolet_Corvette_C4_Kulmbach_17RM0343.jpg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">C2 Sting Ray (1963–67)</div>
-                <div class="classic-item-desc">The split-window 1963 coupe is the most recognizable Corvette ever made. Introduced independent rear suspension and the iconic hidden headlights.</div>
-                <a href="/pages/guides/corvette-c2/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
-            <div class="classic-item">
-              <div class="classic-item-img" style="background: #2e2e2e url('/photos/corvette/Chevrolet_Corvette_C5_1997-2004.jpg') center/cover no-repeat;">
-              </div>
-              <div class="classic-item-info">
-                <div class="classic-item-name">C3 Corvette (1968–82)</div>
-                <div class="classic-item-desc">The Shark-era Corvette. LT1, L88, ZR1 — factory race engines in a road car. The 1969–72 big-block cars are the performance peak of the generation.</div>
-                <a href="/pages/guides/corvette-c3/" class="classic-item-link">Explore →</a>
-              </div>
-            </div>
-
+          <div class="card-body">
+            <span class="card-category">Bel Air</span>
+            <h3 class="card-name">'57 Bel Air</h3>
+            <span class="classic-value"><span class="classic-value-label">Today's Value</span> $25,000–$100,000+</span>
+            <p class="classic-cultural">Perhaps the most recognizable American car ever built. The fuel-injected 283 was a milestone — the first production engine to achieve 1 horsepower per cubic inch.</p>
+            <a href="/pages/models/template.html?model=bel-air-1957&year=1957" class="card-link">Explore Model →</a>
           </div>
-        </div>
+        </article>
+
+        <!-- C10 -->
+        <article class="classic-card">
+          <div class="card-image" style="background: #201c18; background-image: url('/photos/trucks-classic/1953_Chevy_3100.jpg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-classic">1972 · Truck</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">C10 Pickup</span>
+            <h3 class="card-name">C10 — Square Body</h3>
+            <span class="classic-value"><span class="classic-value-label">Today's Value</span> $15,000–$60,000+</span>
+            <p class="classic-cultural">The square-body C10 is the most universally beloved classic truck in America. Clean lines, massive aftermarket support, and cultural versatility across lowrider, farm truck, and restomod builds.</p>
+            <a href="/pages/models/template.html?model=c10-pickup-1972&year=1972" class="card-link">Explore Model →</a>
+          </div>
+        </article>
+
+        <!-- K5 Blazer -->
+        <article class="classic-card">
+          <div class="card-image" style="background: #1a2018; background-image: url('/photos/blazer/pexels_6994020_blazer.jpeg'); background-size: cover; background-position: center; background-color: #252525;">
+            <div class="card-badge badge-classic">1972 · SUV</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">K5 Blazer</span>
+            <h3 class="card-name">K5 Blazer — First Gen</h3>
+            <span class="classic-value"><span class="classic-value-label">Today's Value</span> $25,000–$85,000+</span>
+            <p class="classic-cultural">The K5 pioneered the full-size SUV before the term existed — removable hardtop, real 4WD, and truck-based capability. The spiritual ancestor of every Bronco and 4Runner that followed.</p>
+            <a href="/pages/models/template.html?model=k5-blazer-1972&year=1972" class="card-link">Explore Model →</a>
+          </div>
+        </article>
+
+        <!-- Nova SS -->
+        <article class="classic-card">
+          <div class="card-image" style="background: #201c18; background-image: url('/photos/nova/1964_Chevrolet_Chevy_II_Nova_Super_Sport_Coupe_front_right_09-09-2023.jpg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-classic">1969 · Muscle</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Nova</span>
+            <h3 class="card-name">Nova SS</h3>
+            <span class="classic-value"><span class="classic-value-label">Today's Value</span> $20,000–$60,000+</span>
+            <p class="classic-cultural">Big-block muscle in a lighter, smaller package. The 396-equipped Nova was a legitimate quarter-mile threat and remains one of the most accessible entry points into classic Chevy muscle.</p>
+            <a href="/pages/models/template.html?model=nova-ss-1969&year=1969" class="card-link">Explore Model →</a>
+          </div>
+        </article>
+
+        <!-- El Camino -->
+        <article class="classic-card">
+          <div class="card-image" style="background: #251c10; background-image: url('/photos/chevelle/pexels_1730003_chevelle.jpeg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-classic">1970 · Car-Truck</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">El Camino</span>
+            <h3 class="card-name">El Camino SS</h3>
+            <span class="classic-value"><span class="classic-value-label">Today's Value</span> $15,000–$55,000+</span>
+            <p class="classic-cultural">Half car, half truck — entirely American. Built on the A-body Chevelle platform, the El Camino SS could be optioned with the same big-block engines as its muscle car siblings.</p>
+            <a href="/pages/models/template.html?model=el-camino-1970&year=1970" class="card-link">Explore Model →</a>
+          </div>
+        </article>
+
+        <!-- C3 Corvette -->
+        <article class="classic-card">
+          <div class="card-image" style="background: #1a1820; background-image: url('/photos/corvette/Chevrolet_Corvette_C5_1997-2004.jpg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-classic">1969 · Sports Car</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Corvette</span>
+            <h3 class="card-name">C3 Corvette — Shark Era</h3>
+            <span class="classic-value"><span class="classic-value-label">Today's Value</span> $20,000–$120,000+ (L88/ZR1)</span>
+            <p class="classic-cultural">The Shark-era Corvette. LT1, L88, ZR1 — factory race engines in a road car. The 1969–72 big-block cars are the performance peak of the generation. The L88 was never meant to be street driven.</p>
+            <a href="/pages/models/template.html?model=corvette-c3&year=1969" class="card-link">Explore Model →</a>
+          </div>
+        </article>
+
+        <!-- Monte Carlo -->
+        <article class="classic-card">
+          <div class="card-image" style="background: #1c1820; background-image: url('/photos/monte-carlo/1973_Chevrolet_Monte_Carlo_27753817774.jpg'); background-size: cover; background-position: center;">
+            <div class="card-badge badge-classic">1970 · Personal Luxury</div>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Monte Carlo</span>
+            <h3 class="card-name">Monte Carlo SS</h3>
+            <span class="classic-value"><span class="classic-value-label">Today's Value</span> $12,000–$45,000+</span>
+            <p class="classic-cultural">Chevy's personal luxury coupe with muscle car underpinnings. The SS 454 first-gen is a sleeper collectible. The 1980s aero-body NASCAR SS version is a certified piece of racing heritage.</p>
+            <a href="/pages/models/template.html?model=monte-carlo-ss&year=1970" class="card-link">Explore Model →</a>
+          </div>
+        </article>
 
       </div>
     </section>
@@ -1475,6 +1998,26 @@
         navToggle.setAttribute('aria-expanded', 'false');
       });
     });
+
+    // ── Timeline drag-scroll ───────────────────
+    (function () {
+      const el = document.getElementById('timelineScroll');
+      if (!el) return;
+      let isDown = false, startX, scrollLeft;
+      el.addEventListener('mousedown', e => {
+        isDown = true;
+        startX = e.pageX - el.offsetLeft;
+        scrollLeft = el.scrollLeft;
+      });
+      el.addEventListener('mouseleave', () => { isDown = false; });
+      el.addEventListener('mouseup', () => { isDown = false; });
+      el.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - el.offsetLeft;
+        el.scrollLeft = scrollLeft - (x - startX);
+      });
+    })();
 
     // ── Filter tabs ────────────────────────────
     const filterTabs     = document.querySelectorAll('.filter-tab');

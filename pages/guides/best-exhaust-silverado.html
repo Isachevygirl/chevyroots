@@ -172,32 +172,285 @@
       .product-specs { grid-template-columns: 1fr 1fr; }
       .newsletter-form { flex-direction: column; }
     }
+  
+    /* ============================================================
+       ANNOUNCEMENT BAR
+    ============================================================ */
+    .announcement-bar {
+      background: var(--red);
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .announcement-bar span { color: rgba(255,255,255,0.75); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-height);
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .nav-logo-main {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+    .nav-logo-main em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .nav-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      margin-top: 1px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+    .nav-more {
+      position: relative;
+    }
+    .nav-more-btn {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color var(--transition), background var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .nav-more-btn:hover {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+    .nav-more-arrow {
+      font-size: 0.6rem;
+      transition: transform 0.2s;
+    }
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 200px;
+      background: #2A2A2A;
+      border: 1px solid #3A3A3A;
+      border-top: 2px solid var(--gold);
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      padding: 0.5rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+      z-index: 200;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .nav-more:hover .nav-dropdown,
+    .nav-more.open .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-more:hover .nav-more-arrow {
+      transform: rotate(180deg);
+    }
+    .nav-dropdown a {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      padding: 0.5rem 1.25rem;
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-dropdown a:hover,
+    .nav-dropdown a.active {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+    }
+    .nav-menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--off-white);
+      transition: var(--transition);
+    }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: var(--warm-gray);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-mobile a:hover,
+    .nav-mobile a.active {
+      color: var(--gold);
+      background: rgba(196,160,53,0.08);
+    }
+    .nav-mobile-divider {
+      height: 1px;
+      background: rgba(196,160,53,0.2);
+      margin: 0.5rem 0;
+    }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="/index.html" class="nav-logo">
-      <span class="nav-logo-main">Chevy<span>Roots</span></span>
-      <span class="nav-logo-sub">Run by a Chevy Girl</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/pages/guides/index.html" class="active">Guides</a></li>
-      <li><a href="/pages/guides/silverado-buyers-guide.html">Silverado</a></li>
-      <li><a href="/pages/guides/compare.html">Compare</a></li>
-      <li><a href="/pages/community/">Community</a></li>
-      <li><a href="/pages/marketplace/">Marketplace</a></li>
-      <li><a href="/pages/tools/">Tools</a></li>
-    </ul>
-    <a href="#newsletter" class="nav-cta">Get Updates</a>
-    <button class="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span>2026 &mdash;</span> Celebrating America&rsquo;s 250th &amp; 115 Years of Chevrolet &mdash; <span>Built in America. Still Running Strong.</span>
   </div>
-</nav>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+
+      <a href="/" class="nav-logo" aria-label="ChevyRoots home">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/" class="active" aria-current="page">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/about/">About</a></li>
+        <li class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false" aria-haspopup="true">More <span class="nav-more-arrow">&#9662;</span></button>
+          <div class="nav-dropdown">
+            <a href="/pages/community/">Community</a>
+            <a href="/pages/marketplace/">Marketplace</a>
+            <a href="/pages/tools/">Tools</a>
+            <a href="/pages/mechanics/">Mechanics</a>
+            <a href="/pages/news/">News</a>
+            <a href="/pages/ads/">Vintage Ads</a>
+            <a href="/pages/newsletter/">Newsletter</a>
+            <a href="/pages/partners/">Partners</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+
+      <button class="nav-menu-toggle" aria-label="Toggle mobile menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="/pages/models/" onclick="this.closest('.nav-mobile').classList.remove('open')">Models</a>
+    <a href="/pages/guides/" class="active" onclick="this.closest('.nav-mobile').classList.remove('open')">Guides</a>
+    <a href="/pages/builds/" onclick="this.closest('.nav-mobile').classList.remove('open')">Builds</a>
+    <a href="/pages/events/" onclick="this.closest('.nav-mobile').classList.remove('open')">Events</a>
+    <a href="/pages/crystals-corner/" onclick="this.closest('.nav-mobile').classList.remove('open')">Crystal's Corner</a>
+    <a href="/pages/about/" onclick="this.closest('.nav-mobile').classList.remove('open')">About</a>
+    <div class="nav-mobile-divider"></div>
+    <a href="/pages/community/" onclick="this.closest('.nav-mobile').classList.remove('open')">Community</a>
+    <a href="/pages/marketplace/" onclick="this.closest('.nav-mobile').classList.remove('open')">Marketplace</a>
+    <a href="/pages/tools/" onclick="this.closest('.nav-mobile').classList.remove('open')">Tools</a>
+    <a href="/pages/mechanics/" onclick="this.closest('.nav-mobile').classList.remove('open')">Mechanics</a>
+    <a href="/pages/news/" onclick="this.closest('.nav-mobile').classList.remove('open')">News</a>
+    <a href="/pages/ads/" onclick="this.closest('.nav-mobile').classList.remove('open')">Vintage Ads</a>
+    <a href="/pages/newsletter/" onclick="this.closest('.nav-mobile').classList.remove('open')">Newsletter</a>
+    <a href="/pages/partners/" onclick="this.closest('.nav-mobile').classList.remove('open')">Partners</a>
+    <a href="/pages/builds/" class="btn btn-gold" style="margin-top:0.5rem;" onclick="this.closest('.nav-mobile').classList.remove('open')">Submit Your Build</a>
+  </div>
 
 <!-- HEADER -->
 <header class="article-header">

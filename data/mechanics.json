@@ -7734,6 +7734,5816 @@
       },
       "added_date": "2026-02-16",
       "last_updated": "2026-04-03"
+    },
+    {
+      "id": "copper-auto-repair-kenai",
+      "name": "Copper Auto Repair",
+      "slug": "copper-auto-repair-kenai",
+      "address": {
+        "street": "2751 Highway 9",
+        "city": "Kenai",
+        "state": "AK",
+        "zip": "31948",
+        "lat": 60.5429,
+        "lng": -151.2227
+      },
+      "phone": "(892) 555-9516",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "ls-swap"
+      ],
+      "chevy_models_served": [
+        "traverse",
+        "colorado",
+        "suburban",
+        "corvette"
+      ],
+      "years_in_business": 11,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Kenai. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.7,
+        "chevyroots_count": 6,
+        "yelp_avg": 4.5,
+        "yelp_count": 182,
+        "google_avg": 4.2,
+        "google_count": 212,
+        "composite_score": 4.33
+      },
+      "added_date": "2026-01-10",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "hillside-chevy-works-tuscaloosa",
+      "name": "Hillside Chevy Works",
+      "slug": "hillside-chevy-works-tuscaloosa",
+      "address": {
+        "street": "4580 Highway 9",
+        "city": "Tuscaloosa",
+        "state": "AL",
+        "zip": "11294",
+        "lat": 33.164,
+        "lng": -87.52799999999999
+      },
+      "phone": "(455) 555-1420",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "suspension",
+        "transmission",
+        "electrical"
+      ],
+      "chevy_models_served": [
+        "tahoe",
+        "trailblazer",
+        "impala",
+        "camaro"
+      ],
+      "years_in_business": 18,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Tuscaloosa community Chevy shop. Oil changes to engine builds — honest work at honest prices.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 22,
+        "yelp_avg": 4.3,
+        "yelp_count": 63,
+        "google_avg": 4.7,
+        "google_count": 402,
+        "composite_score": 4.65
+      },
+      "added_date": "2026-03-10",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "uptown-chevy-repair-dothan",
+      "name": "Uptown Chevy Repair",
+      "slug": "uptown-chevy-repair-dothan",
+      "address": {
+        "street": "6969 Market St",
+        "city": "Dothan",
+        "state": "AL",
+        "zip": "14183",
+        "lat": 31.2157,
+        "lng": -85.35090000000001
+      },
+      "phone": "(792) 555-5106",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "camaro",
+        "trax",
+        "equinox"
+      ],
+      "years_in_business": 18,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Dothan's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 41,
+        "yelp_avg": 4.6,
+        "yelp_count": 195,
+        "google_avg": 4.7,
+        "google_count": 389,
+        "composite_score": 4.64
+      },
+      "added_date": "2026-01-28",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "all-star-chevy-specialists-jonesboro",
+      "name": "All-Star Chevy Specialists",
+      "slug": "all-star-chevy-specialists-jonesboro",
+      "address": {
+        "street": "8753 Elm Dr",
+        "city": "Jonesboro",
+        "state": "AR",
+        "zip": "79976",
+        "lat": 35.8111,
+        "lng": -90.7071
+      },
+      "phone": "(764) 555-7201",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "performance-tuning",
+        "engine-rebuild",
+        "transmission",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "silverado-hd",
+        "trailblazer",
+        "c10",
+        "blazer",
+        "camaro"
+      ],
+      "years_in_business": 30,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Jonesboro's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 35,
+        "yelp_avg": 4,
+        "yelp_count": 120,
+        "google_avg": 4.6,
+        "google_count": 102,
+        "composite_score": 4.27
+      },
+      "added_date": "2026-03-15",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "trailhead-chevy-tech-flagstaff",
+      "name": "Trailhead Chevy Tech",
+      "slug": "trailhead-chevy-tech-flagstaff",
+      "address": {
+        "street": "431 Service Rd",
+        "city": "Flagstaff",
+        "state": "AZ",
+        "zip": "59082",
+        "lat": 35.1616,
+        "lng": -111.6623
+      },
+      "phone": "(484) 555-2629",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ls-swap",
+        "ev-hybrid",
+        "diesel",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "blazer",
+        "bolt",
+        "corvette"
+      ],
+      "years_in_business": 34,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Flagstaff. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 39,
+        "yelp_avg": 4.1,
+        "yelp_count": 178,
+        "google_avg": 4,
+        "google_count": 106,
+        "composite_score": 4.13
+      },
+      "added_date": "2026-02-21",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "elite-bowtie-garage-yuma",
+      "name": "Elite Bowtie Garage",
+      "slug": "elite-bowtie-garage-yuma",
+      "address": {
+        "street": "9257 Front St",
+        "city": "Yuma",
+        "state": "AZ",
+        "zip": "57697",
+        "lat": 32.7201,
+        "lng": -114.6199
+      },
+      "phone": "(625) 555-7435",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "blazer",
+        "chevelle",
+        "tahoe",
+        "trax"
+      ],
+      "years_in_business": 5,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Full-service Chevrolet shop in Yuma. Routine maintenance to major builds — we know the bowtie.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 38,
+        "yelp_avg": 4,
+        "yelp_count": 66,
+        "google_avg": 4.6,
+        "google_count": 365,
+        "composite_score": 4.49
+      },
+      "added_date": "2026-02-03",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "delta-chevy-service-riverside",
+      "name": "Delta Chevy Service",
+      "slug": "delta-chevy-service-riverside",
+      "address": {
+        "street": "9434 Main St",
+        "city": "Riverside",
+        "state": "CA",
+        "zip": "38824",
+        "lat": 33.9156,
+        "lng": -117.3783
+      },
+      "phone": "(741) 555-6792",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "diesel",
+        "ls-swap",
+        "performance-tuning",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "bolt",
+        "silverado-1500",
+        "tahoe",
+        "impala",
+        "c10"
+      ],
+      "years_in_business": 21,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Riverside shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 11,
+        "yelp_avg": 4.7,
+        "yelp_count": 77,
+        "google_avg": 4.4,
+        "google_count": 69,
+        "composite_score": 4.51
+      },
+      "added_date": "2026-01-01",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "steel-chevy-co-stockton",
+      "name": "Steel Chevy Co.",
+      "slug": "steel-chevy-co-stockton",
+      "address": {
+        "street": "8300 Commerce Dr",
+        "city": "Stockton",
+        "state": "CA",
+        "zip": "84329",
+        "lat": 37.9131,
+        "lng": -121.3071
+      },
+      "phone": "(335) 555-6230",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "ev-hybrid",
+        "performance-tuning",
+        "classic-restoration"
+      ],
+      "chevy_models_served": [
+        "blazer",
+        "trax",
+        "silverado-hd",
+        "colorado",
+        "c10"
+      ],
+      "years_in_business": 19,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Stockton. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 35,
+        "yelp_avg": 4,
+        "yelp_count": 214,
+        "google_avg": 4.9,
+        "google_count": 393,
+        "composite_score": 4.59
+      },
+      "added_date": "2026-01-10",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "ls-performance-chevy-repair-modesto",
+      "name": "LS Performance Chevy Repair",
+      "slug": "ls-performance-chevy-repair-modesto",
+      "address": {
+        "street": "8444 Service Rd",
+        "city": "Modesto",
+        "state": "CA",
+        "zip": "78156",
+        "lat": 37.6083,
+        "lng": -120.98649999999999
+      },
+      "phone": "(288) 555-1370",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "general-maintenance"
+      ],
+      "chevy_models_served": [
+        "traverse",
+        "colorado",
+        "blazer",
+        "suburban",
+        "bolt"
+      ],
+      "years_in_business": 30,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Full-service Chevrolet shop in Modesto. Routine maintenance to major builds — we know the bowtie.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 44,
+        "yelp_avg": 3.8,
+        "yelp_count": 94,
+        "google_avg": 4.4,
+        "google_count": 128,
+        "composite_score": 4.19
+      },
+      "added_date": "2026-01-20",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "eagle-automotive-visalia",
+      "name": "Eagle Automotive",
+      "slug": "eagle-automotive-visalia",
+      "address": {
+        "street": "1061 Market St",
+        "city": "Visalia",
+        "state": "CA",
+        "zip": "91756",
+        "lat": 36.3585,
+        "lng": -119.2433
+      },
+      "phone": "(424) 555-6708",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "engine-rebuild"
+      ],
+      "chevy_models_served": [
+        "silverado-1500",
+        "impala",
+        "trax",
+        "tahoe"
+      ],
+      "years_in_business": 34,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Visalia. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 3.9,
+        "chevyroots_count": 31,
+        "yelp_avg": 4.6,
+        "yelp_count": 98,
+        "google_avg": 4.4,
+        "google_count": 312,
+        "composite_score": 4.4
+      },
+      "added_date": "2026-02-13",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "elite-auto-service-redding",
+      "name": "Elite Auto Service",
+      "slug": "elite-auto-service-redding",
+      "address": {
+        "street": "2082 Industrial Blvd",
+        "city": "Redding",
+        "state": "CA",
+        "zip": "90470",
+        "lat": 40.6075,
+        "lng": -122.3729
+      },
+      "phone": "(401) 555-3566",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "electrical",
+        "ev-hybrid",
+        "performance-tuning",
+        "general-maintenance"
+      ],
+      "chevy_models_served": [
+        "silverado-1500",
+        "silverado-hd",
+        "suburban"
+      ],
+      "years_in_business": 9,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Redding's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.8,
+        "chevyroots_count": 32,
+        "yelp_avg": 4.3,
+        "yelp_count": 137,
+        "google_avg": 4.9,
+        "google_count": 416,
+        "composite_score": 4.77
+      },
+      "added_date": "2026-02-14",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "crown-chevy-center-pueblo",
+      "name": "Crown Chevy Center",
+      "slug": "crown-chevy-center-pueblo",
+      "address": {
+        "street": "2429 Commerce Dr",
+        "city": "Pueblo",
+        "state": "CO",
+        "zip": "97828",
+        "lat": 38.2153,
+        "lng": -104.63
+      },
+      "phone": "(830) 555-6650",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "transmission",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "colorado",
+        "traverse",
+        "corvette",
+        "silverado-1500"
+      ],
+      "years_in_business": 35,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Pueblo shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 32,
+        "yelp_avg": 3.8,
+        "yelp_count": 104,
+        "google_avg": 3.8,
+        "google_count": 332,
+        "composite_score": 3.83
+      },
+      "added_date": "2026-01-09",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "pioneer-chevy-tech-new-haven",
+      "name": "Pioneer Chevy Tech",
+      "slug": "pioneer-chevy-tech-new-haven",
+      "address": {
+        "street": "5344 First St",
+        "city": "New Haven",
+        "state": "CT",
+        "zip": "94336",
+        "lat": 41.2731,
+        "lng": -72.89389999999999
+      },
+      "phone": "(859) 555-8222",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "diesel",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "bolt",
+        "silverado-hd",
+        "equinox",
+        "corvette"
+      ],
+      "years_in_business": 10,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Full-service Chevrolet shop in New Haven. Routine maintenance to major builds — we know the bowtie.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 33,
+        "yelp_avg": 4,
+        "yelp_count": 164,
+        "google_avg": 4.8,
+        "google_count": 264,
+        "composite_score": 4.48
+      },
+      "added_date": "2026-01-15",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "flatland-chevy-works-dover",
+      "name": "Flatland Chevy Works",
+      "slug": "flatland-chevy-works-dover",
+      "address": {
+        "street": "6130 Auto Row",
+        "city": "Dover",
+        "state": "DE",
+        "zip": "44841",
+        "lat": 39.1343,
+        "lng": -75.5129
+      },
+      "phone": "(468) 555-2249",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "ev-hybrid",
+        "ls-swap",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "traverse",
+        "bolt",
+        "chevelle"
+      ],
+      "years_in_business": 25,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Dover's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 25,
+        "yelp_avg": 4.7,
+        "yelp_count": 46,
+        "google_avg": 4.3,
+        "google_count": 153,
+        "composite_score": 4.36
+      },
+      "added_date": "2026-03-11",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "metro-chevy-lab-gainesville",
+      "name": "Metro Chevy Lab",
+      "slug": "metro-chevy-lab-gainesville",
+      "address": {
+        "street": "4471 Market St",
+        "city": "Gainesville",
+        "state": "FL",
+        "zip": "57385",
+        "lat": 29.667099999999998,
+        "lng": -82.30449999999999
+      },
+      "phone": "(229) 555-8972",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "electrical"
+      ],
+      "chevy_models_served": [
+        "trailblazer",
+        "bolt",
+        "chevelle",
+        "impala"
+      ],
+      "years_in_business": 33,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Veteran-owned Chevy shop in Gainesville. Every truck and car treated like family.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 45,
+        "yelp_avg": 4.4,
+        "yelp_count": 33,
+        "google_avg": 4.6,
+        "google_count": 26,
+        "composite_score": 4.36
+      },
+      "added_date": "2026-01-14",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "county-line-motor-works-tallahassee",
+      "name": "County Line Motor Works",
+      "slug": "county-line-motor-works-tallahassee",
+      "address": {
+        "street": "1932 Service Rd",
+        "city": "Tallahassee",
+        "state": "FL",
+        "zip": "61041",
+        "lat": 30.465100000000003,
+        "lng": -84.32469999999999
+      },
+      "phone": "(860) 555-8041",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "performance-tuning"
+      ],
+      "chevy_models_served": [
+        "camaro",
+        "traverse",
+        "silverado-1500"
+      ],
+      "years_in_business": 13,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Tallahassee community Chevy shop. Oil changes to engine builds — honest work at honest prices.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.8,
+        "chevyroots_count": 40,
+        "yelp_avg": 4.8,
+        "yelp_count": 113,
+        "google_avg": 4.2,
+        "google_count": 373,
+        "composite_score": 4.36
+      },
+      "added_date": "2026-03-28",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "mountain-view-chevy-service-pensacola",
+      "name": "Mountain View Chevy Service",
+      "slug": "mountain-view-chevy-service-pensacola",
+      "address": {
+        "street": "9476 Oak St",
+        "city": "Pensacola",
+        "state": "FL",
+        "zip": "20390",
+        "lat": 30.4011,
+        "lng": -87.2508
+      },
+      "phone": "(518) 555-8099",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "exhaust",
+        "engine-rebuild",
+        "electrical"
+      ],
+      "chevy_models_served": [
+        "camaro",
+        "equinox",
+        "impala"
+      ],
+      "years_in_business": 15,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Pensacola Chevy repair and performance. Honest diagnostics, fast turnarounds, and competitive pricing.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.4,
+        "chevyroots_count": 26,
+        "yelp_avg": 4.2,
+        "yelp_count": 38,
+        "google_avg": 4.6,
+        "google_count": 195,
+        "composite_score": 4.53
+      },
+      "added_date": "2026-02-15",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "mountain-view-gm-garage-st-petersburg",
+      "name": "Mountain View GM Garage",
+      "slug": "mountain-view-gm-garage-st-petersburg",
+      "address": {
+        "street": "1676 Auto Row",
+        "city": "St Petersburg",
+        "state": "FL",
+        "zip": "35701",
+        "lat": 27.739500000000003,
+        "lng": -82.6253
+      },
+      "phone": "(471) 555-1703",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "engine-rebuild",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "silverado-1500",
+        "bolt",
+        "corvette"
+      ],
+      "years_in_business": 31,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Independent Chevy specialists in St Petersburg. Dealer-quality work without the dealer markup.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 33,
+        "yelp_avg": 3.9,
+        "yelp_count": 141,
+        "google_avg": 4.1,
+        "google_count": 123,
+        "composite_score": 4.02
+      },
+      "added_date": "2026-03-27",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "three-star-chevy-masters-lakeland",
+      "name": "Three Star Chevy Masters",
+      "slug": "three-star-chevy-masters-lakeland",
+      "address": {
+        "street": "2980 Commerce Dr",
+        "city": "Lakeland",
+        "state": "FL",
+        "zip": "86550",
+        "lat": 28.0759,
+        "lng": -81.9461
+      },
+      "phone": "(293) 555-2758",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "engine-rebuild",
+        "classic-restoration"
+      ],
+      "chevy_models_served": [
+        "c10",
+        "blazer",
+        "tahoe",
+        "chevelle"
+      ],
+      "years_in_business": 21,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Independent Chevy specialists in Lakeland. Dealer-quality work without the dealer markup.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 33,
+        "yelp_avg": 4,
+        "yelp_count": 35,
+        "google_avg": 4.9,
+        "google_count": 362,
+        "composite_score": 4.81
+      },
+      "added_date": "2026-02-16",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "blue-collar-bowtie-garage-columbus",
+      "name": "Blue Collar Bowtie Garage",
+      "slug": "blue-collar-bowtie-garage-columbus",
+      "address": {
+        "street": "9218 Broadway",
+        "city": "Columbus",
+        "state": "GA",
+        "zip": "72287",
+        "lat": 32.431799999999996,
+        "lng": -84.99000000000001
+      },
+      "phone": "(238) 555-3813",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "performance-tuning",
+        "suspension",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "blazer",
+        "trailblazer",
+        "tahoe"
+      ],
+      "years_in_business": 4,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Columbus. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 32,
+        "yelp_avg": 4.5,
+        "yelp_count": 29,
+        "google_avg": 4.3,
+        "google_count": 170,
+        "composite_score": 4.32
+      },
+      "added_date": "2026-03-15",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "copper-chevy-performance-athens",
+      "name": "Copper Chevy Performance",
+      "slug": "copper-chevy-performance-athens",
+      "address": {
+        "street": "6917 Main St",
+        "city": "Athens",
+        "state": "GA",
+        "zip": "60132",
+        "lat": 33.9433,
+        "lng": -83.3234
+      },
+      "phone": "(696) 555-2209",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "classic-restoration",
+        "electrical",
+        "general-maintenance"
+      ],
+      "chevy_models_served": [
+        "chevelle",
+        "trax",
+        "traverse",
+        "tahoe",
+        "camaro"
+      ],
+      "years_in_business": 28,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Athens Chevy repair and performance. Honest diagnostics, fast turnarounds, and competitive pricing.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 22,
+        "yelp_avg": 3.7,
+        "yelp_count": 89,
+        "google_avg": 4.1,
+        "google_count": 217,
+        "composite_score": 4.01
+      },
+      "added_date": "2026-03-16",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "bowtie-nation-chevy-lab-kailua",
+      "name": "Bowtie Nation Chevy Lab",
+      "slug": "bowtie-nation-chevy-lab-kailua",
+      "address": {
+        "street": "8525 Auto Row",
+        "city": "Kailua",
+        "state": "HI",
+        "zip": "53294",
+        "lat": 21.369600000000002,
+        "lng": -157.754
+      },
+      "phone": "(682) 555-7762",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "exhaust"
+      ],
+      "chevy_models_served": [
+        "corvette",
+        "silverado-1500",
+        "equinox"
+      ],
+      "years_in_business": 7,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Kailua shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 23,
+        "yelp_avg": 4.1,
+        "yelp_count": 126,
+        "google_avg": 4.1,
+        "google_count": 38,
+        "composite_score": 4.11
+      },
+      "added_date": "2026-03-21",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "mile-high-chevy-service-idaho-falls",
+      "name": "Mile High Chevy Service",
+      "slug": "mile-high-chevy-service-idaho-falls",
+      "address": {
+        "street": "3957 Oak St",
+        "city": "Idaho Falls",
+        "state": "ID",
+        "zip": "33931",
+        "lat": 43.523900000000005,
+        "lng": -112.039
+      },
+      "phone": "(767) 555-6304",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ev-hybrid",
+        "performance-tuning",
+        "diesel",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "colorado",
+        "blazer",
+        "silverado-hd"
+      ],
+      "years_in_business": 16,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Idaho Falls Chevy repair and performance. Honest diagnostics, fast turnarounds, and competitive pricing.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 28,
+        "yelp_avg": 4,
+        "yelp_count": 111,
+        "google_avg": 4.5,
+        "google_count": 157,
+        "composite_score": 4.34
+      },
+      "added_date": "2026-03-01",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "5-3-auto-chevy-tech-champaign",
+      "name": "5.3 Auto Chevy Tech",
+      "slug": "5-3-auto-chevy-tech-champaign",
+      "address": {
+        "street": "5089 Front St",
+        "city": "Champaign",
+        "state": "IL",
+        "zip": "83202",
+        "lat": 40.1229,
+        "lng": -88.21499999999999
+      },
+      "phone": "(587) 555-8126",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "ls-swap",
+        "ev-hybrid",
+        "electrical"
+      ],
+      "chevy_models_served": [
+        "colorado",
+        "trax",
+        "corvette",
+        "suburban",
+        "tahoe"
+      ],
+      "years_in_business": 4,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Independent Chevy specialists in Champaign. Dealer-quality work without the dealer markup.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 22,
+        "yelp_avg": 4.2,
+        "yelp_count": 160,
+        "google_avg": 4.7,
+        "google_count": 284,
+        "composite_score": 4.53
+      },
+      "added_date": "2026-02-04",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "metro-chevy-tech-joliet",
+      "name": "Metro Chevy Tech",
+      "slug": "metro-chevy-tech-joliet",
+      "address": {
+        "street": "9035 Commerce Dr",
+        "city": "Joliet",
+        "state": "IL",
+        "zip": "45083",
+        "lat": 41.5662,
+        "lng": -88.0459
+      },
+      "phone": "(458) 555-7682",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ev-hybrid",
+        "classic-restoration",
+        "diesel"
+      ],
+      "chevy_models_served": [
+        "c10",
+        "silverado-hd",
+        "chevelle"
+      ],
+      "years_in_business": 13,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Joliet. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 38,
+        "yelp_avg": 4.1,
+        "yelp_count": 126,
+        "google_avg": 4.4,
+        "google_count": 143,
+        "composite_score": 4.24
+      },
+      "added_date": "2026-01-05",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "flatland-chevy-masters-decatur",
+      "name": "Flatland Chevy Masters",
+      "slug": "flatland-chevy-masters-decatur",
+      "address": {
+        "street": "7242 Industrial Blvd",
+        "city": "Decatur",
+        "state": "IL",
+        "zip": "15502",
+        "lat": 39.8073,
+        "lng": -88.95230000000001
+      },
+      "phone": "(514) 555-2151",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "chevelle",
+        "corvette",
+        "equinox",
+        "suburban"
+      ],
+      "years_in_business": 21,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Decatur Chevy repair and performance. Honest diagnostics, fast turnarounds, and competitive pricing.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 28,
+        "yelp_avg": 4.5,
+        "yelp_count": 111,
+        "google_avg": 3.8,
+        "google_count": 38,
+        "composite_score": 4.25
+      },
+      "added_date": "2026-03-03",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "summit-automotive-south-bend",
+      "name": "Summit Automotive",
+      "slug": "summit-automotive-south-bend",
+      "address": {
+        "street": "4769 Highway 9",
+        "city": "South Bend",
+        "state": "IN",
+        "zip": "43530",
+        "lat": 41.6452,
+        "lng": -86.2041
+      },
+      "phone": "(673) 555-8785",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ev-hybrid",
+        "performance-tuning",
+        "classic-restoration",
+        "engine-rebuild"
+      ],
+      "chevy_models_served": [
+        "camaro",
+        "tahoe",
+        "chevelle"
+      ],
+      "years_in_business": 14,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving South Bend. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 39,
+        "yelp_avg": 4.5,
+        "yelp_count": 21,
+        "google_avg": 4.1,
+        "google_count": 62,
+        "composite_score": 4.19
+      },
+      "added_date": "2026-02-26",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "lakeside-auto-repair-lafayette",
+      "name": "Lakeside Auto Repair",
+      "slug": "lakeside-auto-repair-lafayette",
+      "address": {
+        "street": "3277 Service Rd",
+        "city": "Lafayette",
+        "state": "IN",
+        "zip": "19126",
+        "lat": 40.4076,
+        "lng": -86.8757
+      },
+      "phone": "(296) 555-3136",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "general-maintenance"
+      ],
+      "chevy_models_served": [
+        "suburban",
+        "c10",
+        "equinox"
+      ],
+      "years_in_business": 27,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Lafayette's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 38,
+        "yelp_avg": 4.1,
+        "yelp_count": 45,
+        "google_avg": 3.9,
+        "google_count": 32,
+        "composite_score": 4.18
+      },
+      "added_date": "2026-03-05",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "first-class-chevy-specialists-sioux-city",
+      "name": "First Class Chevy Specialists",
+      "slug": "first-class-chevy-specialists-sioux-city",
+      "address": {
+        "street": "4438 Auto Row",
+        "city": "Sioux City",
+        "state": "IA",
+        "zip": "30940",
+        "lat": 42.487899999999996,
+        "lng": -96.4249
+      },
+      "phone": "(497) 555-7089",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "engine-rebuild",
+        "suspension",
+        "general-maintenance",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "equinox",
+        "colorado",
+        "suburban"
+      ],
+      "years_in_business": 3,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Sioux City shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 25,
+        "yelp_avg": 4.2,
+        "yelp_count": 20,
+        "google_avg": 3.9,
+        "google_count": 261,
+        "composite_score": 3.93
+      },
+      "added_date": "2026-02-12",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "shop-talk-chevy-shop-davenport",
+      "name": "Shop Talk Chevy Shop",
+      "slug": "shop-talk-chevy-shop-davenport",
+      "address": {
+        "street": "3760 Oak St",
+        "city": "Davenport",
+        "state": "IA",
+        "zip": "17760",
+        "lat": 41.4959,
+        "lng": -90.62180000000001
+      },
+      "phone": "(919) 555-3292",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ev-hybrid",
+        "electrical"
+      ],
+      "chevy_models_served": [
+        "equinox",
+        "blazer",
+        "suburban",
+        "corvette",
+        "traverse"
+      ],
+      "years_in_business": 22,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Davenport's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.4,
+        "chevyroots_count": 33,
+        "yelp_avg": 4.8,
+        "yelp_count": 190,
+        "google_avg": 4.4,
+        "google_count": 410,
+        "composite_score": 4.51
+      },
+      "added_date": "2026-03-28",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "harbor-auto-repair-topeka",
+      "name": "Harbor Auto Repair",
+      "slug": "harbor-auto-repair-topeka",
+      "address": {
+        "street": "2170 Elm Dr",
+        "city": "Topeka",
+        "state": "KS",
+        "zip": "33979",
+        "lat": 39.0751,
+        "lng": -95.6392
+      },
+      "phone": "(637) 555-8786",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "exhaust",
+        "transmission",
+        "general-maintenance",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "c10",
+        "suburban",
+        "traverse",
+        "tahoe",
+        "trailblazer"
+      ],
+      "years_in_business": 35,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Full-service Chevrolet shop in Topeka. Routine maintenance to major builds — we know the bowtie.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 42,
+        "yelp_avg": 4.7,
+        "yelp_count": 110,
+        "google_avg": 4.3,
+        "google_count": 372,
+        "composite_score": 4.4
+      },
+      "added_date": "2026-01-15",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "redline-gm-garage-salina",
+      "name": "Redline GM Garage",
+      "slug": "redline-gm-garage-salina",
+      "address": {
+        "street": "5476 Center Ave",
+        "city": "Salina",
+        "state": "KS",
+        "zip": "64320",
+        "lat": 38.8699,
+        "lng": -97.58800000000001
+      },
+      "phone": "(858) 555-1271",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "electrical",
+        "ev-hybrid",
+        "exhaust"
+      ],
+      "chevy_models_served": [
+        "equinox",
+        "tahoe",
+        "camaro"
+      ],
+      "years_in_business": 35,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Salina community Chevy shop. Oil changes to engine builds — honest work at honest prices.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 30,
+        "yelp_avg": 4,
+        "yelp_count": 48,
+        "google_avg": 4.1,
+        "google_count": 305,
+        "composite_score": 4.11
+      },
+      "added_date": "2026-01-02",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "trailhead-auto-service-owensboro",
+      "name": "Trailhead Auto Service",
+      "slug": "trailhead-auto-service-owensboro",
+      "address": {
+        "street": "9501 Broadway",
+        "city": "Owensboro",
+        "state": "KY",
+        "zip": "32477",
+        "lat": 37.8007,
+        "lng": -87.1502
+      },
+      "phone": "(663) 555-4962",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "bodywork",
+        "diesel"
+      ],
+      "chevy_models_served": [
+        "silverado-hd",
+        "colorado",
+        "equinox"
+      ],
+      "years_in_business": 32,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Owensboro. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 40,
+        "yelp_avg": 4.1,
+        "yelp_count": 164,
+        "google_avg": 4.7,
+        "google_count": 287,
+        "composite_score": 4.48
+      },
+      "added_date": "2026-01-12",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "valley-chevy-masters-lake-charles",
+      "name": "Valley Chevy Masters",
+      "slug": "valley-chevy-masters-lake-charles",
+      "address": {
+        "street": "9303 Service Rd",
+        "city": "Lake Charles",
+        "state": "LA",
+        "zip": "50112",
+        "lat": 30.2117,
+        "lng": -93.1919
+      },
+      "phone": "(380) 555-4756",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "ev-hybrid",
+        "engine-rebuild"
+      ],
+      "chevy_models_served": [
+        "tahoe",
+        "c10",
+        "blazer",
+        "chevelle",
+        "corvette"
+      ],
+      "years_in_business": 8,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Lake Charles. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 43,
+        "yelp_avg": 3.9,
+        "yelp_count": 62,
+        "google_avg": 4.7,
+        "google_count": 447,
+        "composite_score": 4.58
+      },
+      "added_date": "2026-02-22",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "torque-chevy-pros-bangor",
+      "name": "Torque Chevy Pros",
+      "slug": "torque-chevy-pros-bangor",
+      "address": {
+        "street": "5395 Oak St",
+        "city": "Bangor",
+        "state": "ME",
+        "zip": "47609",
+        "lat": 44.845,
+        "lng": -68.8111
+      },
+      "phone": "(301) 555-4290",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "bodywork",
+        "ls-swap",
+        "performance-tuning",
+        "electrical"
+      ],
+      "chevy_models_served": [
+        "silverado-1500",
+        "chevelle",
+        "impala",
+        "trax"
+      ],
+      "years_in_business": 27,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Veteran-owned Chevy shop in Bangor. Every truck and car treated like family.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.7,
+        "chevyroots_count": 22,
+        "yelp_avg": 4.2,
+        "yelp_count": 48,
+        "google_avg": 3.9,
+        "google_count": 268,
+        "composite_score": 3.99
+      },
+      "added_date": "2026-03-22",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "harbor-automotive-annapolis",
+      "name": "Harbor Automotive",
+      "slug": "harbor-automotive-annapolis",
+      "address": {
+        "street": "9089 Front St",
+        "city": "Annapolis",
+        "state": "MD",
+        "zip": "36249",
+        "lat": 39.0184,
+        "lng": -76.5024
+      },
+      "phone": "(849) 555-6740",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "bodywork",
+        "electrical",
+        "engine-rebuild"
+      ],
+      "chevy_models_served": [
+        "tahoe",
+        "corvette",
+        "silverado-1500"
+      ],
+      "years_in_business": 15,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Annapolis. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 6,
+        "yelp_avg": 4.4,
+        "yelp_count": 94,
+        "google_avg": 4.2,
+        "google_count": 123,
+        "composite_score": 4.28
+      },
+      "added_date": "2026-03-06",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "pioneer-chevy-repair-springfield",
+      "name": "Pioneer Chevy Repair",
+      "slug": "pioneer-chevy-repair-springfield",
+      "address": {
+        "street": "5347 Center Ave",
+        "city": "Springfield",
+        "state": "MA",
+        "zip": "47024",
+        "lat": 42.1085,
+        "lng": -72.5606
+      },
+      "phone": "(519) 555-2071",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "exhaust",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "chevelle",
+        "camaro",
+        "trailblazer",
+        "suburban"
+      ],
+      "years_in_business": 4,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Springfield shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.7,
+        "chevyroots_count": 5,
+        "yelp_avg": 4.2,
+        "yelp_count": 12,
+        "google_avg": 4.6,
+        "google_count": 140,
+        "composite_score": 4.58
+      },
+      "added_date": "2026-03-02",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "rev-auto-repair-kalamazoo",
+      "name": "Rev Auto Repair",
+      "slug": "rev-auto-repair-kalamazoo",
+      "address": {
+        "street": "5972 Auto Row",
+        "city": "Kalamazoo",
+        "state": "MI",
+        "zip": "57975",
+        "lat": 42.2484,
+        "lng": -85.57029999999999
+      },
+      "phone": "(879) 555-9361",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "electrical",
+        "classic-restoration",
+        "exhaust"
+      ],
+      "chevy_models_served": [
+        "camaro",
+        "equinox",
+        "silverado-hd",
+        "blazer",
+        "suburban"
+      ],
+      "years_in_business": 11,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Kalamazoo. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 16,
+        "yelp_avg": 4,
+        "yelp_count": 118,
+        "google_avg": 3.9,
+        "google_count": 178,
+        "composite_score": 3.94
+      },
+      "added_date": "2026-01-02",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "iron-horse-chevy-repair-saginaw",
+      "name": "Iron Horse Chevy Repair",
+      "slug": "iron-horse-chevy-repair-saginaw",
+      "address": {
+        "street": "8695 Oak St",
+        "city": "Saginaw",
+        "state": "MI",
+        "zip": "26390",
+        "lat": 43.432,
+        "lng": -83.908
+      },
+      "phone": "(890) 555-2608",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "exhaust",
+        "engine-rebuild",
+        "transmission",
+        "classic-restoration"
+      ],
+      "chevy_models_served": [
+        "suburban",
+        "c10",
+        "corvette"
+      ],
+      "years_in_business": 17,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Saginaw community Chevy shop. Oil changes to engine builds — honest work at honest prices.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 39,
+        "yelp_avg": 4.5,
+        "yelp_count": 113,
+        "google_avg": 3.9,
+        "google_count": 417,
+        "composite_score": 4.02
+      },
+      "added_date": "2026-02-02",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "boost-chevy-specialists-traverse-city",
+      "name": "Boost Chevy Specialists",
+      "slug": "boost-chevy-specialists-traverse-city",
+      "address": {
+        "street": "8832 Highway 9",
+        "city": "Traverse City",
+        "state": "MI",
+        "zip": "17359",
+        "lat": 44.766,
+        "lng": -85.5911
+      },
+      "phone": "(378) 555-8471",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "engine-rebuild",
+        "ev-hybrid"
+      ],
+      "chevy_models_served": [
+        "chevelle",
+        "trax",
+        "corvette"
+      ],
+      "years_in_business": 20,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Traverse City shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 5,
+        "chevyroots_count": 13,
+        "yelp_avg": 4.4,
+        "yelp_count": 122,
+        "google_avg": 4.9,
+        "google_count": 167,
+        "composite_score": 4.72
+      },
+      "added_date": "2026-02-10",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "pit-stop-chevy-care-rochester",
+      "name": "Pit Stop Chevy Care",
+      "slug": "pit-stop-chevy-care-rochester",
+      "address": {
+        "street": "4116 Market St",
+        "city": "Rochester",
+        "state": "MN",
+        "zip": "68846",
+        "lat": 44.0582,
+        "lng": -92.4444
+      },
+      "phone": "(606) 555-6129",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ev-hybrid",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "trax",
+        "silverado-1500",
+        "suburban",
+        "trailblazer",
+        "chevelle"
+      ],
+      "years_in_business": 34,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Veteran-owned Chevy shop in Rochester. Every truck and car treated like family.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 21,
+        "yelp_avg": 4.1,
+        "yelp_count": 158,
+        "google_avg": 4.2,
+        "google_count": 87,
+        "composite_score": 4.15
+      },
+      "added_date": "2026-03-20",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "top-gear-chevy-co-tupelo",
+      "name": "Top Gear Chevy Co.",
+      "slug": "top-gear-chevy-co-tupelo",
+      "address": {
+        "street": "3594 Depot Rd",
+        "city": "Tupelo",
+        "state": "MS",
+        "zip": "29398",
+        "lat": 34.266799999999996,
+        "lng": -88.6536
+      },
+      "phone": "(817) 555-4496",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "ls-swap"
+      ],
+      "chevy_models_served": [
+        "bolt",
+        "chevelle",
+        "impala"
+      ],
+      "years_in_business": 17,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Independent Chevy specialists in Tupelo. Dealer-quality work without the dealer markup.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 41,
+        "yelp_avg": 4.2,
+        "yelp_count": 99,
+        "google_avg": 3.8,
+        "google_count": 437,
+        "composite_score": 3.88
+      },
+      "added_date": "2026-03-20",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "frontier-chevy-shop-columbia",
+      "name": "Frontier Chevy Shop",
+      "slug": "frontier-chevy-shop-columbia",
+      "address": {
+        "street": "8512 Main St",
+        "city": "Columbia",
+        "state": "MO",
+        "zip": "10070",
+        "lat": 38.9778,
+        "lng": -92.35810000000001
+      },
+      "phone": "(450) 555-9468",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "c10",
+        "trailblazer",
+        "trax"
+      ],
+      "years_in_business": 30,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Columbia community Chevy shop. Oil changes to engine builds — honest work at honest prices.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 27,
+        "yelp_avg": 4.6,
+        "yelp_count": 92,
+        "google_avg": 4.5,
+        "google_count": 351,
+        "composite_score": 4.51
+      },
+      "added_date": "2026-03-25",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "harbor-bowtie-garage-great-falls",
+      "name": "Harbor Bowtie Garage",
+      "slug": "harbor-bowtie-garage-great-falls",
+      "address": {
+        "street": "7516 Market St",
+        "city": "Great Falls",
+        "state": "MT",
+        "zip": "76978",
+        "lat": 47.541199999999996,
+        "lng": -111.3231
+      },
+      "phone": "(934) 555-5649",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "classic-restoration"
+      ],
+      "chevy_models_served": [
+        "tahoe",
+        "traverse",
+        "blazer"
+      ],
+      "years_in_business": 3,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Great Falls. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.7,
+        "chevyroots_count": 7,
+        "yelp_avg": 4.3,
+        "yelp_count": 62,
+        "google_avg": 4.9,
+        "google_count": 146,
+        "composite_score": 4.74
+      },
+      "added_date": "2026-01-17",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "shop-talk-chevy-tech-kearney",
+      "name": "Shop Talk Chevy Tech",
+      "slug": "shop-talk-chevy-tech-kearney",
+      "address": {
+        "street": "6316 Center Ave",
+        "city": "Kearney",
+        "state": "NE",
+        "zip": "91120",
+        "lat": 40.7018,
+        "lng": -99.05900000000001
+      },
+      "phone": "(945) 555-1767",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "engine-rebuild",
+        "exhaust",
+        "ev-hybrid",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "trailblazer",
+        "silverado-hd",
+        "traverse",
+        "tahoe",
+        "impala"
+      ],
+      "years_in_business": 35,
+      "certified": false,
+      "verified": false,
+      "featured": false,
+      "description": "Full-service Chevrolet shop in Kearney. Routine maintenance to major builds — we know the bowtie.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.8,
+        "chevyroots_count": 29,
+        "yelp_avg": 3.9,
+        "yelp_count": 149,
+        "google_avg": 4.3,
+        "google_count": 164,
+        "composite_score": 4.19
+      },
+      "added_date": "2026-01-14",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "chrome-chevy-repair-henderson",
+      "name": "Chrome Chevy Repair",
+      "slug": "chrome-chevy-repair-henderson",
+      "address": {
+        "street": "8339 Elm Dr",
+        "city": "Henderson",
+        "state": "NV",
+        "zip": "77714",
+        "lat": 36.001599999999996,
+        "lng": -114.9773
+      },
+      "phone": "(926) 555-9019",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "performance-tuning",
+        "general-maintenance",
+        "diesel",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "silverado-1500",
+        "traverse",
+        "silverado-hd",
+        "c10",
+        "colorado"
+      ],
+      "years_in_business": 6,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Henderson's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 31,
+        "yelp_avg": 3.7,
+        "yelp_count": 192,
+        "google_avg": 4.7,
+        "google_count": 192,
+        "composite_score": 4.29
+      },
+      "added_date": "2026-01-12",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "main-street-chevy-pros-nashua",
+      "name": "Main Street Chevy Pros",
+      "slug": "main-street-chevy-pros-nashua",
+      "address": {
+        "street": "990 Park Ave",
+        "city": "Nashua",
+        "state": "NH",
+        "zip": "64454",
+        "lat": 42.7621,
+        "lng": -71.4811
+      },
+      "phone": "(707) 555-7972",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "transmission",
+        "bodywork",
+        "exhaust"
+      ],
+      "chevy_models_served": [
+        "colorado",
+        "trax",
+        "blazer"
+      ],
+      "years_in_business": 15,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Nashua shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.7,
+        "chevyroots_count": 34,
+        "yelp_avg": 4.7,
+        "yelp_count": 109,
+        "google_avg": 4.1,
+        "google_count": 243,
+        "composite_score": 4.31
+      },
+      "added_date": "2026-03-13",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "copper-automotive-trenton",
+      "name": "Copper Automotive",
+      "slug": "copper-automotive-trenton",
+      "address": {
+        "street": "2192 Oak St",
+        "city": "Trenton",
+        "state": "NJ",
+        "zip": "49100",
+        "lat": 40.2464,
+        "lng": -74.6948
+      },
+      "phone": "(414) 555-2082",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "exhaust",
+        "general-maintenance",
+        "performance-tuning"
+      ],
+      "chevy_models_served": [
+        "silverado-1500",
+        "chevelle",
+        "trailblazer"
+      ],
+      "years_in_business": 34,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Trenton. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 35,
+        "yelp_avg": 4.1,
+        "yelp_count": 53,
+        "google_avg": 4.8,
+        "google_count": 362,
+        "composite_score": 4.7
+      },
+      "added_date": "2026-02-13",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "summit-chevy-masters-cherry-hill",
+      "name": "Summit Chevy Masters",
+      "slug": "summit-chevy-masters-cherry-hill",
+      "address": {
+        "street": "1658 Depot Rd",
+        "city": "Cherry Hill",
+        "state": "NJ",
+        "zip": "44235",
+        "lat": 39.907500000000006,
+        "lng": -75.0123
+      },
+      "phone": "(424) 555-3442",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "diesel",
+        "ev-hybrid",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "impala",
+        "bolt",
+        "trailblazer",
+        "chevelle",
+        "silverado-1500"
+      ],
+      "years_in_business": 25,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Cherry Hill shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 2,
+        "yelp_avg": 4.5,
+        "yelp_count": 89,
+        "google_avg": 4.8,
+        "google_count": 190,
+        "composite_score": 4.71
+      },
+      "added_date": "2026-01-03",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "pioneer-chevy-masters-las-cruces",
+      "name": "Pioneer Chevy Masters",
+      "slug": "pioneer-chevy-masters-las-cruces",
+      "address": {
+        "street": "9072 Market St",
+        "city": "Las Cruces",
+        "state": "NM",
+        "zip": "88009",
+        "lat": 32.303999999999995,
+        "lng": -106.7728
+      },
+      "phone": "(955) 555-9392",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "trax",
+        "chevelle",
+        "trailblazer",
+        "silverado-hd"
+      ],
+      "years_in_business": 28,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Las Cruces. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.4,
+        "chevyroots_count": 29,
+        "yelp_avg": 3.8,
+        "yelp_count": 219,
+        "google_avg": 4.7,
+        "google_count": 340,
+        "composite_score": 4.38
+      },
+      "added_date": "2026-03-19",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "steel-chevy-works-albany",
+      "name": "Steel Chevy Works",
+      "slug": "steel-chevy-works-albany",
+      "address": {
+        "street": "6733 First St",
+        "city": "Albany",
+        "state": "NY",
+        "zip": "45206",
+        "lat": 42.6598,
+        "lng": -73.76540000000001
+      },
+      "phone": "(420) 555-1018",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "electrical",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "chevelle",
+        "impala",
+        "camaro",
+        "traverse",
+        "bolt"
+      ],
+      "years_in_business": 32,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Albany's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 28,
+        "yelp_avg": 3.9,
+        "yelp_count": 96,
+        "google_avg": 4.7,
+        "google_count": 218,
+        "composite_score": 4.52
+      },
+      "added_date": "2026-01-23",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "legacy-chevy-co-yonkers",
+      "name": "Legacy Chevy Co.",
+      "slug": "legacy-chevy-co-yonkers",
+      "address": {
+        "street": "6323 Auto Row",
+        "city": "Yonkers",
+        "state": "NY",
+        "zip": "29001",
+        "lat": 40.9038,
+        "lng": -73.8677
+      },
+      "phone": "(600) 555-4392",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "bolt",
+        "impala",
+        "chevelle",
+        "silverado-1500",
+        "equinox"
+      ],
+      "years_in_business": 3,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Full-service Chevrolet shop in Yonkers. Routine maintenance to major builds — we know the bowtie.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 15,
+        "yelp_avg": 3.8,
+        "yelp_count": 152,
+        "google_avg": 4.5,
+        "google_count": 175,
+        "composite_score": 4.22
+      },
+      "added_date": "2026-03-01",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "trailhead-chevy-care-durham",
+      "name": "Trailhead Chevy Care",
+      "slug": "trailhead-chevy-care-durham",
+      "address": {
+        "street": "1825 Front St",
+        "city": "Durham",
+        "state": "NC",
+        "zip": "36318",
+        "lat": 35.9678,
+        "lng": -78.9342
+      },
+      "phone": "(936) 555-4445",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "bodywork",
+        "transmission",
+        "exhaust"
+      ],
+      "chevy_models_served": [
+        "traverse",
+        "tahoe",
+        "equinox"
+      ],
+      "years_in_business": 6,
+      "certified": false,
+      "verified": false,
+      "featured": false,
+      "description": "Durham community Chevy shop. Oil changes to engine builds — honest work at honest prices.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 12,
+        "yelp_avg": 4.3,
+        "yelp_count": 156,
+        "google_avg": 4.9,
+        "google_count": 424,
+        "composite_score": 4.75
+      },
+      "added_date": "2026-01-04",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "precision-chevy-co-fayetteville",
+      "name": "Precision Chevy Co.",
+      "slug": "precision-chevy-co-fayetteville",
+      "address": {
+        "street": "4454 Service Rd",
+        "city": "Fayetteville",
+        "state": "NC",
+        "zip": "18230",
+        "lat": 35.014,
+        "lng": -78.9209
+      },
+      "phone": "(301) 555-3770",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "classic-restoration"
+      ],
+      "chevy_models_served": [
+        "corvette",
+        "suburban",
+        "trax",
+        "colorado",
+        "blazer"
+      ],
+      "years_in_business": 12,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Fayetteville's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.8,
+        "chevyroots_count": 34,
+        "yelp_avg": 3.8,
+        "yelp_count": 99,
+        "google_avg": 4.3,
+        "google_count": 223,
+        "composite_score": 4.23
+      },
+      "added_date": "2026-03-07",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "pit-stop-auto-service-asheville",
+      "name": "Pit Stop Auto Service",
+      "slug": "pit-stop-auto-service-asheville",
+      "address": {
+        "street": "7519 Market St",
+        "city": "Asheville",
+        "state": "NC",
+        "zip": "62125",
+        "lat": 35.563100000000006,
+        "lng": -82.5301
+      },
+      "phone": "(272) 555-2038",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "engine-rebuild"
+      ],
+      "chevy_models_served": [
+        "colorado",
+        "camaro",
+        "chevelle",
+        "trailblazer"
+      ],
+      "years_in_business": 12,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Asheville. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 37,
+        "yelp_avg": 3.8,
+        "yelp_count": 29,
+        "google_avg": 4.5,
+        "google_count": 262,
+        "composite_score": 4.42
+      },
+      "added_date": "2026-01-28",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "crank-auto-repair-grand-forks",
+      "name": "Crank Auto Repair",
+      "slug": "crank-auto-repair-grand-forks",
+      "address": {
+        "street": "1706 Market St",
+        "city": "Grand Forks",
+        "state": "ND",
+        "zip": "40242",
+        "lat": 47.9336,
+        "lng": -97.0562
+      },
+      "phone": "(521) 555-9538",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "ls-swap",
+        "general-maintenance",
+        "electrical"
+      ],
+      "chevy_models_served": [
+        "corvette",
+        "trailblazer",
+        "impala"
+      ],
+      "years_in_business": 33,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Grand Forks. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 30,
+        "yelp_avg": 4.1,
+        "yelp_count": 214,
+        "google_avg": 4.2,
+        "google_count": 174,
+        "composite_score": 4.14
+      },
+      "added_date": "2026-02-26",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "heritage-chevy-shop-akron",
+      "name": "Heritage Chevy Shop",
+      "slug": "heritage-chevy-shop-akron",
+      "address": {
+        "street": "492 Main St",
+        "city": "Akron",
+        "state": "OH",
+        "zip": "80093",
+        "lat": 41.0402,
+        "lng": -81.4837
+      },
+      "phone": "(903) 555-2893",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "exhaust",
+        "diesel"
+      ],
+      "chevy_models_served": [
+        "trax",
+        "colorado",
+        "traverse"
+      ],
+      "years_in_business": 9,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Akron. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 20,
+        "yelp_avg": 3.9,
+        "yelp_count": 216,
+        "google_avg": 4.7,
+        "google_count": 313,
+        "composite_score": 4.42
+      },
+      "added_date": "2026-01-16",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "backroad-gm-garage-dayton",
+      "name": "Backroad GM Garage",
+      "slug": "backroad-gm-garage-dayton",
+      "address": {
+        "street": "4740 Oak St",
+        "city": "Dayton",
+        "state": "OH",
+        "zip": "46653",
+        "lat": 39.757999999999996,
+        "lng": -84.16149999999999
+      },
+      "phone": "(395) 555-6673",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "exhaust",
+        "ev-hybrid"
+      ],
+      "chevy_models_served": [
+        "chevelle",
+        "blazer",
+        "camaro"
+      ],
+      "years_in_business": 31,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Dayton Chevy repair and performance. Honest diagnostics, fast turnarounds, and competitive pricing.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 35,
+        "yelp_avg": 4.4,
+        "yelp_count": 192,
+        "google_avg": 4.5,
+        "google_count": 429,
+        "composite_score": 4.48
+      },
+      "added_date": "2026-01-01",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "main-street-chevy-co-youngstown",
+      "name": "Main Street Chevy Co.",
+      "slug": "main-street-chevy-co-youngstown",
+      "address": {
+        "street": "9465 Highway 9",
+        "city": "Youngstown",
+        "state": "OH",
+        "zip": "55725",
+        "lat": 41.0623,
+        "lng": -80.6682
+      },
+      "phone": "(951) 555-2088",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ls-swap",
+        "exhaust",
+        "diesel",
+        "ev-hybrid"
+      ],
+      "chevy_models_served": [
+        "trax",
+        "silverado-1500",
+        "equinox"
+      ],
+      "years_in_business": 16,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Youngstown's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 34,
+        "yelp_avg": 4.5,
+        "yelp_count": 103,
+        "google_avg": 4.3,
+        "google_count": 168,
+        "composite_score": 4.33
+      },
+      "added_date": "2026-01-25",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "rev-chevy-specialists-lawton",
+      "name": "Rev Chevy Specialists",
+      "slug": "rev-chevy-specialists-lawton",
+      "address": {
+        "street": "5504 Service Rd",
+        "city": "Lawton",
+        "state": "OK",
+        "zip": "78362",
+        "lat": 34.6285,
+        "lng": -98.3676
+      },
+      "phone": "(353) 555-5719",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "performance-tuning",
+        "exhaust",
+        "transmission",
+        "diesel"
+      ],
+      "chevy_models_served": [
+        "suburban",
+        "silverado-1500",
+        "impala",
+        "corvette",
+        "trailblazer"
+      ],
+      "years_in_business": 29,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Lawton shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 36,
+        "yelp_avg": 4.8,
+        "yelp_count": 193,
+        "google_avg": 4.9,
+        "google_count": 290,
+        "composite_score": 4.82
+      },
+      "added_date": "2026-03-18",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "frontier-chevy-performance-salem",
+      "name": "Frontier Chevy Performance",
+      "slug": "frontier-chevy-performance-salem",
+      "address": {
+        "street": "8670 Broadway",
+        "city": "Salem",
+        "state": "OR",
+        "zip": "97115",
+        "lat": 44.923500000000004,
+        "lng": -123.0416
+      },
+      "phone": "(942) 555-1384",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "diesel"
+      ],
+      "chevy_models_served": [
+        "silverado-1500",
+        "bolt",
+        "c10",
+        "blazer",
+        "camaro"
+      ],
+      "years_in_business": 6,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Veteran-owned Chevy shop in Salem. Every truck and car treated like family.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 10,
+        "yelp_avg": 3.7,
+        "yelp_count": 141,
+        "google_avg": 4.4,
+        "google_count": 420,
+        "composite_score": 4.24
+      },
+      "added_date": "2026-02-11",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "apex-chevy-shop-bend",
+      "name": "Apex Chevy Shop",
+      "slug": "apex-chevy-shop-bend",
+      "address": {
+        "street": "2267 Service Rd",
+        "city": "Bend",
+        "state": "OR",
+        "zip": "23604",
+        "lat": 44.092,
+        "lng": -121.2975
+      },
+      "phone": "(578) 555-3184",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "bodywork",
+        "electrical",
+        "ev-hybrid",
+        "engine-rebuild"
+      ],
+      "chevy_models_served": [
+        "tahoe",
+        "silverado-1500",
+        "impala"
+      ],
+      "years_in_business": 34,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Bend shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 15,
+        "yelp_avg": 4.6,
+        "yelp_count": 111,
+        "google_avg": 3.9,
+        "google_count": 282,
+        "composite_score": 4.1
+      },
+      "added_date": "2026-01-21",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "first-class-auto-service-scranton",
+      "name": "First Class Auto Service",
+      "slug": "first-class-auto-service-scranton",
+      "address": {
+        "street": "7028 Center Ave",
+        "city": "Scranton",
+        "state": "PA",
+        "zip": "31166",
+        "lat": 41.4531,
+        "lng": -75.61840000000001
+      },
+      "phone": "(260) 555-1065",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ev-hybrid",
+        "electrical",
+        "general-maintenance",
+        "performance-tuning"
+      ],
+      "chevy_models_served": [
+        "trax",
+        "silverado-hd",
+        "c10"
+      ],
+      "years_in_business": 15,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Scranton shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.4,
+        "chevyroots_count": 5,
+        "yelp_avg": 4.7,
+        "yelp_count": 19,
+        "google_avg": 4.7,
+        "google_count": 276,
+        "composite_score": 4.69
+      },
+      "added_date": "2026-01-22",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "cam-chevy-clinic-harrisburg",
+      "name": "Cam Chevy Clinic",
+      "slug": "cam-chevy-clinic-harrisburg",
+      "address": {
+        "street": "1854 Highway 9",
+        "city": "Harrisburg",
+        "state": "PA",
+        "zip": "75210",
+        "lat": 40.2638,
+        "lng": -76.8459
+      },
+      "phone": "(512) 555-3876",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "performance-tuning",
+        "classic-restoration",
+        "ls-swap",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "traverse",
+        "impala",
+        "c10",
+        "colorado",
+        "chevelle"
+      ],
+      "years_in_business": 18,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Veteran-owned Chevy shop in Harrisburg. Every truck and car treated like family.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 23,
+        "yelp_avg": 4.7,
+        "yelp_count": 156,
+        "google_avg": 4.3,
+        "google_count": 154,
+        "composite_score": 4.49
+      },
+      "added_date": "2026-03-21",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "cam-chevy-service-warwick",
+      "name": "Cam Chevy Service",
+      "slug": "cam-chevy-service-warwick",
+      "address": {
+        "street": "2732 Market St",
+        "city": "Warwick",
+        "state": "RI",
+        "zip": "67212",
+        "lat": 41.6824,
+        "lng": -71.42110000000001
+      },
+      "phone": "(370) 555-2342",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "general-maintenance",
+        "suspension",
+        "classic-restoration"
+      ],
+      "chevy_models_served": [
+        "c10",
+        "silverado-1500",
+        "tahoe",
+        "silverado-hd",
+        "colorado"
+      ],
+      "years_in_business": 31,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Warwick shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 39,
+        "yelp_avg": 4.7,
+        "yelp_count": 99,
+        "google_avg": 4.3,
+        "google_count": 348,
+        "composite_score": 4.36
+      },
+      "added_date": "2026-02-03",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "rev-chevy-masters-myrtle-beach",
+      "name": "Rev Chevy Masters",
+      "slug": "rev-chevy-masters-myrtle-beach",
+      "address": {
+        "street": "549 Elm Dr",
+        "city": "Myrtle Beach",
+        "state": "SC",
+        "zip": "52593",
+        "lat": 33.6878,
+        "lng": -78.86030000000001
+      },
+      "phone": "(683) 555-3256",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "electrical",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "impala",
+        "traverse",
+        "suburban",
+        "trax"
+      ],
+      "years_in_business": 30,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Myrtle Beach. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.7,
+        "chevyroots_count": 21,
+        "yelp_avg": 3.8,
+        "yelp_count": 88,
+        "google_avg": 4,
+        "google_count": 116,
+        "composite_score": 4
+      },
+      "added_date": "2026-03-09",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "crossroads-bowtie-garage-aberdeen",
+      "name": "Crossroads Bowtie Garage",
+      "slug": "crossroads-bowtie-garage-aberdeen",
+      "address": {
+        "street": "3755 Elm Dr",
+        "city": "Aberdeen",
+        "state": "SD",
+        "zip": "89309",
+        "lat": 45.4316,
+        "lng": -98.4616
+      },
+      "phone": "(233) 555-7644",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ls-swap",
+        "diesel"
+      ],
+      "chevy_models_served": [
+        "blazer",
+        "bolt",
+        "colorado"
+      ],
+      "years_in_business": 19,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Aberdeen community Chevy shop. Oil changes to engine builds — honest work at honest prices.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 18,
+        "yelp_avg": 3.8,
+        "yelp_count": 130,
+        "google_avg": 4.7,
+        "google_count": 159,
+        "composite_score": 4.31
+      },
+      "added_date": "2026-02-02",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "boost-chevy-service-clarksville",
+      "name": "Boost Chevy Service",
+      "slug": "boost-chevy-service-clarksville",
+      "address": {
+        "street": "3309 Center Ave",
+        "city": "Clarksville",
+        "state": "TN",
+        "zip": "70720",
+        "lat": 36.5142,
+        "lng": -87.3909
+      },
+      "phone": "(741) 555-2846",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ls-swap",
+        "exhaust",
+        "bodywork",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "silverado-1500",
+        "camaro",
+        "colorado"
+      ],
+      "years_in_business": 22,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Independent Chevy specialists in Clarksville. Dealer-quality work without the dealer markup.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 43,
+        "yelp_avg": 4.4,
+        "yelp_count": 115,
+        "google_avg": 4.9,
+        "google_count": 73,
+        "composite_score": 4.51
+      },
+      "added_date": "2026-02-08",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "river-bowtie-garage-johnson-city",
+      "name": "River Bowtie Garage",
+      "slug": "river-bowtie-garage-johnson-city",
+      "address": {
+        "street": "107 Highway 9",
+        "city": "Johnson City",
+        "state": "TN",
+        "zip": "58651",
+        "lat": 36.359,
+        "lng": -82.30579999999999
+      },
+      "phone": "(754) 555-7020",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "electrical",
+        "suspension",
+        "ev-hybrid"
+      ],
+      "chevy_models_served": [
+        "silverado-hd",
+        "blazer",
+        "suburban",
+        "tahoe",
+        "equinox"
+      ],
+      "years_in_business": 23,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Veteran-owned Chevy shop in Johnson City. Every truck and car treated like family.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 28,
+        "yelp_avg": 4,
+        "yelp_count": 112,
+        "google_avg": 4.8,
+        "google_count": 135,
+        "composite_score": 4.47
+      },
+      "added_date": "2026-02-02",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "blue-collar-gm-garage-waco",
+      "name": "Blue Collar GM Garage",
+      "slug": "blue-collar-gm-garage-waco",
+      "address": {
+        "street": "6731 Service Rd",
+        "city": "Waco",
+        "state": "TX",
+        "zip": "84413",
+        "lat": 31.5765,
+        "lng": -97.13539999999999
+      },
+      "phone": "(815) 555-4136",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ls-swap",
+        "diesel",
+        "ev-hybrid"
+      ],
+      "chevy_models_served": [
+        "c10",
+        "silverado-1500",
+        "trax"
+      ],
+      "years_in_business": 14,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Waco. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 5,
+        "yelp_avg": 3.8,
+        "yelp_count": 195,
+        "google_avg": 3.8,
+        "google_count": 91,
+        "composite_score": 3.81
+      },
+      "added_date": "2026-02-04",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "elite-chevy-lab-tyler",
+      "name": "Elite Chevy Lab",
+      "slug": "elite-chevy-lab-tyler",
+      "address": {
+        "street": "3701 Broadway",
+        "city": "Tyler",
+        "state": "TX",
+        "zip": "12998",
+        "lat": 32.3219,
+        "lng": -95.25330000000001
+      },
+      "phone": "(691) 555-7048",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "diesel",
+        "classic-restoration",
+        "general-maintenance"
+      ],
+      "chevy_models_served": [
+        "camaro",
+        "bolt",
+        "chevelle"
+      ],
+      "years_in_business": 14,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Tyler. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 40,
+        "yelp_avg": 4.3,
+        "yelp_count": 179,
+        "google_avg": 4.4,
+        "google_count": 190,
+        "composite_score": 4.41
+      },
+      "added_date": "2026-02-11",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "nitro-bowtie-garage-beaumont",
+      "name": "Nitro Bowtie Garage",
+      "slug": "nitro-bowtie-garage-beaumont",
+      "address": {
+        "street": "6135 Elm Dr",
+        "city": "Beaumont",
+        "state": "TX",
+        "zip": "92064",
+        "lat": 30.085,
+        "lng": -94.13719999999999
+      },
+      "phone": "(535) 555-3979",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "performance-tuning",
+        "bodywork",
+        "electrical",
+        "general-maintenance"
+      ],
+      "chevy_models_served": [
+        "trax",
+        "trailblazer",
+        "equinox"
+      ],
+      "years_in_business": 21,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Beaumont. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 2,
+        "yelp_avg": 4.3,
+        "yelp_count": 179,
+        "google_avg": 3.9,
+        "google_count": 53,
+        "composite_score": 4.2
+      },
+      "added_date": "2026-03-03",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "legacy-chevy-works-mcallen",
+      "name": "Legacy Chevy Works",
+      "slug": "legacy-chevy-works-mcallen",
+      "address": {
+        "street": "1522 First St",
+        "city": "McAllen",
+        "state": "TX",
+        "zip": "51727",
+        "lat": 26.2074,
+        "lng": -98.2138
+      },
+      "phone": "(721) 555-5132",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "performance-tuning",
+        "transmission",
+        "suspension",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "equinox",
+        "camaro",
+        "suburban"
+      ],
+      "years_in_business": 4,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "McAllen Chevy repair and performance. Honest diagnostics, fast turnarounds, and competitive pricing.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 5,
+        "chevyroots_count": 14,
+        "yelp_avg": 4.2,
+        "yelp_count": 195,
+        "google_avg": 4.1,
+        "google_count": 137,
+        "composite_score": 4.19
+      },
+      "added_date": "2026-02-20",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "copper-chevy-lab-abilene",
+      "name": "Copper Chevy Lab",
+      "slug": "copper-chevy-lab-abilene",
+      "address": {
+        "street": "3450 Elm Dr",
+        "city": "Abilene",
+        "state": "TX",
+        "zip": "98175",
+        "lat": 32.4797,
+        "lng": -99.72309999999999
+      },
+      "phone": "(470) 555-3884",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "performance-tuning",
+        "engine-rebuild"
+      ],
+      "chevy_models_served": [
+        "tahoe",
+        "corvette",
+        "impala"
+      ],
+      "years_in_business": 9,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Veteran-owned Chevy shop in Abilene. Every truck and car treated like family.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 3.9,
+        "chevyroots_count": 40,
+        "yelp_avg": 3.8,
+        "yelp_count": 41,
+        "google_avg": 4.6,
+        "google_count": 175,
+        "composite_score": 4.38
+      },
+      "added_date": "2026-01-28",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "bowtie-nation-chevy-clinic-bryan",
+      "name": "Bowtie Nation Chevy Clinic",
+      "slug": "bowtie-nation-chevy-clinic-bryan",
+      "address": {
+        "street": "4857 Industrial Blvd",
+        "city": "Bryan",
+        "state": "TX",
+        "zip": "21688",
+        "lat": 30.7091,
+        "lng": -96.3719
+      },
+      "phone": "(900) 555-5727",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "engine-rebuild",
+        "transmission",
+        "performance-tuning"
+      ],
+      "chevy_models_served": [
+        "trailblazer",
+        "blazer",
+        "trax"
+      ],
+      "years_in_business": 21,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Bryan's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 3.9,
+        "chevyroots_count": 35,
+        "yelp_avg": 4.7,
+        "yelp_count": 180,
+        "google_avg": 4.1,
+        "google_count": 234,
+        "composite_score": 4.3
+      },
+      "added_date": "2026-02-09",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "mile-high-chevy-masters-laredo",
+      "name": "Mile High Chevy Masters",
+      "slug": "mile-high-chevy-masters-laredo",
+      "address": {
+        "street": "2680 Main St",
+        "city": "Laredo",
+        "state": "TX",
+        "zip": "13985",
+        "lat": 27.490099999999998,
+        "lng": -99.48689999999999
+      },
+      "phone": "(970) 555-5599",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "electrical",
+        "ev-hybrid"
+      ],
+      "chevy_models_served": [
+        "corvette",
+        "impala",
+        "bolt",
+        "silverado-1500",
+        "c10"
+      ],
+      "years_in_business": 13,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Full-service Chevrolet shop in Laredo. Routine maintenance to major builds — we know the bowtie.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 17,
+        "yelp_avg": 4.2,
+        "yelp_count": 119,
+        "google_avg": 4.2,
+        "google_count": 404,
+        "composite_score": 4.22
+      },
+      "added_date": "2026-01-01",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "top-gear-chevy-performance-ogden",
+      "name": "Top Gear Chevy Performance",
+      "slug": "top-gear-chevy-performance-ogden",
+      "address": {
+        "street": "2001 Auto Row",
+        "city": "Ogden",
+        "state": "UT",
+        "zip": "62871",
+        "lat": 41.2491,
+        "lng": -111.94369999999999
+      },
+      "phone": "(455) 555-4439",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "ev-hybrid"
+      ],
+      "chevy_models_served": [
+        "equinox",
+        "chevelle",
+        "camaro",
+        "tahoe",
+        "bolt"
+      ],
+      "years_in_business": 11,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Ogden's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 27,
+        "yelp_avg": 3.9,
+        "yelp_count": 132,
+        "google_avg": 4.8,
+        "google_count": 306,
+        "composite_score": 4.52
+      },
+      "added_date": "2026-01-15",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "iron-horse-motor-works-st-george",
+      "name": "Iron Horse Motor Works",
+      "slug": "iron-horse-motor-works-st-george",
+      "address": {
+        "street": "9758 Auto Row",
+        "city": "St George",
+        "state": "UT",
+        "zip": "92793",
+        "lat": 37.119299999999996,
+        "lng": -113.5411
+      },
+      "phone": "(514) 555-5560",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "silverado-1500",
+        "silverado-hd",
+        "impala",
+        "blazer"
+      ],
+      "years_in_business": 33,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "St George's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 5,
+        "yelp_avg": 4.6,
+        "yelp_count": 186,
+        "google_avg": 4.2,
+        "google_count": 175,
+        "composite_score": 4.38
+      },
+      "added_date": "2026-02-03",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "fifth-gear-chevy-clinic-montpelier",
+      "name": "Fifth Gear Chevy Clinic",
+      "slug": "fifth-gear-chevy-clinic-montpelier",
+      "address": {
+        "street": "201 Front St",
+        "city": "Montpelier",
+        "state": "VT",
+        "zip": "15158",
+        "lat": 44.261700000000005,
+        "lng": -72.6049
+      },
+      "phone": "(543) 555-7211",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "exhaust",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "equinox",
+        "trax",
+        "silverado-1500",
+        "c10",
+        "chevelle"
+      ],
+      "years_in_business": 3,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Montpelier shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 44,
+        "yelp_avg": 3.8,
+        "yelp_count": 89,
+        "google_avg": 4.5,
+        "google_count": 301,
+        "composite_score": 4.42
+      },
+      "added_date": "2026-02-10",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "rev-chevy-tech-lynchburg",
+      "name": "Rev Chevy Tech",
+      "slug": "rev-chevy-tech-lynchburg",
+      "address": {
+        "street": "9462 Oak St",
+        "city": "Lynchburg",
+        "state": "VA",
+        "zip": "89553",
+        "lat": 37.4575,
+        "lng": -79.10770000000001
+      },
+      "phone": "(325) 555-7196",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "trailblazer",
+        "silverado-hd",
+        "colorado"
+      ],
+      "years_in_business": 31,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Lynchburg. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 5,
+        "chevyroots_count": 13,
+        "yelp_avg": 3.9,
+        "yelp_count": 121,
+        "google_avg": 3.8,
+        "google_count": 60,
+        "composite_score": 3.95
+      },
+      "added_date": "2026-01-12",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "coast-chevy-lab-fredericksburg",
+      "name": "Coast Chevy Lab",
+      "slug": "coast-chevy-lab-fredericksburg",
+      "address": {
+        "street": "1862 Park Ave",
+        "city": "Fredericksburg",
+        "state": "VA",
+        "zip": "58530",
+        "lat": 38.3146,
+        "lng": -77.4859
+      },
+      "phone": "(841) 555-8016",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ev-hybrid",
+        "engine-rebuild",
+        "ls-swap",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "corvette",
+        "trailblazer",
+        "impala",
+        "trax"
+      ],
+      "years_in_business": 5,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Fredericksburg. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.8,
+        "chevyroots_count": 14,
+        "yelp_avg": 3.8,
+        "yelp_count": 152,
+        "google_avg": 4.7,
+        "google_count": 437,
+        "composite_score": 4.5
+      },
+      "added_date": "2026-01-17",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "downtown-chevy-lab-olympia",
+      "name": "Downtown Chevy Lab",
+      "slug": "downtown-chevy-lab-olympia",
+      "address": {
+        "street": "589 Auto Row",
+        "city": "Olympia",
+        "state": "WA",
+        "zip": "17206",
+        "lat": 47.070100000000004,
+        "lng": -122.8587
+      },
+      "phone": "(509) 555-8832",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "performance-tuning",
+        "bodywork",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "blazer",
+        "c10",
+        "corvette"
+      ],
+      "years_in_business": 19,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Olympia. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 13,
+        "yelp_avg": 4.5,
+        "yelp_count": 135,
+        "google_avg": 4.6,
+        "google_count": 57,
+        "composite_score": 4.54
+      },
+      "added_date": "2026-03-14",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "county-line-chevy-co-bellingham",
+      "name": "County Line Chevy Co.",
+      "slug": "county-line-chevy-co-bellingham",
+      "address": {
+        "street": "1170 Main St",
+        "city": "Bellingham",
+        "state": "WA",
+        "zip": "73825",
+        "lat": 48.759,
+        "lng": -122.43730000000001
+      },
+      "phone": "(924) 555-8284",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "engine-rebuild",
+        "performance-tuning",
+        "general-maintenance"
+      ],
+      "chevy_models_served": [
+        "chevelle",
+        "silverado-1500",
+        "c10",
+        "silverado-hd"
+      ],
+      "years_in_business": 34,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Bellingham. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 32,
+        "yelp_avg": 4.1,
+        "yelp_count": 186,
+        "google_avg": 4.6,
+        "google_count": 123,
+        "composite_score": 4.32
+      },
+      "added_date": "2026-02-21",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "gearhead-chevy-clinic-morgantown",
+      "name": "Gearhead Chevy Clinic",
+      "slug": "gearhead-chevy-clinic-morgantown",
+      "address": {
+        "street": "2198 Commerce Dr",
+        "city": "Morgantown",
+        "state": "WV",
+        "zip": "52638",
+        "lat": 39.589,
+        "lng": -80.0013
+      },
+      "phone": "(613) 555-4691",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ev-hybrid",
+        "general-maintenance",
+        "ls-swap"
+      ],
+      "chevy_models_served": [
+        "equinox",
+        "suburban",
+        "silverado-hd",
+        "chevelle"
+      ],
+      "years_in_business": 15,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Veteran-owned Chevy shop in Morgantown. Every truck and car treated like family.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.4,
+        "chevyroots_count": 8,
+        "yelp_avg": 4.5,
+        "yelp_count": 199,
+        "google_avg": 4.4,
+        "google_count": 98,
+        "composite_score": 4.46
+      },
+      "added_date": "2026-03-02",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "chrome-chevy-masters-parkersburg",
+      "name": "Chrome Chevy Masters",
+      "slug": "chrome-chevy-masters-parkersburg",
+      "address": {
+        "street": "5113 Broadway",
+        "city": "Parkersburg",
+        "state": "WV",
+        "zip": "17890",
+        "lat": 39.2653,
+        "lng": -81.5393
+      },
+      "phone": "(540) 555-9418",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "classic-restoration",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "c10",
+        "trailblazer",
+        "traverse"
+      ],
+      "years_in_business": 4,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Independent Chevy specialists in Parkersburg. Dealer-quality work without the dealer markup.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 37,
+        "yelp_avg": 4.4,
+        "yelp_count": 175,
+        "google_avg": 4.5,
+        "google_count": 215,
+        "composite_score": 4.47
+      },
+      "added_date": "2026-03-27",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "fifth-gear-chevy-shop-appleton",
+      "name": "Fifth Gear Chevy Shop",
+      "slug": "fifth-gear-chevy-shop-appleton",
+      "address": {
+        "street": "8862 Center Ave",
+        "city": "Appleton",
+        "state": "WI",
+        "zip": "64864",
+        "lat": 44.271699999999996,
+        "lng": -88.38980000000001
+      },
+      "phone": "(227) 555-3027",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ls-swap",
+        "exhaust",
+        "electrical",
+        "performance-tuning"
+      ],
+      "chevy_models_served": [
+        "colorado",
+        "suburban",
+        "traverse",
+        "trax"
+      ],
+      "years_in_business": 10,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Appleton's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.6,
+        "chevyroots_count": 24,
+        "yelp_avg": 4.6,
+        "yelp_count": 32,
+        "google_avg": 4.9,
+        "google_count": 303,
+        "composite_score": 4.86
+      },
+      "added_date": "2026-02-03",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "main-street-chevy-repair-oshkosh",
+      "name": "Main Street Chevy Repair",
+      "slug": "main-street-chevy-repair-oshkosh",
+      "address": {
+        "street": "9842 Service Rd",
+        "city": "Oshkosh",
+        "state": "WI",
+        "zip": "19747",
+        "lat": 44.0382,
+        "lng": -88.4974
+      },
+      "phone": "(464) 555-7116",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "exhaust",
+        "performance-tuning"
+      ],
+      "chevy_models_served": [
+        "camaro",
+        "trax",
+        "silverado-1500"
+      ],
+      "years_in_business": 12,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Oshkosh's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 20,
+        "yelp_avg": 4.4,
+        "yelp_count": 162,
+        "google_avg": 4.2,
+        "google_count": 193,
+        "composite_score": 4.3
+      },
+      "added_date": "2026-01-25",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "thunder-auto-repair-eau-claire",
+      "name": "Thunder Auto Repair",
+      "slug": "thunder-auto-repair-eau-claire",
+      "address": {
+        "street": "3497 Commerce Dr",
+        "city": "Eau Claire",
+        "state": "WI",
+        "zip": "85292",
+        "lat": 44.8104,
+        "lng": -91.51610000000001
+      },
+      "phone": "(636) 555-1170",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "ev-hybrid",
+        "engine-rebuild"
+      ],
+      "chevy_models_served": [
+        "tahoe",
+        "trax",
+        "traverse"
+      ],
+      "years_in_business": 21,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Eau Claire's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.3,
+        "chevyroots_count": 27,
+        "yelp_avg": 3.7,
+        "yelp_count": 181,
+        "google_avg": 4.8,
+        "google_count": 337,
+        "composite_score": 4.45
+      },
+      "added_date": "2026-01-20",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "top-gear-chevy-lab-laramie",
+      "name": "Top Gear Chevy Lab",
+      "slug": "top-gear-chevy-lab-laramie",
+      "address": {
+        "street": "3915 Depot Rd",
+        "city": "Laramie",
+        "state": "WY",
+        "zip": "19310",
+        "lat": 41.2856,
+        "lng": -105.56739999999999
+      },
+      "phone": "(444) 555-8606",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ls-swap",
+        "general-maintenance",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "impala",
+        "silverado-1500",
+        "c10",
+        "trailblazer"
+      ],
+      "years_in_business": 4,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Laramie's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 3.9,
+        "chevyroots_count": 42,
+        "yelp_avg": 4.2,
+        "yelp_count": 107,
+        "google_avg": 4.7,
+        "google_count": 170,
+        "composite_score": 4.44
+      },
+      "added_date": "2026-01-11",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "precision-chevy-center-gillette",
+      "name": "Precision Chevy Center",
+      "slug": "precision-chevy-center-gillette",
+      "address": {
+        "street": "7849 First St",
+        "city": "Gillette",
+        "state": "WY",
+        "zip": "82578",
+        "lat": 44.2887,
+        "lng": -105.5314
+      },
+      "phone": "(648) 555-1775",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "bolt",
+        "equinox",
+        "tahoe",
+        "c10"
+      ],
+      "years_in_business": 32,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Independent Chevy specialists in Gillette. Dealer-quality work without the dealer markup.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.8,
+        "chevyroots_count": 13,
+        "yelp_avg": 4.4,
+        "yelp_count": 26,
+        "google_avg": 4,
+        "google_count": 190,
+        "composite_score": 4.09
+      },
+      "added_date": "2026-01-27",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "main-street-bowtie-garage-rock-springs",
+      "name": "Main Street Bowtie Garage",
+      "slug": "main-street-bowtie-garage-rock-springs",
+      "address": {
+        "street": "9613 Auto Row",
+        "city": "Rock Springs",
+        "state": "WY",
+        "zip": "43326",
+        "lat": 41.6068,
+        "lng": -109.2135
+      },
+      "phone": "(756) 555-2734",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "ls-swap"
+      ],
+      "chevy_models_served": [
+        "trailblazer",
+        "impala",
+        "corvette",
+        "tahoe"
+      ],
+      "years_in_business": 10,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Rock Springs. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 15,
+        "yelp_avg": 4,
+        "yelp_count": 175,
+        "google_avg": 4.5,
+        "google_count": 307,
+        "composite_score": 4.34
+      },
+      "added_date": "2026-02-09",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "pioneer-chevy-care-brooklyn",
+      "name": "Pioneer Chevy Care",
+      "slug": "pioneer-chevy-care-brooklyn",
+      "address": {
+        "street": "1637 Industrial Blvd",
+        "city": "Brooklyn",
+        "state": "NY",
+        "zip": "51848",
+        "lat": 40.706799999999994,
+        "lng": -73.9332
+      },
+      "phone": "(370) 555-5305",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ev-hybrid",
+        "bodywork",
+        "exhaust",
+        "electrical"
+      ],
+      "chevy_models_served": [
+        "blazer",
+        "c10",
+        "bolt",
+        "colorado"
+      ],
+      "years_in_business": 9,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Full-service Chevrolet shop in Brooklyn. Routine maintenance to major builds — we know the bowtie.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 5,
+        "chevyroots_count": 2,
+        "yelp_avg": 4.2,
+        "yelp_count": 117,
+        "google_avg": 4.7,
+        "google_count": 261,
+        "composite_score": 4.56
+      },
+      "added_date": "2026-02-17",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "coast-chevy-care-bronx",
+      "name": "Coast Chevy Care",
+      "slug": "coast-chevy-care-bronx",
+      "address": {
+        "street": "3172 Depot Rd",
+        "city": "Bronx",
+        "state": "NY",
+        "zip": "13567",
+        "lat": 40.833,
+        "lng": -73.8843
+      },
+      "phone": "(734) 555-5589",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "bodywork",
+        "exhaust"
+      ],
+      "chevy_models_served": [
+        "trax",
+        "impala",
+        "tahoe",
+        "bolt"
+      ],
+      "years_in_business": 27,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Bronx community Chevy shop. Oil changes to engine builds — honest work at honest prices.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 9,
+        "yelp_avg": 4.8,
+        "yelp_count": 20,
+        "google_avg": 4.3,
+        "google_count": 79,
+        "composite_score": 4.36
+      },
+      "added_date": "2026-01-28",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "main-street-chevy-masters-queens",
+      "name": "Main Street Chevy Masters",
+      "slug": "main-street-chevy-masters-queens",
+      "address": {
+        "street": "909 Oak St",
+        "city": "Queens",
+        "state": "NY",
+        "zip": "70988",
+        "lat": 40.7722,
+        "lng": -73.8156
+      },
+      "phone": "(325) 555-6919",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "diesel",
+        "performance-tuning",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "trailblazer",
+        "equinox",
+        "suburban",
+        "blazer",
+        "silverado-hd"
+      ],
+      "years_in_business": 26,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Queens community Chevy shop. Oil changes to engine builds — honest work at honest prices.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.2,
+        "chevyroots_count": 22,
+        "yelp_avg": 3.9,
+        "yelp_count": 14,
+        "google_avg": 4.8,
+        "google_count": 258,
+        "composite_score": 4.72
+      },
+      "added_date": "2026-02-05",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "all-star-chevy-tech-plano",
+      "name": "All-Star Chevy Tech",
+      "slug": "all-star-chevy-tech-plano",
+      "address": {
+        "street": "9481 Service Rd",
+        "city": "Plano",
+        "state": "TX",
+        "zip": "85208",
+        "lat": 33.025999999999996,
+        "lng": -96.6806
+      },
+      "phone": "(776) 555-2696",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "exhaust",
+        "diesel"
+      ],
+      "chevy_models_served": [
+        "silverado-hd",
+        "colorado",
+        "corvette",
+        "chevelle"
+      ],
+      "years_in_business": 33,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Plano. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 3.9,
+        "chevyroots_count": 20,
+        "yelp_avg": 4,
+        "yelp_count": 75,
+        "google_avg": 4.1,
+        "google_count": 33,
+        "composite_score": 4.01
+      },
+      "added_date": "2026-01-25",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "valley-chevy-clinic-arlington",
+      "name": "Valley Chevy Clinic",
+      "slug": "valley-chevy-clinic-arlington",
+      "address": {
+        "street": "685 Front St",
+        "city": "Arlington",
+        "state": "TX",
+        "zip": "76142",
+        "lat": 32.7052,
+        "lng": -97.0929
+      },
+      "phone": "(590) 555-5410",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "engine-rebuild",
+        "bodywork",
+        "exhaust",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "bolt",
+        "silverado-1500",
+        "traverse",
+        "chevelle"
+      ],
+      "years_in_business": 18,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Arlington. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 32,
+        "yelp_avg": 4.3,
+        "yelp_count": 156,
+        "google_avg": 4.9,
+        "google_count": 356,
+        "composite_score": 4.69
+      },
+      "added_date": "2026-01-01",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "summit-chevy-specialists-katy",
+      "name": "Summit Chevy Specialists",
+      "slug": "summit-chevy-specialists-katy",
+      "address": {
+        "street": "3850 Main St",
+        "city": "Katy",
+        "state": "TX",
+        "zip": "62240",
+        "lat": 29.8313,
+        "lng": -95.8024
+      },
+      "phone": "(781) 555-4365",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "exhaust",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "bolt",
+        "silverado-hd",
+        "blazer",
+        "silverado-1500"
+      ],
+      "years_in_business": 25,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Katy's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 19,
+        "yelp_avg": 4.8,
+        "yelp_count": 149,
+        "google_avg": 4.1,
+        "google_count": 299,
+        "composite_score": 4.33
+      },
+      "added_date": "2026-02-25",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "trailhead-chevy-works-sugar-land",
+      "name": "Trailhead Chevy Works",
+      "slug": "trailhead-chevy-works-sugar-land",
+      "address": {
+        "street": "3251 Depot Rd",
+        "city": "Sugar Land",
+        "state": "TX",
+        "zip": "11095",
+        "lat": 29.570600000000002,
+        "lng": -95.6284
+      },
+      "phone": "(368) 555-4787",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "diesel",
+        "ev-hybrid",
+        "transmission"
+      ],
+      "chevy_models_served": [
+        "colorado",
+        "impala",
+        "bolt",
+        "equinox",
+        "blazer"
+      ],
+      "years_in_business": 34,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Sugar Land. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 23,
+        "yelp_avg": 4.5,
+        "yelp_count": 204,
+        "google_avg": 3.8,
+        "google_count": 341,
+        "composite_score": 4.07
+      },
+      "added_date": "2026-03-07",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "county-line-chevy-care-spring",
+      "name": "County Line Chevy Care",
+      "slug": "county-line-chevy-care-spring",
+      "address": {
+        "street": "5113 Broadway",
+        "city": "Spring",
+        "state": "TX",
+        "zip": "33223",
+        "lat": 30.122899999999998,
+        "lng": -95.38919999999999
+      },
+      "phone": "(541) 555-5418",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "exhaust",
+        "electrical",
+        "transmission",
+        "suspension"
+      ],
+      "chevy_models_served": [
+        "equinox",
+        "suburban",
+        "impala",
+        "tahoe",
+        "silverado-hd"
+      ],
+      "years_in_business": 14,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Independent Chevy specialists in Spring. Dealer-quality work without the dealer markup.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.7,
+        "chevyroots_count": 41,
+        "yelp_avg": 4.3,
+        "yelp_count": 80,
+        "google_avg": 4.8,
+        "google_count": 386,
+        "composite_score": 4.72
+      },
+      "added_date": "2026-03-23",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "mile-high-chevy-performance-long-beach",
+      "name": "Mile High Chevy Performance",
+      "slug": "mile-high-chevy-performance-long-beach",
+      "address": {
+        "street": "3266 Commerce Dr",
+        "city": "Long Beach",
+        "state": "CA",
+        "zip": "63480",
+        "lat": 33.7629,
+        "lng": -118.14540000000001
+      },
+      "phone": "(305) 555-3417",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ev-hybrid",
+        "bodywork",
+        "performance-tuning"
+      ],
+      "chevy_models_served": [
+        "suburban",
+        "silverado-1500",
+        "camaro",
+        "blazer"
+      ],
+      "years_in_business": 21,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Locally owned Long Beach shop for Chevy trucks, SUVs, and performance cars. Fleet and personal vehicles welcome.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.5,
+        "chevyroots_count": 20,
+        "yelp_avg": 4.6,
+        "yelp_count": 143,
+        "google_avg": 4.5,
+        "google_count": 286,
+        "composite_score": 4.53
+      },
+      "added_date": "2026-02-05",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "uptown-auto-repair-anaheim",
+      "name": "Uptown Auto Repair",
+      "slug": "uptown-auto-repair-anaheim",
+      "address": {
+        "street": "1728 Highway 9",
+        "city": "Anaheim",
+        "state": "CA",
+        "zip": "37920",
+        "lat": 33.833299999999994,
+        "lng": -117.93979999999999
+      },
+      "phone": "(749) 555-5657",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "engine-rebuild",
+        "ls-swap",
+        "exhaust"
+      ],
+      "chevy_models_served": [
+        "c10",
+        "trailblazer",
+        "chevelle",
+        "equinox",
+        "suburban"
+      ],
+      "years_in_business": 10,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Anaheim Chevy repair and performance. Honest diagnostics, fast turnarounds, and competitive pricing.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 16,
+        "yelp_avg": 3.9,
+        "yelp_count": 20,
+        "google_avg": 4.4,
+        "google_count": 74,
+        "composite_score": 4.28
+      },
+      "added_date": "2026-01-18",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "heritage-gm-garage-santa-rosa",
+      "name": "Heritage GM Garage",
+      "slug": "heritage-gm-garage-santa-rosa",
+      "address": {
+        "street": "8659 Service Rd",
+        "city": "Santa Rosa",
+        "state": "CA",
+        "zip": "63082",
+        "lat": 38.458800000000004,
+        "lng": -122.6769
+      },
+      "phone": "(262) 555-7698",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "bodywork",
+        "exhaust",
+        "general-maintenance"
+      ],
+      "chevy_models_served": [
+        "trax",
+        "impala",
+        "silverado-hd",
+        "suburban"
+      ],
+      "years_in_business": 30,
+      "certified": true,
+      "verified": false,
+      "featured": false,
+      "description": "Veteran-owned Chevy shop in Santa Rosa. Every truck and car treated like family.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.9,
+        "chevyroots_count": 28,
+        "yelp_avg": 4.6,
+        "yelp_count": 70,
+        "google_avg": 4.1,
+        "google_count": 76,
+        "composite_score": 4.42
+      },
+      "added_date": "2026-03-23",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "backroad-bowtie-garage-concord",
+      "name": "Backroad Bowtie Garage",
+      "slug": "backroad-bowtie-garage-concord",
+      "address": {
+        "street": "497 Commerce Dr",
+        "city": "Concord",
+        "state": "CA",
+        "zip": "27948",
+        "lat": 38.0142,
+        "lng": -121.9982
+      },
+      "phone": "(566) 555-5278",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "bodywork",
+        "diesel",
+        "ls-swap"
+      ],
+      "chevy_models_served": [
+        "impala",
+        "chevelle",
+        "equinox",
+        "silverado-1500",
+        "blazer"
+      ],
+      "years_in_business": 35,
+      "certified": false,
+      "verified": false,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Concord. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 6:00 PM",
+        "sat": "9:00 AM - 3:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 5,
+        "chevyroots_count": 3,
+        "yelp_avg": 4.5,
+        "yelp_count": 34,
+        "google_avg": 4.6,
+        "google_count": 438,
+        "composite_score": 4.6
+      },
+      "added_date": "2026-01-02",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "redline-chevy-service-aurora",
+      "name": "Redline Chevy Service",
+      "slug": "redline-chevy-service-aurora",
+      "address": {
+        "street": "3353 Broadway",
+        "city": "Aurora",
+        "state": "CO",
+        "zip": "84554",
+        "lat": 39.6992,
+        "lng": -104.792
+      },
+      "phone": "(290) 555-3241",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "engine-rebuild",
+        "exhaust"
+      ],
+      "chevy_models_served": [
+        "trax",
+        "c10",
+        "impala",
+        "suburban",
+        "traverse"
+      ],
+      "years_in_business": 15,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Aurora Chevy repair and performance. Honest diagnostics, fast turnarounds, and competitive pricing.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 3,
+        "yelp_avg": 4.3,
+        "yelp_count": 15,
+        "google_avg": 4,
+        "google_count": 50,
+        "composite_score": 4.06
+      },
+      "added_date": "2026-03-24",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "copper-chevy-center-marietta",
+      "name": "Copper Chevy Center",
+      "slug": "copper-chevy-center-marietta",
+      "address": {
+        "street": "8746 First St",
+        "city": "Marietta",
+        "state": "GA",
+        "zip": "44920",
+        "lat": 33.9452,
+        "lng": -84.5538
+      },
+      "phone": "(341) 555-2354",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "suspension",
+        "general-maintenance"
+      ],
+      "chevy_models_served": [
+        "chevelle",
+        "tahoe",
+        "bolt",
+        "blazer",
+        "silverado-1500"
+      ],
+      "years_in_business": 6,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Marietta's neighborhood Chevy garage. No-nonsense pricing and warranty-safe service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 12,
+        "yelp_avg": 4.7,
+        "yelp_count": 31,
+        "google_avg": 4.2,
+        "google_count": 111,
+        "composite_score": 4.28
+      },
+      "added_date": "2026-02-25",
+      "last_updated": "2026-04-04"
+    },
+    {
+      "id": "metro-bowtie-garage-roswell",
+      "name": "Metro Bowtie Garage",
+      "slug": "metro-bowtie-garage-roswell",
+      "address": {
+        "street": "5461 Main St",
+        "city": "Roswell",
+        "state": "GA",
+        "zip": "93472",
+        "lat": 33.9923,
+        "lng": -84.3564
+      },
+      "phone": "(476) 555-6806",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "ev-hybrid"
+      ],
+      "chevy_models_served": [
+        "silverado-hd",
+        "equinox",
+        "bolt",
+        "camaro"
+      ],
+      "years_in_business": 34,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Roswell's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 22,
+        "yelp_avg": 3.9,
+        "yelp_count": 174,
+        "google_avg": 4.3,
+        "google_count": 154,
+        "composite_score": 4.1
+      },
+      "added_date": "2026-01-05",
+      "last_updated": "2026-04-03"
+    },
+    {
+      "id": "trailhead-bowtie-garage-naperville",
+      "name": "Trailhead Bowtie Garage",
+      "slug": "trailhead-bowtie-garage-naperville",
+      "address": {
+        "street": "8800 Commerce Dr",
+        "city": "Naperville",
+        "state": "IL",
+        "zip": "99089",
+        "lat": 41.792899999999996,
+        "lng": -88.14739999999999
+      },
+      "phone": "(674) 555-5372",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "ls-swap",
+        "ev-hybrid"
+      ],
+      "chevy_models_served": [
+        "traverse",
+        "blazer",
+        "corvette",
+        "silverado-hd"
+      ],
+      "years_in_business": 31,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Family-run Chevy garage serving Naperville. Three-time regional Best Shop winner for GM service.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:30 PM",
+        "sat": "By Appointment",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.8,
+        "chevyroots_count": 2,
+        "yelp_avg": 4.4,
+        "yelp_count": 95,
+        "google_avg": 4.8,
+        "google_count": 284,
+        "composite_score": 4.71
+      },
+      "added_date": "2026-03-08",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "steel-gm-garage-aurora",
+      "name": "Steel GM Garage",
+      "slug": "steel-gm-garage-aurora",
+      "address": {
+        "street": "9628 Park Ave",
+        "city": "Aurora",
+        "state": "IL",
+        "zip": "18504",
+        "lat": 41.7236,
+        "lng": -88.2805
+      },
+      "phone": "(965) 555-1516",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "general-maintenance",
+        "transmission",
+        "engine-rebuild"
+      ],
+      "chevy_models_served": [
+        "camaro",
+        "colorado",
+        "tahoe",
+        "equinox",
+        "silverado-hd"
+      ],
+      "years_in_business": 3,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "ASE-certified Chevy care in Aurora. Genuine GM parts and a commitment to getting it right the first time.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.8,
+        "chevyroots_count": 28,
+        "yelp_avg": 4.5,
+        "yelp_count": 67,
+        "google_avg": 4.1,
+        "google_count": 240,
+        "composite_score": 4.23
+      },
+      "added_date": "2026-03-10",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "pro-chevy-center-dearborn",
+      "name": "Pro Chevy Center",
+      "slug": "pro-chevy-center-dearborn",
+      "address": {
+        "street": "666 Elm Dr",
+        "city": "Dearborn",
+        "state": "MI",
+        "zip": "21886",
+        "lat": 42.3497,
+        "lng": -83.2015
+      },
+      "phone": "(608) 555-2661",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "electrical",
+        "classic-restoration",
+        "exhaust",
+        "ev-hybrid"
+      ],
+      "chevy_models_served": [
+        "silverado-1500",
+        "corvette",
+        "trailblazer",
+        "camaro"
+      ],
+      "years_in_business": 4,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Independent Chevy specialists in Dearborn. Dealer-quality work without the dealer markup.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 10,
+        "yelp_avg": 4.1,
+        "yelp_count": 86,
+        "google_avg": 4.3,
+        "google_count": 242,
+        "composite_score": 4.25
+      },
+      "added_date": "2026-03-18",
+      "last_updated": "2026-04-01"
+    },
+    {
+      "id": "hillside-motor-works-sterling-heights",
+      "name": "Hillside Motor Works",
+      "slug": "hillside-motor-works-sterling-heights",
+      "address": {
+        "street": "3486 First St",
+        "city": "Sterling Heights",
+        "state": "MI",
+        "zip": "58442",
+        "lat": 42.5798,
+        "lng": -83.03259999999999
+      },
+      "phone": "(694) 555-3020",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "performance-tuning",
+        "ev-hybrid",
+        "diesel",
+        "bodywork"
+      ],
+      "chevy_models_served": [
+        "equinox",
+        "trailblazer",
+        "bolt"
+      ],
+      "years_in_business": 20,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Sterling Heights's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "7:30 AM - 5:30 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.1,
+        "chevyroots_count": 45,
+        "yelp_avg": 4,
+        "yelp_count": 125,
+        "google_avg": 4.5,
+        "google_count": 76,
+        "composite_score": 4.19
+      },
+      "added_date": "2026-03-10",
+      "last_updated": "2026-04-02"
+    },
+    {
+      "id": "garage-door-chevy-repair-lakewood",
+      "name": "Garage Door Chevy Repair",
+      "slug": "garage-door-chevy-repair-lakewood",
+      "address": {
+        "street": "1362 Main St",
+        "city": "Lakewood",
+        "state": "OH",
+        "zip": "64315",
+        "lat": 41.4803,
+        "lng": -81.8415
+      },
+      "phone": "(686) 555-2053",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "suspension",
+        "ls-swap"
+      ],
+      "chevy_models_served": [
+        "bolt",
+        "equinox",
+        "silverado-hd",
+        "colorado",
+        "trailblazer"
+      ],
+      "years_in_business": 17,
+      "certified": true,
+      "verified": true,
+      "featured": false,
+      "description": "Lakewood's trusted Chevy specialist. Quality service, fair pricing, and deep GM expertise.",
+      "hours": {
+        "mon_fri": "7:00 AM - 5:00 PM",
+        "sat": "8:00 AM - 12:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4,
+        "chevyroots_count": 7,
+        "yelp_avg": 4.7,
+        "yelp_count": 63,
+        "google_avg": 4.6,
+        "google_count": 230,
+        "composite_score": 4.6
+      },
+      "added_date": "2026-01-18",
+      "last_updated": "2026-04-05"
+    },
+    {
+      "id": "bayshore-chevy-pros-mesa",
+      "name": "Bayshore Chevy Pros",
+      "slug": "bayshore-chevy-pros-mesa",
+      "address": {
+        "street": "6690 Commerce Dr",
+        "city": "Mesa",
+        "state": "AZ",
+        "zip": "77489",
+        "lat": 33.4493,
+        "lng": -111.8812
+      },
+      "phone": "(933) 555-8031",
+      "website": "",
+      "photo": "",
+      "specialties": [
+        "transmission",
+        "performance-tuning",
+        "suspension",
+        "engine-rebuild"
+      ],
+      "chevy_models_served": [
+        "chevelle",
+        "traverse",
+        "corvette"
+      ],
+      "years_in_business": 5,
+      "certified": false,
+      "verified": true,
+      "featured": false,
+      "description": "Veteran-owned Chevy shop in Mesa. Every truck and car treated like family.",
+      "hours": {
+        "mon_fri": "8:00 AM - 5:00 PM",
+        "sat": "9:00 AM - 1:00 PM",
+        "sun": "Closed"
+      },
+      "external_ids": {
+        "yelp": "",
+        "google_place_id": ""
+      },
+      "ratings": {
+        "chevyroots_avg": 4.4,
+        "chevyroots_count": 31,
+        "yelp_avg": 4.7,
+        "yelp_count": 205,
+        "google_avg": 4.4,
+        "google_count": 133,
+        "composite_score": 4.56
+      },
+      "added_date": "2026-01-09",
+      "last_updated": "2026-04-04"
     }
   ]
 }

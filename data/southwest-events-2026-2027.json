@@ -1,0 +1,534 @@
+{
+  "metadata": {
+    "title": "Chevrolet & Car Events - Texas & Southwest States (Apr 2026 - Apr 2027)",
+    "region": ["Texas", "Arizona", "New Mexico", "Colorado", "Nevada", "Utah"],
+    "compiled": "2026-04-05",
+    "total_events": 42
+  },
+  "events": [
+    {
+      "id": 1,
+      "name": "Lonestar Rod & Kustom Round Up",
+      "dates": "April 17-18, 2026",
+      "location": { "city": "Austin", "state": "TX", "venue": "Travis County Expo Center" },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "23rd annual outdoor car show and live music festival featuring vintage hot rods, custom cars, and kustoms. Admission $20, kids 12 and under free.",
+      "url": "https://lonestarroundup.com"
+    },
+    {
+      "id": 2,
+      "name": "Pate Swap Meet",
+      "dates": "April 23-25, 2026",
+      "location": { "city": "Fort Worth", "state": "TX", "venue": "Texas Motor Speedway" },
+      "type": "swap meet",
+      "chevy_specific": false,
+      "description": "One of the largest automotive swap meets in the US. Free admission, $10 parking. Thousands of vendors selling parts, accessories, memorabilia.",
+      "url": "https://www.pateswapmeet.com"
+    },
+    {
+      "id": 3,
+      "name": "Southwest Swap Meet (Spring)",
+      "dates": "April 10-11, 2026",
+      "location": { "city": "Grand Prairie", "state": "TX", "venue": "1000 Lone Star Pkwy" },
+      "type": "swap meet",
+      "chevy_specific": false,
+      "description": "Oldest continuously run classic car swap meet in Texas (est. 1968). 4,500+ vendor spaces, 150+ classic cars, 20,000 attendees.",
+      "url": "https://southwestswapmeet.com"
+    },
+    {
+      "id": 4,
+      "name": "Funny Car Chaos Classic",
+      "dates": "April 9-11, 2026",
+      "location": { "city": "Ennis", "state": "TX", "venue": "Texas Motorplex" },
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "World's largest funny car event featuring nitro-burning cars. High-speed drag racing spectacle.",
+      "url": "https://www.texasmotorplex.com/event-schedule"
+    },
+    {
+      "id": 5,
+      "name": "Mecum Houston Auction",
+      "dates": "April 9-11, 2026",
+      "location": { "city": "Houston", "state": "TX", "venue": "NRG Center" },
+      "type": "auction",
+      "chevy_specific": false,
+      "description": "15th annual Mecum Houston. ~1,000 vehicles including five private collections. 40+ Corvettes consigned. Live on ESPN+.",
+      "url": "https://www.mecum.com"
+    },
+    {
+      "id": 6,
+      "name": "Dallas Area Classic Chevys Tri-Five Show",
+      "dates": "April 19, 2026",
+      "location": { "city": "Richardson", "state": "TX", "venue": "TBD" },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Tri-Five Chevy Show celebrating the 50th Anniversary of DACC (Dallas Area Classic Chevys). 1955-57 Chevy focused.",
+      "url": "http://www.dallasclassicchevy.com/calendar.htm"
+    },
+    {
+      "id": 7,
+      "name": "C10 Nationals - Texas",
+      "dates": "May 8-9, 2026",
+      "location": { "city": "Fort Worth", "state": "TX", "venue": "Texas Motor Speedway" },
+      "type": "truck show",
+      "chevy_specific": true,
+      "description": "GM C10 truck show with Show-N-Shine, autocross, dyno challenge, drag racing, vendors, swap meet, and car corral. Spectator $25/day.",
+      "url": "https://c10nationals.com/schedule-texts/"
+    },
+    {
+      "id": 8,
+      "name": "Holley LS Fest Texas",
+      "dates": "May 15-16, 2026",
+      "location": { "city": "Fort Worth", "state": "TX", "venue": "Texas Motor Speedway" },
+      "type": "car show / drag racing",
+      "chevy_specific": true,
+      "description": "Celebration of GM LS and LT engines. Drifting, drag racing, burnout wars, car show, truck shootout. All LS/LT-powered vehicles welcome.",
+      "url": "https://www.lsfest.com/texas/"
+    },
+    {
+      "id": 9,
+      "name": "Lone Star Corvette Classic",
+      "dates": "May 15-17, 2026",
+      "location": { "city": "Grapevine", "state": "TX", "venue": "TBD" },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Major multi-day Corvette show and gathering with judging competitions, vendors, awards, and entertainment.",
+      "url": "https://www.texas-corvette-association.com"
+    },
+    {
+      "id": 10,
+      "name": "Jerry's Chevrolet Memorial Day Classic Car Show",
+      "dates": "May 25, 2026",
+      "location": { "city": "Burleson", "state": "TX", "venue": "Jerry's Chevrolet" },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Annual Memorial Day classic car show hosted by a Chevy dealership.",
+      "url": "https://www.motortexas.com/events/tag/corvette"
+    },
+    {
+      "id": 11,
+      "name": "Corvette Invasion",
+      "dates": "July 17-18, 2026",
+      "location": { "city": "Bastrop", "state": "TX", "venue": "TBD" },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Annual Corvette-focused show and gathering in the Hill Country.",
+      "url": "https://corvetteinvasion.com"
+    },
+    {
+      "id": 12,
+      "name": "C10s in the Park",
+      "dates": "September 19, 2026",
+      "location": { "city": "Waxahachie", "state": "TX", "venue": "Getzendaner Park" },
+      "type": "truck show",
+      "chevy_specific": true,
+      "description": "11th annual show. 1,200+ GM classic trucks gather. Free spectator admission. One of the largest C10 gatherings in the country.",
+      "url": "https://c10sinthepark.com"
+    },
+    {
+      "id": 13,
+      "name": "Goodguys 33rd Summit Racing Lone Star Nationals",
+      "dates": "September 25-26, 2026",
+      "location": { "city": "Fort Worth", "state": "TX", "venue": "Texas Motor Speedway" },
+      "type": "car show / swap meet",
+      "chevy_specific": false,
+      "description": "New two-day format. Hot rods, muscle cars, customs, trucks (1999 and older). AutoCross, swap meet, vendors, live music.",
+      "url": "https://good-guys.com/lsn-participator"
+    },
+    {
+      "id": 14,
+      "name": "Texas Auto Show at State Fair of Texas",
+      "dates": "September 25 - October 18, 2026",
+      "location": { "city": "Dallas", "state": "TX", "venue": "Fair Park" },
+      "type": "auto show",
+      "chevy_specific": false,
+      "description": "24-day auto show combined with the country's largest state fair. All major manufacturers represented.",
+      "url": "https://texasautoshow.bigtex.com"
+    },
+    {
+      "id": 15,
+      "name": "Mecum Dallas Auction",
+      "dates": "September 2026 (dates TBD)",
+      "location": { "city": "Dallas", "state": "TX", "venue": "TBD" },
+      "type": "auction",
+      "chevy_specific": false,
+      "description": "Major collector car auction with hundreds of vehicles crossing the block.",
+      "url": "https://www.mecum.com"
+    },
+    {
+      "id": 16,
+      "name": "NHRA 41st Texas Fall Nationals / Stampede of Speed",
+      "dates": "October 9-18, 2026",
+      "location": { "city": "Ennis", "state": "TX", "venue": "Texas Motorplex" },
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "NHRA national event plus week-long Stampede of Speed festival. Professional drag racing at its finest.",
+      "url": "https://www.texasmotorplex.com/event-schedule"
+    },
+    {
+      "id": 17,
+      "name": "Southwest Swap Meet (Fall)",
+      "dates": "October 30-31, 2026",
+      "location": { "city": "Grand Prairie", "state": "TX", "venue": "1000 Lone Star Pkwy" },
+      "type": "swap meet",
+      "chevy_specific": false,
+      "description": "Fall edition of the oldest classic car swap meet in Texas.",
+      "url": "https://southwestswapmeet.com"
+    },
+    {
+      "id": 18,
+      "name": "Lowrider Super Show San Antonio",
+      "dates": "March 14, 2026",
+      "location": { "city": "San Antonio", "state": "TX", "venue": "Freeman Coliseum" },
+      "type": "lowrider show",
+      "chevy_specific": false,
+      "description": "Celebration of Chicano and lowrider culture. Custom lowriders, classic cars, and builds from across Texas. Many Chevy Impalas featured. 11am-6pm.",
+      "url": "https://goloentertainment.com"
+    },
+    {
+      "id": 19,
+      "name": "Goodguys 16th LMC Truck Spring Lone Star Nationals",
+      "dates": "March 6-7, 2026",
+      "location": { "city": "Fort Worth", "state": "TX", "venue": "Texas Motor Speedway" },
+      "type": "car show / truck show",
+      "chevy_specific": false,
+      "description": "2,000+ hot rods, muscle cars, customs, trick trucks (1999 and older). AutoCross, swap meet, vendors. Season opener for Goodguys.",
+      "url": "https://good-guys.com/slsn-spectator"
+    },
+    {
+      "id": 20,
+      "name": "48th Corvette Chevy Expo",
+      "dates": "March 7-8, 2026",
+      "location": { "city": "Galveston", "state": "TX", "venue": "Galveston Island Convention Center at The San Luis Resort" },
+      "type": "car show / swap meet",
+      "chevy_specific": true,
+      "description": "48th annual Corvette and Chevy expo. Show cars, specialty vendors, swap meet, plus Galveston Craft Show. All under one roof.",
+      "url": "https://corvettechevyexpo.com"
+    },
+    {
+      "id": 21,
+      "name": "TX2K26",
+      "dates": "March 18-22, 2026",
+      "location": { "city": "Ennis", "state": "TX", "venue": "Texas Motorplex" },
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "The 'Super Bowl of Street Car Racing.' 600+ street cars compete in drag racing and roll racing over 6 days. Entry $399/car. 150+ vendors. Many LS-powered builds.",
+      "url": "https://tx2k.com"
+    },
+    {
+      "id": 22,
+      "name": "Houston Art Car Parade & Festival",
+      "dates": "April 9-12, 2026",
+      "location": { "city": "Houston", "state": "TX", "venue": "Various" },
+      "type": "car show / parade",
+      "chevy_specific": false,
+      "description": "Multi-day art car festival and parade featuring wildly customized vehicles.",
+      "url": "https://www.thehoustonartcarparade.com"
+    },
+    {
+      "id": 23,
+      "name": "Arizona Lowrider Super Show",
+      "dates": "February 28, 2026",
+      "location": { "city": "Phoenix", "state": "AZ", "venue": "State Farm Stadium" },
+      "type": "lowrider show",
+      "chevy_specific": false,
+      "description": "Largest lowrider car show and concert in the nation. Hundreds of indoor and outdoor vehicles. Chicano music, food, fashion & cars. 11am-6pm.",
+      "url": "https://thearizonasupershow.com"
+    },
+    {
+      "id": 24,
+      "name": "Barrett-Jackson Scottsdale Auction (Arizona Car Week)",
+      "dates": "January 17-25, 2026",
+      "location": { "city": "Scottsdale", "state": "AZ", "venue": "WestWorld of Scottsdale" },
+      "type": "auction / car show",
+      "chevy_specific": false,
+      "description": "World's greatest collector car auction. Part of Arizona Car Week (Jan 16-25) with 30+ events across the Valley. Rock the Block concert Jan 16.",
+      "url": "https://www.barrett-jackson.com/events/2026-scottsdale"
+    },
+    {
+      "id": 25,
+      "name": "Arizona Car Week 2026",
+      "dates": "January 16-25, 2026",
+      "location": { "city": "Scottsdale / Phoenix", "state": "AZ", "venue": "Various venues" },
+      "type": "car week",
+      "chevy_specific": false,
+      "description": "Nine-day series with 30+ events including Arizona Concours d'Elegance, Barrett-Jackson, Bonhams auction. Classic, collector, and exotic cars.",
+      "url": "https://arizonacarweek.org"
+    },
+    {
+      "id": 26,
+      "name": "Scottsdale Ranch Exotic Car Show",
+      "dates": "March 8, 2026",
+      "location": { "city": "Scottsdale", "state": "AZ", "venue": "Scottsdale Ranch Community Center" },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Free exotic and classic car show. 11am-3pm.",
+      "url": "https://scottsdaleranchexoticcarshow.com"
+    },
+    {
+      "id": 27,
+      "name": "20th Annual Prescott Corvette Show",
+      "dates": "September 24-26, 2026",
+      "location": { "city": "Prescott", "state": "AZ", "venue": "TBD" },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "20th annual Corvette-only show in the cool pines of Prescott.",
+      "url": "https://www.corvetteforum.com/forums/southwest/"
+    },
+    {
+      "id": 28,
+      "name": "Goodguys 29th Speedway Motors Southwest Nationals",
+      "dates": "November 20-22, 2026",
+      "location": { "city": "Scottsdale", "state": "AZ", "venue": "WestWorld of Scottsdale" },
+      "type": "car show / swap meet",
+      "chevy_specific": false,
+      "description": "Season finale for Goodguys 43rd season. Hot rods, customs, muscle cars (1999 and older). AutoCross, swap meet, Nitro Thunderfest.",
+      "url": "https://good-guys.com/swn-26"
+    },
+    {
+      "id": 29,
+      "name": "FuelFest Arizona",
+      "dates": "December 5, 2026",
+      "location": { "city": "Phoenix", "state": "AZ", "venue": "TBD" },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Part of FuelFest world tour. Massive car show and festival experience.",
+      "url": "https://fuelfest.com"
+    },
+    {
+      "id": 30,
+      "name": "LowClass NM Car Show",
+      "dates": "March 28, 2026",
+      "location": { "city": "Albuquerque", "state": "NM", "venue": "Expo New Mexico - Manuel Lujan Jr Exhibit Complex" },
+      "type": "lowrider show",
+      "chevy_specific": false,
+      "description": "Lowrider and custom car show at Expo New Mexico.",
+      "url": "https://carcruisefinder.com/car-shows/category/new-mexico/"
+    },
+    {
+      "id": 31,
+      "name": "New Mexico Motorfest",
+      "dates": "April 18, 2026",
+      "location": { "city": "Albuquerque", "state": "NM", "venue": "Expo New Mexico (racetrack infield)" },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "All-makes show: lifted trucks, imports, classics, tuners, hot rods, customs, motorcycles, lowriders, SEMA builds. DJs, contests, vendors. 12-5pm.",
+      "url": "https://www.krqe.com/news/community/2026-nm-motorfest-is-coming-to-expo-new-mexico/"
+    },
+    {
+      "id": 32,
+      "name": "10th Annual Honor Flight Car Show",
+      "dates": "May 3, 2026",
+      "location": { "city": "Albuquerque", "state": "NM", "venue": "New Mexico Veterans Memorial" },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Charity car show benefiting Honor Flight. Open to all makes. 9am start.",
+      "url": "https://allevents.in/albuquerque/car-shows"
+    },
+    {
+      "id": 33,
+      "name": "Red River Classic Car Show",
+      "dates": "June 6, 2026",
+      "location": { "city": "Red River", "state": "NM", "venue": "Brandenburg Park" },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "150+ vehicles from classics and hot rods to modern marvels. Live music, food vendors. Mountain setting at 8,750 ft elevation.",
+      "url": "https://redriver.org/events/annual-events/red-river-car-show/"
+    },
+    {
+      "id": 34,
+      "name": "Albuquerque Lowrider Super Show",
+      "dates": "June 7, 2026",
+      "location": { "city": "Albuquerque", "state": "NM", "venue": "Albuquerque Convention Center" },
+      "type": "lowrider show",
+      "chevy_specific": false,
+      "description": "Major lowrider super show. Heavily features Chevy Impalas, Monte Carlos, and other GM platforms. GoLo Entertainment production.",
+      "url": "https://newmexicosupershow.com"
+    },
+    {
+      "id": 35,
+      "name": "Colorado Auto Show",
+      "dates": "April 10-12, 2026",
+      "location": { "city": "Denver", "state": "CO", "venue": "Colorado Convention Center" },
+      "type": "auto show",
+      "chevy_specific": false,
+      "description": "22 manufacturers including Chevrolet. Test drives, exotic cars, Batmobile, DeLorean, F1 simulator. Tickets $16, kids 16 and under free.",
+      "url": "https://colorado.auto/colorado-auto-show/"
+    },
+    {
+      "id": 36,
+      "name": "Goodguys 27th Griot's Garage Colorado Nationals",
+      "dates": "September 5-7, 2026",
+      "location": { "city": "Loveland", "state": "CO", "venue": "The Ranch Events Complex" },
+      "type": "car show / swap meet",
+      "chevy_specific": false,
+      "description": "1999 and older hot rods, muscle cars, customs, pro-touring. AutoCross, swap meet, 80+ awards, Family Fun Zone. Western States Shootout Saturday.",
+      "url": "https://good-guys.com/cn"
+    },
+    {
+      "id": 37,
+      "name": "C10 Nationals - Las Vegas",
+      "dates": "April 10-11, 2026",
+      "location": { "city": "Las Vegas", "state": "NV", "venue": "TBD" },
+      "type": "truck show",
+      "chevy_specific": true,
+      "description": "GM C10 truck show with Show-N-Shine, autocross, dyno challenge, vendors, swap meet, car corral. Spectator $25/day, 12 and under free.",
+      "url": "https://c10nationals.com/schedule-lasvegas/"
+    },
+    {
+      "id": 38,
+      "name": "Viva Las Vegas Rockabilly Weekend",
+      "dates": "April 9-12, 2026",
+      "location": { "city": "Las Vegas", "state": "NV", "venue": "The Orleans Hotel" },
+      "type": "car show / cruise-in",
+      "chevy_specific": false,
+      "description": "Massive rockabilly festival with vintage car show featuring 1960s and older hot rods, customs, and classics.",
+      "url": "https://www.vivalasvegas.net"
+    },
+    {
+      "id": 39,
+      "name": "Barrett-Jackson Las Vegas Auction",
+      "dates": "September 10-12, 2026",
+      "location": { "city": "Las Vegas", "state": "NV", "venue": "Las Vegas Convention Center (West Hall)" },
+      "type": "auction",
+      "chevy_specific": false,
+      "description": "Highly anticipated return of Barrett-Jackson to Las Vegas. Collector car auction with hundreds of vehicles.",
+      "url": "https://www.barrett-jackson.com/2026-las-vegas"
+    },
+    {
+      "id": 40,
+      "name": "Las Vegas Concours d'Elegance",
+      "dates": "October 29 - November 1, 2026",
+      "location": { "city": "Las Vegas", "state": "NV", "venue": "Wynn Las Vegas" },
+      "type": "concours / car show",
+      "chevy_specific": false,
+      "description": "Upscale concours event at the Wynn featuring rare and significant automobiles.",
+      "url": "https://www.idrivesocal.com/events/las-vegas-concours"
+    },
+    {
+      "id": 41,
+      "name": "SEMA Show 2026",
+      "dates": "November 3-6, 2026",
+      "location": { "city": "Las Vegas", "state": "NV", "venue": "Las Vegas Convention Center" },
+      "type": "trade show",
+      "chevy_specific": false,
+      "description": "World's premier automotive specialty products trade event. 2,400 exhibitors, 140,000+ attendees, 70,000+ buyers. Trade-only (public day Nov 6). Major Chevy aftermarket presence.",
+      "url": "https://www.semashow.com"
+    },
+    {
+      "id": 42,
+      "name": "51st Annual Salt Lake City Autorama",
+      "dates": "March 27-29, 2026",
+      "location": { "city": "Sandy", "state": "UT", "venue": "Mountain America Exposition Center" },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "America's finest hot rods, custom cars, trucks, and motorcycles. 51st annual edition.",
+      "url": "https://autorama.com/attend/salt-lake-city/"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Car Show Radar",
+      "url": "https://carshowradar.com",
+      "coverage": "National - searchable by state",
+      "description": "Comprehensive car show listings updated regularly. Filter by state, date, type."
+    },
+    {
+      "name": "CarCruiseFinder",
+      "url": "https://carcruisefinder.com",
+      "coverage": "National - state categories",
+      "description": "Car shows, cruise nights, and automotive events. State-by-state listings."
+    },
+    {
+      "name": "MotorTexas",
+      "url": "https://www.motortexas.com",
+      "coverage": "Texas",
+      "description": "Texas-specific auto shows, car events, and meets. Tag filtering (Corvette, truck, etc.)."
+    },
+    {
+      "name": "OldRide Events",
+      "url": "https://www.oldride.com/events/state/texas",
+      "coverage": "National - state pages",
+      "description": "Classic car shows, swap meets, rallies. Searchable by state."
+    },
+    {
+      "name": "Goodguys Rod & Custom",
+      "url": "https://good-guys.com",
+      "coverage": "National circuit (TX, AZ, CO in Southwest)",
+      "description": "Major hot rod/custom car show series. 3 Southwest events per year (Spring Lone Star, Lone Star Nationals, Southwest Nationals, Colorado Nationals)."
+    },
+    {
+      "name": "Nevada Car Culture",
+      "url": "https://nevadacarculture.com",
+      "coverage": "Nevada",
+      "description": "Comprehensive Nevada car event calendar updated monthly."
+    },
+    {
+      "name": "Arizona Car Culture",
+      "url": "https://arizonacarculture.com",
+      "coverage": "Arizona",
+      "description": "Arizona car shows, meets, and cruise-ins calendar."
+    },
+    {
+      "name": "Utah Car Culture",
+      "url": "https://utahcarculture.org",
+      "coverage": "Utah",
+      "description": "Utah car shows, cruise nights, and charity events."
+    },
+    {
+      "name": "New Mexico Car Council (NMCCC)",
+      "url": "https://www.nmcarcouncil.com",
+      "coverage": "New Mexico",
+      "description": "New Mexico Car Council upcoming events and club listings."
+    },
+    {
+      "name": "Lowrider Experience / GoLo Entertainment",
+      "url": "https://lowriderexperience.com",
+      "coverage": "National (strong TX, AZ, NM presence)",
+      "description": "Official Lowrider magazine super show schedule. 9 events nationally in 2026."
+    },
+    {
+      "name": "Hill Country Portal - Car Shows",
+      "url": "https://www.hillcountryportal.com/hillcountrycarshows.html",
+      "coverage": "Texas Hill Country",
+      "description": "Car shows, swap meets, and rallies in the TX Hill Country region."
+    },
+    {
+      "name": "Autofests",
+      "url": "https://www.autofests.com",
+      "coverage": "National",
+      "description": "Car show and automotive event listings with detailed event pages."
+    },
+    {
+      "name": "Dallas Area Classic Chevys (DACC)",
+      "url": "http://www.dallasclassicchevy.com/calendar.htm",
+      "coverage": "Dallas/Fort Worth TX",
+      "description": "Chevy-specific club with calendar of local Chevy shows and cruises."
+    },
+    {
+      "name": "Texas Corvette Association",
+      "url": "https://www.texas-corvette-association.com",
+      "coverage": "Texas",
+      "description": "Corvette-specific events, shows, and club gatherings across Texas."
+    },
+    {
+      "name": "Vette Vues Corvette Calendar",
+      "url": "https://vette-vues.com/corvette-calendar-events/",
+      "coverage": "National",
+      "description": "Extensive list of Corvette events nationwide. Good for finding regional Corvette shows."
+    },
+    {
+      "name": "LMC Truck Events",
+      "url": "https://www.lmctruck.com/events-and-shows",
+      "coverage": "National",
+      "description": "Classic truck show and event schedule. LMC sponsors many Goodguys and truck-specific events."
+    },
+    {
+      "name": "Time Machine Car Shows",
+      "url": "http://www.timemachinecarshows.com/calendar.html",
+      "coverage": "Texas",
+      "description": "Texas car show calendar and event organizer."
+    }
+  ]
+}

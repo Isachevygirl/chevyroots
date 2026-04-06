@@ -622,113 +622,6 @@
       border-color: var(--gold);
     }
 
-    /* ── MLB TIE-IN ──────────────────────────────────────────── */
-    .mlb-section {
-      margin: 0 0 60px;
-      background: var(--bg-2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .mlb-img {
-      background: #2A2A2A;
-      min-height: 280px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .mlb-img-inner {
-      width: 100%;
-      height: 100%;
-      min-height: 280px;
-      background: linear-gradient(135deg, #222 0%, #2C2820 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .mlb-img-inner .placeholder-label {
-      font-family: var(--font-head);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #555;
-    }
-
-    .mlb-body {
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .mlb-body .kicker {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
-    }
-
-    .mlb-body h2 {
-      font-family: var(--font-head);
-      font-size: clamp(26px, 3.5vw, 38px);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      line-height: 1.1;
-      color: var(--text);
-      margin-bottom: 16px;
-    }
-
-    .mlb-body h2 span {
-      color: var(--gold);
-    }
-
-    .mlb-body p {
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 14px;
-    }
-
-    .mlb-stat-row {
-      display: flex;
-      gap: 24px;
-      margin-top: 20px;
-    }
-
-    .mlb-stat {
-      text-align: center;
-    }
-
-    .mlb-stat .num {
-      font-family: var(--font-head);
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--gold);
-      display: block;
-    }
-
-    .mlb-stat .label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
     /* ── FOOTER ──────────────────────────────────────────────── */
     footer {
       background: #141414;
@@ -1085,10 +978,6 @@
     /* ── RESPONSIVE ──────────────────────────────────────────── */
     @media (max-width: 900px) {
       .event-card.featured { grid-column: span 1; }
-
-      .mlb-section {
-        grid-template-columns: 1fr;
-      }
 
       .footer-top {
         grid-template-columns: 1fr 1fr;
@@ -2150,34 +2039,6 @@
       </div>
       <a href="/pages/guides/america-250-chevy-road-trip.html" class="road-trip-cta">Read the Guide →</a>
     </div>
-
-    <!-- ── MLB TIE-IN ──────────────────────────────────────────── -->
-    <section class="mlb-section" style="margin-top: 60px;">
-      <div class="mlb-img">
-        <div class="mlb-img-inner" style="background: #333 url('/photos/silverado/pexels_12624306_silverado.jpeg') center/cover no-repeat;">
-        </div>
-      </div>
-      <div class="mlb-body">
-        <div class="kicker">Official Vehicle of MLB</div>
-        <h2>Chevy at the <span>Ballpark</span></h2>
-        <p>Chevrolet has been the Official Vehicle of Major League Baseball for over 20 years — a partnership as American as the game itself. From spring training to the Fall Classic, Chevy trucks and SUVs are on the field, in the lots, and behind the scenes at every ballpark in the country.</p>
-        <p>In 2026, with America's 250th anniversary aligning with a landmark baseball season, the connection between Chevrolet and the national pastime has never felt more fitting. Look for Chevy activations at every MLB stadium this season.</p>
-        <div class="mlb-stat-row">
-          <div class="mlb-stat">
-            <span class="num">30</span>
-            <span class="label">MLB Stadiums</span>
-          </div>
-          <div class="mlb-stat">
-            <span class="num">20+</span>
-            <span class="label">Years Official</span>
-          </div>
-          <div class="mlb-stat">
-            <span class="num">2026</span>
-            <span class="label">America's Year</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ── SUBMIT CTA ─────────────────────────────────────────── -->
     <section class="submit-cta" id="submit">

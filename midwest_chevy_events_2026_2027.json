@@ -1,0 +1,734 @@
+{
+  "metadata": {
+    "title": "Chevrolet & Car Events - Midwest Region (Apr 2026 - Apr 2027)",
+    "region": "Midwest USA",
+    "states_covered": ["Illinois", "Indiana", "Iowa", "Kansas", "Michigan", "Minnesota", "Missouri", "Nebraska", "North Dakota", "Ohio", "Oklahoma", "South Dakota", "Wisconsin"],
+    "date_range": "April 2026 - April 2027",
+    "compiled": "2026-04-05",
+    "notes": "Some recurring events have estimated dates based on historical patterns. Verify dates closer to event."
+  },
+  "events": [
+    {
+      "id": 1,
+      "name": "76th Illinois Secretary of State Vehicle Show",
+      "date": "2026-09-12",
+      "location": {"city": "Springfield", "state": "IL", "venue": "Downtown Springfield"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Annual vehicle show featuring a limited-edition specialty license plate of the 1957 Chevrolet Bel Air for 2026. Open to all makes but Chevy-themed plate commemorates the year.",
+      "source_url": "https://www.ilsos.gov/services/vehicle-show.html"
+    },
+    {
+      "id": 2,
+      "name": "Ed Morse Chevrolet Car Show",
+      "date": "2026-04-25",
+      "location": {"city": "Unknown IL location", "state": "IL", "venue": "Ed Morse Chevrolet"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Chevrolet dealership-hosted car show.",
+      "source_url": "https://www.drivechicago.com/carshows"
+    },
+    {
+      "id": 3,
+      "name": "Street Machine Nationals - Du Quoin",
+      "date": "2026-06-05 to 2026-06-07",
+      "location": {"city": "Du Quoin", "state": "IL", "venue": "Du Quoin State Fairgrounds"},
+      "type": "car show / drag racing",
+      "chevy_specific": false,
+      "description": "National event for hot rods, muscle cars, street machines and street trucks. Show-N-Shine contest, Performance Marketplace, and racing events. Thousands of vehicles.",
+      "source_url": "https://www.streetmachinenationals.net/street-machine-nationals-du-quoin/"
+    },
+    {
+      "id": 4,
+      "name": "Route 66 NHRA Nationals",
+      "date": "2026-05-14 to 2026-05-17",
+      "location": {"city": "Joliet", "state": "IL", "venue": "Route 66 Raceway"},
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "26th annual NHRA Mission Foods Drag Racing Series national event. Top Fuel, Funny Car, Pro Stock competition.",
+      "source_url": "https://www.nhra.com/schedule/2026"
+    },
+    {
+      "id": 5,
+      "name": "Cary Cruise Nights",
+      "date": "Every Wednesday, 2026-06-03 to 2026-08-26",
+      "location": {"city": "Cary", "state": "IL", "venue": "Downtown Cary"},
+      "type": "cruise-in",
+      "chevy_specific": false,
+      "description": "Weekly Wednesday evening cruise nights with themed displays, music, and family-friendly activities. No cost, no preregistration required.",
+      "source_url": "https://www.drivechicago.com/carshows"
+    },
+    {
+      "id": 6,
+      "name": "Delaney Chevrolet Car Show",
+      "date": "2026-06-14",
+      "location": {"city": "Indiana", "state": "PA (Downtown Indiana borough)", "venue": "Downtown Indiana"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Chevrolet dealership car show with classic cars, food trucks, and pin up contest. Note: This is Indiana, Pennsylvania - not the state of Indiana.",
+      "source_url": "https://downtownindianapa.org/event/car-show/"
+    },
+    {
+      "id": 7,
+      "name": "20th Century Chevy Car Fest",
+      "date": "2026-09 (estimated, typically September)",
+      "location": {"city": "Washington", "state": "IN", "venue": "Downtown Washington"},
+      "type": "car show / cruise-in",
+      "chevy_specific": true,
+      "description": "All-Chevy event with 600+ antique and custom cars, Saturday cruise through downtown Washington streets. One of the largest Chevy-specific events in Indiana.",
+      "source_url": "https://indianafestivals.org/festival/20th-century-chevy-car-fest/"
+    },
+    {
+      "id": 8,
+      "name": "67th Indianapolis World of Wheels",
+      "date": "2026-03-27 to 2026-03-29",
+      "location": {"city": "Indianapolis", "state": "IN", "venue": "Indiana State Fairgrounds"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Major indoor custom car show featuring hot rods, custom cars, trucks & motorcycles. One of the largest auto events in Indiana.",
+      "source_url": "https://autorama.com/attend/indianapolis/"
+    },
+    {
+      "id": 9,
+      "name": "Bowtie Nationals - Indianapolis Raceway Park",
+      "date": "2026-09 (estimated, typically September)",
+      "location": {"city": "Indianapolis", "state": "IN", "venue": "Lucas Oil Indianapolis Raceway Park"},
+      "type": "drag racing / car show / swap meet",
+      "chevy_specific": true,
+      "description": "All-Chevrolet event: drag racing, autocross, car show, swap meet, dyno challenge, burnout contest, vendor midway. Chevrolet-bodied vehicles only (Camaro, Chevelle, Corvette, Nova, C10, etc.).",
+      "source_url": "https://bowtienationals.com/indianapolis-schedule/"
+    },
+    {
+      "id": 10,
+      "name": "NHRA U.S. Nationals",
+      "date": "2026-09-02 to 2026-09-07",
+      "location": {"city": "Indianapolis", "state": "IN", "venue": "Lucas Oil Indianapolis Raceway Park"},
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "The biggest and most prestigious drag race in the world. Labor Day weekend tradition. NHRA's 75th anniversary season.",
+      "source_url": "https://www.nhra.com/schedule/2026"
+    },
+    {
+      "id": 11,
+      "name": "Goodguys 35th Speedway Motors Heartland Nationals",
+      "date": "2026-07-03 to 2026-07-05",
+      "location": {"city": "Des Moines", "state": "IA", "venue": "Iowa State Fairgrounds"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "5,000+ specialty vehicles, July 4th weekend festivities, fireworks Saturday night. One of the largest car shows in the Midwest.",
+      "source_url": "https://good-guys.com/hln"
+    },
+    {
+      "id": 12,
+      "name": "Ed Morse Chevy GMC Car Show",
+      "date": "2026-04-25",
+      "location": {"city": "DeWitt", "state": "IA", "venue": "2113 11th St, DeWitt"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Chevrolet/GMC dealership-hosted car show.",
+      "source_url": "https://carcruisefinder.com/car-shows/category/iowa/"
+    },
+    {
+      "id": 13,
+      "name": "Top of Iowa Car Show",
+      "date": "2026-07-26",
+      "location": {"city": "Joice", "state": "IA", "venue": "Joice"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Annual car show held the 4th Sunday of July. All makes welcome.",
+      "source_url": "https://topofiowacarshow.com/"
+    },
+    {
+      "id": 14,
+      "name": "Albaugh Classic Car Show presented by Karl Chevrolet",
+      "date": "2026-07 (estimated, typically mid-July)",
+      "location": {"city": "Ankeny", "state": "IA", "venue": "The District at Prairie Trail, 1500 SW Main St"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Central Iowa's favorite car show presented by Karl Chevrolet. Features Dennis Albaugh's legendary Chevy convertible collection alongside hundreds of show cars.",
+      "source_url": "https://albaughclassic.com/"
+    },
+    {
+      "id": 15,
+      "name": "39th Annual Midwest Chevelle Regionals",
+      "date": "2026-06-05 to 2026-06-06",
+      "location": {"city": "Wichita", "state": "KS", "venue": "Wichita State University"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Longest running Chevelle Show in the USA. Chevelles, Malibus, El Caminos, Wagons, GMC Sprints & Beaumonts. Hosted by Wichita Area Chevelle Owners.",
+      "source_url": "https://www.mulvanemarauders.com/events.cfm"
+    },
+    {
+      "id": 16,
+      "name": "Kansas City Auto Show",
+      "date": "2026-06-04 to 2026-06-07",
+      "location": {"city": "Overland Park", "state": "KS", "venue": "Overland Park Convention Center"},
+      "type": "auto show",
+      "chevy_specific": false,
+      "description": "Major auto show featuring new vehicles from all manufacturers including Chevrolet.",
+      "source_url": "https://kcautoshow.com/"
+    },
+    {
+      "id": 17,
+      "name": "66th Annual World of Wheels Kansas City",
+      "date": "2026-03-20 to 2026-03-22",
+      "location": {"city": "Kansas City", "state": "MO", "venue": "Kansas City Convention Center, 301 W. 13th St"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Hot rods, custom cars, trucks & motorcycles showcase. One of the premier indoor car shows in the region.",
+      "source_url": "https://autorama.com/attend/kansas-city/"
+    },
+    {
+      "id": 18,
+      "name": "Haulin' Oz - Kansas All-GM Truck Show",
+      "date": "2026 (date TBD)",
+      "location": {"city": "Kansas", "state": "KS", "venue": "TBD"},
+      "type": "car show / truck show",
+      "chevy_specific": true,
+      "description": "Kansas' largest all-GM truck show including Chevy, GMC, and other GM trucks.",
+      "source_url": "https://www.carshownationals.com/"
+    },
+    {
+      "id": 19,
+      "name": "8th Annual Shaheen Chevrolet Car Show",
+      "date": "2026 (date TBD)",
+      "location": {"city": "Lansing", "state": "MI", "venue": "632 American Rd, Lansing, MI 48911"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Annual Chevrolet dealership car show at Shaheen Chevrolet.",
+      "source_url": "https://www.shaheenchevrolet.com/carshow.htm"
+    },
+    {
+      "id": 20,
+      "name": "45th Annual All-Chevy Show (Steeltown Corvette Club)",
+      "date": "2026-07-26",
+      "location": {"city": "Michigan (exact city TBD)", "state": "MI", "venue": "TBD"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Long-running all-Chevrolet car show. Registration forms available on their website.",
+      "source_url": "https://steeltowncorvetteclub.com/all-chevy-show"
+    },
+    {
+      "id": 21,
+      "name": "Corvettes America 25th Anniversary Show",
+      "date": "2026-07-25",
+      "location": {"city": "Clarkston", "state": "MI", "venue": "Everest Collegiate High School, 5935 Clarkston Rd"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Midwest's newest all-Corvette show. 25th anniversary celebration combining show cars, Corvette suppliers, and display cars.",
+      "source_url": "https://americascorvetteclub.org/corvette-america-show/"
+    },
+    {
+      "id": 22,
+      "name": "NHRA Michigan Nationals",
+      "date": "2026-07-10 to 2026-07-13",
+      "location": {"city": "Martin", "state": "MI", "venue": "U.S. 131 Motorsports Park"},
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "NHRA Mission Foods national event at U.S. 131 Motorsports Park.",
+      "source_url": "https://www.nhra.com/schedule/2026"
+    },
+    {
+      "id": 23,
+      "name": "MSRA Back to the 50's Weekend",
+      "date": "2026-06-19 to 2026-06-21",
+      "location": {"city": "St. Paul", "state": "MN", "venue": "Minnesota State Fairgrounds"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "52nd annual event. 11,000+ street rods, customs, classics (1964 and earlier). $15 admission (cash only). Largest event of its kind in the Midwest.",
+      "source_url": "https://msrabacktothe50s.com/"
+    },
+    {
+      "id": 24,
+      "name": "Cars and Caves - American Theme",
+      "date": "2026-07-25",
+      "location": {"city": "Chanhassen", "state": "MN", "venue": "Chanhassen AutoPlex"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "American vehicles theme (Ford, Mopar, GM/Chevy, Pontiac). Monthly shows last Saturday April-September, 9am-1pm.",
+      "source_url": "https://chanhassenautoplex.com/cars-and-caves/"
+    },
+    {
+      "id": 25,
+      "name": "Chevrolet Booth at Minnesota State Fair",
+      "date": "2026-08-27 to 2026-09-07",
+      "location": {"city": "St. Paul", "state": "MN", "venue": "Minnesota State Fairgrounds"},
+      "type": "manufacturer exhibit",
+      "chevy_specific": true,
+      "description": "Chevrolet booth featuring brand vehicles, t-shirts and tote bags.",
+      "source_url": "https://www.mnstatefair.org/vendor/2073.1/"
+    },
+    {
+      "id": 26,
+      "name": "Friendly Chevrolet Fridley 49er Days Benefit Show",
+      "date": "2026-07-17",
+      "location": {"city": "Fridley", "state": "MN", "venue": "Friendly Chevrolet"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "MSMA benefit show at Friendly Chevrolet dealership, 5pm-8pm.",
+      "source_url": "https://msma.net/msma-events/"
+    },
+    {
+      "id": 27,
+      "name": "Classic Car Show at Kolacky Days",
+      "date": "2026-07 (estimated)",
+      "location": {"city": "Montgomery", "state": "MN", "venue": "Montgomery"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "2026 featured model: Chevrolet Impala SS 1961-1969.",
+      "source_url": "https://www.montgomerymn.org/classic-car-show"
+    },
+    {
+      "id": 28,
+      "name": "All Chevy Show at National Museum of Transportation",
+      "date": "2026-09-13",
+      "location": {"city": "St. Louis", "state": "MO", "venue": "National Museum of Transportation"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Fabulous Fifties Car Club All Chevy Show, 9am-12pm. All Chevrolet vehicles on display at historic transportation museum.",
+      "source_url": "https://tnmot.org/car-shows/"
+    },
+    {
+      "id": 29,
+      "name": "The Great Car Show - Kansas City Auto Museum",
+      "date": "2026-04-19",
+      "location": {"city": "Kansas City", "state": "MO", "venue": "National WWI Museum and Memorial backdrop"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Annual fundraiser for Kansas City Automotive Museum.",
+      "source_url": "https://kansascityautomuseum.com/events/the-great-car-show-2026/"
+    },
+    {
+      "id": 30,
+      "name": "71st Omaha World of Wheels",
+      "date": "2026-03-06 to 2026-03-08",
+      "location": {"city": "Omaha", "state": "NE", "venue": "CHI Health Center, 455 N. 10th St"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "America's Finest Hot Rods, Custom Cars, Trucks & Motorcycles.",
+      "source_url": "https://autorama.com/attend/omaha-ne/"
+    },
+    {
+      "id": 31,
+      "name": "High Plains Auto Club Rock 'N Roll Father's Day Classic",
+      "date": "2026-06-19 to 2026-06-20",
+      "location": {"city": "Gering", "state": "NE", "venue": "Gering"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "27th annual show. Classic cars, hot rods, and rock 'n roll.",
+      "source_url": "http://www.highplainsautoclub.com/events.html"
+    },
+    {
+      "id": 32,
+      "name": "Nebraska Brewing Company Car Shows",
+      "date": "2nd Saturday monthly, 2026-04-12 through October",
+      "location": {"city": "Omaha area", "state": "NE", "venue": "Nebraska Brewing Company"},
+      "type": "cruise-in",
+      "chevy_specific": false,
+      "description": "Monthly car shows at brewery, 2nd Saturday April through October.",
+      "source_url": "https://carcruisefinder.com/car-shows/category/nebraska/"
+    },
+    {
+      "id": 33,
+      "name": "City Museum Car Show",
+      "date": "2026-09-13",
+      "location": {"city": "Fairbury", "state": "NE", "venue": "Fairbury"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Annual car show from 9am-4pm.",
+      "source_url": "https://fairburychamber.org/event/annual-car-show-5/"
+    },
+    {
+      "id": 34,
+      "name": "66th Annual Topper's Car Show",
+      "date": "2026-03-28 to 2026-03-29",
+      "location": {"city": "West Fargo", "state": "ND", "venue": "West Fargo Veterans Memorial Arena"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Sat 9am-7pm, Sun 9am-5pm. $20 tickets. All profits to local charities.",
+      "source_url": "https://www.inforum.com/news/west-fargo/toppers-car-show-gears-up-for-66th-annual-event"
+    },
+    {
+      "id": 35,
+      "name": "New Town Chamber Car & Motorcycle Show",
+      "date": "2026-06-19",
+      "location": {"city": "New Town", "state": "ND", "venue": "Main St / 4 Bears Casino"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Car and motorcycle show, 3pm-7pm.",
+      "source_url": "https://www.ndtourism.com/new-town/events/festivals-fairs/new-town-chamber-car-motorcycle-show"
+    },
+    {
+      "id": 36,
+      "name": "Rods N Rock Annual Classic Car Show",
+      "date": "2026-08-15",
+      "location": {"city": "Carson", "state": "ND", "venue": "Grant County Fair"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Classic car show during Grant County Fair, 9am-3pm MT.",
+      "source_url": "https://sites.google.com/view/rodsnrock"
+    },
+    {
+      "id": 37,
+      "name": "Annual Berea All-Chevy Show",
+      "date": "2026-09-13",
+      "location": {"city": "Berea", "state": "OH", "venue": "Cuyahoga County Fairgrounds"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "All-Chevrolet show: Corvettes, Camaros, Bel-Airs, Blazers - if it has a bowtie, it's welcome.",
+      "source_url": "https://visualfoodie.com/a-guide-to-every-2026-cleveland-car-show/"
+    },
+    {
+      "id": 38,
+      "name": "Goodguys 28th Summit Racing Nationals",
+      "date": "2026-07-10 to 2026-07-12",
+      "location": {"city": "Columbus", "state": "OH", "venue": "Ohio Expo Center, 717 E 17th Ave"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Goodguys' 'Big One.' Grand Prize '40 Ford Coupe giveaway. Top 12 of the Year awards. America's Favorite Car Show.",
+      "source_url": "https://good-guys.com/ggn"
+    },
+    {
+      "id": 39,
+      "name": "Summit Racing Equipment NHRA Nationals",
+      "date": "2026-06-25 to 2026-06-28",
+      "location": {"city": "Norwalk", "state": "OH", "venue": "Summit Motorsports Park"},
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "20th annual event. NHRA's 75th anniversary season. Top Fuel, Funny Car, Pro Stock, Pro Mod.",
+      "source_url": "https://www.summitmotorsportspark.com/featured-events/nhra"
+    },
+    {
+      "id": 40,
+      "name": "49th Annual Cornwell Tools Night Under Fire",
+      "date": "2026 (date TBD, typically August)",
+      "location": {"city": "Norwalk", "state": "OH", "venue": "Summit Motorsports Park"},
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "Largest single-day drag race in the world. New King Of Nitro Top Fuel vs Funny Car format. Fireworks, live concert.",
+      "source_url": "https://www.summitmotorsportspark.com/"
+    },
+    {
+      "id": 41,
+      "name": "Bowtie Nationals - Summit Motorsports Park",
+      "date": "2026-06 (estimated, based on 2025 June dates)",
+      "location": {"city": "Norwalk", "state": "OH", "venue": "Summit Motorsports Park"},
+      "type": "drag racing / car show / swap meet",
+      "chevy_specific": true,
+      "description": "Chevrolet Performance Bowtie Nationals featuring GM Invasion. All-Chevy drag racing, autocross, car show, swap meet, dyno challenge, burnout contest.",
+      "source_url": "https://bowtienationals.com/norwalk-schedule/"
+    },
+    {
+      "id": 42,
+      "name": "Oktoberfest Car & Motorcycle Show",
+      "date": "2026-10-04",
+      "location": {"city": "Willoughby", "state": "OH", "venue": "Downtown Willoughby"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Car and motorcycle show in downtown Willoughby.",
+      "source_url": "https://visualfoodie.com/a-guide-to-every-2026-cleveland-car-show/"
+    },
+    {
+      "id": 43,
+      "name": "35th Annual Ames Performance Pontiac Nationals",
+      "date": "2026-07-17 to 2026-07-19",
+      "location": {"city": "Norwalk", "state": "OH", "venue": "Summit Motorsports Park"},
+      "type": "drag racing / car show",
+      "chevy_specific": false,
+      "description": "GM-related: Pontiac-specific but part of the GM family. Drag racing and car show.",
+      "source_url": "https://pontiacnationals.com/eventinfo.html"
+    },
+    {
+      "id": 44,
+      "name": "Oklahoma High Performance Racing Swap Meet",
+      "date": "2026-01-10",
+      "location": {"city": "Oklahoma City", "state": "OK", "venue": "Centennial Building, Oklahoma State Fairgrounds"},
+      "type": "swap meet",
+      "chevy_specific": false,
+      "description": "Racing auction, trade show & swap meet.",
+      "source_url": "https://raceshow.net/Oklahoma-City/"
+    },
+    {
+      "id": 45,
+      "name": "Tulsa High Performance Racing Swap Meet",
+      "date": "2026-01-17",
+      "location": {"city": "Tulsa", "state": "OK", "venue": "Central Park Hall, Expo Square"},
+      "type": "swap meet",
+      "chevy_specific": false,
+      "description": "Racing auction, trade show & swap meet.",
+      "source_url": "https://raceshow.net/Tulsa/"
+    },
+    {
+      "id": 46,
+      "name": "62nd Annual Darryl Starbird Rod & Custom Car Show",
+      "date": "2026-02-20 to 2026-02-22",
+      "location": {"city": "Tulsa", "state": "OK", "venue": "SageNet Center, Expo Square Fairgrounds"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Legendary rod & custom car show. Rockin' Billy Bash with pinstripers, tattoo artists, rock n' roll. Fri 12-10pm, Sat 10-10pm, Sun 10-6pm.",
+      "source_url": "https://www.starbirdcarshows.com/tulsa_-_event_information"
+    },
+    {
+      "id": 47,
+      "name": "Almost Ready to Cruise Car Club Swap Meet",
+      "date": "2026-03-14 to 2026-03-15",
+      "location": {"city": "Shawnee", "state": "OK", "venue": "Heart of Oklahoma Expo Center"},
+      "type": "swap meet",
+      "chevy_specific": false,
+      "description": "Fri 8am-6pm, Sat 8am-4pm.",
+      "source_url": "https://arccconline.org/"
+    },
+    {
+      "id": 48,
+      "name": "Duncan Auto Swap Meet",
+      "date": "2026-03-26 to 2026-03-28",
+      "location": {"city": "Duncan", "state": "OK", "venue": "Stephens County Fairgrounds"},
+      "type": "swap meet / car show",
+      "chevy_specific": false,
+      "description": "Three-day indoor/outdoor automotive swap meet & car show. Muscle cars, classic vehicles, restoration parts, collectibles.",
+      "source_url": "https://www.duncanokswapmeet.com/"
+    },
+    {
+      "id": 49,
+      "name": "Tulsa Swap Meet",
+      "date": "2026-04-17 to 2026-04-18",
+      "location": {"city": "Kellyville", "state": "OK", "venue": "Creek County Fairgrounds"},
+      "type": "swap meet",
+      "chevy_specific": false,
+      "description": "900+ automotive vendor spaces, motorcycle swap meet, car corral & RV spaces. Free admission and parking. 8am-5pm rain or shine.",
+      "source_url": "https://thetulsaswapmeet.com/"
+    },
+    {
+      "id": 50,
+      "name": "Route 66 Capital Cruise",
+      "date": "2026-05-30",
+      "location": {"city": "Tulsa", "state": "OK", "venue": "Route 66"},
+      "type": "cruise-in",
+      "chevy_specific": false,
+      "description": "World-record classic car parade, food trucks, live music, and vendors along Route 66.",
+      "source_url": "https://www.route66cruisersok.org/carshow.htm"
+    },
+    {
+      "id": 51,
+      "name": "OKC Auto Show",
+      "date": "2026-09-17 to 2026-09-27",
+      "location": {"city": "Oklahoma City", "state": "OK", "venue": "Pavilion Building, Oklahoma State Fair"},
+      "type": "auto show",
+      "chevy_specific": false,
+      "description": "New car auto show during the Oklahoma State Fair.",
+      "source_url": "https://okcautoshow.org/"
+    },
+    {
+      "id": 52,
+      "name": "Topper's Winter Car Show",
+      "date": "2026-02-13 to 2026-02-15",
+      "location": {"city": "Sioux Falls", "state": "SD", "venue": "Denny Sanford PREMIER Center"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Classic and custom cars, valve cover racing competitions.",
+      "source_url": "https://www.topperscarclub.com/Sioux-Falls-Car-Show.html"
+    },
+    {
+      "id": 53,
+      "name": "Cruiser Car Show & Street Fair",
+      "date": "2026-07-04",
+      "location": {"city": "Rapid City", "state": "SD", "venue": "Downtown Rapid City"},
+      "type": "car show / cruise-in",
+      "chevy_specific": false,
+      "description": "July 4th car show and street fair in downtown Rapid City.",
+      "source_url": "https://allevents.in/rapid-city-sd/car-shows"
+    },
+    {
+      "id": 54,
+      "name": "44th Annual Black Hills Super Swap Meet & Car Corral",
+      "date": "2026-09-13",
+      "location": {"city": "Rapid City", "state": "SD", "venue": "Central States Fairground"},
+      "type": "swap meet",
+      "chevy_specific": false,
+      "description": "Long-running automotive swap meet and car corral.",
+      "source_url": "https://allevents.in/rapid-city-sd/car-shows"
+    },
+    {
+      "id": 55,
+      "name": "43rd Annual People's Choice All-Corvette Show",
+      "date": "2026-05-31",
+      "location": {"city": "West Allis", "state": "WI", "venue": "Heiser Chevrolet, 10200 W. Arthur Ave"},
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "All-Corvette show at Heiser Chevrolet dealership. $20 registration fee.",
+      "source_url": "https://wisconsinmotorevents.com/"
+    },
+    {
+      "id": 56,
+      "name": "Iola Car Show & Swap Meet",
+      "date": "2026-07-09 to 2026-07-11",
+      "location": {"city": "Iola", "state": "WI", "venue": "350 Chrome Place"},
+      "type": "car show / swap meet",
+      "chevy_specific": false,
+      "description": "America's Car Show & Swap Meet. 4,000 swap spaces, 2,400 show cars, 1,600 camping sites, 400 car corral spaces. One of the largest in the country.",
+      "source_url": "https://www.iolaoldcarshow.com/"
+    },
+    {
+      "id": 57,
+      "name": "WCEC Season Opener Car Showcase & Meet",
+      "date": "2026 (spring, date TBD)",
+      "location": {"city": "Wisconsin (TBD)", "state": "WI", "venue": "133-acre venue"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Wisconsin's largest car show. Skid pad, field concours, product giveaways. 1,300 asphalt stalls.",
+      "source_url": "https://www.theofficialwcec.com/event-registration/2026-wcec-season-opener-registration"
+    },
+    {
+      "id": 58,
+      "name": "46th Eagle River Car and Truck Show",
+      "date": "2026 (summer, date TBD)",
+      "location": {"city": "Eagle River", "state": "WI", "venue": "Eagle River"},
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Annual car and truck show in northern Wisconsin.",
+      "source_url": "https://eagleriver.org/events/eagle-river-car-and-truck-show/"
+    },
+    {
+      "id": 59,
+      "name": "Bowtie Nationals - Beech Bend Raceway",
+      "date": "2026-05-14 to 2026-05-16",
+      "location": {"city": "Bowling Green", "state": "KY", "venue": "Beech Bend Raceway Park, 798 Beech Bend Rd"},
+      "type": "drag racing / car show / swap meet",
+      "chevy_specific": true,
+      "description": "NOTE: Kentucky (not Midwest) but close to OH/IN border and major Chevy event. All-Chevy drag racing, autocross, car show, swap meet, dyno challenge, burnout contest. Chevrolet-bodied vehicles only.",
+      "source_url": "https://bowtienationals.com/beechbend-schedule/"
+    },
+    {
+      "id": 60,
+      "name": "Carlisle GM Nationals",
+      "date": "2026-06-19 to 2026-06-20",
+      "location": {"city": "Carlisle", "state": "PA", "venue": "Carlisle Fairgrounds"},
+      "type": "car show / swap meet",
+      "chevy_specific": true,
+      "description": "NOTE: Pennsylvania but premier GM event. 1,000+ GM vehicles. 2026 features C10 & Square Body Chevy Special Feature, 100th Pontiac celebration. Automotive flea market & car corral. Rolling burnout & donut contest.",
+      "source_url": "https://carlisleevents.com/events/events-detail/index?id=gm+nationals"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CarShowNationals.com",
+      "url": "https://carshownationals.com/",
+      "description": "State-by-state car show listings for all 50 states. Updated regularly.",
+      "states_covered": "All Midwest states"
+    },
+    {
+      "name": "CarCruiseFinder.com",
+      "url": "https://carcruisefinder.com/",
+      "description": "Daily-updated car show and cruise night listings by state and city.",
+      "states_covered": "All Midwest states"
+    },
+    {
+      "name": "OldRide.com Events",
+      "url": "https://www.oldride.com/events/",
+      "description": "Classic car & truck shows, auctions, swap meets, motorcycle shows by state.",
+      "states_covered": "All Midwest states"
+    },
+    {
+      "name": "DriveChicago.com Car Shows",
+      "url": "https://www.drivechicago.com/carshows",
+      "description": "Comprehensive listing of Chicago-area car shows and cruise nights.",
+      "states_covered": "Illinois"
+    },
+    {
+      "name": "Wisconsin Motor Events",
+      "url": "https://wisconsinmotorevents.com/",
+      "description": "Most complete calendar of Wisconsin car shows, cruise nights, swap meets, and races.",
+      "states_covered": "Wisconsin"
+    },
+    {
+      "name": "Minnesota Street Machine Association (MSMA)",
+      "url": "https://msma.net/msma-events/",
+      "description": "2026 car show events calendar for Minnesota.",
+      "states_covered": "Minnesota"
+    },
+    {
+      "name": "Route 66 Cruisers Oklahoma",
+      "url": "https://www.route66cruisersok.org/carshow.htm",
+      "description": "Free listing of Oklahoma car shows, swap meets, cruise nights.",
+      "states_covered": "Oklahoma"
+    },
+    {
+      "name": "OklahomaCarShows.com",
+      "url": "https://oklahomacarshows.com/",
+      "description": "Comprehensive Oklahoma car show listings.",
+      "states_covered": "Oklahoma"
+    },
+    {
+      "name": "GetOutGarage.com",
+      "url": "https://www.getoutgarage.com/events/car-shows/",
+      "description": "Car show listings by state with 47+ shows across Iowa alone.",
+      "states_covered": "All Midwest states"
+    },
+    {
+      "name": "Octane Road - Iowa Car Show Calendar",
+      "url": "https://octaneroad.com/events/category/iowa-car-show-calendar/",
+      "description": "Iowa-specific car show calendar.",
+      "states_covered": "Iowa"
+    },
+    {
+      "name": "Goodguys Rod & Custom Association",
+      "url": "https://good-guys.com/",
+      "description": "National event organizer with major Midwest shows in Des Moines and Columbus.",
+      "states_covered": "Iowa, Ohio"
+    },
+    {
+      "name": "NHRA Schedule",
+      "url": "https://www.nhra.com/schedule/2026",
+      "description": "Official NHRA national event schedule including all Midwest drag racing events.",
+      "states_covered": "Illinois, Indiana, Michigan, Ohio"
+    },
+    {
+      "name": "Summit Motorsports Park",
+      "url": "https://www.summitmotorsportspark.com/schedule",
+      "description": "Full season schedule for Norwalk, OH drag racing venue.",
+      "states_covered": "Ohio"
+    },
+    {
+      "name": "Bowtie Nationals",
+      "url": "https://bowtienationals.com/schedule/",
+      "description": "All-Chevrolet drag racing and car show events at multiple venues (Indianapolis, Norwalk, Beech Bend).",
+      "states_covered": "Indiana, Ohio (and KY)"
+    },
+    {
+      "name": "Autorama / World of Wheels",
+      "url": "https://autorama.com/",
+      "description": "Indoor custom car show circuit with events in Omaha, Kansas City, Indianapolis.",
+      "states_covered": "Nebraska, Missouri, Indiana"
+    },
+    {
+      "name": "Vette-Vues Corvette Calendar",
+      "url": "https://vette-vues.com/corvette-calendar-events/",
+      "description": "Extensive list of Corvette-specific events nationwide.",
+      "states_covered": "All states"
+    },
+    {
+      "name": "3D Sound - Dixon IL Car Show Calendar",
+      "url": "https://3dsound.org/Car_Show_Calendar.php",
+      "description": "Northern Illinois and surrounding area car show calendar.",
+      "states_covered": "Illinois"
+    },
+    {
+      "name": "Cruis'n Media",
+      "url": "https://cruisnmedia.com/events-calendar/",
+      "description": "Michigan and Midwest cruise-in and car show event calendar.",
+      "states_covered": "Michigan"
+    },
+    {
+      "name": "South Dakota Car Shows (Facebook)",
+      "url": "https://www.facebook.com/southdakotacarshows/",
+      "description": "Community-run South Dakota car show listings.",
+      "states_covered": "South Dakota"
+    },
+    {
+      "name": "Car Show Calendar North Dakota (Facebook Group)",
+      "url": "https://www.facebook.com/groups/carshowcalendarnorthdakota/",
+      "description": "Community-run North Dakota car show calendar.",
+      "states_covered": "North Dakota"
+    }
+  ]
+}

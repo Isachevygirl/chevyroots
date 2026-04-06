@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Change the Oil on Your Chevy Silverado (Every Engine) | ChevyRoots</title>
+  <meta name="description" content="Complete oil change guide for every Silverado engine: 2.7T, 5.3L, 6.2L, and Duramax diesel. Oil type, capacity, filter part numbers, drain plug torque, and how to reset the oil life monitor." />
+  <meta name="keywords" content="silverado oil change, chevy silverado oil type, dexos1 gen 3, 5.3 oil capacity, 6.2 oil capacity, duramax oil change, ACDelco PF64, PF66 filter, silverado drain plug torque" />
+  <meta property="og:title" content="How to Change the Oil on Your Chevy Silverado (Every Engine)" />
+  <meta property="og:description" content="Oil specs, filter part numbers, torque values, and oil life monitor reset for every Silverado engine — 2.7T, 5.3L, 6.2L, and Duramax diesel." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/silverado-oil-change-guide.html" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/silverado-oil-change-guide.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #1A1A1A; --bg2: #222222; --bg3: #2A2A2A;
+      --gold: #C4A035; --gold-lt: #D4B455; --gold-dk: #9E7F22;
+      --text: #F0EDE6; --text-dim: #B0ADA6; --text-mute: #707070;
+      --border: #333333; --radius: 6px; --radius-lg: 12px; --trans: 0.25s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; min-height: 100vh; }
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+
+    .article-header { padding-top: 60px; background: linear-gradient(160deg, #1A1A1A 60%, #1a1f0e 100%); position: relative; overflow: hidden; }
+    .article-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,160,53,0.07) 0%, transparent 70%); pointer-events: none; }
+    .article-header-inner { max-width: 860px; margin: 0 auto; padding: 64px 24px 48px; position: relative; }
+    .article-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .article-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 24px; }
+    .article-title span { color: var(--gold); }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 32px; }
+    .article-meta-item { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mute); }
+    .article-meta-item .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+    .article-hero-img { width: 100%; height: 380px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+
+    .article-layout { max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px; display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start; }
+
+    .article-body h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text); margin: 48px 0 16px; padding-top: 8px; border-top: 2px solid var(--gold); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.04em; color: var(--gold); margin: 32px 0 10px; text-transform: uppercase; }
+    .article-body p { margin-bottom: 20px; color: var(--text-dim); font-size: 16px; }
+    .article-body p strong { color: var(--text); font-weight: 600; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 24px; color: var(--text-dim); }
+    .article-body li { margin-bottom: 8px; }
+
+    .tip-box { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--radius); padding: 18px 22px; margin: 24px 0; }
+    .tip-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .tip-box p { color: var(--text-dim); font-size: 14px; margin: 0; }
+
+    .warning-box { background: rgba(196,160,53,0.06); border: 1px solid rgba(196,160,53,0.25); border-left: 3px solid #c0392b; border-radius: var(--radius); padding: 18px 22px; margin: 24px 0; }
+    .warning-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #c0392b; margin-bottom: 8px; }
+    .warning-box p { color: var(--text-dim); font-size: 14px; margin: 0; }
+
+    .spec-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .spec-table th { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); text-align: left; padding: 10px 14px; background: var(--bg2); border-bottom: 2px solid var(--gold); }
+    .spec-table td { padding: 10px 14px; color: var(--text-dim); border-bottom: 1px solid var(--border); vertical-align: top; }
+    .spec-table td:first-child { font-weight: 600; color: var(--text); white-space: nowrap; }
+    .spec-table tr:last-child td { border-bottom: none; }
+
+    .step-list { list-style: none; margin: 0 0 24px 0; padding: 0; counter-reset: steps; }
+    .step-list li { counter-increment: steps; display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--border); color: var(--text-dim); font-size: 15px; }
+    .step-list li:last-child { border-bottom: none; }
+    .step-list li::before { content: counter(steps); font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; color: var(--gold); flex-shrink: 0; width: 28px; line-height: 1.2; }
+    .step-list li strong { color: var(--text); }
+
+    .inline-img { width: 100%; height: 260px; border-radius: var(--radius); margin: 28px 0; border: 1px solid var(--border); overflow: hidden; background-size: cover; background-position: center; }
+
+    .affiliate-box { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin: 24px 0; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .affiliate-box-icon { font-size: 28px; flex-shrink: 0; }
+    .affiliate-box-text { font-size: 13px; color: var(--text-dim); flex: 1; min-width: 160px; }
+    .affiliate-box-text strong { color: var(--text); display: block; font-size: 14px; margin-bottom: 2px; }
+    .affiliate-box-btn { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--gold); color: #111; padding: 8px 16px; border-radius: var(--radius); white-space: nowrap; transition: background var(--trans); flex-shrink: 0; }
+    .affiliate-box-btn:hover { background: var(--gold-lt); color: #111; }
+
+    .crystal-take { background: linear-gradient(135deg, #1f1a0e 0%, #222 100%); border: 2px solid var(--gold); border-radius: var(--radius-lg); padding: 28px; margin: 36px 0; }
+    .crystal-take-header { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .crystal-take p { color: var(--text-dim); margin-bottom: 12px; font-style: italic; }
+    .crystal-take p:last-child { margin-bottom: 0; }
+    .crystal-take strong { color: var(--text); font-style: normal; }
+
+    .sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 28px; }
+    .sidebar-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
+    .sidebar-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list a { font-size: 13px; color: var(--text-dim); display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+    .toc-list a::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; transition: background var(--trans); }
+    .toc-list a:hover::before { background: var(--gold); }
+    .toc-list a:hover { color: var(--text); }
+    .related-article { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .related-article:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-thumb { width: 64px; height: 48px; background: #333; border-radius: var(--radius); flex-shrink: 0; overflow: hidden; background-size: cover; background-position: center; }
+    .related-title { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--text); letter-spacing: 0.02em; }
+    .related-title:hover { color: var(--gold); }
+    .related-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+    .newsletter-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 24px; }
+    .newsletter-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .newsletter-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .newsletter-title { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 12px; }
+    .newsletter-sub { color: var(--text-dim); font-size: 15px; margin-bottom: 32px; }
+    .newsletter-form { display: flex; gap: 10px; max-width: 480px; margin: 0 auto; }
+    .newsletter-form input { flex: 1; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: border-color var(--trans); }
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form input::placeholder { color: var(--text-mute); }
+    .newsletter-form button { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--gold); color: #111; border: none; padding: 12px 24px; border-radius: var(--radius); cursor: pointer; transition: background var(--trans); white-space: nowrap; }
+    .newsletter-form button:hover { background: var(--gold-lt); }
+    .newsletter-note { font-size: 12px; color: var(--text-mute); margin-top: 12px; }
+
+    footer { background: #111; border-top: 1px solid var(--border); padding: 48px 24px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-bottom: 40px; }
+    .footer-brand { flex: 1; min-width: 200px; }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); margin-bottom: 10px; }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline { font-size: 13px; color: var(--text-mute); max-width: 240px; line-height: 1.5; }
+    .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 13px; color: var(--text-mute); transition: color var(--trans); }
+    .footer-col ul a:hover { color: var(--text); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 12px; color: var(--text-mute); }
+
+    @media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; gap: 40px; } .sidebar { position: static; } }
+    @media (max-width: 640px) { .newsletter-form { flex-direction: column; } .article-hero-img { height: 220px; } .spec-table { font-size: 12px; } }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <span>2026 &mdash;</span> Celebrating America&rsquo;s 250th &amp; 115 Years of Chevrolet &mdash; <span>Built in America. Still Running Strong.</span>
+  </div>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="ChevyRoots home">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/" class="active" aria-current="page">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/about/">About</a></li>
+        <li class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false" aria-haspopup="true">More <span class="nav-more-arrow">&#9662;</span></button>
+          <div class="nav-dropdown">
+            <a href="/pages/community/">Community</a>
+            <a href="/pages/marketplace/">Marketplace</a>
+            <a href="/pages/tools/">Tools</a>
+            <a href="/pages/mechanics/">Mechanics</a>
+            <a href="/pages/news/">News</a>
+            <a href="/pages/ads/">Vintage Ads</a>
+            <a href="/pages/newsletter/">Newsletter</a>
+            <a href="/pages/partners/">Partners</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+      <button class="nav-menu-toggle" aria-label="Toggle mobile menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="/pages/models/" onclick="this.closest('.nav-mobile').classList.remove('open')">Models</a>
+    <a href="/pages/guides/" class="active" onclick="this.closest('.nav-mobile').classList.remove('open')">Guides</a>
+    <a href="/pages/builds/" onclick="this.closest('.nav-mobile').classList.remove('open')">Builds</a>
+    <a href="/pages/events/" onclick="this.closest('.nav-mobile').classList.remove('open')">Events</a>
+    <a href="/pages/crystals-corner/" onclick="this.closest('.nav-mobile').classList.remove('open')">Crystal's Corner</a>
+    <a href="/pages/about/" onclick="this.closest('.nav-mobile').classList.remove('open')">About</a>
+    <div class="nav-mobile-divider"></div>
+    <a href="/pages/community/" onclick="this.closest('.nav-mobile').classList.remove('open')">Community</a>
+    <a href="/pages/marketplace/" onclick="this.closest('.nav-mobile').classList.remove('open')">Marketplace</a>
+    <a href="/pages/tools/" onclick="this.closest('.nav-mobile').classList.remove('open')">Tools</a>
+    <a href="/pages/mechanics/" onclick="this.closest('.nav-mobile').classList.remove('open')">Mechanics</a>
+    <a href="/pages/news/" onclick="this.closest('.nav-mobile').classList.remove('open')">News</a>
+    <a href="/pages/ads/" onclick="this.closest('.nav-mobile').classList.remove('open')">Vintage Ads</a>
+    <a href="/pages/newsletter/" onclick="this.closest('.nav-mobile').classList.remove('open')">Newsletter</a>
+    <a href="/pages/partners/" onclick="this.closest('.nav-mobile').classList.remove('open')">Partners</a>
+    <a href="/pages/builds/" class="btn btn-gold" style="margin-top:0.5rem;" onclick="this.closest('.nav-mobile').classList.remove('open')">Submit Your Build</a>
+  </div>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-eyebrow">Maintenance &nbsp;/&nbsp; DIY</div>
+      <h1 class="article-title">How to Change the Oil on Your <span>Chevy Silverado</span> (Every Engine)</h1>
+      <div class="article-meta">
+        <div class="article-meta-item"><span class="dot"></span>By Crystal &amp; ChevyRoots Staff</div>
+        <div class="article-meta-item"><span class="dot"></span>Updated April 2026</div>
+        <div class="article-meta-item"><span class="dot"></span>8 min read</div>
+        <div class="article-meta-item"><span class="dot"></span>~1,200 words</div>
+      </div>
+      <div class="article-hero-img" style="background: #2a2a2a url('/photos/silverado/pexels_10085134_silverado.jpeg') center/cover no-repeat;"></div>
+    </div>
+  </header>
+
+  <!-- ARTICLE LAYOUT -->
+  <div class="article-layout">
+    <article class="article-body">
+
+      <h2 id="intro">Why Doing It Yourself Matters</h2>
+      <p>The Chevy Silverado is America's best-selling truck for a reason — it's built to work hard. But no matter which engine you're running, nothing protects that investment like clean oil on schedule. Dealer oil changes cost $80–$140 depending on engine. Doing it yourself takes about 30 minutes and costs half that. More importantly, <strong>you know it was done right.</strong></p>
+      <p>This guide covers every current Silverado engine: the turbocharged 2.7L four-cylinder, the 5.3L V8 EcoTec3, the 6.2L V8 EcoTec3, and the 3.0L Duramax inline-six diesel. Each has different oil specs, capacities, and filter part numbers. Use the spec table to find your engine, then follow the steps.</p>
+
+      <div class="tip-box">
+        <div class="tip-label">Quick Reference</div>
+        <p>All current Silverado gasoline engines require <strong>Dexos1 Gen 3</strong> certified oil. The Duramax diesel takes <strong>Dexos D</strong>. Using the wrong spec oil can void your GM warranty.</p>
+      </div>
+
+      <h2 id="specs">Oil Specs by Engine</h2>
+      <p>Before you buy anything, confirm your engine code. It's on your window sticker, your RPO label in the glove box, or in the driver-side door jamb. The spec table below covers model years 2019–2026.</p>
+
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Engine</th>
+            <th>RPO Code</th>
+            <th>Oil Spec</th>
+            <th>Viscosity</th>
+            <th>Capacity (w/ filter)</th>
+            <th>Filter Part #</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2.7L Turbo 4-cyl</td>
+            <td>L3B</td>
+            <td>Dexos1 Gen 3</td>
+            <td>0W-20</td>
+            <td>5.0 qts</td>
+            <td>ACDelco PF64</td>
+          </tr>
+          <tr>
+            <td>5.3L V8 EcoTec3</td>
+            <td>L84 / L82</td>
+            <td>Dexos1 Gen 3</td>
+            <td>0W-20</td>
+            <td>8.0 qts</td>
+            <td>ACDelco PF66</td>
+          </tr>
+          <tr>
+            <td>6.2L V8 EcoTec3</td>
+            <td>L87</td>
+            <td>Dexos1 Gen 3</td>
+            <td>0W-20</td>
+            <td>8.0 qts</td>
+            <td>ACDelco PF66</td>
+          </tr>
+          <tr>
+            <td>3.0L Duramax Diesel</td>
+            <td>LM2 / LZ0</td>
+            <td>Dexos D</td>
+            <td>0W-20</td>
+            <td>7.4 qts</td>
+            <td>ACDelco PF64E</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning-box">
+        <div class="warning-label">Duramax Owners — Read This</div>
+        <p>The 3.0L Duramax requires <strong>Dexos D</strong> — not Dexos1. These are different specifications. Dexos D is a diesel-specific certification. Using standard Dexos1 oil in a Duramax can cause soot buildup and damage the DPF (diesel particulate filter). Make sure your oil jug says "Dexos D" before pouring.</p>
+      </div>
+
+      <h2 id="supplies">What You'll Need</h2>
+      <p>Gather your supplies before getting under the truck. Nothing worse than being halfway through a drain with no funnel in sight.</p>
+      <ul>
+        <li>Correct oil (quantity per spec table above)</li>
+        <li>ACDelco filter (PF64 or PF66 per engine)</li>
+        <li>Oil drain pan (6+ quart capacity)</li>
+        <li>15mm or 13mm socket for drain plug (depending on year — confirm yours)</li>
+        <li>Oil filter wrench (3/4" drive recommended for V8s)</li>
+        <li>Drive-on ramps or floor jack with jack stands</li>
+        <li>Nitrile gloves, shop rags</li>
+        <li>Torque wrench</li>
+      </ul>
+
+      <div class="affiliate-box">
+        <div class="affiliate-box-icon">🛢️</div>
+        <div class="affiliate-box-text">
+          <strong>Mobil 1 Extended Performance 0W-20 (Dexos1 Gen 3)</strong>
+          5-quart jug or 6-quart jug available. One of the top Dexos1 Gen 3-certified choices for Silverado engines.
+        </div>
+        <a href="https://www.amazon.com/s?k=mobil+1+0w-20+dexos1+gen+3&tag=chevyroots-20" class="affiliate-box-btn" target="_blank" rel="noopener">Check Price →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <div class="affiliate-box-icon">🔧</div>
+        <div class="affiliate-box-text">
+          <strong>ACDelco PF66 Engine Oil Filter</strong>
+          OEM-equivalent filter for 5.3L and 6.2L V8 engines. Use PF64 for the 2.7T.
+        </div>
+        <a href="https://www.amazon.com/s?k=ACDelco+PF66+oil+filter&tag=chevyroots-20" class="affiliate-box-btn" target="_blank" rel="noopener">Check Price →</a>
+      </div>
+
+      <div class="affiliate-box">
+        <div class="affiliate-box-icon">🚗</div>
+        <div class="affiliate-box-text">
+          <strong>Drive-On Ramps (Rhino Ramps or similar)</strong>
+          The safest DIY method for oil changes on a Silverado. No jack required.
+        </div>
+        <a href="https://www.amazon.com/s?k=drive+on+ramps+truck+oil+change&tag=chevyroots-20" class="affiliate-box-btn" target="_blank" rel="noopener">Check Price →</a>
+      </div>
+
+      <h2 id="drain-plug">Drain Plug Torque Specs</h2>
+      <p>GM doesn't give you much margin for error on drain plugs. Over-tighten and you strip the oil pan threads — a much worse problem than an oil change. Under-tighten and you're leaving a trail down the highway. Use a torque wrench.</p>
+
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Engine</th>
+            <th>Drain Plug Torque</th>
+            <th>Plug Size</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2.7L Turbo (L3B)</td>
+            <td>18 lb-ft</td>
+            <td>13mm</td>
+            <td>Replace plug gasket every 3 oil changes</td>
+          </tr>
+          <tr>
+            <td>5.3L V8 (L84)</td>
+            <td>18 lb-ft</td>
+            <td>15mm</td>
+            <td>Standard aluminum pan — do not over-torque</td>
+          </tr>
+          <tr>
+            <td>6.2L V8 (L87)</td>
+            <td>18 lb-ft</td>
+            <td>15mm</td>
+            <td>Same pan as 5.3L</td>
+          </tr>
+          <tr>
+            <td>3.0L Duramax (LM2)</td>
+            <td>26 lb-ft</td>
+            <td>17mm</td>
+            <td>Steel pan — slightly higher torque spec</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="inline-img" style="background: url('/photos/silverado/pexels_12385673_silverado.jpeg') center/cover no-repeat;"></div>
+
+      <h2 id="steps">Step-by-Step Oil Change</h2>
+      <p>These steps apply to all Silverado engines. The only things that change are the oil quantity, filter part number, and drain plug torque spec (see tables above).</p>
+
+      <ol class="step-list">
+        <li><strong>Warm up the engine 2–3 minutes</strong> — warm oil drains faster and carries more contaminants out with it. Don't run it hot or you'll burn yourself.</li>
+        <li><strong>Raise and support the truck safely</strong> — drive up on ramps, or jack it up and place it on jack stands. Never work under a truck supported only by a floor jack.</li>
+        <li><strong>Locate and loosen the drain plug</strong> — it's on the bottom of the oil pan. Position your drain pan under it before you pull the plug. The oil will shoot sideways initially.</li>
+        <li><strong>Pull the plug and let it drain completely</strong> — 5 minutes minimum. Inspect the plug and gasket for damage while you wait.</li>
+        <li><strong>Remove the old filter</strong> — use an oil filter wrench for extra grip. Have rags ready; some oil will spill when it comes loose. On V8s the filter is on the passenger side near the front of the block.</li>
+        <li><strong>Install the new filter</strong> — lightly oil the new filter's gasket with fresh oil. Thread it on by hand until the gasket seats, then an additional 3/4 turn. Do not use a wrench to tighten — hand tight is correct.</li>
+        <li><strong>Reinstall the drain plug</strong> — thread it in by hand first to avoid cross-threading, then torque to spec (see table above).</li>
+        <li><strong>Add fresh oil through the top</strong> — use the capacity listed in the spec table. Start with 1 quart less, then check the dipstick and top up.</li>
+        <li><strong>Run the engine 30 seconds, shut off, wait 5 minutes</strong> — check for leaks at the drain plug and filter, then re-check the dipstick. Top up if needed to the "Full" line.</li>
+        <li><strong>Reset the oil life monitor</strong> — see section below.</li>
+      </ol>
+
+      <div class="crystal-take">
+        <div class="crystal-take-header">Crystal's Note</div>
+        <p>The V8 Silverados hold 8 quarts — that's two full 5-qt jugs minus 2 quarts. Buy two jugs, pour all of the first one in, then add from the second while checking the dipstick. You'll have leftover oil for next time. <strong>Don't pour all 8 quarts in blindly</strong> — overfilling damages seals and can hydro-lock a cylinder on startup.</p>
+      </div>
+
+      <h2 id="reset">Resetting the Oil Life Monitor</h2>
+      <p>The Silverado's DIC (Driver Information Center) tracks oil life based on engine conditions, not just mileage. It needs to be manually reset after every oil change. The method varies slightly by generation but follows the same logic.</p>
+
+      <h3>2019–2026 Silverado (T1 Platform)</h3>
+      <ol class="step-list">
+        <li><strong>Press the Home button</strong> on the steering wheel to bring up the main DIC menu.</li>
+        <li><strong>Navigate to "Vehicle Information"</strong> using the up/down arrows on the steering wheel.</li>
+        <li><strong>Find "Oil Life"</strong> — it will show the current remaining percentage.</li>
+        <li><strong>Press and hold the checkmark/OK button</strong> for 3–5 seconds until you see "Oil Life Reset Confirmed" or the percentage resets to 100%.</li>
+      </ol>
+
+      <div class="tip-box">
+        <div class="tip-label">Alternative Method</div>
+        <p>Turn ignition to ON (engine off). Press the accelerator pedal fully to the floor and release it <strong>three times</strong> within five seconds. The oil life indicator will flash and then reset. This works on most 2014–2026 Silverados if you can't navigate the DIC menus.</p>
+      </div>
+
+      <h2 id="interval">How Often Should You Change Your Oil?</h2>
+      <p>GM's official guidance for the Silverado is "follow the oil life monitor." In practice, that typically works out to:</p>
+      <ul>
+        <li><strong>Normal driving:</strong> 7,500–10,000 miles with full synthetic Dexos1 Gen 3</li>
+        <li><strong>Severe service (towing, short trips, dusty conditions):</strong> 5,000–7,500 miles</li>
+        <li><strong>3.0L Duramax diesel:</strong> Up to 7,500 miles with Dexos D — the diesel is actually very tolerant of extended intervals with the right oil</li>
+      </ul>
+      <p>The old "every 3,000 miles" rule is a myth for modern full-synthetic oils. You're wasting money and oil if you're still doing that with a 2019+ Silverado.</p>
+
+      <h2 id="supplies-list">Supplies Quick-Reference</h2>
+      <p>Here's everything you need for each engine at a glance:</p>
+
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Engine</th>
+            <th>Oil</th>
+            <th>Quantity</th>
+            <th>Filter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2.7L Turbo</td>
+            <td>Dexos1 Gen 3 — 0W-20</td>
+            <td>5.0 qts</td>
+            <td>ACDelco PF64</td>
+          </tr>
+          <tr>
+            <td>5.3L V8</td>
+            <td>Dexos1 Gen 3 — 0W-20</td>
+            <td>8.0 qts</td>
+            <td>ACDelco PF66</td>
+          </tr>
+          <tr>
+            <td>6.2L V8</td>
+            <td>Dexos1 Gen 3 — 0W-20</td>
+            <td>8.0 qts</td>
+            <td>ACDelco PF66</td>
+          </tr>
+          <tr>
+            <td>3.0L Duramax</td>
+            <td>Dexos D — 0W-20</td>
+            <td>7.4 qts</td>
+            <td>ACDelco PF64E</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="affiliate-box">
+        <div class="affiliate-box-icon">🪣</div>
+        <div class="affiliate-box-text">
+          <strong>Oil Drain Pan — 8+ Quart Capacity</strong>
+          V8 Silverados drain nearly 8 full quarts. Get a pan rated for at least 8 quarts or you'll be cleaning up a mess.
+        </div>
+        <a href="https://www.amazon.com/s?k=oil+drain+pan+8+quart&tag=chevyroots-20" class="affiliate-box-btn" target="_blank" rel="noopener">Check Price →</a>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">In This Guide</div>
+        <ul class="toc-list">
+          <li><a href="#intro">Why DIY Matters</a></li>
+          <li><a href="#specs">Oil Specs by Engine</a></li>
+          <li><a href="#supplies">What You'll Need</a></li>
+          <li><a href="#drain-plug">Drain Plug Torque</a></li>
+          <li><a href="#steps">Step-by-Step Process</a></li>
+          <li><a href="#reset">Oil Life Monitor Reset</a></li>
+          <li><a href="#interval">Oil Change Intervals</a></li>
+          <li><a href="#supplies-list">Supplies Quick-Reference</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Related Guides</div>
+        <div class="related-article">
+          <div class="related-thumb" style="background: url('/photos/silverado/pexels_11085912_silverado.jpeg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/chevy-maintenance-schedule.html" class="related-title">Chevy Maintenance Schedule: The Full Timeline</a>
+            <div class="related-meta">Maintenance</div>
+          </div>
+        </div>
+        <div class="related-article">
+          <div class="related-thumb" style="background: url('/photos/silverado/pexels_12644976_silverado.jpeg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/silverado-transmission-shudder-fix.html" class="related-title">Silverado Transmission Shudder Fix</a>
+            <div class="related-meta">DIY Repair</div>
+          </div>
+        </div>
+        <div class="related-article">
+          <div class="related-thumb" style="background: url('/photos/silverado/pexels_11836885_silverado.jpeg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/silverado-5.3-vs-6.2.html" class="related-title">5.3L vs 6.2L: Which V8 Should You Choose?</a>
+            <div class="related-meta">Buyer's Guide</div>
+          </div>
+        </div>
+        <div class="related-article">
+          <div class="related-thumb" style="background: url('/photos/silverado/pexels_10099902_silverado.jpeg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/best-mods-silverado.html" class="related-title">Best Mods for Your Silverado</a>
+            <div class="related-meta">Modifications</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Quick Facts</div>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 13px; color: var(--text-dim);">
+          <div><strong style="color: var(--text); display: block;">Oil Standard</strong>Dexos1 Gen 3 (gas) / Dexos D (diesel)</div>
+          <div><strong style="color: var(--text); display: block;">V8 Filter</strong>ACDelco PF66</div>
+          <div><strong style="color: var(--text); display: block;">2.7T Filter</strong>ACDelco PF64</div>
+          <div><strong style="color: var(--text); display: block;">Drain Plug Torque</strong>18 lb-ft (gas) / 26 lb-ft (diesel)</div>
+          <div><strong style="color: var(--text); display: block;">V8 Oil Capacity</strong>8.0 quarts</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-eyebrow">ChevyRoots Newsletter</div>
+      <h2 class="newsletter-title">More Guides Like This</h2>
+      <p class="newsletter-sub">DIY tips, maintenance schedules, and Chevy news delivered straight to your inbox. No spam — just truck stuff.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="your@email.com" aria-label="Email address" />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note">Unsubscribe any time. We respect your inbox.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Chevy<span>Roots</span></div>
+          <p class="footer-tagline">Run by a Chevy Girl. Built for everyone who loves the bowtie.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/pages/guides/silverado-buyers-guide.html">Silverado Buyer's Guide</a></li>
+            <li><a href="/pages/guides/chevy-towing-guide.html">Towing Guide</a></li>
+            <li><a href="/pages/guides/chevy-maintenance-schedule.html">Maintenance Schedule</a></li>
+            <li><a href="/pages/guides/ls-swap-guide.html">LS Swap Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Models</h4>
+          <ul>
+            <li><a href="/pages/models/silverado.html">Silverado</a></li>
+            <li><a href="/pages/models/colorado.html">Colorado</a></li>
+            <li><a href="/pages/models/tahoe.html">Tahoe</a></li>
+            <li><a href="/pages/models/corvette.html">Corvette</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ChevyRoots</h4>
+          <ul>
+            <li><a href="/pages/about/">About</a></li>
+            <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+            <li><a href="/pages/newsletter/">Newsletter</a></li>
+            <li><a href="/pages/partners/">Partners</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 ChevyRoots. Not affiliated with General Motors. Some links are affiliate links &mdash; we earn a small commission at no extra cost to you.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chevy RPO Codes Decoded: How to Read Your Glove Box Sticker | ChevyRoots</title>
+  <meta name="description" content="Learn how to read your Chevy's RPO codes from the glove box sticker. G80, NHT, Z71, Z82, L84, L87, LM2, MYC — the codes that actually matter when buying or selling a used Chevy." />
+  <meta name="keywords" content="chevy RPO codes, GM RPO code list, G80 locking differential, NHT max tow, Z71 RPO, Z82 trailering, L84 engine code, L87 6.2L, LM2 duramax, glove box sticker GM, how to read GM option codes" />
+  <meta property="og:title" content="Chevy RPO Codes Decoded: How to Read Your Glove Box Sticker" />
+  <meta property="og:description" content="What those 3-character codes on your glove box sticker actually mean — and why they matter when buying a used Chevy truck." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/chevy-rpo-codes.html" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/chevy-rpo-codes.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #1A1A1A; --bg2: #222222; --bg3: #2A2A2A;
+      --gold: #C4A035; --gold-lt: #D4B455; --gold-dk: #9E7F22;
+      --text: #F0EDE6; --text-dim: #B0ADA6; --text-mute: #707070;
+      --border: #333333; --radius: 6px; --radius-lg: 12px; --trans: 0.25s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; min-height: 100vh; }
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+
+    .article-header { padding-top: 60px; background: linear-gradient(160deg, #1A1A1A 60%, #1f1a0e 100%); position: relative; overflow: hidden; }
+    .article-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196,160,53,0.07) 0%, transparent 70%); pointer-events: none; }
+    .article-header-inner { max-width: 860px; margin: 0 auto; padding: 64px 24px 48px; position: relative; }
+    .article-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .article-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 6vw, 64px); font-weight: 800; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 24px; }
+    .article-title span { color: var(--gold); }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 32px; }
+    .article-meta-item { display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mute); }
+    .article-meta-item .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+    .article-hero-img { width: 100%; height: 380px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+
+    .article-layout { max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px; display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start; }
+
+    .article-body h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text); margin: 48px 0 16px; padding-top: 8px; border-top: 2px solid var(--gold); }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.04em; color: var(--gold); margin: 32px 0 10px; text-transform: uppercase; }
+    .article-body p { margin-bottom: 20px; color: var(--text-dim); font-size: 16px; }
+    .article-body p strong { color: var(--text); font-weight: 600; }
+    .article-body ul, .article-body ol { margin: 0 0 20px 24px; color: var(--text-dim); }
+    .article-body li { margin-bottom: 8px; }
+
+    .tip-box { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--radius); padding: 18px 22px; margin: 24px 0; }
+    .tip-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .tip-box p { color: var(--text-dim); font-size: 14px; margin: 0; }
+
+    .rpo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin: 24px 0; }
+    .rpo-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .rpo-code { font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 700; color: var(--gold); margin-bottom: 6px; letter-spacing: 0.08em; }
+    .rpo-name { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; text-transform: uppercase; color: var(--text); margin-bottom: 8px; letter-spacing: 0.04em; }
+    .rpo-desc { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+    .rpo-card.high-value { border-color: var(--gold); border-left: 3px solid var(--gold); }
+
+    .spec-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .spec-table th { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); text-align: left; padding: 10px 14px; background: var(--bg2); border-bottom: 2px solid var(--gold); }
+    .spec-table td { padding: 10px 14px; color: var(--text-dim); border-bottom: 1px solid var(--border); vertical-align: top; }
+    .spec-table td:first-child { font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--gold); white-space: nowrap; }
+    .spec-table tr:last-child td { border-bottom: none; }
+
+    .pullquote { border-left: 4px solid var(--gold); padding: 16px 24px; margin: 32px 0; background: rgba(196,160,53,0.06); border-radius: 0 var(--radius) var(--radius) 0; }
+    .pullquote p { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 600; line-height: 1.3; color: var(--text) !important; margin: 0 !important; letter-spacing: 0.01em; }
+
+    .crystal-take { background: linear-gradient(135deg, #1f1a0e 0%, #222 100%); border: 2px solid var(--gold); border-radius: var(--radius-lg); padding: 28px; margin: 36px 0; }
+    .crystal-take-header { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .crystal-take p { color: var(--text-dim); margin-bottom: 12px; font-style: italic; }
+    .crystal-take p:last-child { margin-bottom: 0; }
+    .crystal-take strong { color: var(--text); font-style: normal; }
+
+    .inline-img { width: 100%; height: 260px; border-radius: var(--radius); margin: 28px 0; border: 1px solid var(--border); overflow: hidden; background-size: cover; background-position: center; }
+
+    .sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 28px; }
+    .sidebar-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
+    .sidebar-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list a { font-size: 13px; color: var(--text-dim); display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+    .toc-list a::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; transition: background var(--trans); }
+    .toc-list a:hover::before { background: var(--gold); }
+    .toc-list a:hover { color: var(--text); }
+    .related-article { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .related-article:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-thumb { width: 64px; height: 48px; background: #333; border-radius: var(--radius); flex-shrink: 0; overflow: hidden; background-size: cover; background-position: center; }
+    .related-title { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--text); letter-spacing: 0.02em; }
+    .related-title:hover { color: var(--gold); }
+    .related-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+    .newsletter-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 24px; }
+    .newsletter-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .newsletter-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .newsletter-title { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 12px; }
+    .newsletter-sub { color: var(--text-dim); font-size: 15px; margin-bottom: 32px; }
+    .newsletter-form { display: flex; gap: 10px; max-width: 480px; margin: 0 auto; }
+    .newsletter-form input { flex: 1; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: border-color var(--trans); }
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form input::placeholder { color: var(--text-mute); }
+    .newsletter-form button { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--gold); color: #111; border: none; padding: 12px 24px; border-radius: var(--radius); cursor: pointer; transition: background var(--trans); white-space: nowrap; }
+    .newsletter-form button:hover { background: var(--gold-lt); }
+    .newsletter-note { font-size: 12px; color: var(--text-mute); margin-top: 12px; }
+
+    footer { background: #111; border-top: 1px solid var(--border); padding: 48px 24px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-bottom: 40px; }
+    .footer-brand { flex: 1; min-width: 200px; }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); margin-bottom: 10px; }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline { font-size: 13px; color: var(--text-mute); max-width: 240px; line-height: 1.5; }
+    .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 13px; color: var(--text-mute); transition: color var(--trans); }
+    .footer-col ul a:hover { color: var(--text); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 12px; color: var(--text-mute); }
+
+    @media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; gap: 40px; } .sidebar { position: static; } }
+    @media (max-width: 640px) { .newsletter-form { flex-direction: column; } .article-hero-img { height: 220px; } .rpo-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <span>2026 &mdash;</span> Celebrating America&rsquo;s 250th &amp; 115 Years of Chevrolet &mdash; <span>Built in America. Still Running Strong.</span>
+  </div>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="ChevyRoots home">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/pages/models/">Models</a></li>
+        <li><a href="/pages/guides/" class="active" aria-current="page">Guides</a></li>
+        <li><a href="/pages/builds/">Builds</a></li>
+        <li><a href="/pages/events/">Events</a></li>
+        <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+        <li><a href="/pages/about/">About</a></li>
+        <li class="nav-more">
+          <button class="nav-more-btn" aria-expanded="false" aria-haspopup="true">More <span class="nav-more-arrow">&#9662;</span></button>
+          <div class="nav-dropdown">
+            <a href="/pages/community/">Community</a>
+            <a href="/pages/marketplace/">Marketplace</a>
+            <a href="/pages/tools/">Tools</a>
+            <a href="/pages/mechanics/">Mechanics</a>
+            <a href="/pages/news/">News</a>
+            <a href="/pages/ads/">Vintage Ads</a>
+            <a href="/pages/newsletter/">Newsletter</a>
+            <a href="/pages/partners/">Partners</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/pages/builds/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+      <button class="nav-menu-toggle" aria-label="Toggle mobile menu" onclick="document.getElementById('mobileNav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="/pages/models/" onclick="this.closest('.nav-mobile').classList.remove('open')">Models</a>
+    <a href="/pages/guides/" class="active" onclick="this.closest('.nav-mobile').classList.remove('open')">Guides</a>
+    <a href="/pages/builds/" onclick="this.closest('.nav-mobile').classList.remove('open')">Builds</a>
+    <a href="/pages/events/" onclick="this.closest('.nav-mobile').classList.remove('open')">Events</a>
+    <a href="/pages/crystals-corner/" onclick="this.closest('.nav-mobile').classList.remove('open')">Crystal's Corner</a>
+    <a href="/pages/about/" onclick="this.closest('.nav-mobile').classList.remove('open')">About</a>
+    <div class="nav-mobile-divider"></div>
+    <a href="/pages/community/" onclick="this.closest('.nav-mobile').classList.remove('open')">Community</a>
+    <a href="/pages/marketplace/" onclick="this.closest('.nav-mobile').classList.remove('open')">Marketplace</a>
+    <a href="/pages/tools/" onclick="this.closest('.nav-mobile').classList.remove('open')">Tools</a>
+    <a href="/pages/mechanics/" onclick="this.closest('.nav-mobile').classList.remove('open')">Mechanics</a>
+    <a href="/pages/news/" onclick="this.closest('.nav-mobile').classList.remove('open')">News</a>
+    <a href="/pages/ads/" onclick="this.closest('.nav-mobile').classList.remove('open')">Vintage Ads</a>
+    <a href="/pages/newsletter/" onclick="this.closest('.nav-mobile').classList.remove('open')">Newsletter</a>
+    <a href="/pages/partners/" onclick="this.closest('.nav-mobile').classList.remove('open')">Partners</a>
+    <a href="/pages/builds/" class="btn btn-gold" style="margin-top:0.5rem;" onclick="this.closest('.nav-mobile').classList.remove('open')">Submit Your Build</a>
+  </div>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-eyebrow">Buyer's Guide &nbsp;/&nbsp; Used Trucks</div>
+      <h1 class="article-title">Chevy <span>RPO Codes</span> Decoded: How to Read Your Glove Box Sticker</h1>
+      <div class="article-meta">
+        <div class="article-meta-item"><span class="dot"></span>By Crystal &amp; ChevyRoots Staff</div>
+        <div class="article-meta-item"><span class="dot"></span>Updated April 2026</div>
+        <div class="article-meta-item"><span class="dot"></span>7 min read</div>
+        <div class="article-meta-item"><span class="dot"></span>~1,000 words</div>
+      </div>
+      <div class="article-hero-img" style="background: #2a2a2a url('/photos/silverado/pexels_12624306_silverado.jpeg') center/cover no-repeat;"></div>
+    </div>
+  </header>
+
+  <!-- ARTICLE LAYOUT -->
+  <div class="article-layout">
+    <article class="article-body">
+
+      <h2 id="what-are-rpo">What Are RPO Codes?</h2>
+      <p><strong>RPO stands for Regular Production Option.</strong> It's GM's internal coding system for every option, package, engine, transmission, and feature that goes into a vehicle. Every Chevy built since the 1970s has an RPO label, and it tells you exactly what that specific truck was built with — not what the trim level typically comes with, but what <em>this truck</em> actually has.</p>
+      <p>This matters enormously when buying used. Two trucks can be the same trim level and look identical on the outside while being completely different in capability. The RPO label reveals the truth. It's the difference between a base-spec work truck and a max-tow, locking-diff, off-road machine hiding under the same paint job.</p>
+
+      <div class="tip-box">
+        <div class="tip-label">Where to Find It</div>
+        <p>Open the glove box and look for a white label, usually 4–6 inches wide, with rows of three-character alphanumeric codes. On some models it's on the inside of the glove box door itself. On older trucks (pre-2000) it may be in the center console, behind the ashtray, or on the spare tire cover in the bed.</p>
+      </div>
+
+      <h2 id="how-to-read">How to Read the Label</h2>
+      <p>The label lists every RPO code that applies to that vehicle, separated by spaces. They're not alphabetical — they're grouped by system (powertrain, chassis, interior, etc.) but not in any obvious order. You don't need to decode every single one. What you're looking for are the <strong>high-value codes</strong> that significantly affect capability or resale value.</p>
+      <p>Some codes are present on every truck (like the paint code, which always appears). Others are only on trucks that were ordered with that specific option. The absence of a code is just as informative as its presence — if G80 isn't there, you don't have a locking rear differential.</p>
+
+      <div class="pullquote">
+        <p>"The absence of a code is just as informative as its presence."</p>
+      </div>
+
+      <h2 id="the-codes">The RPO Codes That Actually Matter</h2>
+      <p>These are the codes that meaningfully affect what a truck can do, what it's worth, and how it's equipped. Learn these and you'll know more about a used truck than most people selling them.</p>
+
+      <div class="rpo-grid">
+        <div class="rpo-card high-value">
+          <div class="rpo-code">G80</div>
+          <div class="rpo-name">Locking Rear Differential (Eaton)</div>
+          <div class="rpo-desc">The Eaton Gov-Lok limited-slip differential. Automatically locks when one wheel loses traction. Essential for off-road, towing in soft terrain, and winter driving. A $500+ option new; look for it on used trucks. Silently significant.</div>
+        </div>
+        <div class="rpo-card high-value">
+          <div class="rpo-code">NHT</div>
+          <div class="rpo-name">Max Trailering Package</div>
+          <div class="rpo-desc">This is the heavy-duty towing bundle — upgraded rear axle ratio, heavy-duty cooling, trailer brake controller, 7-pin connector, and more. Unlocks the truck's maximum published tow rating. Without NHT, you're leaving 1,000–3,000+ lbs of tow capacity on the table.</div>
+        </div>
+        <div class="rpo-card high-value">
+          <div class="rpo-code">Z71</div>
+          <div class="rpo-name">Off-Road Suspension Package</div>
+          <div class="rpo-desc">Rancho shock absorbers, skid plates (front differential, transfer case, fuel tank), hill descent control, and locking front differential on 4WD models. This is a genuine capability package, not just a sticker. Also signals the NZZ skid plate group.</div>
+        </div>
+        <div class="rpo-card high-value">
+          <div class="rpo-code">Z82</div>
+          <div class="rpo-name">Trailering Package</div>
+          <div class="rpo-desc">The standard trailering bundle below NHT. Includes integrated trailer brake controller, 7-pin/4-pin trailer connectors, trailer sway control, and hitch guidance camera support. Required for activating trailer sway control on most models.</div>
+        </div>
+        <div class="rpo-card">
+          <div class="rpo-code">L84</div>
+          <div class="rpo-name">5.3L V8 EcoTec3 (355 hp)</div>
+          <div class="rpo-desc">The standard V8. 355 horsepower, 383 lb-ft torque. AFM/DFM cylinder deactivation active. The workhorse of the Silverado lineup, found in LT Trail Boss, LTZ, and High Country trims when the 6.2L isn't selected.</div>
+        </div>
+        <div class="rpo-card">
+          <div class="rpo-code">L87</div>
+          <div class="rpo-name">6.2L V8 EcoTec3 (420 hp)</div>
+          <div class="rpo-desc">The top gas engine. 420 hp, 460 lb-ft. Available only on LTZ and High Country with the premium package. Paired with the 10-speed automatic. Adds significant resale value and towing capability. If you're buying a used LTZ, check for L87 — not all have it.</div>
+        </div>
+        <div class="rpo-card">
+          <div class="rpo-code">LM2</div>
+          <div class="rpo-name">3.0L Duramax Inline-6 Diesel</div>
+          <div class="rpo-desc">277 hp, 460 lb-ft torque. The smoothest engine in the lineup, with best-in-class diesel fuel economy. Look for LZ0 on newer 2022+ trucks (the refreshed version). Commands a premium on used trucks — expect to pay $2,000–4,000 more over an equivalent gas model.</div>
+        </div>
+        <div class="rpo-card">
+          <div class="rpo-code">MYC</div>
+          <div class="rpo-name">10-Speed Automatic Transmission</div>
+          <div class="rpo-desc">The Hydra-Matic 10L80 (gas V8) or 10L90 (6.2L). Paired with all V8 engines on current Silverados. Note: the 2.7T gets its own 8-speed (MHU). If you're comparing older trucks, MYC confirms the truck has the modern 10-speed, not the older 8-speed (M5U).</div>
+        </div>
+        <div class="rpo-card">
+          <div class="rpo-code">NZZ</div>
+          <div class="rpo-name">Z71 Off-Road Package (Skid Plates)</div>
+          <div class="rpo-desc">Usually appears alongside Z71. Specifically refers to the underbody skid plate protection group: front differential, transfer case, and fuel tank. Verify NZZ is present on used Z71 trucks — aftermarket skid plates don't carry this code.</div>
+        </div>
+      </div>
+
+      <div class="inline-img" style="background: url('/photos/silverado/pexels_13070840_silverado.jpeg') center/cover no-repeat;"></div>
+
+      <h2 id="full-table">Extended RPO Reference Table</h2>
+      <p>Here are more codes you may encounter on Silverado and Sierra RPO labels:</p>
+
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>What It Means</th>
+            <th>Why It Matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>GT4</td><td>3.73 Rear Axle Ratio</td><td>Better towing and off-road performance vs. 3.42 (GU4)</td></tr>
+          <tr><td>GU4</td><td>3.42 Rear Axle Ratio</td><td>Standard ratio — better fuel economy, less tow capacity</td></tr>
+          <tr><td>GU6</td><td>3.08 Rear Axle Ratio</td><td>Fuel-economy-focused — lowest tow rating</td></tr>
+          <tr><td>JL1</td><td>Magnetic Ride Control</td><td>Active suspension — premium option on Z71/High Country</td></tr>
+          <tr><td>K05</td><td>Engine Block Heater</td><td>Essential for cold-climate diesel owners</td></tr>
+          <tr><td>LZ0</td><td>3.0L Duramax (2022+)</td><td>Updated Duramax with improved reliability</td></tr>
+          <tr><td>PDV</td><td>Midnight Edition Package</td><td>Black appearance package — mainly cosmetic</td></tr>
+          <tr><td>VYU</td><td>Snow Plow Prep Package</td><td>Upgraded front springs, electrical, and transmission cooler</td></tr>
+          <tr><td>5Y7</td><td>Midnight Blue Metallic Paint</td><td>Paint codes are always 3-char — first digit identifies color</td></tr>
+          <tr><td>A60</td><td>60/40 Split Rear Seat</td><td>Folding rear bench — standard on most crew cabs</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="buying-used">How to Use RPO Codes When Buying Used</h2>
+      <p>When you're looking at a used Silverado, the RPO label is your cheat sheet. Here's how to use it strategically:</p>
+
+      <h3>Before You Go to the Lot</h3>
+      <p>Know the codes you want. If you're buying a tow rig, you want <strong>NHT</strong> and <strong>G80</strong>. If you want a capable off-roader, check for <strong>Z71</strong>, <strong>NZZ</strong>, and <strong>G80</strong>. If you specifically want the 6.2L, look for <strong>L87</strong> — don't rely on the seller to know the difference from the 5.3L.</p>
+
+      <h3>At the Truck</h3>
+      <p>Open the glove box before you do anything else. Photograph the RPO label. Then cross-reference the codes against what the seller claims the truck has. Discrepancies are common — not always deceptive, often just ignorant — but they affect price.</p>
+
+      <h3>Negotiating with Knowledge</h3>
+      <p>A truck without NHT has a lower tow rating, which is a legitimate price difference. A truck with L87 instead of L84 is worth more. A Z71 without G80 is missing a key off-road feature. These gaps give you real, factual leverage at the negotiation table — not just "I found it cheaper elsewhere."</p>
+
+      <div class="crystal-take">
+        <div class="crystal-take-header">Crystal's Take</div>
+        <p>I've personally caught dealers listing trucks as "Max Tow" when they didn't have the NHT package. Not maliciously — they just didn't know. When I pulled the RPO label and pointed to the missing code, the conversation changed immediately. <strong>Knowledge is negotiating power.</strong> Print this page, bring it with you, and don't let anyone tell you a truck has a capability it doesn't have.</p>
+      </div>
+
+      <h2 id="online-lookup">Online RPO Lookup Tools</h2>
+      <p>Beyond the glove box label, you can decode a GM vehicle's full option list using its VIN:</p>
+      <ul>
+        <li><strong>GMAuthority.com / RPOC:</strong> The most comprehensive free RPO lookup tool for GM vehicles</li>
+        <li><strong>iSeeCars / VINCheck:</strong> Free VIN history plus some option data</li>
+        <li><strong>Your Chevy Dealer:</strong> Any GM dealer can run a full build sheet from the VIN using their internal systems — useful for vehicles with partial or damaged RPO labels</li>
+      </ul>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">In This Guide</div>
+        <ul class="toc-list">
+          <li><a href="#what-are-rpo">What Are RPO Codes?</a></li>
+          <li><a href="#how-to-read">How to Read the Label</a></li>
+          <li><a href="#the-codes">Key Codes to Know</a></li>
+          <li><a href="#full-table">Extended Reference</a></li>
+          <li><a href="#buying-used">Using Codes When Buying</a></li>
+          <li><a href="#online-lookup">Online Lookup Tools</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card" style="background: linear-gradient(135deg, #1f1a0e, #222); border-color: var(--gold);">
+        <div class="sidebar-card-title">High-Value RPOs at a Glance</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 8px;"><span style="font-family: 'JetBrains Mono'; color: var(--gold);">G80</span><span style="color: var(--text-dim);">Locking Rear Diff</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 8px;"><span style="font-family: 'JetBrains Mono'; color: var(--gold);">NHT</span><span style="color: var(--text-dim);">Max Tow Package</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 8px;"><span style="font-family: 'JetBrains Mono'; color: var(--gold);">Z71</span><span style="color: var(--text-dim);">Off-Road Package</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 8px;"><span style="font-family: 'JetBrains Mono'; color: var(--gold);">L87</span><span style="color: var(--text-dim);">6.2L V8</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 8px;"><span style="font-family: 'JetBrains Mono'; color: var(--gold);">LM2</span><span style="color: var(--text-dim);">3.0L Duramax</span></div>
+          <div style="display: flex; justify-content: space-between;"><span style="font-family: 'JetBrains Mono'; color: var(--gold);">Z82</span><span style="color: var(--text-dim);">Trailering Package</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Related Guides</div>
+        <div class="related-article">
+          <div class="related-thumb" style="background: url('/photos/silverado/pexels_11567721_silverado.jpeg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/used-chevy-truck-guide.html" class="related-title">How to Buy a Used Chevy Truck</a>
+            <div class="related-meta">Buyer's Guide</div>
+          </div>
+        </div>
+        <div class="related-article">
+          <div class="related-thumb" style="background: url('/photos/silverado/pexels_12485956_silverado.jpeg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/silverado-5.3-vs-6.2.html" class="related-title">5.3L vs 6.2L: Which V8 to Choose</a>
+            <div class="related-meta">Engine Guide</div>
+          </div>
+        </div>
+        <div class="related-article">
+          <div class="related-thumb" style="background: url('/photos/silverado/pexels_14099251_silverado.jpeg') center/cover no-repeat;"></div>
+          <div>
+            <a href="/pages/guides/chevy-towing-guide.html" class="related-title">The Chevy Towing Guide</a>
+            <div class="related-meta">Capability</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-eyebrow">ChevyRoots Newsletter</div>
+      <h2 class="newsletter-title">Know Your Truck Inside Out</h2>
+      <p class="newsletter-sub">Guides like this one, delivered to your inbox. Buying tips, maintenance schedules, and honest Chevy coverage — no fluff.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="your@email.com" aria-label="Email address" />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note">Unsubscribe any time. We respect your inbox.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Chevy<span>Roots</span></div>
+          <p class="footer-tagline">Run by a Chevy Girl. Built for everyone who loves the bowtie.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/pages/guides/silverado-buyers-guide.html">Silverado Buyer's Guide</a></li>
+            <li><a href="/pages/guides/used-chevy-truck-guide.html">Used Truck Guide</a></li>
+            <li><a href="/pages/guides/chevy-towing-guide.html">Towing Guide</a></li>
+            <li><a href="/pages/guides/chevy-dealer-negotiation.html">Dealer Negotiation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Models</h4>
+          <ul>
+            <li><a href="/pages/models/silverado.html">Silverado</a></li>
+            <li><a href="/pages/models/colorado.html">Colorado</a></li>
+            <li><a href="/pages/models/tahoe.html">Tahoe</a></li>
+            <li><a href="/pages/models/corvette.html">Corvette</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>ChevyRoots</h4>
+          <ul>
+            <li><a href="/pages/about/">About</a></li>
+            <li><a href="/pages/crystals-corner/">Crystal's Corner</a></li>
+            <li><a href="/pages/newsletter/">Newsletter</a></li>
+            <li><a href="/pages/partners/">Partners</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 ChevyRoots. Not affiliated with General Motors.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

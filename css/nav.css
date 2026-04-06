@@ -3,6 +3,43 @@
    Include on every page: <link rel="stylesheet" href="/css/nav.css">
    ============================================================ */
 
+/* ── CONTAINER (needed for nav centering) ── */
+.container {
+  width: 100%;
+  max-width: var(--max-width, 1280px);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+/* ── NAV CTA BUTTON ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading, 'Barlow Condensed', sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius, 4px);
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease;
+  text-decoration: none;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-gold {
+  background: var(--gold, #C4A035);
+  color: var(--charcoal, #1A1A1A);
+  border-color: var(--gold, #C4A035);
+}
+.btn-gold:hover {
+  background: var(--gold-light, #D4B44A);
+  border-color: var(--gold-light, #D4B44A);
+}
+
 /* ── ANNOUNCEMENT BAR ── */
 .announcement-bar {
   background: var(--red, #CC0000);

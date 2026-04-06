@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>115 Years of Chevy Advertising: A Visual History | ChevyRoots</title>
+  <meta name="description" content="From hand-drawn 1914 broadsheets to glossy 1980s lifestyle spreads — browse 183 original Chevrolet advertisements spanning 1914 to 1987. A curated visual history of American automotive advertising." />
+  <meta name="keywords" content="vintage chevrolet ads, old chevy advertisements, chevrolet advertising history, 1950s chevy ads, classic chevrolet print ads, chevy bel air ad, corvette vintage ad" />
+  <meta property="og:title" content="115 Years of Chevy Advertising: A Visual History" />
+  <meta property="og:description" content="183 original Chevrolet print ads, 1914–1987. Decade by decade, from horse-and-buggy era broadsides to muscle car glory." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://chevyroots.com/pages/guides/chevy-vintage-ads.html" />
+  <link rel="canonical" href="https://chevyroots.com/pages/guides/chevy-vintage-ads.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #1A1A1A;
+      --bg2:       #222222;
+      --bg3:       #2A2A2A;
+      --gold:      #C4A035;
+      --gold-lt:   #D4B455;
+      --gold-dk:   #9E7F22;
+      --red:       #CC0000;
+      --text:      #F0EDE6;
+      --text-dim:  #B0ADA6;
+      --text-mute: #707070;
+      --border:    #333333;
+      --radius:    6px;
+      --radius-lg: 12px;
+      --trans:     0.25s ease;
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
+      --nav-height:   68px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color var(--trans); }
+    a:hover { color: var(--gold-lt); }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 4vw, 2.5rem);
+    }
+
+    /* ---- NAV ---- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: var(--nav-height);
+      background: rgba(26,26,26,0.97);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      backdrop-filter: blur(8px);
+    }/* ---- HERO ---- */
+    .hero {
+      position: relative;
+      min-height: min(75vh, 660px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(160deg, #0d0d0d 0%, #1a1a1a 50%, #111 100%);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140%;
+      height: 400px;
+      background: radial-gradient(ellipse at center, rgba(196,160,53,0.1) 0%, rgba(196,160,53,0.03) 45%, transparent 70%);
+    }
+    /* Decorative ad-border lines */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      right: 2rem;
+      bottom: 2rem;
+      border: 1px solid rgba(196,160,53,0.08);
+      pointer-events: none;
+    }
+    /* Scattered ad thumbnails in background */
+    .hero-ads-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      opacity: 0.07;
+      overflow: hidden;
+    }
+    .hero-ad-strip {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .hero-ad-strip img {
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-block: clamp(4rem, 10vh, 7rem);
+    }
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      max-width: 14ch;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+      display: block;
+    }
+    .hero-desc {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: var(--text-dim);
+      max-width: 58ch;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .hero-stat-num {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+
+    /* ---- DECADE FILTER BAR ---- */
+    .filter-bar {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: var(--nav-height);
+      z-index: 100;
+    }
+    .filter-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .filter-inner::-webkit-scrollbar { display: none; }
+    .filter-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      padding: 0 1.5rem 0 0;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .filter-btn {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: color var(--trans), border-color var(--trans);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .filter-btn:hover { color: var(--text); }
+    .filter-btn.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+    .filter-btn span {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--text-mute);
+      margin-left: 0.35rem;
+      vertical-align: super;
+    }
+
+    /* ---- GALLERY SECTIONS ---- */
+    .gallery-section {
+      padding-block: 4rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .gallery-section:last-of-type { border-bottom: none; }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+    .section-decade {
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(196,160,53,0.12);
+      letter-spacing: -0.02em;
+      margin-bottom: -0.5rem;
+      user-select: none;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .section-title em { font-style: normal; color: var(--gold); }
+    .section-context {
+      max-width: 72ch;
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+      border-left: 3px solid rgba(196,160,53,0.35);
+      padding-left: 1.25rem;
+    }
+    .section-count {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-top: 0.75rem;
+    }
+
+    /* ---- MASONRY GRID ---- */
+    .ad-grid {
+      columns: 5;
+      column-gap: 10px;
+    }
+    @media (max-width: 1200px) { .ad-grid { columns: 4; } }
+    @media (max-width: 900px)  { .ad-grid { columns: 3; } }
+    @media (max-width: 600px)  { .ad-grid { columns: 2; } }
+    @media (max-width: 380px)  { .ad-grid { columns: 1; } }
+
+    .ad-item {
+      break-inside: avoid;
+      margin-bottom: 10px;
+      position: relative;
+      cursor: pointer;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg3);
+      border: 1px solid transparent;
+      transition: border-color var(--trans), transform var(--trans), box-shadow var(--trans);
+    }
+    .ad-item:hover {
+      border-color: rgba(196,160,53,0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .ad-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .ad-item:hover img {
+      transform: scale(1.03);
+    }
+    .ad-year-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 0.6rem 0.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      opacity: 0;
+      transition: opacity var(--trans);
+    }
+    .ad-item:hover .ad-year-badge { opacity: 1; }
+    .ad-year-text {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .ad-zoom-icon {
+      font-size: 0.8rem;
+      color: rgba(240,237,230,0.6);
+    }
+
+    /* ---- LIGHTBOX ---- */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.95);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      cursor: zoom-out;
+      backdrop-filter: blur(4px);
+    }
+    .lightbox.open { display: flex; }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: min(90vw, 900px);
+      max-height: 90vh;
+      cursor: default;
+      animation: lbIn 0.2s ease;
+    }
+    @keyframes lbIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .lightbox-inner img {
+      max-width: 100%;
+      max-height: calc(90vh - 80px);
+      object-fit: contain;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.8);
+      display: block;
+    }
+    .lightbox-caption {
+      text-align: center;
+      margin-top: 1rem;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .lightbox-caption span {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-mute);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      margin-left: 0.75rem;
+      text-transform: uppercase;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: color var(--trans);
+      padding: 0.25rem;
+    }
+    .lightbox-close:hover { color: var(--text); }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(26,26,26,0.8);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 1.2rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: var(--radius);
+      transition: background var(--trans), color var(--trans);
+    }
+    .lightbox-nav:hover { background: rgba(196,160,53,0.2); color: var(--gold); }
+    .lightbox-prev { left: -3.5rem; }
+    .lightbox-next { right: -3.5rem; }
+    @media (max-width: 700px) {
+      .lightbox-prev { left: 0.25rem; }
+      .lightbox-next { right: 0.25rem; }
+    }
+
+    /* ---- SEE THE USA SECTION ---- */
+    .see-usa {
+      background: linear-gradient(135deg, var(--bg2) 0%, #1e1b12 100%);
+      border-top: 1px solid rgba(196,160,53,0.2);
+      border-bottom: 1px solid rgba(196,160,53,0.2);
+      padding-block: 5rem;
+    }
+    .see-usa-inner {
+      max-width: 900px;
+      margin-inline: auto;
+      text-align: center;
+    }
+    .see-usa-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .see-usa-headline em { font-style: italic; color: var(--gold); }
+    .see-usa-text {
+      font-size: 1rem;
+      color: var(--text-dim);
+      line-height: 1.9;
+      max-width: 65ch;
+      margin: 0 auto 2rem;
+    }
+    .see-usa-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      color: var(--gold);
+      opacity: 0.5;
+    }
+    .see-usa-divider::before,
+    .see-usa-divider::after {
+      content: '';
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: currentColor;
+    }
+    .see-usa-star { font-size: 1.2rem; }
+    .see-usa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      border-radius: var(--radius);
+      padding: 0.9rem 2rem;
+      transition: background var(--trans), transform var(--trans);
+    }
+    .see-usa-link:hover {
+      background: var(--gold-lt);
+      color: var(--bg);
+      transform: translateY(-1px);
+    }
+
+    /* ---- NEWSLETTER ---- */
+    .newsletter {
+      padding-block: 5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .newsletter-inner {
+      max-width: 640px;
+      margin-inline: auto;
+      text-align: center;
+    }
+    .newsletter-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .newsletter h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .newsletter p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input {
+      flex: 1;
+      min-width: 220px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 0.85rem 1.1rem;
+      outline: none;
+      transition: border-color var(--trans);
+    }
+    .newsletter-form input::placeholder { color: var(--text-mute); }
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form button {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--bg);
+      border: none;
+      border-radius: var(--radius);
+      padding: 0.85rem 1.75rem;
+      cursor: pointer;
+      transition: background var(--trans);
+      white-space: nowrap;
+    }
+    .newsletter-form button:hover { background: var(--gold-lt); }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding-block: 3rem 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 700px) { .footer-inner { grid-template-columns: 1fr; } }
+    .footer-brand { }
+    .footer-logo-main {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .footer-logo-main em { font-style: normal; color: var(--gold); }
+    .footer-tagline {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+    .footer-col-title {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+      margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-links a {
+      font-size: 0.875rem;
+      color: var(--text-dim);
+      transition: color var(--trans);
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--text-mute);
+    }
+    .footer-copy em { font-style: normal; color: var(--text-dim); }
+
+    /* ---- HIDDEN / SHOW ---- */
+    .gallery-section.hidden { display: none; }
+
+    /* ---- UTILITY ---- */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="ChevyRoots home">
+        <span class="nav-logo-main">Chevy<em>Roots</em></span>
+        <span class="nav-logo-sub">Run by a Chevy Girl</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/pages/guides/index.html">Guides</a></li>
+        <li><a href="/pages/guides/chevy-history.html">History</a></li>
+        <li><a href="/pages/guides/chevy-dream-tour.html">Road Trip</a></li>
+        <li><a href="/pages/guides/compare.html">Compare</a></li>
+        <li><a href="/pages/guides/quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <p class="hero-eyebrow">Visual History &bull; 1914&ndash;1987</p>
+      <h1>115 Years of Chevy <em>Advertising</em></h1>
+      <p class="hero-desc">
+        Before social media, before TV spots, before banner ads &mdash; there were full-page print ads
+        in Life, Saturday Evening Post, and Popular Science. This is the complete visual record
+        of how Chevrolet sold the American Dream, one page at a time.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">183</span>
+          <span class="hero-stat-label">Original Ads</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">73</span>
+          <span class="hero-stat-label">Years Covered</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">8</span>
+          <span class="hero-stat-label">Decades</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">1914</span>
+          <span class="hero-stat-label">Earliest Ad</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DECADE FILTER -->
+  <div class="filter-bar" role="navigation" aria-label="Filter by decade">
+    <div class="container filter-inner">
+      <span class="filter-label">Decade &rarr;</span>
+      <button class="filter-btn active" data-decade="all" onclick="filterDecade('all',this)">All<span>183</span></button>
+      <button class="filter-btn" data-decade="1910" onclick="filterDecade('1910',this)">1910s<span>6</span></button>
+      <button class="filter-btn" data-decade="1920" onclick="filterDecade('1920',this)">1920s<span>25</span></button>
+      <button class="filter-btn" data-decade="1930" onclick="filterDecade('1930',this)">1930s<span>24</span></button>
+      <button class="filter-btn" data-decade="1940" onclick="filterDecade('1940',this)">1940s<span>30</span></button>
+      <button class="filter-btn" data-decade="1950" onclick="filterDecade('1950',this)">1950s<span>30</span></button>
+      <button class="filter-btn" data-decade="1960" onclick="filterDecade('1960',this)">1960s<span>29</span></button>
+      <button class="filter-btn" data-decade="1970" onclick="filterDecade('1970',this)">1970s<span>24</span></button>
+      <button class="filter-btn" data-decade="1980" onclick="filterDecade('1980',this)">1980s<span>15</span></button>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <main id="gallery">
+
+    <!-- 1910s -->
+    <section class="gallery-section" id="decade-1910" data-decade="1910">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-decade" aria-hidden="true">1910s</div>
+          <h2 class="section-title">The Birth of an Icon &mdash; <em>1914&ndash;1919</em></h2>
+          <p class="section-context">
+            Chevrolet was barely three years old when these first ads ran. The brand was positioning
+            itself against Ford's Model T &mdash; offering more style and features at a competitive
+            price. The tagline "The Product of Experience" carried the confidence of a challenger
+            brand that intended to win. These early ads used dense typography, technical drawings,
+            and matter-of-fact copy aimed at practical buyers weighing one of the largest purchases
+            of their lives. America had fewer than 4 million registered cars. These ads were
+            helping build the car culture from scratch.
+          </p>
+          <span class="section-count">6 ads &bull; 1914&ndash;1919</span>
+        </div>
+        <div class="ad-grid" id="grid-1910"></div>
+      </div>
+    </section>
+
+    <!-- 1920s -->
+    <section class="gallery-section" id="decade-1920" data-decade="1920">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-decade" aria-hidden="true">1920s</div>
+          <h2 class="section-title">The Roaring Twenties &mdash; <em>Style Enters the Picture</em></h2>
+          <p class="section-context">
+            The 1920s were transformative. Chevrolet overtook Ford in sales for the first time in 1927,
+            the same year GM's Alfred Sloan introduced the concept of the annual model change &mdash;
+            creating perpetual desire in the consumer. Ads shifted from technical specs to aspiration:
+            smartly dressed couples, open roads, leisure and freedom. "A car for every purse and purpose"
+            was more than a slogan &mdash; it was a market strategy that built the modern auto industry.
+            Art Deco illustration styles gave these ads a visual elegance that matched the era's optimism.
+          </p>
+          <span class="section-count">25 ads &bull; 1921&ndash;1929</span>
+        </div>
+        <div class="ad-grid" id="grid-1920"></div>
+      </div>
+    </section>
+
+    <!-- 1930s -->
+    <section class="gallery-section" id="decade-1930" data-decade="1930">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-decade" aria-hidden="true">1930s</div>
+          <h2 class="section-title">Depression Era &mdash; <em>Value When It Mattered Most</em></h2>
+          <p class="section-context">
+            The Great Depression hit in 1929 and changed everything. Auto sales collapsed.
+            Chevrolet's ads pivoted hard to value &mdash; economy of ownership, reliability,
+            and affordability. But the visual quality never suffered: illustrations became
+            more cinematic, compositions more dramatic. Chevy kept advertising while others
+            cut budgets, and it paid off in market share. By the mid-1930s, streamlining
+            had entered automotive design &mdash; and the ads reflected it with sweeping
+            speed lines and modern typography that made these cars feel like the future,
+            even in hard times.
+          </p>
+          <span class="section-count">24 ads &bull; 1930&ndash;1939</span>
+        </div>
+        <div class="ad-grid" id="grid-1930"></div>
+      </div>
+    </section>
+
+    <!-- 1940s -->
+    <section class="gallery-section" id="decade-1940" data-decade="1940">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-decade" aria-hidden="true">1940s</div>
+          <h2 class="section-title">War &amp; Homecoming &mdash; <em>Chevy Went to War Too</em></h2>
+          <p class="section-context">
+            Civilian auto production stopped in February 1942 as GM converted its plants
+            to war production. Chevrolet built military trucks, airplane parts, and artillery
+            shells &mdash; over $11 billion in war materiel. The ads from 1942&ndash;1945
+            are some of the most remarkable in American advertising history: patriotic,
+            institutional, promising better days ahead. "The day you've been waiting for"
+            was a recurring theme. When the war ended, pent-up demand exploded. The postwar
+            ads of 1946&ndash;1949 are almost giddy &mdash; full of color, joy, and the
+            promise of a normal life restored.
+          </p>
+          <span class="section-count">30 ads &bull; 1940&ndash;1949</span>
+        </div>
+        <div class="ad-grid" id="grid-1940"></div>
+      </div>
+    </section>
+
+    <!-- 1950s -->
+    <section class="gallery-section" id="decade-1950" data-decade="1950">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-decade" aria-hidden="true">1950s</div>
+          <h2 class="section-title">The Golden Age &mdash; <em>Bel Air, V8, and Tail Fins</em></h2>
+          <p class="section-context">
+            Nothing in American advertising history quite matches the 1950s Chevy ads for
+            sheer exuberance. The 1955 Bel Air introduced the legendary 265 cubic inch
+            small-block V8 &mdash; and the ads screamed it from every page. Two-tone paint.
+            Chrome. Panoramic windshields. Jet-age styling. These cars were selling a lifestyle:
+            suburban prosperity, family adventure, the open American highway. The illustration
+            work &mdash; often by commercial artists of extraordinary skill &mdash; depicted
+            cars in colors that didn't exist in real paint, against skies that never existed,
+            on roads too perfect to be real. Pure, unapologetic desire.
+          </p>
+          <span class="section-count">30 ads &bull; 1950&ndash;1959</span>
+        </div>
+        <div class="ad-grid" id="grid-1950"></div>
+      </div>
+    </section>
+
+    <!-- 1960s -->
+    <section class="gallery-section" id="decade-1960" data-decade="1960">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-decade" aria-hidden="true">1960s</div>
+          <h2 class="section-title">Muscle Car Era &mdash; <em>Camaro, Chevelle, Corvette Stingray</em></h2>
+          <p class="section-context">
+            The baby boom generation was coming of age, and Chevrolet was ready.
+            The 1963 Corvette Sting Ray rewrote sports car design. The 1965 Chevelle SS
+            and 1967 Camaro answered the Mustang with brute force and style.
+            Advertising shifted &mdash; less family sedan, more raw performance.
+            Bold photography replaced illustration. Copy got shorter, punchier, more confident.
+            These ads talked to young buyers who had disposable income and strong opinions.
+            "See the USA in Your Chevrolet" had been the soft sell of the 1950s;
+            the 1960s were a harder sell, a faster sell. The era of the muscle car ad
+            is arguably the most collectible chapter in American print advertising.
+          </p>
+          <span class="section-count">29 ads &bull; 1960&ndash;1969</span>
+        </div>
+        <div class="ad-grid" id="grid-1960"></div>
+      </div>
+    </section>
+
+    <!-- 1970s -->
+    <section class="gallery-section" id="decade-1970" data-decade="1970">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-decade" aria-hidden="true">1970s</div>
+          <h2 class="section-title">Emissions Era &mdash; <em>Trucks Rise, Corvette Survives</em></h2>
+          <p class="section-context">
+            The 1970s were hard for performance cars. The 1973 oil crisis and tightening
+            emissions regulations squeezed horsepower out of muscle cars. But two segments
+            thrived: the Corvette, which survived by adapting, and the C/K pickup truck,
+            which was becoming a lifestyle vehicle rather than just a work tool.
+            Silverado trim launched in 1975. Ads from this era lean heavily on truck culture,
+            off-road capability, and the Corvette as aspirational icon. The photography
+            is earthier &mdash; dusty roads, rugged terrain, real-world grit that marked
+            a departure from the polished dreamscapes of the 1950s.
+          </p>
+          <span class="section-count">24 ads &bull; 1970&ndash;1978</span>
+        </div>
+        <div class="ad-grid" id="grid-1970"></div>
+      </div>
+    </section>
+
+    <!-- 1980s -->
+    <section class="gallery-section" id="decade-1980" data-decade="1980">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-decade" aria-hidden="true">1980s</div>
+          <h2 class="section-title">The Modern Era Arrives &mdash; <em>Truck Culture and the C4</em></h2>
+          <p class="section-context">
+            By 1980, the American car industry was in crisis &mdash; fuel economy mandates,
+            Japanese competition, and a recession reshaped the market. Chevrolet's ads from
+            this era are sophisticated, lifestyle-focused, and surprisingly self-aware.
+            The 1984 Corvette C4 was a genuine reset &mdash; modern, aerodynamic, technologically
+            capable. Meanwhile the Silverado and S-10 trucks were becoming cultural fixtures.
+            The photography became cinematic: dramatic lighting, golden-hour shots,
+            a visual vocabulary borrowed from Hollywood. By 1987 &mdash; the last year
+            represented in this archive &mdash; Chevrolet advertising had evolved
+            from broadsheet typography to visual storytelling in 73 years.
+          </p>
+          <span class="section-count">15 ads &bull; 1980&ndash;1987</span>
+        </div>
+        <div class="ad-grid" id="grid-1980"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SEE THE USA -->
+  <section class="see-usa">
+    <div class="container see-usa-inner">
+      <div class="see-usa-divider"><span class="see-usa-star">&#9733;</span></div>
+      <h2 class="see-usa-headline"><em>"See the USA</em><br>in Your Chevrolet"</h2>
+      <p class="see-usa-text">
+        Dinah Shore first sang those words on NBC in 1951, and the phrase became one of the most
+        enduring slogans in American advertising history. It captured something true about
+        the postwar American experience: the country was big, the roads were new,
+        and a Chevrolet could take you anywhere.
+        <br><br>
+        As America prepares for its 250th birthday in 2026, that spirit feels more relevant
+        than ever. We've mapped out the ultimate Chevy road trip &mdash; from the
+        Blue Ridge to the Pacific Coast &mdash; in the same spirit those 1950s ads promised.
+        The roads are still out there. The Chevys still run.
+      </p>
+      <a href="/pages/guides/america-250-chevy-road-trip.html" class="see-usa-link">
+        Plan the America 250 Road Trip &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container newsletter-inner">
+      <p class="newsletter-eyebrow">Stay in the Loop</p>
+      <h2>More Chevy History, Delivered</h2>
+      <p>Deep dives, vintage finds, and the best Chevy content on the internet &mdash; straight to your inbox. No spam, no filler.</p>
+      <form class="newsletter-form" onsubmit="handleSubmit(event)">
+        <input type="email" placeholder="your@email.com" required aria-label="Email address" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo-main">Chevy<em>Roots</em></div>
+          <div class="footer-tagline">Run by a Chevy Girl</div>
+        </div>
+        <div>
+          <div class="footer-col-title">Guides</div>
+          <ul class="footer-links">
+            <li><a href="/pages/guides/chevy-history.html">Chevrolet History</a></li>
+            <li><a href="/pages/guides/chevy-vintage-ads.html">Vintage Ad Gallery</a></li>
+            <li><a href="/pages/guides/chevy-impala-cultural-history.html">Impala Cultural History</a></li>
+            <li><a href="/pages/guides/c8-corvette-buyers-guide.html">C8 Corvette Buyer&rsquo;s Guide</a></li>
+            <li><a href="/pages/guides/chevy-dream-tour.html">Chevy Dream Tour</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">More</div>
+          <ul class="footer-links">
+            <li><a href="/pages/guides/best-mods-silverado.html">Silverado Mods</a></li>
+            <li><a href="/pages/guides/ls-swap-guide.html">LS Swap Guide</a></li>
+            <li><a href="/pages/guides/chevy-towing-guide.html">Towing Guide</a></li>
+            <li><a href="/pages/guides/america-250-chevy-road-trip.html">America 250 Road Trip</a></li>
+            <li><a href="/pages/guides/quiz.html">Which Chevy Are You?</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 <em>ChevyRoots.com</em> &mdash; All rights reserved</span>
+        <span class="footer-copy">Images are historical artifacts reproduced for educational &amp; cultural reference</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Ad image viewer" onclick="closeLightbox(event)">
+    <div class="lightbox-inner" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+      <button class="lightbox-nav lightbox-prev" onclick="lbNav(-1)" aria-label="Previous">&#8592;</button>
+      <img id="lb-img" src="" alt="" />
+      <button class="lightbox-nav lightbox-next" onclick="lbNav(1)" aria-label="Next">&#8594;</button>
+      <div class="lightbox-caption">
+        <span id="lb-year"></span>
+        <span id="lb-label">Chevrolet Advertisement</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---- IMAGE DATA ----
+    const ADS = [{"file":"1914_Chevrolet_Ad-01.jpg","year":1914},{"file":"1914_Chevrolet_Ad-02.jpg","year":1914},{"file":"1917_Chevrolet_Ad-01.jpg","year":1917},{"file":"1917_Chevrolet_Ad-02.jpg","year":1917},{"file":"1918_Chevrolet_Ad-01.jpg","year":1918},{"file":"1919_Chevrolet_Ad-01.jpg","year":1919},{"file":"1921_Chevrolet_Ad-01.jpg","year":1921},{"file":"1922_Chevrolet_Ad-01.jpg","year":1922},{"file":"1922_Chevrolet_Ad-02.jpg","year":1922},{"file":"1922_Chevrolet_Ad-03.jpg","year":1922},{"file":"1923_Chevrolet_Ad-01.jpg","year":1923},{"file":"1923_Chevrolet_Ad-02.jpg","year":1923},{"file":"1923_Chevrolet_Ad-03.jpg","year":1923},{"file":"1924_Chevrolet_Ad-01.jpg","year":1924},{"file":"1924_Chevrolet_Ad-02.jpg","year":1924},{"file":"1924_Chevrolet_Ad-03.jpg","year":1924},{"file":"1925_Chevrolet_Ad-01.jpg","year":1925},{"file":"1925_Chevrolet_Ad-02.jpg","year":1925},{"file":"1925_Chevrolet_Ad-03.jpg","year":1925},{"file":"1926_Chevrolet_Ad-01.jpg","year":1926},{"file":"1926_Chevrolet_Ad-02.jpg","year":1926},{"file":"1926_Chevrolet_Ad-03.jpg","year":1926},{"file":"1927_Chevrolet_Ad-01.jpg","year":1927},{"file":"1927_Chevrolet_Ad-02.jpg","year":1927},{"file":"1927_Chevrolet_Ad-03.jpg","year":1927},{"file":"1928_Chevrolet_Ad-01.jpg","year":1928},{"file":"1928_Chevrolet_Ad-02.jpg","year":1928},{"file":"1928_Chevrolet_Ad-03.jpg","year":1928},{"file":"1929_Chevrolet_Ad-01.jpg","year":1929},{"file":"1929_Chevrolet_Ad-02.jpg","year":1929},{"file":"1929_Chevrolet_Ad-03.jpg","year":1929},{"file":"1930_Chevrolet_Ad-01.jpg","year":1930},{"file":"1930_Chevrolet_Ad-02.jpg","year":1930},{"file":"1930_Chevrolet_Ad-03.jpg","year":1930},{"file":"1932_Chevrolet_Ad-01.jpg","year":1932},{"file":"1932_Chevrolet_Ad-02.jpg","year":1932},{"file":"1932_Chevrolet_Ad-03.jpg","year":1932},{"file":"1934_Chevrolet_Ad-01.jpg","year":1934},{"file":"1934_Chevrolet_Ad-02.jpg","year":1934},{"file":"1934_Chevrolet_Ad-03.jpg","year":1934},{"file":"1935_Chevrolet_Ad-01.jpg","year":1935},{"file":"1935_Chevrolet_Ad-02.jpg","year":1935},{"file":"1935_Chevrolet_Ad-03.jpg","year":1935},{"file":"1936_Chevrolet_Ad-01.jpg","year":1936},{"file":"1936_Chevrolet_Ad-02.jpg","year":1936},{"file":"1936_Chevrolet_Ad-03.jpg","year":1936},{"file":"1937_Chevrolet_Ad-01.jpg","year":1937},{"file":"1937_Chevrolet_Ad-02.jpg","year":1937},{"file":"1937_Chevrolet_Ad-03.jpg","year":1937},{"file":"1938_Chevrolet_Ad-01.jpg","year":1938},{"file":"1938_Chevrolet_Ad-02.jpg","year":1938},{"file":"1938_Chevrolet_Ad-03.jpg","year":1938},{"file":"1939_Chevrolet_Ad-01.jpg","year":1939},{"file":"1939_Chevrolet_Ad-02.jpg","year":1939},{"file":"1939_Chevrolet_Ad-03.jpg","year":1939},{"file":"1940_Chevrolet_Ad-01.jpg","year":1940},{"file":"1940_Chevrolet_Ad-02.jpg","year":1940},{"file":"1940_Chevrolet_Ad-03.jpg","year":1940},{"file":"1941_Chevrolet_Ad-01.jpg","year":1941},{"file":"1941_Chevrolet_Ad-02.jpg","year":1941},{"file":"1941_Chevrolet_Ad-03.jpg","year":1941},{"file":"1942_Chevrolet_Ad-01.jpg","year":1942},{"file":"1942_Chevrolet_Ad-02.jpg","year":1942},{"file":"1942_Chevrolet_Ad-03.jpg","year":1942},{"file":"1943_Chevrolet_Ad-01.jpg","year":1943},{"file":"1943_Chevrolet_Ad-02.jpg","year":1943},{"file":"1943_Chevrolet_Ad-03.jpg","year":1943},{"file":"1944_Chevrolet_Ad-01.jpg","year":1944},{"file":"1944_Chevrolet_Ad-02.jpg","year":1944},{"file":"1944_Chevrolet_Ad-03.jpg","year":1944},{"file":"1945_Chevrolet_Ad-01.jpg","year":1945},{"file":"1945_Chevrolet_Ad-02.jpg","year":1945},{"file":"1945_Chevrolet_Ad-03.jpg","year":1945},{"file":"1946_Chevrolet_Ad-01.jpg","year":1946},{"file":"1946_Chevrolet_Ad-02.jpg","year":1946},{"file":"1946_Chevrolet_Ad-03.jpg","year":1946},{"file":"1947_Chevrolet_Ad-01.jpg","year":1947},{"file":"1947_Chevrolet_Ad-02.jpg","year":1947},{"file":"1947_Chevrolet_Ad-03.jpg","year":1947},{"file":"1948_Chevrolet_Ad-01.jpg","year":1948},{"file":"1948_Chevrolet_Ad-02.jpg","year":1948},{"file":"1948_Chevrolet_Ad-03.jpg","year":1948},{"file":"1949_Chevrolet_Ad-01.jpg","year":1949},{"file":"1949_Chevrolet_Ad-02.jpg","year":1949},{"file":"1949_Chevrolet_Ad-03.jpg","year":1949},{"file":"1950_Chevrolet_Ad-01.jpg","year":1950},{"file":"1950_Chevrolet_Ad-02.jpg","year":1950},{"file":"1950_Chevrolet_Ad-03.jpg","year":1950},{"file":"1951_Chevrolet_Ad-01.jpg","year":1951},{"file":"1951_Chevrolet_Ad-02.jpg","year":1951},{"file":"1951_Chevrolet_Ad-03.jpg","year":1951},{"file":"1952_Chevrolet_Ad-01.jpg","year":1952},{"file":"1952_Chevrolet_Ad-02.jpg","year":1952},{"file":"1952_Chevrolet_Ad-03.jpg","year":1952},{"file":"1953_Chevrolet_Ad-01.jpg","year":1953},{"file":"1953_Chevrolet_Ad-02.jpg","year":1953},{"file":"1953_Chevrolet_Ad-03.jpg","year":1953},{"file":"1954_Chevrolet_Ad-01.jpg","year":1954},{"file":"1954_Chevrolet_Ad-02.jpg","year":1954},{"file":"1954_Chevrolet_Ad-03.jpg","year":1954},{"file":"1955_Chevrolet_Ad-01.jpg","year":1955},{"file":"1955_Chevrolet_Ad-02.jpg","year":1955},{"file":"1955_Chevrolet_Ad-03.jpg","year":1955},{"file":"1956_Chevrolet_Ad-01.jpg","year":1956},{"file":"1956_Chevrolet_Ad-02.jpg","year":1956},{"file":"1956_Chevrolet_Ad-03.jpg","year":1956},{"file":"1957_Chevrolet_Ad-01.jpg","year":1957},{"file":"1957_Chevrolet_Ad-02.jpg","year":1957},{"file":"1957_Chevrolet_Ad-03.jpg","year":1957},{"file":"1958_Chevrolet_Ad-01.jpg","year":1958},{"file":"1958_Chevrolet_Ad-02.jpg","year":1958},{"file":"1958_Chevrolet_Ad-03.jpg","year":1958},{"file":"1959_Chevrolet_Ad-01.jpg","year":1959},{"file":"1959_Chevrolet_Ad-02.jpg","year":1959},{"file":"1959_Chevrolet_Ad-03.jpg","year":1959},{"file":"1960_Chevrolet_Ad-01.jpg","year":1960},{"file":"1960_Chevrolet_Ad-02.jpg","year":1960},{"file":"1960_Chevrolet_Ad-03.jpg","year":1960},{"file":"1961_Chevrolet_Ad-01.jpg","year":1961},{"file":"1961_Chevrolet_Ad-02.jpg","year":1961},{"file":"1962_Chevrolet_Ad-01.jpg","year":1962},{"file":"1962_Chevrolet_Ad-02.jpg","year":1962},{"file":"1962_Chevrolet_Ad-03.jpg","year":1962},{"file":"1963_Chevrolet_Ad-01.jpg","year":1963},{"file":"1963_Chevrolet_Ad-02.jpg","year":1963},{"file":"1963_Chevrolet_Ad-03.jpg","year":1963},{"file":"1964_Chevrolet_Ad-01.jpg","year":1964},{"file":"1964_Chevrolet_Ad-02.jpg","year":1964},{"file":"1964_Chevrolet_Ad-03.jpg","year":1964},{"file":"1965_Chevrolet_Ad-01.jpg","year":1965},{"file":"1965_Chevrolet_Ad-02.jpg","year":1965},{"file":"1965_Chevrolet_Ad-03.jpg","year":1965},{"file":"1966_Chevrolet_Ad-01.jpg","year":1966},{"file":"1966_Chevrolet_Ad-02.jpg","year":1966},{"file":"1966_Chevrolet_Ad-03.jpg","year":1966},{"file":"1967_Chevrolet_Ad-01.jpg","year":1967},{"file":"1967_Chevrolet_Ad-02.jpg","year":1967},{"file":"1967_Chevrolet_Ad-03.jpg","year":1967},{"file":"1968_Chevrolet_Ad-01.jpg","year":1968},{"file":"1968_Chevrolet_Ad-02.jpg","year":1968},{"file":"1968_Chevrolet_Ad-03.jpg","year":1968},{"file":"1969_Chevrolet_Ad-01.jpg","year":1969},{"file":"1969_Chevrolet_Ad-02.jpg","year":1969},{"file":"1969_Chevrolet_Ad-03.jpg","year":1969},{"file":"1970_Chevrolet_Ad-01.jpg","year":1970},{"file":"1970_Chevrolet_Ad-02.jpg","year":1970},{"file":"1970_Chevrolet_Ad-03.jpg","year":1970},{"file":"1971_Chevrolet_Ad-01.jpg","year":1971},{"file":"1971_Chevrolet_Ad-02.jpg","year":1971},{"file":"1971_Chevrolet_Ad-03.jpg","year":1971},{"file":"1972_Chevrolet_Ad-01.jpg","year":1972},{"file":"1972_Chevrolet_Ad-02.jpg","year":1972},{"file":"1972_Chevrolet_Ad-03.jpg","year":1972},{"file":"1973_Chevrolet_Ad-01.jpg","year":1973},{"file":"1973_Chevrolet_Ad-02.jpg","year":1973},{"file":"1973_Chevrolet_Ad-03.jpg","year":1973},{"file":"1974_Chevrolet_Ad-01.jpg","year":1974},{"file":"1974_Chevrolet_Ad-02.jpg","year":1974},{"file":"1974_Chevrolet_Ad-03.jpg","year":1974},{"file":"1976_Chevrolet_Ad-01.jpg","year":1976},{"file":"1976_Chevrolet_Ad-02.jpg","year":1976},{"file":"1976_Chevrolet_Ad-03.jpg","year":1976},{"file":"1977_Chevrolet_Ad-01.jpg","year":1977},{"file":"1977_Chevrolet_Ad-02.jpg","year":1977},{"file":"1977_Chevrolet_Ad-03.jpg","year":1977},{"file":"1978_Chevrolet_Ad-01.jpg","year":1978},{"file":"1978_Chevrolet_Ad-02.jpg","year":1978},{"file":"1978_Chevrolet_Ad-03.jpg","year":1978},{"file":"1980_Chevrolet_Ad-01.jpg","year":1980},{"file":"1980_Chevrolet_Ad-02.jpg","year":1980},{"file":"1980_Chevrolet_Ad-03.jpg","year":1980},{"file":"1981_Chevrolet_Ad-01.jpg","year":1981},{"file":"1981_Chevrolet_Ad-02.jpg","year":1981},{"file":"1981_Chevrolet_Ad-03.jpg","year":1981},{"file":"1982_Chevrolet_Ad-01.jpg","year":1982},{"file":"1982_Chevrolet_Ad-02.jpg","year":1982},{"file":"1984_Chevrolet_Ad-01.jpg","year":1984},{"file":"1984_Chevrolet_Ad-02.jpg","year":1984},{"file":"1984_Chevrolet_Ad-03.jpg","year":1984},{"file":"1986_Chevrolet_Ad-01.jpg","year":1986},{"file":"1986_Chevrolet_Ad-02.jpg","year":1986},{"file":"1986_Chevrolet_Ad-03.jpg","year":1986},{"file":"1987_Chevrolet_Ad-01.jpg","year":1987}];
+
+    const IMG_BASE = '/photos/vintage-ads-real/';
+
+    // Build decade map
+    const byDecade = {};
+    ADS.forEach((ad, i) => {
+      ad.index = i;
+      const d = Math.floor(ad.year / 10) * 10;
+      if (!byDecade[d]) byDecade[d] = [];
+      byDecade[d].push(ad);
+    });
+
+    // Render all grids
+    Object.entries(byDecade).forEach(([decade, ads]) => {
+      const grid = document.getElementById('grid-' + decade);
+      if (!grid) return;
+      ads.forEach(ad => {
+        const item = document.createElement('div');
+        item.className = 'ad-item';
+        item.setAttribute('role', 'button');
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('aria-label', ad.year + ' Chevrolet Advertisement');
+        item.dataset.index = ad.index;
+        item.innerHTML = `
+          <img
+            src="${IMG_BASE}${ad.file}"
+            alt="${ad.year} Chevrolet Advertisement"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="ad-year-badge" aria-hidden="true">
+            <span class="ad-year-text">${ad.year}</span>
+            <span class="ad-zoom-icon">&#8599;</span>
+          </div>
+        `;
+        item.addEventListener('click', () => openLightbox(ad.index));
+        item.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(ad.index);
+          }
+        });
+        grid.appendChild(item);
+      });
+    });
+
+    // ---- FILTER ----
+    function filterDecade(decade, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.gallery-section').forEach(sec => {
+        if (decade === 'all') {
+          sec.classList.remove('hidden');
+        } else {
+          const match = sec.dataset.decade === decade;
+          sec.classList.toggle('hidden', !match);
+          if (match) {
+            setTimeout(() => sec.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+          }
+        }
+      });
+    }
+
+    // ---- LIGHTBOX ----
+    let lbIndex = 0;
+
+    function openLightbox(index) {
+      lbIndex = index;
+      updateLightbox();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('lb-img').focus();
+    }
+
+    function updateLightbox() {
+      const ad = ADS[lbIndex];
+      const img = document.getElementById('lb-img');
+      img.src = IMG_BASE + ad.file;
+      img.alt = ad.year + ' Chevrolet Advertisement';
+      document.getElementById('lb-year').textContent = ad.year;
+      document.getElementById('lb-label').textContent = 'Chevrolet Advertisement';
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target !== document.getElementById('lightbox') && !e.target.classList.contains('lightbox-close')) return;
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function lbNav(dir) {
+      lbIndex = (lbIndex + dir + ADS.length) % ADS.length;
+      updateLightbox();
+    }
+
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      } else if (e.key === 'ArrowLeft') {
+        lbNav(-1);
+      } else if (e.key === 'ArrowRight') {
+        lbNav(1);
+      }
+    });
+
+    // ---- NEWSLETTER ----
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'You\'re in!';
+      btn.style.background = '#4a7c59';
+      e.target.querySelector('input').value = '';
+      setTimeout(() => {
+        btn.textContent = 'Subscribe';
+        btn.style.background = '';
+      }, 3500);
+    }
+  </script>
+
+</body>
+</html>

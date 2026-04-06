@@ -12,6 +12,7 @@
   <meta property="og:url" content="https://chevyroots.com/pages/guides/best-mods-silverado.html" />
   <link rel="canonical" href="https://chevyroots.com/pages/guides/best-mods-silverado.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="/css/nav.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
@@ -40,18 +41,7 @@
     a:hover { color: var(--gold-lt); }
 
     /* NAV */
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,26,26,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); height: 60px; display: flex; align-items: center; }
-    .nav-inner { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-    .nav-logo { display: flex; flex-direction: column; line-height: 1.1; }
-    .nav-logo-main { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; color: var(--text); letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
-    .nav-logo-main span { color: var(--gold); }
-    .nav-logo-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--text-mute); letter-spacing: 0.1em; text-transform: uppercase; }
-    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
-    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); transition: color var(--trans); }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-    .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--gold); color: #111; padding: 8px 18px; border-radius: var(--radius); transition: background var(--trans), transform var(--trans); white-space: nowrap; }
-    .nav-cta:hover { background: var(--gold-lt); color: #111; transform: translateY(-1px); }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,26,26,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); height: 60px; display: flex; align-items: center; }.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
 
     /* HEADER */
@@ -155,9 +145,7 @@
       .footer-inner { grid-template-columns: 1fr; }
       .footer-links { justify-content: flex-start; }
     }
-    @media (max-width: 600px) {
-      .nav-links, .nav-cta { display: none; }
-      .nav-hamburger { display: flex; }
+    @media (max-width: 600px) {.nav-hamburger { display: flex; }
       .article-hero-img { height: 220px; }
     }
   </style>

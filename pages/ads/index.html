@@ -484,6 +484,37 @@
       text-align: center;
       position: relative;
     }
+    .ad-card-image img.ad-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+    .ad-card-image .ad-visual.has-image {
+      padding: 0;
+    }
+    .ad-card-image .ad-visual.has-image .ad-visual-year,
+    .ad-card-image .ad-visual.has-image .ad-visual-tagline,
+    .ad-card-image .ad-visual.has-image .ad-visual-model { display: none; }
+    .ad-card .video-badge {
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      background: rgba(204,0,0,0.9);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .video-play-icon { font-size: 0.7rem; }
     .ad-visual-year {
       font-family: var(--font-heading);
       font-size: clamp(3rem, 6vw, 4.5rem);
@@ -693,6 +724,19 @@
       padding: 2rem;
       text-align: center;
       position: relative;
+      border-radius: var(--radius-lg);
+    }
+    .lightbox-visual img.lightbox-photo {
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: var(--radius-lg);
+    }
+    .lightbox-visual iframe.lightbox-video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
       border-radius: var(--radius-lg);
     }
     .lightbox-visual .ad-visual-year {
@@ -1554,9 +1598,20 @@
       const bgGrad = `linear-gradient(135deg, ${colors[0]} 0%, ${colors[1] || colors[0]} 100%)`;
       const textColor = isLight(colors[0]) ? '#1A1A1A' : '#F0EDE6';
 
+      const hasImage = ad.image;
+      const hasVideo = ad.youtube_id;
+      const imageHtml = hasImage
+        ? `<img class="ad-photo" src="/${ad.image}" alt="${ad.year} ${ad.model} advertisement" loading="lazy" onerror="this.style.display='none'">`
+        : '';
+      const videoThumb = hasVideo
+        ? `<img class="ad-photo" src="https://img.youtube.com/vi/${ad.youtube_id}/hqdefault.jpg" alt="${ad.year} ${ad.model} commercial" loading="lazy">`
+        : '';
+      const visualClass = (hasImage || hasVideo) ? 'ad-visual has-image' : 'ad-visual';
+
       card.innerHTML = `
         <div class="ad-card-image">
-          <div class="ad-visual" style="background:${bgGrad}; color:${textColor}">
+          <div class="${visualClass}" style="background:${bgGrad}; color:${textColor}">
+            ${imageHtml || videoThumb}
             <span class="ad-visual-year">${ad.year}</span>
             <span class="ad-visual-tagline">"${truncate(ad.tagline, 60)}"</span>
             <span class="ad-visual-model">${ad.year} ${ad.model}</span>
@@ -1565,6 +1620,7 @@
             <span class="badge badge-year">${ad.year}</span>
             <span class="badge badge-type">${ad.category}</span>
           </div>
+          ${hasVideo ? '<div class="video-badge"><span class="video-play-icon">&#9654;</span> Video</div>' : ''}
         </div>
         <div class="ad-card-body">
           <div class="ad-card-title">${ad.year} ${ad.model}</div>
@@ -1604,14 +1660,27 @@
       const bgGrad = `linear-gradient(135deg, ${colors[0]} 0%, ${colors[1] || colors[0]} 100%)`;
       const textColor = isLight(colors[0]) ? '#1A1A1A' : '#F0EDE6';
 
-      lightboxContent.innerHTML = `
-        <div class="lightbox-visual">
+      let visualHtml;
+      if (ad.youtube_id) {
+        visualHtml = `<div class="lightbox-visual">
+          <iframe class="lightbox-video" src="https://www.youtube.com/embed/${ad.youtube_id}?rel=0" allowfullscreen title="${ad.year} ${ad.model} commercial"></iframe>
+        </div>`;
+      } else if (ad.image) {
+        visualHtml = `<div class="lightbox-visual">
+          <img class="lightbox-photo" src="/${ad.image}" alt="${ad.year} ${ad.model} advertisement" onerror="this.parentElement.innerHTML='<div class=\\'ad-visual\\' style=\\'background:${bgGrad}; color:${textColor}; min-height:320px\\'><span class=\\'ad-visual-year\\'>${ad.year}</span><span class=\\'ad-visual-tagline\\'>&quot;${ad.tagline}&quot;</span></div>'">
+        </div>`;
+      } else {
+        visualHtml = `<div class="lightbox-visual">
           <div class="ad-visual" style="background:${bgGrad}; color:${textColor}">
             <span class="ad-visual-year">${ad.year}</span>
             <span class="ad-visual-tagline">"${ad.tagline}"</span>
             <span class="ad-visual-model">${ad.year} ${ad.model}</span>
           </div>
-        </div>
+        </div>`;
+      }
+
+      lightboxContent.innerHTML = `
+        ${visualHtml}
         <div class="lightbox-info">
           <div class="lightbox-eyebrow">${ad.decade} &bull; ${ad.category} &bull; ${ad.era}</div>
           <h2 class="lightbox-title">${ad.year} ${ad.model}</h2>

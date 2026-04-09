@@ -1,0 +1,437 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { vehicles, mechanics, events } from '@lib/data';
+
+// Build a unified searchable index at build time
+const guides = await getCollection('guides', (entry) => !entry.data.noindex);
+const corner = await getCollection('crystals-corner');
+
+const guideIndex = guides.map((g) => ({
+  type: 'guide',
+  typeLabel: 'Guide',
+  title: g.data.title,
+  description: g.data.description,
+  url: `/guides/${g.id}/`,
+  meta: g.data.cluster !== 'Other' ? g.data.cluster : g.data.eyebrow,
+  searchText: [
+    g.data.title,
+    g.data.description,
+    g.data.cluster,
+    g.data.eyebrow,
+    (g.data.tags || []).join(' '),
+    g.data.author,
+  ].join(' ').toLowerCase(),
+}));
+
+const cornerIndex = corner.map((c) => ({
+  type: 'corner',
+  typeLabel: "Crystal's Corner",
+  title: c.data.title,
+  description: c.data.description,
+  url: `/crystals-corner/${c.id}/`,
+  meta: c.data.published.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
+  searchText: [
+    c.data.title,
+    c.data.description,
+    c.data.excerpt || '',
+    (c.data.tags || []).join(' '),
+  ].join(' ').toLowerCase(),
+}));
+
+const modelIndex = vehicles.map((v) => ({
+  type: 'model',
+  typeLabel: 'Model',
+  title: v.model,
+  description: v.description || `${v.years.length}-year coverage · from $${(v.years[0]?.starting_msrp || 0).toLocaleString()}`,
+  url: `/models/${v.slug}/`,
+  meta: v.category,
+  searchText: [v.model, v.category, v.slug].join(' ').toLowerCase(),
+}));
+
+const mechanicIndex = mechanics.slice(0, 200).map((m) => ({
+  type: 'mechanic',
+  typeLabel: 'Mechanic',
+  title: m.name,
+  description: m.description?.slice(0, 160) || `${m.city}, ${m.state}`,
+  url: '/mechanics/',
+  meta: `${m.city}, ${m.state}`,
+  searchText: [m.name, m.city, m.state, (m.specialties || []).join(' '), m.description || ''].join(' ').toLowerCase(),
+}));
+
+const eventIndex = events.map((e) => ({
+  type: 'event',
+  typeLabel: 'Event',
+  title: e.name,
+  description: e.description?.slice(0, 160) || `${e.dates} · ${e.location.city}, ${e.location.state}`,
+  url: `/events/${e.region || 'midwest'}/`,
+  meta: `${e.location.city}, ${e.location.state}`,
+  searchText: [e.name, e.location.city, e.location.state, e.location.venue || '', e.type, e.description || ''].join(' ').toLowerCase(),
+}));
+
+const fullIndex = [
+  ...guideIndex,
+  ...cornerIndex,
+  ...modelIndex,
+  ...mechanicIndex,
+  ...eventIndex,
+];
+
+const counts = {
+  guides: guideIndex.length,
+  corner: cornerIndex.length,
+  models: modelIndex.length,
+  mechanics: mechanicIndex.length,
+  events: eventIndex.length,
+  total: fullIndex.length,
+};
+
+// Serialize the index for the client script to consume
+const indexJson = JSON.stringify(fullIndex);
+---
+
+<BaseLayout
+  title="Search ChevyRoots — Guides, Models, Columns, Events & Mechanics"
+  description={`Search across ${counts.total} ChevyRoots entries — ${counts.guides} guides, ${counts.models} models, ${counts.corner} Crystal's Corner columns, ${counts.events} events, and ${counts.mechanics} mechanics. Instant client-side search.`}
+  noindex={true}
+>
+  <header class="search-header">
+    <div class="container container-narrow">
+      <p class="section-eyebrow">Site Search</p>
+      <h1 class="search-title">Find <em>Anything</em></h1>
+      <span class="gold-line"></span>
+      <p class="search-lede">
+        Instant search across <strong>{counts.total}</strong> entries — {counts.guides} buyer's guides, {counts.models} model pages, {counts.corner} Crystal's Corner columns, {counts.events} events, and {counts.mechanics} mechanics. Nothing server-side; nothing tracked.
+      </p>
+      <div class="search-input-wrap">
+        <span class="search-icon">⌕</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search guides, models, builds, events..."
+          autocomplete="off"
+          autofocus
+        />
+        <button type="button" class="search-clear" id="searchClear" hidden aria-label="Clear search">×</button>
+      </div>
+      <div class="filter-pills" role="tablist">
+        <button type="button" class="filter-pill active" data-type="all">All ({counts.total})</button>
+        <button type="button" class="filter-pill" data-type="guide">Guides ({counts.guides})</button>
+        <button type="button" class="filter-pill" data-type="model">Models ({counts.models})</button>
+        <button type="button" class="filter-pill" data-type="corner">Crystal's Corner ({counts.corner})</button>
+        <button type="button" class="filter-pill" data-type="event">Events ({counts.events})</button>
+        <button type="button" class="filter-pill" data-type="mechanic">Mechanics ({counts.mechanics})</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="results-section">
+    <div class="container container-narrow">
+      <div class="results-meta" id="resultsMeta">
+        Start typing to search. Try <a href="#" data-query="silverado" class="quick-q">Silverado</a>, <a href="#" data-query="corvette" class="quick-q">Corvette</a>, <a href="#" data-query="LS swap" class="quick-q">LS swap</a>, <a href="#" data-query="ZR2" class="quick-q">ZR2</a>, or <a href="#" data-query="known issues" class="quick-q">known issues</a>.
+      </div>
+      <div class="results-list" id="resultsList"></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ indexJson }}>
+  const searchIndex = JSON.parse(indexJson);
+  const searchInput = document.getElementById('searchInput');
+  const searchClear = document.getElementById('searchClear');
+  const resultsMeta = document.getElementById('resultsMeta');
+  const resultsList = document.getElementById('resultsList');
+  const pills = document.querySelectorAll('.filter-pill');
+  const quickQs = document.querySelectorAll('.quick-q');
+
+  let currentType = 'all';
+  let currentQuery = '';
+
+  function runSearch() {
+    const q = currentQuery.trim().toLowerCase();
+    if (!q) {
+      resultsList.innerHTML = '';
+      resultsMeta.innerHTML = 'Start typing to search. Try <a href="#" data-query="silverado" class="quick-q">Silverado</a>, <a href="#" data-query="corvette" class="quick-q">Corvette</a>, <a href="#" data-query="LS swap" class="quick-q">LS swap</a>, <a href="#" data-query="ZR2" class="quick-q">ZR2</a>, or <a href="#" data-query="known issues" class="quick-q">known issues</a>.';
+      wireQuickQueries();
+      return;
+    }
+
+    // Score each entry: title match > description match > other
+    const results = [];
+    for (const entry of searchIndex) {
+      if (currentType !== 'all' && entry.type !== currentType) continue;
+      const title = entry.title.toLowerCase();
+      const haystack = entry.searchText;
+      let score = 0;
+      if (title === q) score += 100;
+      if (title.startsWith(q)) score += 50;
+      if (title.includes(q)) score += 30;
+      if (haystack.includes(q)) score += 10;
+      // Bonus for multi-word queries with all words present
+      const words = q.split(/\s+/).filter(Boolean);
+      if (words.length > 1) {
+        const allPresent = words.every((w) => haystack.includes(w));
+        if (allPresent) score += 20;
+      }
+      if (score > 0) results.push({ entry, score });
+    }
+    results.sort((a, b) => b.score - a.score);
+
+    if (results.length === 0) {
+      resultsList.innerHTML = '';
+      resultsMeta.textContent = `No matches for "${q}". Try a different search or broaden the filter.`;
+      return;
+    }
+
+    resultsMeta.textContent = `${results.length} match${results.length === 1 ? '' : 'es'} for "${q}"`;
+    resultsList.innerHTML = results
+      .slice(0, 100)
+      .map(({ entry }) => {
+        return `<a href="${entry.url}" class="result-card result-${entry.type}">
+          <div class="result-type">${entry.typeLabel}</div>
+          <h3 class="result-title">${entry.title}</h3>
+          <p class="result-desc">${entry.description || ''}</p>
+          ${entry.meta ? `<div class="result-meta">${entry.meta}</div>` : ''}
+        </a>`;
+      })
+      .join('');
+  }
+
+  function wireQuickQueries() {
+    document.querySelectorAll('.quick-q').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const q = link.dataset.query || '';
+        searchInput.value = q;
+        currentQuery = q;
+        searchClear.hidden = false;
+        runSearch();
+      });
+    });
+  }
+
+  searchInput.addEventListener('input', () => {
+    currentQuery = searchInput.value;
+    searchClear.hidden = !currentQuery;
+    runSearch();
+  });
+  searchClear.addEventListener('click', () => {
+    searchInput.value = '';
+    currentQuery = '';
+    searchClear.hidden = true;
+    searchInput.focus();
+    runSearch();
+  });
+  pills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      pills.forEach((p) => p.classList.remove('active'));
+      pill.classList.add('active');
+      currentType = pill.dataset.type || 'all';
+      runSearch();
+    });
+  });
+
+  // Focus input on page load
+  searchInput.focus();
+  wireQuickQueries();
+
+  // Handle ?q= URL param
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialQuery = urlParams.get('q');
+  if (initialQuery) {
+    searchInput.value = initialQuery;
+    currentQuery = initialQuery;
+    searchClear.hidden = false;
+    runSearch();
+  }
+</script>
+
+<style>
+  .search-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 60%, var(--warm-gray) 100%);
+  }
+  .search-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .search-title em { font-style: italic; color: var(--gold); }
+  .search-lede {
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin: 1.5rem 0 2rem;
+  }
+  .search-lede strong { color: var(--gold); }
+
+  .search-input-wrap {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  .search-input {
+    width: 100%;
+    padding: 1.25rem 3rem 1.25rem 3.5rem;
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    background: var(--warm-gray);
+    border: 2px solid var(--border);
+    color: var(--off-white);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition);
+  }
+  .search-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(196, 160, 53, 0.1);
+  }
+  .search-icon {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 1.5rem;
+    pointer-events: none;
+  }
+  .search-clear {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: var(--charcoal);
+    border: 1px solid var(--mid-gray);
+    color: var(--light-gray);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  .search-clear:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .filter-pills {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .filter-pill {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.55rem 1rem;
+    background: var(--charcoal);
+    color: var(--light-gray);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .filter-pill:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+  .filter-pill.active {
+    background: var(--gold);
+    color: var(--charcoal);
+    border-color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ── RESULTS ─────────────────────────────────────── */
+  .results-section {
+    padding: 3rem 0 var(--section-pad);
+  }
+  .results-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--light-gray);
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--warm-gray);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+  }
+  .results-meta a {
+    color: var(--gold);
+    text-decoration: underline;
+    margin: 0 0.25rem;
+  }
+
+  .results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .result-card {
+    display: block;
+    padding: 1.5rem 1.75rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: transform var(--transition), border-color var(--transition);
+  }
+  .result-card:hover {
+    transform: translateX(4px);
+    border-color: var(--gold);
+  }
+  .result-guide { border-left-color: var(--gold); }
+  .result-corner { border-left-color: #e06c5a; }
+  .result-model { border-left-color: #5eb7f0; }
+  .result-event { border-left-color: #7adc9f; }
+  .result-mechanic { border-left-color: #f1a663; }
+
+  .result-type {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .result-corner .result-type { color: #e06c5a; }
+  .result-model .result-type { color: #5eb7f0; }
+  .result-event .result-type { color: #7adc9f; }
+  .result-mechanic .result-type { color: #f1a663; }
+
+  .result-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+  }
+  .result-desc {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+  .result-meta {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+</style>

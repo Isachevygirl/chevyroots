@@ -1,81 +1,320 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import NewsletterCTA from '@components/NewsletterCTA.astro';
-import { vehicles, CATEGORIES } from '@lib/data';
+import lineup from '@data/models-lineup.json';
 
-// Group vehicles by category
-const grouped: Record<string, typeof vehicles> = {};
-for (const v of vehicles) {
-  const key = v.category;
-  if (!grouped[key]) grouped[key] = [];
-  grouped[key].push(v);
+interface ModernModel {
+  name: string;
+  slug: string;
+  price: string;
+  priceLabel?: string;
+  image?: string;
+  tagline: string;
+  badge?: string;
+  note?: string;
 }
 
-const categoryOrder = ['truck', 'car', 'suv', 'ev', 'classic'];
+interface ClassicModel {
+  name: string;
+  slug: string;
+  category: string;
+  era: string;
+  value: string;
+  image: string;
+  cultural: string;
+}
+
+const trucks = lineup.trucks as ModernModel[];
+const suvs = lineup.suvs as ModernModel[];
+const cars = lineup.cars as ModernModel[];
+const sports = lineup.sports as ModernModel[];
+const evs = lineup.evs as ModernModel[];
+const classics = lineup.classics as ClassicModel[];
+
+// For the filter tabs
+const filters = [
+  { id: 'all', label: 'All' },
+  { id: 'trucks', label: `Trucks (${trucks.length})` },
+  { id: 'suvs', label: `SUVs (${suvs.length})` },
+  { id: 'cars', label: `Cars (${cars.length})` },
+  { id: 'sports', label: `Sports (${sports.length})` },
+  { id: 'evs', label: `EVs (${evs.length})` },
+  { id: 'classics', label: `Classics (${classics.length})` },
+];
 ---
 
 <BaseLayout
-  title="All Chevrolet Models | Trucks, Cars, SUVs, EVs, Classics | ChevyRoots"
-  description="Every Chevrolet model we cover, organized by category. Trim data, known issues, photos, buyer's guides, and honest takes on each one."
+  title="Every Chevrolet Model — 2025 Lineup + Heritage Classics | ChevyRoots"
+  description="The full Chevrolet lineup organized by category: trucks, SUVs, cars, sports cars, EVs, and 10 heritage classics. Hand-curated editorial for every model with MSRP, engine options, and cultural context."
 >
-  <header class="models-header">
+  <header class="models-page-hero">
     <div class="container">
-      <p class="section-eyebrow">Every Chevy</p>
-      <h1 class="models-title">Models &amp; <em>Lineups</em></h1>
+      <p class="section-eyebrow">The Complete Lineup</p>
+      <h1 class="models-page-title">Every <em>Chevrolet</em></h1>
       <span class="gold-line"></span>
-      <p class="models-lede">
-        {vehicles.length} Chevrolet models covered in depth — trims, engines, towing specs, known issues by year, photos from our 2,000+ image library, and the buyer's guides that help you decide.
+      <p class="models-page-lede">
+        Every model in the current lineup, plus ten heritage classics that built the bowtie legend. Organized by category with hand-curated editorial, real MSRPs, engine options, and honest takes on where each one fits.
       </p>
     </div>
   </header>
 
-  <div class="models-body">
+  {/* ── FILTER TABS ────────────────────────────────────── */}
+  <div class="filter-bar">
     <div class="container">
-      {categoryOrder.filter((c) => grouped[c]?.length).map((cat) => {
-        const catInfo = CATEGORIES[cat];
-        return (
-          <section class="cat-section">
-            <div class="cat-header">
-              <div>
-                <h2 class="cat-title">{catInfo?.label || cat}</h2>
-                <p class="cat-desc">{catInfo?.description}</p>
-              </div>
-              {catInfo && <a href={`/models/${catInfo.slug}/`} class="btn btn-outline">View Category</a>}
-            </div>
-            <div class="models-grid">
-              {grouped[cat].map((v) => (
-                <a href={`/models/${v.slug}/`} class="model-card">
-                  <div class="model-card-body">
-                    <h3 class="model-card-title">{v.model}</h3>
-                    <div class="model-card-years">
-                      {v.years.length} year{v.years.length !== 1 ? 's' : ''} covered
-                    </div>
-                    {v.years[0] && (
-                      <div class="model-card-msrp">
-                        From ${v.years[0].starting_msrp?.toLocaleString() || '—'}
-                      </div>
-                    )}
-                  </div>
-                  <div class="model-card-arrow">→</div>
-                </a>
-              ))}
-            </div>
-          </section>
-        );
-      })}
+      <div class="filter-tabs" role="tablist">
+        {filters.map((f, i) => (
+          <button
+            type="button"
+            class={`filter-tab ${i === 0 ? 'active' : ''}`}
+            data-filter={f.id}
+            role="tab"
+            aria-selected={i === 0 ? 'true' : 'false'}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
     </div>
   </div>
 
-  <NewsletterCTA source="models-index" />
+  <div class="container models-body">
+
+    {/* ── TRUCKS ─────────────────────────────────────── */}
+    <section class="lineup-section" data-category="trucks">
+      <div class="section-header">
+        <h2>Trucks</h2>
+        <span class="section-count">{trucks.length} models</span>
+      </div>
+      <div class="models-cards-grid">
+        {trucks.map((m) => (
+          <article class="model-card">
+            {m.image ? (
+              <div class="card-image" style={`background-image: url('${m.image}');`}></div>
+            ) : (
+              <div class="card-image card-image-placeholder">
+                <span>{m.name}</span>
+              </div>
+            )}
+            <div class="card-body">
+              <span class="card-category">Truck</span>
+              <h3 class="card-name">{m.name}</h3>
+              <p class="card-price">From {m.price} <span>{m.priceLabel || 'MSRP'}</span></p>
+              <p class="card-tagline">{m.tagline}</p>
+              <a href={`/models/${m.slug}/`} class="card-link">View Guide →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {/* ── SUVS ───────────────────────────────────────── */}
+    <section class="lineup-section" data-category="suvs">
+      <div class="section-header">
+        <h2>SUVs</h2>
+        <span class="section-count">{suvs.length} models</span>
+      </div>
+      <div class="models-cards-grid">
+        {suvs.map((m) => (
+          <article class="model-card">
+            {m.image ? (
+              <div class="card-image" style={`background-image: url('${m.image}');`}></div>
+            ) : (
+              <div class="card-image card-image-placeholder">
+                <span>{m.name}</span>
+              </div>
+            )}
+            <div class="card-body">
+              <span class="card-category">SUV</span>
+              <h3 class="card-name">{m.name}</h3>
+              <p class="card-price">From {m.price} <span>{m.priceLabel || 'MSRP'}</span></p>
+              <p class="card-tagline">{m.tagline}</p>
+              <a href={`/models/${m.slug}/`} class="card-link">View Guide →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {/* ── CARS ───────────────────────────────────────── */}
+    <section class="lineup-section" data-category="cars">
+      <div class="section-header">
+        <h2>Cars</h2>
+        <span class="section-count">{cars.length} model</span>
+      </div>
+      <div class="models-cards-grid">
+        {cars.map((m) => (
+          <article class="model-card">
+            {m.image ? (
+              <div class="card-image" style={`background-image: url('${m.image}');`}>
+                {m.badge && <div class="card-badge badge-note">{m.badge}</div>}
+              </div>
+            ) : (
+              <div class="card-image card-image-placeholder">
+                {m.badge && <div class="card-badge badge-note">{m.badge}</div>}
+                <span>{m.name}</span>
+              </div>
+            )}
+            <div class="card-body">
+              <span class="card-category">Sedan</span>
+              <h3 class="card-name">{m.name}</h3>
+              <p class="card-price">From {m.price} <span>{m.priceLabel || 'MSRP'}</span></p>
+              <p class="card-tagline">{m.tagline}</p>
+              {m.note && <p class="card-note">{m.note}</p>}
+              <a href={`/models/${m.slug}/`} class="card-link">View Guide →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {/* ── SPORTS ─────────────────────────────────────── */}
+    <section class="lineup-section" data-category="sports">
+      <div class="section-header">
+        <h2>Sports</h2>
+        <span class="section-count">{sports.length} models</span>
+      </div>
+      <div class="models-cards-grid">
+        {sports.map((m) => (
+          <article class="model-card">
+            <div class="card-image" style={m.image ? `background-image: url('${m.image}');` : ''}>
+              {m.badge && <div class={`card-badge ${m.badge === 'Production Ended' ? 'badge-note' : 'badge-hybrid'}`}>{m.badge}</div>}
+            </div>
+            <div class="card-body">
+              <span class="card-category">Sports Car</span>
+              <h3 class="card-name">{m.name}</h3>
+              <p class="card-price">From {m.price} <span>{m.priceLabel || 'MSRP'}</span></p>
+              <p class="card-tagline">{m.tagline}</p>
+              {m.note && <p class="card-note">{m.note}</p>}
+              <a href={`/models/${m.slug}/`} class="card-link">View Guide →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {/* ── EVS ────────────────────────────────────────── */}
+    <section class="lineup-section" data-category="evs">
+      <div class="section-header">
+        <h2>Electric Vehicles</h2>
+        <span class="section-count">{evs.length} models</span>
+      </div>
+      <div class="models-cards-grid">
+        {evs.map((m) => (
+          <article class="model-card">
+            {m.image ? (
+              <div class="card-image" style={`background-image: url('${m.image}');`}>
+                {m.badge && <div class="card-badge badge-ev">{m.badge}</div>}
+              </div>
+            ) : (
+              <div class="card-image card-image-placeholder">
+                {m.badge && <div class="card-badge badge-ev">{m.badge}</div>}
+                <span>{m.name}</span>
+              </div>
+            )}
+            <div class="card-body">
+              <span class="card-category">Electric</span>
+              <h3 class="card-name">{m.name}</h3>
+              <p class="card-price">From {m.price} <span>{m.priceLabel || 'MSRP'}</span></p>
+              <p class="card-tagline">{m.tagline}</p>
+              <a href={`/models/${m.slug}/`} class="card-link">View Guide →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {/* ── ERA DIVIDER ────────────────────────────────── */}
+    <div class="era-divider">
+      <div class="era-line"></div>
+      <div class="era-badge">The Classics — Heritage Models</div>
+      <div class="era-line"></div>
+    </div>
+
+    {/* ── CLASSICS ───────────────────────────────────── */}
+    <section class="lineup-section" data-category="classics">
+      <div class="section-header">
+        <h2>The Classics</h2>
+        <span class="section-count">{classics.length} heritage models</span>
+      </div>
+      <p class="classics-intro">
+        Before the trucks sold millions and before mid-engine supercars, Chevrolet built legends. These are the models that cemented the bowtie's place in American culture — on drag strips, in driveways, and at every car show worth attending.
+      </p>
+      <div class="models-cards-grid">
+        {classics.map((c) => (
+          <article class="classic-card">
+            <div class="card-image" style={`background-image: url('${c.image}');`}>
+              <div class="card-badge badge-classic">{c.era}</div>
+            </div>
+            <div class="card-body">
+              <span class="card-category">{c.category}</span>
+              <h3 class="card-name">{c.name}</h3>
+              <div class="classic-value">
+                <span class="classic-value-label">Today's Value</span>
+                {c.value}
+              </div>
+              <p class="classic-cultural">{c.cultural}</p>
+              <a href={`/models/${c.slug}/`} class="card-link">Explore Model →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {/* ── QUIZ TEASER ────────────────────────────────── */}
+    <aside class="quiz-teaser">
+      <div class="quiz-teaser-text">
+        <p class="quiz-teaser-label">Not sure where to start?</p>
+        <p class="quiz-teaser-heading">Can't decide? Try our Buyer's Quiz</p>
+        <p class="quiz-teaser-sub">Answer a few quick questions about how you'll use it — truck or SUV, daily driver or weekend warrior — and we'll point you at the right Chevy.</p>
+      </div>
+      <a href="/guides/quiz/" class="btn btn-gold">Take the Quiz →</a>
+    </aside>
+  </div>
+
+  <NewsletterCTA source="models-lineup" />
 </BaseLayout>
 
+<script>
+  // Filter tab behavior — hide/show sections
+  const filterTabs = document.querySelectorAll<HTMLButtonElement>('.filter-tab');
+  const lineupSections = document.querySelectorAll<HTMLElement>('.lineup-section');
+  const eraDivider = document.querySelector<HTMLElement>('.era-divider');
+
+  filterTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const filter = tab.dataset.filter || 'all';
+      filterTabs.forEach((t) => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      lineupSections.forEach((section) => {
+        const cat = section.dataset.category;
+        if (filter === 'all' || cat === filter) {
+          section.style.display = '';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+
+      // Show era divider only when Classics section is visible (all or classics)
+      if (eraDivider) {
+        eraDivider.style.display =
+          filter === 'all' || filter === 'classics' ? '' : 'none';
+      }
+    });
+  });
+</script>
+
 <style>
-  .models-header {
+  /* ── HERO ─────────────────────────────────────────── */
+  .models-page-hero {
     padding: 80px 0 50px;
     background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
-    border-bottom: 1px solid rgba(196, 160, 53, 0.15);
   }
-  .models-title {
+  .models-page-title {
     font-family: var(--font-heading);
     font-size: clamp(3rem, 7vw, 5.5rem);
     font-weight: 900;
@@ -85,92 +324,321 @@ const categoryOrder = ['truck', 'car', 'suv', 'ev', 'classic'];
     color: var(--off-white);
     margin-top: 0.75rem;
   }
-  .models-title em {
+  .models-page-title em {
     font-style: italic;
     color: var(--gold);
   }
-  .models-lede {
+  .models-page-lede {
     font-size: 1.1rem;
     color: var(--text-dim);
     line-height: 1.7;
     max-width: 72ch;
     margin-top: 1.5rem;
   }
+
+  /* ── FILTER BAR ──────────────────────────────────── */
+  .filter-bar {
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 10;
+  }
+  .filter-tabs {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .filter-tabs::-webkit-scrollbar { display: none; }
+  .filter-tab {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.15rem;
+    background: var(--charcoal);
+    color: var(--light-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all var(--transition);
+  }
+  .filter-tab:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+  .filter-tab.active {
+    background: var(--gold);
+    color: var(--charcoal);
+    border-color: var(--gold);
+  }
+
+  /* ── LINEUP SECTIONS ─────────────────────────────── */
   .models-body {
     padding: 60px 0 80px;
   }
-  .cat-section {
+  .lineup-section {
     margin-bottom: 4rem;
   }
-  .cat-header {
+  .section-header {
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    align-items: baseline;
     margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
     border-bottom: 2px solid var(--gold);
   }
-  .cat-title {
+  .section-header h2 {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.03em;
+    color: var(--off-white);
+  }
+  .section-count {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 0.25rem;
   }
-  .cat-desc {
-    font-size: 0.95rem;
-    color: var(--text-dim);
-  }
-  .models-grid {
+
+  /* ── CARDS ────────────────────────────────────────── */
+  .models-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
   }
-  .model-card {
+  .model-card,
+  .classic-card {
     background: var(--warm-gray);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .model-card:hover,
+  .classic-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+  .card-image {
+    aspect-ratio: 16 / 10;
+    background-size: cover;
+    background-position: center;
+    background-color: #252525;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: rgba(196, 160, 53, 0.4);
+    background: linear-gradient(135deg, #1f1a0e 0%, #252525 100%);
+  }
+  .card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+  }
+  .badge-note {
+    background: rgba(224, 108, 90, 0.2);
+    color: #e06c5a;
+    border: 1px solid rgba(224, 108, 90, 0.4);
+  }
+  .badge-hybrid {
+    background: rgba(94, 183, 240, 0.2);
+    color: #5eb7f0;
+    border: 1px solid rgba(94, 183, 240, 0.4);
+  }
+  .badge-ev {
+    background: rgba(122, 220, 159, 0.2);
+    color: #7adc9f;
+    border: 1px solid rgba(122, 220, 159, 0.4);
+  }
+  .badge-classic {
+    top: auto;
+    right: auto;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(196, 160, 53, 0.2);
+    color: var(--gold);
+    border: 1px solid rgba(196, 160, 53, 0.4);
+  }
+
+  .card-body {
     padding: 1.5rem;
+  }
+  .card-category {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .card-name {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.4rem 0 0.5rem;
+  }
+  .card-price {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .card-price span {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .card-tagline {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .card-note {
+    font-size: 0.78rem;
+    color: #e06c5a;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+  }
+  .card-link {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
     text-decoration: none;
+    font-weight: 700;
+  }
+  .card-link:hover {
+    color: var(--gold-light);
+  }
+
+  .classic-value {
+    padding: 0.5rem 0.75rem;
+    background: var(--charcoal);
+    border-left: 2px solid var(--gold);
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--off-white);
+    margin-bottom: 0.75rem;
+  }
+  .classic-value-label {
+    display: block;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+  }
+  .classic-cultural {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  /* ── ERA DIVIDER ─────────────────────────────────── */
+  .era-divider {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+  .era-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 100%);
+  }
+  .era-line:last-child {
+    background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+  }
+  .era-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--gold);
+    border-radius: var(--radius);
+    background: rgba(196, 160, 53, 0.05);
+  }
+
+  .classics-intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    max-width: 72ch;
+    margin-bottom: 2rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  /* ── QUIZ TEASER ─────────────────────────────────── */
+  .quiz-teaser {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    transition: border-color var(--transition), transform var(--transition);
+    gap: 2rem;
+    padding: 2rem 2.5rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius-lg);
+    margin-top: 3rem;
+    flex-wrap: wrap;
   }
-  .model-card:hover {
-    border-color: var(--gold);
-    transform: translateX(4px);
+  .quiz-teaser-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
   }
-  .model-card-title {
+  .quiz-teaser-heading {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     color: var(--off-white);
     margin-bottom: 0.35rem;
   }
-  .model-card-years {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--light-gray);
-  }
-  .model-card-msrp {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--gold);
-    margin-top: 0.2rem;
-  }
-  .model-card-arrow {
-    font-size: 1.4rem;
-    color: var(--gold);
-    flex-shrink: 0;
+  .quiz-teaser-sub {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    max-width: 52ch;
   }
 </style>

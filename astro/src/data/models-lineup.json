@@ -1,0 +1,230 @@
+{
+  "trucks": [
+    {
+      "name": "Silverado 1500",
+      "slug": "silverado-1500",
+      "price": "$37,200",
+      "image": "/photos/silverado/pexels_12624306_silverado.jpeg",
+      "tagline": "America's best-selling full-size truck. Available with a 2.7L Turbo-4, 5.3L V8, 6.2L V8, or available 3.0L Duramax diesel. Tows up to 13,300 lbs."
+    },
+    {
+      "name": "Silverado HD 2500/3500",
+      "slug": "silverado-hd",
+      "price": "$46,200",
+      "image": "/photos/silverado/New_2020_Chevrolet_Silverado_HD_at_Toronto_International_Autoshow.jpg",
+      "tagline": "Heavy-duty muscle built for serious work. Available 6.6L V8 gas or 6.6L Duramax diesel. Max towing up to 36,000 lbs on 3500 dually."
+    },
+    {
+      "name": "Colorado",
+      "slug": "colorado",
+      "price": "$31,995",
+      "image": "/photos/colorado/pexels_15370045_colorado.jpeg",
+      "tagline": "Midsize truck, redesigned for 2023. 2.7L Turbo-4 across all trims. ZR2 brings serious off-road capability with Multimatic DSSV dampers."
+    }
+  ],
+  "suvs": [
+    {
+      "name": "Tahoe",
+      "slug": "tahoe",
+      "price": "$58,500",
+      "image": "/photos/tahoe/pexels_35004984_tahoe.jpeg",
+      "tagline": "Full-size SUV on a truck-based platform. 5.3L V8 standard, available 3.0L Duramax diesel. Three rows, 8,400-lb tow rating, available Super Cruise."
+    },
+    {
+      "name": "Suburban",
+      "slug": "suburban",
+      "price": "$62,500",
+      "tagline": "The longest-running nameplate in automotive history. Shares Tahoe underpinnings with 22 additional inches of cargo space. The ultimate family hauler."
+    },
+    {
+      "name": "Traverse",
+      "slug": "traverse",
+      "price": "$38,995",
+      "tagline": "Redesigned for 2024. Three-row crossover with a turbocharged 2.5L or available 2.0L turbo. Family-sized interior, up to 98.2 cu ft of cargo space."
+    },
+    {
+      "name": "Equinox",
+      "slug": "equinox",
+      "price": "$33,000",
+      "tagline": "Chevy's best-selling crossover. 1.5L turbocharged 4-cylinder, available FWD or AWD. Practical, fuel-efficient, and packed with standard tech."
+    },
+    {
+      "name": "Blazer",
+      "slug": "blazer",
+      "price": "$41,000",
+      "tagline": "Sport-forward midsize SUV with sharp styling. 2.0L turbocharged 4-cylinder or available 3.6L V6. Available AWD across all trims."
+    },
+    {
+      "name": "Trailblazer",
+      "slug": "trailblazer",
+      "price": "$24,200",
+      "tagline": "Subcompact SUV with youthful styling and available AWD. 1.2L or 1.3L turbocharged 3-cylinder. Activ trim adds off-road-inspired looks."
+    },
+    {
+      "name": "Trax",
+      "slug": "trax",
+      "price": "$21,000",
+      "tagline": "Completely redesigned for 2024. The most affordable Chevy SUV with bold, angular styling. 1.2L turbocharged engine, FWD standard."
+    }
+  ],
+  "cars": [
+    {
+      "name": "Malibu",
+      "slug": "malibu",
+      "price": "$25,300",
+      "tagline": "Chevy's midsize sedan — a nameplate with deep history in the lineup. Turbocharged 1.5L engine, available hybrid powertrain.",
+      "note": "Production ends 2025. The Malibu nameplate dates to 1964.",
+      "badge": "Discontinued"
+    }
+  ],
+  "sports": [
+    {
+      "name": "Corvette Stingray",
+      "slug": "corvette-stingray",
+      "price": "$71,995",
+      "image": "/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg",
+      "tagline": "Mid-engine C8 generation. 6.2L LT2 V8 producing 490 hp (495 with performance exhaust). 0–60 in under 3 seconds. American supercar value."
+    },
+    {
+      "name": "Corvette Z06",
+      "slug": "corvette-z06",
+      "price": "$115,000",
+      "image": "/photos/corvette/pexels_17508919_corvette.jpeg",
+      "tagline": "5.5L flat-plane crank LT6 V8 — 670 hp, 8,600 rpm redline. Race-derived naturally aspirated engine. Available Z07 track package. Wider body, carbon fiber bodywork."
+    },
+    {
+      "name": "Corvette E-Ray",
+      "slug": "corvette-e-ray",
+      "price": "$110,000",
+      "image": "/photos/corvette/pexels_9808_corvette.jpeg",
+      "badge": "Hybrid AWD",
+      "tagline": "First-ever all-wheel drive Corvette. Combines 6.2L LT2 V8 with a front electric motor — 655 hp combined. 0–60 in 2.5 seconds. First Corvette hybrid production model."
+    },
+    {
+      "name": "Camaro",
+      "slug": "camaro",
+      "price": "$29,995",
+      "priceLabel": "MSRP (last MSRP)",
+      "image": "/photos/camaro/pexels_2797720_camaro.jpeg",
+      "badge": "Production Ended",
+      "tagline": "Six generations of American muscle. Available 2.0T, 3.6L V6, 6.2L V8 (SS/ZL1). The ZL1 supercharged 650 hp was the final high point.",
+      "note": "Production ended Feb 2024. Future revival expected — stay tuned."
+    }
+  ],
+  "evs": [
+    {
+      "name": "Equinox EV",
+      "slug": "equinox-ev",
+      "price": "$34,995",
+      "badge": "EV",
+      "tagline": "Built on GM's Ultium platform. Up to 319 miles of estimated range. Available FWD or AWD. One of the most affordable long-range EVs on the market."
+    },
+    {
+      "name": "Blazer EV",
+      "slug": "blazer-ev",
+      "price": "$52,000",
+      "badge": "EV",
+      "tagline": "Performance-focused EV on the Ultium platform. SS trim delivers 557 hp AWD. Up to 320 miles estimated range. DC fast charging standard."
+    },
+    {
+      "name": "Silverado EV",
+      "slug": "silverado-ev",
+      "price": "$74,800",
+      "image": "/photos/silverado/2024_Chevrolet_Silverado_EV_RST.jpg",
+      "badge": "EV",
+      "tagline": "Purpose-built electric truck on the Ultium platform. RST edition: 754 hp, 400+ miles estimated range. Multi-Flex Midgate, 10.2 kW bidirectional charging capability."
+    }
+  ],
+  "classics": [
+    {
+      "name": "Chevelle SS 454",
+      "slug": "chevelle-ss",
+      "category": "Chevelle SS",
+      "era": "1970 · Muscle",
+      "value": "$40,000–$200,000+ (LS6)",
+      "image": "/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg",
+      "cultural": "The pinnacle of the muscle car era. The LS6 454 variant — 450 hp, solid-lifter cam, 11.25:1 compression — is one of the most sought-after factory muscle cars ever built."
+    },
+    {
+      "name": "'69 Camaro Z/28 · SS · ZL1",
+      "slug": "camaro-1969",
+      "category": "Camaro",
+      "era": "1969 · Muscle",
+      "value": "$35,000–$800,000+ (ZL1)",
+      "image": "/photos/camaro/pexels_3076824_camaro.jpeg",
+      "cultural": "The most iconic first-gen Camaro. The COPO ZL1 — 69 units built with an all-aluminum 427 — remains one of the rarest and most valuable American muscle cars ever made."
+    },
+    {
+      "name": "'64 Impala SS",
+      "slug": "impala-1964",
+      "category": "Impala",
+      "era": "1964 · Full-Size",
+      "value": "$20,000–$80,000+",
+      "image": "/photos/impala/1964_Chevrolet_Impala_lowrider_5409593989.jpg",
+      "cultural": "The cornerstone of lowrider culture, immortalized in West Coast hip-hop and Chicano art. Its long hood and smooth lines made it the canvas for generations of custom builders."
+    },
+    {
+      "name": "'57 Bel Air",
+      "slug": "bel-air-1957",
+      "category": "Bel Air",
+      "era": "1957 · Full-Size",
+      "value": "$25,000–$100,000+",
+      "image": "/photos/belair/1957_Chevrolet_Bel_Air_-_Cruisin_for_a_Cure.jpg",
+      "cultural": "Perhaps the most recognizable American car ever built. The fuel-injected 283 was a milestone — the first production engine to achieve 1 horsepower per cubic inch."
+    },
+    {
+      "name": "C10 — Square Body",
+      "slug": "c10-pickup-1972",
+      "category": "C10 Pickup",
+      "era": "1972 · Truck",
+      "value": "$15,000–$60,000+",
+      "image": "/photos/trucks-classic/1953_Chevy_3100.jpg",
+      "cultural": "The square-body C10 is the most universally beloved classic truck in America. Clean lines, massive aftermarket support, and cultural versatility across lowrider, farm truck, and restomod builds."
+    },
+    {
+      "name": "K5 Blazer — First Gen",
+      "slug": "k5-blazer-1972",
+      "category": "K5 Blazer",
+      "era": "1972 · SUV",
+      "value": "$25,000–$85,000+",
+      "image": "/photos/blazer/pexels_6994020_blazer.jpeg",
+      "cultural": "The K5 pioneered the full-size SUV before the term existed — removable hardtop, real 4WD, and truck-based capability. The spiritual ancestor of every Bronco and 4Runner that followed."
+    },
+    {
+      "name": "Nova SS",
+      "slug": "nova-ss-1970",
+      "category": "Nova",
+      "era": "1969 · Muscle",
+      "value": "$20,000–$60,000+",
+      "image": "/photos/nova/1964_Chevrolet_Chevy_II_Nova_Super_Sport_Coupe_front_right_09-09-2023.jpg",
+      "cultural": "Big-block muscle in a lighter, smaller package. The 396-equipped Nova was a legitimate quarter-mile threat and remains one of the most accessible entry points into classic Chevy muscle."
+    },
+    {
+      "name": "El Camino SS",
+      "slug": "el-camino-ss-1970",
+      "category": "El Camino",
+      "era": "1970 · Car-Truck",
+      "value": "$15,000–$55,000+",
+      "image": "/photos/chevelle/pexels_1730003_chevelle.jpeg",
+      "cultural": "Half car, half truck — entirely American. Built on the A-body Chevelle platform, the El Camino SS could be optioned with the same big-block engines as its muscle car siblings."
+    },
+    {
+      "name": "C3 Corvette — Shark Era",
+      "slug": "corvette-c3-stingray-1969",
+      "category": "Corvette",
+      "era": "1969 · Sports Car",
+      "value": "$20,000–$120,000+ (L88/ZR1)",
+      "image": "/photos/corvette/Chevrolet_Corvette_C5_1997-2004.jpg",
+      "cultural": "The Shark-era Corvette. LT1, L88, ZR1 — factory race engines in a road car. The 1969–72 big-block cars are the performance peak of the generation. The L88 was never meant to be street driven."
+    },
+    {
+      "name": "Monte Carlo SS",
+      "slug": "monte-carlo-ss-1970",
+      "category": "Monte Carlo",
+      "era": "1970 · Personal Luxury",
+      "value": "$12,000–$45,000+",
+      "image": "/photos/monte-carlo/1973_Chevrolet_Monte_Carlo_27753817774.jpg",
+      "cultural": "Chevy's personal luxury coupe with muscle car underpinnings. The SS 454 first-gen is a sleeper collectible. The 1980s aero-body NASCAR SS version is a certified piece of racing heritage."
+    }
+  ]
+}

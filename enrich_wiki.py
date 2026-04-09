@@ -3,13 +3,16 @@
 
 import json
 import sys
-sys.path.insert(0, "/Users/crystalarriaga/chevyroots")
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
 from enrich_tags import enrich_entry
 
-WIKI_CATALOG = "/Users/crystalarriaga/chevyroots/photos/catalog.json"
-WIKI_TAGGED = "/Users/crystalarriaga/chevyroots/photos/catalog_wiki_tagged.json"
-PEXELS_TAGGED = "/Users/crystalarriaga/chevyroots/photos/catalog_pexels_tagged.json"
-MASTER = "/Users/crystalarriaga/chevyroots/photos/catalog_master.json"
+WIKI_CATALOG = str(ROOT / "photos" / "catalog.json")
+WIKI_TAGGED = str(ROOT / "photos" / "catalog_wiki_tagged.json")
+PEXELS_TAGGED = str(ROOT / "photos" / "catalog_pexels_tagged.json")
+MASTER = str(ROOT / "photos" / "catalog_master.json")
 
 with open(WIKI_CATALOG) as f:
     wiki = json.load(f)

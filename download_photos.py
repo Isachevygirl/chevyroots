@@ -8,9 +8,11 @@ import time
 import urllib.request
 import urllib.parse
 import ssl
+from pathlib import Path
 
-BASE_DIR = "/Users/crystalarriaga/chevyroots/photos"
-CATALOG_FILE = "/Users/crystalarriaga/chevyroots/photos/catalog.json"
+ROOT = Path(__file__).resolve().parent
+BASE_DIR = str(ROOT / "photos")
+CATALOG_FILE = str(ROOT / "photos" / "catalog.json")
 
 # Search terms mapped to folder categories
 SEARCHES = {

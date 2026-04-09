@@ -7,9 +7,14 @@ import time
 import urllib.request
 import urllib.parse
 import ssl
+from pathlib import Path
 
-API_KEY = "wCGh74JHac23EGDqZPPjgiPhdd8ZAAK6QjWNpXL9tiYjLeI13H3TFA2N"
-BASE_DIR = "/Users/crystalarriaga/chevyroots/photos"
+API_KEY = os.environ.get("PEXELS_API_KEY", "")
+if not API_KEY:
+    raise SystemExit("PEXELS_API_KEY environment variable is not set. See .env.example.")
+
+ROOT = Path(__file__).resolve().parent
+BASE_DIR = str(ROOT / "photos")
 
 # Targeted searches with desired NEW photo counts
 SEARCHES = {

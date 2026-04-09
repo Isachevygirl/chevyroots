@@ -7,10 +7,17 @@ import time
 import urllib.request
 import urllib.parse
 import ssl
+from pathlib import Path
 
-API_KEY = "wCGh74JHac23EGDqZPPjgiPhdd8ZAAK6QjWNpXL9tiYjLeI13H3TFA2N"
-BASE_DIR = "/Users/crystalarriaga/chevyroots/photos"
-CATALOG_FILE = "/Users/crystalarriaga/chevyroots/photos/catalog_pexels.json"
+# Pexels API key — read from environment. See .env.example.
+API_KEY = os.environ.get("PEXELS_API_KEY", "")
+if not API_KEY:
+    raise SystemExit("PEXELS_API_KEY environment variable is not set. See .env.example.")
+
+# Project root is the directory containing this script.
+ROOT = Path(__file__).resolve().parent
+BASE_DIR = str(ROOT / "photos")
+CATALOG_FILE = str(ROOT / "photos" / "catalog_pexels.json")
 
 SEARCHES = {
     "corvette": ["chevrolet corvette", "corvette stingray", "corvette car"],

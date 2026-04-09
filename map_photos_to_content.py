@@ -4,10 +4,12 @@
 import json
 import os
 import re
+from pathlib import Path
 
-MASTER_CATALOG = "/Users/crystalarriaga/chevyroots/photos/catalog_master.json"
-OUTPUT = "/Users/crystalarriaga/chevyroots/photos/photo_assignments.json"
-REPORT = "/Users/crystalarriaga/chevyroots/photos/photo_assignments_report.md"
+ROOT = Path(__file__).resolve().parent
+MASTER_CATALOG = str(ROOT / "photos" / "catalog_master.json")
+OUTPUT = str(ROOT / "photos" / "photo_assignments.json")
+REPORT = str(ROOT / "photos" / "photo_assignments_report.md")
 
 # Define what each page needs
 PAGE_PHOTO_NEEDS = {

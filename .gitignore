@@ -1,2 +1,50 @@
-# Local Netlify folder
-.netlify
+# ── Secrets ─────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+service-account.json
+
+# ── Dependencies ────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ── Build output ────────────────────────────────────────
+astro/dist/
+astro/.astro/
+.output/
+
+# ── Local tooling ───────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# ── Runtime / generated ─────────────────────────────────
+*.log
+.cache/
+.parcel-cache/
+.turbo/
+
+# ── Python (pipelines scripts) ──────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+pip-log.txt
+
+# ── Netlify ─────────────────────────────────────────────
+.netlify/
+
+# ── Drafts awaiting approval ────────────────────────────
+astro/src/content/drafts/
+drafts/rejected/
+
+# ── Temporary outputs from content pipelines ───────────
+pipeline_runs.log
+pipelines/.cache/

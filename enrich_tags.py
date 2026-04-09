@@ -3,9 +3,11 @@
 
 import json
 import re
+from pathlib import Path
 
-CATALOG_FILE = "/Users/crystalarriaga/chevyroots/photos/catalog_pexels.json"
-OUTPUT_FILE = "/Users/crystalarriaga/chevyroots/photos/catalog_pexels_tagged.json"
+ROOT = Path(__file__).resolve().parent
+CATALOG_FILE = str(ROOT / "photos" / "catalog_pexels.json")
+OUTPUT_FILE = str(ROOT / "photos" / "catalog_pexels_tagged.json")
 
 # --- Tag dictionaries ---
 

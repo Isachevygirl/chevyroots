@@ -2,13 +2,19 @@
 """
 Standardize navigation across all ChevyRoots HTML pages.
 Uses the homepage (index.html) nav as the canonical format.
+
+DEPRECATED: This script operated on the old hand-edited HTML site and is
+kept here for reference only. The new Astro build handles navigation via
+src/components/Nav.astro — a single source of truth — and this script
+should not be run against the new site.
 """
 
 import os
 import re
 import glob
+from pathlib import Path
 
-ROOT = '/Users/crystalarriaga/chevyroots'
+ROOT = str(Path(__file__).resolve().parent)
 
 # ── Canonical nav HTML (from homepage) ──
 ANNOUNCEMENT_BAR = '''  <!-- ANNOUNCEMENT BAR -->

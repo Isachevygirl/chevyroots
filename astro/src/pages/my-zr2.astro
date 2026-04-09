@@ -1,0 +1,370 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { getCollection } from 'astro:content';
+
+// Gather all My ZR2 cluster articles
+const guides = await getCollection('guides');
+const zr2Articles = guides
+  .filter((g) => g.data.cluster === 'My ZR2')
+  .sort((a, b) => (b.data.published.getTime() - a.data.published.getTime()));
+
+// The truck — Crystal's actual spec sheet
+const truck = {
+  model: 'Silverado 1500 ZR2',
+  year: 2024,
+  color: 'Silver Ice Metallic',
+  trim: 'ZR2',
+  engine: '6.2L L87 V8',
+  hp: 420,
+  torque: 460,
+  transmission: '10-speed automatic (10L80)',
+  drivetrain: '4WD w/ Autotrac transfer case',
+  tires: 'Goodyear Wrangler Territory MT 33"',
+  lockers: 'Electronic front & rear',
+  dampers: 'Multimatic DSSV position-sensitive',
+  currentMiles: 9100,
+  purchased: 'October 2025',
+};
+
+// Mod log — latest first
+const mods = [
+  { date: '2026-03-28', category: 'Protection', mod: 'Paint Protection Film — hood, front fenders, rocker panels', notes: "Worth every dollar. ZR2's 33s throw gravel that chips paint otherwise." },
+  { date: '2026-03-15', category: 'Interior', mod: 'Salex center console organizer', notes: 'Daily quality-of-life win.' },
+  { date: '2026-02-20', category: 'Bed', mod: 'BAKFlip MX4 hard folding tonneau cover', notes: 'Best single accessory purchase so far.' },
+  { date: '2026-02-10', category: 'Safety', mod: 'BlackVue DR770X-2CH dash cam — hardwired', notes: "Parking mode works. Highly recommend." },
+  { date: '2026-01-22', category: 'Interior', mod: 'WeatherTech FloorLiner — all rows', notes: 'No-brainer. Already saved the factory carpet multiple times.' },
+  { date: '2026-01-15', category: 'Lighting', mod: 'Rigid SR-Q ditch lights — pair, A-pillar mount', notes: 'Genuinely useful for trail edges where headlights don\'t reach.' },
+  { date: '2025-12-12', category: 'REMOVED', mod: 'K&N cold air intake (removed after 3 weeks)', notes: 'Lost torque feel, gained nothing meaningful. Refunded.' },
+  { date: '2025-12-01', category: 'REMOVED', mod: 'Rigid 50" light bar (removed, returned)', notes: 'Truck jewelry I never needed.' },
+  { date: '2025-11-20', category: 'Recovery', mod: 'MAXTRAX traction boards + mount', notes: 'Saved me from a stuck situation twice already.' },
+  { date: '2025-11-10', category: 'Towing', mod: 'Curt TruTrack weight distribution hitch', notes: 'For the dirt bike trailer.' },
+];
+
+// Maintenance log
+const maintenance = [
+  { date: '2026-03-05', miles: 8200, service: 'Transmission fluid exchange (TSB 19-NA-240, Dexron HP)', cost: 'Warranty', notes: 'Fixed the 10-speed light-throttle shudder. Covered under powertrain warranty.' },
+  { date: '2026-02-14', miles: 6500, service: 'Oil change (Mobil 1 0W-20, AC Delco filter)', cost: '$85', notes: 'Independent shop, not dealer.' },
+  { date: '2025-12-20', miles: 3900, service: 'Tire rotation', cost: '$40', notes: '' },
+  { date: '2025-11-15', miles: 2200, service: 'First scheduled maintenance (dealer, free)', cost: '$0', notes: 'First oil change on the house.' },
+];
+---
+
+<BaseLayout
+  title="My ZR2 — Crystal's Silverado ZR2 Living Page | ChevyRoots"
+  description="The living page for Crystal's Silverado ZR2. Current mileage, every mod, maintenance log, and the ongoing ownership story. Updated continuously."
+  ogImage="/photos/crystal/crystal-silverado-zr2-hero.jpg"
+>
+  <header class="zr2-header">
+    <div class="container">
+      <div class="zr2-header-grid">
+        <div class="zr2-hero-img" role="img" aria-label="Crystal's Silverado ZR2"></div>
+        <div class="zr2-header-text">
+          <p class="section-eyebrow">Living Page · Updated Continuously</p>
+          <h1 class="zr2-title">My <em>ZR2</em></h1>
+          <span class="gold-line"></span>
+          <p class="zr2-tag">
+            The permanent page for my {truck.year} {truck.model}. Current specs, mod log, maintenance history, and every article in the "My ZR2" series. Nothing here is speculative — this is my actual truck and my actual ownership story, updated as I drive.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {/* ── THE TRUCK ───────────────────────────────────────────────────── */}
+  <section class="zr2-section">
+    <div class="container container-narrow">
+      <h2 class="zr2-section-title">The Truck</h2>
+      <span class="gold-line"></span>
+      <div class="spec-grid">
+        <div class="spec-item"><div class="spec-label">Model</div><div class="spec-value">{truck.year} {truck.model}</div></div>
+        <div class="spec-item"><div class="spec-label">Color</div><div class="spec-value">{truck.color}</div></div>
+        <div class="spec-item"><div class="spec-label">Engine</div><div class="spec-value">{truck.engine}</div></div>
+        <div class="spec-item"><div class="spec-label">Power</div><div class="spec-value gold">{truck.hp} hp / {truck.torque} lb-ft</div></div>
+        <div class="spec-item"><div class="spec-label">Transmission</div><div class="spec-value">{truck.transmission}</div></div>
+        <div class="spec-item"><div class="spec-label">Drivetrain</div><div class="spec-value">{truck.drivetrain}</div></div>
+        <div class="spec-item"><div class="spec-label">Dampers</div><div class="spec-value">{truck.dampers}</div></div>
+        <div class="spec-item"><div class="spec-label">Tires</div><div class="spec-value">{truck.tires}</div></div>
+        <div class="spec-item"><div class="spec-label">Lockers</div><div class="spec-value gold">{truck.lockers}</div></div>
+        <div class="spec-item"><div class="spec-label">Purchased</div><div class="spec-value">{truck.purchased}</div></div>
+        <div class="spec-item"><div class="spec-label">Current Miles</div><div class="spec-value gold">{truck.currentMiles.toLocaleString()}</div></div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── MOD LOG ─────────────────────────────────────────────────────── */}
+  <section class="zr2-section dark">
+    <div class="container container-narrow">
+      <h2 class="zr2-section-title">Mod Log</h2>
+      <span class="gold-line"></span>
+      <p class="section-intro">Every mod, accessory, and modification I've added (or removed) — with an honest note about each one.</p>
+      <div class="log-list">
+        {mods.map((m) => (
+          <div class={`log-item ${m.category === 'REMOVED' ? 'removed' : ''}`}>
+            <div class="log-date">{m.date}</div>
+            <div class="log-content">
+              <div class="log-category">{m.category}</div>
+              <div class="log-mod">{m.mod}</div>
+              {m.notes && <div class="log-notes">{m.notes}</div>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ── MAINTENANCE LOG ─────────────────────────────────────────────── */}
+  <section class="zr2-section">
+    <div class="container container-narrow">
+      <h2 class="zr2-section-title">Maintenance Log</h2>
+      <span class="gold-line"></span>
+      <p class="section-intro">Scheduled services, repairs, and any work done at dealers or independents.</p>
+      <div class="log-list">
+        {maintenance.map((m) => (
+          <div class="log-item">
+            <div class="log-date">
+              {m.date}<br />
+              <span class="log-mile">{m.miles.toLocaleString()} mi</span>
+            </div>
+            <div class="log-content">
+              <div class="log-mod">{m.service}</div>
+              <div class="log-notes">
+                <strong>Cost:</strong> {m.cost}{m.notes && ` · ${m.notes}`}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ── SERIES ARTICLES ─────────────────────────────────────────────── */}
+  {zr2Articles.length > 0 && (
+    <section class="zr2-section dark">
+      <div class="container">
+        <h2 class="zr2-section-title">The "My ZR2" Series</h2>
+        <span class="gold-line"></span>
+        <p class="section-intro">Long-form articles tracking my ownership experience.</p>
+        <div class="articles-grid">
+          {zr2Articles.map((article) => (
+            <a href={`/guides/${article.id}/`} class="article-card">
+              <div class="article-card-eyebrow">{article.data.eyebrow}</div>
+              <h3 class="article-card-title">{article.data.title}</h3>
+              <p class="article-card-desc">{article.data.description}</p>
+              {article.data.readingTime && <div class="article-card-meta">{article.data.readingTime} min read</div>}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <NewsletterCTA
+    source="my-zr2-page"
+    heading="Get ZR2 updates in your inbox"
+    subheading="New mod reviews, trail reports, and maintenance updates — plus the whole weekly newsletter. Unsubscribe anytime."
+  />
+</BaseLayout>
+
+<style>
+  .zr2-header {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 50%, var(--charcoal) 100%);
+  }
+  .zr2-header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .zr2-hero-img {
+    aspect-ratio: 4 / 5;
+    background: #222 url('/photos/crystal/crystal-silverado-zr2-hero.jpg') center / cover no-repeat;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  }
+  .zr2-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .zr2-title em { font-style: italic; color: var(--gold); }
+  .zr2-tag {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    margin-top: 1.5rem;
+    max-width: 58ch;
+  }
+  .zr2-section {
+    padding: var(--section-pad) 0;
+  }
+  .zr2-section.dark {
+    background: var(--warm-gray);
+  }
+  .zr2-section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+  }
+  .section-intro {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 1rem 0 2rem;
+    max-width: 62ch;
+  }
+  .spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .spec-item {
+    padding: 1rem 1.25rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .spec-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 0.3rem;
+  }
+  .spec-value {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--off-white);
+    font-size: 0.95rem;
+  }
+  .spec-value.gold { color: var(--gold); }
+  .log-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .log-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+  }
+  .log-item.removed {
+    border-left-color: #c0392b;
+    opacity: 0.7;
+  }
+  .log-date {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+  .log-mile {
+    color: var(--light-gray);
+    font-size: 0.72rem;
+  }
+  .log-category {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 0.3rem;
+  }
+  .log-mod {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--off-white);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+  .log-notes {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+  .log-notes strong {
+    color: var(--off-white);
+  }
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .article-card {
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .article-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+  .article-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .article-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .article-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+  }
+  .article-card-meta {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+  @media (max-width: 900px) {
+    .zr2-header-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 640px) {
+    .log-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+</style>

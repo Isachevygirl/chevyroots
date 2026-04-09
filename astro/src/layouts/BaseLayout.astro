@@ -109,6 +109,7 @@ const orgSchema = {
     <slot name="head" />
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     {!hideAnnouncement && <AnnouncementBar message={announcement} />}
     <Nav pathname={Astro.url.pathname} />
     <main id="main">

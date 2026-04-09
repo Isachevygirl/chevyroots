@@ -1,47 +1,753 @@
 ---
-import StaticPage from '@layouts/StaticPage.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+
+// Vehicle listings — the 8 featured from the original page
+const vehicles = [
+  {
+    title: '1970 Chevelle SS 454',
+    price: '$72,500',
+    miles: '47,200',
+    location: 'Houston, TX',
+    notes: 'Numbers matching',
+    condition: 'Excellent',
+    conditionClass: 'excellent',
+    sellerType: 'Private',
+    tags: ['Classic', 'Performance'],
+    image: '/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg',
+  },
+  {
+    title: '1972 C10 Stepside',
+    price: '$28,900',
+    miles: '89,400',
+    location: 'Nashville, TN',
+    notes: 'LS swapped, patina body',
+    condition: 'Good',
+    conditionClass: 'good',
+    sellerType: 'Private',
+    tags: ['Classic', 'Truck'],
+    image: '/photos/silverado/pexels_3122814_silverado.jpeg',
+  },
+  {
+    title: '2023 Corvette Stingray 3LT',
+    price: '$68,900',
+    miles: '4,100',
+    location: 'Scottsdale, AZ',
+    notes: 'Z51 package, Rapid Blue',
+    condition: 'Excellent',
+    conditionClass: 'excellent',
+    sellerType: 'Dealer',
+    tags: ['Performance'],
+    image: '/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg',
+  },
+  {
+    title: '1978 K5 Blazer Cheyenne',
+    price: '$14,500',
+    miles: '132,000',
+    location: 'Roanoke, VA',
+    notes: 'Runs and drives, rust-free frame',
+    condition: 'Fair',
+    conditionClass: 'fair',
+    sellerType: 'Private',
+    tags: ['Classic', 'Truck', 'Project'],
+    image: '/photos/colorado/pexels_4595081_colorado.jpeg',
+  },
+  {
+    title: '2024 Silverado 1500 High Country',
+    price: '$58,750',
+    miles: '1,800',
+    location: 'Dallas, TX',
+    notes: 'Duramax diesel, fully loaded',
+    condition: 'Excellent',
+    conditionClass: 'excellent',
+    sellerType: 'Dealer',
+    tags: ['Truck'],
+    image: '/photos/silverado/pexels_10085134_silverado.jpeg',
+  },
+  {
+    title: '2024 Equinox EV 3RS',
+    price: '$34,200',
+    miles: '2,400',
+    location: 'Richmond, VA',
+    notes: '319-mi range, Super Cruise',
+    condition: 'Excellent',
+    conditionClass: 'excellent',
+    sellerType: 'Dealer',
+    tags: ['EV'],
+    image: '/photos/equinox/2024_Chevrolet_Equinox_EV_Front.jpg',
+  },
+  {
+    title: '1969 Camaro Z/28 — Project',
+    price: '$32,000',
+    miles: 'N/A',
+    location: 'Charlotte, NC',
+    notes: 'Matching DZ 302, partial restore',
+    condition: 'Project',
+    conditionClass: 'project',
+    sellerType: 'Private',
+    tags: ['Classic', 'Performance', 'Project'],
+    image: '/photos/camaro/pexels_2797720_camaro.jpeg',
+  },
+  {
+    title: '1967 Impala SS 396 Convertible',
+    price: '$54,000',
+    miles: '62,800',
+    location: 'Atlanta, GA',
+    notes: 'Marina Blue, white interior',
+    condition: 'Good',
+    conditionClass: 'good',
+    sellerType: 'Private',
+    tags: ['Classic'],
+    image: '/photos/impala/1964_Chevrolet_Impala_Gypsy_Rose.jpg',
+  },
+];
+
+// Parts listings — 6 from the original page
+const parts = [
+  {
+    category: 'Engine',
+    title: 'LS3 6.2L Crate Engine',
+    fits: 'Fits: Universal LS swap / 2008-2013 Corvette',
+    price: '$6,800',
+    condition: 'New — Crate',
+  },
+  {
+    category: 'Intake',
+    title: 'Edelbrock Performer SBC Intake Manifold',
+    fits: 'Fits: 1955-1986 Small Block Chevy 283/327/350',
+    price: '$185',
+    condition: 'Used — Good',
+  },
+  {
+    category: 'Interior',
+    title: 'OEM C10 Bench Seat — Saddle Tan',
+    fits: 'Fits: 1967-1972 C10 / C20 / C30',
+    price: '$450',
+    condition: 'Used — Fair',
+  },
+  {
+    category: 'Exhaust',
+    title: 'Hooker Long Tube Headers — LS Swap',
+    fits: 'Fits: 1967-1969 Camaro / 1968-1974 Nova (LS engine)',
+    price: '$520',
+    condition: 'New',
+  },
+  {
+    category: 'Wheels',
+    title: '15x7 Rally Wheels Set of 4 w/ Rings & Caps',
+    fits: 'Fits: 1967-1981 Camaro / Chevelle / Nova / C10',
+    price: '$650',
+    condition: 'Restored',
+  },
+  {
+    category: 'Lighting',
+    title: 'C3 Corvette LED Tail Light Conversion Kit',
+    fits: 'Fits: 1968-1982 Corvette C3',
+    price: '$289',
+    condition: 'New',
+  },
+];
 ---
 
-<StaticPage
-  title="Chevy Marketplace — Parts, Accessories, Builds & Classifieds | ChevyRoots"
-  description="Shop Chevy parts, performance mods, accessories, and classified builds. Honest picks, vetted retailers, Crystal's personal recommendations."
-  eyebrow="Shop"
-  heading="The Marketplace"
+<BaseLayout
+  title="The Chevy Marketplace — Classifieds for Every Chevrolet | ChevyRoots"
+  description="The only classifieds built exclusively for Chevrolet. Every model, every generation, every part — one marketplace for the entire Chevy community."
 >
-  <p>The ChevyRoots marketplace is where we point you toward the stuff that's actually worth buying — parts, mods, accessories, apparel, and the occasional classified listing. No low-effort affiliate dumps. If it's here, it's because we'd buy it.</p>
+  {/* ── HERO ─────────────────────────────────────────────────── */}
+  <section class="mkt-hero">
+    <div class="mkt-hero-stripe"></div>
+    <div class="container">
+      <div class="section-eyebrow">Buy · Sell · Trade</div>
+      <h1 class="mkt-hero-title">The <em>Chevy</em><br />Market</h1>
+      <p class="mkt-hero-sub">
+        The only classifieds built exclusively for Chevrolet. Every model, every generation, every part — one marketplace for the entire Chevy community.
+      </p>
+      <div class="mkt-hero-stats">
+        <div>
+          <div class="mkt-stat-num">5</div>
+          <div class="mkt-stat-label">Categories</div>
+        </div>
+        <div>
+          <div class="mkt-stat-num">60+</div>
+          <div class="mkt-stat-label">Models Covered</div>
+        </div>
+        <div>
+          <div class="mkt-stat-num">115</div>
+          <div class="mkt-stat-label">Years of Chevy</div>
+        </div>
+      </div>
+      <span class="gold-line"></span>
+    </div>
+  </section>
 
-  <h2>Where to shop</h2>
+  {/* ── FILTER BAR ──────────────────────────────────────────── */}
+  <div class="mkt-filters">
+    <div class="container">
+      <div class="mkt-filters-inner">
+        <input type="text" class="mkt-search" placeholder="Search vehicles, parts, accessories..." aria-label="Search listings" />
+        <select class="mkt-select" aria-label="Category">
+          <option>All Categories</option>
+          <option>Vehicles</option>
+          <option>Parts</option>
+          <option>Accessories</option>
+        </select>
+        <select class="mkt-select" aria-label="Model">
+          <option>All Models</option>
+          <option>Silverado</option>
+          <option>Corvette</option>
+          <option>Camaro</option>
+          <option>C10 / C/K</option>
+          <option>Chevelle</option>
+          <option>Blazer / K5</option>
+          <option>Impala</option>
+          <option>Equinox</option>
+          <option>Tahoe / Suburban</option>
+          <option>Nova</option>
+          <option>Other</option>
+        </select>
+        <select class="mkt-select" aria-label="Era">
+          <option>All Eras</option>
+          <option>Classic (Pre-1980)</option>
+          <option>Modern (1980-2020)</option>
+          <option>Current (2020+)</option>
+        </select>
+        <select class="mkt-select" aria-label="Sort by">
+          <option>Newest</option>
+          <option>Price: Low-High</option>
+          <option>Price: High-Low</option>
+        </select>
+      </div>
+    </div>
+  </div>
 
-  <h3>Performance &amp; Mods</h3>
-  <ul>
-    <li><strong>Summit Racing</strong> — the broadest selection of performance parts, trusted for decades</li>
-    <li><strong>JEGS</strong> — great for hard-to-find classic parts and restoration</li>
-    <li><strong>LMC Truck</strong> — the bible for classic Chevy truck restoration parts</li>
-    <li><strong>Classic Industries</strong> — reproduction parts for muscle-era Chevys</li>
-  </ul>
+  {/* ── VEHICLE LISTINGS ────────────────────────────────────── */}
+  <section class="mkt-listings">
+    <div class="container">
+      <div class="mkt-listings-header">
+        <div class="section-eyebrow">Vehicles for Sale</div>
+        <h2 class="mkt-section-title">Featured Listings</h2>
+        <span class="gold-line"></span>
+        <p class="mkt-section-desc">From barn-find projects to showroom-ready builds. Every Chevy has a story.</p>
+      </div>
+      <div class="mkt-grid">
+        {vehicles.map((v) => (
+          <article class="mkt-card">
+            <div class="mkt-card-img" style={`background-image: url('${v.image}');`}>
+              <div class="mkt-card-badges">
+                <span class={`mkt-badge mkt-badge-${v.conditionClass}`}>{v.condition}</span>
+                <span class="mkt-badge mkt-badge-seller">{v.sellerType}</span>
+              </div>
+            </div>
+            <div class="mkt-card-body">
+              <div class="mkt-card-tags">
+                {v.tags.map((tag) => <span class="mkt-tag">{tag}</span>)}
+              </div>
+              <h3 class="mkt-card-title">{v.title}</h3>
+              <div class="mkt-card-price">{v.price}</div>
+              <div class="mkt-card-meta">
+                <span><strong>{v.miles}</strong> miles</span>
+                <span>·</span>
+                <span>{v.location}</span>
+              </div>
+              <p class="mkt-card-notes">{v.notes}</p>
+              <a href="/contact/?topic=marketplace" class="mkt-card-cta">Contact Seller →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
-  <h3>Accessories &amp; Daily-Driver Stuff</h3>
-  <ul>
-    <li><strong>WeatherTech</strong> — floor liners and accessories</li>
-    <li><strong>RealTruck / AmericanTrucks</strong> — tonneau covers, bed accessories, lift kits</li>
-    <li><strong>Amazon</strong> — everything else, when the price is right</li>
-  </ul>
+  {/* ── PARTS MARKET ────────────────────────────────────────── */}
+  <section class="mkt-listings mkt-parts-section">
+    <div class="container">
+      <div class="mkt-listings-header">
+        <div class="section-eyebrow">Parts &amp; Components</div>
+        <h2 class="mkt-section-title">Chevy Parts Market</h2>
+        <span class="gold-line"></span>
+        <p class="mkt-section-desc">OEM originals, performance upgrades, and hard-to-find pieces for your build.</p>
+      </div>
+      <div class="mkt-parts-grid">
+        {parts.map((part) => (
+          <article class="mkt-part-card">
+            <div class="mkt-part-category">{part.category}</div>
+            <h3 class="mkt-part-title">{part.title}</h3>
+            <div class="mkt-part-fits">{part.fits}</div>
+            <div class="mkt-part-row">
+              <div class="mkt-part-price">{part.price}</div>
+              <div class="mkt-part-condition">{part.condition}</div>
+            </div>
+            <a href="/contact/?topic=marketplace" class="mkt-part-cta">Contact Seller →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
-  <h3>Ownership &amp; Protection</h3>
-  <ul>
-    <li><strong>Hagerty</strong> — classic car insurance (see our <a href="/guides/classic-chevy-insurance/">insurance guide</a>)</li>
-    <li><strong>Endurance / CARCHEX</strong> — extended warranty for out-of-factory trucks</li>
-    <li><strong>Tire Rack / Discount Tire</strong> — tires and wheels</li>
-    <li><strong>etrailer</strong> — towing and trailering gear</li>
-  </ul>
+  {/* ── SELLER CTA ──────────────────────────────────────────── */}
+  <section class="mkt-seller-cta" id="list-your-chevy">
+    <div class="container container-narrow">
+      <div class="mkt-seller-inner">
+        <div class="section-eyebrow">Sell on ChevyRoots</div>
+        <h2 class="mkt-seller-title">List Your <em>Chevy</em></h2>
+        <span class="gold-line"></span>
+        <p class="mkt-seller-desc">
+          Whether you're letting go of a classic, clearing out your garage, or flipping a project — list it where Chevy people are actually looking.
+        </p>
+        <div class="mkt-seller-features">
+          <div>
+            <div class="mkt-feature-num">01</div>
+            <div class="mkt-feature-title">Chevy-only audience</div>
+            <p>Your listing reaches people who are specifically shopping for bowties, not a mixed crowd drowned in Mustang and Camry ads.</p>
+          </div>
+          <div>
+            <div class="mkt-feature-num">02</div>
+            <div class="mkt-feature-title">Structured listing data</div>
+            <p>Year, model, trim, mileage, condition, VIN, mod list — so buyers know exactly what they're looking at before they reach out.</p>
+          </div>
+          <div>
+            <div class="mkt-feature-num">03</div>
+            <div class="mkt-feature-title">No Craigslist drama</div>
+            <p>Verified sellers, no bots, no scams, no "is this still available?" tire-kickers. Real buyers only.</p>
+          </div>
+        </div>
+        <a href="/contact/?topic=marketplace" class="btn btn-gold">Submit a Listing →</a>
+      </div>
+    </div>
+  </section>
 
-  <h2>Affiliate disclosure</h2>
-  <p>Some links on this page are affiliate links — if you click and buy, ChevyRoots earns a commission at no additional cost to you. See the <a href="/disclaimer/">disclaimer page</a> for the full FTC-compliant disclosure. We only link to retailers we'd recommend even if we weren't earning commission.</p>
+  {/* ── COMING SOON ─────────────────────────────────────────── */}
+  <section class="mkt-coming-soon">
+    <div class="container">
+      <div class="section-eyebrow">On the Roadmap</div>
+      <h2 class="mkt-section-title">Coming Soon</h2>
+      <span class="gold-line"></span>
+      <div class="mkt-roadmap">
+        <div class="mkt-roadmap-item">
+          <div class="mkt-roadmap-icon">🔍</div>
+          <h3>Advanced Filters</h3>
+          <p>Filter by horsepower, transmission type, drivetrain, body style, paint color, and more. Find exactly the Chevy you're looking for.</p>
+        </div>
+        <div class="mkt-roadmap-item">
+          <div class="mkt-roadmap-icon">💰</div>
+          <h3>Market Valuation Tool</h3>
+          <p>Real-time pricing data pulled from sold listings, auction results, and owner reports. Know what your Chevy is actually worth.</p>
+        </div>
+        <div class="mkt-roadmap-item">
+          <div class="mkt-roadmap-icon">🗺️</div>
+          <h3>Regional Marketplace</h3>
+          <p>Local listings filtered by distance. Find a Chevy within driving range for an in-person inspection.</p>
+        </div>
+        <div class="mkt-roadmap-item">
+          <div class="mkt-roadmap-icon">🔐</div>
+          <h3>Verified Sellers</h3>
+          <p>Optional verification for private sellers and dealers. Build trust, reduce fraud, make the whole platform safer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Coming soon</h2>
-  <ul>
-    <li>Build-of-the-Month affiliate pages (parts lists linked to our featured builds)</li>
-    <li>ChevyRoots merch (t-shirts, enamel pins, stickers) — launching with the first 10k newsletter subscribers</li>
-    <li>Community classifieds for builds, parts, and project cars</li>
-  </ul>
-</StaticPage>
+  <NewsletterCTA source="marketplace" />
+</BaseLayout>
+
+<style>
+  /* ── HERO ─────────────────────────────────────────────────── */
+  .mkt-hero {
+    padding: 80px 0 40px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 60%, var(--warm-gray) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .mkt-hero-stripe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--gold);
+  }
+  .mkt-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.75rem 0 1.5rem;
+  }
+  .mkt-hero-title em { font-style: italic; color: var(--gold); }
+  .mkt-hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 60ch;
+    margin-bottom: 2rem;
+  }
+  .mkt-hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(196, 160, 53, 0.2);
+    padding-top: 1.5rem;
+  }
+  .mkt-stat-num {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .mkt-stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.4rem;
+  }
+
+  /* ── FILTER BAR ──────────────────────────────────────────── */
+  .mkt-filters {
+    padding: 1rem 0;
+    background: var(--warm-gray);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 10;
+  }
+  .mkt-filters-inner {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .mkt-search {
+    flex: 1;
+    min-width: 200px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    background: var(--charcoal);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+  }
+  .mkt-search:focus { outline: none; border-color: var(--gold); }
+  .mkt-select {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    padding: 0.75rem 1rem;
+    background: var(--charcoal);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── LISTINGS ─────────────────────────────────────────────── */
+  .mkt-listings {
+    padding: var(--section-pad) 0;
+  }
+  .mkt-parts-section {
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+  }
+  .mkt-listings-header {
+    margin-bottom: 3rem;
+  }
+  .mkt-section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.5rem 0 0.5rem;
+  }
+  .mkt-section-desc {
+    color: var(--text-dim);
+    margin-top: 1rem;
+    max-width: 60ch;
+  }
+  .mkt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ── VEHICLE CARD ─────────────────────────────────────────── */
+  .mkt-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .mkt-parts-section .mkt-card { background: var(--charcoal); }
+  .mkt-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+  .mkt-card-img {
+    aspect-ratio: 4 / 3;
+    background-size: cover;
+    background-position: center;
+    background-color: #2a2a2a;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .mkt-card-badges {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    display: flex;
+    gap: 0.4rem;
+  }
+  .mkt-badge {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.55rem;
+    border-radius: 3px;
+  }
+  .mkt-badge-excellent { background: rgba(122, 220, 159, 0.2); color: #7adc9f; border: 1px solid rgba(122, 220, 159, 0.4); }
+  .mkt-badge-good { background: rgba(94, 183, 240, 0.2); color: #5eb7f0; border: 1px solid rgba(94, 183, 240, 0.4); }
+  .mkt-badge-fair { background: rgba(230, 126, 34, 0.2); color: #f1a663; border: 1px solid rgba(230, 126, 34, 0.4); }
+  .mkt-badge-project { background: rgba(224, 108, 90, 0.2); color: #e06c5a; border: 1px solid rgba(224, 108, 90, 0.4); }
+  .mkt-badge-seller { background: rgba(0,0,0,0.7); color: var(--gold); border: 1px solid rgba(196, 160, 53, 0.4); }
+  .mkt-card-body { padding: 1.5rem; }
+  .mkt-card-tags {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+  .mkt-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.55rem;
+    border-radius: 3px;
+    background: rgba(196, 160, 53, 0.1);
+    color: var(--gold);
+    border: 1px solid rgba(196, 160, 53, 0.3);
+  }
+  .mkt-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .mkt-card-price {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .mkt-card-meta {
+    display: flex;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--light-gray);
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .mkt-card-meta strong { color: var(--off-white); }
+  .mkt-card-notes {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .mkt-card-cta {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    width: 100%;
+  }
+
+  /* ── PARTS ────────────────────────────────────────────────── */
+  .mkt-parts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .mkt-part-card {
+    padding: 1.5rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition);
+  }
+  .mkt-part-card:hover { transform: translateY(-3px); }
+  .mkt-part-category {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .mkt-part-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+  .mkt-part-fits {
+    font-size: 0.78rem;
+    color: var(--light-gray);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .mkt-part-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .mkt-part-price {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--gold);
+  }
+  .mkt-part-condition {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .mkt-part-cta {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  /* ── SELLER CTA ──────────────────────────────────────────── */
+  .mkt-seller-cta {
+    padding: var(--section-pad) 0;
+    background: linear-gradient(180deg, var(--warm-gray) 0%, #1f1a0e 100%);
+  }
+  .mkt-seller-inner {
+    text-align: center;
+  }
+  .mkt-seller-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.75rem 0 1rem;
+  }
+  .mkt-seller-title em { font-style: italic; color: var(--gold); }
+  .mkt-seller-inner .gold-line { margin: 1rem auto 1.5rem; }
+  .mkt-seller-desc {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 60ch;
+    margin: 0 auto 2.5rem;
+  }
+  .mkt-seller-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto 2.5rem;
+    text-align: left;
+  }
+  .mkt-seller-features > div {
+    padding: 1.75rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .mkt-feature-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .mkt-feature-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .mkt-seller-features p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* ── ROADMAP ──────────────────────────────────────────────── */
+  .mkt-coming-soon {
+    padding: var(--section-pad) 0;
+  }
+  .mkt-roadmap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .mkt-roadmap-item {
+    padding: 2rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .mkt-roadmap-icon {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  .mkt-roadmap-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .mkt-roadmap-item p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+</style>

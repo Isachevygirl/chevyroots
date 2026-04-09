@@ -2,74 +2,395 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import NewsletterCTA from '@components/NewsletterCTA.astro';
 import { vintageAds } from '@lib/data';
+
+// Compute decade range
+const decades = Array.from(
+  new Set(
+    vintageAds
+      .map((ad) => {
+        if (ad.decade) return String(ad.decade);
+        if (ad.year) {
+          const y = typeof ad.year === 'number' ? ad.year : parseInt(String(ad.year), 10);
+          if (!isNaN(y)) return `${Math.floor(y / 10) * 10}s`;
+        }
+        return null;
+      })
+      .filter((d): d is string => !!d),
+  ),
+).sort();
+
+// Compute model list for filter
+const modelSet = new Set<string>();
+vintageAds.forEach((ad) => {
+  if (ad.model) modelSet.add(ad.model);
+});
+const models = Array.from(modelSet).sort();
+
+const earliestYear = vintageAds.reduce((min, ad) => {
+  const y = typeof ad.year === 'number' ? ad.year : parseInt(String(ad.year || ''), 10);
+  if (isNaN(y)) return min;
+  return y < min ? y : min;
+}, 9999);
+const latestYear = vintageAds.reduce((max, ad) => {
+  const y = typeof ad.year === 'number' ? ad.year : parseInt(String(ad.year || ''), 10);
+  if (isNaN(y)) return max;
+  return y > max ? y : max;
+}, 0);
 ---
 
 <BaseLayout
-  title="Vintage Chevrolet Ads — Every Decade, Every Model | ChevyRoots"
-  description={`${vintageAds.length} restored Chevrolet advertisements from the 1910s to the 1990s. Original scans, full captions, grouped by decade and model. A visual history of how Chevy sold America the dream.`}
+  title="Vintage Chevrolet Ads — Searchable Archive by Decade | ChevyRoots"
+  description={`${vintageAds.length} restored Chevrolet advertisements from ${earliestYear} to ${latestYear}. Searchable by decade, model, and era. Print ads, magazine spreads, brochures, and TV stills from over a century of Chevy marketing.`}
 >
-  <header class="ads-header">
+  {/* ── HERO ──────────────────────────────────────────── */}
+  <section class="ads-hero">
     <div class="container">
-      <p class="section-eyebrow">Visual History</p>
-      <h1 class="ads-title">Vintage <em>Chevrolet Ads</em></h1>
+      <div class="section-eyebrow">// Chevrolet Advertising Archive</div>
+      <h1 class="ads-title">Vintage<br /><span class="gold">Chevy</span> <em>Ads</em></h1>
       <span class="gold-line"></span>
-      <p class="ads-lede">
-        {vintageAds.length} restored Chevrolet advertisements from the 1910s through the 1990s. Original print ads, magazine spreads, dealership brochures — the visual story of how Chevy sold America the dream, one decade at a time.
+      <p class="ads-sub">
+        Over a century of Chevrolet advertising history in one place. From the earliest newspaper ads of {earliestYear} to modern campaigns — every tagline, every era, every story that helped build America's favorite car brand.
       </p>
+      <div class="ads-hero-stats">
+        <div class="hero-stat-item">
+          <span class="hero-stat-value">{vintageAds.length}</span>
+          <span class="hero-stat-label">Historic Ads</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-value">{decades.length}</span>
+          <span class="hero-stat-label">Decades Covered</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-value">{earliestYear}</span>
+          <span class="hero-stat-label">Earliest Ad</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-value">{latestYear}</span>
+          <span class="hero-stat-label">Latest Ad</span>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <div class="ads-body">
+  {/* ── DECADE TIMELINE ───────────────────────────────── */}
+  <div class="timeline-bar">
     <div class="container">
-      <div class="ads-grid">
-        {vintageAds.slice(0, 60).map((ad) => (
-          <figure class="ad-card">
-            {ad.image && <img src={ad.image.startsWith('/') ? ad.image : `/${ad.image}`} alt={ad.title || 'Vintage Chevrolet advertisement'} loading="lazy" />}
-            <figcaption>
-              <div class="ad-year">{ad.year || ad.decade}</div>
-              <div class="ad-title">{ad.title || 'Chevrolet Advertisement'}</div>
-              {ad.model && <div class="ad-model">{ad.model}</div>}
-            </figcaption>
-          </figure>
+      <div class="timeline-tabs" id="decadeTabs">
+        <button class="decade-tab active" data-decade="all">All Eras</button>
+        {decades.map((dec) => (
+          <button class="decade-tab" data-decade={dec}>{dec}</button>
         ))}
       </div>
-
-      {vintageAds.length > 60 && (
-        <p class="ads-more">
-          Showing the first 60 of {vintageAds.length} ads. Full archive with filters and search coming soon.
-        </p>
-      )}
     </div>
   </div>
+
+  {/* ── FILTER BAR ─────────────────────────────────────── */}
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-inner">
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input type="text" id="searchInput" placeholder="Search by tagline, model, year..." aria-label="Search advertisements" />
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="filterModel">Model</label>
+          <select class="filter-select" id="filterModel">
+            <option value="all">All Models</option>
+            {models.map((m) => <option value={m}>{m}</option>)}
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="sortSelect">Sort</label>
+          <select class="filter-select" id="sortSelect">
+            <option value="year-asc">Oldest First</option>
+            <option value="year-desc">Newest First</option>
+          </select>
+        </div>
+        <span class="results-count" id="resultsCount">{vintageAds.length} ads</span>
+      </div>
+    </div>
+  </section>
+
+  {/* ── GALLERY ─────────────────────────────────────── */}
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-grid" id="galleryGrid">
+        {vintageAds.map((ad) => {
+          const y = typeof ad.year === 'number' ? ad.year : parseInt(String(ad.year || ''), 10);
+          const decadeCalc = !isNaN(y) ? `${Math.floor(y / 10) * 10}s` : String(ad.decade || '');
+          return (
+            <figure
+              class="ad-card"
+              data-decade={decadeCalc}
+              data-model={ad.model || ''}
+              data-year={ad.year || ''}
+              data-search={`${ad.title || ''} ${ad.model || ''} ${ad.year || ''} ${ad.description || ''} ${(ad as any).tagline || ''}`.toLowerCase()}
+            >
+              {ad.image && (
+                <img
+                  src={ad.image.startsWith('/') ? ad.image : `/${ad.image}`}
+                  alt={ad.title || `Vintage Chevrolet advertisement from ${ad.year || ad.decade}`}
+                  loading="lazy"
+                />
+              )}
+              <figcaption>
+                <div class="ad-year">{ad.year || ad.decade}</div>
+                <div class="ad-title">{ad.title || 'Chevrolet Advertisement'}</div>
+                {ad.model && <div class="ad-model">{ad.model}</div>}
+                {(ad as any).tagline && <div class="ad-tagline">"{(ad as any).tagline}"</div>}
+              </figcaption>
+            </figure>
+          );
+        })}
+      </div>
+      <div class="empty-state" id="emptyState" hidden>
+        <div class="empty-icon">⚙</div>
+        <h3>No Ads Found</h3>
+        <p>Try adjusting your search or filters to find what you're looking for.</p>
+      </div>
+    </div>
+  </section>
 
   <NewsletterCTA source="vintage-ads" />
 </BaseLayout>
 
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.decade-tab');
+  const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+  const modelSelect = document.getElementById('filterModel') as HTMLSelectElement;
+  const sortSelect = document.getElementById('sortSelect') as HTMLSelectElement;
+  const gallery = document.getElementById('galleryGrid') as HTMLDivElement;
+  const emptyState = document.getElementById('emptyState') as HTMLDivElement;
+  const resultsCount = document.getElementById('resultsCount') as HTMLSpanElement;
+
+  let currentDecade = 'all';
+
+  function applyFilters() {
+    const search = searchInput.value.toLowerCase().trim();
+    const model = modelSelect.value;
+    const cards = gallery.querySelectorAll<HTMLElement>('.ad-card');
+    let visible = 0;
+    cards.forEach((card) => {
+      const cardDecade = card.dataset.decade || '';
+      const cardModel = card.dataset.model || '';
+      const cardSearch = card.dataset.search || '';
+      const matchDecade = currentDecade === 'all' || cardDecade === currentDecade;
+      const matchModel = model === 'all' || cardModel === model;
+      const matchSearch = !search || cardSearch.includes(search);
+      if (matchDecade && matchModel && matchSearch) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    resultsCount.textContent = `${visible} ad${visible === 1 ? '' : 's'}`;
+    emptyState.hidden = visible > 0;
+    gallery.style.display = visible > 0 ? '' : 'none';
+  }
+
+  function applySort() {
+    const sortBy = sortSelect.value;
+    const cards = Array.from(gallery.querySelectorAll<HTMLElement>('.ad-card'));
+    cards.sort((a, b) => {
+      const ya = parseInt(a.dataset.year || '0', 10);
+      const yb = parseInt(b.dataset.year || '0', 10);
+      return sortBy === 'year-desc' ? yb - ya : ya - yb;
+    });
+    cards.forEach((card) => gallery.appendChild(card));
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentDecade = tab.dataset.decade || 'all';
+      applyFilters();
+    });
+  });
+
+  searchInput?.addEventListener('input', applyFilters);
+  modelSelect?.addEventListener('change', applyFilters);
+  sortSelect?.addEventListener('change', () => {
+    applySort();
+    applyFilters();
+  });
+
+  // Initial sort
+  applySort();
+</script>
+
 <style>
-  .ads-header {
+  /* ── HERO ──────────────────────────────────────────── */
+  .ads-hero {
     padding: 80px 0 50px;
-    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 50%, var(--warm-gray) 100%);
   }
   .ads-title {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 900;
-    line-height: 1;
+    line-height: 0.9;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     color: var(--off-white);
-    margin-top: 0.75rem;
+    margin: 0.75rem 0 1.5rem;
   }
+  .ads-title .gold { color: var(--gold); }
   .ads-title em { font-style: italic; color: var(--gold); }
-  .ads-lede {
+  .ads-sub {
     font-size: 1.1rem;
     color: var(--text-dim);
     line-height: 1.7;
-    max-width: 72ch;
+    max-width: 66ch;
     margin-top: 1.5rem;
   }
-  .ads-body { padding: 60px 0 80px; }
-  .ads-grid {
+  .ads-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(196, 160, 53, 0.2);
+    max-width: 720px;
+  }
+  .hero-stat-value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.4rem;
+  }
+
+  /* ── TIMELINE TABS ─────────────────────────────────── */
+  .timeline-bar {
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 10;
+  }
+  .timeline-tabs {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .timeline-tabs::-webkit-scrollbar { display: none; }
+  .decade-tab {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.25rem;
+    background: var(--charcoal);
+    color: var(--light-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all var(--transition);
+  }
+  .decade-tab:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+  .decade-tab.active {
+    background: var(--gold);
+    color: var(--charcoal);
+    border-color: var(--gold);
+  }
+
+  /* ── FILTER BAR ───────────────────────────────────── */
+  .filter-section {
+    padding: 1.5rem 0;
+    background: var(--charcoal);
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-inner {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .search-box {
+    flex: 1;
+    min-width: 240px;
+    position: relative;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+  }
+  .search-box input:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 1rem;
+    pointer-events: none;
+  }
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .filter-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .filter-select {
+    padding: 0.6rem 1rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    min-width: 140px;
+  }
+  .results-count {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-left: auto;
+  }
+
+  /* ── GALLERY ──────────────────────────────────────── */
+  .gallery-section {
+    padding: 3rem 0 var(--section-pad);
+  }
+  .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 1.5rem;
@@ -79,10 +400,13 @@ import { vintageAds } from '@lib/data';
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
-    transition: border-color var(--transition);
     margin: 0;
+    transition: border-color var(--transition), transform var(--transition);
   }
-  .ad-card:hover { border-color: var(--gold); }
+  .ad-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
   .ad-card img {
     width: 100%;
     aspect-ratio: 3 / 4;
@@ -90,36 +414,48 @@ import { vintageAds } from '@lib/data';
     background: var(--charcoal);
   }
   .ad-card figcaption {
-    padding: 1rem;
+    padding: 1rem 1.25rem;
   }
   .ad-year {
     font-family: var(--font-mono);
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     color: var(--gold);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.35rem;
   }
   .ad-title {
     font-family: var(--font-heading);
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.92rem;
+    font-weight: 700;
     color: var(--off-white);
     text-transform: uppercase;
-    letter-spacing: 0.02em;
-    line-height: 1.2;
-    margin-bottom: 0.3rem;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
   }
   .ad-model {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     color: var(--light-gray);
+    margin-bottom: 0.3rem;
   }
-  .ads-more {
+  .ad-tagline {
+    font-size: 0.72rem;
+    color: var(--gold);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+
+  .empty-state {
     text-align: center;
+    padding: 4rem 2rem;
     color: var(--text-dim);
-    font-size: 0.95rem;
-    margin-top: 3rem;
-    padding: 1.5rem;
-    background: var(--warm-gray);
-    border-radius: var(--radius);
+  }
+  .empty-icon { font-size: 3rem; color: var(--gold); margin-bottom: 1rem; }
+  .empty-state h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
   }
 </style>

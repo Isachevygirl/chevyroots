@@ -24,7 +24,7 @@ import { vintageAds } from '@lib/data';
       <div class="ads-grid">
         {vintageAds.slice(0, 60).map((ad) => (
           <figure class="ad-card">
-            {ad.image && <img src={ad.image} alt={ad.title || 'Vintage Chevrolet advertisement'} loading="lazy" />}
+            {ad.image && <img src={ad.image.startsWith('/') ? ad.image : `/${ad.image}`} alt={ad.title || 'Vintage Chevrolet advertisement'} loading="lazy" />}
             <figcaption>
               <div class="ad-year">{ad.year || ad.decade}</div>
               <div class="ad-title">{ad.title || 'Chevrolet Advertisement'}</div>

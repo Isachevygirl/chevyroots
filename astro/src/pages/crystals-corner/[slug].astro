@@ -1,0 +1,111 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('crystals-corner');
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data;
+
+const publishedDate = data.published.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout
+  title={`${data.title} | Crystal's Corner | ChevyRoots`}
+  description={data.description}
+  ogType="article"
+  ogImage={data.heroImage || '/photos/crystal/crystal-silverado-zr2-hero.jpg'}
+>
+  <header class="corner-post-header">
+    <div class="container container-narrow">
+      <p class="section-eyebrow">Crystal's Corner · {publishedDate}</p>
+      <h1 class="corner-post-title">{data.title}</h1>
+      <span class="gold-line"></span>
+      {data.excerpt && <p class="corner-post-excerpt">{data.excerpt}</p>}
+    </div>
+  </header>
+
+  <article class="corner-post-body">
+    <div class="container container-narrow">
+      <Content />
+    </div>
+  </article>
+
+  <NewsletterCTA
+    source={`corner-${entry.id}`}
+    heading="Don't miss the next column"
+    subheading="Crystal's Corner goes out every Friday. Plus new guides, event reports, and community builds. Subscribe to the newsletter."
+  />
+</BaseLayout>
+
+<style>
+  .corner-post-header {
+    padding: 80px 0 40px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 100%);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.2);
+  }
+  .corner-post-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .corner-post-excerpt {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-top: 2rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--gold);
+  }
+  .corner-post-body {
+    padding: 60px 0 80px;
+  }
+  .corner-post-body :global(h2) {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    margin: 3rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--gold);
+  }
+  .corner-post-body :global(p) {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .corner-post-body :global(p strong) { color: var(--off-white); }
+  .corner-post-body :global(ul),
+  .corner-post-body :global(ol) {
+    color: var(--text-dim);
+    margin: 0 0 1.5rem 1.5rem;
+    line-height: 1.75;
+    font-size: 1.05rem;
+  }
+  .corner-post-body :global(li) { margin-bottom: 0.75rem; }
+  .corner-post-body :global(a) {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+</style>

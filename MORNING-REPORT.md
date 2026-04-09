@@ -73,10 +73,45 @@ Restored the final 4 hub pages:
 **Features still to build:**
 - Vintage ads lightbox with prev/next navigation (I did the filtering
   but skipped the lightbox modal)
-- `/search` page — site-wide search
-- Compare pages (`/compare/silverado-vs-ram-1500` etc.) — programmatic
-- More Crystal's Corner columns (4 more are teased on the hub)
-- Model history pages (`/models/{slug}/history`)
+~~- `/search` page — site-wide search~~ ✅ DONE (loop #2)
+~~- Compare pages (`/compare/silverado-vs-ram-1500` etc.) — programmatic~~ ✅ DONE (loop #2)
+~~- More Crystal's Corner columns (4 more are teased on the hub)~~ 🟡 PARTIAL (loop #2 added #3)
+- Model history pages (`/models/{slug}/history`) — needs hand-writing per model
+- JSON-LD BreadcrumbList on guide pages
+- Sitemap HTML for humans ~~(still TBD)~~ ✅ DONE (loop #2)
+
+### Loop #2 recap (fired ~01:47, completed ~01:53, 4 commits)
+
+Moved from Priority 1 (hub restoration) to Priority 2 (features +
+programmatic SEO). Added 38 new pages. Total went from 142 → 180.
+
+| # | What | Pages added |
+|---|---|---|
+| 1 | Programmatic compare pages (`/compare/[pair]/`) | +35 |
+| 2 | `/search` full-page client-side site search with scoring, filter pills, and quick-query links | +1 |
+| 3 | `/sitemap` human-readable HTML sitemap organizing every page by section | +1 |
+| 4 | "610 Cruisers: My First Chevy Meet in Virginia" column (3rd Crystal's Corner post) | +1 |
+
+Compare pages breakdown:
+- **28 auto-generated Chevy-vs-Chevy** within-category matchups
+  (trucks vs trucks, SUVs vs SUVs, etc.) with winner-highlighted
+  spec tables from vehicles.json
+- **7 curated Chevy-vs-competitor** head-to-heads with pros/cons
+  grids and honest verdicts:
+  * Silverado 1500 vs. Ram 1500
+  * Silverado 1500 vs. Ford F-150
+  * Camaro vs. Ford Mustang
+  * Corvette Stingray vs. Porsche 911
+  * Tahoe vs. Ford Expedition
+  * Equinox EV vs. Tesla Model Y
+  * Colorado ZR2 vs. Tacoma TRD Pro
+
+Data is in `src/data/compare-competitors.json` so new matchups can
+be added as one-line edits without touching the template.
+
+Search index ships as pre-built JSON (guides + models + columns +
+mechanics + events), all filtering/scoring runs client-side. Zero
+server calls, zero tracking. Deep-linkable via `?q=corvette`.
 
 ---
 

@@ -1,0 +1,96 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+---
+
+<BaseLayout
+  title="Community Chevy Builds — Submit Your Truck or Car | ChevyRoots"
+  description="Real Chevy builds from real owners. Restomods, LS swaps, pro-touring classics, lifted trucks, daily drivers with personality. Submit your build to be featured."
+>
+  <header class="builds-header">
+    <div class="container">
+      <p class="section-eyebrow">Community Gallery</p>
+      <h1 class="builds-title">Community <em>Builds</em></h1>
+      <span class="gold-line"></span>
+      <p class="builds-lede">
+        Real builds from real Chevy owners. Restomods, LS swaps, lifted Silverados, frame-off classics, daily drivers with character. If you built it, we want to see it.
+      </p>
+      <div class="builds-ctas">
+        <a href="/submit/build/" class="btn btn-gold">Submit Your Build</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="builds-body">
+    <div class="container container-narrow">
+      <div class="coming-soon">
+        <h2>Build gallery launching soon</h2>
+        <p>
+          We're collecting the first batch of community builds right now. If you've got a Chevy you're proud of —
+          a frame-off restoration, an LS swap, a lifted truck, a track-day Camaro, or the daily driver you love —
+          <a href="/submit/build/">submit it here</a>.
+        </p>
+        <p>
+          Every featured build gets: photo gallery, full spec sheet, your story in your words, social media links, and a permanent home on ChevyRoots.
+        </p>
+        <p>
+          First featured builds will publish as soon as Crystal approves them. Subscribe below to get notified when the gallery opens.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <NewsletterCTA source="builds-index" />
+</BaseLayout>
+
+<style>
+  .builds-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+  }
+  .builds-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .builds-title em { font-style: italic; color: var(--gold); }
+  .builds-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 62ch;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .builds-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .builds-body { padding: 60px 0 80px; }
+  .coming-soon {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .coming-soon h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .coming-soon p {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin: 0 auto 1rem;
+    max-width: 56ch;
+  }
+  .coming-soon a { color: var(--gold); text-decoration: underline; }
+</style>

@@ -1,0 +1,173 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { eventsByRegion } from '@lib/data';
+
+const REGIONS: Record<string, { label: string; desc: string }> = {
+  midwest: { label: 'Midwest', desc: 'IL, IN, OH, MI, WI, MN, IA, MO, KS, NE, ND, SD' },
+  northeast: { label: 'Northeast', desc: 'NY, PA, MA, CT, NJ, MD, VA, NC, SC' },
+  southwest: { label: 'Texas & Southwest', desc: 'TX, AZ, NM, CO, NV, UT' },
+};
+
+export async function getStaticPaths() {
+  return ['midwest', 'northeast', 'southwest'].map((region) => ({
+    params: { region },
+  }));
+}
+
+const { region } = Astro.params;
+const info = REGIONS[region!];
+if (!info) return Astro.redirect('/events/');
+
+const events = eventsByRegion(region!);
+---
+
+<BaseLayout
+  title={`${info.label} Chevy Events Calendar — Car Shows & Cruises | ChevyRoots`}
+  description={`Every Chevy-friendly car show, cruise night, and event in the ${info.label} region. From local meets to major national shows. ${events.length} events listed.`}
+>
+  <header class="region-header">
+    <div class="container">
+      <p class="section-eyebrow">{events.length} Events · {info.desc}</p>
+      <h1 class="region-title">{info.label} <em>Events</em></h1>
+      <span class="gold-line"></span>
+      <p class="region-lede">
+        Every Chevy-friendly car show, cruise night, swap meet, and race we could find in the {info.label} region. Dates, locations, and links to the official event page where available.
+      </p>
+    </div>
+  </header>
+
+  <div class="region-body">
+    <div class="container">
+      <div class="events-list">
+        {events.map((event) => (
+          <article class="event-item">
+            <div class="event-date">{event.dates}</div>
+            <div class="event-main">
+              <h2 class="event-name">{event.name}</h2>
+              <div class="event-loc">
+                <strong>{event.location.venue || 'Location TBA'}</strong> · {event.location.city}, {event.location.state}
+              </div>
+              {event.description && <p class="event-desc">{event.description}</p>}
+              <div class="event-meta">
+                <span class="event-type">{event.type}</span>
+                {event.chevy_specific && <span class="event-chevy">Chevy-focused</span>}
+                {event.url && <a href={event.url} class="event-link" target="_blank" rel="noopener">Official page →</a>}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {events.length === 0 && (
+        <p class="empty">No events yet for this region. <a href="/submit/event/">Know of one? Submit it.</a></p>
+      )}
+    </div>
+  </div>
+
+  <NewsletterCTA source={`events-${region}`} />
+</BaseLayout>
+
+<style>
+  .region-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+  }
+  .region-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .region-title em { font-style: italic; color: var(--gold); }
+  .region-lede {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 72ch;
+    margin-top: 1.5rem;
+  }
+  .region-body { padding: 60px 0 80px; }
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .event-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition);
+  }
+  .event-item:hover {
+    border-color: var(--gold);
+  }
+  .event-date {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .event-name {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .event-loc {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    margin-bottom: 0.75rem;
+  }
+  .event-loc strong {
+    color: var(--off-white);
+  }
+  .event-desc {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+  .event-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .event-type { color: var(--light-gray); }
+  .event-chevy {
+    color: var(--gold);
+    background: rgba(196, 160, 53, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+  }
+  .event-link { color: var(--gold); }
+  .empty {
+    padding: 3rem;
+    text-align: center;
+    color: var(--text-dim);
+    background: var(--warm-gray);
+    border-radius: var(--radius-lg);
+  }
+  .empty a { color: var(--gold); }
+  @media (max-width: 720px) {
+    .event-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+</style>

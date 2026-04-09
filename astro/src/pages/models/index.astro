@@ -1,0 +1,176 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { vehicles, CATEGORIES } from '@lib/data';
+
+// Group vehicles by category
+const grouped: Record<string, typeof vehicles> = {};
+for (const v of vehicles) {
+  const key = v.category;
+  if (!grouped[key]) grouped[key] = [];
+  grouped[key].push(v);
+}
+
+const categoryOrder = ['truck', 'car', 'suv', 'ev', 'classic'];
+---
+
+<BaseLayout
+  title="All Chevrolet Models | Trucks, Cars, SUVs, EVs, Classics | ChevyRoots"
+  description="Every Chevrolet model we cover, organized by category. Trim data, known issues, photos, buyer's guides, and honest takes on each one."
+>
+  <header class="models-header">
+    <div class="container">
+      <p class="section-eyebrow">Every Chevy</p>
+      <h1 class="models-title">Models &amp; <em>Lineups</em></h1>
+      <span class="gold-line"></span>
+      <p class="models-lede">
+        {vehicles.length} Chevrolet models covered in depth — trims, engines, towing specs, known issues by year, photos from our 2,000+ image library, and the buyer's guides that help you decide.
+      </p>
+    </div>
+  </header>
+
+  <div class="models-body">
+    <div class="container">
+      {categoryOrder.filter((c) => grouped[c]?.length).map((cat) => {
+        const catInfo = CATEGORIES[cat];
+        return (
+          <section class="cat-section">
+            <div class="cat-header">
+              <div>
+                <h2 class="cat-title">{catInfo?.label || cat}</h2>
+                <p class="cat-desc">{catInfo?.description}</p>
+              </div>
+              {catInfo && <a href={`/models/${catInfo.slug}/`} class="btn btn-outline">View Category</a>}
+            </div>
+            <div class="models-grid">
+              {grouped[cat].map((v) => (
+                <a href={`/models/${v.slug}/`} class="model-card">
+                  <div class="model-card-body">
+                    <h3 class="model-card-title">{v.model}</h3>
+                    <div class="model-card-years">
+                      {v.years.length} year{v.years.length !== 1 ? 's' : ''} covered
+                    </div>
+                    {v.years[0] && (
+                      <div class="model-card-msrp">
+                        From ${v.years[0].starting_msrp?.toLocaleString() || '—'}
+                      </div>
+                    )}
+                  </div>
+                  <div class="model-card-arrow">→</div>
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  </div>
+
+  <NewsletterCTA source="models-index" />
+</BaseLayout>
+
+<style>
+  .models-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.15);
+  }
+  .models-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .models-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .models-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 72ch;
+    margin-top: 1.5rem;
+  }
+  .models-body {
+    padding: 60px 0 80px;
+  }
+  .cat-section {
+    margin-bottom: 4rem;
+  }
+  .cat-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--gold);
+  }
+  .cat-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+  }
+  .cat-desc {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+  }
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .model-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .model-card:hover {
+    border-color: var(--gold);
+    transform: translateX(4px);
+  }
+  .model-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.35rem;
+  }
+  .model-card-years {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .model-card-msrp {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--gold);
+    margin-top: 0.2rem;
+  }
+  .model-card-arrow {
+    font-size: 1.4rem;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+</style>

@@ -1,0 +1,105 @@
+---
+import StaticPage from '@layouts/StaticPage.astro';
+---
+
+<StaticPage
+  title="Contact ChevyRoots"
+  description="Get in touch with Crystal and the ChevyRoots team. Editorial questions, partnerships, corrections, or just to say hi."
+  eyebrow="Connect"
+  heading="Contact Us"
+  showNewsletter={false}
+>
+  <p>Got a question, a correction, a story tip, a partnership idea, or just want to say hi? We read every email.</p>
+
+  <h2>Send us a message</h2>
+
+  <form class="contact-form" action="/api/contact" method="POST">
+    <div class="field">
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name" required autocomplete="name" />
+    </div>
+
+    <div class="field">
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" required autocomplete="email" />
+    </div>
+
+    <div class="field">
+      <label for="topic">Topic</label>
+      <select id="topic" name="topic" required>
+        <option value="">Select a topic…</option>
+        <option value="editorial">Editorial / story tip / correction</option>
+        <option value="partnership">Partnership / advertising</option>
+        <option value="build-submission">Build submission help</option>
+        <option value="event">Event to add to the calendar</option>
+        <option value="mechanic">Mechanic listing</option>
+        <option value="general">General / other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Your message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-gold">Send Message</button>
+  </form>
+
+  <h2>Direct email</h2>
+  <p>
+    General inquiries: <a href="mailto:hello@chevyroots.com">hello@chevyroots.com</a><br />
+    Partnerships: <a href="mailto:hello@chevyroots.com?subject=Partnership%20Inquiry">hello@chevyroots.com</a><br />
+    Content removal / takedowns: <a href="mailto:takedown@chevyroots.com">takedown@chevyroots.com</a>
+  </p>
+
+  <h2>Social</h2>
+  <p>You can also reach Crystal on Instagram, TikTok, and YouTube — the social links are in the footer.</p>
+</StaticPage>
+
+<style>
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 560px;
+    margin: 1.5rem 0 3rem;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .field label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.85rem 1rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+    transition: border-color var(--transition);
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .field textarea {
+    resize: vertical;
+    font-family: var(--font-body);
+  }
+  button[type='submit'] {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+</style>

@@ -1,0 +1,125 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { vintageAds } from '@lib/data';
+---
+
+<BaseLayout
+  title="Vintage Chevrolet Ads — Every Decade, Every Model | ChevyRoots"
+  description={`${vintageAds.length} restored Chevrolet advertisements from the 1910s to the 1990s. Original scans, full captions, grouped by decade and model. A visual history of how Chevy sold America the dream.`}
+>
+  <header class="ads-header">
+    <div class="container">
+      <p class="section-eyebrow">Visual History</p>
+      <h1 class="ads-title">Vintage <em>Chevrolet Ads</em></h1>
+      <span class="gold-line"></span>
+      <p class="ads-lede">
+        {vintageAds.length} restored Chevrolet advertisements from the 1910s through the 1990s. Original print ads, magazine spreads, dealership brochures — the visual story of how Chevy sold America the dream, one decade at a time.
+      </p>
+    </div>
+  </header>
+
+  <div class="ads-body">
+    <div class="container">
+      <div class="ads-grid">
+        {vintageAds.slice(0, 60).map((ad) => (
+          <figure class="ad-card">
+            {ad.image && <img src={ad.image} alt={ad.title || 'Vintage Chevrolet advertisement'} loading="lazy" />}
+            <figcaption>
+              <div class="ad-year">{ad.year || ad.decade}</div>
+              <div class="ad-title">{ad.title || 'Chevrolet Advertisement'}</div>
+              {ad.model && <div class="ad-model">{ad.model}</div>}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      {vintageAds.length > 60 && (
+        <p class="ads-more">
+          Showing the first 60 of {vintageAds.length} ads. Full archive with filters and search coming soon.
+        </p>
+      )}
+    </div>
+  </div>
+
+  <NewsletterCTA source="vintage-ads" />
+</BaseLayout>
+
+<style>
+  .ads-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+  }
+  .ads-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .ads-title em { font-style: italic; color: var(--gold); }
+  .ads-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 72ch;
+    margin-top: 1.5rem;
+  }
+  .ads-body { padding: 60px 0 80px; }
+  .ads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .ad-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color var(--transition);
+    margin: 0;
+  }
+  .ad-card:hover { border-color: var(--gold); }
+  .ad-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background: var(--charcoal);
+  }
+  .ad-card figcaption {
+    padding: 1rem;
+  }
+  .ad-year {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .ad-title {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--off-white);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+  .ad-model {
+    font-size: 0.78rem;
+    color: var(--light-gray);
+  }
+  .ads-more {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--warm-gray);
+    border-radius: var(--radius);
+  }
+</style>

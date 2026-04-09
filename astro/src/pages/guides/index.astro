@@ -1,0 +1,193 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { getCollection } from 'astro:content';
+
+const guides = await getCollection('guides', (entry) => !entry.data.noindex);
+
+// Sort by revenue priority first, then by published date
+const sortedGuides = guides.sort((a, b) => {
+  const priDelta = (b.data.revenuePriority || 0) - (a.data.revenuePriority || 0);
+  if (priDelta !== 0) return priDelta;
+  return b.data.published.getTime() - a.data.published.getTime();
+});
+
+// Group by cluster
+const byCluster: Record<string, typeof guides> = {};
+for (const g of sortedGuides) {
+  const key = g.data.cluster;
+  if (!byCluster[key]) byCluster[key] = [];
+  byCluster[key].push(g);
+}
+
+const clusterOrder = [
+  'Silverado Buyer Funnel',
+  'Affiliate Density',
+  'My ZR2',
+  'Performance & Classic',
+  'EV Cluster',
+  'Insurance & Ownership',
+  'Maintenance',
+  'History',
+  'Comparison',
+  'Lifestyle & Culture',
+  'Other',
+];
+---
+
+<BaseLayout
+  title="Chevy Buyer's Guides & How-Tos | ChevyRoots"
+  description="Every ChevyRoots guide in one place — buyer's guides, negotiation tips, mod walkthroughs, maintenance schedules, history deep-dives, and the honest takes you won't find on a dealer site."
+>
+  <header class="guides-header">
+    <div class="container">
+      <p class="section-eyebrow">The Library</p>
+      <h1 class="guides-title">Chevy <em>Guides</em></h1>
+      <span class="gold-line"></span>
+      <p class="guides-lede">
+        {guides.length} honest, photo-rich guides covering everything from Silverado lease deals to C8 Corvette buying strategy to LS swap walkthroughs. Every one is written to help you make a better decision, not push you toward a dealer.
+      </p>
+    </div>
+  </header>
+
+  <div class="guides-body">
+    <div class="container">
+      {clusterOrder.filter((c) => byCluster[c]?.length).map((cluster) => (
+        <section class="cluster-section">
+          <h2 class="cluster-heading">{cluster}</h2>
+          <div class="guides-grid">
+            {byCluster[cluster].map((guide) => (
+              <a href={`/guides/${guide.id}/`} class="guide-card">
+                {guide.data.heroImage && (
+                  <div class="guide-card-img" style={`background-image: url('${guide.data.heroImage}');`} aria-hidden="true"></div>
+                )}
+                <div class="guide-card-body">
+                  <div class="guide-card-eyebrow">{guide.data.eyebrow}</div>
+                  <h3 class="guide-card-title">{guide.data.title}</h3>
+                  <p class="guide-card-desc">{guide.data.description}</p>
+                  <div class="guide-card-meta">
+                    <span>By {guide.data.author}</span>
+                    {guide.data.readingTime && <span>· {guide.data.readingTime} min read</span>}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+
+  <NewsletterCTA source="guides-index" />
+</BaseLayout>
+
+<style>
+  .guides-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.15);
+  }
+  .guides-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .guides-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .guides-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 72ch;
+    margin-top: 1.5rem;
+  }
+  .guides-body {
+    padding: 60px 0 80px;
+  }
+  .cluster-section {
+    margin-bottom: 4rem;
+  }
+  .cluster-heading {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--gold);
+  }
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .guide-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    transition: border-color var(--transition), transform var(--transition);
+    display: flex;
+    flex-direction: column;
+  }
+  .guide-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+  .guide-card-img {
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .guide-card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .guide-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .guide-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .guide-card-desc {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+  .guide-card-meta {
+    display: flex;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+</style>

@@ -1,0 +1,202 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { vehicles } from '@lib/data';
+
+const guides = await getCollection('guides');
+const guidesCount = guides.length;
+const modelsCount = vehicles.length;
+---
+
+<BaseLayout
+  title="Press Kit — ChevyRoots"
+  description="Press kit for ChevyRoots — media contacts, logo files, bio, stats, and partnership opportunities. For journalists, brands, and dealers."
+  ogImage="/photos/crystal/crystal-silverado-zr2-hero.jpg"
+>
+  <header class="press-header">
+    <div class="container container-narrow">
+      <p class="section-eyebrow">For Press & Partners</p>
+      <h1 class="press-title">Press Kit</h1>
+      <span class="gold-line"></span>
+      <p class="press-lede">
+        Everything you need to write about, partner with, or feature ChevyRoots. Bio, logo files, photography, stats, and the direct line to Crystal.
+      </p>
+    </div>
+  </header>
+
+  <div class="press-body">
+    <div class="container container-narrow">
+
+      <section class="press-section">
+        <h2>The quick summary</h2>
+        <p>ChevyRoots is an independent Chevrolet enthusiast resource founded in 2026. We publish buyer's guides, build features, event coverage, mechanical deep-dives, and a weekly editorial column (Crystal's Corner) from our founder. The site reaches Chevy owners and buyers across the United States.</p>
+        <p><strong>Founded:</strong> 2026<br />
+        <strong>Founder:</strong> Crystal (Texas)<br />
+        <strong>Content:</strong> {guidesCount}+ guides, {modelsCount} models covered, 2,000+ photos, regional event calendars<br />
+        <strong>Not affiliated with:</strong> General Motors or any of its subsidiaries</p>
+      </section>
+
+      <section class="press-section">
+        <h2>About Crystal</h2>
+        <p><strong>Crystal</strong> is the founder and editor-in-chief of ChevyRoots. Raised in Texas around Chevys, she currently drives a Silverado ZR2 and attends roughly one major car show every two weeks. Her weekly "Crystal's Corner" editorial is the heart of the site's personality. She's available for interviews, podcast appearances, event panels, and dealer-facing partnership conversations.</p>
+        <p><strong>Availability:</strong> Houston metro and national travel for major shows</p>
+        <p><strong>Specialties:</strong> Silverado (1500 and HD), classic trucks, buyer-side negotiation, women in the Chevy community</p>
+      </section>
+
+      <section class="press-section">
+        <h2>Hero photography</h2>
+        <div class="press-photo-grid">
+          <figure>
+            <div class="press-photo" style="background-image: url('/photos/crystal/crystal-silverado-zr2-hero.jpg');"></div>
+            <figcaption>Crystal & her Silverado ZR2 — the signature brand image</figcaption>
+          </figure>
+        </div>
+        <p>High-res originals available on request — email <a href="mailto:hello@chevyroots.com">hello@chevyroots.com</a> with "Press Photos" in the subject.</p>
+      </section>
+
+      <section class="press-section">
+        <h2>Logo files</h2>
+        <p>SVG + PNG logo files (light and dark versions) are available on request. Email <a href="mailto:hello@chevyroots.com">hello@chevyroots.com</a>.</p>
+      </section>
+
+      <section class="press-section">
+        <h2>What we can do together</h2>
+        <h3>For press / journalists</h3>
+        <ul>
+          <li>Interview Crystal about women in the Chevy community, the enthusiast market, or any specific model we cover</li>
+          <li>Quote us on Chevy-related stories — we'll respond within a business day</li>
+          <li>Use our data — event calendars, known-issues database, model histories — with attribution</li>
+        </ul>
+
+        <h3>For dealerships</h3>
+        <ul>
+          <li>Featured dealer listings on model pages and in our "Best Chevy Dealer Near You" guide</li>
+          <li>Sponsored in-depth buyer walkthroughs (clearly labeled Sponsored Content)</li>
+          <li>Event coverage for your showroom launches or community events</li>
+        </ul>
+
+        <h3>For brands & OEMs</h3>
+        <ul>
+          <li>Product reviews — we actually review things, including calling out what's bad</li>
+          <li>Long-term test vehicle loans — we drive, film, and write honestly</li>
+          <li>Sponsored newsletter placement (one sponsor per issue)</li>
+        </ul>
+
+        <h3>For event organizers & tourism boards</h3>
+        <ul>
+          <li>Crystal attends roughly 24 major car shows per year — we can include your event in the calendar and send coverage</li>
+          <li>State tourism boards: we'll build travel itineraries around Chevy-relevant regional destinations</li>
+        </ul>
+      </section>
+
+      <section class="press-section">
+        <h2>Direct contact</h2>
+        <p>
+          <strong>General & press:</strong> <a href="mailto:hello@chevyroots.com">hello@chevyroots.com</a><br />
+          <strong>Partnerships:</strong> <a href="mailto:hello@chevyroots.com?subject=Partnership">hello@chevyroots.com</a><br />
+          <strong>Content removal:</strong> <a href="mailto:takedown@chevyroots.com">takedown@chevyroots.com</a>
+        </p>
+        <p>Response time: 1–2 business days for most inquiries.</p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .press-header {
+    padding: 80px 0 40px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.15);
+  }
+  .press-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .press-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 60ch;
+    margin-top: 1.5rem;
+  }
+  .press-body {
+    padding: 60px 0 80px;
+  }
+  .press-section {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .press-section:last-child {
+    border-bottom: none;
+  }
+  .press-section h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--off-white);
+    margin-bottom: 1.25rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--gold);
+  }
+  .press-section h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin: 1.75rem 0 0.5rem;
+  }
+  .press-section p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .press-section strong { color: var(--off-white); }
+  .press-section a { color: var(--gold); }
+  .press-section ul {
+    color: var(--text-dim);
+    margin: 0 0 1.5rem 1.5rem;
+    list-style: disc;
+  }
+  .press-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  .press-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .press-photo-grid figure {
+    margin: 0;
+  }
+  .press-photo {
+    aspect-ratio: 4 / 5;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+  }
+  .press-photo-grid figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.6rem;
+    text-align: center;
+  }
+</style>

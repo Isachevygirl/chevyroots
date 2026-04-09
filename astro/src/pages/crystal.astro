@@ -1,0 +1,144 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+---
+
+<BaseLayout
+  title="Meet Crystal — Founder of ChevyRoots"
+  description="Crystal is the founder of ChevyRoots. She drives a Silverado ZR2, attends car shows across the country, and writes every week about the trucks and cars she actually loves. This is her story."
+  ogImage="/photos/crystal/crystal-silverado-zr2-hero.jpg"
+>
+  <section class="crystal-hero">
+    <div class="container">
+      <div class="crystal-hero-grid">
+        <div class="crystal-hero-image" role="img" aria-label="Crystal with her Silverado ZR2"></div>
+        <div class="crystal-hero-text">
+          <p class="section-eyebrow">Founder · Editor in Chief</p>
+          <h1 class="crystal-hero-title">Crystal</h1>
+          <span class="gold-line"></span>
+          <p class="crystal-hero-tag">Run by a Chevy Girl. Driven by one, too.</p>
+          <p class="crystal-hero-body">
+            I'm Crystal — I grew up around Chevys, drive a Silverado ZR2 now, and started ChevyRoots because I couldn't find a single Chevy website that wasn't either a dealer lead-gen farm or an AI-generated spec sheet mill. There wasn't a place telling the real story of these trucks and cars from someone who actually owns one and shows up to the events. So I built it.
+          </p>
+          <div class="crystal-hero-ctas">
+            <a href="/crystals-corner/" class="btn btn-gold">Read the Column</a>
+            <a href="/contact/" class="btn btn-outline">Say Hi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="crystal-section">
+    <div class="container container-narrow">
+      <h2>The Truck</h2>
+      <p>My current ride is a <strong>Silverado ZR2</strong> — the off-road trim, not a base work truck. I chose it over the TrailBoss because I wanted the factory skid plates, Multimatic DSSV shocks, and the front and rear lockers. It's the truck I actually off-road in, daily-drive, take to events, and write about honestly.</p>
+      <p>Every Silverado article on this site — warranty breakdowns, mod reviews, long-term ownership takes, maintenance walkthroughs — is written from the perspective of someone who drives the exact truck being discussed. That's not marketing. That's just how the site works.</p>
+
+      <h2>What I Do Here</h2>
+      <ul>
+        <li><strong>Crystal's Corner</strong> — my weekly editorial column. What I saw, what I drove, what I think about a specific thing in the Chevy world that week.</li>
+        <li><strong>Event reports</strong> — I attend around one major car show every two weeks. Goodguys, local cruise nights, SEMA, Bowtie Nationals. Every show becomes a photo/video/writeup package on the site.</li>
+        <li><strong>Video content</strong> — in-car POV, driving videos, walk-arounds of cool builds at shows, occasional dealer walk-ins where I talk through what I'm looking for.</li>
+        <li><strong>The face of the partnerships</strong> — dealerships, brands, event organizers, and tourism boards all deal directly with me.</li>
+      </ul>
+
+      <h2>Why Independent Matters</h2>
+      <p>Most "Chevy" content online is written by people who don't own the vehicles they're writing about. It's either SEO content farms, manufacturer press-release rewrites, or dealer-paid articles that pretend to be objective reviews. None of that is the truth about what it's like to actually own and love these machines.</p>
+      <p>ChevyRoots is different because I'm different: I own Chevys, I go to shows, I talk to other owners, and when something about a truck is annoying I say so, even if it's my own. Nobody pays me to say nice things. Sponsored content on this site — when it exists — is always clearly labeled.</p>
+
+      <h2>Get in Touch</h2>
+      <p>If you're a dealership in a major metro, a brand with an actual Chevy-relevant product, an event organizer who wants real coverage, or a journalist writing about women in the Chevy community — email me directly at <a href="mailto:hello@chevyroots.com">hello@chevyroots.com</a>. I respond personally to partnership inquiries.</p>
+      <p>If you're an enthusiast who wants to share a build, tip me off to an event, or just say hi — same email. The inbox is open.</p>
+    </div>
+  </section>
+
+  <NewsletterCTA source="crystal-bio" />
+</BaseLayout>
+
+<style>
+  .crystal-hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 50%, var(--charcoal) 100%);
+  }
+  .crystal-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .crystal-hero-image {
+    aspect-ratio: 4 / 5;
+    background: #222 url('/photos/crystal/crystal-silverado-zr2-hero.jpg') center / cover no-repeat;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  }
+  .crystal-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .crystal-hero-tag {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 1.25rem;
+  }
+  .crystal-hero-body {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--text-dim);
+    margin: 1.5rem 0 2rem;
+    max-width: 60ch;
+  }
+  .crystal-hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .crystal-section {
+    padding: var(--section-pad) 0;
+  }
+  .crystal-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--off-white);
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--gold);
+  }
+  .crystal-section h2:first-child { margin-top: 0; }
+  .crystal-section p {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+  .crystal-section strong { color: var(--off-white); }
+  .crystal-section a { color: var(--gold); text-decoration: underline; }
+  .crystal-section ul {
+    color: var(--text-dim);
+    margin: 0 0 1.5rem 1.5rem;
+    list-style: disc;
+    line-height: 1.75;
+  }
+  .crystal-section li { margin-bottom: 0.75rem; }
+
+  @media (max-width: 900px) {
+    .crystal-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

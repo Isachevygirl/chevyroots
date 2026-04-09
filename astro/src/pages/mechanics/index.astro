@@ -1,0 +1,165 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { mechanics } from '@lib/data';
+
+// Group mechanics by state
+const byState: Record<string, typeof mechanics> = {};
+for (const m of mechanics) {
+  const state = (m.state || 'Unknown').toUpperCase();
+  if (!byState[state]) byState[state] = [];
+  byState[state].push(m);
+}
+
+const stateOrder = Object.keys(byState).sort();
+---
+
+<BaseLayout
+  title={`Chevy Mechanic Directory — ${mechanics.length} Shops You Can Trust | ChevyRoots`}
+  description={`${mechanics.length} Chevy mechanics, specialty shops, and restoration experts across the US. Organized by state. Classic work, LS swaps, transmission specialists, diesel/Duramax, and more.`}
+>
+  <header class="mechs-header">
+    <div class="container">
+      <p class="section-eyebrow">Directory</p>
+      <h1 class="mechs-title">Find a <em>Mechanic</em></h1>
+      <span class="gold-line"></span>
+      <p class="mechs-lede">
+        {mechanics.length} vetted Chevy shops across the United States — classic restoration, LS swaps, transmission specialists, performance tuning, diesel/Duramax, paint and bodywork. We only list shops with a track record.
+      </p>
+    </div>
+  </header>
+
+  <div class="mechs-body">
+    <div class="container">
+      {stateOrder.map((state) => (
+        <section class="state-section">
+          <h2 class="state-title">{state}</h2>
+          <div class="mech-grid">
+            {byState[state].map((m) => (
+              <div class="mech-card">
+                <h3 class="mech-name">{m.name}</h3>
+                <div class="mech-loc">{m.city}, {m.state}</div>
+                {m.specialties && m.specialties.length > 0 && (
+                  <div class="mech-specs">
+                    {m.specialties.slice(0, 4).map((s) => (
+                      <span class="mech-tag">{s}</span>
+                    ))}
+                  </div>
+                )}
+                {m.description && <p class="mech-desc">{m.description.slice(0, 140)}{m.description.length > 140 ? '…' : ''}</p>}
+                <div class="mech-contact">
+                  {m.phone && <span>{m.phone}</span>}
+                  {m.website && <a href={m.website} target="_blank" rel="noopener">Website →</a>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+
+  <NewsletterCTA source="mechanics-index" />
+</BaseLayout>
+
+<style>
+  .mechs-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+  }
+  .mechs-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .mechs-title em { font-style: italic; color: var(--gold); }
+  .mechs-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 72ch;
+    margin-top: 1.5rem;
+  }
+  .mechs-body { padding: 60px 0 80px; }
+  .state-section { margin-bottom: 4rem; }
+  .state-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--gold);
+  }
+  .mech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+  .mech-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: border-color var(--transition);
+  }
+  .mech-card:hover { border-color: var(--gold); }
+  .mech-name {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.25rem;
+  }
+  .mech-loc {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .mech-specs {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+  .mech-tag {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    background: var(--charcoal);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+  .mech-desc {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+  }
+  .mech-contact {
+    display: flex;
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--light-gray);
+  }
+  .mech-contact a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+</style>

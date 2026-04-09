@@ -1,0 +1,158 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('crystals-corner');
+const sortedPosts = posts.sort((a, b) => b.data.published.getTime() - a.data.published.getTime());
+---
+
+<BaseLayout
+  title="Crystal's Corner — Weekly Editorial from the Founder | ChevyRoots"
+  description="Weekly editorial from Crystal — what she drove, what she saw at shows, and what she thinks about the Chevy world this week. The founder's voice at ChevyRoots."
+>
+  <header class="corner-header">
+    <div class="container">
+      <p class="section-eyebrow">Weekly Editorial</p>
+      <h1 class="corner-title">Crystal's <em>Corner</em></h1>
+      <span class="gold-line"></span>
+      <p class="corner-lede">
+        Every week, something on my mind in Chevy world. The trucks I saw at shows, the dealer I walked into, the mod I wish I hadn't done, the email somebody sent that made me think. The honest stuff.
+      </p>
+    </div>
+  </header>
+
+  <div class="corner-body">
+    <div class="container container-narrow">
+      {sortedPosts.length === 0 && (
+        <div class="coming-soon">
+          <h2>The first column is coming soon.</h2>
+          <p>
+            I'm working on the first Crystal's Corner piece right now. Subscribe to the newsletter below and you'll get it in your inbox the moment it publishes.
+          </p>
+          <p>
+            In the meantime, check out the <a href="/guides/">buyer's guides</a> — those are already published and there are quite a few.
+          </p>
+        </div>
+      )}
+
+      {sortedPosts.length > 0 && (
+        <div class="posts-list">
+          {sortedPosts.map((post) => (
+            <article class="post-card">
+              <div class="post-meta">{new Date(post.data.published).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+              <h2 class="post-title"><a href={`/crystals-corner/${post.id}/`}>{post.data.title}</a></h2>
+              <p class="post-excerpt">{post.data.excerpt || post.data.description}</p>
+              <a href={`/crystals-corner/${post.id}/`} class="post-readmore">Read more →</a>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+
+  <NewsletterCTA source="crystals-corner-index" heading="Get Crystal's Column in Your Inbox" subheading="Every Friday. No filler. No spam. Unsubscribe anytime." />
+</BaseLayout>
+
+<style>
+  .corner-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 100%);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.2);
+  }
+  .corner-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .corner-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .corner-lede {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    max-width: 62ch;
+    margin-top: 1.5rem;
+  }
+  .corner-body {
+    padding: 60px 0;
+  }
+  .coming-soon {
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+  .coming-soon h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .coming-soon p {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 56ch;
+    margin: 0 auto 1rem;
+  }
+  .coming-soon a {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .post-card {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .post-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .post-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .post-title a {
+    color: var(--off-white);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .post-title a:hover {
+    color: var(--gold);
+  }
+  .post-excerpt {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .post-readmore {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+</style>

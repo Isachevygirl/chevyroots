@@ -1,77 +1,693 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { getCollection } from 'astro:content';
+import { vehicles, recentNews, events } from '@lib/data';
+
+// Featured guides — pulled from the content collection, sorted by revenue priority
+const allGuides = await getCollection('guides', (entry) => !entry.data.noindex);
+const featuredGuides = allGuides
+  .sort((a, b) => (b.data.revenuePriority || 0) - (a.data.revenuePriority || 0))
+  .slice(0, 6);
+
+const latestNews = recentNews(5);
+const upcomingEvents = [...events]
+  .filter((e) => e.chevy_specific || e.type === 'car show')
+  .slice(0, 4);
+
+// Category thumbnails — hardcoded hero images from the /photos catalog
+const categories = [
+  { slug: 'trucks', label: 'Trucks', tagline: 'Silverado · Colorado · S-10', image: '/photos/silverado/New_2020_Chevrolet_Silverado_HD_at_Toronto_International_Autoshow.jpg', icon: '🚚' },
+  { slug: 'corvette', label: 'Corvette', tagline: 'C1 through C8 · Every Generation', image: '/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg', icon: '🏁' },
+  { slug: 'classics', label: 'Classics', tagline: 'Muscle Era · Pre-1980 Legends', image: '/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg', icon: '⭐' },
+  { slug: 'cars', label: 'Cars', tagline: 'Camaro · Malibu · Impala · Sonic', image: '/photos/camaro/pexels_2797720_camaro.jpeg', icon: '🚗' },
+  { slug: 'suvs', label: 'SUVs', tagline: 'Tahoe · Suburban · Trailblazer · Blazer', image: '/photos/tahoe/pexels_4679347_tahoe.jpeg', icon: '🚙' },
+  { slug: 'evs', label: 'EVs', tagline: 'Silverado EV · Equinox EV · Blazer EV', image: '/photos/bolt/pexels_10148960_bolt.jpeg', icon: '⚡' },
+];
+
+const modelsCount = vehicles.length;
+const guidesCount = allGuides.length;
 ---
 
 <BaseLayout
-  title="ChevyRoots — Run by a Chevy Girl"
-  description="The independent home for Chevrolet enthusiasts — models, builds, buyer's guides, events, and the known issues database. Run by Crystal. Not affiliated with General Motors."
+  title="ChevyRoots — Run by a Chevy Girl | Independent Chevrolet Resource"
+  description="The independent home for Chevrolet enthusiasts. Models, builds, events, buyer's guides, and the known-issues database. Run by Crystal — a real Chevy girl who drives a Silverado ZR2. Not affiliated with General Motors."
 >
-  <section class="scaffold-hero">
-    <div class="container">
-      <div class="section-eyebrow">Phase 0 · Scaffolding</div>
-      <h1 class="scaffold-title">Chevy<em>Roots</em> Astro Migration</h1>
-      <span class="gold-line"></span>
-      <p class="scaffold-body">
-        The new Astro-powered ChevyRoots is bootstrapping. Homepage content will be ported
-        from the existing <code>index.html</code> in the next step. The foundation — nav, footer,
-        design system, JSON-LD schemas, newsletter CTA, article layout, and content components
-        — is in place and rendering from a single source of truth.
-      </p>
-      <div class="scaffold-buttons">
-        <a href="/guides/" class="btn btn-gold">Browse Guides</a>
-        <a href="/about/" class="btn btn-outline">About the Rebuild</a>
+  {/* ── HERO ────────────────────────────────────────────────────────── */}
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg" role="img" aria-label="Chevrolet Silverado in a rural setting"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Independent Chevrolet Resource — Est. 2026
+        </div>
+        <h1 class="hero-heading">
+          Where<br />
+          <span class="gold">Chevy</span><br />
+          <span class="italic">Runs Deep</span>
+        </h1>
+        <p class="hero-sub">
+          Models, builds, events, and guides for the Chevy-obsessed. No fluff. No filler. Just the real story of America's most iconic truck and car brand — from a Chevy girl who actually drives one.
+        </p>
+        <div class="hero-ctas">
+          <a href="/models/" class="btn btn-gold">Explore Models</a>
+          <a href="/guides/" class="btn btn-outline">Read the Guides</a>
+          <div class="hero-divider" aria-hidden="true"></div>
+          <div class="hero-stat-group" aria-label="Site stats">
+            <div class="hero-stat">
+              <span class="hero-stat-value">{guidesCount}+</span>
+              <span class="hero-stat-label">Guides</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">{modelsCount}</span>
+              <span class="hero-stat-label">Models Covered</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">115</span>
+              <span class="hero-stat-label">Years of Chevy</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  {/* ── AMERICA 250 BANNER ──────────────────────────────────────────── */}
+  <div class="america250" role="complementary" aria-label="America 250 milestone">
+    <div class="container">
+      <div class="america250-inner">
+        <div class="america250-flag" aria-hidden="true">🇺🇸</div>
+        <div class="america250-text">
+          <div class="america250-headline">
+            2026: Celebrating <span class="gold">America's 250th</span> — and <span class="gold">115 Years of Chevrolet</span>
+          </div>
+          <div class="america250-body">
+            From the 1911 Little Series C to the 2026 Silverado EV — Chevy has been part of America's story since the beginning. This year, we celebrate both.
+          </div>
+        </div>
+        <div class="america250-tag" aria-hidden="true">Chevy · America · 2026</div>
+      </div>
+    </div>
+  </div>
+
+  {/* ── CATEGORIES GRID ─────────────────────────────────────────────── */}
+  <section class="categories" aria-labelledby="categories-heading">
+    <div class="container">
+      <div class="categories-header">
+        <div>
+          <p class="section-eyebrow">Browse by Category</p>
+          <h2 class="section-title" id="categories-heading">Find Your Chevy</h2>
+          <span class="gold-line"></span>
+        </div>
+        <a href="/models/" class="btn btn-outline">View All Models</a>
+      </div>
+      <div class="categories-grid" role="list">
+        {categories.map((cat) => (
+          <a href={`/models/${cat.slug}/`} class="category-card" role="listitem" aria-label={cat.label}>
+            <img src={cat.image} alt={cat.label} loading="lazy" />
+            <div class="category-overlay" aria-hidden="true"></div>
+            <div class="category-content">
+              <div class="category-icon" aria-hidden="true">{cat.icon}</div>
+              <div class="category-name">{cat.label}</div>
+              <div class="category-count">{cat.tagline}</div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ── FEATURED GUIDES ─────────────────────────────────────────────── */}
+  <section class="featured-guides" aria-labelledby="featured-guides-heading">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">The Real Story</p>
+          <h2 class="section-title" id="featured-guides-heading">Featured <em>Guides</em></h2>
+          <span class="gold-line"></span>
+        </div>
+        <a href="/guides/" class="btn btn-outline">All Guides</a>
+      </div>
+      <div class="guides-grid">
+        {featuredGuides.map((guide) => (
+          <a href={`/guides/${guide.id}/`} class="guide-card">
+            {guide.data.heroImage && (
+              <div class="guide-card-img" style={`background-image: url('${guide.data.heroImage}');`} aria-hidden="true"></div>
+            )}
+            <div class="guide-card-body">
+              <div class="guide-card-eyebrow">{guide.data.cluster !== 'Other' ? guide.data.cluster : guide.data.eyebrow}</div>
+              <h3 class="guide-card-title">{guide.data.title}</h3>
+              <p class="guide-card-desc">{guide.data.description}</p>
+              <div class="guide-card-meta">
+                <span>By {guide.data.author}</span>
+                {guide.data.readingTime && <span>·</span>}
+                {guide.data.readingTime && <span>{guide.data.readingTime} min read</span>}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ── CRYSTAL'S CORNER TEASER ─────────────────────────────────────── */}
+  <section class="crystals-corner-teaser" aria-labelledby="crystal-teaser-heading">
+    <div class="container">
+      <div class="crystal-teaser-inner">
+        <div class="crystal-teaser-image" role="img" aria-label="Crystal with her Silverado ZR2"></div>
+        <div class="crystal-teaser-text">
+          <p class="section-eyebrow">From the Founder</p>
+          <h2 class="section-title" id="crystal-teaser-heading">Crystal's <em>Corner</em></h2>
+          <span class="gold-line"></span>
+          <p class="crystal-teaser-body">
+            I'm Crystal — a Chevy girl who drives a Silverado ZR2 and runs this whole operation. Every week I write about the Chevys I've owned, the builds I've seen at local shows, and the honest stuff nobody at a dealership will ever tell you. This is where the audience meets the real person behind ChevyRoots.
+          </p>
+          <div class="crystal-teaser-ctas">
+            <a href="/crystals-corner/" class="btn btn-gold">Read the Column</a>
+            <a href="/crystal/" class="btn btn-outline">Meet Crystal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── EVENTS PREVIEW ──────────────────────────────────────────────── */}
+  {upcomingEvents.length > 0 && (
+    <section class="events-preview" aria-labelledby="events-heading">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">Upcoming Shows</p>
+            <h2 class="section-title" id="events-heading">Events <em>Calendar</em></h2>
+            <span class="gold-line"></span>
+          </div>
+          <a href="/events/" class="btn btn-outline">All Events</a>
+        </div>
+        <div class="events-grid">
+          {upcomingEvents.map((event) => (
+            <div class="event-card">
+              <div class="event-date">{event.dates}</div>
+              <h3 class="event-name">{event.name}</h3>
+              <div class="event-loc">{event.location.city}, {event.location.state}</div>
+              {event.description && <p class="event-desc">{event.description.slice(0, 120)}…</p>}
+              {event.url && <a href={event.url} class="event-link" target="_blank" rel="noopener">Details →</a>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* ── NEWS PREVIEW ────────────────────────────────────────────────── */}
+  {latestNews.length > 0 && (
+    <section class="news-preview" aria-labelledby="news-heading">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-eyebrow">Chevy in the Wild</p>
+            <h2 class="section-title" id="news-heading">Latest <em>News</em></h2>
+            <span class="gold-line"></span>
+          </div>
+          <a href="/news/" class="btn btn-outline">All News</a>
+        </div>
+        <div class="news-grid">
+          {latestNews.map((item) => (
+            <a href={item.url} class="news-card" target="_blank" rel="noopener">
+              <div class="news-card-meta">
+                <span class="news-card-source">{item.source}</span>
+                <span class="news-card-date">{new Date(item.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+              </div>
+              <h3 class="news-card-title">{item.title}</h3>
+              <p class="news-card-summary">{item.summary}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <NewsletterCTA source="homepage" />
 </BaseLayout>
 
 <style>
-  .scaffold-hero {
-    padding: var(--section-pad) 0;
-    min-height: 60vh;
+  /* ── HERO ─────────────────────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 88vh;
     display: flex;
     align-items: center;
-    background:
-      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196, 160, 53, 0.08) 0%, transparent 70%),
-      var(--charcoal);
+    overflow: hidden;
+    background: var(--charcoal);
   }
-
-  .scaffold-title {
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/photos/silverado/New_2020_Chevrolet_Silverado_HD_at_Toronto_International_Autoshow.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.55) saturate(0.9);
+    z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(26, 26, 26, 0.4) 0%, rgba(26, 26, 26, 0.8) 80%, var(--charcoal) 100%),
+      radial-gradient(ellipse 60% 50% at 30% 40%, rgba(196, 160, 53, 0.08) 0%, transparent 70%);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 80px 0;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1rem;
+    background: rgba(196, 160, 53, 0.08);
+    border: 1px solid rgba(196, 160, 53, 0.3);
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .hero-heading {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 7vw, 6rem);
+    font-size: clamp(3rem, 9vw, 7.5rem);
     font-weight: 900;
-    line-height: 1;
+    line-height: 0.9;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     color: var(--off-white);
-    margin-top: 1rem;
-  }
-
-  .scaffold-title em {
-    font-style: normal;
-    color: var(--gold);
-  }
-
-  .scaffold-body {
-    max-width: 60ch;
-    font-size: 1.1rem;
-    line-height: 1.65;
-    color: var(--text-dim);
     margin-bottom: 2rem;
   }
-
-  .scaffold-body code {
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-    padding: 0.1em 0.4em;
-    background: var(--warm-gray);
-    border-radius: var(--radius);
+  .hero-heading .gold { color: var(--gold); }
+  .hero-heading .italic { font-style: italic; font-weight: 700; }
+  .hero-sub {
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    color: var(--text-dim);
+    line-height: 1.65;
+    max-width: 56ch;
+    margin-bottom: 2.5rem;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .hero-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(196, 160, 53, 0.3);
+    margin: 0 0.75rem;
+  }
+  .hero-stat-group {
+    display: flex;
+    gap: 2rem;
+  }
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .hero-stat-value {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
     color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
   }
 
-  .scaffold-buttons {
+  /* ── AMERICA 250 BANNER ──────────────────────────────────────────── */
+  .america250 {
+    padding: 2.5rem 0;
+    background: linear-gradient(90deg, #0f0a04 0%, #1a1205 50%, #0f0a04 100%);
+    border-top: 1px solid rgba(196, 160, 53, 0.2);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.2);
+  }
+  .america250-inner {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .america250-flag {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+  .america250-text {
+    flex: 1;
+    min-width: 280px;
+  }
+  .america250-headline {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.3rem;
+  }
+  .america250-headline .gold { color: var(--gold); }
+  .america250-body {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+  }
+  .america250-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.4rem 0.9rem;
+    background: rgba(196, 160, 53, 0.08);
+    border: 1px solid rgba(196, 160, 53, 0.25);
+    border-radius: 4px;
+  }
+
+  /* ── CATEGORIES ──────────────────────────────────────────────────── */
+  .categories {
+    padding: var(--section-pad) 0;
+  }
+  .categories-header, .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .category-card {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: border-color var(--transition), transform var(--transition);
+    text-decoration: none;
+  }
+  .category-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+  .category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .category-card:hover img {
+    transform: scale(1.05);
+  }
+  .category-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(26,26,26,0.9) 100%);
+  }
+  .category-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+  }
+  .category-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .category-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--off-white);
+    margin-bottom: 0.25rem;
+  }
+  .category-count {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+
+  /* ── FEATURED GUIDES ─────────────────────────────────────────────── */
+  .featured-guides {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 900;
+  }
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .guide-card {
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--transition), transform var(--transition);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .guide-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+  .guide-card-img {
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .guide-card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .guide-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .guide-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.75rem;
+    line-height: 1.15;
+  }
+  .guide-card-desc {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+  .guide-card-meta {
+    display: flex;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+
+  /* ── CRYSTAL'S CORNER TEASER ─────────────────────────────────────── */
+  .crystals-corner-teaser {
+    padding: var(--section-pad) 0;
+  }
+  .crystal-teaser-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .crystal-teaser-image {
+    aspect-ratio: 4 / 5;
+    background: #222 url('/photos/crystal/crystal-silverado-zr2-hero.jpg') center / cover no-repeat;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  }
+  .crystal-teaser-body {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 56ch;
+  }
+  .crystal-teaser-ctas {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  /* ── EVENTS ──────────────────────────────────────────────────────── */
+  .events-preview {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+  }
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .event-card {
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: border-color var(--transition);
+  }
+  .event-card:hover {
+    border-color: var(--gold);
+  }
+  .event-date {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .event-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .event-loc {
+    font-size: 0.85rem;
+    color: var(--light-gray);
+    margin-bottom: 0.75rem;
+  }
+  .event-desc {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .event-link {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  /* ── NEWS ────────────────────────────────────────────────────────── */
+  .news-preview {
+    padding: var(--section-pad) 0;
+  }
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .news-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .news-card:hover {
+    border-color: var(--gold);
+  }
+  .news-card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+  .news-card-source {
+    color: var(--gold);
+  }
+  .news-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--off-white);
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .news-card-summary {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .crystal-teaser-inner {
+      grid-template-columns: 1fr;
+    }
+    .hero-stat-group {
+      gap: 1.25rem;
+    }
+    .hero-divider {
+      display: none;
+    }
   }
 </style>

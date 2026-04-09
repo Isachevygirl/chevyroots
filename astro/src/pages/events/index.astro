@@ -1,0 +1,161 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { events, eventsByRegion } from '@lib/data';
+
+const regions = [
+  { slug: 'midwest', label: 'Midwest', desc: 'IL, IN, OH, MI, WI, MN, IA, MO, KS, NE, ND, SD' },
+  { slug: 'northeast', label: 'Northeast', desc: 'NY, PA, MA, CT, NJ, MD, VA, NC, SC' },
+  { slug: 'southwest', label: 'Texas & Southwest', desc: 'TX, AZ, NM, CO, NV, UT' },
+];
+
+const totalEvents = events.length;
+---
+
+<BaseLayout
+  title="Chevy Events Calendar — Car Shows Across America | ChevyRoots"
+  description={`${totalEvents}+ car shows, cruise nights, and Chevy-focused events across the US — organized by region. From Goodguys to SEMA, local weekend cruises to the biggest national shows.`}
+>
+  <header class="events-header">
+    <div class="container">
+      <p class="section-eyebrow">Events Calendar</p>
+      <h1 class="events-title">Car Shows &amp; <em>Cruises</em></h1>
+      <span class="gold-line"></span>
+      <p class="events-lede">
+        {totalEvents}+ Chevy-friendly events across the United States. Goodguys, NHRA, SEMA, local car clubs, cruise nights, and the shows Crystal personally attends. Organized by region so you can find what's near you.
+      </p>
+    </div>
+  </header>
+
+  <div class="events-body">
+    <div class="container">
+      <div class="regions-grid">
+        {regions.map((r) => {
+          const regionEvents = eventsByRegion(r.slug);
+          return (
+            <a href={`/events/${r.slug}/`} class="region-card">
+              <div class="region-card-body">
+                <div class="region-card-eyebrow">{regionEvents.length} events</div>
+                <h2 class="region-card-title">{r.label}</h2>
+                <p class="region-card-desc">{r.desc}</p>
+                <span class="region-card-link">View calendar →</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <section class="events-cta">
+        <h2>Know an event we should cover?</h2>
+        <p>Tell us about it. <a href="/submit/event/">Submit an event</a> or email <a href="mailto:hello@chevyroots.com">hello@chevyroots.com</a> with the details.</p>
+      </section>
+    </div>
+  </div>
+
+  <NewsletterCTA source="events-index" />
+</BaseLayout>
+
+<style>
+  .events-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.15);
+  }
+  .events-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .events-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .events-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 72ch;
+    margin-top: 1.5rem;
+  }
+  .events-body {
+    padding: 60px 0 80px;
+  }
+  .regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .region-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-decoration: none;
+    transition: border-color var(--transition), transform var(--transition);
+    display: block;
+  }
+  .region-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+  .region-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .region-card-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .region-card-desc {
+    font-size: 0.85rem;
+    color: var(--light-gray);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+  .region-card-link {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .events-cta {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--warm-gray);
+    border: 1px solid rgba(196, 160, 53, 0.2);
+    border-radius: var(--radius-lg);
+  }
+  .events-cta h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .events-cta p {
+    color: var(--text-dim);
+    font-size: 1rem;
+  }
+  .events-cta a {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+</style>

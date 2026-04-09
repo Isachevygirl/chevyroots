@@ -1,0 +1,146 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { news } from '@lib/data';
+
+const sortedNews = [...news].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+// Group by category
+const byCategory: Record<string, typeof news> = {};
+for (const item of sortedNews) {
+  const c = item.category || 'news';
+  if (!byCategory[c]) byCategory[c] = [];
+  byCategory[c].push(item);
+}
+
+const categoryLabels: Record<string, string> = {
+  culture: 'Chevy Culture',
+  tech: 'Tech & Innovation',
+  deal: 'Deals & Incentives',
+  recall: 'Recalls & Safety',
+  ev: 'Electric Vehicles',
+  motorsport: 'Motorsports',
+  news: 'General News',
+};
+---
+
+<BaseLayout
+  title="Chevy News — Recalls, Deals, Tech, Motorsports & Culture | ChevyRoots"
+  description={`${news.length} Chevy news items from across the web — aggregated from Tier 1 and Tier 2 automotive sources. Recalls, deals, tech breakthroughs, motorsports wins, and culture coverage.`}
+>
+  <header class="news-header">
+    <div class="container">
+      <p class="section-eyebrow">Chevy in the Wild</p>
+      <h1 class="news-title">Latest <em>News</em></h1>
+      <span class="gold-line"></span>
+      <p class="news-lede">
+        {news.length} news items pulled from across automotive media. Recalls, deals, new tech, motorsport wins, and Chevy culture stories — all in one feed.
+      </p>
+    </div>
+  </header>
+
+  <div class="news-body">
+    <div class="container">
+      {Object.entries(byCategory).map(([cat, items]) => (
+        <section class="cat-section">
+          <h2 class="cat-title">{categoryLabels[cat] || cat}</h2>
+          <div class="news-grid">
+            {items.slice(0, 12).map((item) => (
+              <a href={item.url} target="_blank" rel="noopener" class="news-card">
+                <div class="news-meta">
+                  <span class="news-source">{item.source}</span>
+                  <span class="news-date">{new Date(item.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                </div>
+                <h3 class="news-title-card">{item.title}</h3>
+                <p class="news-summary">{item.summary}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+
+  <NewsletterCTA source="news-index" />
+</BaseLayout>
+
+<style>
+  .news-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+  }
+  .news-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .news-title em { font-style: italic; color: var(--gold); }
+  .news-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 72ch;
+    margin-top: 1.5rem;
+  }
+  .news-body { padding: 60px 0 80px; }
+  .cat-section { margin-bottom: 4rem; }
+  .cat-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--gold);
+  }
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.25rem;
+  }
+  .news-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color var(--transition);
+  }
+  .news-card:hover { border-color: var(--gold); }
+  .news-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .news-source { color: var(--gold); }
+  .news-date { color: var(--text-mute); }
+  .news-title-card {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: var(--off-white);
+    line-height: 1.25;
+  }
+  .news-summary {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+</style>

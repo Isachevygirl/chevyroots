@@ -1,0 +1,119 @@
+---
+import StaticPage from '@layouts/StaticPage.astro';
+---
+
+<StaticPage
+  title="Submit an Event — Chevy Car Shows & Cruises | ChevyRoots"
+  description="Know of a Chevy-friendly car show, cruise night, or event we should cover? Submit it here."
+  eyebrow="Community"
+  heading="Submit an Event"
+>
+  <p>Know of a car show, cruise night, swap meet, drag day, or Chevy-focused event we should cover? Tell us.</p>
+
+  <p>We run regional calendars for the Midwest, Northeast, and Texas / Southwest — and we're building out more. Every event you submit goes into the moderation queue, and if it fits, we add it to the calendar. If Crystal can attend, we send event coverage (photos, video, writeup).</p>
+
+  <form class="submit-form" action="/api/submit-event" method="POST">
+    <div class="field">
+      <label for="event-name">Event name</label>
+      <input type="text" id="event-name" name="event-name" required />
+    </div>
+
+    <div class="field">
+      <label for="event-dates">Date(s)</label>
+      <input type="text" id="event-dates" name="event-dates" placeholder="e.g. April 17-18, 2026 or recurring monthly" required />
+    </div>
+
+    <div class="field">
+      <label for="venue">Venue / location</label>
+      <input type="text" id="venue" name="venue" placeholder="Travis County Expo Center, etc." required />
+    </div>
+
+    <div class="field">
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" required />
+    </div>
+
+    <div class="field">
+      <label for="state">State</label>
+      <input type="text" id="state" name="state" required placeholder="TX, VA, etc." maxlength="2" />
+    </div>
+
+    <div class="field">
+      <label for="event-type">Type</label>
+      <select id="event-type" name="event-type" required>
+        <option value="">Select a type…</option>
+        <option>Car show</option>
+        <option>Cruise night</option>
+        <option>Swap meet</option>
+        <option>Drag racing</option>
+        <option>Autocross</option>
+        <option>Track day</option>
+        <option>Off-road event</option>
+        <option>Chevy club meet</option>
+        <option>Festival / fair with car show</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="chevy-focus">Chevy-specific?</label>
+      <select id="chevy-focus" name="chevy-focus">
+        <option>No — all makes welcome</option>
+        <option>Yes — Chevy-only</option>
+        <option>Chevy-heavy but mixed</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="description">Description (what makes it worth coming?)</label>
+      <textarea id="description" name="description" rows="5"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="url">Official event URL (if any)</label>
+      <input type="url" id="url" name="url" placeholder="https://..." />
+    </div>
+
+    <div class="field">
+      <label for="submitter-email">Your email (so we can confirm or ask questions)</label>
+      <input type="email" id="submitter-email" name="submitter-email" required />
+    </div>
+
+    <button type="submit" class="btn btn-gold">Submit Event</button>
+  </form>
+</StaticPage>
+
+<style>
+  .submit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 600px;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .field { display: flex; flex-direction: column; gap: 0.5rem; }
+  .field label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .field input, .field select, .field textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.85rem 1rem;
+    background: var(--charcoal);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none; border-color: var(--gold);
+  }
+  button[type='submit'] { align-self: flex-start; }
+</style>

@@ -1,0 +1,411 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { vehicles, knownIssuesForModel, type Vehicle } from '@lib/data';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  // Build pages for vehicles, skipping any slug that collides with a category page.
+  // Categories: trucks, cars, classics, suvs, evs, corvette (handled as category)
+  const reserved = new Set(['trucks', 'cars', 'classics', 'suvs', 'evs', 'corvette']);
+  return vehicles
+    .filter((v) => !reserved.has(v.slug))
+    .map((v) => ({
+      params: { slug: v.slug },
+      props: { vehicle: v },
+    }));
+}
+
+interface Props {
+  vehicle: Vehicle;
+}
+
+const { vehicle } = Astro.props;
+const issues = knownIssuesForModel(vehicle.slug);
+const latestYear = vehicle.years[0];
+
+// Find related guides
+const allGuides = await getCollection('guides');
+const relatedGuides = allGuides
+  .filter((g) => {
+    const titleLower = g.data.title.toLowerCase();
+    const modelLower = vehicle.model.toLowerCase();
+    // Match if the model name or a keyword fragment is in the title or description
+    return (
+      titleLower.includes(modelLower.split(' ')[0]) ||
+      g.data.description.toLowerCase().includes(modelLower)
+    );
+  })
+  .slice(0, 6);
+---
+
+<BaseLayout
+  title={`${vehicle.model} — Trims, Specs, Known Issues, Photos | ChevyRoots`}
+  description={`Complete ${vehicle.model} reference: every trim, MSRP, engine spec, towing capacity, year-by-year known issues, and the buyer's guides that help you decide. Independent coverage from ChevyRoots.`}
+>
+  {/* ── HEADER ──────────────────────────────────────────────────────── */}
+  <header class="model-header">
+    <div class="container">
+      <p class="section-eyebrow">{vehicle.category}</p>
+      <h1 class="model-title">{vehicle.model}</h1>
+      <span class="gold-line"></span>
+      {latestYear && (
+        <div class="model-header-meta">
+          <div class="meta-item">
+            <div class="meta-label">Starting MSRP</div>
+            <div class="meta-value">${latestYear.starting_msrp?.toLocaleString() || '—'}</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Years Covered</div>
+            <div class="meta-value">{vehicle.years.length}</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Trims (Latest)</div>
+            <div class="meta-value">{latestYear.trims?.length || 0}</div>
+          </div>
+          {issues && (
+            <div class="meta-item">
+              <div class="meta-label">Known Issues</div>
+              <div class="meta-value">{issues.issues_by_year.reduce((n, yr) => n + yr.issues.length, 0)}</div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  </header>
+
+  {/* ── TRIM TABLE ──────────────────────────────────────────────────── */}
+  {latestYear && latestYear.trims && latestYear.trims.length > 0 && (
+    <section class="model-section">
+      <div class="container">
+        <h2 class="section-title">{latestYear.year} Trims &amp; Specs</h2>
+        <span class="gold-line"></span>
+        <div class="trims-table-wrap">
+          <table class="trims-table">
+            <thead>
+              <tr>
+                <th>Trim</th>
+                <th>MSRP</th>
+                <th>Engine</th>
+                <th>HP</th>
+                <th>Torque</th>
+                <th>Towing</th>
+                <th>MPG (City / Hwy)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {latestYear.trims.map((trim) => (
+                <tr>
+                  <td class="trim-name">{trim.name}</td>
+                  <td>${trim.msrp?.toLocaleString() || '—'}</td>
+                  <td>{trim.engine || '—'}</td>
+                  <td>{trim.hp || '—'}</td>
+                  <td>{trim.torque ? `${trim.torque} lb-ft` : '—'}</td>
+                  <td>{trim.towing_capacity ? `${trim.towing_capacity.toLocaleString()} lbs` : '—'}</td>
+                  <td>{trim.mpg_city && trim.mpg_highway ? `${trim.mpg_city} / ${trim.mpg_highway}` : '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* ── KNOWN ISSUES ────────────────────────────────────────────────── */}
+  {issues && issues.issues_by_year.length > 0 && (
+    <section class="model-section known-issues">
+      <div class="container">
+        <h2 class="section-title">Known Issues</h2>
+        <span class="gold-line"></span>
+        <p class="issues-intro">
+          Real-world reliability notes compiled from owner reports, TSBs, and known technical service bulletins. If you're shopping used, read these before signing.
+        </p>
+        {issues.issues_by_year.map((block) => (
+          <div class="issue-block">
+            <h3 class="issue-year">{block.year_range}</h3>
+            {block.issues.map((issue) => (
+              <div class={`issue-card severity-${issue.severity}`}>
+                <div class="issue-header">
+                  <h4 class="issue-title">{issue.title}</h4>
+                  <span class={`severity-badge severity-${issue.severity}`}>{issue.severity}</span>
+                </div>
+                <p class="issue-desc">{issue.description}</p>
+                {issue.fix_description && (
+                  <div class="issue-fix">
+                    <strong>Fix:</strong> {issue.fix_description}
+                  </div>
+                )}
+                {issue.estimated_cost && (
+                  <div class="issue-cost">
+                    <strong>Estimated cost:</strong> {issue.estimated_cost}
+                  </div>
+                )}
+                {issue.tsb && (
+                  <div class="issue-tsb">
+                    TSB Reference: <code>{issue.tsb}</code>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {/* ── RELATED GUIDES ──────────────────────────────────────────────── */}
+  {relatedGuides.length > 0 && (
+    <section class="model-section related-guides">
+      <div class="container">
+        <h2 class="section-title">Related Guides</h2>
+        <span class="gold-line"></span>
+        <div class="guides-grid">
+          {relatedGuides.map((guide) => (
+            <a href={`/guides/${guide.id}/`} class="guide-card">
+              <div class="guide-card-body">
+                <div class="guide-card-eyebrow">{guide.data.eyebrow}</div>
+                <h3 class="guide-card-title">{guide.data.title}</h3>
+                <p class="guide-card-desc">{guide.data.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <NewsletterCTA source={`model-${vehicle.slug}`} />
+</BaseLayout>
+
+<style>
+  .model-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.15);
+  }
+  .model-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .model-header-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    max-width: 720px;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .meta-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .meta-value {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--gold);
+  }
+
+  .model-section {
+    padding: var(--section-pad) 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.25rem;
+  }
+
+  .trims-table-wrap {
+    margin-top: 2rem;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--warm-gray);
+  }
+  .trims-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .trims-table th {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    text-align: left;
+    padding: 14px 16px;
+    background: var(--charcoal);
+    border-bottom: 2px solid var(--gold);
+  }
+  .trims-table td {
+    padding: 12px 16px;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+  }
+  .trims-table tr:last-child td {
+    border-bottom: none;
+  }
+  .trim-name {
+    font-weight: 600;
+    color: var(--off-white);
+  }
+
+  .issues-intro {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 1.5rem 0 2rem;
+    max-width: 72ch;
+  }
+  .issue-block {
+    margin-bottom: 2.5rem;
+  }
+  .issue-year {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .issue-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .issue-card.severity-major {
+    border-left-color: #c0392b;
+  }
+  .issue-card.severity-moderate {
+    border-left-color: #e67e22;
+  }
+  .issue-card.severity-minor {
+    border-left-color: var(--gold);
+  }
+  .issue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .issue-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+  }
+  .severity-badge {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius);
+    flex-shrink: 0;
+  }
+  .severity-badge.severity-major { background: rgba(192, 57, 43, 0.2); color: #e06c5a; }
+  .severity-badge.severity-moderate { background: rgba(230, 126, 34, 0.2); color: #f1a663; }
+  .severity-badge.severity-minor { background: rgba(196, 160, 53, 0.15); color: var(--gold); }
+  .issue-desc {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+  }
+  .issue-fix, .issue-cost {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+  .issue-fix strong, .issue-cost strong {
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .issue-tsb {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--light-gray);
+    margin-top: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+  .issue-tsb code {
+    background: var(--charcoal);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    color: var(--gold);
+  }
+
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .guide-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .guide-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+  .guide-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .guide-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--off-white);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .guide-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+</style>

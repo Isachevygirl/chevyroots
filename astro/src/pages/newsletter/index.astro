@@ -1,0 +1,157 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+---
+
+<BaseLayout
+  title="The ChevyRoots Newsletter — Weekly Chevy Stories, Guides & Events"
+  description="Subscribe to the ChevyRoots newsletter. New buyer's guides, event reports, build features, and Crystal's weekly column — delivered to your inbox. No spam. Unsubscribe anytime."
+>
+  <header class="nl-header">
+    <div class="container container-narrow">
+      <p class="section-eyebrow">Delivered Weekly</p>
+      <h1 class="nl-title">The <em>Newsletter</em></h1>
+      <span class="gold-line"></span>
+      <p class="nl-lede">
+        One email per week. New buyer's guides, Crystal's Corner, event reports, featured community builds, and the honest stuff you won't find on a dealer site. No filler. Unsubscribe anytime.
+      </p>
+    </div>
+  </header>
+
+  <section class="nl-body">
+    <div class="container container-narrow">
+      <div class="nl-form-wrap">
+        <h2>Join 10,000+ Chevy enthusiasts</h2>
+        <p class="form-sub">Just your email — we'll handle the rest.</p>
+        <form class="nl-form" data-newsletter-form data-source="newsletter-page" action="/api/subscribe" method="POST">
+          <label for="nl-email" class="visually-hidden">Your email</label>
+          <input type="email" id="nl-email" name="email" required placeholder="you@chevyroots.com" />
+          <button type="submit" class="btn btn-gold">Subscribe</button>
+        </form>
+        <p class="form-fine">Double opt-in. Your email stays private. We never share it.</p>
+      </div>
+
+      <h2>What you get</h2>
+      <ul>
+        <li><strong>New buyer's guides</strong> — in-depth, honest, no dealer spin</li>
+        <li><strong>Crystal's Corner</strong> — the weekly editorial in her voice</li>
+        <li><strong>Event reports</strong> — photos, video, and writeups from car shows Crystal attends</li>
+        <li><strong>Featured builds</strong> — the best community-submitted Chevys, spec sheets included</li>
+        <li><strong>News roundup</strong> — important Chevy news without the clickbait</li>
+        <li><strong>Reader questions</strong> — answered directly in the newsletter when we can help</li>
+      </ul>
+
+      <h2>What you DON'T get</h2>
+      <ul>
+        <li>More than one email a week</li>
+        <li>Third-party promotions from companies we don't trust</li>
+        <li>Your email address sold or shared — ever</li>
+        <li>Clickbait subject lines</li>
+      </ul>
+
+      <h2>How we use your email</h2>
+      <p>Your email goes into our newsletter provider (Loops.so) with a timestamp and the source page you subscribed from. That's it. We send you the weekly digest; you unsubscribe whenever you want with one click. See the <a href="/privacy/">privacy policy</a> for the full details.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .nl-header {
+    padding: 80px 0 40px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 100%);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.2);
+  }
+  .nl-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .nl-title em { font-style: italic; color: var(--gold); }
+  .nl-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-top: 1.5rem;
+    max-width: 60ch;
+  }
+  .nl-body { padding: 60px 0 80px; }
+  .nl-form-wrap {
+    background: var(--warm-gray);
+    border: 2px solid var(--gold);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .nl-form-wrap h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .form-sub {
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+  }
+  .nl-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .nl-form input {
+    flex: 1;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.85rem 1.1rem;
+    background: var(--charcoal);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+  }
+  .nl-form input:focus {
+    outline: none; border-color: var(--gold);
+  }
+  .form-fine {
+    font-size: 0.75rem;
+    color: var(--text-mute);
+    margin-top: 1rem;
+  }
+  .nl-body h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--off-white);
+    margin: 3rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--gold);
+  }
+  .nl-body ul {
+    color: var(--text-dim);
+    margin: 0 0 1.5rem 1.5rem;
+    list-style: disc;
+    line-height: 1.75;
+  }
+  .nl-body li { margin-bottom: 0.5rem; }
+  .nl-body p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .nl-body a { color: var(--gold); text-decoration: underline; }
+  .nl-body strong { color: var(--off-white); }
+  @media (max-width: 600px) {
+    .nl-form { flex-direction: column; }
+  }
+</style>

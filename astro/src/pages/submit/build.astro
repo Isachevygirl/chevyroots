@@ -1,0 +1,154 @@
+---
+import StaticPage from '@layouts/StaticPage.astro';
+---
+
+<StaticPage
+  title="Submit Your Chevy Build | ChevyRoots"
+  description="Share your Chevy build with the ChevyRoots community. Photos, story, specs — get featured on the site."
+  eyebrow="Community"
+  heading="Submit Your Build"
+>
+  <p>Got a Chevy you're proud of? We want to feature it. This is how every community build story starts on ChevyRoots.</p>
+
+  <h2>What we publish</h2>
+  <ul>
+    <li><strong>Restomods</strong> — classic Chevy bodies with modern drivetrains, brakes, and suspension</li>
+    <li><strong>LS swaps</strong> — anything with a Chevy V8 dropped into something it wasn't originally meant for</li>
+    <li><strong>Frame-off restorations</strong> — from rust bucket to show car</li>
+    <li><strong>Modified trucks</strong> — lifted, lowered, off-road, overlanding, track-ready</li>
+    <li><strong>Corvettes of every generation</strong> — C1 through C8, stock or built</li>
+    <li><strong>Daily drivers with personality</strong> — your truck doesn't need to be a trailer queen to be featured</li>
+    <li><strong>Work-in-progress builds</strong> — we love an ongoing story</li>
+  </ul>
+
+  <h2>What we need from you</h2>
+  <form class="submit-form" action="/api/submit-build" method="POST" enctype="multipart/form-data">
+    <div class="field">
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="field">
+      <label for="email">Email (we won't publish this)</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="field">
+      <label for="location">Where are you based? (City, State)</label>
+      <input type="text" id="location" name="location" required />
+    </div>
+
+    <div class="field">
+      <label for="year-model">Year &amp; model</label>
+      <input type="text" id="year-model" name="year-model" placeholder="1970 Chevelle SS, 2020 Silverado, etc." required />
+    </div>
+
+    <div class="field">
+      <label for="build-name">Build name or nickname (optional)</label>
+      <input type="text" id="build-name" name="build-name" placeholder="Green Machine, Ol' Blue, etc." />
+    </div>
+
+    <div class="field">
+      <label for="story">Tell us your build story</label>
+      <textarea id="story" name="story" rows="8" required placeholder="How did you find this vehicle? What drew you to it? What have you done to it? What's next? In your own words — we'll clean it up, not rewrite it."></textarea>
+    </div>
+
+    <div class="field">
+      <label for="specs">Key specs (engine, trans, mods, paint, wheels)</label>
+      <textarea id="specs" name="specs" rows="6" placeholder="Engine: 454 big block / Trans: Tremec T56 / Paint: Fathom Green Pearl / Wheels: 18-inch Forgeline GA3..."></textarea>
+    </div>
+
+    <div class="field">
+      <label for="photos">Upload photos (at least 3 — the more the better)</label>
+      <input type="file" id="photos" name="photos" accept="image/*" multiple required />
+      <small>By uploading you confirm you own these photos or have permission to publish them.</small>
+    </div>
+
+    <div class="field">
+      <label for="social">Your social handle (optional — we'll credit you)</label>
+      <input type="text" id="social" name="social" placeholder="@yourinstagram" />
+    </div>
+
+    <div class="field checkbox">
+      <input type="checkbox" id="permission" name="permission" required />
+      <label for="permission">I own the photos and give ChevyRoots permission to publish them with attribution.</label>
+    </div>
+
+    <button type="submit" class="btn btn-gold">Submit Build</button>
+  </form>
+
+  <h2>What happens next</h2>
+  <p>
+    Every build submission lands in Crystal's review queue. She reads every one. If your build is a fit, we'll email you to confirm, clean up the story, pick the best photos, and schedule a publish date. If we have questions, we'll ask.
+  </p>
+  <p>
+    Build features include: full photo gallery, spec sheet, your story, social media credit, and a permanent page on ChevyRoots. We also promote featured builds on Instagram and in the newsletter.
+  </p>
+</StaticPage>
+
+<style>
+  .submit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 640px;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .field.checkbox {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .field label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .field.checkbox label {
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    font-family: var(--font-body);
+  }
+  .field input[type='text'],
+  .field input[type='email'],
+  .field input[type='file'],
+  .field textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.85rem 1rem;
+    background: var(--charcoal);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+    transition: border-color var(--transition);
+  }
+  .field input:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .field textarea {
+    resize: vertical;
+  }
+  .field small {
+    font-size: 0.75rem;
+    color: var(--light-gray);
+  }
+  button[type='submit'] {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+</style>

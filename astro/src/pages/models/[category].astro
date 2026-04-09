@@ -1,0 +1,173 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { vehicles, CATEGORIES, categoryBySlug } from '@lib/data';
+
+export async function getStaticPaths() {
+  // Generate a page for each category AND the legacy /corvette/ slug which maps to Corvette specifically
+  const paths = Object.values(CATEGORIES).map((cat) => ({
+    params: { category: cat.slug },
+    props: { categorySlug: cat.slug },
+  }));
+  // Add /models/corvette/ as a redirect-ish landing page for just the Corvette model
+  paths.push({ params: { category: 'corvette' }, props: { categorySlug: 'corvette' } });
+  return paths;
+}
+
+const { categorySlug } = Astro.props;
+
+// Handle special /models/corvette/ case — one model, one page
+const isCorvette = categorySlug === 'corvette';
+let title: string;
+let description: string;
+let displayVehicles: typeof vehicles;
+let label: string;
+let catDescription: string;
+
+if (isCorvette) {
+  displayVehicles = vehicles.filter((v) => v.slug === 'corvette-c8' || v.model.toLowerCase().includes('corvette'));
+  label = 'Corvette';
+  catDescription = 'The American sports car. From the 1953 C1 to the mid-engine C8.';
+  title = 'Chevrolet Corvette — Every Generation | ChevyRoots';
+  description = 'The complete Corvette library. C1 through C8 — history, specs, known issues, and buying guides for every generation of America\'s sports car.';
+} else {
+  const catEntry = categoryBySlug(categorySlug);
+  const catKey = catEntry?.[0];
+  const cat = catEntry?.[1];
+  if (!cat || !catKey) {
+    return Astro.redirect('/models/');
+  }
+  displayVehicles = vehicles.filter((v) => v.category === catKey);
+  label = cat.label;
+  catDescription = cat.description;
+  title = `Chevrolet ${cat.label} | ${cat.description} | ChevyRoots`;
+  description = `Every Chevrolet ${cat.label.toLowerCase()} we cover — trim data, known issues, photos, and honest buying guides. ${cat.description}`;
+}
+---
+
+<BaseLayout title={title} description={description}>
+  <header class="cat-page-header">
+    <div class="container">
+      <p class="section-eyebrow">Category</p>
+      <h1 class="cat-page-title">{label}</h1>
+      <span class="gold-line"></span>
+      <p class="cat-page-lede">{catDescription}</p>
+    </div>
+  </header>
+
+  <div class="cat-page-body">
+    <div class="container">
+      <div class="models-grid">
+        {displayVehicles.map((v) => (
+          <a href={`/models/${v.slug}/`} class="model-card">
+            <div>
+              <h2 class="model-card-title">{v.model}</h2>
+              <div class="model-card-years">
+                {v.years.length} year{v.years.length !== 1 ? 's' : ''} covered
+              </div>
+              {v.years[0] && (
+                <div class="model-card-msrp">
+                  From ${v.years[0].starting_msrp?.toLocaleString() || '—'}
+                </div>
+              )}
+            </div>
+            <div class="model-card-arrow">→</div>
+          </a>
+        ))}
+      </div>
+
+      {displayVehicles.length === 0 && (
+        <p class="empty-note">
+          More coverage coming soon. In the meantime, check the <a href="/models/">full model library</a>.
+        </p>
+      )}
+    </div>
+  </div>
+
+  <NewsletterCTA source={`models-${categorySlug}`} />
+</BaseLayout>
+
+<style>
+  .cat-page-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 60%, var(--warm-gray) 100%);
+  }
+  .cat-page-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .cat-page-lede {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 60ch;
+    margin-top: 1.5rem;
+  }
+  .cat-page-body {
+    padding: 60px 0 80px;
+  }
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .model-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .model-card:hover {
+    border-color: var(--gold);
+    transform: translateX(4px);
+  }
+  .model-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.35rem;
+  }
+  .model-card-years {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .model-card-msrp {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--gold);
+    margin-top: 0.25rem;
+  }
+  .model-card-arrow {
+    font-size: 1.5rem;
+    color: var(--gold);
+  }
+  .empty-note {
+    color: var(--text-dim);
+    font-size: 1rem;
+    padding: 2rem;
+    text-align: center;
+    background: var(--warm-gray);
+    border-radius: var(--radius-lg);
+  }
+  .empty-note a {
+    color: var(--gold);
+  }
+</style>

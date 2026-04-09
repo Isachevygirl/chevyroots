@@ -1,0 +1,108 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  eyebrow?: string;
+  heading?: string;
+  showNewsletter?: boolean;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  eyebrow = 'ChevyRoots',
+  heading,
+  showNewsletter = true,
+  noindex = false,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description} noindex={noindex}>
+  <header class="static-header">
+    <div class="container container-narrow">
+      <p class="section-eyebrow">{eyebrow}</p>
+      <h1 class="static-title">{heading || title}</h1>
+      <span class="gold-line"></span>
+    </div>
+  </header>
+
+  <div class="static-body">
+    <div class="container container-narrow">
+      <slot />
+    </div>
+  </div>
+
+  {showNewsletter && <NewsletterCTA source="static-page" />}
+</BaseLayout>
+
+<style>
+  .static-header {
+    padding: 80px 0 40px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.15);
+  }
+  .static-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .static-body {
+    padding: 60px 0 80px;
+  }
+  .static-body :global(h2) {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--off-white);
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--gold);
+  }
+  .static-body :global(h2:first-child) {
+    margin-top: 0;
+  }
+  .static-body :global(h3) {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin: 2rem 0 0.5rem;
+  }
+  .static-body :global(p) {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  .static-body :global(p strong) {
+    color: var(--off-white);
+  }
+  .static-body :global(ul), .static-body :global(ol) {
+    color: var(--text-dim);
+    margin: 0 0 1.25rem 1.5rem;
+    line-height: 1.75;
+  }
+  .static-body :global(ul) { list-style: disc; }
+  .static-body :global(ol) { list-style: decimal; }
+  .static-body :global(li) { margin-bottom: 0.5rem; }
+  .static-body :global(a) {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+  .static-body :global(a:hover) {
+    color: var(--gold-light);
+  }
+</style>

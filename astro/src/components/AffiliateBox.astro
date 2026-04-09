@@ -1,0 +1,83 @@
+---
+// Styled affiliate product callout. Wraps AffiliateLink with a visual box.
+import AffiliateLink from './AffiliateLink.astro';
+
+export interface Props {
+  /** Retailer key for /go/{retailer}/{slug} */
+  retailer: string;
+  /** URL slug identifying the product or query */
+  slug: string;
+  /** Product name (bold line) */
+  product: string;
+  /** One-line description */
+  description: string;
+  /** CTA label on the button */
+  cta?: string;
+  /** Optional emoji / icon character */
+  icon?: string;
+}
+
+const { retailer, slug, product, description, cta = 'See Price', icon = '🏁' } = Astro.props;
+---
+
+<div class="affiliate-box">
+  <div class="affiliate-box-icon" aria-hidden="true">{icon}</div>
+  <div class="affiliate-box-text">
+    <strong>{product}</strong>
+    {description}
+  </div>
+  <AffiliateLink retailer={retailer} slug={slug}>
+    <span class="affiliate-box-btn">{cta}</span>
+  </AffiliateLink>
+</div>
+
+<style>
+  .affiliate-box {
+    background: var(--mid-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .affiliate-box-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+  }
+  .affiliate-box-text {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    flex: 1;
+    min-width: 160px;
+    line-height: 1.5;
+  }
+  .affiliate-box-text strong {
+    color: var(--off-white);
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+  .affiliate-box :global(a) {
+    text-decoration: none;
+  }
+  .affiliate-box-btn {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    white-space: nowrap;
+    transition: background var(--transition);
+  }
+  .affiliate-box :global(a:hover) .affiliate-box-btn {
+    background: var(--gold-light);
+  }
+</style>

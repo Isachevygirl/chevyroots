@@ -1,0 +1,1773 @@
+{
+  "vehicles": [
+    {
+      "model": "Silverado 1500",
+      "slug": "silverado-1500",
+      "category": "truck",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 36400,
+          "trims": [
+            {
+              "name": "Work Truck",
+              "msrp": 36400,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 430,
+              "transmission": "8-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 9500,
+              "mpg_city": 19,
+              "mpg_highway": 23,
+              "key_features": ["Steel wheels", "Vinyl seating", "Work-focused interior", "Spray-in bedliner prep", "Trailering package available"]
+            },
+            {
+              "name": "Custom",
+              "msrp": 41600,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 430,
+              "transmission": "8-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 9500,
+              "mpg_city": 19,
+              "mpg_highway": 23,
+              "key_features": ["17-inch aluminum wheels", "Body-color bumpers", "Enhanced driver display", "Apple CarPlay / Android Auto", "Teen Driver technology"]
+            },
+            {
+              "name": "LT",
+              "msrp": 46900,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 430,
+              "transmission": "8-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 9500,
+              "mpg_city": 19,
+              "mpg_highway": 23,
+              "key_features": ["Cloth seating", "8-inch Chevy Infotainment 3 Plus", "Power driver seat", "Remote start", "Rear vision camera", "EZ Lift-and-Lower tailgate"]
+            },
+            {
+              "name": "RST",
+              "msrp": 52200,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "8-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 11500,
+              "mpg_city": 15,
+              "mpg_highway": 21,
+              "key_features": ["Sport appearance package", "20-inch black aluminum wheels", "LED headlamps", "Leather-appointed seating", "Bose premium audio available"]
+            },
+            {
+              "name": "LTZ",
+              "msrp": 57500,
+              "engine": "5.3L V8 with DFM",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "8-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 11500,
+              "mpg_city": 15,
+              "mpg_highway": 21,
+              "key_features": ["Leather seating", "13.4-inch diagonal infotainment touchscreen", "Heated and ventilated front seats", "Wireless charging", "Multi-Pro tailgate", "Power running boards available"]
+            },
+            {
+              "name": "High Country",
+              "msrp": 64200,
+              "engine": "6.2L V8 with DFM",
+              "hp": 420,
+              "torque": 460,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 13300,
+              "mpg_city": 14,
+              "mpg_highway": 20,
+              "key_features": ["Premium leather seating", "Unique chrome exterior badges", "Enhanced audio", "Head-Up Display", "Surround Vision camera", "Signature High Country styling"]
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "starting_msrp": 37200,
+          "trims": [
+            {
+              "name": "Work Truck",
+              "msrp": 37200,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 430,
+              "transmission": "8-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 9500,
+              "mpg_city": 19,
+              "mpg_highway": 23,
+              "key_features": ["Steel wheels", "Vinyl seating", "Work-focused interior", "Spray-in bedliner prep", "Trailering package available"]
+            },
+            {
+              "name": "LT",
+              "msrp": 47800,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 430,
+              "transmission": "8-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 9500,
+              "mpg_city": 19,
+              "mpg_highway": 23,
+              "key_features": ["Cloth seating", "8-inch Chevy Infotainment 3 Plus", "Power driver seat", "Remote start", "EZ Lift-and-Lower tailgate"]
+            },
+            {
+              "name": "LTZ",
+              "msrp": 58500,
+              "engine": "5.3L V8 with DFM",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "8-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 11500,
+              "mpg_city": 15,
+              "mpg_highway": 21,
+              "key_features": ["Leather seating", "13.4-inch diagonal infotainment touchscreen", "Heated and ventilated front seats", "Wireless charging", "Multi-Pro tailgate"]
+            },
+            {
+              "name": "High Country",
+              "msrp": 65500,
+              "engine": "6.2L V8 with DFM",
+              "hp": 420,
+              "torque": 460,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 13300,
+              "mpg_city": 14,
+              "mpg_highway": 20,
+              "key_features": ["Premium leather seating", "Head-Up Display", "Surround Vision camera", "Signature High Country styling", "Enhanced Bose audio"]
+            },
+            {
+              "name": "ZR2",
+              "msrp": 72000,
+              "engine": "6.2L V8",
+              "hp": 420,
+              "torque": 460,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 8900,
+              "mpg_city": 13,
+              "mpg_highway": 17,
+              "key_features": ["DSSV dampers by Multimatic", "33-inch all-terrain tires", "Underbody skid plates", "Front and rear locking differentials", "Rock crawl mode"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Colorado",
+      "slug": "colorado",
+      "category": "truck",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 30995,
+          "trims": [
+            {
+              "name": "Base",
+              "msrp": 30995,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 237,
+              "torque": 259,
+              "transmission": "8-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 7700,
+              "mpg_city": 18,
+              "mpg_highway": 24,
+              "key_features": ["8-inch infotainment screen", "Apple CarPlay / Android Auto", "Teen Driver technology", "Rear vision camera", "17-inch aluminum wheels"]
+            },
+            {
+              "name": "LT",
+              "msrp": 33695,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 237,
+              "torque": 259,
+              "transmission": "8-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 7700,
+              "mpg_city": 18,
+              "mpg_highway": 24,
+              "key_features": ["11.3-inch infotainment touchscreen", "Rear camera mirror", "Heated front seats", "Keyless open and start", "Chevy Safety Assist"]
+            },
+            {
+              "name": "Trail Boss",
+              "msrp": 41495,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 390,
+              "transmission": "8-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 7700,
+              "mpg_city": 17,
+              "mpg_highway": 21,
+              "key_features": ["2-inch factory lift", "All-terrain tires", "Locking rear differential", "Skid plates", "Rancho shocks", "Off-road suspension"]
+            },
+            {
+              "name": "Z71",
+              "msrp": 43995,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 390,
+              "transmission": "8-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 7700,
+              "mpg_city": 17,
+              "mpg_highway": 21,
+              "key_features": ["Bose premium audio", "Leather-appointed seating", "Heated and ventilated front seats", "Z71 off-road package", "Multi-Flex tailgate"]
+            },
+            {
+              "name": "ZR2",
+              "msrp": 50395,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 390,
+              "transmission": "8-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 5000,
+              "mpg_city": 16,
+              "mpg_highway": 19,
+              "key_features": ["DSSV dampers by Multimatic", "33-inch Goodyear Wrangler Duratrac tires", "Front and rear locking differentials", "Rock crawl mode", "Underbody protection"]
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "starting_msrp": 31995,
+          "trims": [
+            {
+              "name": "Base",
+              "msrp": 31995,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 237,
+              "torque": 259,
+              "transmission": "8-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 7700,
+              "mpg_city": 18,
+              "mpg_highway": 24,
+              "key_features": ["8-inch infotainment screen", "Apple CarPlay / Android Auto", "Rear vision camera", "17-inch aluminum wheels", "Chevy Safety Assist"]
+            },
+            {
+              "name": "LT",
+              "msrp": 34695,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 237,
+              "torque": 259,
+              "transmission": "8-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 7700,
+              "mpg_city": 18,
+              "mpg_highway": 24,
+              "key_features": ["11.3-inch infotainment touchscreen", "Heated front seats", "Keyless open and start", "Rear camera mirror", "Wireless Apple CarPlay"]
+            },
+            {
+              "name": "Trail Boss",
+              "msrp": 42495,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 390,
+              "transmission": "8-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 7700,
+              "mpg_city": 17,
+              "mpg_highway": 21,
+              "key_features": ["2-inch factory lift", "All-terrain tires", "Locking rear differential", "Skid plates", "Off-road suspension", "Rancho shocks"]
+            },
+            {
+              "name": "Z71",
+              "msrp": 44995,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 390,
+              "transmission": "8-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 7700,
+              "mpg_city": 17,
+              "mpg_highway": 21,
+              "key_features": ["Bose premium audio", "Leather-appointed seating", "Heated and ventilated front seats", "Multi-Flex tailgate", "Z71 badge"]
+            },
+            {
+              "name": "ZR2",
+              "msrp": 51995,
+              "engine": "2.7L Turbo 4-cylinder",
+              "hp": 310,
+              "torque": 390,
+              "transmission": "8-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 5000,
+              "mpg_city": 16,
+              "mpg_highway": 19,
+              "key_features": ["DSSV dampers by Multimatic", "33-inch Goodyear Duratrac tires", "Front and rear locking differentials", "Rock crawl mode", "Underbody protection", "Factory desert-racing capability"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Tahoe",
+      "slug": "tahoe",
+      "category": "suv",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 57800,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 57800,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 8400,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["8-inch infotainment touchscreen", "Cloth seating", "Power liftgate", "Rear vision camera", "Apple CarPlay / Android Auto"]
+            },
+            {
+              "name": "LT",
+              "msrp": 62500,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 8400,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["10.2-inch infotainment touchscreen", "Leather-appointed seating", "Heated front seats", "Power-folding third row", "Wireless charging"]
+            },
+            {
+              "name": "RST",
+              "msrp": 68000,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 8400,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["Sport appearance package", "22-inch gloss black wheels", "Black exterior accents", "Bose premium audio", "Power running boards available"]
+            },
+            {
+              "name": "Z71",
+              "msrp": 70500,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 8400,
+              "mpg_city": 14,
+              "mpg_highway": 18,
+              "key_features": ["Z71 off-road package", "Two-speed transfer case", "Hill descent control", "Skid plates", "All-terrain tires"]
+            },
+            {
+              "name": "Premier",
+              "msrp": 73500,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 8400,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["Perforated leather seating", "Heated second row", "Panoramic sunroof", "Head-Up Display", "Surround Vision camera system"]
+            },
+            {
+              "name": "High Country",
+              "msrp": 83000,
+              "engine": "6.2L V8",
+              "hp": 420,
+              "torque": 460,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 8400,
+              "mpg_city": 13,
+              "mpg_highway": 18,
+              "key_features": ["Semi-aniline leather seating", "Unique High Country trim", "Enhanced audio system", "Rear-seat media system available", "Magnetic Ride Control available"]
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "starting_msrp": 58500,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 58500,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 8400,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["8-inch infotainment touchscreen", "Cloth seating", "Power liftgate", "Rear vision camera", "Apple CarPlay / Android Auto"]
+            },
+            {
+              "name": "LT",
+              "msrp": 63500,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 8400,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["10.2-inch infotainment touchscreen", "Leather-appointed seating", "Heated front seats", "Power-folding third row", "Wireless charging"]
+            },
+            {
+              "name": "Premier",
+              "msrp": 74500,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 8400,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["Perforated leather seating", "Heated second row", "Panoramic sunroof", "Head-Up Display", "Surround Vision camera system"]
+            },
+            {
+              "name": "High Country",
+              "msrp": 84500,
+              "engine": "6.2L V8",
+              "hp": 420,
+              "torque": 460,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 8400,
+              "mpg_city": 13,
+              "mpg_highway": 18,
+              "key_features": ["Semi-aniline leather seating", "Unique High Country trim", "Rear-seat media system available", "Magnetic Ride Control available", "Enhanced Bose audio"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Suburban",
+      "slug": "suburban",
+      "category": "suv",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 61700,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 61700,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 8300,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["8-inch infotainment touchscreen", "Cloth seating", "Power liftgate", "Rear vision camera", "Apple CarPlay / Android Auto", "Third-row seating"]
+            },
+            {
+              "name": "LT",
+              "msrp": 66200,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 8300,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["10.2-inch infotainment touchscreen", "Leather-appointed seating", "Heated front seats", "Second-row bucket seats available", "Wireless charging"]
+            },
+            {
+              "name": "RST",
+              "msrp": 72000,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 8300,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["Sport appearance package", "22-inch gloss black wheels", "Black exterior accents", "Bose premium audio", "Sport-tuned suspension"]
+            },
+            {
+              "name": "Premier",
+              "msrp": 77000,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 8300,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["Perforated leather seating", "Heated second row", "Panoramic sunroof", "Head-Up Display", "Surround Vision camera system"]
+            },
+            {
+              "name": "High Country",
+              "msrp": 88000,
+              "engine": "6.2L V8",
+              "hp": 420,
+              "torque": 460,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 8300,
+              "mpg_city": 13,
+              "mpg_highway": 18,
+              "key_features": ["Semi-aniline leather seating", "Rear-seat media system available", "Magnetic Ride Control available", "Enhanced Bose audio", "Exclusive High Country badging"]
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "starting_msrp": 62500,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 62500,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 8300,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["8-inch infotainment touchscreen", "Cloth seating", "Power liftgate", "Rear vision camera", "Three-row seating for up to 9"]
+            },
+            {
+              "name": "LT",
+              "msrp": 67200,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 8300,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["10.2-inch infotainment touchscreen", "Leather-appointed seating", "Heated front seats", "Wireless charging", "Second-row bucket seats available"]
+            },
+            {
+              "name": "Premier",
+              "msrp": 78500,
+              "engine": "5.3L V8",
+              "hp": 355,
+              "torque": 383,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 8300,
+              "mpg_city": 14,
+              "mpg_highway": 19,
+              "key_features": ["Perforated leather seating", "Heated second row", "Panoramic sunroof", "Head-Up Display", "Surround Vision camera system"]
+            },
+            {
+              "name": "High Country",
+              "msrp": 89500,
+              "engine": "6.2L V8",
+              "hp": 420,
+              "torque": 460,
+              "transmission": "10-speed automatic",
+              "drivetrain": "4WD",
+              "towing_capacity": 8300,
+              "mpg_city": 13,
+              "mpg_highway": 18,
+              "key_features": ["Semi-aniline leather seating", "Magnetic Ride Control", "Rear-seat media system", "Enhanced Bose audio", "Exclusive High Country trim"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Equinox",
+      "slug": "equinox",
+      "category": "suv",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 31900,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 31900,
+              "engine": "1.5L Turbo 4-cylinder",
+              "hp": 175,
+              "torque": 203,
+              "transmission": "6-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 1500,
+              "mpg_city": 26,
+              "mpg_highway": 31,
+              "key_features": ["7-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Rear vision camera", "Teen Driver technology", "Chevy Safety Assist"]
+            },
+            {
+              "name": "LT",
+              "msrp": 34700,
+              "engine": "1.5L Turbo 4-cylinder",
+              "hp": 175,
+              "torque": 203,
+              "transmission": "6-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 1500,
+              "mpg_city": 26,
+              "mpg_highway": 31,
+              "key_features": ["11.3-inch infotainment touchscreen", "Heated front seats", "Remote start", "Wireless charging", "Power driver seat", "Blind-zone alert"]
+            },
+            {
+              "name": "RS",
+              "msrp": 37200,
+              "engine": "1.5L Turbo 4-cylinder",
+              "hp": 175,
+              "torque": 203,
+              "transmission": "6-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 1500,
+              "mpg_city": 26,
+              "mpg_highway": 31,
+              "key_features": ["Sport appearance package", "18-inch black aluminum wheels", "Black roof rails", "Sport-themed interior", "RS badge"]
+            },
+            {
+              "name": "Premier",
+              "msrp": 40100,
+              "engine": "1.5L Turbo 4-cylinder",
+              "hp": 175,
+              "torque": 203,
+              "transmission": "6-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 1500,
+              "mpg_city": 25,
+              "mpg_highway": 30,
+              "key_features": ["Leather seating", "Heated and ventilated front seats", "Heated steering wheel", "Bose premium audio", "Panoramic sunroof available"]
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "starting_msrp": 33000,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 33000,
+              "engine": "1.5L Turbo 4-cylinder",
+              "hp": 175,
+              "torque": 203,
+              "transmission": "6-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 1500,
+              "mpg_city": 26,
+              "mpg_highway": 31,
+              "key_features": ["11.3-inch infotainment touchscreen (new for 2025)", "Apple CarPlay / Android Auto", "Rear vision camera", "Chevy Safety Assist", "Teen Driver technology"]
+            },
+            {
+              "name": "LT",
+              "msrp": 35900,
+              "engine": "1.5L Turbo 4-cylinder",
+              "hp": 175,
+              "torque": 203,
+              "transmission": "6-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 1500,
+              "mpg_city": 26,
+              "mpg_highway": 31,
+              "key_features": ["Heated front seats", "Remote start", "Wireless charging", "Power driver seat", "Blind-zone alert", "Rear cross-traffic alert"]
+            },
+            {
+              "name": "RS",
+              "msrp": 38500,
+              "engine": "1.5L Turbo 4-cylinder",
+              "hp": 175,
+              "torque": 203,
+              "transmission": "6-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 1500,
+              "mpg_city": 26,
+              "mpg_highway": 31,
+              "key_features": ["Sport appearance package", "18-inch black aluminum wheels", "Black exterior accents", "Sport-themed interior trim", "RS badging"]
+            },
+            {
+              "name": "Premier",
+              "msrp": 41500,
+              "engine": "1.5L Turbo 4-cylinder",
+              "hp": 175,
+              "torque": 203,
+              "transmission": "6-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 1500,
+              "mpg_city": 25,
+              "mpg_highway": 30,
+              "key_features": ["Leather seating", "Heated and ventilated front seats", "Heated steering wheel", "Bose premium audio", "Panoramic sunroof available", "Wireless Apple CarPlay"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Traverse",
+      "slug": "traverse",
+      "category": "suv",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 37995,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 37995,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 1500,
+              "mpg_city": 21,
+              "mpg_highway": 26,
+              "key_features": ["New generation — completely redesigned for 2024", "8-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Three-row seating", "Rear vision camera"]
+            },
+            {
+              "name": "LT",
+              "msrp": 41500,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 1500,
+              "mpg_city": 21,
+              "mpg_highway": 26,
+              "key_features": ["11.3-inch infotainment touchscreen", "Heated front seats", "Wireless charging", "Chevy Safety Assist", "Power liftgate"]
+            },
+            {
+              "name": "RS",
+              "msrp": 44500,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 1500,
+              "mpg_city": 20,
+              "mpg_highway": 25,
+              "key_features": ["Sport appearance", "20-inch black aluminum wheels", "Black exterior accents", "Sport-themed interior", "Panoramic sunroof"]
+            },
+            {
+              "name": "Z71",
+              "msrp": 47500,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 1500,
+              "mpg_city": 20,
+              "mpg_highway": 25,
+              "key_features": ["All-weather capability", "Z71 off-road tuned suspension", "Unique exterior badging", "All-season tires", "Hill descent control"]
+            },
+            {
+              "name": "Premier",
+              "msrp": 50500,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 1500,
+              "mpg_city": 20,
+              "mpg_highway": 25,
+              "key_features": ["Leather seating", "Heated and ventilated front seats", "Bose premium audio", "Head-Up Display", "Surround Vision cameras"]
+            },
+            {
+              "name": "High Country",
+              "msrp": 55000,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 1500,
+              "mpg_city": 20,
+              "mpg_highway": 25,
+              "key_features": ["Semi-aniline leather seating", "Exclusive High Country trim", "Enhanced Bose audio", "Massaging front seats", "21-inch premium wheels"]
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "starting_msrp": 38995,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 38995,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 1500,
+              "mpg_city": 21,
+              "mpg_highway": 26,
+              "key_features": ["8-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Three-row seating", "Rear vision camera", "Chevy Safety Assist"]
+            },
+            {
+              "name": "LT",
+              "msrp": 42500,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 1500,
+              "mpg_city": 21,
+              "mpg_highway": 26,
+              "key_features": ["11.3-inch infotainment touchscreen", "Heated front seats", "Wireless charging", "Power liftgate", "Chevy Safety Assist"]
+            },
+            {
+              "name": "RS",
+              "msrp": 45500,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 1500,
+              "mpg_city": 20,
+              "mpg_highway": 25,
+              "key_features": ["Sport appearance", "20-inch black wheels", "Panoramic sunroof", "Sport-themed interior", "Black exterior accents"]
+            },
+            {
+              "name": "Premier",
+              "msrp": 51500,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 1500,
+              "mpg_city": 20,
+              "mpg_highway": 25,
+              "key_features": ["Leather seating", "Heated and ventilated front seats", "Bose premium audio", "Head-Up Display", "Surround Vision cameras"]
+            },
+            {
+              "name": "High Country",
+              "msrp": 56000,
+              "engine": "2.5L 4-cylinder",
+              "hp": 193,
+              "torque": 189,
+              "transmission": "8-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 1500,
+              "mpg_city": 20,
+              "mpg_highway": 25,
+              "key_features": ["Semi-aniline leather seating", "Massaging front seats", "Enhanced Bose audio", "Exclusive High Country trim", "21-inch premium wheels"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Trax",
+      "slug": "trax",
+      "category": "suv",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 20400,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 20400,
+              "engine": "1.2L Turbo 3-cylinder",
+              "hp": 137,
+              "torque": 162,
+              "transmission": "CVT",
+              "drivetrain": "FWD",
+              "towing_capacity": 1000,
+              "mpg_city": 28,
+              "mpg_highway": 32,
+              "key_features": ["Completely redesigned for 2024", "11-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Rear vision camera", "Teen Driver technology"]
+            },
+            {
+              "name": "LT",
+              "msrp": 23100,
+              "engine": "1.2L Turbo 3-cylinder",
+              "hp": 137,
+              "torque": 162,
+              "transmission": "CVT",
+              "drivetrain": "FWD",
+              "towing_capacity": 1000,
+              "mpg_city": 28,
+              "mpg_highway": 32,
+              "key_features": ["Heated front seats", "Remote start", "Wireless charging", "Blind-zone alert", "Rear cross-traffic alert", "Power driver seat"]
+            },
+            {
+              "name": "RS",
+              "msrp": 25400,
+              "engine": "1.2L Turbo 3-cylinder",
+              "hp": 137,
+              "torque": 162,
+              "transmission": "CVT",
+              "drivetrain": "FWD",
+              "towing_capacity": 1000,
+              "mpg_city": 28,
+              "mpg_highway": 32,
+              "key_features": ["Sport appearance package", "17-inch black aluminum wheels", "Black exterior accents", "Sport interior trim", "RS badging", "Panoramic sunroof available"]
+            },
+            {
+              "name": "ACTIV",
+              "msrp": 26100,
+              "engine": "1.2L Turbo 3-cylinder",
+              "hp": 137,
+              "torque": 162,
+              "transmission": "CVT",
+              "drivetrain": "FWD",
+              "towing_capacity": 1000,
+              "mpg_city": 28,
+              "mpg_highway": 32,
+              "key_features": ["Adventure-focused variant", "Raised ride height", "Roof rails", "Rugged exterior styling", "All-season tires", "ACTIV badging"]
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "starting_msrp": 21000,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 21000,
+              "engine": "1.2L Turbo 3-cylinder",
+              "hp": 137,
+              "torque": 162,
+              "transmission": "CVT",
+              "drivetrain": "FWD",
+              "towing_capacity": 1000,
+              "mpg_city": 28,
+              "mpg_highway": 32,
+              "key_features": ["11-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Rear vision camera", "Teen Driver technology", "Chevy Safety Assist"]
+            },
+            {
+              "name": "LT",
+              "msrp": 23800,
+              "engine": "1.2L Turbo 3-cylinder",
+              "hp": 137,
+              "torque": 162,
+              "transmission": "CVT",
+              "drivetrain": "FWD",
+              "towing_capacity": 1000,
+              "mpg_city": 28,
+              "mpg_highway": 32,
+              "key_features": ["Heated front seats", "Remote start", "Wireless charging", "Power driver seat", "Blind-zone alert"]
+            },
+            {
+              "name": "RS",
+              "msrp": 26000,
+              "engine": "1.2L Turbo 3-cylinder",
+              "hp": 137,
+              "torque": 162,
+              "transmission": "CVT",
+              "drivetrain": "FWD",
+              "towing_capacity": 1000,
+              "mpg_city": 28,
+              "mpg_highway": 32,
+              "key_features": ["Sport appearance", "17-inch black wheels", "Black exterior accents", "Sport interior trim", "Panoramic sunroof available"]
+            },
+            {
+              "name": "ACTIV",
+              "msrp": 26800,
+              "engine": "1.2L Turbo 3-cylinder",
+              "hp": 137,
+              "torque": 162,
+              "transmission": "CVT",
+              "drivetrain": "FWD",
+              "towing_capacity": 1000,
+              "mpg_city": 28,
+              "mpg_highway": 32,
+              "key_features": ["Raised ride height", "Roof rails", "Rugged exterior styling", "All-season tires", "Adventure-focused package"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Corvette Stingray",
+      "slug": "corvette-stingray",
+      "category": "sports",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 69995,
+          "trims": [
+            {
+              "name": "1LT",
+              "msrp": 69995,
+              "engine": "6.2L LT2 V8",
+              "hp": 490,
+              "torque": 465,
+              "transmission": "8-speed dual-clutch automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 15,
+              "mpg_highway": 27,
+              "key_features": ["Mid-engine layout", "8-inch passenger display", "Bose audio", "Performance Traction Management", "Carbon fiber removable roof panel", "0-60 in 2.9 seconds"]
+            },
+            {
+              "name": "2LT",
+              "msrp": 76990,
+              "engine": "6.2L LT2 V8",
+              "hp": 490,
+              "torque": 465,
+              "transmission": "8-speed dual-clutch automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 15,
+              "mpg_highway": 27,
+              "key_features": ["GT2 seats (heated/ventilated)", "Wireless charging", "Enhanced Bose audio", "Carbon fiber interior trim", "Head-Up Display", "Navigation system"]
+            },
+            {
+              "name": "3LT",
+              "msrp": 83995,
+              "engine": "6.2L LT2 V8",
+              "hp": 490,
+              "torque": 465,
+              "transmission": "8-speed dual-clutch automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 15,
+              "mpg_highway": 27,
+              "key_features": ["Competition Sport seats", "Full leather interior", "Memory seats", "Bose Performance audio (14 speakers)", "Satin graphite carbon fiber package available"]
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "starting_msrp": 71995,
+          "trims": [
+            {
+              "name": "1LT",
+              "msrp": 71995,
+              "engine": "6.2L LT2 V8",
+              "hp": 490,
+              "torque": 465,
+              "transmission": "8-speed dual-clutch automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 15,
+              "mpg_highway": 27,
+              "key_features": ["Mid-engine layout", "8-inch passenger display", "Bose audio", "Performance Traction Management", "Carbon fiber removable roof panel", "0-60 in 2.9 seconds"]
+            },
+            {
+              "name": "2LT",
+              "msrp": 78990,
+              "engine": "6.2L LT2 V8",
+              "hp": 490,
+              "torque": 465,
+              "transmission": "8-speed dual-clutch automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 15,
+              "mpg_highway": 27,
+              "key_features": ["GT2 seats (heated/ventilated)", "Wireless charging", "Enhanced Bose audio", "Carbon fiber interior trim", "Head-Up Display", "Navigation"]
+            },
+            {
+              "name": "3LT",
+              "msrp": 85995,
+              "engine": "6.2L LT2 V8",
+              "hp": 490,
+              "torque": 465,
+              "transmission": "8-speed dual-clutch automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 15,
+              "mpg_highway": 27,
+              "key_features": ["Competition Sport seats", "Full leather interior", "Memory seats", "Bose Performance 14-speaker audio", "Available E-Ray hybrid powertrain option"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Camaro",
+      "slug": "camaro",
+      "category": "sports",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 29995,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 29995,
+              "engine": "2.0L Turbo 4-cylinder",
+              "hp": 275,
+              "torque": 295,
+              "transmission": "6-speed manual or 8-speed automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 22,
+              "mpg_highway": 30,
+              "key_features": ["FINAL production year", "8-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Rear vision camera", "Chevrolet Performance suspension tuning"]
+            },
+            {
+              "name": "LT",
+              "msrp": 35995,
+              "engine": "2.0L Turbo 4-cylinder",
+              "hp": 275,
+              "torque": 295,
+              "transmission": "6-speed manual or 8-speed automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 22,
+              "mpg_highway": 30,
+              "key_features": ["18-inch aluminum wheels", "Heated front seats", "Remote start", "Rear parking assist", "Blind-zone alert", "Sport interior trim"]
+            },
+            {
+              "name": "LT1",
+              "msrp": 41995,
+              "engine": "6.2L LT1 V8",
+              "hp": 455,
+              "torque": 455,
+              "transmission": "6-speed manual or 10-speed automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 16,
+              "mpg_highway": 27,
+              "key_features": ["Legendary small-block V8", "Performance Exhaust available", "Magnetic Ride Control available", "Brembo brakes available", "19-inch aluminum wheels"]
+            },
+            {
+              "name": "SS",
+              "msrp": 45995,
+              "engine": "6.2L LT1 V8",
+              "hp": 455,
+              "torque": 455,
+              "transmission": "6-speed manual or 10-speed automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 16,
+              "mpg_highway": 27,
+              "key_features": ["Brembo 4-piston brakes", "20-inch forged aluminum wheels", "Recaro seats available", "Performance Exhaust", "Magnetic Ride Control"]
+            },
+            {
+              "name": "ZL1",
+              "msrp": 72995,
+              "engine": "6.2L Supercharged LT4 V8",
+              "hp": 650,
+              "torque": 650,
+              "transmission": "6-speed manual or 10-speed automatic",
+              "drivetrain": "RWD",
+              "towing_capacity": 0,
+              "mpg_city": 14,
+              "mpg_highway": 20,
+              "key_features": ["650 hp supercharged V8", "Magnetic Ride Control 4.0", "Brembo 6-piston Evo brakes", "Aggressive aero package", "Performance data recorder available", "0-60 in 3.5 seconds"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Blazer",
+      "slug": "blazer",
+      "category": "suv",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 39995,
+          "trims": [
+            {
+              "name": "LT",
+              "msrp": 39995,
+              "engine": "2.0L Turbo 4-cylinder",
+              "hp": 228,
+              "torque": 258,
+              "transmission": "9-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 4500,
+              "mpg_city": 22,
+              "mpg_highway": 29,
+              "key_features": ["10.2-inch infotainment touchscreen", "Heated front seats", "Remote start", "Wireless charging", "Power liftgate", "Chevy Safety Assist"]
+            },
+            {
+              "name": "RS",
+              "msrp": 43500,
+              "engine": "2.0L Turbo 4-cylinder",
+              "hp": 228,
+              "torque": 258,
+              "transmission": "9-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 4500,
+              "mpg_city": 21,
+              "mpg_highway": 27,
+              "key_features": ["Sport appearance package", "21-inch black aluminum wheels", "Black exterior accents", "Bose premium audio", "Heated/ventilated front seats", "Panoramic sunroof available"]
+            },
+            {
+              "name": "Premier",
+              "msrp": 48000,
+              "engine": "3.6L V6",
+              "hp": 308,
+              "torque": 270,
+              "transmission": "9-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 4500,
+              "mpg_city": 18,
+              "mpg_highway": 26,
+              "key_features": ["Leather seating", "Heated and ventilated front seats", "Head-Up Display", "Surround Vision cameras", "Premium Bose audio", "21-inch chrome wheels"]
+            }
+          ]
+        },
+        {
+          "year": 2025,
+          "starting_msrp": 41000,
+          "trims": [
+            {
+              "name": "LT",
+              "msrp": 41000,
+              "engine": "2.0L Turbo 4-cylinder",
+              "hp": 228,
+              "torque": 258,
+              "transmission": "9-speed automatic",
+              "drivetrain": "FWD (AWD available)",
+              "towing_capacity": 4500,
+              "mpg_city": 22,
+              "mpg_highway": 29,
+              "key_features": ["10.2-inch infotainment touchscreen", "Heated front seats", "Remote start", "Wireless charging", "Power liftgate", "Chevy Safety Assist"]
+            },
+            {
+              "name": "RS",
+              "msrp": 44500,
+              "engine": "2.0L Turbo 4-cylinder",
+              "hp": 228,
+              "torque": 258,
+              "transmission": "9-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 4500,
+              "mpg_city": 21,
+              "mpg_highway": 27,
+              "key_features": ["Sport appearance", "21-inch black wheels", "Black exterior accents", "Bose audio", "Heated/ventilated front seats", "Panoramic sunroof available"]
+            },
+            {
+              "name": "Premier",
+              "msrp": 49500,
+              "engine": "3.6L V6",
+              "hp": 308,
+              "torque": 270,
+              "transmission": "9-speed automatic",
+              "drivetrain": "AWD",
+              "towing_capacity": 4500,
+              "mpg_city": 18,
+              "mpg_highway": 26,
+              "key_features": ["Leather seating", "Heated and ventilated front seats", "Head-Up Display", "Surround Vision cameras", "Premium Bose audio", "21-inch premium wheels"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Chevelle SS",
+      "slug": "chevelle-ss",
+      "category": "muscle_car",
+      "era": "classic",
+      "cultural_note": "The 1970 Chevelle SS is widely considered the pinnacle of the muscle car era, offering big-block power in an intermediate body that could run with anything on the street or strip. The LS6 454 variant is one of the most sought-after factory muscle cars ever built.",
+      "years": [
+        {
+          "year": 1970,
+          "original_msrp": 3100,
+          "current_value_range": "$40,000–$200,000+ (LS6 examples)",
+          "trims": [
+            {
+              "name": "SS 396",
+              "engine": "396ci (6.5L) V8 — Turbo-Jet",
+              "displacement_ci": 396,
+              "hp": 350,
+              "torque": 415,
+              "transmission_options": ["Muncie M20 4-speed manual", "Muncie M21 close-ratio 4-speed manual", "Turbo-Hydramatic TH400 3-speed automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["SS hood with twin dome scoops", "Bucket seats", "Floor-mounted shifter", "F41 suspension", "14x7 Rally wheels"]
+            },
+            {
+              "name": "SS 454",
+              "engine": "454ci (7.4L) V8 — Turbo-Jet LS5",
+              "displacement_ci": 454,
+              "hp": 360,
+              "torque": 500,
+              "transmission_options": ["Muncie M20 4-speed manual", "Turbo-Hydramatic TH400 3-speed automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["SS badging", "Power front disc brakes", "Cowl induction hood available (ZL2)", "Heavy-duty cooling"]
+            },
+            {
+              "name": "SS 454 LS6",
+              "engine": "454ci (7.4L) V8 — Turbo-Jet LS6",
+              "displacement_ci": 454,
+              "hp": 450,
+              "torque": 500,
+              "transmission_options": ["Muncie M22 rock-crusher 4-speed manual", "Turbo-Hydramatic TH400 3-speed automatic"],
+              "drivetrain": "RWD",
+              "production_notes": "Approximately 4,475 Chevelles built with LS6 in 1970. The LS6 was the highest factory-rated engine GM offered that year.",
+              "key_features": ["Solid-lifter camshaft", "11.25:1 compression ratio", "Holley 780 CFM carburetor", "Four-bolt main bearing caps", "Cowl induction hood ZL2 standard", "Heavy-duty 4-core radiator"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Camaro",
+      "slug": "camaro-1969",
+      "category": "muscle_car",
+      "era": "classic",
+      "cultural_note": "The 1969 Camaro is the most iconic first-generation Camaro, refined from its 1967 debut with a restyled body and an enormous option list that allowed buyers to spec anything from a mild cruiser to one of the most capable street cars of the era. The COPO ZL1 remains one of the rarest and most valuable American muscle cars.",
+      "years": [
+        {
+          "year": 1969,
+          "original_msrp": 2726,
+          "current_value_range": "$35,000–$800,000+ (ZL1 examples)",
+          "trims": [
+            {
+              "name": "SS 350",
+              "engine": "350ci (5.7L) V8 — Turbo-Fire",
+              "displacement_ci": 350,
+              "hp": 300,
+              "torque": 380,
+              "transmission_options": ["3-speed manual", "Muncie M20 4-speed manual", "Powerglide 2-speed automatic", "Turbo-Hydramatic TH350 automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["SS appearance package", "D80 spoiler available", "Bumblebee stripe", "F41 sport suspension", "Power front disc brakes available"]
+            },
+            {
+              "name": "SS 396",
+              "engine": "396ci (6.5L) V8 — Turbo-Jet L35/L78",
+              "displacement_ci": 396,
+              "hp": 350,
+              "torque": 415,
+              "transmission_options": ["Muncie M20 4-speed manual", "Muncie M21 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["SS badging", "Special instrumentation", "Power front disc brakes", "Rally Sport package available (RS/SS)"]
+            },
+            {
+              "name": "Z/28",
+              "engine": "302ci (4.9L) V8 — High-revving Trans-Am spec",
+              "displacement_ci": 302,
+              "hp": 290,
+              "torque": 290,
+              "notes": "Factory hp rating was conservative; dyno-tested output was closer to 350–360hp. Built to SCCA Trans-Am 5.0L displacement limit.",
+              "transmission_options": ["Muncie M21 close-ratio 4-speed manual"],
+              "drivetrain": "RWD",
+              "production_notes": "20,302 Z/28s produced for 1969.",
+              "key_features": ["High-revving solid-lifter 302", "Front and rear spoilers", "Special Z/28 striping", "Upgraded suspension and brakes", "Dual exhaust"]
+            },
+            {
+              "name": "ZL1",
+              "engine": "427ci (7.0L) V8 — All-aluminum ZL1",
+              "displacement_ci": 427,
+              "hp": 430,
+              "torque": 450,
+              "notes": "Factory hp rating was deliberately understated to avoid insurance scrutiny. True output estimated at 500–550hp. The all-aluminum block and heads made it lighter than the iron 302.",
+              "transmission_options": ["Muncie M22 rock-crusher 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "drivetrain": "RWD",
+              "production_notes": "Only 69 ZL1 Camaros were produced in 1969, ordered through COPO (Central Office Production Order) #9560. Each cost approximately $4,160 in option price alone — nearly double the base car.",
+              "key_features": ["All-aluminum 427 block and heads", "Open-element air cleaner", "Cowl induction", "Heavy-duty 4-core radiator", "Positraction rear axle", "Front disc brakes"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Impala",
+      "slug": "impala-1964",
+      "category": "full_size",
+      "era": "classic",
+      "cultural_note": "The 1964 Impala is the cornerstone of lowrider culture, immortalized in West Coast hip-hop and Chicano art. Its long hood, smooth lines, and full-size stance made it the canvas for generations of custom builders. Clean unmodified examples and slammed show cars alike command intense attention.",
+      "years": [
+        {
+          "year": 1964,
+          "original_msrp": 2947,
+          "current_value_range": "$20,000–$80,000+ (show-quality lowriders significantly more)",
+          "trims": [
+            {
+              "name": "Base",
+              "engine": "230ci (3.8L) Inline-6 or 283ci V8",
+              "displacement_ci": 283,
+              "hp": 195,
+              "torque": 285,
+              "transmission_options": ["3-speed manual", "Powerglide 2-speed automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["Full-size body-on-frame", "Smooth roofline", "Front bench seat", "Wide rear seat ideal for custom interiors"]
+            },
+            {
+              "name": "SS",
+              "engine": "409ci (6.7L) V8 — dual 4-barrel option",
+              "displacement_ci": 409,
+              "hp_range": "340hp (single 4-barrel) or 425hp (dual 4-barrel)",
+              "hp": 425,
+              "torque": 425,
+              "transmission_options": ["4-speed manual", "Powerglide 2-speed automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["SS badging", "Bucket seats", "Floor shifter", "Special SS wheel covers", "Dual exhaust", "Sinatra and the Beach Boys made the 409 famous before this car rolled off the line"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Bel Air",
+      "slug": "bel-air-1957",
+      "category": "full_size",
+      "era": "classic",
+      "cultural_note": "The 1957 Chevrolet Bel Air is perhaps the most recognizable American car ever built, with its distinctive tailfins and two-tone paint combinations defining the optimism of the postwar era. The fuel-injected 283 was an engineering milestone — the first production car engine to achieve 1 horsepower per cubic inch.",
+      "years": [
+        {
+          "year": 1957,
+          "original_msrp": 2290,
+          "current_value_range": "$25,000–$100,000+ (fuel-injected examples command premium)",
+          "trims": [
+            {
+              "name": "Base (235ci Inline-6)",
+              "engine": "235ci (3.9L) Blue Flame Inline-6",
+              "displacement_ci": 235,
+              "hp": 140,
+              "torque": 210,
+              "transmission_options": ["3-speed manual", "Powerglide 2-speed automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["Two-tone paint options", "Tailfin styling", "Chrome trim", "Full-width bench seats", "Tri-Five body style"]
+            },
+            {
+              "name": "V8 (283ci 2-barrel)",
+              "engine": "283ci (4.6L) V8 — Turbo-Fire",
+              "displacement_ci": 283,
+              "hp": 185,
+              "torque": 275,
+              "transmission_options": ["3-speed manual", "Powerglide 2-speed automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["Small-block V8 debut year for this displacement", "Two-tone paint", "Optional Power-Pak dual exhaust"]
+            },
+            {
+              "name": "V8 (283ci 4-barrel)",
+              "engine": "283ci (4.6L) V8 — Super Turbo-Fire",
+              "displacement_ci": 283,
+              "hp": 220,
+              "torque": 300,
+              "transmission_options": ["3-speed manual", "4-speed manual", "Powerglide 2-speed automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["Four-barrel carburetor", "Dual exhaust", "Power-Pak option"]
+            },
+            {
+              "name": "V8 (283ci Dual 4-barrel)",
+              "engine": "283ci (4.6L) V8 — Turbo-Fire dual 4-barrel",
+              "displacement_ci": 283,
+              "hp": 245,
+              "torque": 300,
+              "transmission_options": ["3-speed manual", "4-speed manual"],
+              "drivetrain": "RWD",
+              "key_features": ["Dual four-barrel carburetors", "High-lift camshaft", "Dual exhaust"]
+            },
+            {
+              "name": "V8 (283ci Fuel Injection — 250hp)",
+              "engine": "283ci (4.6L) V8 — Rochester Ramjet fuel injection",
+              "displacement_ci": 283,
+              "hp": 250,
+              "torque": 305,
+              "transmission_options": ["4-speed manual", "3-speed manual"],
+              "drivetrain": "RWD",
+              "production_notes": "Rochester Ramjet continuous-flow fuel injection. Relatively rare — most buyers opted for carbureted versions.",
+              "key_features": ["Continuous-flow fuel injection", "High-compression heads", "Dual exhaust"]
+            },
+            {
+              "name": "V8 (283ci Fuel Injection — 283hp)",
+              "engine": "283ci (4.6L) V8 — Rochester Ramjet fuel injection, high-compression",
+              "displacement_ci": 283,
+              "hp": 283,
+              "torque": 290,
+              "transmission_options": ["4-speed manual"],
+              "drivetrain": "RWD",
+              "production_notes": "The legendary 1hp-per-cubic-inch achievement — the first production car engine to reach this milestone. Required premium fuel and close-ratio 4-speed. Approximately 1,530 units delivered with this option.",
+              "key_features": ["283hp from 283ci — 1hp per cubic inch", "Solid-lifter camshaft", "10.5:1 compression ratio", "Rochester Ramjet fuel injection", "Mandatory 4-speed manual transmission", "No air conditioning available with this option"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "C10 Pickup",
+      "slug": "c10-pickup-1972",
+      "category": "truck",
+      "era": "classic",
+      "cultural_note": "The 1972 C10 represents the peak of the square-body generation's early styling, featuring the last year of the rounded 'Action Line' cab before it gave way to the boxy 1973+ design. Square-body C10s from 1967–1972 are the most universally beloved classic trucks in America, valued for their clean lines, massive aftermarket support, and cultural versatility across low-rider, farm truck, and restomod builds.",
+      "years": [
+        {
+          "year": 1972,
+          "original_msrp": 2595,
+          "current_value_range": "$15,000–$60,000+ (Cheyenne Super restomod examples higher)",
+          "trims": [
+            {
+              "name": "Custom",
+              "engine": "250ci (4.1L) Inline-6",
+              "displacement_ci": 250,
+              "hp": 110,
+              "torque": 185,
+              "transmission_options": ["3-speed manual", "4-speed manual", "Turbo-Hydramatic automatic"],
+              "drivetrain": "RWD (4WD available as K10)",
+              "key_features": ["Long or short bed", "Step-side or fleetside box", "Basic interior", "Single headlamps"]
+            },
+            {
+              "name": "Custom Deluxe",
+              "engine": "307ci (5.0L) V8",
+              "displacement_ci": 307,
+              "hp": 130,
+              "torque": 230,
+              "transmission_options": ["3-speed manual", "4-speed manual", "Turbo-Hydramatic automatic"],
+              "drivetrain": "RWD (4WD available as K10)",
+              "key_features": ["Upgraded interior trim", "Full carpeting", "Dome light", "Door armrests", "Color-keyed steering wheel"]
+            },
+            {
+              "name": "Cheyenne",
+              "engine": "350ci (5.7L) V8",
+              "displacement_ci": 350,
+              "hp": 175,
+              "torque": 270,
+              "transmission_options": ["4-speed manual", "Turbo-Hydramatic TH350 automatic", "Turbo-Hydramatic TH400 automatic"],
+              "drivetrain": "RWD (4WD available as K10)",
+              "key_features": ["Woodgrain interior accents", "Deluxe cab trim", "Chrome bumpers", "Color-keyed carpet", "Cheyenne badge on fenders"]
+            },
+            {
+              "name": "Cheyenne Super",
+              "engine": "402ci (6.6L) V8 — marketed as 'Turbo-Jet 400'",
+              "displacement_ci": 402,
+              "hp": 240,
+              "torque": 345,
+              "transmission_options": ["Turbo-Hydramatic TH400 3-speed automatic", "4-speed manual"],
+              "drivetrain": "RWD (4WD available as K10)",
+              "production_notes": "The 402ci engine was marketed as the 'Turbo-Jet 400' — GM avoided calling it a 396 even though it was a bored version of that block. This was the top-spec C10 configuration.",
+              "key_features": ["Highest trim level available", "Full instrumentation", "Deluxe wood interior", "Chrome exterior trim", "Custom steering wheel", "Full headliner"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "K5 Blazer",
+      "slug": "k5-blazer-1972",
+      "category": "suv",
+      "era": "classic",
+      "cultural_note": "The K5 Blazer pioneered the full-size SUV concept before the term existed, offering truck-based capability with a removable fiberglass hardtop for open-air driving. The 1969–1972 generation is the most prized, and clean examples have skyrocketed in value as the 'original' off-road SUV — the spiritual ancestor of every Bronco and 4Runner that followed.",
+      "years": [
+        {
+          "year": 1972,
+          "original_msrp": 3350,
+          "current_value_range": "$25,000–$85,000+ (restored Cheyenne examples)",
+          "trims": [
+            {
+              "name": "Custom",
+              "engine": "250ci (4.1L) Inline-6 or 307ci (5.0L) V8",
+              "displacement_ci_options": [250, 307],
+              "hp": 130,
+              "torque": 230,
+              "transmission_options": ["3-speed manual", "4-speed manual", "Turbo-Hydramatic automatic"],
+              "drivetrain": "4WD (part-time)",
+              "key_features": ["Removable fiberglass hardtop", "Short wheelbase (104 inches)", "Manual front locking hubs", "Dana 44 front axle", "Open rear cargo area", "Full convertible capability with top removed"]
+            },
+            {
+              "name": "Cheyenne",
+              "engine": "350ci (5.7L) V8",
+              "displacement_ci": 350,
+              "hp": 175,
+              "torque": 270,
+              "transmission_options": ["4-speed manual", "Turbo-Hydramatic TH350 automatic", "Turbo-Hydramatic TH400 automatic"],
+              "drivetrain": "4WD (part-time)",
+              "key_features": ["Top-spec trim", "Woodgrain interior", "Chrome bumpers", "Bucket seats available", "Removable hardtop", "Cheyenne badging", "Dana 44 front / 14-bolt GM rear axle"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Nova SS",
+      "slug": "nova-ss-1970",
+      "category": "muscle_car",
+      "era": "classic",
+      "cultural_note": "The Nova SS offered big-block muscle in a lighter, smaller package than the Chevelle, making it a sleeper that could embarrass cars twice its price. The 396-equipped Nova was a legitimate quarter-mile threat and remains one of the most accessible entry points into classic Chevy muscle.",
+      "years": [
+        {
+          "year": 1970,
+          "original_msrp": 2827,
+          "current_value_range": "$20,000–$60,000+ (SS 396 examples)",
+          "trims": [
+            {
+              "name": "SS 350",
+              "engine": "350ci (5.7L) V8 — Turbo-Fire LT1-based",
+              "displacement_ci": 350,
+              "hp": 300,
+              "torque": 380,
+              "transmission_options": ["3-speed manual", "Muncie M20 4-speed manual", "Turbo-Hydramatic TH350 automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["SS grille and badging", "Bucket seats", "Floor shifter", "Rally wheels", "Dual exhaust", "Heavier front springs for big-block clearance"]
+            },
+            {
+              "name": "SS 396",
+              "engine": "396ci (6.5L) V8 — Turbo-Jet L78",
+              "displacement_ci": 396,
+              "hp": 375,
+              "torque": 415,
+              "transmission_options": ["Muncie M21 close-ratio 4-speed manual", "Muncie M22 rock-crusher 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "drivetrain": "RWD",
+              "production_notes": "The solid-lifter L78 396 in the lighter Nova body produced a power-to-weight ratio that rivaled the Chevelle SS LS6. A well-known sleeper — it looked like a grocery getter.",
+              "key_features": ["Solid-lifter 396", "11.0:1 compression ratio", "800 CFM Holley carburetor", "Positraction rear axle", "Heavy-duty clutch", "F41 sport suspension"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "El Camino SS",
+      "slug": "el-camino-ss-1970",
+      "category": "car_truck",
+      "era": "classic",
+      "cultural_note": "The El Camino defied categorization — built on the Chevelle A-body platform with a pickup bed, it offered sports car looks with genuine truck utility. The SS package transformed it into a muscle car that could haul a motorcycle in the bed. It remains one of the most distinctive vehicles ever produced in America.",
+      "years": [
+        {
+          "year": 1970,
+          "original_msrp": 2900,
+          "current_value_range": "$20,000–$70,000+ (SS 454 examples)",
+          "trims": [
+            {
+              "name": "SS 396",
+              "engine": "396ci (6.5L) V8 — Turbo-Jet LS3",
+              "displacement_ci": 396,
+              "hp": 350,
+              "torque": 415,
+              "transmission_options": ["Muncie M20 4-speed manual", "Muncie M21 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["SS badging", "Sport stripes", "Bucket seats", "Floor console", "Dual exhaust", "Pickup bed with SS trim"]
+            },
+            {
+              "name": "SS 454",
+              "engine": "454ci (7.4L) V8 — Turbo-Jet LS5",
+              "displacement_ci": 454,
+              "hp": 360,
+              "torque": 500,
+              "transmission_options": ["Muncie M22 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["454 big-block", "SS hood", "Power front disc brakes", "Heavy-duty cooling", "Positraction rear axle", "Rally wheels"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Corvette C3 Stingray",
+      "slug": "corvette-c3-stingray-1969",
+      "category": "sports_car",
+      "era": "classic",
+      "cultural_note": "The 1969 C3 Stingray represented Corvette at its rawest and most visceral — a purpose-built American sports car with enough engine options to satisfy both the weekend canyon carver and the dedicated drag racer. The ZL1 option, shared with the COPO Camaro, produced an all-aluminum 427 that made it one of the fastest cars in the world that year.",
+      "years": [
+        {
+          "year": 1969,
+          "original_msrp": 4438,
+          "current_value_range": "$40,000–$500,000+ (L88/ZL1 examples)",
+          "trims": [
+            {
+              "name": "Base (L46 350)",
+              "engine": "350ci (5.7L) V8 — Turbo-Fire L46",
+              "displacement_ci": 350,
+              "hp": 300,
+              "torque": 380,
+              "transmission_options": ["4-speed manual", "3-speed manual", "Turbo-Hydramatic automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["Stingray body", "T-top roof", "Hideaway headlamps", "Independent rear suspension", "4-wheel disc brakes available"]
+            },
+            {
+              "name": "L46 (350/350hp)",
+              "engine": "350ci (5.7L) V8 — High-Performance L46",
+              "displacement_ci": 350,
+              "hp": 350,
+              "torque": 380,
+              "transmission_options": ["4-speed manual close-ratio", "Turbo-Hydramatic automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["High-performance 350", "Transistor ignition", "Special camshaft", "4-wheel disc brakes standard with L46"]
+            },
+            {
+              "name": "L36 (427/390hp)",
+              "engine": "427ci (7.0L) V8 — Turbo-Jet L36",
+              "displacement_ci": 427,
+              "hp": 390,
+              "torque": 460,
+              "transmission_options": ["4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["Big-block 427", "Single Holley 4-barrel", "Chrome valve covers", "Side exhaust available", "Stinger hood available"]
+            },
+            {
+              "name": "L71 (427/435hp)",
+              "engine": "427ci (7.0L) V8 — Tri-Power L71",
+              "displacement_ci": 427,
+              "hp": 435,
+              "torque": 460,
+              "transmission_options": ["Muncie M22 rock-crusher 4-speed manual"],
+              "drivetrain": "RWD",
+              "key_features": ["Three Holley 2-barrel carburetors", "Solid-lifter camshaft", "11.0:1 compression", "Transistor ignition", "Mandatory heavy-duty suspension"]
+            },
+            {
+              "name": "ZL1 (427/430hp)",
+              "engine": "427ci (7.0L) V8 — All-aluminum ZL1",
+              "displacement_ci": 427,
+              "hp": 430,
+              "torque": 450,
+              "notes": "Factory hp was deliberately underrated. True output was estimated at 560hp+. The all-aluminum block and heads weighed 100 lbs less than the iron-block L88.",
+              "transmission_options": ["Muncie M22 rock-crusher 4-speed manual"],
+              "drivetrain": "RWD",
+              "production_notes": "Only 2 Corvettes were factory-built with the ZL1 option in 1969. Additional units were dealer-installed. The ZL1 option alone cost $4,718 — more than the base Corvette.",
+              "key_features": ["All-aluminum 427 block and heads", "Open-element air cleaner", "No radio or heater (weight reduction)", "Transistor ignition", "4-wheel disc brakes", "Heavy-duty suspension mandatory"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Monte Carlo SS",
+      "slug": "monte-carlo-ss-1970",
+      "category": "personal_luxury",
+      "era": "classic",
+      "cultural_note": "The 1970 Monte Carlo was Chevrolet's answer to the Ford Thunderbird and Pontiac Grand Prix — a personal luxury car with a long hood and relaxed demeanor that could still embarrass sports cars when equipped with the SS 454. It debuted to immediate acclaim and established a nameplate that would last four decades.",
+      "years": [
+        {
+          "year": 1970,
+          "original_msrp": 3123,
+          "current_value_range": "$20,000–$65,000+ (SS 454 examples)",
+          "trims": [
+            {
+              "name": "Base",
+              "engine": "350ci (5.7L) V8",
+              "displacement_ci": 350,
+              "hp": 250,
+              "torque": 345,
+              "transmission_options": ["3-speed manual", "Turbo-Hydramatic TH350 automatic"],
+              "drivetrain": "RWD",
+              "key_features": ["116-inch wheelbase", "Long hood styling", "Hidden headlamps", "Concealed windshield wipers", "Standard full instrumentation"]
+            },
+            {
+              "name": "SS 454",
+              "engine": "454ci (7.4L) V8 — Turbo-Jet LS5",
+              "displacement_ci": 454,
+              "hp": 360,
+              "torque": 500,
+              "transmission_options": ["Muncie M22 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "drivetrain": "RWD",
+              "production_notes": "Approximately 3,823 Monte Carlos were built with the SS 454 option in 1970 — making it relatively rare. The SS package added a unique hood, badging, and performance hardware to what was otherwise a luxury-oriented platform.",
+              "key_features": ["SS hood with distinctive styling", "SS badging", "Power front disc brakes", "Heavy-duty suspension", "Positraction rear axle", "Bucket seats available", "Console shifter"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import NewsletterCTA from '../components/NewsletterCTA.astro';
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+import Schema from '../components/Schema.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  published: string; // ISO date
+  updated?: string;
+  author?: string;
+  heroImage?: string;
+  heroAlt?: string;
+  eyebrow?: string;
+  cluster?: string;
+  hasAffiliates?: boolean;
+  /** ≤150-char summary for sidebar cards and search */
+  excerpt?: string;
+  /** Reading time in minutes */
+  readingTime?: number;
+}
+
+const {
+  title,
+  description,
+  slug,
+  published,
+  updated,
+  author = 'Crystal',
+  heroImage,
+  heroAlt = '',
+  eyebrow = 'Buyer\'s Guide',
+  cluster,
+  hasAffiliates = true,
+  readingTime,
+} = Astro.props;
+
+const site = Astro.site?.toString() || 'https://chevyroots.com';
+const canonicalUrl = `${site.replace(/\/$/, '')}/guides/${slug}/`;
+
+const articleSchema = {
+  headline: title,
+  description,
+  image: heroImage ? new URL(heroImage, site).toString() : undefined,
+  datePublished: published,
+  dateModified: updated || published,
+  author: {
+    '@type': 'Person',
+    name: author,
+    url: `${site}crystal/`,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ChevyRoots',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${site}images/chevyroots-logo.png`,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+};
+
+const publishedDate = new Date(published).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout
+  title={`${title} | ChevyRoots`}
+  description={description}
+  ogImage={heroImage}
+  ogType="article"
+  canonical={canonicalUrl}
+>
+  <Schema slot="head" type="Article" data={articleSchema} />
+
+  <article class="article">
+    <header class="article-header">
+      <div class="article-header-inner">
+        <div class="article-eyebrow">{eyebrow}{cluster && ` · ${cluster}`}</div>
+        <h1 class="article-title">{title}</h1>
+        <div class="article-meta">
+          <div class="article-meta-item"><span class="dot"></span>By {author}</div>
+          <div class="article-meta-item"><span class="dot"></span>{publishedDate}</div>
+          {readingTime && (
+            <div class="article-meta-item"><span class="dot"></span>{readingTime} min read</div>
+          )}
+          {updated && (
+            <div class="article-meta-item"><span class="dot"></span>Updated {new Date(updated).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</div>
+          )}
+        </div>
+        {heroImage && (
+          <div class="article-hero-img" style={`background-image: url('${heroImage}');`} role="img" aria-label={heroAlt}></div>
+        )}
+      </div>
+    </header>
+
+    <div class="article-layout">
+      <div class="article-body">
+        {hasAffiliates && <AffiliateDisclosure />}
+        <slot />
+      </div>
+
+      <aside class="sidebar">
+        <slot name="sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">About the Author</div>
+            <p class="sidebar-about">
+              Crystal is the founder of ChevyRoots and drives a Silverado ZR2 when she's not writing about them.
+              <a href="/crystal/">Read her story →</a>
+            </p>
+          </div>
+        </slot>
+      </aside>
+    </div>
+  </article>
+
+  <NewsletterCTA source={`guide-${slug}`} />
+</BaseLayout>
+
+<style>
+  .article-header {
+    background: linear-gradient(160deg, #1a1a1a 60%, #1f1a0e 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .article-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196, 160, 53, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .article-header-inner {
+    max-width: var(--article-max);
+    margin: 0 auto;
+    padding: 64px 24px 48px;
+    position: relative;
+  }
+  .article-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .article-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    color: var(--off-white);
+  }
+  .article-title :global(span) {
+    color: var(--gold);
+  }
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .article-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+  .article-meta-item .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  .article-hero-img {
+    width: 100%;
+    height: 380px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .article-layout {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .article-body {
+    min-width: 0; /* allow flex/grid children to shrink */
+  }
+
+  .article-body :global(h2) {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--off-white);
+    margin: 48px 0 16px;
+    padding-top: 16px;
+    border-top: 2px solid var(--gold);
+  }
+  .article-body :global(h2:first-child) {
+    margin-top: 0;
+  }
+  .article-body :global(h3) {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin: 32px 0 10px;
+    text-transform: uppercase;
+  }
+  .article-body :global(p) {
+    margin-bottom: 20px;
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  .article-body :global(p strong) {
+    color: var(--off-white);
+    font-weight: 600;
+  }
+  .article-body :global(ul),
+  .article-body :global(ol) {
+    margin: 0 0 20px 24px;
+    color: var(--text-dim);
+  }
+  .article-body :global(ul) {
+    list-style: disc;
+  }
+  .article-body :global(ol) {
+    list-style: decimal;
+  }
+  .article-body :global(li) {
+    margin-bottom: 8px;
+    line-height: 1.65;
+  }
+  .article-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 0.9rem;
+  }
+  .article-body :global(th) {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--charcoal-soft);
+    border-bottom: 2px solid var(--gold);
+  }
+  .article-body :global(td) {
+    padding: 10px 14px;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: calc(var(--nav-height) + 16px);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .sidebar-card {
+    background: var(--charcoal-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+  .sidebar-card-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-about {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .sidebar-about a {
+    color: var(--gold);
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 960px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 40px 20px 60px;
+    }
+    .sidebar {
+      position: static;
+    }
+  }
+</style>

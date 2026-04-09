@@ -1,0 +1,38 @@
+---
+export interface Props {
+  label?: string;
+}
+const { label = 'Watch Out' } = Astro.props;
+---
+
+<aside class="warning-box" role="note">
+  <div class="warning-label">{label}</div>
+  <div class="warning-body"><slot /></div>
+</aside>
+
+<style>
+  .warning-box {
+    background: rgba(192, 57, 43, 0.06);
+    border: 1px solid rgba(192, 57, 43, 0.25);
+    border-left: 3px solid #c0392b;
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin: 24px 0;
+  }
+  .warning-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #e06c5a;
+    margin-bottom: 8px;
+  }
+  .warning-body :global(p) {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .warning-body :global(p + p) {
+    margin-top: 0.75rem;
+  }
+</style>

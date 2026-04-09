@@ -1,0 +1,119 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import AnnouncementBar from '../components/AnnouncementBar.astro';
+import Schema from '../components/Schema.astro';
+
+export interface Props {
+  /** <title> — include brand suffix if you want it */
+  title: string;
+  /** <meta name="description"> */
+  description: string;
+  /** Path-relative OG image. Defaults to site hero. */
+  ogImage?: string;
+  /** Page type for OG. Defaults to website. */
+  ogType?: 'website' | 'article';
+  /** Canonical URL override (defaults to current page) */
+  canonical?: string;
+  /** Announcement bar message override */
+  announcement?: string;
+  /** Hide announcement bar entirely */
+  hideAnnouncement?: boolean;
+  /** Noindex the page */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/photos/crystal/crystal-silverado-zr2-hero.jpg',
+  ogType = 'website',
+  canonical,
+  announcement,
+  hideAnnouncement = false,
+  noindex = false,
+} = Astro.props;
+
+const site = Astro.site?.toString() || 'https://chevyroots.com';
+const canonicalUrl = canonical || new URL(Astro.url.pathname, site).toString();
+const ogImageUrl = new URL(ogImage, site).toString();
+
+// Site-wide schema: WebSite + Organization injected on every page.
+const siteSchema = {
+  name: 'ChevyRoots',
+  alternateName: 'Run by a Chevy Girl',
+  url: site,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${site}/search?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const orgSchema = {
+  name: 'ChevyRoots',
+  url: site,
+  logo: `${site}/images/chevyroots-logo.png`,
+  description:
+    'Independent Chevrolet enthusiast resource covering models, builds, events, buyer guides, and Chevy culture. Run by a Chevy Girl.',
+  sameAs: [
+    'https://www.instagram.com/thechevygirl',
+    'https://www.youtube.com/@thechevygirl',
+    'https://www.tiktok.com/@thechevygirl',
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    {/* Open Graph */}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="ChevyRoots" />
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    {/* Fonts */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    {/* Favicon */}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    {/* Site-wide schema */}
+    <Schema type="WebSite" data={siteSchema} />
+    <Schema type="Organization" data={orgSchema} />
+
+    {/* Allow individual pages to inject extra head content */}
+    <slot name="head" />
+  </head>
+  <body>
+    {!hideAnnouncement && <AnnouncementBar message={announcement} />}
+    <Nav pathname={Astro.url.pathname} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

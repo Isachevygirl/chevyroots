@@ -1,0 +1,30 @@
+---
+// Wraps an outbound affiliate link. Uses the /go/{retailer}/{slug} redirect pattern
+// served by the Netlify Function (Phase 1 task). Adds rel=sponsored + nofollow
+// + noopener to stay FTC and SEO compliant.
+
+export interface Props {
+  /** Retailer key: amazon, summit, jegs, rockauto, discount-tire, hagerty, etc. */
+  retailer: string;
+  /** URL-safe slug identifying the specific product or query */
+  slug: string;
+  /** Optional UTM campaign override */
+  utm?: string;
+  /** Open in new tab */
+  newTab?: boolean;
+}
+
+const { retailer, slug, utm, newTab = true } = Astro.props;
+
+const href = `/go/${retailer}/${slug}${utm ? `?c=${encodeURIComponent(utm)}` : ''}`;
+---
+
+<a
+  href={href}
+  rel="sponsored nofollow noopener"
+  target={newTab ? '_blank' : undefined}
+  data-affiliate={retailer}
+  data-affiliate-slug={slug}
+>
+  <slot />
+</a>

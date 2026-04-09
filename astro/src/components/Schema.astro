@@ -1,0 +1,30 @@
+---
+// Renders JSON-LD structured data in the document head.
+// Supports the handful of schemas we actually use: Organization, Person (Crystal),
+// WebSite, Article, Event, LocalBusiness (mechanic), ItemList.
+
+export interface Props {
+  type:
+    | 'Organization'
+    | 'Person'
+    | 'WebSite'
+    | 'Article'
+    | 'Event'
+    | 'LocalBusiness'
+    | 'ItemList'
+    | 'BreadcrumbList';
+  data: Record<string, unknown>;
+}
+
+const { type, data } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': type,
+  ...data,
+};
+
+const json = JSON.stringify(schema, null, 2);
+---
+
+<script type="application/ld+json" set:html={json} />

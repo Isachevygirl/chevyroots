@@ -1,0 +1,1053 @@
+{
+  "metadata": {
+    "title": "Northeast Chevrolet Car Shows, Events & Sources (April 2026 - April 2027)",
+    "generated": "2026-04-05",
+    "states_covered": [
+      "Connecticut", "Delaware", "Maine", "Maryland", "Massachusetts",
+      "New Hampshire", "New Jersey", "New York", "Pennsylvania",
+      "Rhode Island", "Vermont", "Virginia", "Washington DC", "West Virginia"
+    ]
+  },
+  "events": [
+    {
+      "id": 1,
+      "name": "Spring Carlisle Collector Car Flea Market, Corral & Auction",
+      "dates": "April 22-26, 2026",
+      "location": {
+        "city": "Carlisle",
+        "state": "PA",
+        "venue": "Carlisle Fairgrounds, 1000 Bryn Mawr Rd"
+      },
+      "type": "swap meet / flea market / auction",
+      "chevy_specific": false,
+      "description": "One of the world's largest automotive flea markets. 8,100 vendor spaces with parts, accessories, collectibles, memorabilia, and classic cars for sale. Collector Car Auction runs April 23-24 at the Carlisle Expo Center.",
+      "url": "https://www.carlisleevents.com/carlisle-events/carlisle-spring-swap-meet-corral-auction/default.aspx"
+    },
+    {
+      "id": 2,
+      "name": "Spring Classic at TOBAY Beach",
+      "dates": "April 26, 2026 (rain date May 2)",
+      "location": {
+        "city": "Massapequa",
+        "state": "NY",
+        "venue": "TOBAY Beach"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Features classic and hot rod cars from the tri-state region at the beachside venue on Long Island.",
+      "url": "https://carcruisefinder.com/car-shows/category/new-york/"
+    },
+    {
+      "id": 3,
+      "name": "Cruisin' Ocean City (36th Annual)",
+      "dates": "April 30 - May 3, 2026",
+      "location": {
+        "city": "Ocean City",
+        "state": "MD",
+        "venue": "Inlet Parking Lot & Convention Center"
+      },
+      "type": "cruise-in / car show / swap meet",
+      "chevy_specific": false,
+      "description": "Nationally recognized event attracting 3,000+ customs, hot rods, street machines, and classics. Swap meet and vendors inside OC Convention Center. Boardwalk parades Thursday-Saturday mornings. All makes welcome, heavy Chevy presence.",
+      "url": "https://specialeventpro.com/cruisin-ocean-city"
+    },
+    {
+      "id": 4,
+      "name": "Greenbrier Concours d'Elegance",
+      "dates": "May 1-3, 2026",
+      "location": {
+        "city": "White Sulphur Springs",
+        "state": "WV",
+        "venue": "The Greenbrier Resort"
+      },
+      "type": "concours / car show",
+      "chevy_specific": false,
+      "description": "Weekend of drives, receptions, car shows, seminars, and dinners culminating in Sunday Concours with ~100 top collector cars judged on the front lawn. 2026 featured class is Chrysler.",
+      "url": "https://www.greenbrierconcours.com/"
+    },
+    {
+      "id": 5,
+      "name": "Flemington Cruise Night - Chevy/Camaro/Chevelle/Cadillac Feature",
+      "dates": "May 9, 2026 (rain date May 16)",
+      "location": {
+        "city": "Flemington",
+        "state": "NJ",
+        "venue": "Main Street"
+      },
+      "type": "cruise night",
+      "chevy_specific": true,
+      "description": "Free cruise night featuring Chevy, Camaro, Chevelle, and Cadillac in the feature lot. 5:00-8:00 PM. Hundreds of classic cars on the East Coast's premier Main Street cruise.",
+      "url": "https://www.flemingtoncarshows.com/schedule"
+    },
+    {
+      "id": 6,
+      "name": "Bentley's Season Open Car Show",
+      "dates": "May 10, 2026 (rain date May 17)",
+      "location": {
+        "city": "Arundel",
+        "state": "ME",
+        "venue": "Bentley's Saloon"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Season opening car show. Weekly Cruisin' Night Tuesday Car Shows follow from May 19 through September 22, 2026.",
+      "url": "https://bentleyssaloon.com/car-shows/"
+    },
+    {
+      "id": 7,
+      "name": "Bonny Eagle Car Show",
+      "dates": "May 17, 2026",
+      "location": {
+        "city": "Buxton",
+        "state": "ME",
+        "venue": "Bonny Eagle School Grounds"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Public gates open at 8am. All-makes car show at the school grounds.",
+      "url": "https://www.bonnyeaglefootball.com/page/show/2319412-bonny-eagle-car-show"
+    },
+    {
+      "id": 8,
+      "name": "Port 5 Naval Veterans Car Show",
+      "dates": "May 17, 2026",
+      "location": {
+        "city": "Stratford",
+        "state": "CT",
+        "venue": "5744 Main Street Putney"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Car show presented by Port 5 Naval Veterans. 9:00 AM to 3:00 PM. All makes welcome.",
+      "url": "https://www.portfiveusa.com/carshow"
+    },
+    {
+      "id": 9,
+      "name": "Corvette Club of Western MA - 10th Annual All Corvette Show",
+      "dates": "May 17, 2026",
+      "location": {
+        "city": "Chicopee",
+        "state": "MA",
+        "venue": "Chicopee Moose Family Center, 244 Fuller Road"
+      },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "All-Corvette show hosted by the Corvette Club of Western Massachusetts. 10:00 AM start.",
+      "url": "https://www.corvetteforum.com/forums/northeast/4973673-new-england-states-2026-corvette-show-list.html"
+    },
+    {
+      "id": 10,
+      "name": "Hemmings Cruise-In",
+      "dates": "May 21, 2026 (recurring series)",
+      "location": {
+        "city": "Bennington",
+        "state": "VT",
+        "venue": "Main Street (closed to traffic)"
+      },
+      "type": "cruise-in",
+      "chevy_specific": false,
+      "description": "Better Bennington Corp partners with Hemmings Motor News. Main Street transformed into car museum. All year/make/model welcome. Free entry, no pre-registration. Live music.",
+      "url": "https://www.getoutgarage.com/events/cruise-nights/vt/bennington/hemmings-cruise-in-bennington-vt"
+    },
+    {
+      "id": 11,
+      "name": "NHRA Potomac Nationals",
+      "dates": "May 29-31, 2026",
+      "location": {
+        "city": "Mechanicsville",
+        "state": "MD",
+        "venue": "Maryland International Raceway"
+      },
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "Inaugural NHRA national event at Maryland International Raceway. 12,000-hp, 340-mph nitro machines. Chevrolet Camaro ZL1 is the official Chevy body in the 2026 NASCAR/NHRA season.",
+      "url": "https://www.nhra.com/schedule/2026"
+    },
+    {
+      "id": 12,
+      "name": "Vettes of Coastal Maine - Bar Harbor Tour",
+      "dates": "May 28-31, 2026",
+      "location": {
+        "city": "Bar Harbor",
+        "state": "ME",
+        "venue": "Various"
+      },
+      "type": "corvette tour / cruise",
+      "chevy_specific": true,
+      "description": "Multi-day Corvette touring event along the Maine coast to Bar Harbor.",
+      "url": "https://www.corvetteforum.com/forums/northeast/4973673-new-england-states-2026-corvette-show-list.html"
+    },
+    {
+      "id": 13,
+      "name": "Cruise Night on Main Street (28th Annual) - Middletown",
+      "dates": "June 2, 2026",
+      "location": {
+        "city": "Middletown",
+        "state": "CT",
+        "venue": "Main Street"
+      },
+      "type": "cruise night",
+      "chevy_specific": false,
+      "description": "4:30-8:00 PM. Entry $10, spectators free. One of Connecticut's largest annual cruise nights.",
+      "url": "https://classiccars.ride-ct.com/calendar/"
+    },
+    {
+      "id": 14,
+      "name": "NHRA New England Nationals (13th Annual)",
+      "dates": "June 5-7, 2026",
+      "location": {
+        "city": "Epping",
+        "state": "NH",
+        "venue": "New England Dragway"
+      },
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "NHRA Mission Foods Drag Racing Series national event. Top Fuel, Funny Car, Pro Stock racing.",
+      "url": "https://www.nhra.com/schedule/2026/nhra-mission-foods-drag-racing-series/nhra-new-england-nationals"
+    },
+    {
+      "id": 15,
+      "name": "Carlisle GM Nationals",
+      "dates": "June 19-20, 2026",
+      "location": {
+        "city": "Carlisle",
+        "state": "PA",
+        "venue": "Carlisle Fairgrounds, 1000 Bryn Mawr Rd"
+      },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "1,000+ GM vehicles on the National Parts Depot Showfield. Special 2026 features: 100 Years of Pontiac, C10 & Square Body Chevy display, 3rd-gen Camaro/Firebird showcase, Solid Lifter Showroom for high-performance GM muscle. Chevrolet, Buick, Cadillac, GMC, Oldsmobile, Pontiac all represented.",
+      "url": "https://carlisleevents.com/events/events-detail/index?id=gm+nationals"
+    },
+    {
+      "id": 16,
+      "name": "All Wheels Car Show",
+      "dates": "June 19-20, 2026",
+      "location": {
+        "city": "Harrington",
+        "state": "DE",
+        "venue": "Delaware State Fairgrounds"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Two-day all-makes car show at the Delaware State Fairgrounds.",
+      "url": "https://carcruisefinder.com/car-shows/category/delaware/"
+    },
+    {
+      "id": 17,
+      "name": "Old Timers' Day Classic Car Show & Family Festival (69th Annual)",
+      "dates": "June 20, 2026",
+      "location": {
+        "city": "Selbyville",
+        "state": "DE",
+        "venue": "Downtown Selbyville"
+      },
+      "type": "car show / festival",
+      "chevy_specific": false,
+      "description": "8:00 AM - 3:00 PM. Over 100 vehicles from 2006 and earlier. Family festival atmosphere.",
+      "url": "https://oldtimersdayde.com/"
+    },
+    {
+      "id": 18,
+      "name": "Bay State Motor Festival",
+      "dates": "June 21, 2026",
+      "location": {
+        "city": "Framingham",
+        "state": "MA",
+        "venue": "Cushing Park"
+      },
+      "type": "car show / festival",
+      "chevy_specific": false,
+      "description": "Major Massachusetts car show and motor festival. All makes welcome.",
+      "url": "https://baystatemotorfestival.com/"
+    },
+    {
+      "id": 19,
+      "name": "NVCC Chantilly Corvette Show",
+      "dates": "June 2026 (date TBD)",
+      "location": {
+        "city": "Chantilly",
+        "state": "VA",
+        "venue": "Pohanka Chevrolet, 13915 Route 50"
+      },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "All-Corvette show hosted by Northern Virginia Corvette Club, sponsored by Pohanka Chevrolet. Benefits Western Fairfax Christian Ministries Food Pantry. Raffles, music, food, ice cream.",
+      "url": "https://www.pohankachevrolet.com/Corvette-Show/"
+    },
+    {
+      "id": 20,
+      "name": "Camaro Nationals (27th Annual)",
+      "dates": "July 17-18, 2026",
+      "location": {
+        "city": "Morgantown",
+        "state": "PA",
+        "venue": "Classic Auto Mall"
+      },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Indoor and outdoor event featuring 600+ judged and non-judged Camaros including restored, resto-mods, ProTouring, race cars and daily drivers. Produced by the American Camaro Association. 40-acre venue with 8 climate-controlled acres under roof. Space for 750+ F-Bodies, 100+ trailers, parts/swap vendors, food trucks.",
+      "url": "https://camaronationals.org/"
+    },
+    {
+      "id": 21,
+      "name": "Steel Town Corvette Club - 45th Annual All-Chevy Show",
+      "dates": "July 26, 2026",
+      "location": {
+        "city": "Bridgeville",
+        "state": "PA",
+        "venue": "Bridgeville Volunteer Fire Department"
+      },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "All-Chevrolet show with 32 award classes. Main fundraiser for Steel Town Corvette Club (est. 1972). Sponsored by Colussy Chevrolet for 40+ years. Registration forms available on website.",
+      "url": "https://steeltowncorvetteclub.com/all-chevy-show"
+    },
+    {
+      "id": 22,
+      "name": "Vettes at the Beach (33rd Annual)",
+      "dates": "July 26, 2026",
+      "location": {
+        "city": "Sylvan Beach",
+        "state": "NY",
+        "venue": "Sylvan Beach"
+      },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "One of the largest single-day premier Corvette shows in the Northeast. 400+ participants, several thousand enthusiasts. 9 AM to 3 PM. Music, 50/50s, door prizes, dash plaques for first 150 pre-registrations. All net proceeds go to local charities.",
+      "url": "https://www.syracusecorvetteclub.com/vettes-at-the-beach"
+    },
+    {
+      "id": 23,
+      "name": "Carlisle Truck Nationals",
+      "dates": "August 7-9, 2026",
+      "location": {
+        "city": "Carlisle",
+        "state": "PA",
+        "venue": "Carlisle Fairgrounds, 1000 Bryn Mawr Rd"
+      },
+      "type": "car show / truck show",
+      "chevy_specific": false,
+      "description": "Three-day event dedicated to trucks, from vintage to contemporary. Classic Chevrolet C10s and modern trucks featured prominently.",
+      "url": "https://www.carlisleevents.com/carlisle-events/carlisle-truck-nationals/"
+    },
+    {
+      "id": 24,
+      "name": "State Fair of West Virginia Car Show",
+      "dates": "August 10, 2026",
+      "location": {
+        "city": "Lewisburg",
+        "state": "WV",
+        "venue": "State Fair of West Virginia"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "11 AM - 4 PM during the 100th Annual State Fair. Open to 1969 or older custom hot rods, rat rods, classics, antiques, drag cars. Limited 1970-1985 hot rods and muscle cars accepted.",
+      "url": "https://statefairofwv.com/special-events/"
+    },
+    {
+      "id": 25,
+      "name": "East Coast Chevy Show - Chevy vs. The World",
+      "dates": "August 16-17, 2026",
+      "location": {
+        "city": "Dinwiddie",
+        "state": "VA",
+        "venue": "Virginia Motorsports Park"
+      },
+      "type": "drag racing / car show / swap meet",
+      "chevy_specific": true,
+      "description": "Drag racing, car show, and swap meet at Virginia Motorsports Park. 'Chevy vs. The World' format opens event to all makes for competition against Chevys.",
+      "url": "https://racevmp.com/event/east-coast-chevy-show-chevy-vs-the-world/"
+    },
+    {
+      "id": 26,
+      "name": "MPACT Shakedown Motorsports Festival & Car Show",
+      "dates": "August 22, 2026",
+      "location": {
+        "city": "Long Pond",
+        "state": "PA",
+        "venue": "Pocono Raceway"
+      },
+      "type": "car show / motorsport",
+      "chevy_specific": false,
+      "description": "Timed Track X, Roll Racing, drifting, and curated car show at Pocono Raceway.",
+      "url": "https://www.mpacteast.com/pocono-raceway"
+    },
+    {
+      "id": 27,
+      "name": "Corvettes at Carlisle",
+      "dates": "August 27-29, 2026",
+      "location": {
+        "city": "Carlisle",
+        "state": "PA",
+        "venue": "Carlisle Fairgrounds, 1000 Bryn Mawr Rd"
+      },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "The largest all-Corvette show in the world. Nearly 3,000 Corvettes on the Fun Field representing all generations (C1 through C8). Autocross, exhaust contests, seminars, automotive flea market, all-Corvette car corral, Manufacturers Midway. Special 2026: 200+ red/white/blue Corvettes forming American flag on Fun Field (Fri 9AM-2PM), 50th Anniversary display of the 1976 Corvette. General admission $20, kids 12 & under free, parking $10.",
+      "url": "https://www.carlisleevents.com/events/events-detail/index?id=corvettes+at+carlisle"
+    },
+    {
+      "id": 28,
+      "name": "Flemington Cruise Night - Corvette Feature",
+      "dates": "September 5, 2026",
+      "location": {
+        "city": "Flemington",
+        "state": "NJ",
+        "venue": "Main Street"
+      },
+      "type": "cruise night",
+      "chevy_specific": true,
+      "description": "Free cruise night with Corvette feature lot. 5:00-8:00 PM. Free for spectators and car owners.",
+      "url": "https://www.flemingtoncarshows.com/schedule"
+    },
+    {
+      "id": 29,
+      "name": "Olcott Beach Car Show",
+      "dates": "September 5, 2026",
+      "location": {
+        "city": "Olcott (Burt)",
+        "state": "NY",
+        "venue": "Olcott Beach, Beach Street"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "8:00 AM - 4:30 PM. One of the largest outdoor car events in Western New York. Shaded park on the shores of Lake Ontario with vintage, muscle, and modern cars.",
+      "url": "https://www.olcottbeachcarshow.com/"
+    },
+    {
+      "id": 30,
+      "name": "For Corvettes Only - 19th Annual Vettes at Ocean Beach Park",
+      "dates": "September 13, 2026",
+      "location": {
+        "city": "New London",
+        "state": "CT",
+        "venue": "Ocean Beach Park"
+      },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "All-Corvette charity car show at Ocean Beach Park. 10:00 AM start.",
+      "url": "https://www.corvetteforum.com/forums/northeast/4973673-new-england-states-2026-corvette-show-list.html"
+    },
+    {
+      "id": 31,
+      "name": "PDRA Drag Racing - Virginia Motorsports Park",
+      "dates": "September 17-20, 2026",
+      "location": {
+        "city": "Dinwiddie",
+        "state": "VA",
+        "venue": "Virginia Motorsports Park"
+      },
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "Professional Drag Racers Association national event. Many Chevy-powered entries.",
+      "url": "https://racevmp.com/"
+    },
+    {
+      "id": 32,
+      "name": "The British Invasion XXXV",
+      "dates": "September 18-20, 2026",
+      "location": {
+        "city": "Stowe",
+        "state": "VT",
+        "venue": "Various Stowe venues"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Largest all-British motorcar show in the US with 500+ British motorcars. Not Chevy-specific but a major Northeast car event.",
+      "url": "https://www.britishinvasion.com/"
+    },
+    {
+      "id": 33,
+      "name": "Jets & Vettes Corvette Show",
+      "dates": "September 27, 2026",
+      "location": {
+        "city": "Windsor Locks",
+        "state": "CT",
+        "venue": "New England Air Museum, 36 Perimeter Road"
+      },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "All-Corvette show at the New England Air Museum. 10:00 AM start. Unique pairing of Corvettes and historic aircraft.",
+      "url": "https://www.corvetteforum.com/forums/northeast/4973673-new-england-states-2026-corvette-show-list.html"
+    },
+    {
+      "id": 34,
+      "name": "The Boston Cup Classic Car Show",
+      "dates": "September 27, 2026",
+      "location": {
+        "city": "Boston",
+        "state": "MA",
+        "venue": "Parkman Bandstand, Boston Common"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "8 AM to 2 PM. Premier classic car show featuring nostalgic models, muscle cars, supercars, and rare concours-winning machines on Boston Common.",
+      "url": "https://thebostoncup.com/"
+    },
+    {
+      "id": 35,
+      "name": "Fall Carlisle Collector Car Flea Market, Corral & Auction",
+      "dates": "September 30 - October 4, 2026",
+      "location": {
+        "city": "Carlisle",
+        "state": "PA",
+        "venue": "Carlisle Fairgrounds, 1000 Bryn Mawr Rd"
+      },
+      "type": "swap meet / flea market / auction",
+      "chevy_specific": false,
+      "description": "8,100 vendor spaces with parts, accessories, cars, collectibles, memorabilia. Collector Car Auction runs October 1-2 at the Carlisle Expo Center.",
+      "url": "https://www.carlisleevents.com/events/events-detail/index?id=fall+carlisle"
+    },
+    {
+      "id": 36,
+      "name": "Audrain's Newport Concours & Motor Week",
+      "dates": "October 1-4, 2026",
+      "location": {
+        "city": "Newport",
+        "state": "RI",
+        "venue": "Various Newport venues"
+      },
+      "type": "concours / car show",
+      "chevy_specific": false,
+      "description": "Celebration of sportsmanship and motoring history in Newport. Expanded Veteran Car Tour weekend format for 2026.",
+      "url": "https://www.audrainconcours.com/"
+    },
+    {
+      "id": 37,
+      "name": "AACA Eastern Fall Meet (Hershey)",
+      "dates": "October 6-9, 2026",
+      "location": {
+        "city": "Hershey",
+        "state": "PA",
+        "venue": "Hersheypark Complex, 550 Hersheypark Drive"
+      },
+      "type": "swap meet / flea market / car show",
+      "chevy_specific": false,
+      "description": "71st edition of one of the world's largest antique car shows & auto flea markets. Thousands of vendor spaces selling rare parts and memorabilia, huge car corral, prestigious judged show for restored vehicles. Free admission to flea market, car corral, and car show.",
+      "url": "https://hershey.aaca.com/eastern-division-fall-meet/"
+    },
+    {
+      "id": 38,
+      "name": "Endless Summer Cruisin' (29th Annual)",
+      "dates": "October 8-11, 2026",
+      "location": {
+        "city": "Ocean City",
+        "state": "MD",
+        "venue": "Various Ocean City locations"
+      },
+      "type": "cruise-in / car show",
+      "chevy_specific": false,
+      "description": "Major fall cruisin' event with classic cars, hot rods, and custom vehicles throughout Ocean City.",
+      "url": "https://specialeventpro.com/endless-summer-cruisin"
+    },
+    {
+      "id": 39,
+      "name": "Hot Rods & Heroes Car Show",
+      "dates": "October 18, 2026",
+      "location": {
+        "city": "Westbrook",
+        "state": "ME",
+        "venue": "Bill Dodge Auto Group"
+      },
+      "type": "car show / charity",
+      "chevy_specific": false,
+      "description": "Gates open at 10 AM. Charity car show raising funds for Veterans Forward Maine.",
+      "url": "https://www.billdodgeautogroup.com/carshow"
+    },
+    {
+      "id": 40,
+      "name": "Yesterday's Chevrolet Annual Fox Run Car Show",
+      "dates": "October 18, 2026",
+      "location": {
+        "city": "Bear",
+        "state": "DE",
+        "venue": "Fox Run Shopping Center (Routes 72 & 40)"
+      },
+      "type": "car show",
+      "chevy_specific": true,
+      "description": "Hosted by Yesterday's Chevrolet car club. 10 AM - 2 PM. Trophies, music, food. $10 entry. All makes and models welcome but hosted by a Chevy club.",
+      "url": "https://carcruisefinder.com/car-shows/category/delaware/"
+    },
+    {
+      "id": 41,
+      "name": "St. Albans FOP Car Show",
+      "dates": "October 25, 2026",
+      "location": {
+        "city": "St. Albans",
+        "state": "WV",
+        "venue": "St. Albans Police Department HQ, 613 MacCorkle Ave"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "9:00 AM - 3:00 PM. Car show hosted by the Fraternal Order of Police.",
+      "url": "https://stalbanswv.com/event/st-albans-fop-car-show/"
+    },
+    {
+      "id": 42,
+      "name": "Del Rods Car Club Spring Kick-Off Show",
+      "dates": "April 11, 2026",
+      "location": {
+        "city": "Dover",
+        "state": "DE",
+        "venue": "Greentree Plaza"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "10 AM - 2 PM. Trophies, dash plaques, door prizes, music. All makes welcome.",
+      "url": "https://delrodscarclub.org/"
+    },
+    {
+      "id": 43,
+      "name": "Carroll County Car Fest",
+      "dates": "2026 (date TBD)",
+      "location": {
+        "city": "Westminster",
+        "state": "MD",
+        "venue": "Carroll County"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "150+ car show featuring classic, custom, and unique vehicles.",
+      "url": "https://carrollcountytourism.org/event/2026-carroll-county-car-fest/"
+    },
+    {
+      "id": 44,
+      "name": "NH Muscle Cars Season Opener",
+      "dates": "Spring 2026 (date TBD)",
+      "location": {
+        "city": "Deerfield",
+        "state": "NH",
+        "venue": "Deerfield Fairgrounds"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "All-vehicle car show with 35 trophies, fair food vendors, outdoor vendors, special exhibits, live music. Family-friendly and open to the public. 7th season at Deerfield.",
+      "url": "https://www.nhmusclecars.com/events"
+    },
+    {
+      "id": 45,
+      "name": "NH Muscle Cars Summer Sizzler",
+      "dates": "Summer 2026 (date TBD)",
+      "location": {
+        "city": "Epping",
+        "state": "NH",
+        "venue": "Star Speedway"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "All-vehicle show with 35 trophies, vendors, live music.",
+      "url": "https://www.nhmusclecars.com/events"
+    },
+    {
+      "id": 46,
+      "name": "NH Muscle Cars Spooktacular Season Closer",
+      "dates": "Fall 2026 (date TBD)",
+      "location": {
+        "city": "Deerfield",
+        "state": "NH",
+        "venue": "Deerfield Fairgrounds"
+      },
+      "type": "car show",
+      "chevy_specific": false,
+      "description": "Fall-themed car show with Trunk or Treat Halloween-decorated show cars, crafters, outdoor vendors, live music, indoor Trunk or Treat displays, Kids Kar Show and Parade, seasonal fair food.",
+      "url": "https://www.nhmusclecars.com/events"
+    },
+    {
+      "id": 47,
+      "name": "New England Dragway Swap Meet Series",
+      "dates": "April 30, May 28, June 25, July 30, Aug 27, Sep 24, Oct 29, 2026",
+      "location": {
+        "city": "Epping",
+        "state": "NH",
+        "venue": "New England Dragway"
+      },
+      "type": "swap meet",
+      "chevy_specific": false,
+      "description": "Monthly swap meet/flea market with automotive parts, tools, and accessories. Vendor spaces $30. Buyer/spectator admission free.",
+      "url": "https://www.nedragway.com/swapmeet"
+    },
+    {
+      "id": 48,
+      "name": "South Jersey Region AACA 54th Annual Swap Meet & Car Corral",
+      "dates": "March 22, 2026",
+      "location": {
+        "city": "Woodstown",
+        "state": "NJ",
+        "venue": "Salem County Fairgrounds"
+      },
+      "type": "swap meet",
+      "chevy_specific": false,
+      "description": "8 AM - 4 PM. Over 350 vendors expected. Large annual automotive swap meet.",
+      "url": "https://www.sjraaca.com/annual-swap-meet-car-corral/"
+    },
+    {
+      "id": 49,
+      "name": "PDRA Drag Racing - Memorial Day Weekend",
+      "dates": "May 21-23, 2026",
+      "location": {
+        "city": "Dinwiddie",
+        "state": "VA",
+        "venue": "Virginia Motorsports Park"
+      },
+      "type": "drag racing",
+      "chevy_specific": false,
+      "description": "Professional Drag Racers Association national event. Memorial Day weekend.",
+      "url": "https://racevmp.com/"
+    },
+    {
+      "id": 50,
+      "name": "Yesterday's Chevrolet Fox Run Cruise (Monthly)",
+      "dates": "3rd Saturdays, April-September 2026",
+      "location": {
+        "city": "Bear",
+        "state": "DE",
+        "venue": "Fox Run Shopping Center (Routes 72 & 40)"
+      },
+      "type": "cruise-in",
+      "chevy_specific": true,
+      "description": "Monthly cruise hosted by Yesterday's Chevrolet car club. 4-7 PM. All makes welcome.",
+      "url": "https://carcruisefinder.com/car-shows/category/delaware/"
+    },
+    {
+      "id": 51,
+      "name": "Cars and Cannoli Cruise (Monthly)",
+      "dates": "4th Sundays, April-October 2026",
+      "location": {
+        "city": "Chantilly",
+        "state": "VA",
+        "venue": "Buon Appetito Pizza, Sully Place Shopping Center"
+      },
+      "type": "cruise-in",
+      "chevy_specific": false,
+      "description": "9 AM - 1 PM. Monthly cruise-in open to all makes. Northern Virginia.",
+      "url": "https://carcruisefinder.com/car-shows/category/virginia/northern-virginia/"
+    },
+    {
+      "id": 52,
+      "name": "Cars & Coffee Vermont (Monthly)",
+      "dates": "Monthly May-October 2026 (UMall: 5/16, 6/20, 7/18, 8/15, 9/19, 10/17)",
+      "location": {
+        "city": "South Burlington / Middlebury",
+        "state": "VT",
+        "venue": "UMall and Middlebury locations"
+      },
+      "type": "cars & coffee",
+      "chevy_specific": false,
+      "description": "Monthly Cars & Coffee meets at two Vermont locations. Also a special event at Vermont SportsCar on May 9.",
+      "url": "http://carscoffeevermont.com/"
+    },
+    {
+      "id": 53,
+      "name": "Longley's Cruise Nights (Weekly)",
+      "dates": "Fridays, April 18 - Fall 2026",
+      "location": {
+        "city": "Branford",
+        "state": "CT",
+        "venue": "249 West Main Street"
+      },
+      "type": "cruise night",
+      "chevy_specific": false,
+      "description": "4-8 PM every Friday. Weekly recurring cruise night. All makes welcome.",
+      "url": "https://classiccars.ride-ct.com/cruise-nights/"
+    },
+    {
+      "id": 54,
+      "name": "Hlobik's Car Show at American Legion (Weekly)",
+      "dates": "Mondays, May 5 - October 27, 2026",
+      "location": {
+        "city": "Stafford Springs",
+        "state": "CT",
+        "venue": "American Legion Post 26, 10 Monson Road"
+      },
+      "type": "cruise night / car show",
+      "chevy_specific": false,
+      "description": "4-8 PM every Monday, rain or shine. Recurring weekly car show.",
+      "url": "https://classiccars.ride-ct.com/cruise-nights/"
+    },
+    {
+      "id": 55,
+      "name": "Bentley's Cruisin' Night Tuesday Car Shows (Weekly)",
+      "dates": "Tuesdays, May 19 - September 22, 2026",
+      "location": {
+        "city": "Arundel",
+        "state": "ME",
+        "venue": "Bentley's Saloon"
+      },
+      "type": "cruise night",
+      "chevy_specific": false,
+      "description": "Weekly Tuesday evening cruise nights throughout the summer season.",
+      "url": "https://bentleyssaloon.com/car-shows/"
+    },
+    {
+      "id": 56,
+      "name": "Fredericksburg Cruise at Gourmeltz (Weekly)",
+      "dates": "Last Fridays, March-October 2026",
+      "location": {
+        "city": "Fredericksburg",
+        "state": "VA",
+        "venue": "Gourmeltz, 10013 Jefferson Davis Hwy"
+      },
+      "type": "cruise-in",
+      "chevy_specific": false,
+      "description": "5-9 PM. Trophies, charity donations each month. Oldies music and DJ. Lots of parking.",
+      "url": "http://capitalcruisin.com/shows.html"
+    },
+    {
+      "id": 57,
+      "name": "Fredericksburg Harrison Crossing Cruise (Weekly)",
+      "dates": "Sundays, April-October 2026",
+      "location": {
+        "city": "Fredericksburg",
+        "state": "VA",
+        "venue": "Harrison Crossing Wendy's, 5801 Plank Rd"
+      },
+      "type": "cruise-in",
+      "chevy_specific": false,
+      "description": "Weekly Sunday cruise, open to all years/makes/models. Family-oriented. Weather permitting.",
+      "url": "http://capitalcruisin.com/cruisein.html"
+    }
+  ],
+  "sources": [
+    {
+      "id": 1,
+      "name": "NortheastWheelsEvents.com",
+      "url": "https://northeastwheelsevents.com/",
+      "type": "website / calendar",
+      "coverage": "Northeast region (all 14 target states)",
+      "description": "Comprehensive regional car show calendar covering the entire Northeast. Filterable by event type (car show, swap meet, cruise, drag racing) and location. One of the best single sources for the region."
+    },
+    {
+      "id": 2,
+      "name": "CarCruiseFinder.com",
+      "url": "https://carcruisefinder.com/",
+      "type": "website / calendar",
+      "coverage": "All 14 target states (state-specific pages)",
+      "description": "Updated daily with car shows and cruise-ins. State-specific pages with flyers, event times, and locations. Covers every target state."
+    },
+    {
+      "id": 3,
+      "name": "CarShowNationals.com",
+      "url": "https://www.carshownationals.com/",
+      "type": "website / calendar",
+      "coverage": "All states",
+      "description": "State-by-state car show listings. Good for finding events in smaller states."
+    },
+    {
+      "id": 4,
+      "name": "Carlisle Events",
+      "url": "https://carlisleevents.com/events/schedule",
+      "type": "website",
+      "coverage": "Pennsylvania (Carlisle Fairgrounds)",
+      "description": "Official site for all Carlisle Fairgrounds events including GM Nationals, Corvettes at Carlisle, Truck Nationals, Spring/Fall flea markets. The biggest car show venue in the Northeast."
+    },
+    {
+      "id": 5,
+      "name": "RIDE-CT (Classic Cars)",
+      "url": "https://classiccars.ride-ct.com/calendar/",
+      "type": "website / calendar",
+      "coverage": "Connecticut",
+      "description": "Comprehensive 2026 Connecticut car show calendar and cruise night listings. Updated regularly. Email submissions accepted."
+    },
+    {
+      "id": 6,
+      "name": "NewJerseyCarShows.com",
+      "url": "https://www.newjerseycarshows.com/",
+      "type": "website / calendar",
+      "coverage": "New Jersey",
+      "description": "Free listings for NJ car shows, cruise nights, and swap meets. Monthly calendars."
+    },
+    {
+      "id": 7,
+      "name": "NJCruiseNews.com",
+      "url": "http://www.njcruisenews.com/",
+      "type": "website / calendar",
+      "coverage": "New Jersey (by county)",
+      "description": "NJ cruise night and car show listings organized by county."
+    },
+    {
+      "id": 8,
+      "name": "Capital Cruisin'",
+      "url": "http://capitalcruisin.com/shows.html",
+      "type": "website / calendar",
+      "coverage": "Virginia (Northern VA, Fredericksburg area)",
+      "description": "Virginia car show and cruise-in listings. Good for Northern Virginia and Fredericksburg events."
+    },
+    {
+      "id": 9,
+      "name": "Car Club Council of Hampton Roads",
+      "url": "https://www.ccchr.org/events",
+      "type": "website / calendar",
+      "coverage": "Virginia (Hampton Roads / Tidewater area)",
+      "description": "Events calendar for the Hampton Roads car club council covering southeastern Virginia."
+    },
+    {
+      "id": 10,
+      "name": "Y2Camaro.com - New England Car Show Schedule",
+      "url": "https://y2camaro.com/show/show.php",
+      "type": "website / calendar",
+      "coverage": "New England (CT, MA, ME, NH, RI, VT)",
+      "description": "2026 New England car show schedule with events continuously being added."
+    },
+    {
+      "id": 11,
+      "name": "NewEnglandAutoShows.com",
+      "url": "https://www.newenglandautoshows.com/",
+      "type": "website / calendar",
+      "coverage": "New England states",
+      "description": "Calendar of car shows across New England with detailed listings."
+    },
+    {
+      "id": 12,
+      "name": "CruisinBruce.com",
+      "url": "https://www.cruisinbruce.com/carshowcalendar",
+      "type": "website / calendar",
+      "coverage": "New England (primarily MA, RI, CT)",
+      "description": "General car show and cruise event calendar for the New England area."
+    },
+    {
+      "id": 13,
+      "name": "Massachusetts Association of Auto Clubs",
+      "url": "https://massautoclubs.org/maynard-area-event-listing/",
+      "type": "website / calendar",
+      "coverage": "Massachusetts / New England",
+      "description": "Event listings from the Massachusetts Association of Auto Clubs."
+    },
+    {
+      "id": 14,
+      "name": "Vette-Vues.com Corvette Calendar",
+      "url": "https://vette-vues.com/corvette-calendar-events/",
+      "type": "website / calendar",
+      "coverage": "National (filter for Northeast)",
+      "description": "Extensive Corvette event calendar nationwide. Great for finding Corvette-specific shows in any state."
+    },
+    {
+      "id": 15,
+      "name": "CorvetteForum.com - Northeast Section",
+      "url": "https://www.corvetteforum.com/forums/northeast/",
+      "type": "forum",
+      "coverage": "Northeast states",
+      "description": "Active forum with annual consolidated Corvette show lists for New England and Northeast states. Community-maintained and updated."
+    },
+    {
+      "id": 16,
+      "name": "CarsAndCoffeeEvents.com",
+      "url": "https://carsandcoffeeevents.com/",
+      "type": "website / calendar",
+      "coverage": "All states (state-specific pages)",
+      "description": "State-by-state car show, bike show, and truck show listings. Includes Cars & Coffee events."
+    },
+    {
+      "id": 17,
+      "name": "Flemington Car Shows",
+      "url": "https://www.flemingtoncarshows.com/schedule",
+      "type": "website",
+      "coverage": "New Jersey (Flemington)",
+      "description": "Schedule for Flemington cruise nights, which feature different marques each month including Chevy/Camaro/Chevelle and Corvette nights."
+    },
+    {
+      "id": 18,
+      "name": "Car Show & Cruise Guide (CarCruiseGuide.com)",
+      "url": "https://carcruiseguide.com/",
+      "type": "website / calendar",
+      "coverage": "Mid-Atlantic (PA, NJ, DE, MD)",
+      "description": "Car show and cruise night listings for the mid-Atlantic region."
+    },
+    {
+      "id": 19,
+      "name": "OldRide.com Events",
+      "url": "https://www.oldride.com/events/",
+      "type": "website / calendar",
+      "coverage": "All states",
+      "description": "Classic car & truck shows, auctions, swap meets, motorcycle show listings by state."
+    },
+    {
+      "id": 20,
+      "name": "Cruising Magazine Events Calendar",
+      "url": "https://cruisingmagazine.net/events-calendar/",
+      "type": "website / calendar",
+      "coverage": "Mid-Atlantic / Northeast",
+      "description": "Auto & motorcycle event information and event calendar."
+    },
+    {
+      "id": 21,
+      "name": "CarShowz.com - Virginia",
+      "url": "https://carshowz.com/virginia-car-shows/",
+      "type": "website",
+      "coverage": "Virginia (also other states)",
+      "description": "Virginia car show listings with photos from events."
+    },
+    {
+      "id": 22,
+      "name": "Facebook: NEW JERSEY CAR SHOWS AND CRUISE NIGHT FLYERS",
+      "url": "https://www.facebook.com/groups/newjerseycarshowsandcruisenightflyers/",
+      "type": "Facebook group",
+      "coverage": "New Jersey",
+      "description": "Active Facebook group where NJ car show flyers are posted. Good for last-minute and smaller events."
+    },
+    {
+      "id": 23,
+      "name": "Facebook: Central New York Car Show & Cruise-In Scene",
+      "url": "https://www.facebook.com/CNYCarCruise/",
+      "type": "Facebook page",
+      "coverage": "Central New York",
+      "description": "Central NY car show and cruise-in listings and community."
+    },
+    {
+      "id": 24,
+      "name": "Vintage Chevrolet Club of America (VCCA)",
+      "url": "https://vcca.org/",
+      "type": "website / club",
+      "coverage": "National with regional chapters",
+      "description": "Nonprofit dedicated to preservation and restoration of all Chevrolets and GMCs. Regional chapters host shows throughout the Northeast."
+    },
+    {
+      "id": 25,
+      "name": "American Camaro Association / Camaro Nationals",
+      "url": "https://camaronationals.org/",
+      "type": "website / club",
+      "coverage": "Pennsylvania / National",
+      "description": "Not-for-profit club producing the annual Camaro Nationals in Morgantown, PA. Good resource for Camaro-specific events."
+    },
+    {
+      "id": 26,
+      "name": "Special Event Productions (Cruisin' Ocean City)",
+      "url": "https://specialeventpro.com/",
+      "type": "website",
+      "coverage": "Maryland (Ocean City)",
+      "description": "Organizer of Cruisin' Ocean City and Endless Summer Cruisin' events. Two of the largest car cruise events in the mid-Atlantic."
+    },
+    {
+      "id": 27,
+      "name": "Car Club Council of Central Virginia",
+      "url": "https://carclubcouncil.com/cal.html",
+      "type": "website / calendar",
+      "coverage": "Central Virginia",
+      "description": "Calendar of car club events in the central Virginia region."
+    },
+    {
+      "id": 28,
+      "name": "GetOutGarage.com",
+      "url": "https://www.getoutgarage.com/events/car-shows/",
+      "type": "website / calendar",
+      "coverage": "All states",
+      "description": "Car show and cruise night discovery platform filterable by state."
+    },
+    {
+      "id": 29,
+      "name": "Vermont Auto Enthusiasts (VTAuto.org)",
+      "url": "https://vtauto.org/vermont-car-shows/",
+      "type": "website / club",
+      "coverage": "Vermont",
+      "description": "Vermont car show listings from the Vermont Auto Enthusiasts organization."
+    },
+    {
+      "id": 30,
+      "name": "Rhode Island Street Rodding Association",
+      "url": "https://www.ristreetrodding.org/",
+      "type": "website / club",
+      "coverage": "Rhode Island",
+      "description": "RI car show, swap meet, and cruise listings."
+    }
+  ]
+}

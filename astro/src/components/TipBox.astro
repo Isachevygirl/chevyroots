@@ -1,0 +1,38 @@
+---
+export interface Props {
+  label?: string;
+}
+const { label = 'Pro Tip' } = Astro.props;
+---
+
+<aside class="tip-box" role="note">
+  <div class="tip-label">{label}</div>
+  <div class="tip-body"><slot /></div>
+</aside>
+
+<style>
+  .tip-box {
+    background: var(--charcoal-soft);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin: 24px 0;
+  }
+  .tip-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .tip-body :global(p) {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .tip-body :global(p + p) {
+    margin-top: 0.75rem;
+  }
+</style>

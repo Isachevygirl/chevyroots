@@ -1,0 +1,180 @@
+---
+// Newsletter signup CTA. Posts to /api/subscribe Netlify Function (Phase 1 task).
+// Until Phase 1 ships, submission is no-op with a client-side confirmation.
+
+export interface Props {
+  /** Heading override */
+  heading?: string;
+  /** Subheading override */
+  subheading?: string;
+  /** Source tag used to segment subscribers in Loops */
+  source?: string;
+  /** Compact layout (for sidebars) */
+  compact?: boolean;
+}
+
+const {
+  heading = 'Join the Chevy Girl Newsletter',
+  subheading = 'New guides, event reports, and Crystal\'s honest takes. Weekly. No spam. Unsubscribe anytime.',
+  source = 'generic',
+  compact = false,
+} = Astro.props;
+---
+
+<section class:list={['newsletter-cta', { 'newsletter-compact': compact }]} aria-labelledby="newsletter-heading">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-copy">
+        <div class="section-eyebrow">Newsletter</div>
+        <h2 id="newsletter-heading" class="newsletter-heading">{heading}</h2>
+        <p class="newsletter-sub">{subheading}</p>
+      </div>
+      <form
+        class="newsletter-form"
+        data-newsletter-form
+        data-source={source}
+        action="/api/subscribe"
+        method="POST"
+        novalidate
+      >
+        <label class="visually-hidden" for={`newsletter-email-${source}`}>Your email address</label>
+        <input
+          id={`newsletter-email-${source}`}
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          placeholder="you@chevyroots.com"
+        />
+        <input type="hidden" name="source" value={source} />
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
+      <p class="newsletter-message" data-newsletter-message hidden></p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Progressive enhancement — intercept submission for fetch if JS available.
+  // Falls back to normal form POST if JS disabled.
+  const forms = document.querySelectorAll<HTMLFormElement>('[data-newsletter-form]');
+  forms.forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailInput = form.querySelector<HTMLInputElement>('input[type=email]');
+      const messageEl = form.parentElement?.querySelector<HTMLElement>('[data-newsletter-message]');
+      if (!emailInput || !emailInput.value.includes('@')) return;
+
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: emailInput.value,
+            source: form.dataset.source || 'generic',
+          }),
+        });
+        if (res.ok) {
+          if (messageEl) {
+            messageEl.textContent = 'Thanks — check your inbox to confirm.';
+            messageEl.hidden = false;
+          }
+          form.reset();
+        } else {
+          throw new Error('Subscribe failed');
+        }
+      } catch (err) {
+        if (messageEl) {
+          messageEl.textContent = 'Something went wrong. Try again or email hello@chevyroots.com.';
+          messageEl.hidden = false;
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  .newsletter-cta {
+    padding: var(--section-pad) 0;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+    border-top: 1px solid rgba(196, 160, 53, 0.15);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.15);
+  }
+
+  .newsletter-cta.newsletter-compact {
+    padding: 3rem 0;
+  }
+
+  .newsletter-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .newsletter-compact .newsletter-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .newsletter-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    color: var(--off-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter-sub {
+    font-size: 0.95rem;
+    color: var(--light-gray);
+    line-height: 1.6;
+    max-width: 46ch;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  .newsletter-form input[type='email'] {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.85rem 1.1rem;
+    background: var(--charcoal);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+    min-width: 280px;
+    transition: border-color var(--transition);
+  }
+
+  .newsletter-form input[type='email']:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+
+  .newsletter-message {
+    grid-column: 1 / -1;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 720px) {
+    .newsletter-inner {
+      grid-template-columns: 1fr;
+    }
+    .newsletter-form {
+      flex-direction: column;
+    }
+    .newsletter-form input[type='email'] {
+      min-width: 0;
+      width: 100%;
+    }
+  }
+</style>

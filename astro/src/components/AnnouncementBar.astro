@@ -1,0 +1,15 @@
+---
+// Slim red bar above the nav. Single place to update for site-wide announcements.
+
+export interface Props {
+  message?: string;
+}
+
+const {
+  message = '2026 — Celebrating America\'s 250th & 115 Years of Chevrolet — Built in America. Still Running Strong.',
+} = Astro.props;
+---
+
+<div class="announcement-bar" role="region" aria-label="Site announcement">
+  <span>{message}</span>
+</div>

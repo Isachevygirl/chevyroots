@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="ChevyRoots — Run by a Chevy Girl"
+  description="The independent home for Chevrolet enthusiasts — models, builds, buyer's guides, events, and the known issues database. Run by Crystal. Not affiliated with General Motors."
+>
+  <section class="scaffold-hero">
+    <div class="container">
+      <div class="section-eyebrow">Phase 0 · Scaffolding</div>
+      <h1 class="scaffold-title">Chevy<em>Roots</em> Astro Migration</h1>
+      <span class="gold-line"></span>
+      <p class="scaffold-body">
+        The new Astro-powered ChevyRoots is bootstrapping. Homepage content will be ported
+        from the existing <code>index.html</code> in the next step. The foundation — nav, footer,
+        design system, JSON-LD schemas, newsletter CTA, article layout, and content components
+        — is in place and rendering from a single source of truth.
+      </p>
+      <div class="scaffold-buttons">
+        <a href="/guides/" class="btn btn-gold">Browse Guides</a>
+        <a href="/about/" class="btn btn-outline">About the Rebuild</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .scaffold-hero {
+    padding: var(--section-pad) 0;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(196, 160, 53, 0.08) 0%, transparent 70%),
+      var(--charcoal);
+  }
+
+  .scaffold-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 1rem;
+  }
+
+  .scaffold-title em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .scaffold-body {
+    max-width: 60ch;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+  }
+
+  .scaffold-body code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: 0.1em 0.4em;
+    background: var(--warm-gray);
+    border-radius: var(--radius);
+    color: var(--gold);
+  }
+
+  .scaffold-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+</style>

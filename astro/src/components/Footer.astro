@@ -1,0 +1,233 @@
+---
+// Site footer. Contains the single authoritative GM non-affiliation disclaimer.
+// Every page inherits this via BaseLayout.
+
+const year = new Date().getFullYear();
+
+const explore = [
+  { href: '/models/trucks/', label: 'Trucks' },
+  { href: '/models/corvette/', label: 'Corvette' },
+  { href: '/models/classics/', label: 'Classics' },
+  { href: '/models/cars/', label: 'Cars' },
+  { href: '/models/suvs/', label: 'SUVs' },
+  { href: '/models/evs/', label: 'Electric Vehicles' },
+];
+
+const resources = [
+  { href: '/builds/', label: 'Community Builds' },
+  { href: '/events/', label: 'Events Calendar' },
+  { href: '/guides/', label: "Buyer's Guides" },
+  { href: '/guides/quiz/', label: "What's Your Chevy? Quiz" },
+  { href: '/vintage-ads/', label: 'Vintage Ads' },
+  { href: '/guides/chevy-history/', label: 'Chevy History' },
+  { href: '/community/', label: 'Community Hub' },
+  { href: '/marketplace/', label: 'Marketplace' },
+  { href: '/tools/', label: 'Tools & Calculators' },
+  { href: '/mechanics/', label: 'Find a Mechanic' },
+];
+
+const site = [
+  { href: '/about/', label: 'About ChevyRoots' },
+  { href: '/contact/', label: 'Contact' },
+  { href: '/crystal/', label: 'Meet Crystal' },
+  { href: '/press/', label: 'Press Kit' },
+  { href: '/advertise/', label: 'Advertise' },
+  { href: '/privacy/', label: 'Privacy Policy' },
+  { href: '/terms/', label: 'Terms of Use' },
+  { href: '/disclaimer/', label: 'Disclaimer' },
+];
+---
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Chevy<em>Roots</em></div>
+        <div class="footer-brand-tag">Independent Chevrolet Resource</div>
+        <p class="footer-desc">
+          An independent enthusiast resource covering Chevrolet models, builds, events, and buying guides.
+          Run by a Chevy girl from Houston, written for everyone who loves these trucks and cars.
+        </p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+          <a href="#" class="social-btn" aria-label="YouTube">YT</a>
+          <a href="#" class="social-btn" aria-label="TikTok">TT</a>
+          <a href="#" class="social-btn" aria-label="X / Twitter">X</a>
+        </div>
+      </div>
+
+      <nav aria-label="Explore links">
+        <div class="footer-col-title">Explore</div>
+        <ul class="footer-links" role="list">
+          {explore.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <nav aria-label="Resources links">
+        <div class="footer-col-title">Resources</div>
+        <ul class="footer-links" role="list">
+          {resources.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </nav>
+
+      <nav aria-label="Site links">
+        <div class="footer-col-title">Site</div>
+        <ul class="footer-links" role="list">
+          {site.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; {year} ChevyRoots. All rights reserved.</p>
+      <p class="footer-disclaimer">
+        ChevyRoots is an independent enthusiast website and is not affiliated with, endorsed by, or
+        sponsored by General Motors, Chevrolet, or any of their subsidiaries. All model names,
+        trademarks, and logos are the property of their respective owners.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #111;
+    border-top: 1px solid rgba(176, 168, 154, 0.1);
+    padding: clamp(2.5rem, 5vw, 4rem) 0 2rem;
+    margin-top: var(--section-pad);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(176, 168, 154, 0.08);
+  }
+
+  .footer-brand-name {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--off-white);
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-brand-name em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .footer-brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 1rem;
+  }
+
+  .footer-desc {
+    font-size: 0.82rem;
+    color: var(--light-gray);
+    line-height: 1.65;
+    max-width: 280px;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .social-btn {
+    width: 34px;
+    height: 34px;
+    background: var(--warm-gray);
+    border: 1px solid rgba(176, 168, 154, 0.12);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--light-gray);
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+  }
+
+  .social-btn:hover {
+    color: var(--gold);
+    border-color: rgba(196, 160, 53, 0.3);
+    background: rgba(196, 160, 53, 0.06);
+  }
+
+  .footer-col-title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    margin-bottom: 1.1rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    color: var(--light-gray);
+    transition: color var(--transition);
+  }
+
+  .footer-links a:hover {
+    color: var(--gold);
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--light-gray);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  .footer-disclaimer {
+    font-size: 0.7rem;
+    color: var(--light-gray);
+    opacity: 0.75;
+    line-height: 1.5;
+    max-width: 720px;
+  }
+
+  @media (max-width: 900px) {
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .footer-bottom {
+      flex-direction: column;
+    }
+  }
+</style>

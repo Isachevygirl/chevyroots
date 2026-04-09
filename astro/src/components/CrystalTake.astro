@@ -1,0 +1,52 @@
+---
+// "Crystal's Take" — a styled callout block used in articles to voice Crystal's
+// personal opinion. Establishes the founder's voice inline with content.
+---
+
+<aside class="crystal-take" aria-label="Crystal's take">
+  <div class="crystal-take-header">Crystal's Take</div>
+  <div class="crystal-take-body"><slot /></div>
+</aside>
+
+<style>
+  .crystal-take {
+    background: linear-gradient(135deg, #1f1a0e 0%, #222 100%);
+    border: 2px solid var(--gold);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    margin: 36px 0;
+    position: relative;
+  }
+  .crystal-take::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .crystal-take-header {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .crystal-take-body :global(p) {
+    color: var(--text-dim);
+    font-style: italic;
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+  }
+  .crystal-take-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+  .crystal-take-body :global(strong) {
+    color: var(--off-white);
+    font-style: normal;
+    font-weight: 600;
+  }
+</style>

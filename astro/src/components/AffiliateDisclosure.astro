@@ -1,0 +1,41 @@
+---
+// FTC-compliant affiliate disclosure block. Render at top of any article with affiliate links.
+
+export interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<aside class:list={['affiliate-disclosure', { compact }]} role="note">
+  <strong>Affiliate disclosure:</strong>
+  ChevyRoots earns commissions on qualifying purchases through some links on this page.
+  We only link to products and services we'd put on Crystal's own truck.
+  Your price doesn't change — it just keeps this independent site running.
+</aside>
+
+<style>
+  .affiliate-disclosure {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--text-dim);
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 0.85rem 1.15rem;
+    margin: 1.25rem 0;
+  }
+
+  .affiliate-disclosure.compact {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.72rem;
+  }
+
+  .affiliate-disclosure strong {
+    color: var(--off-white);
+    font-weight: 600;
+  }
+</style>

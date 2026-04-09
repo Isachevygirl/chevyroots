@@ -1,0 +1,565 @@
+{
+  "known_issues": [
+    {
+      "model": "Silverado 1500",
+      "slug": "silverado-1500",
+      "issues_by_year": [
+        {
+          "year_range": "2019-2021",
+          "issues": [
+            {
+              "title": "AFM/DFM Lifter Failure",
+              "description": "The Active Fuel Management (AFM) and Dynamic Fuel Management (DFM) systems on 5.3L and 6.2L V8 engines have well-documented lifter collapse issues. Oil pressure drops can cause lifter rollers to fail, leading to camshaft damage and requiring full engine disassembly. This is arguably the most common serious complaint on this generation.",
+              "severity": "major",
+              "affected_trims": ["LT with 5.3L V8", "LTZ", "High Country"],
+              "fix_description": "GM issued multiple TSBs. Most effective permanent fix is the AFM/DFM delete kit (range technology or DoD delete). Warranty coverage depends on mileage. Out-of-warranty repair requires lifter replacement and cam inspection.",
+              "estimated_cost": "$3,000–$8,000 (dealer), $1,500–$3,500 (independent)"
+            },
+            {
+              "title": "Transmission Torque Converter Shudder",
+              "description": "8-speed and 10-speed automatic transmissions exhibit a shudder or vibration between 40–55 mph under light throttle. Caused by torque converter clutch slip. GM has issued multiple TSBs and revised transmission fluid specifications (Dexron HP).",
+              "severity": "moderate",
+              "affected_trims": ["All trims with 8-speed or 10-speed automatic"],
+              "fix_description": "GM TSB covers transmission fluid flush and refill with updated Dexron HP fluid. In persistent cases, torque converter replacement or transmission reprogramming. Many dealers address this under warranty.",
+              "estimated_cost": "$150–$300 (fluid flush), $1,500–$3,500 (torque converter replacement)"
+            },
+            {
+              "title": "Excessive Brake Dust / Premature Brake Wear",
+              "description": "Many owners report excessive dark brake dust accumulation on front wheels and premature front brake pad wear. The factory brake pads, while adequate, tend to be soft compounds that wear faster than expected and produce noticeable dust on 18–22 inch wheels.",
+              "severity": "minor",
+              "affected_trims": ["All trims"],
+              "fix_description": "Upgrade to aftermarket low-dust brake pads (EBC, Hawk, Power Stop). Factory pads can be replaced under powertrain warranty only if they fail prematurely beyond normal wear standards.",
+              "estimated_cost": "$200–$450 (pads + rotors, DIY or independent shop)"
+            },
+            {
+              "title": "Steering Intermediate Shaft Clunk",
+              "description": "A clunking or popping noise when turning at low speeds is a widely reported complaint on 2019–2023 Silverados. The intermediate steering shaft u-joint develops play and produces audible clunks during low-speed parking maneuvers and slow turns. GM issued TSB 19-NA-240 addressing the condition.",
+              "severity": "minor",
+              "tsb": "19-NA-240",
+              "affected_trims": ["All trims (2019–2023)"],
+              "fix_description": "Replacement of the steering intermediate shaft per TSB 19-NA-240. Covered under warranty within the bumper-to-bumper period.",
+              "estimated_cost": "$300–$600"
+            },
+            {
+              "title": "Dashboard Cracking Near Defrost Vents",
+              "description": "Dashboards on 2019–2021 Silverados crack and split near the defroster vents, particularly in regions with extreme heat or UV exposure. The hard plastic material used around the vent openings is prone to stress cracking and is a well-documented cosmetic issue.",
+              "severity": "minor",
+              "affected_trims": ["All trims (2019–2021)"],
+              "fix_description": "Dashboard replacement. Often covered under warranty or goodwill if reported within the coverage period. Out-of-warranty cost is significant.",
+              "estimated_cost": "$1,500–$2,500 (often warranty)"
+            },
+            {
+              "title": "DI Fuel Pump Failure (5.3L / 6.2L)",
+              "description": "The direct-injection high-pressure fuel pump on 2019–2022 5.3L and 6.2L V8 engines can fail, causing hard starts, no-start conditions, and loss of power. Failure is sometimes accompanied by a ticking noise near the top of the engine before complete failure. Multiple NHTSA complaints filed.",
+              "severity": "major",
+              "affected_trims": ["All V8 trims (5.3L L84, 6.2L L87) 2019–2022"],
+              "fix_description": "High-pressure fuel pump replacement. Covered under powertrain warranty. Out-of-warranty replacement is a dealer-level job.",
+              "estimated_cost": "$800–$1,400"
+            }
+          ]
+        },
+        {
+          "year_range": "2022-2024",
+          "issues": [
+            {
+              "title": "Multi-Pro Tailgate Latch Failures",
+              "description": "The Multi-Pro tailgate on 2022+ Silverados has reported latch mechanism issues where inner gate sections do not latch securely or the step function becomes inoperable. GM issued a recall (NHTSA 22V-880) covering certain 2022–2023 models for tailgate latch issues.",
+              "severity": "moderate",
+              "affected_trims": ["All trims with Multi-Pro tailgate (LTZ, High Country)"],
+              "fix_description": "Dealer replacement of the tailgate latch assembly. Covered under GM's recall if VIN is affected. Check NHTSA.gov with your VIN.",
+              "estimated_cost": "$0 (recall/warranty)"
+            },
+            {
+              "title": "Infotainment Screen Freezing / Black Screen",
+              "description": "The 13.4-inch diagonal infotainment screen on higher trims intermittently freezes, goes black, or loses touchscreen responsiveness. Often occurs after software updates or in temperature extremes. GM has released OTA software patches.",
+              "severity": "minor",
+              "affected_trims": ["LTZ", "High Country (13.4-inch screen trims)"],
+              "fix_description": "GM OTA software updates resolve most cases. Dealer can also perform software reflash. Hard resets (hold power button) often provide temporary fix.",
+              "estimated_cost": "$0 (software update / warranty)"
+            },
+            {
+              "title": "DFM Camshaft / Lifter Issues (Continued)",
+              "description": "While GM revised the DFM system for 2022+, some owners still report lifter noise and early AFM-related wear on the 5.3L V8. The underlying architecture remains similar and the concern persists, particularly for high-mileage towing use.",
+              "severity": "moderate",
+              "affected_trims": ["LTZ 5.3L V8", "High Country"],
+              "fix_description": "Range Technology AFM disabler prevents cylinder deactivation without permanently modifying engine. For permanent fix, DFM delete requires camshaft and valve train replacement.",
+              "estimated_cost": "$50–$100 (Range device), $2,000–$5,000 (full delete)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Colorado",
+      "slug": "colorado",
+      "issues_by_year": [
+        {
+          "year_range": "2023-2025",
+          "issues": [
+            {
+              "title": "Transmission Hesitation / Rough Shifts",
+              "description": "The 8-speed automatic paired with the 2.7L turbo four-cylinder exhibits hesitation and rough downshifts at low speeds and in stop-and-go traffic. Multiple forum threads report a stumble when pulling away from stops and searching for the correct gear in the 1–3 range. GM has released transmission software updates.",
+              "severity": "moderate",
+              "affected_trims": ["All trims"],
+              "fix_description": "GM TSB available for transmission control module reprogramming. Most resolved under warranty. Adaptive learning improves over the first 3,000–5,000 miles of ownership.",
+              "estimated_cost": "$0 (TSB / warranty)"
+            },
+            {
+              "title": "Interior Rattles and Squeaks",
+              "description": "The new-generation Colorado has widespread reports of interior trim rattles, particularly from the dashboard, A-pillar trim, and rear cargo area. Cold temperatures exacerbate the issue. Multiple NHTSA complaints logged.",
+              "severity": "minor",
+              "affected_trims": ["All trims"],
+              "fix_description": "Dealer inspection and application of foam tape or clip replacement to affected panels. Some owners resolve with aftermarket panel foam inserts. Severity varies significantly by vehicle.",
+              "estimated_cost": "$0 (warranty), $50–$200 (DIY foam deadening)"
+            },
+            {
+              "title": "ZR2 Differential / Front CV Axle Concerns",
+              "description": "ZR2 owners using the truck for serious off-road use (rock crawling, extended trail use) have reported front CV axle wear and front differential engagement issues at higher mileage. The factory axles are adequate for moderate off-road but can struggle under sustained heavy abuse.",
+              "severity": "moderate",
+              "affected_trims": ["ZR2"],
+              "fix_description": "Aftermarket heavy-duty CV axles available from vendors like Superior Axle & Gear. Regular inspection of CV boots recommended. Warranty coverage depends on whether damage is deemed abuse-related.",
+              "estimated_cost": "$400–$900 per axle (parts + labor)"
+            },
+            {
+              "title": "8-Speed Transmission Shudder",
+              "description": "Similar to the Silverado's torque converter shudder, the 8-speed automatic in the 2023+ Colorado exhibits shudder or vibration at highway cruise speeds under light throttle. The condition is caused by torque converter clutch slip and is most noticeable in the 45–65 mph range.",
+              "severity": "moderate",
+              "affected_trims": ["All trims with 8-speed automatic"],
+              "fix_description": "Transmission fluid flush with updated Dexron HP fluid per GM TSB. In persistent cases, torque converter replacement. Most resolved under warranty.",
+              "estimated_cost": "$400–$2,500"
+            },
+            {
+              "title": "Electrical Gremlins / Phantom Warnings",
+              "description": "A subset of 2023+ Colorado owners report intermittent electrical issues including phantom warning lights, infotainment system resets, and unexplained error messages that clear on their own. Ground wire integrity and software calibration are the most common culprits identified by techs.",
+              "severity": "minor",
+              "affected_trims": ["All trims"],
+              "fix_description": "Dealer software update first; if persistent, inspection and cleaning or replacement of ground wire connections. Some cases require BCM reprogramming.",
+              "estimated_cost": "$0–$500"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Tahoe",
+      "slug": "tahoe",
+      "issues_by_year": [
+        {
+          "year_range": "2021-2024",
+          "issues": [
+            {
+              "title": "Air Suspension / Ride Height Sensor Failures",
+              "description": "Tahoes equipped with the optional air suspension (Adaptive Air Ride) have reported ride height sensor failures that cause the system to default to lowest ride height or display warning messages. Replacement sensors can be costly and the system requires calibration after replacement.",
+              "severity": "moderate",
+              "affected_trims": ["Premier", "High Country with Adaptive Air Ride option"],
+              "fix_description": "Dealer replacement of ride height sensor and system calibration. Covered under warranty within 3 years / 36,000 miles. Some owners opt to convert to standard coilover suspension to eliminate ongoing air suspension costs.",
+              "estimated_cost": "$300–$800 per sensor (dealer), $150–$400 (independent)"
+            },
+            {
+              "title": "Electrical / HVAC Blend Door Actuator Issues",
+              "description": "Multiple owners report HVAC airflow issues where temperature or direction changes don't respond or clicking/grinding noises come from behind the dash. Blend door actuator failures are common on this platform and can affect front and rear climate zones.",
+              "severity": "moderate",
+              "affected_trims": ["All trims"],
+              "fix_description": "Replacement of the affected blend door actuator. Labor is significant as dashboard removal is often required for rear actuators. Some front actuators are more accessible.",
+              "estimated_cost": "$150–$600 parts, $300–$1,200 total with labor depending on location"
+            },
+            {
+              "title": "Fuel Pump / EVAP System Codes",
+              "description": "The high-pressure fuel pump and EVAP canister purge valve have generated multiple complaints and NHTSA reports across the 2021+ platform. Owners report stalling concerns, P0442 and P0455 EVAP codes, and hesitation under hard acceleration. GM issued related TSBs.",
+              "severity": "moderate",
+              "affected_trims": ["All trims"],
+              "fix_description": "GM TSB covers updated purge valve and in some cases fuel pump replacement. Covered under warranty. EVAP codes may also be caused by loose fuel cap — check cap seal first.",
+              "estimated_cost": "$0 (warranty), $200–$600 (out of warranty, purge valve + fuel system inspection)"
+            },
+            {
+              "title": "10-Speed Transmission Clunk on Deceleration",
+              "description": "The 10L80 10-speed automatic transmission in 2021–2024 Tahoe and Suburban models produces a noticeable clunk or thud during deceleration and light braking. The condition is traced to the valve body calibration and torque converter behavior at low speeds.",
+              "severity": "moderate",
+              "affected_trims": ["All trims with 10L80 10-speed automatic"],
+              "fix_description": "Dealer valve body replacement or transmission control module reflash. Severity varies — many cases resolved with a software update alone.",
+              "estimated_cost": "$500–$2,000"
+            },
+            {
+              "title": "Rear A/C Not Cooling",
+              "description": "A common complaint on 2021–2022 Tahoes and Suburbans is the rear HVAC zone blowing warm or insufficiently cool air. The condition is often caused by low refrigerant charge from the factory or a faulty rear expansion valve restricting refrigerant flow to the rear evaporator.",
+              "severity": "minor",
+              "affected_trims": ["All trims with rear HVAC (2021–2022 most affected)"],
+              "fix_description": "Refrigerant recharge or rear expansion valve replacement. Most resolved under warranty. Ensure the rear HVAC evaporator drain is not clogged.",
+              "estimated_cost": "$200–$800"
+            },
+            {
+              "title": "Power Running Board Malfunction",
+              "description": "Auto-deploying power running boards on optioned Tahoes and Suburbans stick in the deployed position, fail to retract, or do not deploy at all. The electric motor and linkage assembly are susceptible to corrosion and debris intrusion, especially in northern climates with road salt.",
+              "severity": "minor",
+              "affected_trims": ["All trims with optional power running boards"],
+              "fix_description": "Motor and linkage assembly inspection, lubrication, or replacement. Covered under warranty. Out-of-warranty repair requires per-side motor/linkage replacement.",
+              "estimated_cost": "$600–$1,200 per side"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Suburban",
+      "slug": "suburban",
+      "issues_by_year": [
+        {
+          "year_range": "2021-2024",
+          "issues": [
+            {
+              "title": "Third-Row Power Folding Seat Malfunctions",
+              "description": "The power-folding third-row seating on 2021+ Suburbans has generated complaints about the mechanism binding, failing to fold fully flat, or losing power mid-cycle. The larger Suburban experiences more strain on the fold mechanism than the Tahoe due to its longer body.",
+              "severity": "moderate",
+              "affected_trims": ["LT", "Premier", "High Country (with power fold third row)"],
+              "fix_description": "Dealer inspection of seat motor and track assembly. GM TSB addresses recalibration procedure. In some cases the seat fold motor requires replacement.",
+              "estimated_cost": "$0 (warranty), $400–$900 (out of warranty)"
+            },
+            {
+              "title": "Air Suspension Compressor Premature Failure",
+              "description": "Suburbans with the Adaptive Air Ride suspension option have higher reported rates of compressor failure than the Tahoe, likely due to the vehicle's increased weight. Compressor failure results in the vehicle sitting low and a warning message.",
+              "severity": "major",
+              "affected_trims": ["Premier", "High Country with Adaptive Air Ride"],
+              "fix_description": "Air compressor replacement. Dealer service required for calibration. Many owners on Suburban forums convert to aftermarket non-air suspension after the second failure to reduce long-term costs.",
+              "estimated_cost": "$800–$1,800 (dealer air compressor replacement)"
+            },
+            {
+              "title": "Panoramic Roof Wind Noise / Leaks",
+              "description": "Owners of Suburbans with the optional panoramic sunroof report wind noise above 65 mph and, in some cases, water intrusion around the seal. The large roof panel and the vehicle's height make it susceptible to wind buffeting.",
+              "severity": "minor",
+              "affected_trims": ["Premier", "High Country with panoramic sunroof"],
+              "fix_description": "Dealer resealing of roof glass and weatherstripping replacement. GM has a TSB for wind noise addressing sunroof alignment. Some cases require sunroof replacement.",
+              "estimated_cost": "$0 (warranty), $200–$600 (seal replacement out of warranty)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Equinox",
+      "slug": "equinox",
+      "issues_by_year": [
+        {
+          "year_range": "2018-2022 (1.5T previous gen)",
+          "issues": [
+            {
+              "title": "1.5T Excessive Oil Consumption",
+              "description": "The 1.5L turbocharged four-cylinder in the 2018–2021 Equinox is known for consuming significant amounts of engine oil — up to 1 quart per 1,500–2,000 miles in affected vehicles. GM acknowledged the issue and extended warranty coverage. Related NHTSA investigation (PE20-027).",
+              "severity": "major",
+              "affected_trims": ["All trims with 1.5T (2018-2021)"],
+              "fix_description": "GM extended powertrain warranty to 10 years / 120,000 miles for oil consumption on affected models. Dealerships perform an oil consumption test (measure over 3,000 miles). Engine replacement authorized if consumption exceeds GM's threshold.",
+              "estimated_cost": "$0 under extended warranty, $4,000–$8,000 out of warranty (short block replacement)"
+            },
+            {
+              "title": "Timing Chain Stretch and Rattle",
+              "description": "The 1.5T engine's timing chain can stretch prematurely, causing a rattle on cold starts and potential timing issues. Low oil level (exacerbated by the oil consumption issue) accelerates timing chain wear. In severe cases, the chain can jump a tooth.",
+              "severity": "major",
+              "affected_trims": ["All trims with 1.5T (2018-2021)"],
+              "fix_description": "Timing chain replacement with updated tensioner. Often done as part of engine repair. Keeping oil full (check every fill-up) is critical to preventing this on affected engines.",
+              "estimated_cost": "$1,200–$2,500 (chain + labor)"
+            },
+            {
+              "title": "Transmission Shudder (1.5T / 6-speed)",
+              "description": "The 6-speed automatic mated to the 1.5T exhibits torque converter shudder in the 40–55 mph range, similar to the Silverado. GM issued a TSB for updated transmission fluid.",
+              "severity": "minor",
+              "affected_trims": ["All trims with 6-speed automatic"],
+              "fix_description": "Transmission fluid drain and fill with updated Dexron HP fluid per GM TSB. Typically resolves the shudder. Covered under warranty.",
+              "estimated_cost": "$0 (warranty), $150–$250 (fluid service out of warranty)"
+            }
+          ]
+        },
+        {
+          "year_range": "2022-2024 (current gen)",
+          "issues": [
+            {
+              "title": "Infotainment Software Bugs",
+              "description": "The 2022+ Equinox's new-generation infotainment system has initial software issues including Bluetooth connectivity drops, Apple CarPlay disconnections, and the system rebooting while driving. OTA updates have addressed most but not all complaints.",
+              "severity": "minor",
+              "affected_trims": ["All trims"],
+              "fix_description": "GM OTA software updates via Wi-Fi. Dealer can also perform software flashing. Ensure system is updated to latest version. Factory reset can resolve persistent Bluetooth pairing issues.",
+              "estimated_cost": "$0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Traverse",
+      "slug": "traverse",
+      "issues_by_year": [
+        {
+          "year_range": "2018-2021 (previous gen)",
+          "issues": [
+            {
+              "title": "3.6L Timing Chain Failure",
+              "description": "The 3.6L V6 engine in 2018–2021 Traverse models is known for premature timing chain wear and chain guide failure. Symptoms include a rattling noise on cold start, rough idle, and check engine lights for camshaft position correlation codes (P0017, P0008). GM extended the powertrain warranty on affected vehicles.",
+              "severity": "major",
+              "affected_trims": ["All trims (2018-2021 3.6L V6)"],
+              "fix_description": "Timing chain system replacement including chains, tensioners, and guides. GM extended warranty covers this repair on qualified vehicles. Out of warranty this is a substantial repair requiring significant labor time.",
+              "estimated_cost": "$2,500–$5,500 (parts + labor)"
+            },
+            {
+              "title": "Power Sliding Door Failures (RS trim)",
+              "description": "2018–2021 Traverse RS trim with available power sliding doors reported door motor failures and door track issues. Doors would fail to open/close completely or reverse direction mid-cycle.",
+              "severity": "moderate",
+              "affected_trims": ["RS with power sliding doors"],
+              "fix_description": "Door motor and track inspection by dealer. Door recalibration procedure in GM TSB resolves some cases. Motor replacement needed for failed units.",
+              "estimated_cost": "$400–$1,200"
+            }
+          ]
+        },
+        {
+          "year_range": "2024 (new gen)",
+          "issues": [
+            {
+              "title": "2.5L Engine Hesitation Under Load",
+              "description": "The new 2024 Traverse's standard 2.5L naturally-aspirated four-cylinder feels underpowered for a vehicle of this size, and some owners report a noticeable hesitation when merging onto highways or towing near the rated capacity. This is partially an engineering limitation rather than a defect.",
+              "severity": "minor",
+              "affected_trims": ["All trims (2.5L)"],
+              "fix_description": "No specific TSB fix — this is a performance characteristic. Ensure transmission software is updated to latest calibration. Some owners opt for aftermarket tune or air intake for minor improvement.",
+              "estimated_cost": "$0 (software), $200–$600 (performance mods)"
+            },
+            {
+              "title": "Door Panel Trim Fit Issues",
+              "description": "Early production 2024 Traverse units have reported door panel trim gaps, particularly on rear doors. Some owners note trim pieces that don't seat flush or produce rattles over rough surfaces.",
+              "severity": "minor",
+              "affected_trims": ["All trims"],
+              "fix_description": "Dealer panel reseating and clip replacement. GM quality control appeared to improve in mid-production 2024 builds.",
+              "estimated_cost": "$0 (warranty)"
+            },
+            {
+              "title": "Rear HVAC Performance in Third Row",
+              "description": "With the redesigned body, some owners report that the rear climate zone does not adequately cool or heat the third row. Complaints are more common in extreme hot climates. The longer wheelbase and glass area contribute to higher thermal load.",
+              "severity": "minor",
+              "affected_trims": ["All trims with rear HVAC"],
+              "fix_description": "GM issued HVAC calibration update. Parking in shade and using sunshades helps significantly. Aftermarket window tint reduces solar load substantially.",
+              "estimated_cost": "$0 (software), $200–$600 (window tint)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Trax",
+      "slug": "trax",
+      "issues_by_year": [
+        {
+          "year_range": "2024-2025",
+          "issues": [
+            {
+              "title": "CVT Transmission Noise and Vibration",
+              "description": "The new Trax uses a CVT (continuously variable transmission) paired with the 1.2L turbo three-cylinder. Some owners report a droning or rubber-band feel under acceleration, which is inherent to CVT operation, as well as occasional shudder at low speeds.",
+              "severity": "minor",
+              "affected_trims": ["All trims"],
+              "fix_description": "CVT fluid service and software calibration update from GM dealer. Some CVT behavior is normal — driver adaptation over time reduces complaints. Ensure transmission is up to latest software calibration.",
+              "estimated_cost": "$0 (software), $150–$250 (CVT fluid service)"
+            },
+            {
+              "title": "1.2L Three-Cylinder Engine Vibration at Idle",
+              "description": "The 1.2L turbocharged three-cylinder engine produces noticeable vibration at idle due to its odd-fire cylinder configuration. While normal for this engine type, owners accustomed to four-cylinder smoothness report the vibration as a concern.",
+              "severity": "minor",
+              "affected_trims": ["All trims"],
+              "fix_description": "This is an inherent characteristic of three-cylinder engines. GM updated engine mounts in mid-cycle production. Dealer can inspect and replace engine mounts if vibration is excessive beyond normal spec.",
+              "estimated_cost": "$0–$400 (engine mount replacement if warranted)"
+            },
+            {
+              "title": "Interior Plastic Squeaks and Rattles",
+              "description": "At its price point, the Trax uses cost-focused interior materials. Multiple owners report dashboard and door panel squeaks and rattles, particularly over rough roads. The issue is widespread enough to appear frequently in owner forums.",
+              "severity": "minor",
+              "affected_trims": ["All trims"],
+              "fix_description": "Dealer panel reseating and foam tape application. DIY fix using automotive foam tape in door panels and dashboard is effective. This is a known trade-off of the economy-class pricing.",
+              "estimated_cost": "$0 (warranty), $30–$100 (DIY foam tape)"
+            },
+            {
+              "title": "Turbo Lag at Low RPM",
+              "description": "The 1.2L 3-cylinder turbo engine has a noticeable hesitation and flat spot when pulling away from stops, especially at low RPM before the turbocharger spools. Owners describe it as sluggish off the line. GM has addressed this with ECU calibration updates.",
+              "severity": "minor",
+              "affected_trims": ["All trims (2024–2025)"],
+              "fix_description": "ECU/calibration reprogram at the dealer. Most resolved under warranty with a software update.",
+              "estimated_cost": "$0–$200"
+            },
+            {
+              "title": "Rear Seat Comfort (Small Rear Cabin)",
+              "description": "Widely noted by owners and reviewers: the rear seat on the 2024+ Trax is cramped for adult passengers, with limited legroom and a high floor intrusion. This is a known packaging trade-off of the platform rather than a manufacturing defect.",
+              "severity": "minor",
+              "affected_trims": ["All trims"],
+              "fix_description": "No mechanical fix available — inherent to the platform design. Slide the front seat forward slightly to improve rear legroom.",
+              "estimated_cost": "$0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Corvette Stingray",
+      "slug": "corvette-stingray",
+      "issues_by_year": [
+        {
+          "year_range": "2020-2024",
+          "issues": [
+            {
+              "title": "Rear Trunk / Frunk Latch Failures",
+              "description": "The mid-engine C8 Corvette has both a front trunk (frunk) and rear engine compartment. Owners have reported latch mechanism failures on both compartments that prevent proper opening or cause the hood to not fully latch. NHTSA received complaints and GM issued a recall (22V-543) for hood latch concerns.",
+              "severity": "moderate",
+              "affected_trims": ["All trims"],
+              "fix_description": "GM recall covers latch inspection and replacement on affected VINs. Check NHTSA.gov with your VIN number. Covered under warranty if not recall-covered.",
+              "estimated_cost": "$0 (recall/warranty)"
+            },
+            {
+              "title": "Oil Cooler / Coolant Leak Concerns",
+              "description": "Some C8 Stingray owners have reported oil cooler line leaks and coolant system hose sealing issues. The mid-engine layout creates more complex plumbing routing and some early builds had inconsistent sealing at hose connections.",
+              "severity": "moderate",
+              "affected_trims": ["All trims"],
+              "fix_description": "Dealer inspection of oil cooler lines and coolant hoses. Most resolved under warranty with updated hose clamps and line replacements. Check for oil or coolant spots under the vehicle at regular intervals.",
+              "estimated_cost": "$0 (warranty), $400–$1,200 (out of warranty hose/cooler replacement)"
+            },
+            {
+              "title": "Roof Panel Storage / Fit Concerns",
+              "description": "The removable roof panels on the C8 can develop rattles and fit issues after repeated removal and reinstallation. The locking mechanism can become loose over time, leading to wind noise at highway speeds.",
+              "severity": "minor",
+              "affected_trims": ["All trims with targa top"],
+              "fix_description": "Dealer roof latch adjustment and seal replacement. Proper installation technique (firm pressure at both corners simultaneously) prevents most fit issues. Updated latch design in later production runs.",
+              "estimated_cost": "$0 (warranty), $100–$400 (seal/latch replacement)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Camaro",
+      "slug": "camaro",
+      "issues_by_year": [
+        {
+          "year_range": "2016-2024",
+          "issues": [
+            {
+              "title": "Visibility Issues — Small Rear Window",
+              "description": "The sixth-generation Camaro's styling prioritizes low roofline over visibility. The tiny rear window and thick C-pillars create significant blind spots. This is widely considered the most common legitimate criticism of the car — it's a safety concern confirmed by multiple publications and NHTSA visibility tests.",
+              "severity": "moderate",
+              "affected_trims": ["All trims (coupe)"],
+              "fix_description": "Not a mechanical defect — inherent to the design. Rear vision camera is essential. Aftermarket wide-angle camera upgrades and blind-spot monitoring (available from LT trim up) mitigate but don't eliminate the issue.",
+              "estimated_cost": "$0 (use camera), $200–$600 (aftermarket camera upgrade)"
+            },
+            {
+              "title": "LT1 / SS Carbon Deposit Buildup (GDI Engine)",
+              "description": "The LT1 6.2L V8 uses gasoline direct injection (GDI) exclusively. Without port injection to clean intake valves, carbon deposits accumulate on the intake valves over time — typically noticeable by 60,000–80,000 miles. Symptoms include rough idle, misfires, and reduced power.",
+              "severity": "moderate",
+              "affected_trims": ["LT1", "SS", "ZL1"],
+              "fix_description": "Walnut blasting or chemical intake cleaning to remove carbon deposits. Not covered by warranty as it's considered a maintenance item. Recommended at 60,000-mile intervals for high-performance use.",
+              "estimated_cost": "$400–$800 (professional walnut blast service)"
+            },
+            {
+              "title": "ZL1 Supercharger Bearing Wear (High Mileage / Track Use)",
+              "description": "High-mileage and track-driven ZL1 superchargers have shown bearing wear on the LT4 Eaton TVS 2300 supercharger. The snout bearing is the most common failure point under sustained high-RPM load.",
+              "severity": "major",
+              "affected_trims": ["ZL1"],
+              "fix_description": "Supercharger snout bearing replacement or full supercharger rebuild/replacement. Several specialty shops offer ZL1 supercharger rebuilds. GM warranty covers this within the powertrain coverage period.",
+              "estimated_cost": "$800–$2,500 (snout rebuild), $3,000–$6,000 (full supercharger replacement)"
+            },
+            {
+              "title": "Alpha Platform Structural Creaks",
+              "description": "A common complaint across all 6th-gen Camaro body styles is structural creaking and groaning from the Alpha platform over bumps, rough pavement, and chassis flex. Body mount bushings and door/roof weatherstripping are the most common sources of the noise.",
+              "severity": "minor",
+              "affected_trims": ["All trims (2016–2024)"],
+              "fix_description": "Inspection and replacement of body mount bushings; weatherstripping lubrication or replacement. Dealer often addresses under warranty via squeak-and-rattle diagnosis.",
+              "estimated_cost": "$200–$600"
+            },
+            {
+              "title": "Magnetic Ride Control Shock Failure",
+              "description": "MRC-equipped Camaros (1LE, SS with MRC, ZL1) can develop leaking or failed magnetorheological shocks, especially after track use or at higher mileage. Failed shocks cause a harsh, uncontrolled ride and may trigger a suspension warning light.",
+              "severity": "moderate",
+              "affected_trims": ["SS with MRC option", "1LE", "ZL1"],
+              "fix_description": "Replacement of the failed MRC shock(s). All four are commonly replaced at once for balanced handling. Dealer replacement under warranty within the powertrain coverage period.",
+              "estimated_cost": "$1,500–$3,000 for all four shocks"
+            },
+            {
+              "title": "Oil Consumption (LT1 6.2L)",
+              "description": "The LT1 6.2L V8 in SS and higher Camaro trims can consume notable amounts of oil, particularly under hard driving or track use. The PCV system design allows oil mist to be ingested under high RPM sustained use. Some owners report 1 quart per 3,000–5,000 miles under spirited driving.",
+              "severity": "minor",
+              "affected_trims": ["SS (LT1)", "ZL1 (LT4)"],
+              "fix_description": "PCV valve replacement and/or installation of an oil catch can to reduce oil ingestion. Check oil level regularly, especially before track days.",
+              "estimated_cost": "$100–$400 (PCV + catch can install)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Blazer",
+      "slug": "blazer",
+      "issues_by_year": [
+        {
+          "year_range": "2019-2024",
+          "issues": [
+            {
+              "title": "Infotainment System Software Failures",
+              "description": "The Blazer's infotainment system has been one of the most complained-about in its segment. Owners report frequent freezing, black screen events, Apple CarPlay disconnections, and system reboots. The Blazer EV version made national news in late 2023 for widespread software failures at launch; similar (though less severe) software instability has affected the gas-powered Blazer as well.",
+              "severity": "moderate",
+              "affected_trims": ["All trims"],
+              "fix_description": "GM OTA updates have progressively improved stability. Dealer software reflash resolves most issues. Ensure the system is on the latest firmware version. Hard resets can clear temporary freezing.",
+              "estimated_cost": "$0 (warranty/OTA update)"
+            },
+            {
+              "title": "Transmission Hesitation (2.0T and V6)",
+              "description": "Both the 2.0L turbo and 3.6L V6 have reported hesitation with the 9-speed automatic — particularly noticeable when pulling away from stops or during low-speed parking maneuvers. The transmission can hunt between 1st and 2nd gear in urban driving.",
+              "severity": "minor",
+              "affected_trims": ["All trims"],
+              "fix_description": "GM issued transmission calibration TSB. Dealer reprogramming addresses the hunting behavior in most cases. Adaptive learning over 2,000–3,000 miles also improves behavior.",
+              "estimated_cost": "$0 (TSB / warranty)"
+            },
+            {
+              "title": "Panoramic Sunroof Seal Leaks",
+              "description": "The Blazer's large panoramic sunroof has generated complaints about water leaks, particularly at the front seal. Water intrusion typically appears at the headliner or drips from the dome light area during heavy rain.",
+              "severity": "moderate",
+              "affected_trims": ["RS", "Premier with panoramic sunroof"],
+              "fix_description": "Dealer inspection and resealing of the sunroof perimeter. Sunroof drain tube cleaning is also recommended as clogged drains cause overflow into the cabin. Ensure drains are clear before concluding the seal is faulty.",
+              "estimated_cost": "$0 (warranty), $150–$400 (seal replacement out of warranty)"
+            },
+            {
+              "title": "9-Speed Transmission Gear Hunting",
+              "description": "The 9-speed automatic in the Blazer frequently hunts for the correct gear during moderate highway acceleration, cycling between multiple gears before settling. This is distinct from the low-speed hesitation and is most apparent at 45–65 mph during partial throttle inputs.",
+              "severity": "moderate",
+              "affected_trims": ["All trims with 9-speed automatic"],
+              "fix_description": "Transmission control module (TCM) reprogram via dealer. Several TSBs have been issued for shift quality on this transmission family.",
+              "estimated_cost": "$0–$300"
+            },
+            {
+              "title": "Auto Start-Stop System Issues",
+              "description": "The auto start-stop system on Blazers engages and disengages roughly, causing noticeable shudder when the engine restarts at stoplights. Some owners also report the system failing to re-enable after manual shutoff, or failing to shut the engine off when conditions should allow it.",
+              "severity": "minor",
+              "affected_trims": ["All trims with auto start-stop"],
+              "fix_description": "Battery replacement (a weak 12V battery commonly causes rough start-stop behavior) or start-stop module reprogram. Ensure battery is tested before condemning the module.",
+              "estimated_cost": "$200–$500"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Malibu",
+      "slug": "malibu",
+      "issues_by_year": [
+        {
+          "year_range": "2016-2024",
+          "issues": [
+            {
+              "title": "Excessive Oil Consumption (1.5T)",
+              "description": "The 1.5L turbocharged four-cylinder engine in the Malibu shares its architecture with the Equinox 1.5T and exhibits the same well-documented excessive oil consumption problem. Affected engines consume up to 1 quart per 2,000 miles. GM extended warranty coverage on this engine family.",
+              "severity": "major",
+              "affected_trims": ["All trims with 1.5T (2016–2024)"],
+              "fix_description": "GM extended warranty coverage for oil consumption testing. Piston ring replacement or short block replacement authorized if consumption exceeds GM threshold. Check oil level frequently — low oil accelerates timing chain wear.",
+              "estimated_cost": "$2,000–$4,000 (piston rings / short block)"
+            },
+            {
+              "title": "Trunk Water Intrusion",
+              "description": "Water enters the trunk area on 2016–2020 Malibus through degraded trunk weatherstripping and seam sealer at the rear body panel joints. Owners discover wet spare tire wells, damp carpeting, and in some cases mold growth after heavy rain or car washes.",
+              "severity": "minor",
+              "affected_trims": ["All trims (2016–2020 most affected)"],
+              "fix_description": "Reseal trunk weatherstripping and inspect body seam sealer at trunk lid perimeter. Aftermarket weatherstripping replacement is an affordable fix. Ensure trunk drain holes are clear.",
+              "estimated_cost": "$100–$400"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

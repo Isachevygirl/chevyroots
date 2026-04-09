@@ -65,6 +65,30 @@ const articleSchema = {
   },
 };
 
+// Breadcrumb schema for search engines
+const breadcrumbSchema = {
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: site,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: "Guides",
+      item: `${site.replace(/\/$/, '')}/guides/`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: title,
+      item: canonicalUrl,
+    },
+  ],
+};
+
 const publishedDate = new Date(published).toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
@@ -80,10 +104,22 @@ const publishedDate = new Date(published).toLocaleDateString('en-US', {
   canonical={canonicalUrl}
 >
   <Schema slot="head" type="Article" data={articleSchema} />
+  <Schema slot="head" type="BreadcrumbList" data={breadcrumbSchema} />
 
   <article class="article">
     <header class="article-header">
       <div class="article-header-inner">
+        <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/guides/">Guides</a>
+          {cluster && (
+            <>
+              <span class="breadcrumb-sep">/</span>
+              <span class="breadcrumb-current">{cluster}</span>
+            </>
+          )}
+        </nav>
         <div class="article-eyebrow">{eyebrow}{cluster && ` · ${cluster}`}</div>
         <h1 class="article-title">{title}</h1>
         <div class="article-meta">
@@ -141,8 +177,33 @@ const publishedDate = new Date(published).toLocaleDateString('en-US', {
   .article-header-inner {
     max-width: var(--article-max);
     margin: 0 auto;
-    padding: 64px 24px 48px;
+    padding: 48px 24px 48px;
     position: relative;
+  }
+  .article-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+  .article-breadcrumbs a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .article-breadcrumbs a:hover {
+    color: var(--gold);
+  }
+  .breadcrumb-sep {
+    color: var(--text-mute);
+  }
+  .breadcrumb-current {
+    color: var(--gold);
   }
   .article-eyebrow {
     font-family: var(--font-mono);

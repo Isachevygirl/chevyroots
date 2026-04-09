@@ -1,0 +1,633 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { vehicles, type Vehicle, type Trim } from '@lib/data';
+import competitorData from '@data/compare-competitors.json';
+
+interface Competitor {
+  slug: string;
+  chevy: string;
+  chevyName: string;
+  opponent: string;
+  opponentBrand: string;
+  category: string;
+  headline: string;
+  pitch: string;
+  verdict: string;
+  chevyWins: string[];
+  opponentWins: string[];
+}
+
+interface ComparePageProps {
+  type: 'chevy-vs-chevy';
+  a: Vehicle;
+  b: Vehicle;
+}
+
+interface CompetitorPageProps {
+  type: 'chevy-vs-competitor';
+  chevy: Vehicle;
+  competitor: Competitor;
+}
+
+type Props = ComparePageProps | CompetitorPageProps;
+
+export async function getStaticPaths() {
+  const paths: Array<{ params: { pair: string }; props: Props }> = [];
+
+  // Pair Chevy-vs-Chevy only within same category (trucks with trucks, etc.)
+  // Skip reserved slugs that collide with category routes
+  const reserved = new Set(['trucks', 'cars', 'classics', 'suvs', 'evs', 'corvette']);
+  const chevyVehicles = vehicles.filter((v) => !reserved.has(v.slug));
+
+  // Group by category
+  const byCategory: Record<string, Vehicle[]> = {};
+  for (const v of chevyVehicles) {
+    const cat = v.category || 'other';
+    if (!byCategory[cat]) byCategory[cat] = [];
+    byCategory[cat].push(v);
+  }
+
+  // Generate pair combinations within each category
+  for (const cat of Object.keys(byCategory)) {
+    const list = byCategory[cat];
+    for (let i = 0; i < list.length; i++) {
+      for (let j = i + 1; j < list.length; j++) {
+        const a = list[i];
+        const b = list[j];
+        // Use alphabetic slug order for stable URLs
+        const [first, second] = [a, b].sort((x, y) => x.slug.localeCompare(y.slug));
+        paths.push({
+          params: { pair: `${first.slug}-vs-${second.slug}` },
+          props: { type: 'chevy-vs-chevy', a: first, b: second },
+        });
+      }
+    }
+  }
+
+  // Add curated competitor matchups
+  const competitors = (competitorData as { competitors: Competitor[] }).competitors;
+  for (const comp of competitors) {
+    const chevy = vehicles.find((v) => v.slug === comp.chevy);
+    if (!chevy) continue;
+    paths.push({
+      params: { pair: comp.slug },
+      props: { type: 'chevy-vs-competitor', chevy, competitor: comp },
+    });
+  }
+
+  return paths;
+}
+
+const props = Astro.props as Props;
+
+// Build trim summaries for the spec table
+function latestTrim(v: Vehicle): Trim | null {
+  const y = v.years?.[0];
+  if (!y?.trims?.length) return null;
+  // Pick a mid-trim as the representative
+  const mid = y.trims[Math.floor(y.trims.length / 2)] || y.trims[0];
+  return mid;
+}
+
+let title: string;
+let description: string;
+let headline: string;
+let pitch: string;
+let verdict: string;
+let aName: string;
+let bName: string;
+let aTrim: Trim | null = null;
+let bTrim: Trim | null = null;
+let aMSRP = 0;
+let bMSRP = 0;
+let chevyWins: string[] = [];
+let opponentWins: string[] = [];
+let aLink = '';
+let bLink = '';
+let isCompetitor = false;
+
+if (props.type === 'chevy-vs-chevy') {
+  aName = props.a.model;
+  bName = props.b.model;
+  aTrim = latestTrim(props.a);
+  bTrim = latestTrim(props.b);
+  aMSRP = props.a.years?.[0]?.starting_msrp || 0;
+  bMSRP = props.b.years?.[0]?.starting_msrp || 0;
+  aLink = `/models/${props.a.slug}/`;
+  bLink = `/models/${props.b.slug}/`;
+  title = `${aName} vs. ${bName} — Side-by-Side Chevy Comparison | ChevyRoots`;
+  description = `Compare the Chevrolet ${aName} and ${bName} side-by-side — trim, engine, horsepower, torque, towing capacity, MPG, and MSRP. Honest head-to-head from ChevyRoots.`;
+  headline = `${aName} vs. ${bName}`;
+  pitch = `Two Chevys, one decision. Side-by-side comparison of the ${aName} and the ${bName} — specs, price, real-world trade-offs, and an honest recommendation on which one fits which kind of buyer.`;
+  verdict = `Both are solid choices. The ${aMSRP < bMSRP ? aName : bName} has the lower starting MSRP${Math.abs(aMSRP - bMSRP) > 0 ? ` (by about $${Math.abs(aMSRP - bMSRP).toLocaleString()})` : ''}. Check our individual model pages for the full known-issues history on each before you sign anything.`;
+} else {
+  const comp = props.competitor;
+  isCompetitor = true;
+  aName = comp.chevyName;
+  bName = comp.opponent;
+  aTrim = latestTrim(props.chevy);
+  aMSRP = props.chevy.years?.[0]?.starting_msrp || 0;
+  aLink = `/models/${props.chevy.slug}/`;
+  bLink = '#';
+  chevyWins = comp.chevyWins;
+  opponentWins = comp.opponentWins;
+  title = `${comp.headline} | ChevyRoots`;
+  description = comp.pitch.slice(0, 220);
+  headline = comp.headline;
+  pitch = comp.pitch;
+  verdict = comp.verdict;
+}
+
+function fmtMoney(n: number): string {
+  if (!n) return '—';
+  return `$${n.toLocaleString()}`;
+}
+
+// Determine "winning" spec in Chevy-vs-Chevy (bigger is better for most)
+function winsOn(aVal: any, bVal: any, higherBetter = true): 'a' | 'b' | null {
+  if (aVal == null || bVal == null) return null;
+  if (typeof aVal === 'string' || typeof bVal === 'string') return null;
+  if (aVal === bVal) return null;
+  if (higherBetter) return aVal > bVal ? 'a' : 'b';
+  return aVal < bVal ? 'a' : 'b';
+}
+
+const hpWin = aTrim && bTrim ? winsOn(aTrim.hp, bTrim.hp) : null;
+const torqueWin = aTrim && bTrim ? winsOn(aTrim.torque, bTrim.torque) : null;
+const towWin = aTrim && bTrim ? winsOn(aTrim.towing_capacity, bTrim.towing_capacity) : null;
+const mpgCityWin = aTrim && bTrim ? winsOn(aTrim.mpg_city, bTrim.mpg_city) : null;
+const mpgHwyWin = aTrim && bTrim ? winsOn(aTrim.mpg_highway, bTrim.mpg_highway) : null;
+const priceWin = !isCompetitor ? winsOn(aMSRP, bMSRP, false) : null;
+---
+
+<BaseLayout title={title} description={description}>
+  <header class="compare-header">
+    <div class="container container-narrow">
+      <p class="section-eyebrow">Head-to-Head Comparison</p>
+      <h1 class="compare-title">{headline}</h1>
+      <span class="gold-line"></span>
+      <p class="compare-lede">{pitch}</p>
+      {isCompetitor && (
+        <div class="compare-badge">
+          <span class="badge-chevy">ChevyRoots Independent Take</span>
+          <span class="badge-text">We're not paid by either brand. This is the honest comparison.</span>
+        </div>
+      )}
+    </div>
+  </header>
+
+  {/* ── VEHICLE HEADERS ─────────────────────────────── */}
+  <section class="vehicle-bar">
+    <div class="container container-narrow">
+      <div class="vehicle-bar-grid">
+        <div class="vehicle-col">
+          <div class="vehicle-label">Vehicle A</div>
+          <h2 class="vehicle-name">{aName}</h2>
+          {aMSRP > 0 && <div class="vehicle-price">From {fmtMoney(aMSRP)}</div>}
+          <a href={aLink} class="vehicle-link">Full details →</a>
+        </div>
+        <div class="vehicle-vs">VS</div>
+        <div class="vehicle-col">
+          <div class="vehicle-label">Vehicle B</div>
+          <h2 class="vehicle-name">{bName}</h2>
+          {!isCompetitor && bMSRP > 0 && <div class="vehicle-price">From {fmtMoney(bMSRP)}</div>}
+          {isCompetitor && (
+            <div class="vehicle-price" style="color: var(--light-gray);">Competitor brand</div>
+          )}
+          {bLink !== '#' && <a href={bLink} class="vehicle-link">Full details →</a>}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── SPEC TABLE (Chevy-vs-Chevy only) ────────────── */}
+  {!isCompetitor && aTrim && bTrim && (
+    <section class="spec-section">
+      <div class="container container-narrow">
+        <h2 class="section-h2">Side-by-Side Specs</h2>
+        <span class="gold-line"></span>
+        <p class="section-lede">Representative mid-trim specs for quick comparison. Winner in each row is highlighted in gold.</p>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Spec</th>
+                <th>{aName}</th>
+                <th>{bName}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="spec-label">Starting MSRP</td>
+                <td class={priceWin === 'a' ? 'winner' : ''}>{fmtMoney(aMSRP)}</td>
+                <td class={priceWin === 'b' ? 'winner' : ''}>{fmtMoney(bMSRP)}</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Engine</td>
+                <td>{aTrim.engine || '—'}</td>
+                <td>{bTrim.engine || '—'}</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Horsepower</td>
+                <td class={hpWin === 'a' ? 'winner' : ''}>{aTrim.hp ? `${aTrim.hp} hp` : '—'}</td>
+                <td class={hpWin === 'b' ? 'winner' : ''}>{bTrim.hp ? `${bTrim.hp} hp` : '—'}</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Torque</td>
+                <td class={torqueWin === 'a' ? 'winner' : ''}>{aTrim.torque ? `${aTrim.torque} lb-ft` : '—'}</td>
+                <td class={torqueWin === 'b' ? 'winner' : ''}>{bTrim.torque ? `${bTrim.torque} lb-ft` : '—'}</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Towing Capacity</td>
+                <td class={towWin === 'a' ? 'winner' : ''}>{aTrim.towing_capacity ? `${aTrim.towing_capacity.toLocaleString()} lbs` : '—'}</td>
+                <td class={towWin === 'b' ? 'winner' : ''}>{bTrim.towing_capacity ? `${bTrim.towing_capacity.toLocaleString()} lbs` : '—'}</td>
+              </tr>
+              <tr>
+                <td class="spec-label">MPG City</td>
+                <td class={mpgCityWin === 'a' ? 'winner' : ''}>{aTrim.mpg_city || '—'}</td>
+                <td class={mpgCityWin === 'b' ? 'winner' : ''}>{bTrim.mpg_city || '—'}</td>
+              </tr>
+              <tr>
+                <td class="spec-label">MPG Highway</td>
+                <td class={mpgHwyWin === 'a' ? 'winner' : ''}>{aTrim.mpg_highway || '—'}</td>
+                <td class={mpgHwyWin === 'b' ? 'winner' : ''}>{bTrim.mpg_highway || '—'}</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Drivetrain</td>
+                <td>{aTrim.drivetrain || '—'}</td>
+                <td>{bTrim.drivetrain || '—'}</td>
+              </tr>
+              <tr>
+                <td class="spec-label">Transmission</td>
+                <td>{aTrim.transmission || '—'}</td>
+                <td>{bTrim.transmission || '—'}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* ── CHEVY-VS-COMPETITOR PROS/CONS ────────────────── */}
+  {isCompetitor && (
+    <section class="pros-cons-section">
+      <div class="container container-narrow">
+        <h2 class="section-h2">Where Each One Wins</h2>
+        <span class="gold-line"></span>
+        <div class="pros-cons-grid">
+          <div class="pros-col chevy-col">
+            <h3>{aName} wins on:</h3>
+            <ul>
+              {chevyWins.map((w) => <li>{w}</li>)}
+            </ul>
+          </div>
+          <div class="pros-col opponent-col">
+            <h3>{bName} wins on:</h3>
+            <ul>
+              {opponentWins.map((w) => <li>{w}</li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* ── VERDICT ─────────────────────────────────────── */}
+  <section class="verdict-section">
+    <div class="container container-narrow">
+      <div class="verdict-box">
+        <p class="section-eyebrow">The ChevyRoots Verdict</p>
+        <h2 class="verdict-title">The Honest Take</h2>
+        <span class="gold-line"></span>
+        <p class="verdict-body">{verdict}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ── RELATED COMPARISONS ─────────────────────────── */}
+  <section class="related-section">
+    <div class="container container-narrow">
+      <h2 class="section-h2">More Chevy Comparisons</h2>
+      <span class="gold-line"></span>
+      <p class="section-lede">Cross-shopping is smart. These comparisons cover other common buyer decisions.</p>
+      <div class="related-grid">
+        <a href="/compare/silverado-1500-vs-ram-1500/" class="related-card">Silverado vs Ram 1500</a>
+        <a href="/compare/camaro-vs-mustang/" class="related-card">Camaro vs Mustang</a>
+        <a href="/compare/corvette-stingray-vs-911/" class="related-card">Corvette vs 911</a>
+        <a href="/compare/tahoe-vs-expedition/" class="related-card">Tahoe vs Expedition</a>
+        <a href="/compare/equinox-ev-vs-model-y/" class="related-card">Equinox EV vs Model Y</a>
+        <a href="/compare/colorado-zr2-vs-tacoma-trd-pro/" class="related-card">Colorado ZR2 vs Tacoma TRD Pro</a>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterCTA
+    source={`compare-${Astro.params.pair}`}
+    heading="Get buyer's guides like this in your inbox"
+    subheading="Honest comparisons, real owner takes, and new guides every week. One email on Fridays."
+  />
+</BaseLayout>
+
+<style>
+  .compare-header {
+    padding: 80px 0 40px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 60%, var(--warm-gray) 100%);
+  }
+  .compare-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .compare-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin: 1.5rem 0;
+  }
+  .compare-badge {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(196, 160, 53, 0.08);
+    border: 1px solid rgba(196, 160, 53, 0.35);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+    margin-top: 1rem;
+  }
+  .badge-chevy {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .badge-text {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  /* ── VEHICLE BAR ─────────────────────────────────── */
+  .vehicle-bar {
+    padding: 3rem 0;
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .vehicle-bar-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .vehicle-col {
+    text-align: center;
+  }
+  .vehicle-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .vehicle-name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .vehicle-price {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .vehicle-link {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196, 160, 53, 0.4);
+  }
+  .vehicle-vs {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    text-align: center;
+    line-height: 1;
+    padding: 1rem 2rem;
+    background: var(--charcoal);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+  }
+
+  /* ── SPEC TABLE ──────────────────────────────────── */
+  .spec-section {
+    padding: var(--section-pad) 0;
+  }
+  .section-h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .section-lede {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 1rem 0 2rem;
+    max-width: 60ch;
+  }
+  .spec-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--warm-gray);
+  }
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .spec-table th {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    text-align: left;
+    padding: 1rem 1.25rem;
+    background: var(--charcoal);
+    border-bottom: 2px solid var(--gold);
+  }
+  .spec-table th:first-child { color: var(--gold); }
+  .spec-table td {
+    padding: 0.9rem 1.25rem;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+  }
+  .spec-table .spec-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .spec-table td.winner {
+    color: var(--gold);
+    font-weight: 700;
+    background: rgba(196, 160, 53, 0.08);
+  }
+  .spec-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ── PROS / CONS ─────────────────────────────────── */
+  .pros-cons-section {
+    padding: var(--section-pad) 0;
+  }
+  .pros-cons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .pros-col {
+    padding: 2rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .chevy-col {
+    border-left: 3px solid var(--gold);
+  }
+  .opponent-col {
+    border-left: 3px solid var(--light-gray);
+  }
+  .pros-col h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--off-white);
+    margin-bottom: 1rem;
+  }
+  .chevy-col h3 { color: var(--gold); }
+  .pros-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pros-col li {
+    padding: 0.65rem 0 0.65rem 1.5rem;
+    position: relative;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    border-bottom: 1px solid var(--border);
+  }
+  .pros-col li:last-child { border-bottom: none; }
+  .pros-col li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .opponent-col li::before {
+    color: var(--light-gray);
+  }
+
+  /* ── VERDICT ─────────────────────────────────────── */
+  .verdict-section {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .verdict-box {
+    padding: 3rem;
+    background: linear-gradient(135deg, var(--charcoal) 0%, #1f1a0e 100%);
+    border: 2px solid var(--gold);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  }
+  .verdict-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.75rem 0 0.5rem;
+  }
+  .verdict-box .gold-line { margin-bottom: 1.5rem; }
+  .verdict-body {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: none;
+  }
+
+  /* ── RELATED ─────────────────────────────────────── */
+  .related-section {
+    padding: var(--section-pad) 0;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  .related-card {
+    padding: 1rem 1.25rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    text-decoration: none;
+    transition: transform var(--transition), border-color var(--transition);
+  }
+  .related-card:hover {
+    transform: translateX(4px);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  @media (max-width: 700px) {
+    .vehicle-bar-grid, .pros-cons-grid { grid-template-columns: 1fr; }
+    .vehicle-vs { justify-self: center; }
+  }
+</style>

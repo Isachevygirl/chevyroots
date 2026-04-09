@@ -1,0 +1,179 @@
+{
+  "competitors": [
+    {
+      "slug": "silverado-1500-vs-ram-1500",
+      "chevy": "silverado-1500",
+      "chevyName": "Silverado 1500",
+      "opponent": "Ram 1500",
+      "opponentBrand": "Ram",
+      "category": "full-size truck",
+      "headline": "Silverado 1500 vs. Ram 1500: Which Half-Ton Wins?",
+      "pitch": "The two most-cross-shopped half-ton pickups in America. Same size, same job, very different philosophies. Here's how they stack up on the specs that matter — and the honest take on who each one is actually for.",
+      "verdict": "The Silverado wins on powertrain variety (five engine options including the 3.0L Duramax), tow rating at common trim levels, and the factory off-road ZR2. The Ram wins on interior quality, coil-spring rear suspension comfort, and the RamBox storage system. If you haul and tow and want off-road hardware, Silverado. If you daily-drive 200 miles a week and want the best cabin on the road, Ram.",
+      "chevyWins": [
+        "More powertrain options (2.7L turbo · 5.3L V8 · 6.2L V8 · 3.0L Duramax · EV)",
+        "Factory ZR2 off-road trim with Multimatic DSSV dampers",
+        "Higher max towing on 6.2 + Max Trailering package (13,300 lbs)",
+        "Cheaper entry point (Work Truck starts under $37K)",
+        "Available Multi-Flex tailgate with six functions"
+      ],
+      "opponentWins": [
+        "Luxury interior — the best half-ton cabin GM's ever tried to match",
+        "Coil-spring rear suspension = smoother ride on rough pavement",
+        "RamBox cargo management system built into the bedrails",
+        "Longer warranty (5yr/60K powertrain vs GM's 5yr/60K — tied, but Ram has transferability advantages)",
+        "Air suspension availability across more trims"
+      ]
+    },
+    {
+      "slug": "silverado-1500-vs-f-150",
+      "chevy": "silverado-1500",
+      "chevyName": "Silverado 1500",
+      "opponent": "Ford F-150",
+      "opponentBrand": "Ford",
+      "category": "full-size truck",
+      "headline": "Silverado 1500 vs. Ford F-150: The Real Comparison",
+      "pitch": "The two best-selling vehicles in America — F-150 usually wins the volume crown but the Silverado is closer than the numbers suggest. Here's the unfiltered take.",
+      "verdict": "F-150 has the advantage in aluminum body (weight + rust resistance), PowerBoost hybrid, and the BlueCruise hands-free system. Silverado has the Duramax diesel option, lower starting price, and the 6.2L V8 that's still the most proven full-size truck engine in existence. For daily work, F-150 is slightly more refined. For long-haul towing with a V8, Silverado is the classic pick.",
+      "chevyWins": [
+        "3.0L Duramax diesel (F-150 killed their own diesel in 2021)",
+        "Still uses the 6.2L V8 — Ford only offers EcoBoost V6s above the base 2.7",
+        "Lower starting MSRP by ~$1,500 at base trim",
+        "ZR2 off-road factory trim with Multimatic dampers",
+        "Longer warranty at the powertrain level on gasoline engines"
+      ],
+      "opponentWins": [
+        "Military-grade aluminum body — lighter, doesn't rust",
+        "PowerBoost hybrid (no Chevy equivalent in Silverado)",
+        "BlueCruise hands-free highway driving",
+        "Raptor R with the supercharged 5.2 from the GT500 (nothing on Chevy's side like this)",
+        "Pro Power Onboard 7.2kW generator"
+      ]
+    },
+    {
+      "slug": "camaro-vs-mustang",
+      "chevy": "camaro",
+      "chevyName": "Camaro",
+      "opponent": "Ford Mustang",
+      "opponentBrand": "Ford",
+      "category": "muscle car",
+      "headline": "Camaro vs. Mustang: The Eternal Question",
+      "pitch": "You already have an opinion on this. Every Chevy person does. Here's the actual head-to-head for the two cars that defined the modern muscle era — with an honest verdict on why one is still in production and one isn't.",
+      "verdict": "The 6th gen Camaro is the better-handling car on a road course — it's on the Alpha platform, lighter, with a tighter chassis. The Mustang has better straight-line performance in top trims, a better interior, and — crucially — is still in production. The Camaro ended in February 2024; the Mustang rolls on with the Dark Horse and the supercharged GTD. If you can buy a low-mileage ZL1 1LE, do it. It's the best-handling American muscle car ever built.",
+      "chevyWins": [
+        "Alpha platform = ~300 lbs lighter than Mustang",
+        "Better track performance in SS 1LE, ZL1, and ZL1 1LE trims",
+        "The ZL1 1LE held the Nürburgring muscle car record for years",
+        "More visually aggressive styling (if you like the aesthetic)",
+        "Magnetic Ride Control on higher trims"
+      ],
+      "opponentWins": [
+        "Still in production (2024+)",
+        "GT500 supercharged 5.2 and the upcoming GTD are unmatched halo cars",
+        "Better visibility out the rear (Camaro has gun-slit windows)",
+        "Better interior quality and tech on current models",
+        "Available Dark Horse with a Tremec manual in 2026"
+      ]
+    },
+    {
+      "slug": "corvette-stingray-vs-911",
+      "chevy": "corvette-stingray",
+      "chevyName": "Corvette Stingray",
+      "opponent": "Porsche 911",
+      "opponentBrand": "Porsche",
+      "category": "sports car",
+      "headline": "C8 Corvette Stingray vs. Porsche 911: American Value vs. German Precision",
+      "pitch": "The C8 Stingray starts at $72K. A base 911 Carrera starts at $122K. Both are mid-engine layouts (well, the 911 is rear-engine but whatever), both are icons, both will be cross-shopped by anyone writing a $100K sports car check. Here's the honest head-to-head.",
+      "verdict": "The 911 is the better-built car. Porsche interior quality is in a different league, the options list is endless, and the PDK dual-clutch is the best automatic transmission ever made. But the Corvette delivers 90% of the driving experience for 60% of the price, and the 6.2L V8 sounds like something the 911's flat-six never will. If you can afford the 911 comfortably, buy it. If you can afford the Corvette and you want the 911 feeling without the 911 payment, buy the Corvette and don't look back.",
+      "chevyWins": [
+        "$50K cheaper at the base level ($72K vs $122K)",
+        "V8 sound and torque character vs flat-six",
+        "Better frunk AND trunk (911 has tiny front storage)",
+        "8-speed dual-clutch is genuinely excellent",
+        "American supercar performance without the import tax"
+      ],
+      "opponentWins": [
+        "Interior quality, material choices, and ergonomics — in a different league",
+        "PDK dual-clutch is still the gold standard",
+        "Residual value is stronger (911s depreciate less)",
+        "The model range — from Carrera to GT3 RS — covers every driving want",
+        "Daily-driver usability (rear seats, visibility, long-trip comfort)"
+      ]
+    },
+    {
+      "slug": "tahoe-vs-expedition",
+      "chevy": "tahoe",
+      "chevyName": "Tahoe",
+      "opponent": "Ford Expedition",
+      "opponentBrand": "Ford",
+      "category": "full-size SUV",
+      "headline": "Tahoe vs. Expedition: Full-Size SUV Showdown",
+      "pitch": "Both ride on truck-based platforms, both carry seven or eight, both tow north of 8,000 lbs. The Expedition used to lose on every front; the new one is a lot closer. Here's where each one wins.",
+      "verdict": "The Tahoe has the edge on powertrain variety (5.3L, 6.2L, and 3.0L Duramax diesel) and Super Cruise hands-free driving. The Expedition wins on twin-turbo V6 torque and a genuinely nicer interior in the upper trims. The Tahoe is still the choice for tow-heavy users and for people who want the diesel; the Expedition is the choice for people who prioritize highway comfort and modern tech.",
+      "chevyWins": [
+        "3.0L Duramax diesel available (Expedition doesn't offer diesel)",
+        "6.2L V8 on higher trims (Expedition is twin-turbo V6 only)",
+        "Super Cruise hands-free highway driving",
+        "Proven 10-speed transmission",
+        "Independent rear suspension for improved ride"
+      ],
+      "opponentWins": [
+        "3.5L EcoBoost V6 produces more torque than 5.3L V8",
+        "Max Trailer Tow Package rivals Tahoe",
+        "Better second- and third-row access",
+        "BlueCruise alternative to Super Cruise",
+        "ExpeditionMAX rivals Suburban for cargo"
+      ]
+    },
+    {
+      "slug": "equinox-ev-vs-model-y",
+      "chevy": "equinox-ev",
+      "chevyName": "Equinox EV",
+      "opponent": "Tesla Model Y",
+      "opponentBrand": "Tesla",
+      "category": "electric SUV",
+      "headline": "Equinox EV vs. Tesla Model Y: The Real Value Play",
+      "pitch": "The Equinox EV starts at $33K. The Model Y starts closer to $45K. Both claim 300+ miles of range. Both are electric compact SUVs. But the experience of driving them is wildly different. Here's the honest comparison.",
+      "verdict": "The Model Y has the better charging network (Supercharger access is still the real advantage), more mature Full Self-Driving package, and higher performance. The Equinox EV has a vastly better interior, physical buttons for HVAC, Super Cruise for highway hands-free, and $12K more in your pocket. For people who want an EV that feels like a normal car, the Equinox EV is the right answer. For people who want the tech-first EV experience, Tesla still owns that.",
+      "chevyWins": [
+        "$12K cheaper at the base level",
+        "Real buttons for HVAC and common controls",
+        "Super Cruise hands-free highway driving",
+        "Up to 319-mile EPA range on the FWD 2RS trim",
+        "Tax credit eligibility (US-assembled, meets battery sourcing rules)"
+      ],
+      "opponentWins": [
+        "Supercharger network is still the best charging experience in North America",
+        "Full Self-Driving (Supervised) is more capable than Super Cruise in city driving",
+        "Performance trim does 0-60 in 3.5 seconds",
+        "More years of data on battery degradation and reliability",
+        "Over-the-air updates roll out faster"
+      ]
+    },
+    {
+      "slug": "colorado-zr2-vs-tacoma-trd-pro",
+      "chevy": "colorado",
+      "chevyName": "Colorado ZR2",
+      "opponent": "Toyota Tacoma TRD Pro",
+      "opponentBrand": "Toyota",
+      "category": "midsize off-road truck",
+      "headline": "Colorado ZR2 vs. Tacoma TRD Pro: Off-Road Midsize Battle",
+      "pitch": "Two midsize trucks with legitimate off-road hardware. The Colorado ZR2 got a full redesign in 2023; the Tacoma TRD Pro got a full redesign in 2024. This is the first time in years the comparison is actually close.",
+      "verdict": "The Colorado ZR2 has better shocks (Multimatic DSSV vs FOX 2.5), better approach/departure angles, and the more modern interior. The Tacoma has the legendary Toyota reliability reputation, better resale value, and the new i-FORCE MAX hybrid. If you're buying new and plan to keep it 5-7 years, the ZR2 is the better truck. If you're buying new and plan to keep it 15 years, you know where the Tacoma fits.",
+      "chevyWins": [
+        "Multimatic DSSV dampers vs Tacoma's FOX 2.5 Internal Bypass",
+        "Better approach angle (38.2° vs 33.8°)",
+        "More modern interior and infotainment",
+        "Available Bison trim with AEV armor",
+        "Better on-road composure and steering feel"
+      ],
+      "opponentWins": [
+        "Reputation for 250K+ mile reliability",
+        "Stronger resale value — Tacomas hold value better than any midsize truck",
+        "i-FORCE MAX hybrid (326 hp, 465 lb-ft torque — more than the Colorado)",
+        "Rear seat headroom and cargo flexibility",
+        "Factory locker in the Tacoma TRD Off-Road as the entry point"
+      ]
+    }
+  ]
+}

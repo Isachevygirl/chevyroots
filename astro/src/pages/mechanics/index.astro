@@ -3,64 +3,205 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import NewsletterCTA from '@components/NewsletterCTA.astro';
 import { mechanics } from '@lib/data';
 
-// Group mechanics by state
-const byState: Record<string, typeof mechanics> = {};
-for (const m of mechanics) {
-  const state = (m.state || 'Unknown').toUpperCase();
-  if (!byState[state]) byState[state] = [];
-  byState[state].push(m);
-}
+// Sort and group
+const sorted = [...mechanics].sort((a, b) => a.name.localeCompare(b.name));
+const states = Array.from(new Set(sorted.map((m) => (m.state || '').toUpperCase()).filter(Boolean))).sort();
 
-const stateOrder = Object.keys(byState).sort();
+// Collect all specialties
+const specialtySet = new Set<string>();
+sorted.forEach((m) => (m.specialties || []).forEach((s) => specialtySet.add(s)));
+const specialties = Array.from(specialtySet).sort();
+
+// Top-rated spotlight (first 3 mechanics with highest ratings)
+const spotlight = sorted
+  .filter((m) => (m.rating ?? 0) >= 4.5)
+  .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
+  .slice(0, 3);
+
+const totalCount = sorted.length;
 ---
 
 <BaseLayout
-  title={`Chevy Mechanic Directory — ${mechanics.length} Shops You Can Trust | ChevyRoots`}
-  description={`${mechanics.length} Chevy mechanics, specialty shops, and restoration experts across the US. Organized by state. Classic work, LS swaps, transmission specialists, diesel/Duramax, and more.`}
+  title={`Find a Chevy Mechanic — ${totalCount} Vetted Shops Across the US | ChevyRoots`}
+  description={`${totalCount} top-rated Chevy mechanics, specialty shops, and restoration experts. Filter by state, specialty, and rating. LS swaps, transmissions, diesel/Duramax, classic restoration, performance tuning.`}
 >
   <header class="mechs-header">
     <div class="container">
-      <p class="section-eyebrow">Directory</p>
-      <h1 class="mechs-title">Find a <em>Mechanic</em></h1>
+      <p class="section-eyebrow">ChevyRoots Mechanic Finder</p>
+      <h1 class="mechs-title">Find a <em>Chevy Mechanic</em></h1>
       <span class="gold-line"></span>
       <p class="mechs-lede">
-        {mechanics.length} vetted Chevy shops across the United States — classic restoration, LS swaps, transmission specialists, performance tuning, diesel/Duramax, paint and bodywork. We only list shops with a track record.
+        Top-rated shops ranked by Yelp, Google, and the ChevyRoots community. {totalCount} vetted wrenches — from LS swaps to oil changes — find the right one for your bowtie.
       </p>
     </div>
   </header>
 
+  {/* ── FILTER BAR ─────────────────────────────────── */}
+  <div class="filter-bar">
+    <div class="container">
+      <div class="filter-grid">
+        <div class="filter-group">
+          <label for="mechSearch">Search</label>
+          <input type="text" id="mechSearch" placeholder="Shop name, city, specialty..." />
+        </div>
+        <div class="filter-group">
+          <label for="filterState">State</label>
+          <select id="filterState">
+            <option value="">All States</option>
+            {states.map((s) => <option value={s}>{s}</option>)}
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterSpecialty">Specialty</label>
+          <select id="filterSpecialty">
+            <option value="">All Specialties</option>
+            {specialties.map((s) => <option value={s}>{s}</option>)}
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filterSort">Sort By</label>
+          <select id="filterSort">
+            <option value="name">Name (A–Z)</option>
+            <option value="state">State (A–Z)</option>
+            <option value="city">City (A–Z)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="mechs-body">
     <div class="container">
-      {stateOrder.map((state) => (
-        <section class="state-section">
-          <h2 class="state-title">{state}</h2>
-          <div class="mech-grid">
-            {byState[state].map((m) => (
-              <div class="mech-card">
+      <div class="results-header">
+        <span class="results-count" id="resultsCount">{totalCount} mechanics</span>
+      </div>
+
+      <div class="content-layout">
+        <div>
+          <div class="mech-grid" id="mechGrid">
+            {sorted.map((m) => (
+              <div
+                class="mech-card"
+                data-name={(m.name || '').toLowerCase()}
+                data-city={(m.city || '').toLowerCase()}
+                data-state={(m.state || '').toUpperCase()}
+                data-specialties={(m.specialties || []).join('|').toLowerCase()}
+                data-search={`${m.name || ''} ${m.city || ''} ${m.state || ''} ${(m.specialties || []).join(' ')} ${m.description || ''}`.toLowerCase()}
+              >
                 <h3 class="mech-name">{m.name}</h3>
                 <div class="mech-loc">{m.city}, {m.state}</div>
                 {m.specialties && m.specialties.length > 0 && (
                   <div class="mech-specs">
-                    {m.specialties.slice(0, 4).map((s) => (
-                      <span class="mech-tag">{s}</span>
-                    ))}
+                    {m.specialties.slice(0, 4).map((s) => <span class="mech-tag">{s}</span>)}
                   </div>
                 )}
-                {m.description && <p class="mech-desc">{m.description.slice(0, 140)}{m.description.length > 140 ? '…' : ''}</p>}
+                {m.description && (
+                  <p class="mech-desc">
+                    {m.description.slice(0, 140)}
+                    {m.description.length > 140 ? '…' : ''}
+                  </p>
+                )}
                 <div class="mech-contact">
                   {m.phone && <span>{m.phone}</span>}
-                  {m.website && <a href={m.website} target="_blank" rel="noopener">Website →</a>}
+                  {m.website && (
+                    <a href={m.website} target="_blank" rel="noopener">Website →</a>
+                  )}
                 </div>
               </div>
             ))}
           </div>
-        </section>
-      ))}
+          <div class="no-results" id="noResults" hidden>
+            <p>No mechanics match your filters. Try a different search or state.</p>
+          </div>
+        </div>
+
+        {spotlight.length > 0 && (
+          <aside class="spotlight-sidebar">
+            <div class="spotlight-title">Mechanic Spotlight</div>
+            <div class="spotlight-subtitle">Highest-rated this month</div>
+            {spotlight.map((m) => (
+              <div class="spotlight-card">
+                <h4>{m.name}</h4>
+                <div class="spotlight-loc">{m.city}, {m.state}</div>
+                {m.rating != null && (
+                  <div class="spotlight-rating">
+                    {Array.from({ length: 5 }).map((_, i) =>
+                      i < Math.round(m.rating ?? 0) ? '★' : '☆',
+                    ).join('')}
+                    <span>{m.rating?.toFixed(1)}</span>
+                  </div>
+                )}
+                {m.specialties && m.specialties[0] && (
+                  <span class="spotlight-spec">{m.specialties[0]}</span>
+                )}
+              </div>
+            ))}
+            <div class="spotlight-cta">
+              <p>Know a shop that belongs here?</p>
+              <a href="/contact/?topic=mechanic-listing">Nominate a Mechanic →</a>
+            </div>
+          </aside>
+        )}
+      </div>
     </div>
   </div>
 
   <NewsletterCTA source="mechanics-index" />
 </BaseLayout>
+
+<script>
+  const searchInput = document.getElementById('mechSearch') as HTMLInputElement;
+  const stateFilter = document.getElementById('filterState') as HTMLSelectElement;
+  const specialtyFilter = document.getElementById('filterSpecialty') as HTMLSelectElement;
+  const sortSelect = document.getElementById('filterSort') as HTMLSelectElement;
+  const grid = document.getElementById('mechGrid') as HTMLDivElement;
+  const noResults = document.getElementById('noResults') as HTMLDivElement;
+  const resultsCount = document.getElementById('resultsCount') as HTMLSpanElement;
+
+  function applyFilters() {
+    const q = searchInput.value.toLowerCase().trim();
+    const state = stateFilter.value;
+    const spec = specialtyFilter.value.toLowerCase();
+    const cards = grid.querySelectorAll<HTMLElement>('.mech-card');
+    let visible = 0;
+    cards.forEach((card) => {
+      const cardState = card.dataset.state || '';
+      const cardSpecs = card.dataset.specialties || '';
+      const cardSearch = card.dataset.search || '';
+      const matchState = !state || cardState === state;
+      const matchSpec = !spec || cardSpecs.includes(spec);
+      const matchSearch = !q || cardSearch.includes(q);
+      if (matchState && matchSpec && matchSearch) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    resultsCount.textContent = `${visible} mechanic${visible === 1 ? '' : 's'}`;
+    noResults.hidden = visible > 0;
+    grid.style.display = visible > 0 ? '' : 'none';
+  }
+
+  function applySort() {
+    const sortBy = sortSelect.value;
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('.mech-card'));
+    cards.sort((a, b) => {
+      const aVal = a.dataset[sortBy === 'name' ? 'name' : sortBy === 'state' ? 'state' : 'city'] || '';
+      const bVal = b.dataset[sortBy === 'name' ? 'name' : sortBy === 'state' ? 'state' : 'city'] || '';
+      return aVal.localeCompare(bVal);
+    });
+    cards.forEach((c) => grid.appendChild(c));
+  }
+
+  searchInput?.addEventListener('input', applyFilters);
+  stateFilter?.addEventListener('change', applyFilters);
+  specialtyFilter?.addEventListener('change', applyFilters);
+  sortSelect?.addEventListener('change', () => {
+    applySort();
+    applyFilters();
+  });
+</script>
 
 <style>
   .mechs-header {
@@ -85,36 +226,87 @@ const stateOrder = Object.keys(byState).sort();
     max-width: 72ch;
     margin-top: 1.5rem;
   }
-  .mechs-body { padding: 60px 0 80px; }
-  .state-section { margin-bottom: 4rem; }
-  .state-title {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--gold);
+
+  /* ── FILTER BAR ──────────────────────────────────── */
+  .filter-bar {
+    background: var(--charcoal);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 0;
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 10;
   }
+  .filter-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.3fr 1fr;
+    gap: 1rem;
+  }
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .filter-group label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .filter-group input,
+  .filter-group select {
+    padding: 0.6rem 0.85rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+  }
+  .filter-group input:focus,
+  .filter-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+
+  /* ── BODY ─────────────────────────────────────────── */
+  .mechs-body { padding: 2rem 0 var(--section-pad); }
+  .results-header {
+    margin-bottom: 1.5rem;
+  }
+  .results-count {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
   .mech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.25rem;
   }
   .mech-card {
+    padding: 1.5rem;
     background: var(--warm-gray);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
     transition: border-color var(--transition);
   }
   .mech-card:hover { border-color: var(--gold); }
   .mech-name {
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     color: var(--off-white);
@@ -122,7 +314,7 @@ const stateOrder = Object.keys(byState).sort();
   }
   .mech-loc {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--gold);
@@ -130,19 +322,20 @@ const stateOrder = Object.keys(byState).sort();
   }
   .mech-specs {
     display: flex;
-    gap: 0.35rem;
     flex-wrap: wrap;
+    gap: 0.35rem;
     margin-bottom: 0.75rem;
   }
   .mech-tag {
     font-family: var(--font-mono);
-    font-size: 0.62rem;
+    font-size: 0.58rem;
+    font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--light-gray);
-    background: var(--charcoal);
     padding: 0.2rem 0.5rem;
     border-radius: 3px;
+    background: var(--charcoal);
+    color: var(--light-gray);
     border: 1px solid var(--border);
   }
   .mech-desc {
@@ -154,12 +347,119 @@ const stateOrder = Object.keys(byState).sort();
   .mech-contact {
     display: flex;
     gap: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     color: var(--light-gray);
   }
   .mech-contact a {
     color: var(--gold);
     text-decoration: none;
+    margin-left: auto;
+  }
+
+  /* ── SPOTLIGHT ─────────────────────────────────────── */
+  .spotlight-sidebar {
+    padding: 1.75rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius-lg);
+    position: sticky;
+    top: calc(var(--nav-height) + 6rem);
+  }
+  .spotlight-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+  }
+  .spotlight-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 1.25rem;
+  }
+  .spotlight-card {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .spotlight-card:last-of-type { border-bottom: none; }
+  .spotlight-card h4 {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--off-white);
+    margin-bottom: 0.25rem;
+  }
+  .spotlight-loc {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 0.5rem;
+  }
+  .spotlight-rating {
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.05em;
+  }
+  .spotlight-rating span {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--light-gray);
+    margin-left: 0.35rem;
+  }
+  .spotlight-spec {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.45rem;
+    background: var(--charcoal);
+    color: var(--gold);
+    border-radius: 3px;
+  }
+  .spotlight-cta {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .spotlight-cta p {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+  }
+  .spotlight-cta a {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .no-results {
+    padding: 3rem;
+    text-align: center;
+    color: var(--text-dim);
+    background: var(--warm-gray);
+    border-radius: var(--radius-lg);
+  }
+
+  @media (max-width: 1000px) {
+    .filter-grid { grid-template-columns: 1fr 1fr; }
+    .content-layout { grid-template-columns: 1fr; }
+    .spotlight-sidebar { position: static; }
   }
 </style>

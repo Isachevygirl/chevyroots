@@ -10,12 +10,90 @@ const regions = [
 ];
 
 const totalEvents = events.length;
+
+// Crystal's personal picks — preserved from the old HTML
+const crystalPicks = [
+  {
+    label: 'This Saturday · Recurring',
+    title: '610 Cruisers Weekly',
+    location: 'Stafford, VA · Every Saturday 4–8 PM',
+    desc: "My first cruise-in in Virginia. Nervous but excited.",
+    tag: 'My home turf ★',
+    color: 'gold',
+  },
+  {
+    label: 'Apr 28–30 · Camden Yards',
+    title: 'Orioles vs. Astros ⚾',
+    location: 'Camden Yards · Baltimore, MD',
+    desc: "Houston girl watching her Astros. In the truck. At Camden Yards. Content writes itself.",
+    tag: 'Houston girl, Maryland game ★',
+    color: 'orange',
+  },
+  {
+    label: 'Apr 30 – May 3 · Ocean City, MD',
+    title: "Cruisin' Ocean City",
+    location: 'Ocean City, MD · 3,000+ vehicles',
+    desc: "3,000 cars at the beach? We're there.",
+    tag: "Don't miss this one ★",
+    color: 'gold',
+  },
+];
+
+// Road trip planner routes — preserved from the old HTML
+const routes = [
+  {
+    season: 'Spring · Mid-Atlantic',
+    subtitle: 'All within 2 hrs of Fredericksburg, VA',
+    title: 'DMV Spring Run',
+    stops: [
+      { name: '610 Cruisers', detail: 'Stafford, VA · Sat' },
+      { name: 'Orioles Game', detail: 'Camden Yards · Apr 28–30' },
+      { name: "Cruisin' Ocean City", detail: 'Ocean City, MD · Apr 30–May 3' },
+    ],
+    desc: 'Start local on Saturday, head up 95 to Camden Yards for the Astros series, then roll east to Ocean City for the boardwalk shows. Four days, three events, less than 200 miles of total driving.',
+  },
+  {
+    season: 'Summer · Northeast',
+    subtitle: 'Carlisle, PA as your base camp',
+    title: 'Summer East Coast',
+    stops: [
+      { name: 'Carlisle GM Nationals', detail: 'Carlisle, PA · Jun' },
+      { name: 'East Coast Chevy Show', detail: 'Mid-Atlantic · Summer' },
+      { name: 'Corvettes at Carlisle', detail: 'Carlisle, PA · Aug' },
+    ],
+    desc: 'Bookend your summer with both Carlisle events and hit the East Coast shows in between. The Carlisle Fairgrounds basically becomes Chevy central for half the summer — makes it easy to plan a week around multiple events.',
+  },
+  {
+    season: 'Fall · The South',
+    subtitle: 'KY → TN → MS — the pilgrimage route',
+    title: 'Fall Pilgrimage',
+    stops: [
+      { name: 'NCM Anniversary', detail: 'Bowling Green, KY · Sep' },
+      { name: 'LS Fest', detail: 'Nashville, TN · Oct' },
+      { name: "Cruisin' the Coast", detail: 'Gulf Coast, MS · Oct' },
+    ],
+    desc: 'Start at the Corvette Museum in Bowling Green, swing through Nashville for LS Fest, then end on the Mississippi Gulf Coast for one of the best cruise events in the country. The South in fall is unbeatable — warm weather, long roads, and serious Chevy iron everywhere you look.',
+  },
+];
+
+// State density — preserved from the old HTML
+const eventsByState = [
+  { state: 'Kentucky', venues: 'NCM · Louisville · LS Fest', count: 5, highlight: true },
+  { state: 'Pennsylvania', venues: 'Carlisle × 3', count: 3 },
+  { state: 'Tennessee', venues: 'Nashville · Knoxville · Memphis', count: 3 },
+  { state: 'Maryland', venues: 'Ocean City · MIR', count: 2 },
+  { state: 'Virginia', venues: '610 Cruisers · VMP', count: 2 },
+  { state: 'Michigan', venues: 'Detroit GP · Woodward', count: 2 },
+  { state: 'California', venues: 'Del Mar · Pleasanton', count: 2 },
+  { state: 'Texas', venues: 'Lone Star × 2', count: 2 },
+];
 ---
 
 <BaseLayout
-  title="Chevy Events Calendar — Car Shows Across America | ChevyRoots"
-  description={`${totalEvents}+ car shows, cruise nights, and Chevy-focused events across the US — organized by region. From Goodguys to SEMA, local weekend cruises to the biggest national shows.`}
+  title="Chevy Events Calendar — Car Shows, Road Trips, Crystal's Picks | ChevyRoots"
+  description={`${totalEvents}+ car shows, cruise nights, and Chevy-focused events across the US. Crystal's personal event picks, multi-stop road trip planners, events by state, and full regional calendars.`}
 >
+  {/* ── HERO ─────────────────────────────────────────── */}
   <header class="events-header">
     <div class="container">
       <p class="section-eyebrow">Events Calendar</p>
@@ -27,30 +105,132 @@ const totalEvents = events.length;
     </div>
   </header>
 
-  <div class="events-body">
+  {/* ── AMERICA 250 BANNER ───────────────────────────── */}
+  <div class="america-banner">
     <div class="container">
+      <div class="america-inner">
+        <p>
+          <strong>2026 is Chevy's Year</strong> — Celebrating 115 Years Alongside America's 250th
+        </p>
+        <p class="america-quote">"See the USA in your Chevrolet." The road belongs to us in 2026.</p>
+      </div>
+    </div>
+  </div>
+
+  {/* ── CRYSTAL'S EVENT PICKS ─────────────────────────── */}
+  <section class="picks-section">
+    <div class="container">
+      <div class="picks-header">
+        <div class="picks-eyebrow">
+          <span>Crystal's Picks</span>
+          <span class="picks-sub">— Events I'm actually going to</span>
+        </div>
+        <h2 class="picks-title">Crystal's <em>Event Picks</em></h2>
+        <p class="picks-intro">These are the three events I'm personally planning to hit this spring. If you see a silver Chevy girl in the crowd, say hi.</p>
+      </div>
+      <div class="picks-grid">
+        {crystalPicks.map((pick) => (
+          <div class={`pick-card pick-${pick.color}`}>
+            <div class="pick-label">{pick.label}</div>
+            <h3 class="pick-title">{pick.title}</h3>
+            <div class="pick-loc">{pick.location}</div>
+            <p class="pick-desc">{pick.desc}</p>
+            <span class="pick-tag">{pick.tag}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ── REGIONAL CALENDARS ──────────────────────────── */}
+  <section class="regions-section">
+    <div class="container">
+      <div class="events-header-alt">
+        <div class="section-eyebrow">Regional Calendars</div>
+        <h2 class="section-h2">Browse by <em>Region</em></h2>
+        <span class="gold-line"></span>
+      </div>
       <div class="regions-grid">
         {regions.map((r) => {
           const regionEvents = eventsByRegion(r.slug);
           return (
             <a href={`/events/${r.slug}/`} class="region-card">
-              <div class="region-card-body">
-                <div class="region-card-eyebrow">{regionEvents.length} events</div>
-                <h2 class="region-card-title">{r.label}</h2>
-                <p class="region-card-desc">{r.desc}</p>
-                <span class="region-card-link">View calendar →</span>
-              </div>
+              <div class="region-card-eyebrow">{regionEvents.length} events</div>
+              <h3 class="region-card-title">{r.label}</h3>
+              <p class="region-card-desc">{r.desc}</p>
+              <span class="region-card-link">View calendar →</span>
             </a>
           );
         })}
       </div>
-
-      <section class="events-cta">
-        <h2>Know an event we should cover?</h2>
-        <p>Tell us about it. <a href="/submit/event/">Submit an event</a> or email <a href="mailto:hello@chevyroots.com">hello@chevyroots.com</a> with the details.</p>
-      </section>
     </div>
-  </div>
+  </section>
+
+  {/* ── ROAD TRIP PLANNER ───────────────────────────── */}
+  <section class="planner-section">
+    <div class="container">
+      <div class="planner-header">
+        <div class="section-eyebrow">Road Trip Planner</div>
+        <h2 class="section-h2">Plan <em>Your Route</em></h2>
+        <span class="gold-line"></span>
+        <p class="planner-intro">
+          Chain events together into a real road trip. These routes are proven combos — logical geography, great shows, and enough driving to feel like an adventure without burning a full week of PTO.
+        </p>
+      </div>
+      <div class="routes-list">
+        {routes.map((route) => (
+          <div class="route-card">
+            <div class="route-meta">
+              <span class="route-season">{route.season}</span>
+              <span class="route-sub">{route.subtitle}</span>
+            </div>
+            <h3 class="route-title">{route.title}</h3>
+            <div class="route-stops">
+              {route.stops.map((stop, i) => (
+                <>
+                  {i > 0 && <div class="route-arrow">→</div>}
+                  <div class="route-stop">
+                    <div class="route-stop-name">{stop.name}</div>
+                    <div class="route-stop-detail">{stop.detail}</div>
+                  </div>
+                </>
+              ))}
+            </div>
+            <p class="route-desc">{route.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ── EVENTS BY STATE ─────────────────────────────── */}
+  <section class="by-state-section">
+    <div class="container">
+      <div class="section-eyebrow">Quick Reference</div>
+      <h2 class="section-h2">Events by <em>State</em></h2>
+      <span class="gold-line"></span>
+      <p class="section-lede">Where the 2026 calendar is densest. Plan accordingly.</p>
+      <div class="by-state-grid">
+        {eventsByState.map((s) => (
+          <div class={`state-card ${s.highlight ? 'highlight' : ''}`}>
+            <div>
+              <div class="state-name">{s.state}</div>
+              <div class="state-venues">{s.venues}</div>
+            </div>
+            <div class="state-count">{s.count}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ── SUBMIT CTA ──────────────────────────────────── */}
+  <section class="submit-cta">
+    <div class="container container-narrow">
+      <h2>Know an event we should cover?</h2>
+      <p>Tell us about it. <a href="/submit/event/">Submit an event</a> or email <a href="mailto:hello@chevyroots.com">hello@chevyroots.com</a> with the details.</p>
+    </div>
+  </section>
 
   <NewsletterCTA source="events-index" />
 </BaseLayout>
@@ -59,7 +239,6 @@ const totalEvents = events.length;
   .events-header {
     padding: 80px 0 50px;
     background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
-    border-bottom: 1px solid rgba(196, 160, 53, 0.15);
   }
   .events-title {
     font-family: var(--font-heading);
@@ -71,10 +250,7 @@ const totalEvents = events.length;
     color: var(--off-white);
     margin-top: 0.75rem;
   }
-  .events-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
+  .events-title em { font-style: italic; color: var(--gold); }
   .events-lede {
     font-size: 1.1rem;
     color: var(--text-dim);
@@ -82,23 +258,178 @@ const totalEvents = events.length;
     max-width: 72ch;
     margin-top: 1.5rem;
   }
-  .events-body {
-    padding: 60px 0 80px;
+
+  /* ── AMERICA BANNER ─────────────────────────────────── */
+  .america-banner {
+    background: linear-gradient(90deg, #1A1005 0%, #1f1a0e 50%, #1A1005 100%);
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  .america-inner p {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+  .america-inner strong { color: var(--gold); }
+  .america-quote {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    color: var(--light-gray);
+    margin-top: 0.5rem;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* ── CRYSTAL'S PICKS ───────────────────────────────── */
+  .picks-section {
+    padding: var(--section-pad) 0;
+    background: linear-gradient(135deg, #1A0F0F 0%, #231515 50%, var(--charcoal) 100%);
+    border-bottom: 2px solid rgba(139, 26, 26, 0.5);
+  }
+  .picks-header {
+    margin-bottom: 2.5rem;
+  }
+  .picks-eyebrow {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .picks-eyebrow span:first-child {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .picks-sub {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--text-mute);
+    letter-spacing: 0.08em;
+  }
+  .picks-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .picks-title em { font-style: italic; color: var(--gold); }
+  .picks-intro {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    max-width: 56ch;
+  }
+  .picks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .pick-card {
+    padding: 1.75rem;
+    background: rgba(196, 160, 53, 0.06);
+    border: 1px solid rgba(196, 160, 53, 0.3);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+  }
+  .pick-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+  .pick-card.pick-orange::before { background: #FF6600; }
+  .pick-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .pick-card.pick-orange .pick-label { color: #FF6600; }
+  .pick-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.4rem;
+  }
+  .pick-loc {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+  }
+  .pick-desc {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .pick-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .pick-card.pick-orange .pick-tag { color: #FF6600; }
+
+  /* ── REGIONS ───────────────────────────────────────── */
+  .regions-section {
+    padding: var(--section-pad) 0;
+  }
+  .events-header-alt {
+    margin-bottom: 3rem;
+  }
+  .section-h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.5rem 0 0.5rem;
+  }
+  .section-h2 em { font-style: italic; color: var(--gold); }
+  .section-lede {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    max-width: 60ch;
+    margin: 1rem 0 2rem;
   }
   .regions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    margin-bottom: 4rem;
   }
   .region-card {
+    padding: 2rem;
     background: var(--warm-gray);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 2rem;
     text-decoration: none;
     transition: border-color var(--transition), transform var(--transition);
-    display: block;
   }
   .region-card:hover {
     border-color: var(--gold);
@@ -106,15 +437,15 @@ const totalEvents = events.length;
   }
   .region-card-eyebrow {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 0.75rem;
   }
   .region-card-title {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -130,32 +461,181 @@ const totalEvents = events.length;
   .region-card-link {
     font-family: var(--font-mono);
     font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--gold);
   }
-  .events-cta {
-    text-align: center;
-    padding: 3rem 2rem;
+
+  /* ── ROAD TRIP PLANNER ─────────────────────────────── */
+  .planner-section {
+    padding: var(--section-pad) 0;
     background: var(--warm-gray);
-    border: 1px solid rgba(196, 160, 53, 0.2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .planner-header {
+    margin-bottom: 2.5rem;
+  }
+  .planner-intro {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    max-width: 68ch;
+    margin-top: 1rem;
+  }
+  .routes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .route-card {
+    padding: 2rem;
+    background: var(--charcoal);
+    border: 1px solid rgba(196, 160, 53, 0.25);
+    border-left: 3px solid var(--gold);
     border-radius: var(--radius-lg);
   }
-  .events-cta h2 {
+  .route-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+  .route-season {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.3rem 0.7rem;
+    background: rgba(196, 160, 53, 0.12);
+    border-radius: 3px;
+  }
+  .route-sub {
+    font-size: 0.82rem;
+    color: var(--light-gray);
+  }
+  .route-title {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 1rem;
+  }
+  .route-stops {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 1rem;
+  }
+  .route-stop {
+    background: rgba(196, 160, 53, 0.1);
+    border: 1px solid rgba(196, 160, 53, 0.3);
+    border-radius: var(--radius);
+    padding: 0.75rem 1.1rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .route-stop-name {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+  .route-stop-detail {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.2rem;
+  }
+  .route-arrow {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--gold);
+    padding: 0 0.75rem;
+  }
+  .route-desc {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-top: 1rem;
+  }
+
+  /* ── BY STATE ──────────────────────────────────────── */
+  .by-state-section {
+    padding: var(--section-pad) 0;
+  }
+  .by-state-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  .state-card {
+    padding: 1rem 1.25rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: border-color var(--transition);
+  }
+  .state-card:hover { border-color: var(--gold); }
+  .state-card.highlight {
+    border-color: rgba(196, 160, 53, 0.6);
+    background: rgba(196, 160, 53, 0.04);
+  }
+  .state-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+  .state-venues {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.2rem;
+  }
+  .state-count {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  /* ── SUBMIT CTA ────────────────────────────────────── */
+  .submit-cta {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .submit-cta h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.03em;
     color: var(--gold);
     margin-bottom: 0.75rem;
   }
-  .events-cta p {
+  .submit-cta p {
     color: var(--text-dim);
     font-size: 1rem;
   }
-  .events-cta a {
-    color: var(--gold);
-    text-decoration: underline;
-  }
+  .submit-cta a { color: var(--gold); text-decoration: underline; }
 </style>

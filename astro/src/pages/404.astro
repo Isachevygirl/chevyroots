@@ -1,0 +1,136 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found — ChevyRoots"
+  description="This page doesn't exist on ChevyRoots. Try the search, browse models, or head back to the homepage."
+  noindex={true}
+  hideAnnouncement={true}
+>
+  <section class="not-found">
+    <div class="container container-narrow">
+      <div class="nf-badge">404</div>
+      <h1 class="nf-title">Wrong <em>Turn</em></h1>
+      <p class="nf-sub">
+        This page doesn't exist — or it moved during the site rebuild. Either way, you're not lost. Just a little off-route.
+      </p>
+      <div class="nf-links">
+        <a href="/" class="btn btn-gold">Back to Home</a>
+        <a href="/search/" class="btn btn-outline">Search the Site</a>
+        <a href="/guides/" class="btn btn-outline">Browse Guides</a>
+      </div>
+      <div class="nf-suggest">
+        <p class="nf-suggest-label">Maybe you were looking for:</p>
+        <div class="nf-suggest-grid">
+          <a href="/models/">All Chevy Models</a>
+          <a href="/guides/silverado-buyers-guide/">Silverado Buyer's Guide</a>
+          <a href="/crystals-corner/">Crystal's Corner</a>
+          <a href="/builds/">Community Builds</a>
+          <a href="/events/">Events Calendar</a>
+          <a href="/my-zr2/">My ZR2</a>
+          <a href="/mechanics/">Find a Mechanic</a>
+          <a href="/sitemap/">Full Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: var(--section-pad) 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 30%, rgba(196, 160, 53, 0.06) 0%, transparent 70%),
+      var(--charcoal);
+  }
+  .nf-badge {
+    font-family: var(--font-heading);
+    font-size: clamp(6rem, 15vw, 12rem);
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    opacity: 0.15;
+    margin-bottom: -2rem;
+    position: relative;
+    z-index: 0;
+  }
+  .nf-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+  }
+  .nf-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .nf-sub {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 52ch;
+    margin: 0 auto 2.5rem;
+  }
+  .nf-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+  .nf-suggest {
+    padding: 2.5rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    text-align: left;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .nf-suggest-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .nf-suggest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .nf-suggest-grid a {
+    display: block;
+    padding: 0.75rem 1rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .nf-suggest-grid a:hover {
+    border-color: var(--gold);
+    transform: translateX(4px);
+    color: var(--gold);
+  }
+  @media (max-width: 600px) {
+    .nf-suggest-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

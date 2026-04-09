@@ -20,7 +20,13 @@
               "towing_capacity": 9500,
               "mpg_city": 19,
               "mpg_highway": 23,
-              "key_features": ["Steel wheels", "Vinyl seating", "Work-focused interior", "Spray-in bedliner prep", "Trailering package available"]
+              "key_features": [
+                "Steel wheels",
+                "Vinyl seating",
+                "Work-focused interior",
+                "Spray-in bedliner prep",
+                "Trailering package available"
+              ]
             },
             {
               "name": "Custom",
@@ -33,7 +39,13 @@
               "towing_capacity": 9500,
               "mpg_city": 19,
               "mpg_highway": 23,
-              "key_features": ["17-inch aluminum wheels", "Body-color bumpers", "Enhanced driver display", "Apple CarPlay / Android Auto", "Teen Driver technology"]
+              "key_features": [
+                "17-inch aluminum wheels",
+                "Body-color bumpers",
+                "Enhanced driver display",
+                "Apple CarPlay / Android Auto",
+                "Teen Driver technology"
+              ]
             },
             {
               "name": "LT",
@@ -46,7 +58,14 @@
               "towing_capacity": 9500,
               "mpg_city": 19,
               "mpg_highway": 23,
-              "key_features": ["Cloth seating", "8-inch Chevy Infotainment 3 Plus", "Power driver seat", "Remote start", "Rear vision camera", "EZ Lift-and-Lower tailgate"]
+              "key_features": [
+                "Cloth seating",
+                "8-inch Chevy Infotainment 3 Plus",
+                "Power driver seat",
+                "Remote start",
+                "Rear vision camera",
+                "EZ Lift-and-Lower tailgate"
+              ]
             },
             {
               "name": "RST",
@@ -59,7 +78,13 @@
               "towing_capacity": 11500,
               "mpg_city": 15,
               "mpg_highway": 21,
-              "key_features": ["Sport appearance package", "20-inch black aluminum wheels", "LED headlamps", "Leather-appointed seating", "Bose premium audio available"]
+              "key_features": [
+                "Sport appearance package",
+                "20-inch black aluminum wheels",
+                "LED headlamps",
+                "Leather-appointed seating",
+                "Bose premium audio available"
+              ]
             },
             {
               "name": "LTZ",
@@ -72,7 +97,14 @@
               "towing_capacity": 11500,
               "mpg_city": 15,
               "mpg_highway": 21,
-              "key_features": ["Leather seating", "13.4-inch diagonal infotainment touchscreen", "Heated and ventilated front seats", "Wireless charging", "Multi-Pro tailgate", "Power running boards available"]
+              "key_features": [
+                "Leather seating",
+                "13.4-inch diagonal infotainment touchscreen",
+                "Heated and ventilated front seats",
+                "Wireless charging",
+                "Multi-Pro tailgate",
+                "Power running boards available"
+              ]
             },
             {
               "name": "High Country",
@@ -85,7 +117,14 @@
               "towing_capacity": 13300,
               "mpg_city": 14,
               "mpg_highway": 20,
-              "key_features": ["Premium leather seating", "Unique chrome exterior badges", "Enhanced audio", "Head-Up Display", "Surround Vision camera", "Signature High Country styling"]
+              "key_features": [
+                "Premium leather seating",
+                "Unique chrome exterior badges",
+                "Enhanced audio",
+                "Head-Up Display",
+                "Surround Vision camera",
+                "Signature High Country styling"
+              ]
             }
           ]
         },
@@ -104,7 +143,13 @@
               "towing_capacity": 9500,
               "mpg_city": 19,
               "mpg_highway": 23,
-              "key_features": ["Steel wheels", "Vinyl seating", "Work-focused interior", "Spray-in bedliner prep", "Trailering package available"]
+              "key_features": [
+                "Steel wheels",
+                "Vinyl seating",
+                "Work-focused interior",
+                "Spray-in bedliner prep",
+                "Trailering package available"
+              ]
             },
             {
               "name": "LT",
@@ -117,7 +162,13 @@
               "towing_capacity": 9500,
               "mpg_city": 19,
               "mpg_highway": 23,
-              "key_features": ["Cloth seating", "8-inch Chevy Infotainment 3 Plus", "Power driver seat", "Remote start", "EZ Lift-and-Lower tailgate"]
+              "key_features": [
+                "Cloth seating",
+                "8-inch Chevy Infotainment 3 Plus",
+                "Power driver seat",
+                "Remote start",
+                "EZ Lift-and-Lower tailgate"
+              ]
             },
             {
               "name": "LTZ",
@@ -130,7 +181,13 @@
               "towing_capacity": 11500,
               "mpg_city": 15,
               "mpg_highway": 21,
-              "key_features": ["Leather seating", "13.4-inch diagonal infotainment touchscreen", "Heated and ventilated front seats", "Wireless charging", "Multi-Pro tailgate"]
+              "key_features": [
+                "Leather seating",
+                "13.4-inch diagonal infotainment touchscreen",
+                "Heated and ventilated front seats",
+                "Wireless charging",
+                "Multi-Pro tailgate"
+              ]
             },
             {
               "name": "High Country",
@@ -143,7 +200,13 @@
               "towing_capacity": 13300,
               "mpg_city": 14,
               "mpg_highway": 20,
-              "key_features": ["Premium leather seating", "Head-Up Display", "Surround Vision camera", "Signature High Country styling", "Enhanced Bose audio"]
+              "key_features": [
+                "Premium leather seating",
+                "Head-Up Display",
+                "Surround Vision camera",
+                "Signature High Country styling",
+                "Enhanced Bose audio"
+              ]
             },
             {
               "name": "ZR2",
@@ -156,7 +219,13 @@
               "towing_capacity": 8900,
               "mpg_city": 13,
               "mpg_highway": 17,
-              "key_features": ["DSSV dampers by Multimatic", "33-inch all-terrain tires", "Underbody skid plates", "Front and rear locking differentials", "Rock crawl mode"]
+              "key_features": [
+                "DSSV dampers by Multimatic",
+                "33-inch all-terrain tires",
+                "Underbody skid plates",
+                "Front and rear locking differentials",
+                "Rock crawl mode"
+              ]
             }
           ]
         }
@@ -182,7 +251,13 @@
               "towing_capacity": 7700,
               "mpg_city": 18,
               "mpg_highway": 24,
-              "key_features": ["8-inch infotainment screen", "Apple CarPlay / Android Auto", "Teen Driver technology", "Rear vision camera", "17-inch aluminum wheels"]
+              "key_features": [
+                "8-inch infotainment screen",
+                "Apple CarPlay / Android Auto",
+                "Teen Driver technology",
+                "Rear vision camera",
+                "17-inch aluminum wheels"
+              ]
             },
             {
               "name": "LT",
@@ -195,7 +270,13 @@
               "towing_capacity": 7700,
               "mpg_city": 18,
               "mpg_highway": 24,
-              "key_features": ["11.3-inch infotainment touchscreen", "Rear camera mirror", "Heated front seats", "Keyless open and start", "Chevy Safety Assist"]
+              "key_features": [
+                "11.3-inch infotainment touchscreen",
+                "Rear camera mirror",
+                "Heated front seats",
+                "Keyless open and start",
+                "Chevy Safety Assist"
+              ]
             },
             {
               "name": "Trail Boss",
@@ -208,7 +289,14 @@
               "towing_capacity": 7700,
               "mpg_city": 17,
               "mpg_highway": 21,
-              "key_features": ["2-inch factory lift", "All-terrain tires", "Locking rear differential", "Skid plates", "Rancho shocks", "Off-road suspension"]
+              "key_features": [
+                "2-inch factory lift",
+                "All-terrain tires",
+                "Locking rear differential",
+                "Skid plates",
+                "Rancho shocks",
+                "Off-road suspension"
+              ]
             },
             {
               "name": "Z71",
@@ -221,7 +309,13 @@
               "towing_capacity": 7700,
               "mpg_city": 17,
               "mpg_highway": 21,
-              "key_features": ["Bose premium audio", "Leather-appointed seating", "Heated and ventilated front seats", "Z71 off-road package", "Multi-Flex tailgate"]
+              "key_features": [
+                "Bose premium audio",
+                "Leather-appointed seating",
+                "Heated and ventilated front seats",
+                "Z71 off-road package",
+                "Multi-Flex tailgate"
+              ]
             },
             {
               "name": "ZR2",
@@ -234,7 +328,13 @@
               "towing_capacity": 5000,
               "mpg_city": 16,
               "mpg_highway": 19,
-              "key_features": ["DSSV dampers by Multimatic", "33-inch Goodyear Wrangler Duratrac tires", "Front and rear locking differentials", "Rock crawl mode", "Underbody protection"]
+              "key_features": [
+                "DSSV dampers by Multimatic",
+                "33-inch Goodyear Wrangler Duratrac tires",
+                "Front and rear locking differentials",
+                "Rock crawl mode",
+                "Underbody protection"
+              ]
             }
           ]
         },
@@ -253,7 +353,13 @@
               "towing_capacity": 7700,
               "mpg_city": 18,
               "mpg_highway": 24,
-              "key_features": ["8-inch infotainment screen", "Apple CarPlay / Android Auto", "Rear vision camera", "17-inch aluminum wheels", "Chevy Safety Assist"]
+              "key_features": [
+                "8-inch infotainment screen",
+                "Apple CarPlay / Android Auto",
+                "Rear vision camera",
+                "17-inch aluminum wheels",
+                "Chevy Safety Assist"
+              ]
             },
             {
               "name": "LT",
@@ -266,7 +372,13 @@
               "towing_capacity": 7700,
               "mpg_city": 18,
               "mpg_highway": 24,
-              "key_features": ["11.3-inch infotainment touchscreen", "Heated front seats", "Keyless open and start", "Rear camera mirror", "Wireless Apple CarPlay"]
+              "key_features": [
+                "11.3-inch infotainment touchscreen",
+                "Heated front seats",
+                "Keyless open and start",
+                "Rear camera mirror",
+                "Wireless Apple CarPlay"
+              ]
             },
             {
               "name": "Trail Boss",
@@ -279,7 +391,14 @@
               "towing_capacity": 7700,
               "mpg_city": 17,
               "mpg_highway": 21,
-              "key_features": ["2-inch factory lift", "All-terrain tires", "Locking rear differential", "Skid plates", "Off-road suspension", "Rancho shocks"]
+              "key_features": [
+                "2-inch factory lift",
+                "All-terrain tires",
+                "Locking rear differential",
+                "Skid plates",
+                "Off-road suspension",
+                "Rancho shocks"
+              ]
             },
             {
               "name": "Z71",
@@ -292,7 +411,13 @@
               "towing_capacity": 7700,
               "mpg_city": 17,
               "mpg_highway": 21,
-              "key_features": ["Bose premium audio", "Leather-appointed seating", "Heated and ventilated front seats", "Multi-Flex tailgate", "Z71 badge"]
+              "key_features": [
+                "Bose premium audio",
+                "Leather-appointed seating",
+                "Heated and ventilated front seats",
+                "Multi-Flex tailgate",
+                "Z71 badge"
+              ]
             },
             {
               "name": "ZR2",
@@ -305,7 +430,14 @@
               "towing_capacity": 5000,
               "mpg_city": 16,
               "mpg_highway": 19,
-              "key_features": ["DSSV dampers by Multimatic", "33-inch Goodyear Duratrac tires", "Front and rear locking differentials", "Rock crawl mode", "Underbody protection", "Factory desert-racing capability"]
+              "key_features": [
+                "DSSV dampers by Multimatic",
+                "33-inch Goodyear Duratrac tires",
+                "Front and rear locking differentials",
+                "Rock crawl mode",
+                "Underbody protection",
+                "Factory desert-racing capability"
+              ]
             }
           ]
         }
@@ -331,7 +463,13 @@
               "towing_capacity": 8400,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["8-inch infotainment touchscreen", "Cloth seating", "Power liftgate", "Rear vision camera", "Apple CarPlay / Android Auto"]
+              "key_features": [
+                "8-inch infotainment touchscreen",
+                "Cloth seating",
+                "Power liftgate",
+                "Rear vision camera",
+                "Apple CarPlay / Android Auto"
+              ]
             },
             {
               "name": "LT",
@@ -344,7 +482,13 @@
               "towing_capacity": 8400,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["10.2-inch infotainment touchscreen", "Leather-appointed seating", "Heated front seats", "Power-folding third row", "Wireless charging"]
+              "key_features": [
+                "10.2-inch infotainment touchscreen",
+                "Leather-appointed seating",
+                "Heated front seats",
+                "Power-folding third row",
+                "Wireless charging"
+              ]
             },
             {
               "name": "RST",
@@ -357,7 +501,13 @@
               "towing_capacity": 8400,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["Sport appearance package", "22-inch gloss black wheels", "Black exterior accents", "Bose premium audio", "Power running boards available"]
+              "key_features": [
+                "Sport appearance package",
+                "22-inch gloss black wheels",
+                "Black exterior accents",
+                "Bose premium audio",
+                "Power running boards available"
+              ]
             },
             {
               "name": "Z71",
@@ -370,7 +520,13 @@
               "towing_capacity": 8400,
               "mpg_city": 14,
               "mpg_highway": 18,
-              "key_features": ["Z71 off-road package", "Two-speed transfer case", "Hill descent control", "Skid plates", "All-terrain tires"]
+              "key_features": [
+                "Z71 off-road package",
+                "Two-speed transfer case",
+                "Hill descent control",
+                "Skid plates",
+                "All-terrain tires"
+              ]
             },
             {
               "name": "Premier",
@@ -383,7 +539,13 @@
               "towing_capacity": 8400,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["Perforated leather seating", "Heated second row", "Panoramic sunroof", "Head-Up Display", "Surround Vision camera system"]
+              "key_features": [
+                "Perforated leather seating",
+                "Heated second row",
+                "Panoramic sunroof",
+                "Head-Up Display",
+                "Surround Vision camera system"
+              ]
             },
             {
               "name": "High Country",
@@ -396,7 +558,13 @@
               "towing_capacity": 8400,
               "mpg_city": 13,
               "mpg_highway": 18,
-              "key_features": ["Semi-aniline leather seating", "Unique High Country trim", "Enhanced audio system", "Rear-seat media system available", "Magnetic Ride Control available"]
+              "key_features": [
+                "Semi-aniline leather seating",
+                "Unique High Country trim",
+                "Enhanced audio system",
+                "Rear-seat media system available",
+                "Magnetic Ride Control available"
+              ]
             }
           ]
         },
@@ -415,7 +583,13 @@
               "towing_capacity": 8400,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["8-inch infotainment touchscreen", "Cloth seating", "Power liftgate", "Rear vision camera", "Apple CarPlay / Android Auto"]
+              "key_features": [
+                "8-inch infotainment touchscreen",
+                "Cloth seating",
+                "Power liftgate",
+                "Rear vision camera",
+                "Apple CarPlay / Android Auto"
+              ]
             },
             {
               "name": "LT",
@@ -428,7 +602,13 @@
               "towing_capacity": 8400,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["10.2-inch infotainment touchscreen", "Leather-appointed seating", "Heated front seats", "Power-folding third row", "Wireless charging"]
+              "key_features": [
+                "10.2-inch infotainment touchscreen",
+                "Leather-appointed seating",
+                "Heated front seats",
+                "Power-folding third row",
+                "Wireless charging"
+              ]
             },
             {
               "name": "Premier",
@@ -441,7 +621,13 @@
               "towing_capacity": 8400,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["Perforated leather seating", "Heated second row", "Panoramic sunroof", "Head-Up Display", "Surround Vision camera system"]
+              "key_features": [
+                "Perforated leather seating",
+                "Heated second row",
+                "Panoramic sunroof",
+                "Head-Up Display",
+                "Surround Vision camera system"
+              ]
             },
             {
               "name": "High Country",
@@ -454,7 +640,13 @@
               "towing_capacity": 8400,
               "mpg_city": 13,
               "mpg_highway": 18,
-              "key_features": ["Semi-aniline leather seating", "Unique High Country trim", "Rear-seat media system available", "Magnetic Ride Control available", "Enhanced Bose audio"]
+              "key_features": [
+                "Semi-aniline leather seating",
+                "Unique High Country trim",
+                "Rear-seat media system available",
+                "Magnetic Ride Control available",
+                "Enhanced Bose audio"
+              ]
             }
           ]
         }
@@ -480,7 +672,14 @@
               "towing_capacity": 8300,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["8-inch infotainment touchscreen", "Cloth seating", "Power liftgate", "Rear vision camera", "Apple CarPlay / Android Auto", "Third-row seating"]
+              "key_features": [
+                "8-inch infotainment touchscreen",
+                "Cloth seating",
+                "Power liftgate",
+                "Rear vision camera",
+                "Apple CarPlay / Android Auto",
+                "Third-row seating"
+              ]
             },
             {
               "name": "LT",
@@ -493,7 +692,13 @@
               "towing_capacity": 8300,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["10.2-inch infotainment touchscreen", "Leather-appointed seating", "Heated front seats", "Second-row bucket seats available", "Wireless charging"]
+              "key_features": [
+                "10.2-inch infotainment touchscreen",
+                "Leather-appointed seating",
+                "Heated front seats",
+                "Second-row bucket seats available",
+                "Wireless charging"
+              ]
             },
             {
               "name": "RST",
@@ -506,7 +711,13 @@
               "towing_capacity": 8300,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["Sport appearance package", "22-inch gloss black wheels", "Black exterior accents", "Bose premium audio", "Sport-tuned suspension"]
+              "key_features": [
+                "Sport appearance package",
+                "22-inch gloss black wheels",
+                "Black exterior accents",
+                "Bose premium audio",
+                "Sport-tuned suspension"
+              ]
             },
             {
               "name": "Premier",
@@ -519,7 +730,13 @@
               "towing_capacity": 8300,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["Perforated leather seating", "Heated second row", "Panoramic sunroof", "Head-Up Display", "Surround Vision camera system"]
+              "key_features": [
+                "Perforated leather seating",
+                "Heated second row",
+                "Panoramic sunroof",
+                "Head-Up Display",
+                "Surround Vision camera system"
+              ]
             },
             {
               "name": "High Country",
@@ -532,7 +749,13 @@
               "towing_capacity": 8300,
               "mpg_city": 13,
               "mpg_highway": 18,
-              "key_features": ["Semi-aniline leather seating", "Rear-seat media system available", "Magnetic Ride Control available", "Enhanced Bose audio", "Exclusive High Country badging"]
+              "key_features": [
+                "Semi-aniline leather seating",
+                "Rear-seat media system available",
+                "Magnetic Ride Control available",
+                "Enhanced Bose audio",
+                "Exclusive High Country badging"
+              ]
             }
           ]
         },
@@ -551,7 +774,13 @@
               "towing_capacity": 8300,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["8-inch infotainment touchscreen", "Cloth seating", "Power liftgate", "Rear vision camera", "Three-row seating for up to 9"]
+              "key_features": [
+                "8-inch infotainment touchscreen",
+                "Cloth seating",
+                "Power liftgate",
+                "Rear vision camera",
+                "Three-row seating for up to 9"
+              ]
             },
             {
               "name": "LT",
@@ -564,7 +793,13 @@
               "towing_capacity": 8300,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["10.2-inch infotainment touchscreen", "Leather-appointed seating", "Heated front seats", "Wireless charging", "Second-row bucket seats available"]
+              "key_features": [
+                "10.2-inch infotainment touchscreen",
+                "Leather-appointed seating",
+                "Heated front seats",
+                "Wireless charging",
+                "Second-row bucket seats available"
+              ]
             },
             {
               "name": "Premier",
@@ -577,7 +812,13 @@
               "towing_capacity": 8300,
               "mpg_city": 14,
               "mpg_highway": 19,
-              "key_features": ["Perforated leather seating", "Heated second row", "Panoramic sunroof", "Head-Up Display", "Surround Vision camera system"]
+              "key_features": [
+                "Perforated leather seating",
+                "Heated second row",
+                "Panoramic sunroof",
+                "Head-Up Display",
+                "Surround Vision camera system"
+              ]
             },
             {
               "name": "High Country",
@@ -590,7 +831,13 @@
               "towing_capacity": 8300,
               "mpg_city": 13,
               "mpg_highway": 18,
-              "key_features": ["Semi-aniline leather seating", "Magnetic Ride Control", "Rear-seat media system", "Enhanced Bose audio", "Exclusive High Country trim"]
+              "key_features": [
+                "Semi-aniline leather seating",
+                "Magnetic Ride Control",
+                "Rear-seat media system",
+                "Enhanced Bose audio",
+                "Exclusive High Country trim"
+              ]
             }
           ]
         }
@@ -616,7 +863,13 @@
               "towing_capacity": 1500,
               "mpg_city": 26,
               "mpg_highway": 31,
-              "key_features": ["7-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Rear vision camera", "Teen Driver technology", "Chevy Safety Assist"]
+              "key_features": [
+                "7-inch infotainment touchscreen",
+                "Apple CarPlay / Android Auto",
+                "Rear vision camera",
+                "Teen Driver technology",
+                "Chevy Safety Assist"
+              ]
             },
             {
               "name": "LT",
@@ -629,7 +882,14 @@
               "towing_capacity": 1500,
               "mpg_city": 26,
               "mpg_highway": 31,
-              "key_features": ["11.3-inch infotainment touchscreen", "Heated front seats", "Remote start", "Wireless charging", "Power driver seat", "Blind-zone alert"]
+              "key_features": [
+                "11.3-inch infotainment touchscreen",
+                "Heated front seats",
+                "Remote start",
+                "Wireless charging",
+                "Power driver seat",
+                "Blind-zone alert"
+              ]
             },
             {
               "name": "RS",
@@ -642,7 +902,13 @@
               "towing_capacity": 1500,
               "mpg_city": 26,
               "mpg_highway": 31,
-              "key_features": ["Sport appearance package", "18-inch black aluminum wheels", "Black roof rails", "Sport-themed interior", "RS badge"]
+              "key_features": [
+                "Sport appearance package",
+                "18-inch black aluminum wheels",
+                "Black roof rails",
+                "Sport-themed interior",
+                "RS badge"
+              ]
             },
             {
               "name": "Premier",
@@ -655,7 +921,13 @@
               "towing_capacity": 1500,
               "mpg_city": 25,
               "mpg_highway": 30,
-              "key_features": ["Leather seating", "Heated and ventilated front seats", "Heated steering wheel", "Bose premium audio", "Panoramic sunroof available"]
+              "key_features": [
+                "Leather seating",
+                "Heated and ventilated front seats",
+                "Heated steering wheel",
+                "Bose premium audio",
+                "Panoramic sunroof available"
+              ]
             }
           ]
         },
@@ -674,7 +946,13 @@
               "towing_capacity": 1500,
               "mpg_city": 26,
               "mpg_highway": 31,
-              "key_features": ["11.3-inch infotainment touchscreen (new for 2025)", "Apple CarPlay / Android Auto", "Rear vision camera", "Chevy Safety Assist", "Teen Driver technology"]
+              "key_features": [
+                "11.3-inch infotainment touchscreen (new for 2025)",
+                "Apple CarPlay / Android Auto",
+                "Rear vision camera",
+                "Chevy Safety Assist",
+                "Teen Driver technology"
+              ]
             },
             {
               "name": "LT",
@@ -687,7 +965,14 @@
               "towing_capacity": 1500,
               "mpg_city": 26,
               "mpg_highway": 31,
-              "key_features": ["Heated front seats", "Remote start", "Wireless charging", "Power driver seat", "Blind-zone alert", "Rear cross-traffic alert"]
+              "key_features": [
+                "Heated front seats",
+                "Remote start",
+                "Wireless charging",
+                "Power driver seat",
+                "Blind-zone alert",
+                "Rear cross-traffic alert"
+              ]
             },
             {
               "name": "RS",
@@ -700,7 +985,13 @@
               "towing_capacity": 1500,
               "mpg_city": 26,
               "mpg_highway": 31,
-              "key_features": ["Sport appearance package", "18-inch black aluminum wheels", "Black exterior accents", "Sport-themed interior trim", "RS badging"]
+              "key_features": [
+                "Sport appearance package",
+                "18-inch black aluminum wheels",
+                "Black exterior accents",
+                "Sport-themed interior trim",
+                "RS badging"
+              ]
             },
             {
               "name": "Premier",
@@ -713,7 +1004,14 @@
               "towing_capacity": 1500,
               "mpg_city": 25,
               "mpg_highway": 30,
-              "key_features": ["Leather seating", "Heated and ventilated front seats", "Heated steering wheel", "Bose premium audio", "Panoramic sunroof available", "Wireless Apple CarPlay"]
+              "key_features": [
+                "Leather seating",
+                "Heated and ventilated front seats",
+                "Heated steering wheel",
+                "Bose premium audio",
+                "Panoramic sunroof available",
+                "Wireless Apple CarPlay"
+              ]
             }
           ]
         }
@@ -739,7 +1037,13 @@
               "towing_capacity": 1500,
               "mpg_city": 21,
               "mpg_highway": 26,
-              "key_features": ["New generation — completely redesigned for 2024", "8-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Three-row seating", "Rear vision camera"]
+              "key_features": [
+                "New generation — completely redesigned for 2024",
+                "8-inch infotainment touchscreen",
+                "Apple CarPlay / Android Auto",
+                "Three-row seating",
+                "Rear vision camera"
+              ]
             },
             {
               "name": "LT",
@@ -752,7 +1056,13 @@
               "towing_capacity": 1500,
               "mpg_city": 21,
               "mpg_highway": 26,
-              "key_features": ["11.3-inch infotainment touchscreen", "Heated front seats", "Wireless charging", "Chevy Safety Assist", "Power liftgate"]
+              "key_features": [
+                "11.3-inch infotainment touchscreen",
+                "Heated front seats",
+                "Wireless charging",
+                "Chevy Safety Assist",
+                "Power liftgate"
+              ]
             },
             {
               "name": "RS",
@@ -765,7 +1075,13 @@
               "towing_capacity": 1500,
               "mpg_city": 20,
               "mpg_highway": 25,
-              "key_features": ["Sport appearance", "20-inch black aluminum wheels", "Black exterior accents", "Sport-themed interior", "Panoramic sunroof"]
+              "key_features": [
+                "Sport appearance",
+                "20-inch black aluminum wheels",
+                "Black exterior accents",
+                "Sport-themed interior",
+                "Panoramic sunroof"
+              ]
             },
             {
               "name": "Z71",
@@ -778,7 +1094,13 @@
               "towing_capacity": 1500,
               "mpg_city": 20,
               "mpg_highway": 25,
-              "key_features": ["All-weather capability", "Z71 off-road tuned suspension", "Unique exterior badging", "All-season tires", "Hill descent control"]
+              "key_features": [
+                "All-weather capability",
+                "Z71 off-road tuned suspension",
+                "Unique exterior badging",
+                "All-season tires",
+                "Hill descent control"
+              ]
             },
             {
               "name": "Premier",
@@ -791,7 +1113,13 @@
               "towing_capacity": 1500,
               "mpg_city": 20,
               "mpg_highway": 25,
-              "key_features": ["Leather seating", "Heated and ventilated front seats", "Bose premium audio", "Head-Up Display", "Surround Vision cameras"]
+              "key_features": [
+                "Leather seating",
+                "Heated and ventilated front seats",
+                "Bose premium audio",
+                "Head-Up Display",
+                "Surround Vision cameras"
+              ]
             },
             {
               "name": "High Country",
@@ -804,7 +1132,13 @@
               "towing_capacity": 1500,
               "mpg_city": 20,
               "mpg_highway": 25,
-              "key_features": ["Semi-aniline leather seating", "Exclusive High Country trim", "Enhanced Bose audio", "Massaging front seats", "21-inch premium wheels"]
+              "key_features": [
+                "Semi-aniline leather seating",
+                "Exclusive High Country trim",
+                "Enhanced Bose audio",
+                "Massaging front seats",
+                "21-inch premium wheels"
+              ]
             }
           ]
         },
@@ -823,7 +1157,13 @@
               "towing_capacity": 1500,
               "mpg_city": 21,
               "mpg_highway": 26,
-              "key_features": ["8-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Three-row seating", "Rear vision camera", "Chevy Safety Assist"]
+              "key_features": [
+                "8-inch infotainment touchscreen",
+                "Apple CarPlay / Android Auto",
+                "Three-row seating",
+                "Rear vision camera",
+                "Chevy Safety Assist"
+              ]
             },
             {
               "name": "LT",
@@ -836,7 +1176,13 @@
               "towing_capacity": 1500,
               "mpg_city": 21,
               "mpg_highway": 26,
-              "key_features": ["11.3-inch infotainment touchscreen", "Heated front seats", "Wireless charging", "Power liftgate", "Chevy Safety Assist"]
+              "key_features": [
+                "11.3-inch infotainment touchscreen",
+                "Heated front seats",
+                "Wireless charging",
+                "Power liftgate",
+                "Chevy Safety Assist"
+              ]
             },
             {
               "name": "RS",
@@ -849,7 +1195,13 @@
               "towing_capacity": 1500,
               "mpg_city": 20,
               "mpg_highway": 25,
-              "key_features": ["Sport appearance", "20-inch black wheels", "Panoramic sunroof", "Sport-themed interior", "Black exterior accents"]
+              "key_features": [
+                "Sport appearance",
+                "20-inch black wheels",
+                "Panoramic sunroof",
+                "Sport-themed interior",
+                "Black exterior accents"
+              ]
             },
             {
               "name": "Premier",
@@ -862,7 +1214,13 @@
               "towing_capacity": 1500,
               "mpg_city": 20,
               "mpg_highway": 25,
-              "key_features": ["Leather seating", "Heated and ventilated front seats", "Bose premium audio", "Head-Up Display", "Surround Vision cameras"]
+              "key_features": [
+                "Leather seating",
+                "Heated and ventilated front seats",
+                "Bose premium audio",
+                "Head-Up Display",
+                "Surround Vision cameras"
+              ]
             },
             {
               "name": "High Country",
@@ -875,7 +1233,13 @@
               "towing_capacity": 1500,
               "mpg_city": 20,
               "mpg_highway": 25,
-              "key_features": ["Semi-aniline leather seating", "Massaging front seats", "Enhanced Bose audio", "Exclusive High Country trim", "21-inch premium wheels"]
+              "key_features": [
+                "Semi-aniline leather seating",
+                "Massaging front seats",
+                "Enhanced Bose audio",
+                "Exclusive High Country trim",
+                "21-inch premium wheels"
+              ]
             }
           ]
         }
@@ -901,7 +1265,13 @@
               "towing_capacity": 1000,
               "mpg_city": 28,
               "mpg_highway": 32,
-              "key_features": ["Completely redesigned for 2024", "11-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Rear vision camera", "Teen Driver technology"]
+              "key_features": [
+                "Completely redesigned for 2024",
+                "11-inch infotainment touchscreen",
+                "Apple CarPlay / Android Auto",
+                "Rear vision camera",
+                "Teen Driver technology"
+              ]
             },
             {
               "name": "LT",
@@ -914,7 +1284,14 @@
               "towing_capacity": 1000,
               "mpg_city": 28,
               "mpg_highway": 32,
-              "key_features": ["Heated front seats", "Remote start", "Wireless charging", "Blind-zone alert", "Rear cross-traffic alert", "Power driver seat"]
+              "key_features": [
+                "Heated front seats",
+                "Remote start",
+                "Wireless charging",
+                "Blind-zone alert",
+                "Rear cross-traffic alert",
+                "Power driver seat"
+              ]
             },
             {
               "name": "RS",
@@ -927,7 +1304,14 @@
               "towing_capacity": 1000,
               "mpg_city": 28,
               "mpg_highway": 32,
-              "key_features": ["Sport appearance package", "17-inch black aluminum wheels", "Black exterior accents", "Sport interior trim", "RS badging", "Panoramic sunroof available"]
+              "key_features": [
+                "Sport appearance package",
+                "17-inch black aluminum wheels",
+                "Black exterior accents",
+                "Sport interior trim",
+                "RS badging",
+                "Panoramic sunroof available"
+              ]
             },
             {
               "name": "ACTIV",
@@ -940,7 +1324,14 @@
               "towing_capacity": 1000,
               "mpg_city": 28,
               "mpg_highway": 32,
-              "key_features": ["Adventure-focused variant", "Raised ride height", "Roof rails", "Rugged exterior styling", "All-season tires", "ACTIV badging"]
+              "key_features": [
+                "Adventure-focused variant",
+                "Raised ride height",
+                "Roof rails",
+                "Rugged exterior styling",
+                "All-season tires",
+                "ACTIV badging"
+              ]
             }
           ]
         },
@@ -959,7 +1350,13 @@
               "towing_capacity": 1000,
               "mpg_city": 28,
               "mpg_highway": 32,
-              "key_features": ["11-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Rear vision camera", "Teen Driver technology", "Chevy Safety Assist"]
+              "key_features": [
+                "11-inch infotainment touchscreen",
+                "Apple CarPlay / Android Auto",
+                "Rear vision camera",
+                "Teen Driver technology",
+                "Chevy Safety Assist"
+              ]
             },
             {
               "name": "LT",
@@ -972,7 +1369,13 @@
               "towing_capacity": 1000,
               "mpg_city": 28,
               "mpg_highway": 32,
-              "key_features": ["Heated front seats", "Remote start", "Wireless charging", "Power driver seat", "Blind-zone alert"]
+              "key_features": [
+                "Heated front seats",
+                "Remote start",
+                "Wireless charging",
+                "Power driver seat",
+                "Blind-zone alert"
+              ]
             },
             {
               "name": "RS",
@@ -985,7 +1388,13 @@
               "towing_capacity": 1000,
               "mpg_city": 28,
               "mpg_highway": 32,
-              "key_features": ["Sport appearance", "17-inch black wheels", "Black exterior accents", "Sport interior trim", "Panoramic sunroof available"]
+              "key_features": [
+                "Sport appearance",
+                "17-inch black wheels",
+                "Black exterior accents",
+                "Sport interior trim",
+                "Panoramic sunroof available"
+              ]
             },
             {
               "name": "ACTIV",
@@ -998,7 +1407,13 @@
               "towing_capacity": 1000,
               "mpg_city": 28,
               "mpg_highway": 32,
-              "key_features": ["Raised ride height", "Roof rails", "Rugged exterior styling", "All-season tires", "Adventure-focused package"]
+              "key_features": [
+                "Raised ride height",
+                "Roof rails",
+                "Rugged exterior styling",
+                "All-season tires",
+                "Adventure-focused package"
+              ]
             }
           ]
         }
@@ -1024,7 +1439,14 @@
               "towing_capacity": 0,
               "mpg_city": 15,
               "mpg_highway": 27,
-              "key_features": ["Mid-engine layout", "8-inch passenger display", "Bose audio", "Performance Traction Management", "Carbon fiber removable roof panel", "0-60 in 2.9 seconds"]
+              "key_features": [
+                "Mid-engine layout",
+                "8-inch passenger display",
+                "Bose audio",
+                "Performance Traction Management",
+                "Carbon fiber removable roof panel",
+                "0-60 in 2.9 seconds"
+              ]
             },
             {
               "name": "2LT",
@@ -1037,7 +1459,14 @@
               "towing_capacity": 0,
               "mpg_city": 15,
               "mpg_highway": 27,
-              "key_features": ["GT2 seats (heated/ventilated)", "Wireless charging", "Enhanced Bose audio", "Carbon fiber interior trim", "Head-Up Display", "Navigation system"]
+              "key_features": [
+                "GT2 seats (heated/ventilated)",
+                "Wireless charging",
+                "Enhanced Bose audio",
+                "Carbon fiber interior trim",
+                "Head-Up Display",
+                "Navigation system"
+              ]
             },
             {
               "name": "3LT",
@@ -1050,7 +1479,13 @@
               "towing_capacity": 0,
               "mpg_city": 15,
               "mpg_highway": 27,
-              "key_features": ["Competition Sport seats", "Full leather interior", "Memory seats", "Bose Performance audio (14 speakers)", "Satin graphite carbon fiber package available"]
+              "key_features": [
+                "Competition Sport seats",
+                "Full leather interior",
+                "Memory seats",
+                "Bose Performance audio (14 speakers)",
+                "Satin graphite carbon fiber package available"
+              ]
             }
           ]
         },
@@ -1069,7 +1504,14 @@
               "towing_capacity": 0,
               "mpg_city": 15,
               "mpg_highway": 27,
-              "key_features": ["Mid-engine layout", "8-inch passenger display", "Bose audio", "Performance Traction Management", "Carbon fiber removable roof panel", "0-60 in 2.9 seconds"]
+              "key_features": [
+                "Mid-engine layout",
+                "8-inch passenger display",
+                "Bose audio",
+                "Performance Traction Management",
+                "Carbon fiber removable roof panel",
+                "0-60 in 2.9 seconds"
+              ]
             },
             {
               "name": "2LT",
@@ -1082,7 +1524,14 @@
               "towing_capacity": 0,
               "mpg_city": 15,
               "mpg_highway": 27,
-              "key_features": ["GT2 seats (heated/ventilated)", "Wireless charging", "Enhanced Bose audio", "Carbon fiber interior trim", "Head-Up Display", "Navigation"]
+              "key_features": [
+                "GT2 seats (heated/ventilated)",
+                "Wireless charging",
+                "Enhanced Bose audio",
+                "Carbon fiber interior trim",
+                "Head-Up Display",
+                "Navigation"
+              ]
             },
             {
               "name": "3LT",
@@ -1095,7 +1544,13 @@
               "towing_capacity": 0,
               "mpg_city": 15,
               "mpg_highway": 27,
-              "key_features": ["Competition Sport seats", "Full leather interior", "Memory seats", "Bose Performance 14-speaker audio", "Available E-Ray hybrid powertrain option"]
+              "key_features": [
+                "Competition Sport seats",
+                "Full leather interior",
+                "Memory seats",
+                "Bose Performance 14-speaker audio",
+                "Available E-Ray hybrid powertrain option"
+              ]
             }
           ]
         }
@@ -1121,7 +1576,13 @@
               "towing_capacity": 0,
               "mpg_city": 22,
               "mpg_highway": 30,
-              "key_features": ["FINAL production year", "8-inch infotainment touchscreen", "Apple CarPlay / Android Auto", "Rear vision camera", "Chevrolet Performance suspension tuning"]
+              "key_features": [
+                "FINAL production year",
+                "8-inch infotainment touchscreen",
+                "Apple CarPlay / Android Auto",
+                "Rear vision camera",
+                "Chevrolet Performance suspension tuning"
+              ]
             },
             {
               "name": "LT",
@@ -1134,7 +1595,14 @@
               "towing_capacity": 0,
               "mpg_city": 22,
               "mpg_highway": 30,
-              "key_features": ["18-inch aluminum wheels", "Heated front seats", "Remote start", "Rear parking assist", "Blind-zone alert", "Sport interior trim"]
+              "key_features": [
+                "18-inch aluminum wheels",
+                "Heated front seats",
+                "Remote start",
+                "Rear parking assist",
+                "Blind-zone alert",
+                "Sport interior trim"
+              ]
             },
             {
               "name": "LT1",
@@ -1147,7 +1615,13 @@
               "towing_capacity": 0,
               "mpg_city": 16,
               "mpg_highway": 27,
-              "key_features": ["Legendary small-block V8", "Performance Exhaust available", "Magnetic Ride Control available", "Brembo brakes available", "19-inch aluminum wheels"]
+              "key_features": [
+                "Legendary small-block V8",
+                "Performance Exhaust available",
+                "Magnetic Ride Control available",
+                "Brembo brakes available",
+                "19-inch aluminum wheels"
+              ]
             },
             {
               "name": "SS",
@@ -1160,7 +1634,13 @@
               "towing_capacity": 0,
               "mpg_city": 16,
               "mpg_highway": 27,
-              "key_features": ["Brembo 4-piston brakes", "20-inch forged aluminum wheels", "Recaro seats available", "Performance Exhaust", "Magnetic Ride Control"]
+              "key_features": [
+                "Brembo 4-piston brakes",
+                "20-inch forged aluminum wheels",
+                "Recaro seats available",
+                "Performance Exhaust",
+                "Magnetic Ride Control"
+              ]
             },
             {
               "name": "ZL1",
@@ -1173,7 +1653,14 @@
               "towing_capacity": 0,
               "mpg_city": 14,
               "mpg_highway": 20,
-              "key_features": ["650 hp supercharged V8", "Magnetic Ride Control 4.0", "Brembo 6-piston Evo brakes", "Aggressive aero package", "Performance data recorder available", "0-60 in 3.5 seconds"]
+              "key_features": [
+                "650 hp supercharged V8",
+                "Magnetic Ride Control 4.0",
+                "Brembo 6-piston Evo brakes",
+                "Aggressive aero package",
+                "Performance data recorder available",
+                "0-60 in 3.5 seconds"
+              ]
             }
           ]
         }
@@ -1199,7 +1686,14 @@
               "towing_capacity": 4500,
               "mpg_city": 22,
               "mpg_highway": 29,
-              "key_features": ["10.2-inch infotainment touchscreen", "Heated front seats", "Remote start", "Wireless charging", "Power liftgate", "Chevy Safety Assist"]
+              "key_features": [
+                "10.2-inch infotainment touchscreen",
+                "Heated front seats",
+                "Remote start",
+                "Wireless charging",
+                "Power liftgate",
+                "Chevy Safety Assist"
+              ]
             },
             {
               "name": "RS",
@@ -1212,7 +1706,14 @@
               "towing_capacity": 4500,
               "mpg_city": 21,
               "mpg_highway": 27,
-              "key_features": ["Sport appearance package", "21-inch black aluminum wheels", "Black exterior accents", "Bose premium audio", "Heated/ventilated front seats", "Panoramic sunroof available"]
+              "key_features": [
+                "Sport appearance package",
+                "21-inch black aluminum wheels",
+                "Black exterior accents",
+                "Bose premium audio",
+                "Heated/ventilated front seats",
+                "Panoramic sunroof available"
+              ]
             },
             {
               "name": "Premier",
@@ -1225,7 +1726,14 @@
               "towing_capacity": 4500,
               "mpg_city": 18,
               "mpg_highway": 26,
-              "key_features": ["Leather seating", "Heated and ventilated front seats", "Head-Up Display", "Surround Vision cameras", "Premium Bose audio", "21-inch chrome wheels"]
+              "key_features": [
+                "Leather seating",
+                "Heated and ventilated front seats",
+                "Head-Up Display",
+                "Surround Vision cameras",
+                "Premium Bose audio",
+                "21-inch chrome wheels"
+              ]
             }
           ]
         },
@@ -1244,7 +1752,14 @@
               "towing_capacity": 4500,
               "mpg_city": 22,
               "mpg_highway": 29,
-              "key_features": ["10.2-inch infotainment touchscreen", "Heated front seats", "Remote start", "Wireless charging", "Power liftgate", "Chevy Safety Assist"]
+              "key_features": [
+                "10.2-inch infotainment touchscreen",
+                "Heated front seats",
+                "Remote start",
+                "Wireless charging",
+                "Power liftgate",
+                "Chevy Safety Assist"
+              ]
             },
             {
               "name": "RS",
@@ -1257,7 +1772,14 @@
               "towing_capacity": 4500,
               "mpg_city": 21,
               "mpg_highway": 27,
-              "key_features": ["Sport appearance", "21-inch black wheels", "Black exterior accents", "Bose audio", "Heated/ventilated front seats", "Panoramic sunroof available"]
+              "key_features": [
+                "Sport appearance",
+                "21-inch black wheels",
+                "Black exterior accents",
+                "Bose audio",
+                "Heated/ventilated front seats",
+                "Panoramic sunroof available"
+              ]
             },
             {
               "name": "Premier",
@@ -1270,7 +1792,14 @@
               "towing_capacity": 4500,
               "mpg_city": 18,
               "mpg_highway": 26,
-              "key_features": ["Leather seating", "Heated and ventilated front seats", "Head-Up Display", "Surround Vision cameras", "Premium Bose audio", "21-inch premium wheels"]
+              "key_features": [
+                "Leather seating",
+                "Heated and ventilated front seats",
+                "Head-Up Display",
+                "Surround Vision cameras",
+                "Premium Bose audio",
+                "21-inch premium wheels"
+              ]
             }
           ]
         }
@@ -1294,9 +1823,19 @@
               "displacement_ci": 396,
               "hp": 350,
               "torque": 415,
-              "transmission_options": ["Muncie M20 4-speed manual", "Muncie M21 close-ratio 4-speed manual", "Turbo-Hydramatic TH400 3-speed automatic"],
+              "transmission_options": [
+                "Muncie M20 4-speed manual",
+                "Muncie M21 close-ratio 4-speed manual",
+                "Turbo-Hydramatic TH400 3-speed automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["SS hood with twin dome scoops", "Bucket seats", "Floor-mounted shifter", "F41 suspension", "14x7 Rally wheels"]
+              "key_features": [
+                "SS hood with twin dome scoops",
+                "Bucket seats",
+                "Floor-mounted shifter",
+                "F41 suspension",
+                "14x7 Rally wheels"
+              ]
             },
             {
               "name": "SS 454",
@@ -1304,9 +1843,17 @@
               "displacement_ci": 454,
               "hp": 360,
               "torque": 500,
-              "transmission_options": ["Muncie M20 4-speed manual", "Turbo-Hydramatic TH400 3-speed automatic"],
+              "transmission_options": [
+                "Muncie M20 4-speed manual",
+                "Turbo-Hydramatic TH400 3-speed automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["SS badging", "Power front disc brakes", "Cowl induction hood available (ZL2)", "Heavy-duty cooling"]
+              "key_features": [
+                "SS badging",
+                "Power front disc brakes",
+                "Cowl induction hood available (ZL2)",
+                "Heavy-duty cooling"
+              ]
             },
             {
               "name": "SS 454 LS6",
@@ -1314,10 +1861,20 @@
               "displacement_ci": 454,
               "hp": 450,
               "torque": 500,
-              "transmission_options": ["Muncie M22 rock-crusher 4-speed manual", "Turbo-Hydramatic TH400 3-speed automatic"],
+              "transmission_options": [
+                "Muncie M22 rock-crusher 4-speed manual",
+                "Turbo-Hydramatic TH400 3-speed automatic"
+              ],
               "drivetrain": "RWD",
               "production_notes": "Approximately 4,475 Chevelles built with LS6 in 1970. The LS6 was the highest factory-rated engine GM offered that year.",
-              "key_features": ["Solid-lifter camshaft", "11.25:1 compression ratio", "Holley 780 CFM carburetor", "Four-bolt main bearing caps", "Cowl induction hood ZL2 standard", "Heavy-duty 4-core radiator"]
+              "key_features": [
+                "Solid-lifter camshaft",
+                "11.25:1 compression ratio",
+                "Holley 780 CFM carburetor",
+                "Four-bolt main bearing caps",
+                "Cowl induction hood ZL2 standard",
+                "Heavy-duty 4-core radiator"
+              ]
             }
           ]
         }
@@ -1341,9 +1898,20 @@
               "displacement_ci": 350,
               "hp": 300,
               "torque": 380,
-              "transmission_options": ["3-speed manual", "Muncie M20 4-speed manual", "Powerglide 2-speed automatic", "Turbo-Hydramatic TH350 automatic"],
+              "transmission_options": [
+                "3-speed manual",
+                "Muncie M20 4-speed manual",
+                "Powerglide 2-speed automatic",
+                "Turbo-Hydramatic TH350 automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["SS appearance package", "D80 spoiler available", "Bumblebee stripe", "F41 sport suspension", "Power front disc brakes available"]
+              "key_features": [
+                "SS appearance package",
+                "D80 spoiler available",
+                "Bumblebee stripe",
+                "F41 sport suspension",
+                "Power front disc brakes available"
+              ]
             },
             {
               "name": "SS 396",
@@ -1351,9 +1919,18 @@
               "displacement_ci": 396,
               "hp": 350,
               "torque": 415,
-              "transmission_options": ["Muncie M20 4-speed manual", "Muncie M21 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "transmission_options": [
+                "Muncie M20 4-speed manual",
+                "Muncie M21 4-speed manual",
+                "Turbo-Hydramatic TH400 automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["SS badging", "Special instrumentation", "Power front disc brakes", "Rally Sport package available (RS/SS)"]
+              "key_features": [
+                "SS badging",
+                "Special instrumentation",
+                "Power front disc brakes",
+                "Rally Sport package available (RS/SS)"
+              ]
             },
             {
               "name": "Z/28",
@@ -1362,10 +1939,18 @@
               "hp": 290,
               "torque": 290,
               "notes": "Factory hp rating was conservative; dyno-tested output was closer to 350–360hp. Built to SCCA Trans-Am 5.0L displacement limit.",
-              "transmission_options": ["Muncie M21 close-ratio 4-speed manual"],
+              "transmission_options": [
+                "Muncie M21 close-ratio 4-speed manual"
+              ],
               "drivetrain": "RWD",
               "production_notes": "20,302 Z/28s produced for 1969.",
-              "key_features": ["High-revving solid-lifter 302", "Front and rear spoilers", "Special Z/28 striping", "Upgraded suspension and brakes", "Dual exhaust"]
+              "key_features": [
+                "High-revving solid-lifter 302",
+                "Front and rear spoilers",
+                "Special Z/28 striping",
+                "Upgraded suspension and brakes",
+                "Dual exhaust"
+              ]
             },
             {
               "name": "ZL1",
@@ -1374,10 +1959,20 @@
               "hp": 430,
               "torque": 450,
               "notes": "Factory hp rating was deliberately understated to avoid insurance scrutiny. True output estimated at 500–550hp. The all-aluminum block and heads made it lighter than the iron 302.",
-              "transmission_options": ["Muncie M22 rock-crusher 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "transmission_options": [
+                "Muncie M22 rock-crusher 4-speed manual",
+                "Turbo-Hydramatic TH400 automatic"
+              ],
               "drivetrain": "RWD",
               "production_notes": "Only 69 ZL1 Camaros were produced in 1969, ordered through COPO (Central Office Production Order) #9560. Each cost approximately $4,160 in option price alone — nearly double the base car.",
-              "key_features": ["All-aluminum 427 block and heads", "Open-element air cleaner", "Cowl induction", "Heavy-duty 4-core radiator", "Positraction rear axle", "Front disc brakes"]
+              "key_features": [
+                "All-aluminum 427 block and heads",
+                "Open-element air cleaner",
+                "Cowl induction",
+                "Heavy-duty 4-core radiator",
+                "Positraction rear axle",
+                "Front disc brakes"
+              ]
             }
           ]
         }
@@ -1401,9 +1996,17 @@
               "displacement_ci": 283,
               "hp": 195,
               "torque": 285,
-              "transmission_options": ["3-speed manual", "Powerglide 2-speed automatic"],
+              "transmission_options": [
+                "3-speed manual",
+                "Powerglide 2-speed automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["Full-size body-on-frame", "Smooth roofline", "Front bench seat", "Wide rear seat ideal for custom interiors"]
+              "key_features": [
+                "Full-size body-on-frame",
+                "Smooth roofline",
+                "Front bench seat",
+                "Wide rear seat ideal for custom interiors"
+              ]
             },
             {
               "name": "SS",
@@ -1412,9 +2015,19 @@
               "hp_range": "340hp (single 4-barrel) or 425hp (dual 4-barrel)",
               "hp": 425,
               "torque": 425,
-              "transmission_options": ["4-speed manual", "Powerglide 2-speed automatic"],
+              "transmission_options": [
+                "4-speed manual",
+                "Powerglide 2-speed automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["SS badging", "Bucket seats", "Floor shifter", "Special SS wheel covers", "Dual exhaust", "Sinatra and the Beach Boys made the 409 famous before this car rolled off the line"]
+              "key_features": [
+                "SS badging",
+                "Bucket seats",
+                "Floor shifter",
+                "Special SS wheel covers",
+                "Dual exhaust",
+                "Sinatra and the Beach Boys made the 409 famous before this car rolled off the line"
+              ]
             }
           ]
         }
@@ -1438,9 +2051,18 @@
               "displacement_ci": 235,
               "hp": 140,
               "torque": 210,
-              "transmission_options": ["3-speed manual", "Powerglide 2-speed automatic"],
+              "transmission_options": [
+                "3-speed manual",
+                "Powerglide 2-speed automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["Two-tone paint options", "Tailfin styling", "Chrome trim", "Full-width bench seats", "Tri-Five body style"]
+              "key_features": [
+                "Two-tone paint options",
+                "Tailfin styling",
+                "Chrome trim",
+                "Full-width bench seats",
+                "Tri-Five body style"
+              ]
             },
             {
               "name": "V8 (283ci 2-barrel)",
@@ -1448,9 +2070,16 @@
               "displacement_ci": 283,
               "hp": 185,
               "torque": 275,
-              "transmission_options": ["3-speed manual", "Powerglide 2-speed automatic"],
+              "transmission_options": [
+                "3-speed manual",
+                "Powerglide 2-speed automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["Small-block V8 debut year for this displacement", "Two-tone paint", "Optional Power-Pak dual exhaust"]
+              "key_features": [
+                "Small-block V8 debut year for this displacement",
+                "Two-tone paint",
+                "Optional Power-Pak dual exhaust"
+              ]
             },
             {
               "name": "V8 (283ci 4-barrel)",
@@ -1458,9 +2087,17 @@
               "displacement_ci": 283,
               "hp": 220,
               "torque": 300,
-              "transmission_options": ["3-speed manual", "4-speed manual", "Powerglide 2-speed automatic"],
+              "transmission_options": [
+                "3-speed manual",
+                "4-speed manual",
+                "Powerglide 2-speed automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["Four-barrel carburetor", "Dual exhaust", "Power-Pak option"]
+              "key_features": [
+                "Four-barrel carburetor",
+                "Dual exhaust",
+                "Power-Pak option"
+              ]
             },
             {
               "name": "V8 (283ci Dual 4-barrel)",
@@ -1468,9 +2105,16 @@
               "displacement_ci": 283,
               "hp": 245,
               "torque": 300,
-              "transmission_options": ["3-speed manual", "4-speed manual"],
+              "transmission_options": [
+                "3-speed manual",
+                "4-speed manual"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["Dual four-barrel carburetors", "High-lift camshaft", "Dual exhaust"]
+              "key_features": [
+                "Dual four-barrel carburetors",
+                "High-lift camshaft",
+                "Dual exhaust"
+              ]
             },
             {
               "name": "V8 (283ci Fuel Injection — 250hp)",
@@ -1478,10 +2122,17 @@
               "displacement_ci": 283,
               "hp": 250,
               "torque": 305,
-              "transmission_options": ["4-speed manual", "3-speed manual"],
+              "transmission_options": [
+                "4-speed manual",
+                "3-speed manual"
+              ],
               "drivetrain": "RWD",
               "production_notes": "Rochester Ramjet continuous-flow fuel injection. Relatively rare — most buyers opted for carbureted versions.",
-              "key_features": ["Continuous-flow fuel injection", "High-compression heads", "Dual exhaust"]
+              "key_features": [
+                "Continuous-flow fuel injection",
+                "High-compression heads",
+                "Dual exhaust"
+              ]
             },
             {
               "name": "V8 (283ci Fuel Injection — 283hp)",
@@ -1489,10 +2140,19 @@
               "displacement_ci": 283,
               "hp": 283,
               "torque": 290,
-              "transmission_options": ["4-speed manual"],
+              "transmission_options": [
+                "4-speed manual"
+              ],
               "drivetrain": "RWD",
               "production_notes": "The legendary 1hp-per-cubic-inch achievement — the first production car engine to reach this milestone. Required premium fuel and close-ratio 4-speed. Approximately 1,530 units delivered with this option.",
-              "key_features": ["283hp from 283ci — 1hp per cubic inch", "Solid-lifter camshaft", "10.5:1 compression ratio", "Rochester Ramjet fuel injection", "Mandatory 4-speed manual transmission", "No air conditioning available with this option"]
+              "key_features": [
+                "283hp from 283ci — 1hp per cubic inch",
+                "Solid-lifter camshaft",
+                "10.5:1 compression ratio",
+                "Rochester Ramjet fuel injection",
+                "Mandatory 4-speed manual transmission",
+                "No air conditioning available with this option"
+              ]
             }
           ]
         }
@@ -1516,9 +2176,18 @@
               "displacement_ci": 250,
               "hp": 110,
               "torque": 185,
-              "transmission_options": ["3-speed manual", "4-speed manual", "Turbo-Hydramatic automatic"],
+              "transmission_options": [
+                "3-speed manual",
+                "4-speed manual",
+                "Turbo-Hydramatic automatic"
+              ],
               "drivetrain": "RWD (4WD available as K10)",
-              "key_features": ["Long or short bed", "Step-side or fleetside box", "Basic interior", "Single headlamps"]
+              "key_features": [
+                "Long or short bed",
+                "Step-side or fleetside box",
+                "Basic interior",
+                "Single headlamps"
+              ]
             },
             {
               "name": "Custom Deluxe",
@@ -1526,9 +2195,19 @@
               "displacement_ci": 307,
               "hp": 130,
               "torque": 230,
-              "transmission_options": ["3-speed manual", "4-speed manual", "Turbo-Hydramatic automatic"],
+              "transmission_options": [
+                "3-speed manual",
+                "4-speed manual",
+                "Turbo-Hydramatic automatic"
+              ],
               "drivetrain": "RWD (4WD available as K10)",
-              "key_features": ["Upgraded interior trim", "Full carpeting", "Dome light", "Door armrests", "Color-keyed steering wheel"]
+              "key_features": [
+                "Upgraded interior trim",
+                "Full carpeting",
+                "Dome light",
+                "Door armrests",
+                "Color-keyed steering wheel"
+              ]
             },
             {
               "name": "Cheyenne",
@@ -1536,9 +2215,19 @@
               "displacement_ci": 350,
               "hp": 175,
               "torque": 270,
-              "transmission_options": ["4-speed manual", "Turbo-Hydramatic TH350 automatic", "Turbo-Hydramatic TH400 automatic"],
+              "transmission_options": [
+                "4-speed manual",
+                "Turbo-Hydramatic TH350 automatic",
+                "Turbo-Hydramatic TH400 automatic"
+              ],
               "drivetrain": "RWD (4WD available as K10)",
-              "key_features": ["Woodgrain interior accents", "Deluxe cab trim", "Chrome bumpers", "Color-keyed carpet", "Cheyenne badge on fenders"]
+              "key_features": [
+                "Woodgrain interior accents",
+                "Deluxe cab trim",
+                "Chrome bumpers",
+                "Color-keyed carpet",
+                "Cheyenne badge on fenders"
+              ]
             },
             {
               "name": "Cheyenne Super",
@@ -1546,10 +2235,20 @@
               "displacement_ci": 402,
               "hp": 240,
               "torque": 345,
-              "transmission_options": ["Turbo-Hydramatic TH400 3-speed automatic", "4-speed manual"],
+              "transmission_options": [
+                "Turbo-Hydramatic TH400 3-speed automatic",
+                "4-speed manual"
+              ],
               "drivetrain": "RWD (4WD available as K10)",
               "production_notes": "The 402ci engine was marketed as the 'Turbo-Jet 400' — GM avoided calling it a 396 even though it was a bored version of that block. This was the top-spec C10 configuration.",
-              "key_features": ["Highest trim level available", "Full instrumentation", "Deluxe wood interior", "Chrome exterior trim", "Custom steering wheel", "Full headliner"]
+              "key_features": [
+                "Highest trim level available",
+                "Full instrumentation",
+                "Deluxe wood interior",
+                "Chrome exterior trim",
+                "Custom steering wheel",
+                "Full headliner"
+              ]
             }
           ]
         }
@@ -1570,12 +2269,26 @@
             {
               "name": "Custom",
               "engine": "250ci (4.1L) Inline-6 or 307ci (5.0L) V8",
-              "displacement_ci_options": [250, 307],
+              "displacement_ci_options": [
+                250,
+                307
+              ],
               "hp": 130,
               "torque": 230,
-              "transmission_options": ["3-speed manual", "4-speed manual", "Turbo-Hydramatic automatic"],
+              "transmission_options": [
+                "3-speed manual",
+                "4-speed manual",
+                "Turbo-Hydramatic automatic"
+              ],
               "drivetrain": "4WD (part-time)",
-              "key_features": ["Removable fiberglass hardtop", "Short wheelbase (104 inches)", "Manual front locking hubs", "Dana 44 front axle", "Open rear cargo area", "Full convertible capability with top removed"]
+              "key_features": [
+                "Removable fiberglass hardtop",
+                "Short wheelbase (104 inches)",
+                "Manual front locking hubs",
+                "Dana 44 front axle",
+                "Open rear cargo area",
+                "Full convertible capability with top removed"
+              ]
             },
             {
               "name": "Cheyenne",
@@ -1583,9 +2296,21 @@
               "displacement_ci": 350,
               "hp": 175,
               "torque": 270,
-              "transmission_options": ["4-speed manual", "Turbo-Hydramatic TH350 automatic", "Turbo-Hydramatic TH400 automatic"],
+              "transmission_options": [
+                "4-speed manual",
+                "Turbo-Hydramatic TH350 automatic",
+                "Turbo-Hydramatic TH400 automatic"
+              ],
               "drivetrain": "4WD (part-time)",
-              "key_features": ["Top-spec trim", "Woodgrain interior", "Chrome bumpers", "Bucket seats available", "Removable hardtop", "Cheyenne badging", "Dana 44 front / 14-bolt GM rear axle"]
+              "key_features": [
+                "Top-spec trim",
+                "Woodgrain interior",
+                "Chrome bumpers",
+                "Bucket seats available",
+                "Removable hardtop",
+                "Cheyenne badging",
+                "Dana 44 front / 14-bolt GM rear axle"
+              ]
             }
           ]
         }
@@ -1609,9 +2334,20 @@
               "displacement_ci": 350,
               "hp": 300,
               "torque": 380,
-              "transmission_options": ["3-speed manual", "Muncie M20 4-speed manual", "Turbo-Hydramatic TH350 automatic"],
+              "transmission_options": [
+                "3-speed manual",
+                "Muncie M20 4-speed manual",
+                "Turbo-Hydramatic TH350 automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["SS grille and badging", "Bucket seats", "Floor shifter", "Rally wheels", "Dual exhaust", "Heavier front springs for big-block clearance"]
+              "key_features": [
+                "SS grille and badging",
+                "Bucket seats",
+                "Floor shifter",
+                "Rally wheels",
+                "Dual exhaust",
+                "Heavier front springs for big-block clearance"
+              ]
             },
             {
               "name": "SS 396",
@@ -1619,10 +2355,21 @@
               "displacement_ci": 396,
               "hp": 375,
               "torque": 415,
-              "transmission_options": ["Muncie M21 close-ratio 4-speed manual", "Muncie M22 rock-crusher 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "transmission_options": [
+                "Muncie M21 close-ratio 4-speed manual",
+                "Muncie M22 rock-crusher 4-speed manual",
+                "Turbo-Hydramatic TH400 automatic"
+              ],
               "drivetrain": "RWD",
               "production_notes": "The solid-lifter L78 396 in the lighter Nova body produced a power-to-weight ratio that rivaled the Chevelle SS LS6. A well-known sleeper — it looked like a grocery getter.",
-              "key_features": ["Solid-lifter 396", "11.0:1 compression ratio", "800 CFM Holley carburetor", "Positraction rear axle", "Heavy-duty clutch", "F41 sport suspension"]
+              "key_features": [
+                "Solid-lifter 396",
+                "11.0:1 compression ratio",
+                "800 CFM Holley carburetor",
+                "Positraction rear axle",
+                "Heavy-duty clutch",
+                "F41 sport suspension"
+              ]
             }
           ]
         }
@@ -1646,9 +2393,20 @@
               "displacement_ci": 396,
               "hp": 350,
               "torque": 415,
-              "transmission_options": ["Muncie M20 4-speed manual", "Muncie M21 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "transmission_options": [
+                "Muncie M20 4-speed manual",
+                "Muncie M21 4-speed manual",
+                "Turbo-Hydramatic TH400 automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["SS badging", "Sport stripes", "Bucket seats", "Floor console", "Dual exhaust", "Pickup bed with SS trim"]
+              "key_features": [
+                "SS badging",
+                "Sport stripes",
+                "Bucket seats",
+                "Floor console",
+                "Dual exhaust",
+                "Pickup bed with SS trim"
+              ]
             },
             {
               "name": "SS 454",
@@ -1656,9 +2414,19 @@
               "displacement_ci": 454,
               "hp": 360,
               "torque": 500,
-              "transmission_options": ["Muncie M22 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "transmission_options": [
+                "Muncie M22 4-speed manual",
+                "Turbo-Hydramatic TH400 automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["454 big-block", "SS hood", "Power front disc brakes", "Heavy-duty cooling", "Positraction rear axle", "Rally wheels"]
+              "key_features": [
+                "454 big-block",
+                "SS hood",
+                "Power front disc brakes",
+                "Heavy-duty cooling",
+                "Positraction rear axle",
+                "Rally wheels"
+              ]
             }
           ]
         }
@@ -1682,9 +2450,19 @@
               "displacement_ci": 350,
               "hp": 300,
               "torque": 380,
-              "transmission_options": ["4-speed manual", "3-speed manual", "Turbo-Hydramatic automatic"],
+              "transmission_options": [
+                "4-speed manual",
+                "3-speed manual",
+                "Turbo-Hydramatic automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["Stingray body", "T-top roof", "Hideaway headlamps", "Independent rear suspension", "4-wheel disc brakes available"]
+              "key_features": [
+                "Stingray body",
+                "T-top roof",
+                "Hideaway headlamps",
+                "Independent rear suspension",
+                "4-wheel disc brakes available"
+              ]
             },
             {
               "name": "L46 (350/350hp)",
@@ -1692,9 +2470,17 @@
               "displacement_ci": 350,
               "hp": 350,
               "torque": 380,
-              "transmission_options": ["4-speed manual close-ratio", "Turbo-Hydramatic automatic"],
+              "transmission_options": [
+                "4-speed manual close-ratio",
+                "Turbo-Hydramatic automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["High-performance 350", "Transistor ignition", "Special camshaft", "4-wheel disc brakes standard with L46"]
+              "key_features": [
+                "High-performance 350",
+                "Transistor ignition",
+                "Special camshaft",
+                "4-wheel disc brakes standard with L46"
+              ]
             },
             {
               "name": "L36 (427/390hp)",
@@ -1702,9 +2488,18 @@
               "displacement_ci": 427,
               "hp": 390,
               "torque": 460,
-              "transmission_options": ["4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "transmission_options": [
+                "4-speed manual",
+                "Turbo-Hydramatic TH400 automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["Big-block 427", "Single Holley 4-barrel", "Chrome valve covers", "Side exhaust available", "Stinger hood available"]
+              "key_features": [
+                "Big-block 427",
+                "Single Holley 4-barrel",
+                "Chrome valve covers",
+                "Side exhaust available",
+                "Stinger hood available"
+              ]
             },
             {
               "name": "L71 (427/435hp)",
@@ -1712,9 +2507,17 @@
               "displacement_ci": 427,
               "hp": 435,
               "torque": 460,
-              "transmission_options": ["Muncie M22 rock-crusher 4-speed manual"],
+              "transmission_options": [
+                "Muncie M22 rock-crusher 4-speed manual"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["Three Holley 2-barrel carburetors", "Solid-lifter camshaft", "11.0:1 compression", "Transistor ignition", "Mandatory heavy-duty suspension"]
+              "key_features": [
+                "Three Holley 2-barrel carburetors",
+                "Solid-lifter camshaft",
+                "11.0:1 compression",
+                "Transistor ignition",
+                "Mandatory heavy-duty suspension"
+              ]
             },
             {
               "name": "ZL1 (427/430hp)",
@@ -1723,10 +2526,19 @@
               "hp": 430,
               "torque": 450,
               "notes": "Factory hp was deliberately underrated. True output was estimated at 560hp+. The all-aluminum block and heads weighed 100 lbs less than the iron-block L88.",
-              "transmission_options": ["Muncie M22 rock-crusher 4-speed manual"],
+              "transmission_options": [
+                "Muncie M22 rock-crusher 4-speed manual"
+              ],
               "drivetrain": "RWD",
               "production_notes": "Only 2 Corvettes were factory-built with the ZL1 option in 1969. Additional units were dealer-installed. The ZL1 option alone cost $4,718 — more than the base Corvette.",
-              "key_features": ["All-aluminum 427 block and heads", "Open-element air cleaner", "No radio or heater (weight reduction)", "Transistor ignition", "4-wheel disc brakes", "Heavy-duty suspension mandatory"]
+              "key_features": [
+                "All-aluminum 427 block and heads",
+                "Open-element air cleaner",
+                "No radio or heater (weight reduction)",
+                "Transistor ignition",
+                "4-wheel disc brakes",
+                "Heavy-duty suspension mandatory"
+              ]
             }
           ]
         }
@@ -1750,9 +2562,18 @@
               "displacement_ci": 350,
               "hp": 250,
               "torque": 345,
-              "transmission_options": ["3-speed manual", "Turbo-Hydramatic TH350 automatic"],
+              "transmission_options": [
+                "3-speed manual",
+                "Turbo-Hydramatic TH350 automatic"
+              ],
               "drivetrain": "RWD",
-              "key_features": ["116-inch wheelbase", "Long hood styling", "Hidden headlamps", "Concealed windshield wipers", "Standard full instrumentation"]
+              "key_features": [
+                "116-inch wheelbase",
+                "Long hood styling",
+                "Hidden headlamps",
+                "Concealed windshield wipers",
+                "Standard full instrumentation"
+              ]
             },
             {
               "name": "SS 454",
@@ -1760,10 +2581,206 @@
               "displacement_ci": 454,
               "hp": 360,
               "torque": 500,
-              "transmission_options": ["Muncie M22 4-speed manual", "Turbo-Hydramatic TH400 automatic"],
+              "transmission_options": [
+                "Muncie M22 4-speed manual",
+                "Turbo-Hydramatic TH400 automatic"
+              ],
               "drivetrain": "RWD",
               "production_notes": "Approximately 3,823 Monte Carlos were built with the SS 454 option in 1970 — making it relatively rare. The SS package added a unique hood, badging, and performance hardware to what was otherwise a luxury-oriented platform.",
-              "key_features": ["SS hood with distinctive styling", "SS badging", "Power front disc brakes", "Heavy-duty suspension", "Positraction rear axle", "Bucket seats available", "Console shifter"]
+              "key_features": [
+                "SS hood with distinctive styling",
+                "SS badging",
+                "Power front disc brakes",
+                "Heavy-duty suspension",
+                "Positraction rear axle",
+                "Bucket seats available",
+                "Console shifter"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Blazer EV",
+      "slug": "blazer-ev",
+      "category": "ev",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 52000,
+          "trims": [
+            {
+              "name": "LT",
+              "msrp": 52000,
+              "engine": "Electric Motor",
+              "hp": 340,
+              "torque": 333,
+              "transmission": "Single-Speed",
+              "drivetrain": "FWD (AWD available)",
+              "mpg_city": null,
+              "mpg_highway": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Corvette E-Ray",
+      "slug": "corvette-e-ray",
+      "category": "car",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 110000,
+          "trims": [
+            {
+              "name": "E-Ray 1LZ",
+              "msrp": 110000,
+              "engine": "6.2L V8 + Electric Motor",
+              "hp": 655,
+              "torque": 574,
+              "transmission": "8-speed DCT",
+              "drivetrain": "eAWD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Corvette Z06",
+      "slug": "corvette-z06",
+      "category": "car",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 115000,
+          "trims": [
+            {
+              "name": "Z06 1LZ",
+              "msrp": 115000,
+              "engine": "5.5L LT6 Flat-Plane V8",
+              "hp": 670,
+              "torque": 460,
+              "transmission": "8-speed DCT",
+              "drivetrain": "RWD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Equinox EV",
+      "slug": "equinox-ev",
+      "category": "ev",
+      "years": [
+        {
+          "year": 2025,
+          "starting_msrp": 34995,
+          "trims": [
+            {
+              "name": "2RS FWD",
+              "msrp": 34995,
+              "engine": "Electric Motor",
+              "hp": 213,
+              "torque": 236,
+              "transmission": "Single-Speed",
+              "drivetrain": "FWD",
+              "mpg_city": null,
+              "mpg_highway": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Malibu",
+      "slug": "malibu",
+      "category": "car",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 25300,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 25300,
+              "engine": "1.5L Turbo I-4",
+              "hp": 160,
+              "torque": 184,
+              "transmission": "CVT",
+              "drivetrain": "FWD",
+              "mpg_city": 29,
+              "mpg_highway": 36
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Silverado EV",
+      "slug": "silverado-ev",
+      "category": "ev",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 74800,
+          "trims": [
+            {
+              "name": "RST",
+              "msrp": 74800,
+              "engine": "Dual Electric Motors",
+              "hp": 754,
+              "torque": 785,
+              "transmission": "Single-Speed",
+              "drivetrain": "AWD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Silverado HD",
+      "slug": "silverado-hd",
+      "category": "truck",
+      "years": [
+        {
+          "year": 2024,
+          "starting_msrp": 46200,
+          "trims": [
+            {
+              "name": "Work Truck",
+              "msrp": 46200,
+              "engine": "6.6L V8",
+              "hp": 401,
+              "torque": 464,
+              "transmission": "6-speed automatic",
+              "drivetrain": "RWD (4WD available)",
+              "towing_capacity": 18500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "model": "Trailblazer",
+      "slug": "trailblazer",
+      "category": "suv",
+      "years": [
+        {
+          "year": 2025,
+          "starting_msrp": 24200,
+          "trims": [
+            {
+              "name": "LS",
+              "msrp": 24200,
+              "engine": "1.2L Turbo 3-cylinder",
+              "hp": 137,
+              "torque": 162,
+              "transmission": "CVT",
+              "drivetrain": "FWD",
+              "mpg_city": 29,
+              "mpg_highway": 33
             }
           ]
         }

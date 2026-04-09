@@ -1,0 +1,346 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { vehicles, events } from '@lib/data';
+
+const guides = await getCollection('guides', (e) => !e.data.noindex);
+const cornerPosts = await getCollection('crystals-corner');
+
+// Group guides by cluster
+const guidesByCluster: Record<string, typeof guides> = {};
+for (const g of guides) {
+  const c = g.data.cluster || 'Other';
+  if (!guidesByCluster[c]) guidesByCluster[c] = [];
+  guidesByCluster[c].push(g);
+}
+const clusterOrder = [
+  'Silverado Buyer Funnel',
+  'My ZR2',
+  'Affiliate Density',
+  'Maintenance',
+  'Performance & Classic',
+  'Insurance & Ownership',
+  'History',
+  'Comparison',
+  'Lifestyle & Culture',
+  'EV Cluster',
+  'Other',
+];
+
+// Group vehicles by category
+const byCategory: Record<string, typeof vehicles> = {};
+for (const v of vehicles) {
+  const c = v.category || 'other';
+  if (!byCategory[c]) byCategory[c] = [];
+  byCategory[c].push(v);
+}
+
+const categoryLabels: Record<string, string> = {
+  truck: 'Trucks',
+  suv: 'SUVs',
+  car: 'Cars',
+  ev: 'Electric Vehicles',
+  classic: 'Classics',
+};
+
+// Hub pages
+const hubPages = [
+  { label: 'Home', url: '/' },
+  { label: 'Guides Library', url: '/guides/' },
+  { label: 'Models Lineup', url: '/models/' },
+  { label: "Crystal's Corner", url: '/crystals-corner/' },
+  { label: "Meet Crystal", url: '/crystal/' },
+  { label: 'My ZR2', url: '/my-zr2/' },
+  { label: 'Build Engine', url: '/builds/' },
+  { label: 'Events Calendar', url: '/events/' },
+  { label: 'Mechanic Finder', url: '/mechanics/' },
+  { label: 'Chevy News', url: '/news/' },
+  { label: 'Vintage Ads Archive', url: '/vintage-ads/' },
+  { label: 'Community Hub', url: '/community/' },
+  { label: 'The Marketplace', url: '/marketplace/' },
+  { label: 'Tools Hub', url: '/tools/' },
+  { label: 'Weekly Wrench Newsletter', url: '/newsletter/' },
+  { label: 'Partners & Advertising', url: '/partners/' },
+  { label: 'Search', url: '/search/' },
+];
+
+const compareSlugs = [
+  'silverado-1500-vs-ram-1500',
+  'silverado-1500-vs-f-150',
+  'camaro-vs-mustang',
+  'corvette-stingray-vs-911',
+  'tahoe-vs-expedition',
+  'equinox-ev-vs-model-y',
+  'colorado-zr2-vs-tacoma-trd-pro',
+];
+
+const compareTitles: Record<string, string> = {
+  'silverado-1500-vs-ram-1500': 'Silverado 1500 vs. Ram 1500',
+  'silverado-1500-vs-f-150': 'Silverado 1500 vs. Ford F-150',
+  'camaro-vs-mustang': 'Camaro vs. Ford Mustang',
+  'corvette-stingray-vs-911': 'Corvette Stingray vs. Porsche 911',
+  'tahoe-vs-expedition': 'Tahoe vs. Ford Expedition',
+  'equinox-ev-vs-model-y': 'Equinox EV vs. Tesla Model Y',
+  'colorado-zr2-vs-tacoma-trd-pro': 'Colorado ZR2 vs. Tacoma TRD Pro',
+};
+
+const legalPages = [
+  { label: 'About ChevyRoots', url: '/about/' },
+  { label: 'Contact', url: '/contact/' },
+  { label: 'Press Kit', url: '/press/' },
+  { label: 'Privacy Policy', url: '/privacy/' },
+  { label: 'Terms of Use', url: '/terms/' },
+  { label: 'Affiliate Disclosure', url: '/disclaimer/' },
+  { label: 'Advertise with Us', url: '/advertise/' },
+  { label: 'Write for Us', url: '/write-for-us/' },
+];
+
+const submitPages = [
+  { label: 'Submit Your Build', url: '/submit/build/' },
+  { label: 'Submit an Event', url: '/submit/event/' },
+];
+---
+
+<BaseLayout
+  title="Sitemap — Every Page on ChevyRoots"
+  description="The complete ChevyRoots sitemap. Every page on the site organized by section — guides, models, crystal's corner, comparisons, events, and more. For humans, not just crawlers."
+>
+  <header class="sitemap-header">
+    <div class="container container-narrow">
+      <p class="section-eyebrow">Site Index</p>
+      <h1 class="sitemap-title">The <em>Sitemap</em></h1>
+      <span class="gold-line"></span>
+      <p class="sitemap-lede">
+        Every page on ChevyRoots, organized for humans. If you're looking for something specific, <a href="/search/">try search</a> — otherwise, browse by section below.
+      </p>
+    </div>
+  </header>
+
+  <section class="sitemap-body">
+    <div class="container container-narrow">
+
+      {/* ── MAIN HUBS ─────────────────────────────── */}
+      <section class="sitemap-section">
+        <h2>Main Sections</h2>
+        <ul class="sitemap-list">
+          {hubPages.map((p) => (
+            <li><a href={p.url}>{p.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ── GUIDES BY CLUSTER ─────────────────────── */}
+      <section class="sitemap-section">
+        <h2>Buyer's Guides ({guides.length})</h2>
+        {clusterOrder.filter((c) => guidesByCluster[c]?.length).map((cluster) => (
+          <div class="cluster-group">
+            <h3>{cluster}</h3>
+            <ul class="sitemap-list">
+              {guidesByCluster[cluster].map((g) => (
+                <li><a href={`/guides/${g.id}/`}>{g.data.title}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+
+      {/* ── CRYSTAL'S CORNER ──────────────────────── */}
+      {cornerPosts.length > 0 && (
+        <section class="sitemap-section">
+          <h2>Crystal's Corner ({cornerPosts.length})</h2>
+          <ul class="sitemap-list">
+            {cornerPosts
+              .sort((a, b) => b.data.published.getTime() - a.data.published.getTime())
+              .map((p) => (
+                <li>
+                  <a href={`/crystals-corner/${p.id}/`}>{p.data.title}</a>
+                  <span class="list-meta">
+                    {p.data.published.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                  </span>
+                </li>
+              ))}
+          </ul>
+        </section>
+      )}
+
+      {/* ── MODELS ─────────────────────────────────── */}
+      <section class="sitemap-section">
+        <h2>Models ({vehicles.length})</h2>
+        {Object.keys(categoryLabels).filter((c) => byCategory[c]?.length).map((cat) => (
+          <div class="cluster-group">
+            <h3>{categoryLabels[cat]}</h3>
+            <ul class="sitemap-list">
+              {byCategory[cat].map((v) => (
+                <li>
+                  <a href={`/models/${v.slug}/`}>{v.model}</a>
+                  {v.years[0]?.starting_msrp && (
+                    <span class="list-meta">from ${v.years[0].starting_msrp.toLocaleString()}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+
+      {/* ── COMPARISONS ────────────────────────────── */}
+      <section class="sitemap-section">
+        <h2>Compare Pages ({compareSlugs.length} curated + 28 same-category)</h2>
+        <div class="cluster-group">
+          <h3>Curated head-to-heads</h3>
+          <ul class="sitemap-list">
+            {compareSlugs.map((slug) => (
+              <li><a href={`/compare/${slug}/`}>{compareTitles[slug]}</a></li>
+            ))}
+          </ul>
+        </div>
+        <p class="cluster-note">
+          Plus 28 auto-generated Chevy-vs-Chevy comparisons (trucks vs trucks,
+          SUVs vs SUVs, etc.). Hit the search with a model name to find
+          specific matchups.
+        </p>
+      </section>
+
+      {/* ── EVENTS ─────────────────────────────────── */}
+      <section class="sitemap-section">
+        <h2>Events ({events.length})</h2>
+        <ul class="sitemap-list">
+          <li><a href="/events/">All Events Calendar</a></li>
+          <li><a href="/events/midwest/">Midwest Events</a></li>
+          <li><a href="/events/northeast/">Northeast Events</a></li>
+          <li><a href="/events/southwest/">Texas & Southwest Events</a></li>
+        </ul>
+      </section>
+
+      {/* ── SUBMIT ─────────────────────────────────── */}
+      <section class="sitemap-section">
+        <h2>Community Submissions</h2>
+        <ul class="sitemap-list">
+          {submitPages.map((p) => (
+            <li><a href={p.url}>{p.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ── LEGAL ──────────────────────────────────── */}
+      <section class="sitemap-section">
+        <h2>About &amp; Legal</h2>
+        <ul class="sitemap-list">
+          {legalPages.map((p) => (
+            <li><a href={p.url}>{p.label}</a></li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ── XML FOOTER ─────────────────────────────── */}
+      <section class="sitemap-section">
+        <h2>For Crawlers</h2>
+        <ul class="sitemap-list">
+          <li><a href="/sitemap-index.xml">XML Sitemap Index</a> (for search engines)</li>
+          <li><a href="/rss.xml">RSS Feed</a> (all guides)</li>
+          <li><a href="/robots.txt">robots.txt</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .sitemap-header {
+    padding: 80px 0 40px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+  }
+  .sitemap-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .sitemap-title em { font-style: italic; color: var(--gold); }
+  .sitemap-lede {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-top: 1.5rem;
+  }
+  .sitemap-lede a {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+
+  .sitemap-body {
+    padding: 60px 0 80px;
+  }
+  .sitemap-section {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .sitemap-section:last-child {
+    border-bottom: none;
+  }
+  .sitemap-section h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--gold);
+  }
+  .cluster-group {
+    margin-bottom: 2rem;
+  }
+  .cluster-group h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--off-white);
+    margin-bottom: 0.75rem;
+  }
+  .cluster-note {
+    font-size: 0.85rem;
+    color: var(--light-gray);
+    font-style: italic;
+    margin-top: 0.75rem;
+    max-width: 62ch;
+  }
+  .sitemap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.4rem 1.5rem;
+  }
+  .sitemap-list li {
+    padding: 0.35rem 0;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+  }
+  .sitemap-list a {
+    color: var(--off-white);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .sitemap-list a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+  .list-meta {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    color: var(--text-mute);
+    margin-left: 0.5rem;
+  }
+</style>

@@ -147,27 +147,33 @@ server calls, zero tracking. Deep-linkable via `?q=corvette`.
 
 ---
 
-## tl;dr
+## tl;dr (updated after full overnight run)
 
-Phase 0 is done. Phase 1, 3, and 6 are scaffolded with production-ready
-code. Phase 2 Wave 1 is live (the My ZR2 cluster is the new content
-showpiece). Nothing has been pushed to the remote, nothing has been
-deployed to Netlify, and no paid services have been signed up for.
-Everything is committed locally and ready for your review.
+**183 pages. Zero errors. Zero pushes. Zero deploys. All local.**
 
-The new Astro site lives at `~/crystal/chevyroots/astro/` alongside the
-old HTML (which I left alone as reference — nothing in `/pages/` was
-modified).
+The site went from 50 hand-edited HTML pages to a full Astro-powered
+platform overnight. Every hub page from the old HTML is fully restored
+with the original content depth (most upgraded with interactive filtering
+and search). 5 new "My ZR2" articles and 6 Crystal's Corner columns are
+published. 35 programmatic compare pages, 20 model-year pages, 20
+best-year-to-buy pages, 7 Netlify Functions, 5 content pipelines, and
+full SEO primitives are all ready.
 
-Three decisions still block deployment:
+**Dave answered the 3 blocking questions earlier tonight:**
 
-1. **Does Crystal own chevyroots.com?** Where is it pointed now?
-2. **$50–130/mo in tooling budget — OK to proceed?**
-3. **Which GitHub account pushes?** (I recommend `sons-of-cern` since it's
-   already authenticated in your `gh` CLI.)
+1. ✅ Crystal owns chevyroots.com
+2. ✅ Budget $50-130/mo approved
+3. ✅ sons-of-cern is the push account (invite accepted)
 
-Once you answer those, deploying is: `git push`, connect Netlify, set env
-vars, point DNS. Probably 45 minutes of your time.
+**To deploy, run:**
+```sh
+cd ~/crystal/chevyroots
+git push origin main
+```
+Then connect the repo to Netlify, set the build command to
+`cd astro && npm install && npm run build`, set publish directory
+to `astro/dist`, set the env vars from .env.example, and point
+the DNS.
 
 ---
 

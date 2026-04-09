@@ -71,14 +71,44 @@ Restored the final 4 hub pages:
 | `/mechanics/` | Multi-field filter bar (search · state · specialty · sort), live results counter, client-side filtering, mechanic spotlight sidebar (top 3 by rating) |
 
 **Features still to build:**
-- Vintage ads lightbox with prev/next navigation (I did the filtering
-  but skipped the lightbox modal)
+~~- Vintage ads lightbox with prev/next navigation~~ ✅ DONE (loop #3)
 ~~- `/search` page — site-wide search~~ ✅ DONE (loop #2)
 ~~- Compare pages (`/compare/silverado-vs-ram-1500` etc.) — programmatic~~ ✅ DONE (loop #2)
-~~- More Crystal's Corner columns (4 more are teased on the hub)~~ 🟡 PARTIAL (loop #2 added #3)
-- Model history pages (`/models/{slug}/history`) — needs hand-writing per model
-- JSON-LD BreadcrumbList on guide pages
-- Sitemap HTML for humans ~~(still TBD)~~ ✅ DONE (loop #2)
+~~- More Crystal's Corner columns (4 more are teased on the hub)~~ ✅ DONE (loop #3 added #4 and #5)
+- Model history pages (`/models/{slug}/history`) — still needs hand-writing per model
+~~- JSON-LD BreadcrumbList on guide pages~~ ✅ DONE (loop #3)
+~~- Sitemap HTML for humans~~ ✅ DONE (loop #2)
+- Model-year landing pages with specific buyer advice per year
+- CSS polish + a11y audit
+
+### Loop #3 recap (fired ~02:11, completed ~02:19, 4 commits)
+
+Finished the Priority 2 feature list. 2 more pages + 1 layout
+improvement. Total: 180 → 182 pages.
+
+| # | Commit | What |
+|---|---|---|
+| 1 | `94a1f09` | Vintage ads lightbox with backdrop blur, keyboard nav (← → Escape), prev/next cycling through **filtered** results only, mobile-responsive, counter showing "X of Y" |
+| 2 | `7a551e9` | 4th Crystal's Corner column: "Why Houston Girls Love Chevys (It's in the Water)" — long-form culture piece on Houston as the Chevy capital, Impala swanga culture, Silverado as rite of passage, Galveston salt-water detail, editorial voice thesis |
+| 3 | `b77f1f3` | Visible breadcrumb navigation + JSON-LD `BreadcrumbList` schema on all 35 guides (via ArticleLayout, automatic for every article) |
+| 4 | `8d269f8` | 5th Crystal's Corner column: "Skyline Drive in a Corvette — Our Next Rental Adventure" — pre-trip post for the April 18 C8 Stingray convertible rental, route plan, stress list, the honest "if money were no object" Corvette admission |
+
+Crystal's Corner now has 5 published columns (Origin Story, Tahoe
+hot take, 610 Cruisers, Houston Girls, Skyline Drive) + 3 still
+teased on the hub (Camaro rental review is embedded but not
+standalone, Camaro vs Mustang hot take, Houston Girls is now
+published — wait, 4 teased posts left to fill out).
+
+Updated teased-post inventory after loop #3:
+- ✅ "I Rented a Camaro for a Day" (embedded in hub, not standalone)
+- 🔜 "The Tahoe Is the Most Underrated Chevy — Fight Me" (DONE, live)
+- 🔜 "610 Cruisers: My First Chevy Meet in Virginia" (DONE, live)
+- 🔜 "Why Houston Girls Love Chevys" (DONE, live)
+- 🔜 "Skyline Drive in a Corvette" (DONE, live)
+- 📝 "Camaro vs Mustang: Why This Isn't Even a Debate" (still a stub card)
+
+Priority 2 is now ~80% done. Remaining work is mostly editorial
+(more columns, model histories) and polish (CSS, a11y).
 
 ### Loop #2 recap (fired ~01:47, completed ~01:53, 4 commits)
 

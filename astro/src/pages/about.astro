@@ -1,56 +1,1085 @@
 ---
-import StaticPage from '@layouts/StaticPage.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { getCollection } from 'astro:content';
+import { vehicles, knownIssues, events } from '@lib/data';
+
+const guides = await getCollection('guides');
+const guidesCount = guides.length;
+const modelsCount = vehicles.length;
+const knownIssuesCount = knownIssues.reduce((n, m) => n + m.issues_by_year.reduce((k, b) => k + b.issues.length, 0), 0);
+const eventsCount = events.length;
 ---
 
-<StaticPage
-  title="About ChevyRoots"
-  description="ChevyRoots is an independent Chevrolet enthusiast resource run by Crystal. No dealer spin, no manufacturer PR — just honest coverage of the trucks and cars America built."
-  eyebrow="Our Story"
-  heading="About ChevyRoots"
+<BaseLayout
+  title="About ChevyRoots — The Story, the Mission, the Founder"
+  description="ChevyRoots is an independent Chevrolet enthusiast resource founded by Crystal — a Houston native, Chevy truck driver, and the voice behind the site. Here's the story, the mission, and why we're building this."
+  ogImage="/photos/crystal/crystal-silverado-zr2-hero.jpg"
 >
-  <p>ChevyRoots is an independent home for everything Chevrolet. We cover trucks, Corvettes, classics, muscle cars, SUVs, EVs, and the whole community around them — from the factory floor in 1911 to whatever rolled off the line last week.</p>
+  {/* ── HERO ─────────────────────────────────────────────────── */}
+  <section class="about-hero">
+    <div class="about-hero-stripe"></div>
+    <div class="container">
+      <div class="about-hero-inner">
+        <div class="section-eyebrow">Our story</div>
+        <h1 class="about-hero-title">About<br /><em>ChevyRoots</em></h1>
+        <p class="about-hero-sub">
+          Built by a Houston girl who rented a Camaro, fell in love all over again, and got tired of the Chevy community having nowhere decent to live online.
+        </p>
+        <span class="gold-line"></span>
+      </div>
+    </div>
+  </section>
 
-  <h2>Why this site exists</h2>
-  <p>Every other Chevy site on the internet is one of two things: a dealer lead-generation engine dressed up as "content," or a soulless AI-generated spec sheet farm. There wasn't a good place for enthusiasts to get honest, well-written, photo-rich coverage of the trucks and cars they actually drive.</p>
+  {/* ── ORIGIN STORY ─────────────────────────────────────────── */}
+  <section class="origin">
+    <div class="container">
+      <div class="origin-inner">
+        <div class="origin-content">
+          <div class="section-eyebrow">How it started</div>
+          <h2 class="origin-title">The<br /><em>Origin</em><br />Story</h2>
+          <span class="gold-line"></span>
+          <p class="body-text">
+            A while back I rented a Camaro for a weekend trip. Just needed something fun to drive — didn't expect it to ruin me.
+          </p>
+          <p class="body-text">
+            Two hours in, windows down, that V8 doing what it does, I caught myself thinking: <em>why don't I know more about this car?</em> Not specs — anybody can Google specs. I mean the real stuff. Which years are the best sleepers? What do owners actually say about the LT1 vs. the LS3? Where are the good meets? Who's building cool versions of this thing right now?
+          </p>
+          <p class="body-text">
+            So I went looking. And what I found was a mess — forums frozen in 2005, model pages scattered across a dozen sites, event listings three years out of date, YouTube channels that never talk to each other. A ton of passion with nowhere to land.
+          </p>
+          <blockquote class="origin-pullquote">
+            "Every forum is stuck in 2005. Every resource is fragmented by model. Nobody's built what Chevy owners actually deserve."
+          </blockquote>
+          <p class="body-text">
+            I drive a Chevy truck. I grew up in Houston — Chevy country — surrounded by bowties. I know how deep this culture runs. It deserved better. So I decided to build the thing I kept looking for and couldn't find.
+          </p>
+        </div>
+        <div class="origin-visual">
+          <div class="origin-photo" role="img" aria-label="Camaro rental photo" style="background-image: url('/photos/camaro/pexels_2797720_camaro.jpeg');"></div>
+          <div class="origin-accent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <p>We built ChevyRoots to be that place. Run by a Chevy girl who actually drives a Silverado ZR2. Written for people who love these vehicles for what they are, not what a salesperson wants them to be.</p>
+  {/* ── MEET CRYSTAL ─────────────────────────────────────────── */}
+  <section class="crystal-section">
+    <div class="container">
+      <div class="crystal-inner">
+        <div class="crystal-photo-wrap">
+          <div class="crystal-photo" role="img" aria-label="Crystal with her Silverado ZR2"></div>
+          <div class="crystal-corner-accent"></div>
+        </div>
+        <div class="crystal-content">
+          <div class="section-eyebrow">Founder</div>
+          <h2 class="crystal-name">Crystal</h2>
+          <div class="crystal-tags">
+            <span class="tag tag-gold">Houston Native</span>
+            <span class="tag">Fredericksburg, VA</span>
+            <span class="tag">Silverado ZR2 Driver</span>
+            <span class="tag">Bowtie Only</span>
+          </div>
+          <div class="section-eyebrow crystal-subhead">Houston roots. Chevy soul.</div>
+          <p class="body-text">
+            I grew up in Houston, Texas — and if you know Houston, you know Chevy isn't just a car brand there. It's in the culture. The trucks, the Impalas, the Silverados sitting tall in every driveway. I grew up around all of it and never thought twice about driving anything with a different badge.
+          </p>
+          <p class="body-text">
+            I'm based in Virginia now, but the roots don't leave you. I still drive a Chevy truck. I still get irrationally excited at car shows. And I still think the bowtie represents something that the rest of the car world doesn't always give it credit for — real people, real machines, real history.
+          </p>
+          <p class="body-text">
+            ChevyRoots is a passion project that got out of hand in the best possible way. I'm not a journalist or a professional reviewer. I'm just someone who loves these cars and wanted to build something worthy of the community around them.
+          </p>
+          <blockquote class="crystal-quote">
+            "If it ain't a bowtie, I don't drive it."
+          </blockquote>
+          <div class="crystal-socials">
+            <a href="https://tiktok.com/@chevyroots" target="_blank" rel="noopener" class="social-link">@chevyroots · TikTok</a>
+            <a href="https://instagram.com/chevyroots" target="_blank" rel="noopener" class="social-link">@chevyroots · Instagram</a>
+          </div>
+          <a href="/crystal/" class="btn btn-outline" style="margin-top: 1.5rem;">Read Crystal's full story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>What we publish</h2>
-  <ul>
-    <li><strong>Buyer's guides</strong> — the honest kind. Lease deals, warranty math, dealer negotiation, known issues by year</li>
-    <li><strong>Model histories</strong> — generation-by-generation deep dives on every Chevy that matters</li>
-    <li><strong>Build features</strong> — community-submitted trucks, restomods, classics, and modern performance builds</li>
-    <li><strong>Event coverage</strong> — Crystal attends car shows around the country with photos, video, and full reports</li>
-    <li><strong>The known-issues database</strong> — a living reference on common problems by model and year</li>
-    <li><strong>The mechanic directory</strong> — shops that actually know what they're doing</li>
-    <li><strong>Crystal's Corner</strong> — weekly editorial from the founder herself</li>
-  </ul>
+  {/* ── THE MISSION ─────────────────────────────────────────── */}
+  <section class="mission">
+    <div class="container">
+      <div class="mission-header">
+        <div class="section-eyebrow">What we're building</div>
+        <h2 class="mission-title">The <em>Mission</em></h2>
+        <span class="gold-line"></span>
+        <p class="body-text">
+          ChevyRoots isn't trying to be everything automotive. It's trying to be the single best resource for Chevy owners and enthusiasts — full stop. Here's what that looks like in practice.
+        </p>
+      </div>
+      <div class="mission-grid">
+        <div class="mission-item">
+          <div class="mission-num">01</div>
+          <h3 class="mission-item-title">The Model Database</h3>
+          <p>The most complete Chevy model database online — from the classic Bel Air to the current Tahoe. Real production years, real owner insight, not just press-release specs.</p>
+        </div>
+        <div class="mission-item">
+          <div class="mission-num">02</div>
+          <h3 class="mission-item-title">The Build Engine</h3>
+          <p>A structured gallery of real builds with real costs. No vague "about $X into it" — actual parts, actual prices, photos at every stage. Builds you can actually learn from.</p>
+        </div>
+        <div class="mission-item">
+          <div class="mission-num">03</div>
+          <h3 class="mission-item-title">The Event Calendar</h3>
+          <p>The only national Chevy event calendar that's actually maintained. Shows, meetups, cruise-ins — searchable by state, date, and model type.</p>
+        </div>
+        <div class="mission-item">
+          <div class="mission-num">04</div>
+          <h3 class="mission-item-title">The Community</h3>
+          <p>A modern home for Chevy culture that doesn't look like it was built during the Bush administration. Real conversations, not forum threads from 2007.</p>
+        </div>
+        <div class="mission-item">
+          <div class="mission-num">05</div>
+          <h3 class="mission-item-title">Real Content</h3>
+          <p>Coverage that respects both the culture and the cars. Written by people who actually own Chevys and care about getting it right — not content farms optimizing for clicks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>What we don't do</h2>
-  <ul>
-    <li>Dealer-paid lead-gen articles disguised as reviews</li>
-    <li>Clickbait "Top 10 Shocking Facts" slideshows</li>
-    <li>Auto-generated spec sheets ripped from manufacturer press releases</li>
-    <li>Inflating every product to five stars for affiliate commissions</li>
-    <li>Pretending to be neutral when we have a strong opinion</li>
-  </ul>
+  {/* ── BY THE NUMBERS ──────────────────────────────────────── */}
+  <section class="numbers">
+    <div class="container">
+      <div class="section-eyebrow">What we've built so far</div>
+      <h2 class="mission-title">By the <em>Numbers</em></h2>
+      <span class="gold-line"></span>
+      <div class="numbers-grid">
+        <div class="number-card">
+          <div class="number-val">{modelsCount}</div>
+          <div class="number-label">Model Profiles</div>
+          <div class="number-desc">From classic Bel Air to the current Silverado — every major Chevy covered.</div>
+        </div>
+        <div class="number-card">
+          <div class="number-val">{guidesCount}</div>
+          <div class="number-label">Guides Published</div>
+          <div class="number-desc">Buyer's guides, history deep-dives, road trip routes, and tech references.</div>
+        </div>
+        <div class="number-card">
+          <div class="number-val">{knownIssuesCount}</div>
+          <div class="number-label">Known Issues Documented</div>
+          <div class="number-desc">TSBs, common faults, and owner-reported problems tracked across the lineup.</div>
+        </div>
+        <div class="number-card">
+          <div class="number-val">{eventsCount}</div>
+          <div class="number-label">Events on the Calendar</div>
+          <div class="number-desc">Shows, meetups, and cruises — the only Chevy-specific event calendar online.</div>
+        </div>
+        <div class="number-card">
+          <div class="number-val">12</div>
+          <div class="number-label">Builds in the Gallery</div>
+          <div class="number-desc">Real Chevys, real owners, real builds — the gallery is live and growing.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>How we make money</h2>
-  <p>ChevyRoots is supported by affiliate commissions from retailers we genuinely recommend (Summit Racing, JEGS, Amazon, etc.), newsletter sponsorships, and — eventually — featured dealer listings and OEM partnerships. Every affiliate link is disclosed. Every sponsored piece is clearly labeled. See the <a href="/disclaimer/">disclaimer page</a> for the full details.</p>
+  {/* ── TIMELINE ────────────────────────────────────────────── */}
+  <section class="timeline">
+    <div class="container">
+      <div class="section-eyebrow">How we got here</div>
+      <h2 class="mission-title">ChevyRoots <em>Milestones</em></h2>
+      <span class="gold-line"></span>
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <div class="timeline-dot filled"></div>
+          <div class="timeline-body">
+            <div class="timeline-date">April 2026</div>
+            <h3>Site Launches</h3>
+            <p>ChevyRoots goes live. Model profiles, the guides library, the known issues tracker, and Crystal's Corner all debut at once. The community calendar opens for submissions.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot open"></div>
+          <div class="timeline-body">
+            <div class="timeline-date">Summer 2026</div>
+            <h3>America 250 Road Trip Coverage</h3>
+            <p>We're documenting <a href="/guides/america-250-chevy-road-trip/">the ultimate Chevy road trip route for America's 250th birthday</a>. Coast to coast, in a Chevy. No other way to do it.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot dashed"></div>
+          <div class="timeline-body">
+            <div class="timeline-date">Coming Next</div>
+            <h3>Build Submissions Open</h3>
+            <p>The build gallery goes live with community submissions — real builds, real costs, real stories. <a href="/submit/build/">Submit yours to be among the first.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Who runs it</h2>
-  <p><strong>Crystal</strong> is the founder and editor-in-chief. She drives a Silverado ZR2, has been around Chevys her whole life, and writes Crystal's Corner every week. Her story is on the <a href="/crystal/">meet Crystal</a> page.</p>
+  {/* ── CONTRIBUTE ──────────────────────────────────────────── */}
+  <section class="contribute">
+    <div class="container">
+      <div class="section-eyebrow">Get involved</div>
+      <h2 class="mission-title">Want to <em>Contribute?</em></h2>
+      <span class="gold-line"></span>
+      <p class="body-text contribute-intro">
+        ChevyRoots is built by enthusiasts, for enthusiasts. If you've got a build, an event, or a story — we want it. Not affiliated with GM, just in love with what they build.
+      </p>
+      <div class="contribute-grid">
+        <div class="contribute-card">
+          <div class="contribute-icon">🔧</div>
+          <h3>Submit Your Build</h3>
+          <p>Got a Chevy you've poured time and money into? Document it. Share the parts list, the costs, the process. Inspire the next builder.</p>
+          <a href="/submit/build/">Submit Build →</a>
+        </div>
+        <div class="contribute-card">
+          <div class="contribute-icon">📅</div>
+          <h3>Submit an Event</h3>
+          <p>Organizing a show, a meetup, or a cruise? Get it listed on the only Chevy event calendar that people actually check.</p>
+          <a href="/submit/event/">Submit Event →</a>
+        </div>
+        <div class="contribute-card">
+          <div class="contribute-icon">✏️</div>
+          <h3>Write for ChevyRoots</h3>
+          <p>Know your way around a Chevy? Write about it. Tech guides, history deep-dives, owner spotlights — we're looking for people who know the culture.</p>
+          <a href="/write-for-us/">Write for us →</a>
+        </div>
+        <div class="contribute-card">
+          <div class="contribute-icon">📣</div>
+          <h3>Advertise with Us</h3>
+          <p>Reach a highly engaged audience of Chevy owners and builders. Shops, parts suppliers, event organizers — let's talk about what makes sense.</p>
+          <a href="/advertise/">Advertise →</a>
+        </div>
+      </div>
+      <div class="contribute-contact">
+        <div>
+          <h3>Say hello.</h3>
+          <p>Questions, pitches, or just want to talk Chevy — the inbox is always open.</p>
+        </div>
+        <a href="mailto:hello@chevyroots.com" class="btn btn-gold">hello@chevyroots.com →</a>
+      </div>
+    </div>
+  </section>
 
-  <p>A small editorial team helps with research, fact-checking, and community moderation.</p>
+  {/* ── WHAT MAKES CHEVYROOTS DIFFERENT ─────────────────────── */}
+  <section class="different">
+    <div class="container">
+      <div class="section-eyebrow">No comparable platform exists</div>
+      <h2 class="mission-title">What Makes ChevyRoots <em>Different</em></h2>
+      <span class="gold-line"></span>
+      <p class="body-text different-intro">We didn't reinvent the wheel — we just noticed that the Chevy community deserved something nobody had actually built yet.</p>
+      <div class="different-table-wrap">
+        <table class="different-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Old Forums</th>
+              <th>Generic Car Sites</th>
+              <th class="highlight">ChevyRoots</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Modern Design</td>
+              <td>No</td>
+              <td>Yes</td>
+              <td class="yes">Yes</td>
+            </tr>
+            <tr>
+              <td>Chevy-Only Focus</td>
+              <td>Some</td>
+              <td>No</td>
+              <td class="yes">Yes</td>
+            </tr>
+            <tr>
+              <td>Structured Build Data</td>
+              <td>No</td>
+              <td>No</td>
+              <td class="yes">Yes</td>
+            </tr>
+            <tr>
+              <td>Interactive Tools</td>
+              <td>No</td>
+              <td>Some</td>
+              <td class="yes"><a href="/guides/quiz/">Quiz</a>, Compare, Build Engine</td>
+            </tr>
+            <tr>
+              <td>Real Person Behind It</td>
+              <td>No</td>
+              <td>No</td>
+              <td class="yes">Yes — Crystal</td>
+            </tr>
+            <tr>
+              <td>Known Issues Database</td>
+              <td>Scattered</td>
+              <td>No</td>
+              <td class="yes">Yes — by model & year</td>
+            </tr>
+            <tr>
+              <td>Event Calendar</td>
+              <td>No</td>
+              <td>No</td>
+              <td class="yes">Yes — national + regional</td>
+            </tr>
+            <tr>
+              <td>Weekly Editorial</td>
+              <td>No</td>
+              <td>Sometimes</td>
+              <td class="yes">Crystal's Corner</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-  <h2>Get involved</h2>
-  <ul>
-    <li><strong>Subscribe</strong> to the newsletter for weekly Chevy stories</li>
-    <li><strong>Submit your build</strong> to be featured on the site</li>
-    <li><strong>Tell us about an event</strong> in your region</li>
-    <li><strong>Recommend a mechanic</strong> who earned their spot in the directory</li>
-    <li><strong>Follow Crystal</strong> on Instagram, YouTube, and TikTok (links in the footer)</li>
-  </ul>
+  {/* ── PRESS & MEDIA ───────────────────────────────────────── */}
+  <section class="press">
+    <div class="container">
+      <div class="section-eyebrow">For journalists & partners</div>
+      <h2 class="mission-title">Press & <em>Media</em></h2>
+      <span class="gold-line"></span>
+      <div class="press-grid">
+        <div class="press-card">
+          <div class="press-card-label">About the Site</div>
+          <p>ChevyRoots is an independent Chevrolet enthusiast resource covering model profiles, build documentation, community events, and Chevy culture. The site launched in April 2026 with a full library of guides, an interactive model comparison tool, a known-issues tracker, and an events calendar. It is not affiliated with General Motors.</p>
+        </div>
+        <div class="press-card">
+          <div class="press-card-label">Quick Facts</div>
+          <ul>
+            <li><strong>Founded:</strong> April 2026</li>
+            <li><strong>Focus:</strong> Chevrolet — trucks, cars, classics, performance</li>
+            <li><strong>Coverage:</strong> {modelsCount} model profiles, {guidesCount} guides, {knownIssuesCount} known-issue threads</li>
+            <li><strong>Tools:</strong> Model quiz, side-by-side compare, events calendar</li>
+            <li><strong>Affiliation:</strong> None — fully independent</li>
+          </ul>
+        </div>
+        <div class="press-card">
+          <div class="press-card-label">Press Contact</div>
+          <p>For interview requests, editorial partnerships, or media inquiries, reach out directly. Turnaround is typically 24–48 hours.</p>
+          <a href="mailto:hello@chevyroots.com" class="btn btn-gold">hello@chevyroots.com →</a>
+          <div style="margin-top: 1rem;">
+            <a href="/press/" class="press-kit-link">Press kit & partnerships →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <p>Questions? <a href="/contact/">Contact us</a>.</p>
-</StaticPage>
+  {/* ── AMERICA 250 ─────────────────────────────────────────── */}
+  <section class="america">
+    <div class="container">
+      <div class="america-inner">
+        <div class="america-content">
+          <div class="section-eyebrow">A moment worth marking</div>
+          <h2 class="america-title">America<br /><em>Turns 250.</em><br />Chevy Turns 115.</h2>
+          <span class="gold-line"></span>
+          <p class="body-text">
+            In 2026, America celebrates its 250th birthday. That same year, Chevrolet marks 115 years of building cars that have moved this country — literally and culturally. From the first Series C to the current Silverado, from Indy 500 pace cars to every worksite in every zip code.
+          </p>
+          <p class="body-text">
+            We're here to celebrate both. ChevyRoots is building the kind of archive and community that a 115-year legacy actually deserves. We're just getting started.
+          </p>
+          <div class="america-stats">
+            <div>
+              <div class="america-stat-num">250</div>
+              <div class="america-stat-label">Years of America</div>
+            </div>
+            <div>
+              <div class="america-stat-num">115</div>
+              <div class="america-stat-label">Years of Chevy</div>
+            </div>
+            <div>
+              <div class="america-stat-num">2026</div>
+              <div class="america-stat-label">The year it all lands</div>
+            </div>
+          </div>
+        </div>
+        <div class="america-badge">
+          <div class="america-badge-ring">
+            <div class="america-badge-year">2026</div>
+            <div class="america-badge-sub">America 250</div>
+          </div>
+          <div class="america-badge-footer">Chevy 115</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterCTA source="about" />
+</BaseLayout>
+
+<style>
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-dim);
+    margin-bottom: 1.25rem;
+  }
+  .body-text em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .body-text strong { color: var(--off-white); }
+
+  /* ── HERO ─────────────────────────────────────────────────── */
+  .about-hero {
+    padding: 80px 0 40px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 60%, var(--warm-gray) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-hero-stripe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--gold);
+  }
+  .about-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.75rem 0 1.5rem;
+  }
+  .about-hero-title em { font-style: italic; color: var(--gold); }
+  .about-hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 58ch;
+    margin-bottom: 2rem;
+  }
+
+  /* ── ORIGIN ───────────────────────────────────────────────── */
+  .origin {
+    padding: var(--section-pad) 0;
+  }
+  .origin-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .origin-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.5rem 0 1rem;
+  }
+  .origin-title em { font-style: italic; color: var(--gold); }
+  .origin-pullquote {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--off-white);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-left: 3px solid var(--gold);
+    background: rgba(196, 160, 53, 0.06);
+    margin: 2rem 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .origin-visual {
+    position: sticky;
+    top: calc(var(--nav-height) + 2rem);
+  }
+  .origin-photo {
+    aspect-ratio: 4 / 5;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+  .origin-accent {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--gold);
+    border-radius: var(--radius);
+    z-index: -1;
+  }
+
+  /* ── CRYSTAL ──────────────────────────────────────────────── */
+  .crystal-section {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .crystal-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .crystal-photo-wrap {
+    position: relative;
+  }
+  .crystal-photo {
+    aspect-ratio: 4 / 5;
+    background: #2a2a2a url('/photos/crystal/crystal-silverado-zr2-hero.jpg') center / cover no-repeat;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  }
+  .crystal-corner-accent {
+    position: absolute;
+    bottom: -1rem;
+    left: -1rem;
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--gold);
+    border-radius: var(--radius);
+    z-index: 0;
+  }
+  .crystal-name {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.5rem 0 1rem;
+  }
+  .crystal-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .crystal-subhead {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .crystal-quote {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    font-style: italic;
+    padding: 1.25rem 0 1.25rem 1.5rem;
+    border-left: 3px solid var(--gold);
+    margin: 1.5rem 0;
+  }
+  .crystal-socials {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .social-link {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.5rem 1rem;
+    background: rgba(196, 160, 53, 0.08);
+    border: 1px solid rgba(196, 160, 53, 0.3);
+    border-radius: 50px;
+    text-decoration: none;
+  }
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.55rem;
+    border-radius: 3px;
+    background: var(--charcoal);
+    color: var(--light-gray);
+    border: 1px solid var(--border);
+  }
+  .tag-gold {
+    background: rgba(196, 160, 53, 0.15);
+    color: var(--gold);
+    border-color: rgba(196, 160, 53, 0.4);
+  }
+
+  /* ── MISSION ──────────────────────────────────────────────── */
+  .mission {
+    padding: var(--section-pad) 0;
+  }
+  .mission-header {
+    margin-bottom: 3rem;
+    max-width: 68ch;
+  }
+  .mission-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.5rem 0 0.75rem;
+  }
+  .mission-title em { font-style: italic; color: var(--gold); }
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .mission-item {
+    padding: 2rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition), border-color var(--transition);
+  }
+  .mission-item:hover { transform: translateY(-3px); }
+  .mission-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .mission-item-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--off-white);
+    margin-bottom: 0.75rem;
+  }
+  .mission-item p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* ── NUMBERS ──────────────────────────────────────────────── */
+  .numbers {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .number-card {
+    padding: 2rem 1.75rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .number-val {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+  .number-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.75rem;
+  }
+  .number-desc {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-top: 0.6rem;
+    line-height: 1.55;
+  }
+
+  /* ── TIMELINE ─────────────────────────────────────────────── */
+  .timeline {
+    padding: var(--section-pad) 0;
+  }
+  .timeline-list {
+    position: relative;
+    margin-top: 2rem;
+    padding-left: 1rem;
+  }
+  .timeline-list::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 1rem;
+    bottom: 1rem;
+    width: 2px;
+    background: var(--border);
+  }
+  .timeline-item {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding-bottom: 2.5rem;
+  }
+  .timeline-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .timeline-dot.filled {
+    background: var(--gold);
+    border: 3px solid var(--charcoal);
+  }
+  .timeline-dot.open {
+    background: var(--warm-gray);
+    border: 2px solid var(--gold);
+  }
+  .timeline-dot.open::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+  .timeline-dot.dashed {
+    background: var(--warm-gray);
+    border: 2px dashed var(--border);
+  }
+  .timeline-body {
+    flex: 1;
+  }
+  .timeline-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .timeline-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .timeline-body p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    max-width: 60ch;
+  }
+  .timeline-body a { color: var(--gold); text-decoration: underline; }
+
+  /* ── CONTRIBUTE ───────────────────────────────────────────── */
+  .contribute {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+  }
+  .contribute-intro {
+    max-width: 62ch;
+    margin: 0.5rem 0 2rem;
+  }
+  .contribute-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .contribute-card {
+    padding: 2rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .contribute-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+  .contribute-icon {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  .contribute-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .contribute-card p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .contribute-card a {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .contribute-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 2.5rem;
+    background: var(--charcoal);
+    border: 1px solid rgba(196, 160, 53, 0.3);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+  }
+  .contribute-contact h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--off-white);
+    margin-bottom: 0.35rem;
+  }
+  .contribute-contact p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  /* ── DIFFERENT (COMPARISON TABLE) ────────────────────────── */
+  .different {
+    padding: var(--section-pad) 0;
+  }
+  .different-intro {
+    max-width: 64ch;
+    margin-bottom: 2rem;
+  }
+  .different-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--warm-gray);
+  }
+  .different-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 640px;
+  }
+  .different-table th {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    text-align: center;
+    padding: 1rem 1.25rem;
+    background: var(--charcoal);
+    border-bottom: 1px solid var(--border);
+  }
+  .different-table th:first-child { text-align: left; }
+  .different-table th.highlight {
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+    background: rgba(196, 160, 53, 0.05);
+  }
+  .different-table td {
+    padding: 0.9rem 1.25rem;
+    color: var(--light-gray);
+    text-align: center;
+    border-bottom: 1px solid rgba(196, 160, 53, 0.08);
+  }
+  .different-table td:first-child {
+    text-align: left;
+    color: var(--off-white);
+  }
+  .different-table td.yes {
+    color: var(--gold);
+    font-weight: 600;
+    background: rgba(196, 160, 53, 0.04);
+  }
+  .different-table td.yes a { color: var(--gold); }
+  .different-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ── PRESS ────────────────────────────────────────────────── */
+  .press {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .press-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .press-card {
+    padding: 2rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .press-card-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .press-card p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+  .press-card ul {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.85;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .press-card strong {
+    color: var(--off-white);
+    font-weight: 500;
+  }
+  .press-kit-link {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ── AMERICA 250 ─────────────────────────────────────────── */
+  .america {
+    padding: var(--section-pad) 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 40%, rgba(196, 160, 53, 0.08) 0%, transparent 70%),
+      var(--charcoal);
+  }
+  .america-inner {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .america-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.5rem 0 1rem;
+  }
+  .america-title em { font-style: italic; color: var(--gold); }
+  .america-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .america-stat-num {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .america-stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.4rem;
+  }
+  .america-badge {
+    justify-self: center;
+    text-align: center;
+  }
+  .america-badge-ring {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: radial-gradient(circle at center, rgba(196, 160, 53, 0.08) 0%, transparent 70%);
+  }
+  .america-badge-ring::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(196, 160, 53, 0.3);
+    border-radius: 50%;
+  }
+  .america-badge-year {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .america-badge-sub {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.75rem;
+  }
+  .america-badge-footer {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .origin-inner,
+    .crystal-inner,
+    .america-inner {
+      grid-template-columns: 1fr;
+    }
+    .origin-visual { position: static; }
+    .america-stats { grid-template-columns: 1fr; }
+  }
+</style>

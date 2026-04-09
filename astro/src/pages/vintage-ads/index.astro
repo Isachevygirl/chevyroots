@@ -139,6 +139,17 @@ const latestYear = vintageAds.reduce((max, ad) => {
                 {ad.model && <div class="ad-model">{ad.model}</div>}
                 {(ad as any).tagline && <div class="ad-tagline">"{(ad as any).tagline}"</div>}
               </figcaption>
+              <button
+                class="ad-card-expand"
+                type="button"
+                data-expand
+                data-src={ad.image ? (ad.image.startsWith('/') ? ad.image : `/${ad.image}`) : ''}
+                data-year={ad.year || ad.decade || ''}
+                data-title={ad.title || 'Chevrolet Advertisement'}
+                data-model={ad.model || ''}
+                data-tagline={(ad as any).tagline || ''}
+                aria-label={`Open ${ad.title || 'ad'} in lightbox`}
+              ></button>
             </figure>
           );
         })}
@@ -150,6 +161,23 @@ const latestYear = vintageAds.reduce((max, ad) => {
       </div>
     </div>
   </section>
+
+  {/* ── LIGHTBOX ───────────────────────────────────── */}
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vintage ad viewer" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous ad">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next ad">›</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-caption">
+        <div class="lightbox-year" id="lightboxYear"></div>
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-model" id="lightboxModel"></div>
+        <div class="lightbox-tagline" id="lightboxTagline"></div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+      </div>
+    </div>
+  </div>
 
   <NewsletterCTA source="vintage-ads" />
 </BaseLayout>
@@ -218,6 +246,95 @@ const latestYear = vintageAds.reduce((max, ad) => {
 
   // Initial sort
   applySort();
+
+  // ── LIGHTBOX ────────────────────────────────────────
+  const lightbox = document.getElementById('lightbox') as HTMLDivElement;
+  const lightboxImg = document.getElementById('lightboxImg') as HTMLImageElement;
+  const lightboxYear = document.getElementById('lightboxYear') as HTMLDivElement;
+  const lightboxTitle = document.getElementById('lightboxTitle') as HTMLDivElement;
+  const lightboxModel = document.getElementById('lightboxModel') as HTMLDivElement;
+  const lightboxTagline = document.getElementById('lightboxTagline') as HTMLDivElement;
+  const lightboxCounter = document.getElementById('lightboxCounter') as HTMLDivElement;
+  const lightboxClose = document.getElementById('lightboxClose') as HTMLButtonElement;
+  const lightboxPrev = document.getElementById('lightboxPrev') as HTMLButtonElement;
+  const lightboxNext = document.getElementById('lightboxNext') as HTMLButtonElement;
+
+  let currentIndex = -1;
+
+  function getVisibleButtons(): HTMLButtonElement[] {
+    const allCards = Array.from(gallery.querySelectorAll<HTMLElement>('.ad-card'));
+    return allCards
+      .filter((card) => card.style.display !== 'none')
+      .map((card) => card.querySelector<HTMLButtonElement>('[data-expand]'))
+      .filter((b): b is HTMLButtonElement => b !== null);
+  }
+
+  function openLightbox(index: number) {
+    const buttons = getVisibleButtons();
+    if (index < 0 || index >= buttons.length) return;
+    currentIndex = index;
+    const btn = buttons[index];
+    const src = btn.dataset.src || '';
+    const year = btn.dataset.year || '';
+    const title = btn.dataset.title || '';
+    const model = btn.dataset.model || '';
+    const tagline = btn.dataset.tagline || '';
+    if (src) {
+      lightboxImg.src = src;
+      lightboxImg.alt = title;
+      lightboxImg.hidden = false;
+    } else {
+      lightboxImg.hidden = true;
+    }
+    lightboxYear.textContent = year;
+    lightboxTitle.textContent = title;
+    lightboxModel.textContent = model;
+    lightboxTagline.textContent = tagline ? `"${tagline}"` : '';
+    lightboxCounter.textContent = `${index + 1} of ${buttons.length}`;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+    currentIndex = -1;
+  }
+
+  function navigate(delta: number) {
+    const buttons = getVisibleButtons();
+    if (buttons.length === 0) return;
+    const next = (currentIndex + delta + buttons.length) % buttons.length;
+    openLightbox(next);
+  }
+
+  // Wire up expand buttons on every card
+  gallery.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const btn = target.closest<HTMLButtonElement>('[data-expand]');
+    if (!btn) return;
+    e.preventDefault();
+    const buttons = getVisibleButtons();
+    const index = buttons.indexOf(btn);
+    if (index >= 0) openLightbox(index);
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', () => navigate(-1));
+  lightboxNext.addEventListener('click', () => navigate(1));
+
+  // Click backdrop to close
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Keyboard support
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
+  });
 </script>
 
 <style>
@@ -457,5 +574,199 @@ const latestYear = vintageAds.reduce((max, ad) => {
     text-transform: uppercase;
     color: var(--off-white);
     margin-bottom: 0.5rem;
+  }
+
+  /* ── AD CARD EXPAND OVERLAY BUTTON ───────────────── */
+  .ad-card {
+    position: relative;
+    cursor: pointer;
+  }
+  .ad-card-expand {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+  }
+  .ad-card-expand:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: -4px;
+  }
+  .ad-card:hover .ad-card-expand::after {
+    content: '⤢';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    pointer-events: none;
+  }
+
+  /* ── LIGHTBOX ─────────────────────────────────────── */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.96);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 5rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: lightbox-fade 200ms ease-out;
+  }
+  .lightbox[hidden] { display: none; }
+
+  @keyframes lightbox-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .lightbox-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 2rem;
+    max-width: 1200px;
+    max-height: 100%;
+    width: 100%;
+    align-items: center;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: var(--radius);
+    box-shadow: 0 24px 72px rgba(0, 0, 0, 0.6);
+    background: var(--charcoal);
+  }
+
+  .lightbox-caption {
+    padding: 2rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius-lg);
+  }
+
+  .lightbox-year {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .lightbox-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .lightbox-model {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    margin-bottom: 0.75rem;
+  }
+  .lightbox-model:empty { display: none; }
+  .lightbox-tagline {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1.4;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+  .lightbox-tagline:empty { display: none; border-top: none; padding-top: 0; }
+  .lightbox-counter {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+
+  .lightbox-close,
+  .lightbox-nav {
+    position: absolute;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    color: var(--gold);
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color var(--transition), background var(--transition);
+    z-index: 10;
+  }
+
+  .lightbox-close {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.75rem;
+    border-radius: 50%;
+    line-height: 1;
+  }
+  .lightbox-close:hover {
+    background: var(--gold);
+    color: var(--charcoal);
+  }
+
+  .lightbox-nav {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    font-size: 2.25rem;
+    border-radius: 50%;
+    line-height: 1;
+  }
+  .lightbox-prev { left: 1.5rem; }
+  .lightbox-next { right: 1.5rem; }
+  .lightbox-nav:hover {
+    background: var(--gold);
+    color: var(--charcoal);
+    border-color: var(--gold);
+  }
+
+  @media (max-width: 900px) {
+    .lightbox {
+      padding: 1rem;
+    }
+    .lightbox-content {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      max-height: 100%;
+      overflow-y: auto;
+    }
+    .lightbox-content img { max-height: 50vh; }
+    .lightbox-close { top: 0.75rem; right: 0.75rem; width: 40px; height: 40px; }
+    .lightbox-nav { width: 44px; height: 44px; font-size: 1.75rem; }
+    .lightbox-prev { left: 0.5rem; }
+    .lightbox-next { right: 0.5rem; }
   }
 </style>

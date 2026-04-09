@@ -1,47 +1,792 @@
 ---
-import StaticPage from '@layouts/StaticPage.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+
+const profiles = [
+  { icon: '🔧', title: 'The Builder', desc: 'Actively wrenching — buys parts regularly from Summit Racing, JEGS, Classic Industries. Reads every build feature start to finish.' },
+  { icon: '🚗', title: 'The Owner', desc: 'Owns 1–3 Chevrolets. Maintenance-focused, event-goer, buys accessories and upgrades. Refers friends before they buy.' },
+  { icon: '📸', title: 'The Enthusiast', desc: 'Deep into the culture — car shows, online communities, model history. Influence-heavy within their social circle.' },
+  { icon: '🛒', title: 'The Buyer', desc: 'Using ChevyRoots to research their next Chevy purchase. Pre-sale, high-intent, reading model guides and comparisons.' },
+];
+
+const whyItems = [
+  { num: '01', title: '100% Topical Authority', desc: "Every page, every guide, every build — it's all Chevrolet. No diluted multi-brand audience. Visitors arrive because they searched for something Chevy-specific, and found exactly that. That's topical authority you can't buy elsewhere." },
+  { num: '02', title: 'Crystal as Brand Ambassador', desc: "ChevyRoots is built and run by Crystal — a Houston-raised, Virginia-living Chevy loyalist. When she recommends a product or partner, readers listen. That's not influencer theater. It's genuine trust built over years of being in the community." },
+  { num: '03', title: 'Only Chevy-Focused Modern Platform', desc: 'Old forums are outdated and scattered. Generic car sites spread attention across every make. ChevyRoots is the only platform built from scratch in 2026 to serve the Chevy community with structured data, real tools, and a modern editorial voice.' },
+  { num: '04', title: 'Real Engagement, Not Passive Browsing', desc: "Buyers guide readers, known-issues researchers, build planners — these visitors have intent. They're not scrolling. They're deciding. Getting your brand in front of someone reading a Silverado buyers guide is not the same as a banner impression on a general news site." },
+  { num: '05', title: 'Ground-Floor Pricing', desc: "We're building the audience now. Founding partners lock in early-mover rates that won't be available once the community scales. First movers get the best deal, always." },
+  { num: '06', title: 'Flexible Formats', desc: "From full sponsored build features to newsletter text blurbs, we can work with your budget and goals. No one-size-fits-all packages — let's build something that actually fits." },
+];
+
+const partnershipOptions = [
+  {
+    featured: true,
+    featuredBadge: 'Most Impactful',
+    icon: '🔧',
+    name: 'Sponsored Build Feature',
+    price: 'Starting at $X / month',
+    desc: 'Your brand featured alongside a full build writeup — the most-read content format on ChevyRoots. Native placement, not banner advertising. Readers stay engaged for 4–8 minutes per build.',
+    includes: [
+      'Brand mention throughout the build article',
+      'Logo placement in build header',
+      'Product link in spec section (if applicable)',
+      "Newsletter callout in that week's issue",
+      'Social post tagging sponsor',
+    ],
+  },
+  {
+    icon: '📰',
+    name: 'Newsletter Sponsorship',
+    price: 'Starting at $X / issue',
+    desc: 'The Weekly Wrench goes out to subscribers every Thursday. A dedicated sponsor slot in the email body — not a tiny footer ad, but a real placement the reader actually sees.',
+    includes: [
+      'Branded sponsor block inside the email',
+      'Your copy or ours (we can write it)',
+      'Tracked affiliate link with click reporting',
+      'Available per-issue or multi-issue blocks',
+    ],
+  },
+  {
+    icon: '🖼',
+    name: 'Display Advertising',
+    price: 'Starting at $X / month',
+    desc: "Sitewide banner placement on high-traffic pages — model guides, build pages, and the events calendar. Designed to match ChevyRoots' aesthetic so it doesn't look like a blinking billboard.",
+    includes: [
+      'Leaderboard and sidebar placements',
+      'Mobile-responsive ad units',
+      'Monthly impression and click reporting',
+      'We can design your creative if needed',
+    ],
+  },
+  {
+    icon: '⭐',
+    name: 'Product Review',
+    price: 'Contact for pricing',
+    desc: "Send us your product, we test it. We write an honest review — meaning we say what works and what doesn't. Readers trust this content because we don't do fake five-star reviews. Great for parts brands and tool companies.",
+    includes: [
+      'Full written review article (500–1,200 words)',
+      'SEO-optimized with product schema',
+      'Newsletter feature in the week of publish',
+      'Honest editorial — no guaranteed star rating',
+    ],
+  },
+  {
+    icon: '🏁',
+    name: 'Event Coverage Sponsorship',
+    price: 'Contact for pricing',
+    desc: 'When ChevyRoots covers a car show, swap meet, or major Chevy event, your brand can be part of that coverage. Pre-event promos, on-the-ground content, and post-event recap articles.',
+    includes: [
+      'Pre-event brand mention in event preview',
+      'Sponsor callout in post-event recap',
+      'Social coverage tagging',
+      'Newsletter event roundup mention',
+    ],
+  },
+  {
+    icon: '⚙',
+    name: 'Custom Partnership',
+    price: "Let's build it together",
+    desc: 'Have a specific goal or budget in mind? We can put together a package that actually fits. Founding partners get priority calendar placement and locked-in rates before pricing scales with the audience.',
+    includes: [
+      'Mix-and-match from any format above',
+      'Founding partner rate locked in for campaign',
+      'First right of renewal at same rate',
+      'Direct line to Crystal for campaign management',
+    ],
+  },
+];
 ---
 
-<StaticPage
-  title="ChevyRoots Partners — Dealers, Brands, Retailers, Event Partners"
-  description="Trusted ChevyRoots partners — dealerships, brands, parts retailers, insurance providers, and event organizers. We only list partners we'd recommend anyway."
-  eyebrow="Trusted Partners"
-  heading="Partners"
+<BaseLayout
+  title="Advertise with ChevyRoots — Media Kit & Partnership Options"
+  description="Reach a dedicated, purchase-ready community of Chevrolet owners and enthusiasts. Zero casual scrollers — just people who live and breathe these trucks and cars. Now accepting founding partners."
 >
-  <p>ChevyRoots partners with a small, carefully chosen group of companies that serve the Chevy community well. Every listing here is one we'd recommend to a friend — and many of them are relationships built after months of watching how they treat customers.</p>
+  {/* ── HERO ──────────────────────────────────────────── */}
+  <section class="partners-hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Media Kit — Now Accepting Founding Partners
+          </div>
+          <h1 class="hero-title">
+            Advertise<br />
+            with <span class="gold">Chevy</span><span class="gold">Roots</span>
+          </h1>
+          <p class="hero-sub">
+            Reach a dedicated, purchase-ready community of Chevrolet owners and enthusiasts. Zero casual scrollers — just people who live and breathe these trucks and cars.
+          </p>
+          <div class="hero-ctas">
+            <a href="#options" class="btn btn-gold">View Partnership Options</a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-card">
+            <div class="stat-val">100%</div>
+            <div class="stat-label">Chevrolet-focused audience</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="stat-val">US</div>
+            <div class="stat-label">Based — primary audience</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="stat-val">18–55</div>
+            <div class="stat-label">Core age demographic</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="stat-val">5+</div>
+            <div class="stat-label">Content channels &amp; formats</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Featured dealers</h2>
-  <p>We'll list featured Chevy dealerships here as they sign on. If you run a dealership in a major metro and you'd like to reach ChevyRoots readers, see our <a href="/advertise/">advertise page</a>.</p>
+  {/* ── FOUNDING PARTNER BANNER ───────────────────────── */}
+  <div class="founding-banner">
+    <div class="container">
+      <div class="founding-inner">
+        <span class="founding-badge">Limited Offer</span>
+        <span class="founding-text">Currently accepting founding partners — locked-in early-mover pricing for life of the campaign</span>
+        <a href="#contact" class="founding-link">Inquire Now →</a>
+      </div>
+    </div>
+  </div>
 
-  <h2>Retail partners</h2>
-  <ul>
-    <li><strong>Summit Racing</strong> — performance parts, tools, shop supplies</li>
-    <li><strong>JEGS</strong> — hot rod and restoration parts</li>
-    <li><strong>LMC Truck</strong> — classic Chevy truck restoration</li>
-    <li><strong>Classic Industries</strong> — muscle era reproduction parts</li>
-    <li><strong>Amazon Associates</strong> — for the everyday stuff</li>
-  </ul>
+  {/* ── AUDIENCE PROFILE ──────────────────────────────── */}
+  <section class="audience-section">
+    <div class="container">
+      <div class="audience-grid">
+        <div>
+          <p class="section-eyebrow">Audience profile</p>
+          <h2 class="section-title">Who We Reach</h2>
+          <span class="gold-line"></span>
+          <p class="section-lede">
+            ChevyRoots is a growing community of Chevy enthusiasts — people who own, build, restore, and buy Chevrolets. Not a general automotive audience. Not a brand deal audience. Actual Chevy people.
+          </p>
+          <div class="audience-stat-list">
+            <div class="audience-stat"><span>Geography</span><strong>US-Based</strong></div>
+            <div class="audience-stat"><span>Age Range</span><strong>18–55</strong></div>
+            <div class="audience-stat"><span>Vehicle Ownership</span><strong>Chevy Owners &amp; Intenders</strong></div>
+            <div class="audience-stat"><span>Top Content</span><strong>Builds, Buyers Guides, Known Issues</strong></div>
+            <div class="audience-stat"><span>Model Coverage</span><strong>20 Profiles — Silverado to Corvette</strong></div>
+            <div class="audience-stat"><span>Site Content</span><strong>35+ Guides · 12 Builds · 16 Events</strong></div>
+            <div class="audience-stat"><span>Launch</span><strong>April 2026 — Founding Partner Window Open</strong></div>
+          </div>
+        </div>
+        <div>
+          <p class="section-eyebrow">Who's in the community</p>
+          <div class="profile-cards">
+            {profiles.map((p) => (
+              <div class="profile-card">
+                <div class="profile-icon">{p.icon}</div>
+                <div class="profile-title">{p.title}</div>
+                <div class="profile-desc">{p.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Insurance &amp; protection</h2>
-  <ul>
-    <li><strong>Hagerty</strong> — classic car insurance (agreed value, roadside, event coverage)</li>
-    <li><strong>Grundy</strong> — classic car insurance, no mileage limits</li>
-    <li><strong>American Collectors</strong> — classic car insurance</li>
-    <li><strong>Endurance</strong> — extended warranty for late-model Chevys</li>
-    <li><strong>CARCHEX</strong> — extended warranty coverage</li>
-  </ul>
+  {/* ── WHY PARTNER ───────────────────────────────────── */}
+  <section class="why-section">
+    <div class="container">
+      <div class="why-header">
+        <p class="section-eyebrow">Why partner with us</p>
+        <h2 class="section-title">Why Partner With ChevyRoots?</h2>
+        <span class="gold-line"></span>
+        <p class="section-lede">There are a lot of automotive sites. There is exactly one modern, Chevy-only platform with real editorial depth, real tools, and a real person behind every word.</p>
+      </div>
+      <div class="why-grid">
+        {whyItems.map((item) => (
+          <div class="why-item">
+            <div class="why-num">{item.num}</div>
+            <div class="why-item-title">{item.title}</div>
+            <div class="why-item-desc">{item.desc}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-  <h2>Services &amp; tools</h2>
-  <ul>
-    <li><strong>TrueCar / CarEdge</strong> — dealer price transparency</li>
-    <li><strong>Discount Tire / Tire Rack</strong> — tires and wheels</li>
-    <li><strong>WeatherTech</strong> — floor liners and vehicle protection</li>
-    <li><strong>etrailer</strong> — towing and trailering</li>
-  </ul>
+  {/* ── FOUNDING PARTNER SLOTS ────────────────────────── */}
+  <section class="stories-section">
+    <div class="container">
+      <div class="stories-header">
+        <p class="section-eyebrow">Partner spotlight</p>
+        <h2 class="section-title">Our First Sponsors Could Be Here</h2>
+        <span class="gold-line"></span>
+        <p class="section-lede">We're at the ground floor. The Chevy community is real and engaged — the founding partner slot is open and the rate locks in now.</p>
+      </div>
+      <div class="slots-grid">
+        <div class="slot-card">
+          <div class="slot-label">Founding Partner — Slot 1</div>
+          <div class="slot-brand">Your Brand Here</div>
+          <p>A parts supplier, shop, or Chevy-adjacent brand that got in first. Locked-in founding rate, first-right-of-renewal, and Crystal's personal endorsement in every build feature.</p>
+          <a href="mailto:partnerships@chevyroots.com" class="slot-claim">Claim this spot →</a>
+        </div>
+        <div class="slot-card">
+          <div class="slot-label">Founding Partner — Slot 2</div>
+          <div class="slot-brand">Your Brand Here</div>
+          <p>An event organizer, apparel brand, or tool company reaching Chevy enthusiasts in the moment they're most engaged — mid-build, mid-research, mid-decision.</p>
+          <a href="mailto:partnerships@chevyroots.com" class="slot-claim">Claim this spot →</a>
+        </div>
+        <div class="slot-card">
+          <div class="slot-label">Founding Partner — Slot 3</div>
+          <div class="slot-brand">Your Brand Here</div>
+          <p>The brand that understands why getting in front of 100% Chevy-loyal readers during the site's growth phase is an opportunity that doesn't come back around.</p>
+          <a href="mailto:partnerships@chevyroots.com" class="slot-claim">Claim this spot →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Disclosure</h2>
-  <p>Some of our partners are affiliates — we earn commissions when readers click through and make a purchase. Others are editorial partners or recommended providers we've vetted. Either way, we only list companies we'd recommend to friends.</p>
+  {/* ── OPTIONS ───────────────────────────────────────── */}
+  <section class="options-section" id="options">
+    <div class="container">
+      <div class="options-header">
+        <p class="section-eyebrow">Partnership options</p>
+        <h2 class="section-title">Find the Right Fit</h2>
+        <span class="gold-line"></span>
+        <p class="section-lede">
+          All pricing listed is placeholder — we'll build a custom proposal based on your goals and budget. Founding partners receive locked-in rates for the duration of their first campaign.
+        </p>
+      </div>
+      <div class="options-grid">
+        {partnershipOptions.map((opt) => (
+          <div class={`option-card ${opt.featured ? 'featured' : ''}`}>
+            {opt.featured && <span class="featured-badge">{opt.featuredBadge}</span>}
+            <div class="option-icon">{opt.icon}</div>
+            <div class="option-name">{opt.name}</div>
+            <div class="option-price">{opt.price}</div>
+            <p class="option-desc">{opt.desc}</p>
+            <div class="option-includes">
+              {opt.includes.map((inc) => (
+                <div class="include-item">
+                  <span class="include-check">✓</span>
+                  <span>{inc}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-  <h2>Become a partner</h2>
-  <p>Interested in partnering with ChevyRoots? Email <a href="mailto:hello@chevyroots.com?subject=Partnership">hello@chevyroots.com</a> with "Partnership" in the subject line. See also the <a href="/advertise/">advertise page</a> for partnership options.</p>
-</StaticPage>
+  {/* ── CONTACT ───────────────────────────────────────── */}
+  <section class="contact-section" id="contact">
+    <div class="container container-narrow">
+      <div class="contact-inner">
+        <p class="section-eyebrow">Ready to partner?</p>
+        <h2 class="contact-title">Let's Talk Partnerships</h2>
+        <span class="gold-line"></span>
+        <p class="contact-lede">
+          No RFP forms, no automated sales funnels. You're talking directly to Crystal — the person who built this site and will run your campaign. Send one email, tell me what you're trying to accomplish, and I'll come back to you with a straight answer within 48 hours.
+        </p>
+        <div class="contact-email-block">
+          <div class="contact-email-label">Email Crystal directly</div>
+          <a href="mailto:partnerships@chevyroots.com" class="contact-email-address">partnerships@chevyroots.com</a>
+        </div>
+        <div class="contact-bullets">
+          <p class="bullets-label">What to include in your email</p>
+          <div class="bullet">▸ Your brand name and what you sell or do</div>
+          <div class="bullet">▸ Which partnership option(s) interest you (or just say "I'm not sure, let's talk")</div>
+          <div class="bullet">▸ A rough budget range if you have one</div>
+          <div class="bullet">▸ Best way to follow up with you</div>
+        </div>
+        <a href="mailto:partnerships@chevyroots.com" class="btn btn-gold contact-cta">
+          Email partnerships@chevyroots.com →
+        </a>
+        <p class="contact-response">Typical response time: 24–48 hours. Every email goes directly to Crystal.</p>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterCTA source="partners" />
+</BaseLayout>
+
+<style>
+  /* ── HERO ──────────────────────────────────────────── */
+  .partners-hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 60%, var(--warm-gray) 100%);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(196, 160, 53, 0.08);
+    border: 1px solid rgba(196, 160, 53, 0.3);
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 1.5rem;
+  }
+  .hero-title .gold { color: var(--gold); }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 56ch;
+    margin-bottom: 2rem;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .hero-stat-card {
+    padding: 1.5rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+  }
+  .stat-val {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.5rem;
+  }
+
+  /* ── FOUNDING BANNER ───────────────────────────────── */
+  .founding-banner {
+    padding: 1rem 0;
+    background: var(--gold);
+    color: var(--charcoal);
+  }
+  .founding-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .founding-badge {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    background: var(--charcoal);
+    color: var(--gold);
+    border-radius: 3px;
+  }
+  .founding-text {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .founding-link {
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    text-decoration: none;
+    border-bottom: 1.5px solid rgba(26, 26, 26, 0.4);
+    padding-bottom: 1px;
+  }
+
+  /* ── SECTION BASE ─────────────────────────────────── */
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.5rem 0 0.5rem;
+  }
+  .section-lede {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    max-width: 60ch;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  /* ── AUDIENCE ─────────────────────────────────────── */
+  .audience-section { padding: var(--section-pad) 0; }
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .audience-stat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 2rem;
+  }
+  .audience-stat {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--warm-gray);
+    border-left: 2px solid var(--gold);
+    border-radius: 3px;
+    font-size: 0.85rem;
+  }
+  .audience-stat span {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .audience-stat strong {
+    color: var(--off-white);
+    font-weight: 600;
+  }
+  .profile-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .profile-card {
+    padding: 1.5rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--transition);
+  }
+  .profile-card:hover { border-color: var(--gold); }
+  .profile-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .profile-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .profile-desc {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+
+  /* ── WHY ──────────────────────────────────────────── */
+  .why-section {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .why-header {
+    max-width: 68ch;
+    margin-bottom: 3rem;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .why-item {
+    padding: 2rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    border-radius: var(--radius-lg);
+  }
+  .why-num {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .why-item-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--off-white);
+    margin-bottom: 0.75rem;
+  }
+  .why-item-desc {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+
+  /* ── FOUNDING SLOTS ───────────────────────────────── */
+  .stories-section {
+    padding: var(--section-pad) 0;
+  }
+  .stories-header { max-width: 68ch; margin-bottom: 3rem; }
+  .slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .slot-card {
+    padding: 2rem;
+    background: var(--charcoal);
+    border: 1px dashed rgba(196, 160, 53, 0.35);
+    border-radius: var(--radius-lg);
+  }
+  .slot-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .slot-brand {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(176, 168, 154, 0.3);
+    margin-bottom: 0.75rem;
+  }
+  .slot-card p {
+    font-size: 0.82rem;
+    color: rgba(176, 168, 154, 0.6);
+    line-height: 1.55;
+  }
+  .slot-claim {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ── OPTIONS ──────────────────────────────────────── */
+  .options-section {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+  }
+  .options-header { max-width: 68ch; margin-bottom: 3rem; }
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .option-card {
+    padding: 2rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    position: relative;
+  }
+  .option-card.featured {
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 40px rgba(196, 160, 53, 0.1);
+  }
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    background: var(--gold);
+    color: var(--charcoal);
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .option-icon {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  .option-name {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .option-price {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .option-desc {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+  .option-includes {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .include-item {
+    display: flex;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+  .include-check {
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ── CONTACT ──────────────────────────────────────── */
+  .contact-section {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    border-top: 2px solid var(--gold);
+  }
+  .contact-inner {
+    text-align: center;
+  }
+  .contact-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.75rem 0 1rem;
+  }
+  .contact-inner .gold-line { margin: 1rem auto; }
+  .contact-lede {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 60ch;
+    margin: 1.5rem auto 2rem;
+  }
+  .contact-email-block {
+    background: rgba(196, 160, 53, 0.08);
+    border: 1px solid var(--gold);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 520px;
+  }
+  .contact-email-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .contact-email-address {
+    font-family: var(--font-mono);
+    font-size: clamp(1rem, 2.2vw, 1.5rem);
+    color: var(--off-white);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .contact-email-address:hover { color: var(--gold); }
+  .contact-bullets {
+    max-width: 520px;
+    margin: 2rem auto;
+    text-align: left;
+    padding: 1.5rem 2rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .bullets-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .bullet {
+    padding: 0.35rem 0;
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+  .contact-cta {
+    font-size: 1rem !important;
+    padding: 1rem 2.5rem !important;
+    margin-top: 1rem;
+  }
+  .contact-response {
+    font-size: 0.78rem;
+    color: var(--light-gray);
+    margin-top: 1.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid, .audience-grid { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .profile-cards { grid-template-columns: 1fr; }
+  }
+</style>

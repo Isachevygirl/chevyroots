@@ -46,13 +46,29 @@ The /loop 30m scheduled job e38406d9 is running and will pick these
 up in sequence. Nothing is blocking, nothing is broken.
 
 **Pages that still need content review/upgrade:**
-- `/news/` — currently renders from news_articles.json. The old HTML
-  page may have hand-curated featured-story sections I haven't checked
-- `/models/` — renders from vehicles.json, looks OK but old HTML may
-  have additional editorial
-- `/mechanics/` — renders from mechanics.json, old HTML may have
-  extra context
-- `/newsletter/` — old HTML may have richer "what you get" content
+~~- `/news/` — currently renders from news_articles.json. The old HTML
+  page may have hand-curated featured-story sections I haven't checked~~ ✅ DONE (loop #1)
+~~- `/models/` — renders from vehicles.json, looks OK but old HTML may
+  have additional editorial~~ ✅ DONE (loop #1)
+~~- `/mechanics/` — renders from mechanics.json, old HTML may have
+  extra context~~ ✅ DONE (loop #1)
+~~- `/newsletter/` — old HTML may have richer "what you get" content~~ ✅ DONE (loop #1)
+
+**All 13 hub pages are now fully restored.** Every Astro page has the
+content depth of its old HTML counterpart (or better, with added
+interactive filtering and search). Next loop invocations should move
+to Priority 2 work.
+
+### Loop #1 recap (fired ~01:15, completed ~01:28, 4 commits)
+
+Restored the final 4 hub pages:
+
+| Page | Key additions |
+|---|---|
+| `/newsletter/` | Full Weekly Wrench sample issue email preview (macOS chrome, gold headline bar, Build of the Week, news items, events, Crystal's Picks, footer) + 5-benefit list + sticky signup box + bottom CTA |
+| `/models/` | 6 lineup sections (Trucks 3 · SUVs 7 · Cars 1 · Sports 4 · EVs 3 · Classics 10) extracted into src/data/models-lineup.json. Sticky filter tabs. Classics with "Today's Value" + cultural context. |
+| `/news/` | Category filter tabs, search bar, featured story card, news sources sidebar (3 groups), content disclaimer, Submit a Tip section |
+| `/mechanics/` | Multi-field filter bar (search · state · specialty · sort), live results counter, client-side filtering, mechanic spotlight sidebar (top 3 by rating) |
 
 **Features still to build:**
 - Vintage ads lightbox with prev/next navigation (I did the filtering

@@ -1,10 +1,68 @@
 # ChevyRoots — Morning Report
 
-**Session:** autonomous overnight run
+**Session:** autonomous overnight run + "restore the content we had" fix pass
 **Start:** 2026-04-08 evening
-**End:** 2026-04-09 early morning
-**Commits on main (local):** 4 checkpoints, ~6 hours of focused work
-**Build status:** ✅ 141 pages, 0 errors, 0 broken links
+**Last checkpoint:** 2026-04-09 ~01:15
+**Commits on main (local):** 14 checkpoints across 2 sessions
+**Build status:** ✅ 142 pages, 0 errors
+**Loop status:** Running every 30m (:11 and :41 past each hour, job e38406d9)
+
+---
+
+## SESSION 2 ADDENDUM (post "you wrote over content" feedback)
+
+You were right to push back. The first run rebuilt the hub pages as
+thin data-driven scaffolds ("coming soon" states, minimal grids) when
+the old HTML had 22,098 lines of rich hand-written content across
+those pages. I missed it entirely on the first pass.
+
+This second session restored 9 hub pages with the original content
+fully preserved (nothing in `pages/` was touched — it's still there
+as reference; everything was ported into the new Astro project):
+
+| Page | Before (session 1) | After (session 2) |
+|---|---|---|
+| `/builds/` | "Coming soon" stub | Build of the Month (1970 Chevelle SS, @mike_wrenchworks) + 12 community builds with full spec cards + How It Works |
+| `/crystals-corner/` | Blog-index pulling from empty collection | Full magazine layout: 6 column cards, Camaro rental review (full 6-paragraph piece), What I'm Driving This Month, Chevy Girl Playlist (7 tracks), April schedule, Chevy Rank, Wishlist, Ask Crystal form, Follow the Journey |
+| `/about/` | 6-section stub | Full 10-section port: Origin Story (Camaro rental), Meet Crystal, The Mission (5 pillars), By the Numbers (live-computed), Milestones timeline, Contribute grid, comparison table, Press & Media, America 250 badge |
+| `/marketplace/` | Static link list | Full Chevy Market: 8 vehicle listings + 6 parts listings + seller CTA with 3-feature grid + roadmap |
+| `/community/` | Coming-soon stub | 8 major sections: Find Us (6 platforms), Reddit Strategy (6 subs), Ride of the Month + past winners, Build Journals (3 active projects), Regional Meetups (6 regions), Forum Preview (6 topics), Contribute, Manifesto |
+| `/tools/` | Static "coming soon" | All 3 interactive tools working: VIN Decoder (full 17-char validation, country/mfr/year/plant tables), Spec Comparison (8 vehicles, winner highlight), Tire & Wheel Fitment Guide (5 models with stock + upgrade tables) |
+| `/partners/` | Minimal static page | Full media kit: audience profile, 4 buyer personas, 6 "why partner" items, 3 founding slots, 6 partnership options with featured Sponsored Build tier, contact CTA |
+| `/vintage-ads/` | Static 60-card grid | Full interactive gallery: decade tabs (sticky), search, model filter, sort, result counter, empty state, all 400+ ads visible |
+| `/events/` | 3 regional cards | Above the regional grid: America 250 banner, Crystal's Event Picks (3 cards with her commentary), Road Trip Planner (3 multi-stop routes), Events by State (8-card density grid) |
+
+Also added:
+- Second Crystal's Corner column: "The Tahoe Is the Most Underrated
+  Chevy — Fight Me" (live standalone post at /crystals-corner/the-tahoe-is-underrated/)
+
+**New page count:** 142 (was 141 after session 1)
+
+---
+
+## Still not done (for the loop to work through)
+
+The /loop 30m scheduled job e38406d9 is running and will pick these
+up in sequence. Nothing is blocking, nothing is broken.
+
+**Pages that still need content review/upgrade:**
+- `/news/` — currently renders from news_articles.json. The old HTML
+  page may have hand-curated featured-story sections I haven't checked
+- `/models/` — renders from vehicles.json, looks OK but old HTML may
+  have additional editorial
+- `/mechanics/` — renders from mechanics.json, old HTML may have
+  extra context
+- `/newsletter/` — old HTML may have richer "what you get" content
+
+**Features still to build:**
+- Vintage ads lightbox with prev/next navigation (I did the filtering
+  but skipped the lightbox modal)
+- `/search` page — site-wide search
+- Compare pages (`/compare/silverado-vs-ram-1500` etc.) — programmatic
+- More Crystal's Corner columns (4 more are teased on the hub)
+- Model history pages (`/models/{slug}/history`)
+
+---
 
 ---
 

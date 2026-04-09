@@ -1,96 +1,855 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import NewsletterCTA from '@components/NewsletterCTA.astro';
+import buildsData from '@data/builds.json';
+
+const { botm, builds } = buildsData as {
+  botm: {
+    month: string;
+    image: string;
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    owner: string;
+    handle: string;
+    location: string;
+    stats: Array<{ value: string; label: string }>;
+    keyMods: string[];
+  };
+  builds: Array<{
+    model: string;
+    year: string;
+    yearRange: string;
+    type: string;
+    budget: string;
+    search: string;
+    image: string;
+    stageText: string;
+    vehicle: string;
+    subtitle: string;
+    avatar: string;
+    handle: string;
+    location: string;
+    stats: Array<{ value: string; label: string }>;
+    tags: Array<{ color: string; label: string }>;
+    progressPct: string;
+    modsCount: string;
+  }>;
+};
+
+const totalDocumented = builds.reduce((acc, b) => {
+  const stat = b.stats.find((s) => s.label === 'Total');
+  if (!stat) return acc;
+  const num = parseFloat(stat.value.replace(/[^0-9.]/g, ''));
+  const isK = stat.value.includes('K');
+  return acc + (isK ? num * 1000 : num);
+}, 0);
+const totalDocumentedLabel = `$${Math.round(totalDocumented / 1000)}K`;
 ---
 
 <BaseLayout
-  title="Community Chevy Builds — Submit Your Truck or Car | ChevyRoots"
-  description="Real Chevy builds from real owners. Restomods, LS swaps, pro-touring classics, lifted trucks, daily drivers with personality. Submit your build to be featured."
+  title="The Build Engine — Community Chevy Builds | ChevyRoots"
+  description="Every mod. Every part. Every dollar. The most detailed Chevy build database ever created — structured, searchable, and built by the community that actually turns wrenches."
 >
-  <header class="builds-header">
+  {/* ── HERO ────────────────────────────────────────────────────── */}
+  <section class="builds-hero">
     <div class="container">
-      <p class="section-eyebrow">Community Gallery</p>
-      <h1 class="builds-title">Community <em>Builds</em></h1>
-      <span class="gold-line"></span>
-      <p class="builds-lede">
-        Real builds from real Chevy owners. Restomods, LS swaps, lifted Silverados, frame-off classics, daily drivers with character. If you built it, we want to see it.
-      </p>
-      <div class="builds-ctas">
+      <div class="builds-hero-grid">
+        <div class="builds-hero-content">
+          <div class="hero-eyebrow">
+            <div class="hero-eyebrow-dot"></div>
+            <span>ChevyRoots — Build Engine</span>
+          </div>
+          <h1 class="builds-hero-title">
+            The<br /><em>Build</em><br />Engine
+          </h1>
+          <p class="builds-hero-sub">
+            <strong>Every mod. Every part. Every dollar.</strong> The most detailed Chevy
+            build database ever created — structured, searchable, and built by the community
+            that actually turns wrenches.
+          </p>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-value">{builds.length}</span>
+              <span class="hero-stat-label">Builds Live</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">{totalDocumentedLabel}</span>
+              <span class="hero-stat-label">Total Documented</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">5+</span>
+              <span class="hero-stat-label">Decades Covered</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">0</span>
+              <span class="hero-stat-label">Sites Like This</span>
+            </div>
+          </div>
+        </div>
+        <div class="builds-hero-visual">
+          <div class="hfc">
+            <div class="hfc-header">
+              <div class="hfc-icon">🔧</div>
+              <div>
+                <div class="hfc-title">Featured Build</div>
+                <div class="hfc-meta">Updated 3 days ago</div>
+              </div>
+            </div>
+            <div class="hfc-img" style={`background-image: url('${botm.image}');`}>
+              <div class="hfc-img-label">1970 Chevelle SS</div>
+            </div>
+            <div class="hfc-tags">
+              <span class="tag tag-gold">Restoration</span>
+              <span class="tag tag-blue">LS Swap</span>
+              <span class="tag tag-red">Muscle</span>
+            </div>
+            <div class="hfc-row">
+              <span class="hfc-row-label">Total invested</span>
+              <span class="hfc-row-value">$47,200</span>
+            </div>
+            <div class="hfc-row">
+              <span class="hfc-row-label">Output</span>
+              <span class="hfc-row-value">450 hp</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ── BUILD OF THE MONTH ──────────────────────────────────────── */}
+  {botm && (
+    <section class="botm">
+      <div class="container">
+        <span class="section-label">{botm.month}</span>
+        <div class="botm-card">
+          <div class="botm-img" style={`background-image: url('${botm.image}');`}>
+            <div class="botm-badge">Build of the Month</div>
+          </div>
+          <div class="botm-content">
+            <div class="botm-eyebrow">{botm.eyebrow}</div>
+            <h2 class="botm-title">{botm.title}</h2>
+            <p class="botm-subtitle">{botm.subtitle}</p>
+            <div class="botm-owner">
+              <div class="botm-avatar">{botm.owner}</div>
+              <div>
+                <div class="botm-owner-name">{botm.handle}</div>
+                <div class="botm-owner-loc">{botm.location}</div>
+              </div>
+            </div>
+            <div class="botm-stats">
+              {botm.stats.map((stat) => (
+                <div class="botm-stat">
+                  <span class="botm-stat-val">{stat.value}</span>
+                  <span class="botm-stat-lbl">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+            <div class="botm-mods-title">Key Modifications</div>
+            <div class="botm-mods-list">
+              {botm.keyMods.map((mod) => (
+                <div class="botm-mod">{mod}</div>
+              ))}
+            </div>
+            <a href="#" class="botm-cta">View Full Build Details →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* ── BUILD GALLERY ───────────────────────────────────────────── */}
+  <section class="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <div>
+          <span class="section-label">Active Builds</span>
+          <h2 class="gallery-title">Community <em>Builds</em></h2>
+        </div>
+        <p class="gallery-count">{builds.length} builds documented</p>
+      </div>
+      <div class="builds-grid">
+        {builds.map((build) => (
+          <article class="build-card">
+            <div class="build-card-img" style={`background-image: url('${build.image}');`}>
+              {build.stageText && <div class="build-card-stage">{build.stageText}</div>}
+            </div>
+            <div class="build-card-body">
+              <h3 class="build-card-title">{build.vehicle}</h3>
+              <p class="build-card-subtitle">{build.subtitle}</p>
+              <div class="build-card-owner">
+                <div class="build-card-avatar">{build.avatar}</div>
+                <div>
+                  <div class="build-card-handle">{build.handle}</div>
+                  <div class="build-card-loc">{build.location}</div>
+                </div>
+              </div>
+              <div class="build-card-stats">
+                {build.stats.map((stat) => (
+                  <div class="build-stat">
+                    <span class="build-stat-value">{stat.value}</span>
+                    <span class="build-stat-label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+              <div class="build-card-tags">
+                {build.tags.map((tag) => (
+                  <span class={`tag tag-${tag.color}`}>{tag.label}</span>
+                ))}
+              </div>
+              {build.progressPct && (
+                <div class="build-progress">
+                  <div class="build-progress-header">
+                    <span>Build Progress</span>
+                    <span>{build.progressPct}%</span>
+                  </div>
+                  <div class="build-progress-bar">
+                    <div class="build-progress-fill" style={`width: ${build.progressPct}%`}></div>
+                  </div>
+                </div>
+              )}
+              <div class="build-card-footer">
+                <a href="#" class="build-card-cta">View Full Build →</a>
+                {build.modsCount && <span class="build-card-mods">{build.modsCount} mods documented</span>}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ── HOW IT WORKS ───────────────────────────────────────────── */}
+  <section class="how">
+    <div class="container">
+      <h2 class="how-title">How It <em>Works</em></h2>
+      <div class="how-grid">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <h3>Submit</h3>
+          <p>Fill out the build submission form with your photos, specs, mod list, and build story. Takes 5 minutes.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <h3>We Structure It</h3>
+          <p>Crystal reviews every submission. We format the spec sheet, lay out your photos, and make sure your story reads the way you wrote it.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <h3>Community Learns</h3>
+          <p>Your build goes live with full credit, social links, and a permanent page on ChevyRoots. Other builders learn from your mod list.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <h3>Parts Link Out</h3>
+          <p>Every mod in your build list links to where other owners can buy the same part. You help the community; we help you fund the next mod.</p>
+        </div>
+      </div>
+      <div class="how-cta">
         <a href="/submit/build/" class="btn btn-gold">Submit Your Build</a>
       </div>
     </div>
-  </header>
-
-  <div class="builds-body">
-    <div class="container container-narrow">
-      <div class="coming-soon">
-        <h2>Build gallery launching soon</h2>
-        <p>
-          We're collecting the first batch of community builds right now. If you've got a Chevy you're proud of —
-          a frame-off restoration, an LS swap, a lifted truck, a track-day Camaro, or the daily driver you love —
-          <a href="/submit/build/">submit it here</a>.
-        </p>
-        <p>
-          Every featured build gets: photo gallery, full spec sheet, your story in your words, social media links, and a permanent home on ChevyRoots.
-        </p>
-        <p>
-          First featured builds will publish as soon as Crystal approves them. Subscribe below to get notified when the gallery opens.
-        </p>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <NewsletterCTA source="builds-index" />
 </BaseLayout>
 
 <style>
-  .builds-header {
-    padding: 80px 0 50px;
-    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+  /* ── HERO ──────────────────────────────────────────────────── */
+  .builds-hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 60%, var(--warm-gray) 100%);
+    position: relative;
+    overflow: hidden;
   }
-  .builds-title {
+  .builds-hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1rem;
+    background: rgba(196, 160, 53, 0.08);
+    border: 1px solid rgba(196, 160, 53, 0.3);
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow-dot {
+    width: 6px; height: 6px; background: var(--gold); border-radius: 50%;
+  }
+  .builds-hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-size: clamp(3rem, 9vw, 7rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 2rem;
+  }
+  .builds-hero-title em { font-style: italic; color: var(--gold); }
+  .builds-hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 56ch;
+    margin-bottom: 2rem;
+  }
+  .builds-hero-sub strong { color: var(--off-white); }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(196, 160, 53, 0.2);
+  }
+  .hero-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .hero-stat-value {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+
+  /* ── HERO VISUAL CARD ──────────────────────────────────────── */
+  .hfc {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+  .hfc-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .hfc-icon { font-size: 1.5rem; }
+  .hfc-title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+  }
+  .hfc-meta {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.15rem;
+  }
+  .hfc-img {
+    aspect-ratio: 16 / 10;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+  }
+  .hfc-img-label {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--off-white);
+    background: rgba(0,0,0,0.6);
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+  }
+  .hfc-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .hfc-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+  }
+  .hfc-row-label { color: var(--light-gray); letter-spacing: 0.08em; text-transform: uppercase; }
+  .hfc-row-value { color: var(--gold); font-weight: 700; }
+
+  /* ── TAGS (shared) ─────────────────────────────────────────── */
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.55rem;
+    border-radius: 3px;
+  }
+  .tag-gold { background: rgba(196, 160, 53, 0.15); color: var(--gold); }
+  .tag-blue { background: rgba(54, 162, 235, 0.15); color: #5eb7f0; }
+  .tag-red { background: rgba(192, 57, 43, 0.15); color: #e06c5a; }
+  .tag-green { background: rgba(46, 204, 113, 0.15); color: #7adc9f; }
+  .tag-grey { background: rgba(176, 168, 154, 0.15); color: var(--light-gray); }
+
+  /* ── BUILD OF THE MONTH ────────────────────────────────────── */
+  .botm {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .botm-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .botm-img {
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .botm-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    background: var(--gold);
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+  }
+  .botm-content {
+    padding: 2.5rem;
+  }
+  .botm-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .botm-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
     font-weight: 900;
     line-height: 1;
     text-transform: uppercase;
     letter-spacing: 0.02em;
     color: var(--off-white);
-    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
   }
-  .builds-title em { font-style: italic; color: var(--gold); }
-  .builds-lede {
-    font-size: 1.1rem;
+  .botm-subtitle {
     color: var(--text-dim);
-    line-height: 1.7;
-    max-width: 62ch;
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
-  .builds-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .builds-body { padding: 60px 0 80px; }
-  .coming-soon {
-    text-align: center;
-    padding: 3rem 2rem;
+  .botm-owner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .botm-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.9rem;
+  }
+  .botm-owner-name {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--off-white);
+  }
+  .botm-owner-loc {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--light-gray);
+  }
+  .botm-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+  .botm-stat { text-align: center; }
+  .botm-stat-val {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .botm-stat-lbl {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.25rem;
+  }
+  .botm-mods-title {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .botm-mods-list {
+    margin-bottom: 1.5rem;
+  }
+  .botm-mod {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    padding: 0.35rem 0;
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .botm-mod::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+  .botm-cta {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--gold);
+    text-decoration: none;
+  }
+
+  /* ── GALLERY ────────────────────────────────────────────────── */
+  .gallery {
+    padding: var(--section-pad) 0;
+  }
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .gallery-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+  }
+  .gallery-title em { font-style: italic; color: var(--gold); }
+  .gallery-count {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .builds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .build-card {
     background: var(--warm-gray);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--transition), transform var(--transition);
   }
-  .coming-soon h2 {
+  .build-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+  .build-card-img {
+    aspect-ratio: 16 / 10;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .build-card-stage {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(0,0,0,0.7);
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    border: 1px solid rgba(196, 160, 53, 0.4);
+  }
+  .build-card-body {
+    padding: 1.5rem;
+  }
+  .build-card-title {
     font-family: var(--font-heading);
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: var(--gold);
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.3rem;
+  }
+  .build-card-subtitle {
+    font-size: 0.82rem;
+    color: var(--light-gray);
     margin-bottom: 1rem;
   }
-  .coming-soon p {
-    color: var(--text-dim);
-    font-size: 1.05rem;
-    line-height: 1.75;
-    margin: 0 auto 1rem;
-    max-width: 56ch;
+  .build-card-owner {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
   }
-  .coming-soon a { color: var(--gold); text-decoration: underline; }
+  .build-card-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.75rem;
+  }
+  .build-card-handle {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--off-white);
+  }
+  .build-card-loc {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--light-gray);
+    margin-top: 0.1rem;
+  }
+  .build-card-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .build-stat { text-align: center; }
+  .build-stat-value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .build-stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 0.25rem;
+  }
+  .build-card-tags {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .build-progress {
+    margin-bottom: 1rem;
+  }
+  .build-progress-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 0.35rem;
+  }
+  .build-progress-bar {
+    height: 4px;
+    background: var(--charcoal);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .build-progress-fill {
+    height: 100%;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+  .build-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .build-card-cta {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .build-card-mods {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+
+  /* ── HOW IT WORKS ───────────────────────────────────────────── */
+  .how {
+    padding: var(--section-pad) 0;
+    background: var(--warm-gray);
+    border-top: 1px solid var(--border);
+  }
+  .how-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .how-title em { font-style: italic; color: var(--gold); }
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .how-step {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    position: relative;
+  }
+  .how-step-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.1rem;
+    margin: 0 auto 1rem;
+  }
+  .how-step h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .how-step p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .how-cta {
+    text-align: center;
+  }
+
+  /* ── RESPONSIVE ─────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .builds-hero-grid,
+    .botm-card {
+      grid-template-columns: 1fr;
+    }
+    .botm-img {
+      min-height: 300px;
+    }
+  }
 </style>

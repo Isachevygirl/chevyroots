@@ -1,158 +1,1144 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import NewsletterCTA from '@components/NewsletterCTA.astro';
-import { getCollection } from 'astro:content';
 
-const posts = await getCollection('crystals-corner');
-const sortedPosts = posts.sort((a, b) => b.data.published.getTime() - a.data.published.getTime());
+// Latest posts (card previews) — preserves the 6 columns from the original
+const latestPosts = [
+  {
+    type: 'First Drive / Review',
+    typeClass: 'review',
+    title: "I Rented a Camaro for a Day — Here's What Happened",
+    preview: "We grabbed a Camaro from the rental lot and spent the day finding out if it lives up to the hype. Spoiler: yes.",
+    date: 'April 5, 2026',
+    status: 'live',
+    anchor: '#camaro-review',
+    image: '/photos/camaro/pexels_2797720_camaro.jpeg',
+  },
+  {
+    type: 'Hot Take',
+    typeClass: 'hot-take',
+    title: 'The Tahoe Is the Most Underrated Chevy — Fight Me',
+    preview: "Everyone talks about the Silverado and the Corvette. Nobody gives the Tahoe the respect it deserves. Let me fix that.",
+    date: 'Coming Soon',
+    status: 'soon',
+    image: '/photos/tahoe/pexels_35004984_tahoe.jpeg',
+  },
+  {
+    type: 'Event / Adventure',
+    typeClass: 'adventure',
+    title: '610 Cruisers: My First Chevy Meet in Virginia',
+    preview: "I showed up to a Saturday cruise-in in Stafford, VA and found my people. Here's what went down.",
+    date: 'Coming Soon',
+    status: 'soon',
+    image: '/photos/belair/1955-1957_Chevrolet_Bel_Air_in_the_SunRice_Festival_parade_in_Pine_Ave.jpg',
+  },
+  {
+    type: 'Culture',
+    typeClass: 'culture',
+    title: "Why Houston Girls Love Chevys (It's in the Water)",
+    preview: "Growing up in Houston, Chevys were everywhere — Impalas on swangas, Silverados in every driveway. It wasn't a choice, it was just how it was.",
+    date: 'Coming Soon',
+    status: 'soon',
+    image: '/photos/impala/1964_Chevrolet_Impala_lowrider_5409593989.jpg',
+  },
+  {
+    type: 'Adventure',
+    typeClass: 'adventure',
+    title: 'Skyline Drive in a Corvette — Our Next Rental Adventure',
+    preview: "Shenandoah's most scenic stretch of road. A C8 Corvette. What could go wrong? We're planning it and I'm documenting every turn.",
+    date: 'Coming Soon',
+    status: 'soon',
+    image: '/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg',
+  },
+  {
+    type: 'Hot Take',
+    typeClass: 'hot-take',
+    title: "Camaro vs Mustang: Why This Isn't Even a Debate",
+    preview: "Every year someone asks me. Every year I give the same answer. Here it is in writing, with receipts, so we can stop having this conversation.",
+    date: 'Coming Soon',
+    status: 'soon',
+    image: '/photos/camaro/pexels_11532597_camaro.jpeg',
+  },
+];
+
+const playlist = [
+  { num: 1, song: "Ridin'", artist: "Chamillionaire ft. Krayzie Bone", vibe: "Houston classic" },
+  { num: 2, song: "Chevrolet", artist: "Suga Free", vibe: "West coast" },
+  { num: 3, song: "Drive It Like You Stole It", artist: "Squirrel Nut Zippers", vibe: "No notes" },
+  { num: 4, song: "Lowrider", artist: "War", vibe: "Impala energy" },
+  { num: 5, song: "Cruise", artist: "Florida Georgia Line", vibe: "Truck anthem" },
+  { num: 6, song: "Old Chevy", artist: "Matt Stell", vibe: "Country nostalgia" },
+  { num: 7, song: "Something to Ride To", artist: "Nipsey Hussle", vibe: "Late night miles" },
+];
+
+const schedule = [
+  { date: 'Apr 5', name: 'Camaro Rental Review', status: 'Live Now', cls: 'live' },
+  { date: 'Apr 11', name: '610 Cruisers Cruise-In — Stafford, VA', status: 'Event', cls: 'event' },
+  { date: 'Apr 18', name: 'Corvette C8 Rental + Skyline Drive', status: 'Upcoming', cls: 'upcoming' },
+  { date: 'Apr 25', name: 'Tahoe / Silverado Rental Day', status: 'Upcoming', cls: 'upcoming' },
+  { date: 'Apr 28–30', name: 'Orioles vs Astros — Camden Yards, Baltimore', status: 'Event', cls: 'event' },
+  { date: 'Apr 30', name: "Cruisin' Ocean City", status: 'Event', cls: 'event' },
+];
+
+const driving = [
+  {
+    name: 'Her Chevy Truck',
+    role: 'Daily Driver',
+    roleClass: 'daily',
+    detail: 'The ride-or-die. Does everything, complains about nothing. Gets me where I\'m going and looks good doing it.',
+    image: '/photos/crystal/crystal-silverado-zr2-hero.jpg',
+  },
+  {
+    name: 'Corvette C8',
+    role: 'Next Rental',
+    roleClass: 'next',
+    detail: 'Skyline Drive in Shenandoah. Mid-engine. Winding mountain roads. April 18th. I\'m not ready but I\'m doing it.',
+    image: '/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg',
+  },
+  {
+    name: 'Classic C10 — Route 66',
+    role: 'Dream Drive',
+    roleClass: 'dream',
+    detail: 'Square body. Patina. Small-block V8. Windows down on Route 66. This is the dream drive. One day.',
+    image: '',
+  },
+];
+
+const rankings = [
+  { name: 'Her Truck', label: 'Daily driver · My truck', quote: '"My ride or die. No debate."', score: '9.0', pct: 90 },
+  { name: 'Camaro', label: 'Rental · April 2026', quote: '"Made me feel like a different person."', score: '8.5', pct: 85 },
+  { name: 'Next Up: ???', label: 'More coming · Stay tuned', quote: '"The list is growing. Check back."', score: '—', pct: 0, tease: true },
+];
+
+const wishlist = [
+  {
+    name: 'Corvette C8',
+    label: 'Next rental target · C8 Mid-Engine',
+    quote: '"The most American supercar. I need a whole day with this thing."',
+    status: 'ON LIST',
+  },
+  {
+    name: 'Tahoe Z71',
+    label: 'Family SUV done right · Off-road trim',
+    quote: '"I want to take this thing somewhere with no cell service and zero regrets."',
+    status: 'ON LIST',
+  },
+  {
+    name: 'Classic C10',
+    label: 'The classic · C10 Stepside or Fleetside',
+    quote: '"Square body, patina finish, small-block V8. The dream truck. This is the one I actually want to own."',
+    status: 'THE DREAM',
+  },
+];
 ---
 
 <BaseLayout
-  title="Crystal's Corner — Weekly Editorial from the Founder | ChevyRoots"
-  description="Weekly editorial from Crystal — what she drove, what she saw at shows, and what she thinks about the Chevy world this week. The founder's voice at ChevyRoots."
+  title="Crystal's Corner — Reviews, Hot Takes & Chevy Adventures | ChevyRoots"
+  description="Crystal's Corner: Reviews, hot takes, Chevy adventures, and the unfiltered voice behind ChevyRoots. Run by a Chevy Girl."
+  ogImage="/photos/crystal/crystal-silverado-zr2-hero.jpg"
 >
-  <header class="corner-header">
+  {/* ── HERO ────────────────────────────────────────────────── */}
+  <section class="cc-hero">
+    <div class="cc-hero-bg-stripe"></div>
+    <div class="cc-hero-gold-bar"></div>
     <div class="container">
-      <p class="section-eyebrow">Weekly Editorial</p>
-      <h1 class="corner-title">Crystal's <em>Corner</em></h1>
-      <span class="gold-line"></span>
-      <p class="corner-lede">
-        Every week, something on my mind in Chevy world. The trucks I saw at shows, the dealer I walked into, the mod I wish I hadn't done, the email somebody sent that made me think. The honest stuff.
-      </p>
+      <div class="cc-hero-inner">
+        <div class="cc-hero-content">
+          <div class="cc-hero-eyebrow">Crystal's Corner</div>
+          <h1 class="cc-hero-title">Crystal's<br />Corner</h1>
+          <p class="cc-hero-tagline">Run by a Chevy Girl</p>
+          <p class="cc-hero-intro">
+            Houston born. Virginia living. Chevy driving. This is where I talk about what I love — every Chevy I drive, every show I hit, every hot take I can't keep to myself.
+          </p>
+          <div class="cc-socials">
+            <a href="https://tiktok.com/@chevyroots" target="_blank" rel="noopener" class="cc-social-pill">@chevyroots · TikTok</a>
+            <a href="https://instagram.com/chevyroots" target="_blank" rel="noopener" class="cc-social-pill">@chevyroots · Instagram</a>
+            <a href="https://youtube.com/@chevyroots" target="_blank" rel="noopener" class="cc-social-pill">ChevyRoots · YouTube</a>
+          </div>
+        </div>
+        <div class="cc-hero-photo-wrap">
+          <div class="cc-hero-photo" role="img" aria-label="Photo of Crystal with her Silverado ZR2"></div>
+          <p class="cc-hero-photo-caption">The Chevy girl behind all of this.</p>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <div class="corner-body">
+  {/* ── LATEST FROM CRYSTAL ─────────────────────────────────── */}
+  <section class="cc-section" aria-labelledby="latest-heading">
+    <div class="container">
+      <div class="cc-section-header">
+        <p class="cc-section-label">// latest posts</p>
+        <h2 class="cc-section-title" id="latest-heading">Latest from Crystal</h2>
+        <p class="cc-section-sub">Reviews, hot takes, culture, and pure Chevy chaos — all from one girl with a lot of opinions.</p>
+      </div>
+      <div class="cc-cards-grid">
+        {latestPosts.map((post) => (
+          <article class="cc-card">
+            <div class="cc-card-thumb" style={`background-image: url('${post.image}');`}>
+              <span class={`cc-card-type cc-card-type-${post.typeClass}`}>{post.type}</span>
+            </div>
+            <div class="cc-card-body">
+              <h3 class="cc-card-title">{post.title}</h3>
+              <p class="cc-card-preview">{post.preview}</p>
+              <div class="cc-card-footer">
+                <span class="cc-card-date">{post.date}</span>
+                {post.status === 'live' ? (
+                  <a href={post.anchor} class="cc-card-cta">Read it →</a>
+                ) : (
+                  <span class="cc-card-cta" style="opacity:0.4;">Stay tuned</span>
+                )}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="cc-divider"><hr /></div>
+
+  {/* ── FIRST REVIEW: CAMARO ────────────────────────────────── */}
+  <section class="cc-section" id="camaro-review" aria-labelledby="camaro-review-heading">
     <div class="container container-narrow">
-      {sortedPosts.length === 0 && (
-        <div class="coming-soon">
-          <h2>The first column is coming soon.</h2>
-          <p>
-            I'm working on the first Crystal's Corner piece right now. Subscribe to the newsletter below and you'll get it in your inbox the moment it publishes.
-          </p>
-          <p>
-            In the meantime, check out the <a href="/guides/">buyer's guides</a> — those are already published and there are quite a few.
-          </p>
-        </div>
-      )}
+      <div class="cc-section-header">
+        <p class="cc-section-label">// first review — april 5, 2026</p>
+        <h2 class="cc-section-title" id="camaro-review-heading">Crystal's First Review</h2>
+        <p class="cc-section-sub">This is the first real piece of editorial content on ChevyRoots. Unfiltered, from the driver's seat.</p>
+      </div>
 
-      {sortedPosts.length > 0 && (
-        <div class="posts-list">
-          {sortedPosts.map((post) => (
-            <article class="post-card">
-              <div class="post-meta">{new Date(post.data.published).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
-              <h2 class="post-title"><a href={`/crystals-corner/${post.id}/`}>{post.data.title}</a></h2>
-              <p class="post-excerpt">{post.data.excerpt || post.data.description}</p>
-              <a href={`/crystals-corner/${post.id}/`} class="post-readmore">Read more →</a>
-            </article>
-          ))}
+      <article class="cc-first-review">
+        <div class="cc-first-review-hero">
+          <div class="cc-first-review-hero-meta">
+            <span class="cc-first-review-badge">First Drive / Review</span>
+            <span class="cc-first-review-date">April 5, 2026</span>
+          </div>
         </div>
-      )}
+
+        <div class="cc-first-review-body">
+          <h3 class="cc-first-review-title">I Rented a Camaro for a Day</h3>
+          <p class="cc-first-review-subtitle">2024 Camaro SS — Rapid Blue — 6.2L V8 — One Very Good Day</p>
+
+          <div class="cc-first-review-prose">
+            <p>
+              Let me set the scene. It's a Tuesday. I show up to the rental counter fully expecting to walk out with a beige Nissan Altima and go on with my life. Instead, the guy behind the desk says they're out of midsize sedans and asks if I'd be okay with — and I quote — "something a little sportier." Reader, it was a 2024 Camaro SS in <strong>Rapid Blue</strong>. I said yes before he finished the sentence.
+            </p>
+            <p>
+              First impression the second you lay eyes on it in the lot: it's low. Like, <em>actually</em> low. Squatted, wide-shouldered, aggressive in a way that reads less "sports car" and more "I will absolutely do something your insurance doesn't cover." The Rapid Blue popped in the morning light — this deep metallic blue that shifts almost purple depending on the angle. I stood next to it for probably two minutes before I even got in.
+            </p>
+            <p>
+              Then I started it. Oh. The V8 fires up with this deep, rumbly exhale — not a scream, not a bark, just a confident growl that says <em>I've been waiting</em>. Pulling out of the lot, I kept the windows down even though it was a little chilly because I needed to hear every single thing going on under that hood. First corner at normal speed and the steering already feels connected and direct in a way my daily just doesn't. It's communicating with you. You can feel the road.
+            </p>
+            <p>
+              The best moment of the day came somewhere on a back highway with no one around. I got on it. Not stupid-fast, just — let it breathe. The exhaust opened up, the whole car flattened out, and for about ten seconds I completely understood why people build their lives around these things. It wasn't just speed. It was the whole experience: the sound, the pull, the way the seat is holding you while everything around you starts moving faster. That's the Camaro. It's theater and it's performance at the same time.
+            </p>
+            <p>
+              The interior is fine — nothing fancy, comfortable enough, visibility out the back is basically a joke (you're living by your mirrors), and the rear seat exists mostly as a conversation piece. But none of that matters because you're not buying this car for cargo room. You're buying it because sometimes you need life to feel a little bit alive.
+            </p>
+            <p>
+              Would I rent it again? <strong>Yes. Immediately. Without thinking about it.</strong> Would I want to own one? That's a conversation for another day, but I'll say this — it made my daily feel very boring on the drive back. That's the Camaro effect. It recalibrates you.
+            </p>
+          </div>
+
+          <div class="cc-first-review-verdict">
+            <div class="cc-first-review-verdict-score">8.5<span>/10</span></div>
+            <div class="cc-first-review-verdict-text">
+              <p class="cc-first-review-verdict-label">Crystal's Verdict</p>
+              <p class="cc-first-review-verdict-quote">"Made me feel like a different person.<br />Would rent again. No hesitation."</p>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
-  </div>
+  </section>
 
-  <NewsletterCTA source="crystals-corner-index" heading="Get Crystal's Column in Your Inbox" subheading="Every Friday. No filler. No spam. Unsubscribe anytime." />
+  <div class="cc-divider"><hr /></div>
+
+  {/* ── WHAT I'M DRIVING THIS MONTH ─────────────────────────── */}
+  <section class="cc-section cc-section-alt" aria-labelledby="driving-heading">
+    <div class="container">
+      <div class="cc-section-header">
+        <p class="cc-section-label">// april 2026</p>
+        <h2 class="cc-section-title" id="driving-heading">What I'm Driving This Month</h2>
+        <p class="cc-section-sub">The daily, the next rental target, and the truck I think about way too often.</p>
+      </div>
+      <div class="cc-driving-grid">
+        {driving.map((car) => (
+          <div class="cc-driving-card">
+            <div class="cc-driving-card-thumb" style={car.image ? `background-image: url('${car.image}');` : ''}>
+              <span class={`cc-driving-role cc-driving-role-${car.roleClass}`}>{car.role}</span>
+            </div>
+            <div class="cc-driving-card-body">
+              <h3 class="cc-driving-name">{car.name}</h3>
+              <p class="cc-driving-detail">{car.detail}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="cc-divider"><hr /></div>
+
+  {/* ── CHEVY GIRL PLAYLIST ─────────────────────────────────── */}
+  <section class="cc-section" aria-labelledby="playlist-heading">
+    <div class="container container-narrow">
+      <div class="cc-section-header">
+        <p class="cc-section-label">// the soundtrack</p>
+        <h2 class="cc-section-title" id="playlist-heading">Chevy Girl Playlist</h2>
+        <p class="cc-section-sub">The songs I'm actually listening to. On-brand, no-skip, windows-down certified.</p>
+      </div>
+      <div class="cc-playlist-card">
+        <div class="cc-playlist-header">
+          <div class="cc-playlist-art">♫</div>
+          <div>
+            <p class="cc-playlist-title">Chevy Girl Playlist</p>
+            <p class="cc-playlist-meta">By Crystal · {playlist.length} songs · ChevyRoots official</p>
+          </div>
+        </div>
+        <ol class="cc-playlist-tracks">
+          {playlist.map((track) => (
+            <li class="cc-playlist-track">
+              <span class="cc-track-num">{track.num}</span>
+              <div class="cc-track-info">
+                <p class="cc-track-song">{track.song}</p>
+                <p class="cc-track-artist">{track.artist}</p>
+              </div>
+              <span class="cc-track-vibe">{track.vibe}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="cc-divider"><hr /></div>
+
+  {/* ── THIS MONTH'S SCHEDULE ───────────────────────────────── */}
+  <section class="cc-section" aria-labelledby="schedule-heading">
+    <div class="container container-narrow">
+      <div class="cc-section-header">
+        <p class="cc-section-label">// content calendar</p>
+        <h2 class="cc-section-title" id="schedule-heading">This Month's Schedule</h2>
+        <p class="cc-section-sub">April is packed. Here's everything I'm covering — reviews, events, and the adventures in between.</p>
+      </div>
+      <div class="cc-cal-grid">
+        {schedule.map((item) => (
+          <div class={`cc-cal-item ${item.cls === 'live' ? 'cc-cal-live' : ''}`}>
+            <span class="cc-cal-date">{item.date}</span>
+            <span class="cc-cal-name">{item.name}</span>
+            <span class={`cc-cal-status cc-cal-status-${item.cls}`}>{item.status}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="cc-divider"><hr /></div>
+
+  {/* ── CRYSTAL'S CHEVY RANK ────────────────────────────────── */}
+  <section class="cc-section cc-section-alt" aria-labelledby="rank-heading">
+    <div class="container">
+      <div class="cc-section-header">
+        <p class="cc-section-label">// the rankings</p>
+        <h2 class="cc-section-title" id="rank-heading">Crystal's Chevy Rank</h2>
+        <p class="cc-section-sub">Every Chevy I get behind the wheel of gets scored. No PR fluff — just honest takes from a girl who actually drives them.</p>
+      </div>
+      <div class="cc-rank-grid">
+        {rankings.map((item) => (
+          <div class={`cc-rank-item ${item.tease ? 'cc-rank-tease' : ''}`}>
+            <div>
+              <p class="cc-rank-label">{item.label}</p>
+              <h3 class="cc-rank-name">{item.name}</h3>
+              <p class="cc-rank-quote">{item.quote}</p>
+            </div>
+            <div class="cc-rank-score-wrap">
+              <div class="cc-rank-score">{item.score}<span>/10</span></div>
+              <div class="cc-rank-bar-wrap">
+                <div class="cc-rank-bar" style={`width: ${item.pct}%`}></div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="cc-divider"><hr /></div>
+
+  {/* ── CRYSTAL'S CHEVY WISHLIST ────────────────────────────── */}
+  <section class="cc-section" aria-labelledby="wishlist-heading">
+    <div class="container">
+      <div class="cc-section-header">
+        <p class="cc-section-label">// bucket list</p>
+        <h2 class="cc-section-title" id="wishlist-heading">Crystal's Chevy Wishlist</h2>
+        <p class="cc-section-sub">The Chevys I haven't driven yet but fully intend to. Some have a plan. Some are just dreams right now.</p>
+      </div>
+      <div class="cc-rank-grid">
+        {wishlist.map((item) => (
+          <div class="cc-rank-item">
+            <div>
+              <p class="cc-rank-label">{item.label}</p>
+              <h3 class="cc-rank-name">{item.name}</h3>
+              <p class="cc-rank-quote">{item.quote}</p>
+            </div>
+            <div class="cc-rank-score-wrap">
+              <div class="cc-wishlist-status">{item.status}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="cc-divider"><hr /></div>
+
+  {/* ── ASK CRYSTAL ─────────────────────────────────────────── */}
+  <section class="cc-section" id="ask" aria-labelledby="ask-heading">
+    <div class="container container-narrow">
+      <div class="cc-ask-wrap">
+        <div class="cc-ask-pitch">
+          <p class="cc-section-label">// hit me up</p>
+          <h2 class="cc-ask-title" id="ask-heading">Ask<br /><em>Crystal</em></h2>
+          <p class="cc-ask-body">Got a Chevy question? Want me to review something? Found a meet I should know about? Drop it here.</p>
+          <p class="cc-ask-body">I read everything. I might even make a video about it.</p>
+          <div class="cc-ask-note">The best questions end up in content. Just saying.</div>
+        </div>
+        <form class="cc-form" action="/api/ask-crystal" method="POST">
+          <div class="cc-form-row">
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="ask-name">Name</label>
+              <input class="cc-form-input" type="text" id="ask-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="cc-form-group">
+              <label class="cc-form-label" for="ask-email">Email</label>
+              <input class="cc-form-input" type="email" id="ask-email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="cc-form-group">
+            <label class="cc-form-label" for="ask-question">Your question or request</label>
+            <textarea class="cc-form-textarea" id="ask-question" name="question" rows="5" placeholder="Ask me anything Chevy — a model question, a review request, a hot take you need validated..." required></textarea>
+          </div>
+          <button class="cc-form-btn" type="submit">Send it →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterCTA
+    source="crystals-corner-hub"
+    heading="Get Crystal's picks in The Weekly Wrench"
+    subheading="New Chevy content, event drops, and whatever's on my mind — every Thursday, no filler."
+  />
 </BaseLayout>
 
 <style>
-  .corner-header {
-    padding: 80px 0 50px;
-    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 100%);
-    border-bottom: 1px solid rgba(196, 160, 53, 0.2);
+  /* ── HERO ─────────────────────────────────────────────────── */
+  .cc-hero {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 60%, var(--warm-gray) 100%);
+    position: relative;
+    overflow: hidden;
   }
-  .corner-title {
-    font-family: var(--font-heading);
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 900;
-    line-height: 0.9;
+  .cc-hero-bg-stripe {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background: linear-gradient(135deg, transparent 0%, rgba(196, 160, 53, 0.06) 100%);
+    pointer-events: none;
+  }
+  .cc-hero-gold-bar {
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--gold);
+  }
+  .cc-hero-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+  }
+  .cc-hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: var(--off-white);
-    margin-top: 0.75rem;
-  }
-  .corner-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
-  .corner-lede {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--text-dim);
-    max-width: 62ch;
-    margin-top: 1.5rem;
-  }
-  .corner-body {
-    padding: 60px 0;
-  }
-  .coming-soon {
-    text-align: center;
-    padding: 3rem 2rem;
-  }
-  .coming-soon h2 {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
     color: var(--gold);
     margin-bottom: 1rem;
   }
-  .coming-soon p {
-    color: var(--text-dim);
-    font-size: 1.05rem;
-    line-height: 1.75;
-    max-width: 56ch;
-    margin: 0 auto 1rem;
+  .cc-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 900;
+    line-height: 0.88;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
   }
-  .coming-soon a {
-    color: var(--gold);
-    text-decoration: underline;
-  }
-  .posts-list {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-  .post-card {
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .post-meta {
+  .cc-hero-tagline {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .cc-hero-intro {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 56ch;
+    margin-bottom: 2rem;
+  }
+  .cc-socials {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .cc-social-pill {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.5rem 1rem;
+    background: rgba(196, 160, 53, 0.08);
+    border: 1px solid rgba(196, 160, 53, 0.3);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background var(--transition);
+  }
+  .cc-social-pill:hover {
+    background: rgba(196, 160, 53, 0.15);
+  }
+  .cc-hero-photo-wrap {
+    text-align: center;
+  }
+  .cc-hero-photo {
+    aspect-ratio: 4 / 5;
+    background: var(--warm-gray) url('/photos/crystal/crystal-silverado-zr2-hero.jpg') center / cover no-repeat;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  }
+  .cc-hero-photo-caption {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-top: 1rem;
+  }
+
+  /* ── SECTION BASE ─────────────────────────────────────────── */
+  .cc-section {
+    padding: var(--section-pad) 0;
+  }
+  .cc-section-alt {
+    background: var(--warm-gray);
+  }
+  .cc-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .cc-section-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 0.75rem;
   }
-  .post-title {
+  .cc-section-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.75rem;
+  }
+  .cc-section-sub {
+    color: var(--text-dim);
+    max-width: 58ch;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+  .cc-divider {
+    padding: 0 var(--section-pad);
+  }
+  .cc-divider hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  /* ── CARDS GRID ───────────────────────────────────────────── */
+  .cc-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .cc-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .cc-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+  .cc-card-thumb {
+    aspect-ratio: 16 / 10;
+    background-size: cover;
+    background-position: center;
+    background-color: #333;
+    position: relative;
+  }
+  .cc-card-type {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--gold);
+    border: 1px solid rgba(196, 160, 53, 0.4);
+  }
+  .cc-card-type-review { color: #5eb7f0; border-color: rgba(94, 183, 240, 0.4); }
+  .cc-card-type-hot-take { color: #e06c5a; border-color: rgba(224, 108, 90, 0.4); }
+  .cc-card-type-adventure { color: #7adc9f; border-color: rgba(122, 220, 159, 0.4); }
+  .cc-card-type-culture { color: var(--gold); border-color: rgba(196, 160, 53, 0.4); }
+  .cc-card-body {
+    padding: 1.5rem;
+  }
+  .cc-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .cc-card-preview {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .cc-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .cc-card-date {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .cc-card-cta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  /* ── FIRST REVIEW ─────────────────────────────────────────── */
+  .cc-first-review {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .cc-first-review-hero {
+    aspect-ratio: 16 / 9;
+    background: #222 url('/photos/camaro/pexels_2797720_camaro.jpeg') center / cover no-repeat;
+    position: relative;
+  }
+  .cc-first-review-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(26,26,26,0.7));
+  }
+  .cc-first-review-hero-meta {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    z-index: 1;
+  }
+  .cc-first-review-badge,
+  .cc-first-review-date {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.75rem;
+    border-radius: 3px;
+  }
+  .cc-first-review-badge {
+    background: var(--gold);
+    color: var(--charcoal);
+    font-weight: 700;
+  }
+  .cc-first-review-date {
+    background: rgba(0,0,0,0.7);
+    color: var(--off-white);
+    border: 1px solid var(--border);
+  }
+  .cc-first-review-body {
+    padding: 2.5rem;
+  }
+  .cc-first-review-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .cc-first-review-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+  .cc-first-review-prose p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-dim);
+    margin-bottom: 1.25rem;
+  }
+  .cc-first-review-prose strong {
+    color: var(--off-white);
+  }
+  .cc-first-review-prose em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .cc-first-review-verdict {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    background: var(--charcoal);
+    border: 1px solid var(--gold);
+    border-radius: var(--radius);
+    margin-top: 2rem;
+  }
+  .cc-first-review-verdict-score {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .cc-first-review-verdict-score span {
+    font-size: 1.25rem;
+    color: var(--light-gray);
+  }
+  .cc-first-review-verdict-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 0.5rem;
+  }
+  .cc-first-review-verdict-quote {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--off-white);
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  /* ── DRIVING GRID ─────────────────────────────────────────── */
+  .cc-driving-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .cc-driving-card {
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color var(--transition);
+  }
+  .cc-driving-card:hover { border-color: var(--gold); }
+  .cc-driving-card-thumb {
+    aspect-ratio: 16 / 10;
+    background: #2a2a2a;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .cc-driving-role {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-weight: 700;
+  }
+  .cc-driving-role-daily { background: var(--gold); color: var(--charcoal); }
+  .cc-driving-role-next { background: rgba(94, 183, 240, 0.2); color: #5eb7f0; border: 1px solid rgba(94, 183, 240, 0.4); }
+  .cc-driving-role-dream { background: rgba(196, 160, 53, 0.15); color: var(--gold); border: 1px solid var(--gold); }
+  .cc-driving-card-body {
+    padding: 1.5rem;
+  }
+  .cc-driving-name {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-  }
-  .post-title a {
     color: var(--off-white);
-    text-decoration: none;
-    transition: color var(--transition);
+    margin-bottom: 0.75rem;
   }
-  .post-title a:hover {
+  .cc-driving-detail {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* ── PLAYLIST ─────────────────────────────────────────────── */
+  .cc-playlist-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .cc-playlist-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1f1a0e 0%, #2a2a2a 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  .cc-playlist-art {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius);
+    background: var(--gold);
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+  .cc-playlist-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--off-white);
+  }
+  .cc-playlist-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--light-gray);
+    margin-top: 0.2rem;
+  }
+  .cc-playlist-tracks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .cc-playlist-track {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .cc-playlist-track:last-child { border-bottom: none; }
+  .cc-track-num {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .cc-track-song {
+    font-weight: 600;
+    color: var(--off-white);
+    font-size: 0.9rem;
+  }
+  .cc-track-artist {
+    font-size: 0.78rem;
+    color: var(--light-gray);
+    margin-top: 0.1rem;
+  }
+  .cc-track-vibe {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--gold);
   }
-  .post-excerpt {
-    color: var(--text-dim);
-    font-size: 1.05rem;
-    line-height: 1.75;
-    margin-bottom: 1rem;
+
+  /* ── CALENDAR ─────────────────────────────────────────────── */
+  .cc-cal-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
-  .post-readmore {
+  .cc-cal-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .cc-cal-live { border-color: var(--gold); background: linear-gradient(90deg, rgba(196,160,53,0.08) 0%, var(--warm-gray) 100%); }
+  .cc-cal-date {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+  }
+  .cc-cal-name {
+    color: var(--off-white);
+    font-size: 0.95rem;
+  }
+  .cc-cal-status {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+  }
+  .cc-cal-status-live { background: var(--gold); color: var(--charcoal); font-weight: 700; }
+  .cc-cal-status-event { background: rgba(122, 220, 159, 0.15); color: #7adc9f; }
+  .cc-cal-status-upcoming { background: rgba(94, 183, 240, 0.15); color: #5eb7f0; }
+
+  /* ── RANKINGS ─────────────────────────────────────────────── */
+  .cc-rank-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .cc-rank-item {
+    padding: 1.5rem;
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color var(--transition);
+  }
+  .cc-rank-item:hover { border-color: var(--gold); }
+  .cc-rank-tease {
+    opacity: 0.6;
+    border-style: dashed;
+  }
+  .cc-rank-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 0.4rem;
+  }
+  .cc-rank-name {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-bottom: 0.5rem;
+  }
+  .cc-rank-quote {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .cc-rank-score-wrap {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+  .cc-rank-score {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .cc-rank-score span {
+    font-size: 0.85rem;
+    color: var(--light-gray);
+  }
+  .cc-rank-bar-wrap {
+    height: 4px;
+    background: var(--warm-gray);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .cc-rank-bar {
+    height: 100%;
+    background: var(--gold);
+  }
+  .cc-wishlist-status {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    text-align: center;
+    padding: 0.5rem 0;
+    line-height: 1.2;
+  }
+
+  /* ── ASK CRYSTAL FORM ─────────────────────────────────────── */
+  .cc-ask-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .cc-ask-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.75rem 0 1.5rem;
+  }
+  .cc-ask-title em { font-style: italic; color: var(--gold); }
+  .cc-ask-body {
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 48ch;
+  }
+  .cc-ask-note {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.75rem 1rem;
+    background: rgba(196, 160, 53, 0.08);
+    border-left: 3px solid var(--gold);
+    border-radius: 3px;
+    margin-top: 1.5rem;
+  }
+  .cc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .cc-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .cc-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .cc-form-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--gold);
+  }
+  .cc-form-input,
+  .cc-form-textarea {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--mid-gray);
+    color: var(--off-white);
+    border-radius: var(--radius);
+  }
+  .cc-form-input:focus,
+  .cc-form-textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .cc-form-textarea {
+    resize: vertical;
+  }
+  .cc-form-btn {
+    align-self: flex-start;
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: 0.85rem 1.75rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background var(--transition);
+  }
+  .cc-form-btn:hover { background: var(--gold-light); }
+
+  @media (max-width: 900px) {
+    .cc-hero-inner,
+    .cc-ask-wrap,
+    .cc-form-row,
+    .cc-first-review-verdict {
+      grid-template-columns: 1fr;
+    }
+    .cc-first-review-verdict { flex-direction: column; text-align: center; }
+    .cc-cal-item { grid-template-columns: 1fr; gap: 0.5rem; }
   }
 </style>

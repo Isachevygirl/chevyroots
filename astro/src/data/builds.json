@@ -1,0 +1,580 @@
+{
+  "botm": {
+    "month": "April 2026",
+    "image": "/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg",
+    "eyebrow": "Featured Build - Classic Muscle Restoration",
+    "title": "1970 Chevelle SS",
+    "subtitle": "LS3 Swap - Frame-Off Restoration - Stage 3 of 4",
+    "owner": "MW",
+    "handle": "@mike_wrenchworks",
+    "location": "Austin, TX - 3-year build",
+    "stats": [
+      {
+        "value": "$47.2K",
+        "label": "Total"
+      },
+      {
+        "value": "450",
+        "label": "HP"
+      },
+      {
+        "value": "18",
+        "label": "Mods"
+      },
+      {
+        "value": "75%",
+        "label": "Complete"
+      }
+    ],
+    "keyMods": [
+      "LS3 6.2L V8 engine swap — crate motor + full wiring harness",
+      "Frame-off bare-metal restoration - sandblasted + epoxy primed",
+      "4L60E automatic with B&M ratchet shifter",
+      "12-bolt rear end - 3.73 gears - Auburn limited-slip diff",
+      "Wilwood disc brakes all around - Baer slotted rotors"
+    ]
+  },
+  "builds": [
+    {
+      "model": "chevelle",
+      "year": "1970",
+      "yearRange": "1970-1979",
+      "type": "restoration",
+      "budget": "30k-60k",
+      "search": "1970 chevelle ss ls swap frame-off restoration muscle mike_wrenchworks austin",
+      "image": "/photos/chevelle/1970_Chevrolet_Chevelle_SS_-_01.jpg",
+      "stageText": "Stage 3 of 4",
+      "vehicle": "1970 Chevelle SS",
+      "subtitle": "LS3 Swap - Frame-Off Restoration",
+      "avatar": "MW",
+      "handle": "@mike_wrenchworks",
+      "location": "Austin, TX",
+      "stats": [
+        {
+          "value": "$47.2K",
+          "label": "Total"
+        },
+        {
+          "value": "3 yr",
+          "label": "Build Time"
+        },
+        {
+          "value": "450",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "gold",
+          "label": "Restoration"
+        },
+        {
+          "color": "blue",
+          "label": "LS Swap"
+        },
+        {
+          "color": "red",
+          "label": "Muscle"
+        }
+      ],
+      "progressPct": "75",
+      "modsCount": "18"
+    },
+    {
+      "model": "silverado",
+      "year": "2022",
+      "yearRange": "2015-present",
+      "type": "off-road",
+      "budget": "5k-15k",
+      "search": "2022 silverado trail boss lifted off-road daily dirtroad_dave fredericksburg",
+      "image": "/photos/silverado/pexels_15338002_silverado.jpeg",
+      "stageText": "Stage 2 of 3",
+      "vehicle": "2022 Silverado 1500",
+      "subtitle": "Trail Boss - Lifted Off-Road Build",
+      "avatar": "DD",
+      "handle": "@dirtroad_dave",
+      "location": "Fredericksburg, VA",
+      "stats": [
+        {
+          "value": "$12.8K",
+          "label": "Total"
+        },
+        {
+          "value": "6 mo",
+          "label": "Build Time"
+        },
+        {
+          "value": "355",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "green",
+          "label": "Off-Road"
+        },
+        {
+          "color": "blue",
+          "label": "Lifted"
+        },
+        {
+          "color": "grey",
+          "label": "Daily"
+        }
+      ],
+      "progressPct": "60",
+      "modsCount": "9"
+    },
+    {
+      "model": "c10",
+      "year": "1967",
+      "yearRange": "1955-1969",
+      "type": "restoration",
+      "budget": "15k-30k",
+      "search": "1967 c10 stepside patina shop truck 350 sbc classic c10collective nashville",
+      "image": "/photos/silverado/pexels_3122814_silverado.jpeg",
+      "stageText": "Stage 4 of 4",
+      "vehicle": "1967 C10 Stepside",
+      "subtitle": "Patina Shop Truck - 350 SBC",
+      "avatar": "C1",
+      "handle": "@c10collective",
+      "location": "Nashville, TN",
+      "stats": [
+        {
+          "value": "$22.5K",
+          "label": "Total"
+        },
+        {
+          "value": "18 mo",
+          "label": "Build Time"
+        },
+        {
+          "value": "290",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "gold",
+          "label": "Classic"
+        },
+        {
+          "color": "grey",
+          "label": "Patina"
+        },
+        {
+          "color": "grey",
+          "label": "Shop Truck"
+        }
+      ],
+      "progressPct": "100",
+      "modsCount": "14"
+    },
+    {
+      "model": "corvette",
+      "year": "2024",
+      "yearRange": "2015-present",
+      "type": "performance",
+      "budget": "5k-15k",
+      "search": "2024 corvette c8 stingray bolt-on performance vette_life_kr houston",
+      "image": "/photos/corvette/Chevrolet_Corvette_C8_IAA_2021_1X7A0156.jpg",
+      "stageText": "Stage 2 of 2",
+      "vehicle": "2024 Corvette C8",
+      "subtitle": "Stingray - Bolt-On Performance",
+      "avatar": "VK",
+      "handle": "@vette_life_kr",
+      "location": "Houston, TX",
+      "stats": [
+        {
+          "value": "$8.4K",
+          "label": "Total"
+        },
+        {
+          "value": "3 mo",
+          "label": "Build Time"
+        },
+        {
+          "value": "520",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "red",
+          "label": "Performance"
+        },
+        {
+          "color": "blue",
+          "label": "Bolt-On"
+        },
+        {
+          "color": "grey",
+          "label": "C8"
+        }
+      ],
+      "progressPct": "100",
+      "modsCount": "7"
+    },
+    {
+      "model": "k5 blazer",
+      "year": "1972",
+      "yearRange": "1970-1979",
+      "type": "restoration",
+      "budget": "30k-60k",
+      "search": "1972 k5 blazer full restoration 383 stroker off-road classic k5queen denver",
+      "image": "/photos/colorado/pexels_4595081_colorado.jpeg",
+      "stageText": "Stage 3 of 3",
+      "vehicle": "1972 K5 Blazer",
+      "subtitle": "Full Restoration - 383 Stroker",
+      "avatar": "K5",
+      "handle": "@k5queen",
+      "location": "Denver, CO",
+      "stats": [
+        {
+          "value": "$35K",
+          "label": "Total"
+        },
+        {
+          "value": "2 yr",
+          "label": "Build Time"
+        },
+        {
+          "value": "340",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "gold",
+          "label": "Restoration"
+        },
+        {
+          "color": "green",
+          "label": "Off-Road"
+        },
+        {
+          "color": "gold",
+          "label": "Classic"
+        }
+      ],
+      "progressPct": "100",
+      "modsCount": "21"
+    },
+    {
+      "model": "camaro",
+      "year": "2023",
+      "yearRange": "2015-present",
+      "type": "track build",
+      "budget": "15k-30k",
+      "search": "2023 camaro zl1 1le track build supercharged lt4 performance trackrat_zl1 atlanta",
+      "image": "/photos/camaro/pexels_5511993_camaro.jpeg",
+      "stageText": "Stage 2 of 3",
+      "vehicle": "2023 Camaro ZL1 1LE",
+      "subtitle": "Track Build - Supercharged LT4",
+      "avatar": "TZ",
+      "handle": "@trackrat_zl1",
+      "location": "Atlanta, GA",
+      "stats": [
+        {
+          "value": "$15.6K",
+          "label": "Total"
+        },
+        {
+          "value": "8 mo",
+          "label": "Build Time"
+        },
+        {
+          "value": "680",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "red",
+          "label": "Track"
+        },
+        {
+          "color": "red",
+          "label": "Performance"
+        },
+        {
+          "color": "grey",
+          "label": "Modern Muscle"
+        }
+      ],
+      "progressPct": "65",
+      "modsCount": "11"
+    },
+    {
+      "model": "nova",
+      "year": "1969",
+      "yearRange": "1955-1969",
+      "type": "performance",
+      "budget": "15k-30k",
+      "search": "1969 nova ss 396 big block drag strip performance nova_nation_greg memphis",
+      "image": "",
+      "stageText": "Stage 2 of 3",
+      "vehicle": "1969 Nova SS",
+      "subtitle": "396 Big Block — Drag Strip Build",
+      "avatar": "NG",
+      "handle": "@nova_nation_greg",
+      "location": "Memphis, TN",
+      "stats": [
+        {
+          "value": "$19.4K",
+          "label": "Total"
+        },
+        {
+          "value": "14 mo",
+          "label": "Build Time"
+        },
+        {
+          "value": "420",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "red",
+          "label": "Performance"
+        },
+        {
+          "color": "gold",
+          "label": "Classic"
+        },
+        {
+          "color": "orange",
+          "label": "Drag"
+        }
+      ],
+      "progressPct": "70",
+      "modsCount": "12"
+    },
+    {
+      "model": "colorado",
+      "year": "2021",
+      "yearRange": "2015-present",
+      "type": "off-road",
+      "budget": "15k-30k",
+      "search": "2021 colorado zr2 overlanding roof tent recovery gear off-road col_overland portland",
+      "image": "",
+      "stageText": "Stage 3 of 4",
+      "vehicle": "2021 Colorado ZR2",
+      "subtitle": "Overlander — Expedition Ready",
+      "avatar": "CO",
+      "handle": "@col_overland",
+      "location": "Portland, OR",
+      "stats": [
+        {
+          "value": "$21.1K",
+          "label": "Total"
+        },
+        {
+          "value": "10 mo",
+          "label": "Build Time"
+        },
+        {
+          "value": "308",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "green",
+          "label": "Off-Road"
+        },
+        {
+          "color": "blue",
+          "label": "Overlanding"
+        },
+        {
+          "color": "grey",
+          "label": "ZR2"
+        }
+      ],
+      "progressPct": "80",
+      "modsCount": "16"
+    },
+    {
+      "model": "monte carlo",
+      "year": "1987",
+      "yearRange": "1980-1999",
+      "type": "restoration",
+      "budget": "5k-15k",
+      "search": "1987 monte carlo ss g-body lowrider restoration monte_tony_d detroit",
+      "image": "",
+      "stageText": "Stage 4 of 4",
+      "vehicle": "1987 Monte Carlo SS",
+      "subtitle": "G-Body — Full Show Restoration",
+      "avatar": "TD",
+      "handle": "@monte_tony_d",
+      "location": "Detroit, MI",
+      "stats": [
+        {
+          "value": "$9.7K",
+          "label": "Total"
+        },
+        {
+          "value": "22 mo",
+          "label": "Build Time"
+        },
+        {
+          "value": "210",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "gold",
+          "label": "Restoration"
+        },
+        {
+          "color": "grey",
+          "label": "G-Body"
+        },
+        {
+          "color": "grey",
+          "label": "Show Car"
+        }
+      ],
+      "progressPct": "100",
+      "modsCount": "19"
+    },
+    {
+      "model": "silverado",
+      "year": "2019",
+      "yearRange": "2015-present",
+      "type": "off-road",
+      "budget": "15k-30k",
+      "search": "2019 silverado hd 2500 duramax diesel lifted work truck towing hd_haul_central kansas city",
+      "image": "",
+      "stageText": "Stage 2 of 2",
+      "vehicle": "2019 Silverado HD 2500",
+      "subtitle": "Duramax Diesel — Lifted Work Rig",
+      "avatar": "HC",
+      "handle": "@hd_haul_central",
+      "location": "Kansas City, MO",
+      "stats": [
+        {
+          "value": "$23.3K",
+          "label": "Total"
+        },
+        {
+          "value": "12 mo",
+          "label": "Build Time"
+        },
+        {
+          "value": "445",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "green",
+          "label": "Off-Road"
+        },
+        {
+          "color": "blue",
+          "label": "Diesel"
+        },
+        {
+          "color": "grey",
+          "label": "HD Truck"
+        }
+      ],
+      "progressPct": "100",
+      "modsCount": "13"
+    },
+    {
+      "model": "corvette",
+      "year": "2006",
+      "yearRange": "2000-2014",
+      "type": "track build",
+      "budget": "15k-30k",
+      "search": "2006 corvette c6 z06 ls7 track build wilwood brakes borla exhaust c6_z06_rip charlotte",
+      "image": "",
+      "stageText": "Stage 3 of 3",
+      "vehicle": "2006 Corvette C6 Z06",
+      "subtitle": "LS7 — Full Track Prep",
+      "avatar": "ZR",
+      "handle": "@c6_z06_rip",
+      "location": "Charlotte, NC",
+      "stats": [
+        {
+          "value": "$28.9K",
+          "label": "Total"
+        },
+        {
+          "value": "2 yr",
+          "label": "Build Time"
+        },
+        {
+          "value": "560",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "red",
+          "label": "Track"
+        },
+        {
+          "color": "blue",
+          "label": "Wilwood"
+        },
+        {
+          "color": "orange",
+          "label": "Borla"
+        }
+      ],
+      "progressPct": "100",
+      "modsCount": "24"
+    },
+    {
+      "model": "impala",
+      "year": "1964",
+      "yearRange": "1955-1969",
+      "type": "restoration",
+      "budget": "30k-60k",
+      "search": "1964 impala ss lowrider frame off restoration hydraulics 409 la_impala_kings los angeles",
+      "image": "",
+      "stageText": "Stage 2 of 3",
+      "vehicle": "1964 Impala SS",
+      "subtitle": "Frame-Off Restoration — Show Build",
+      "avatar": "IK",
+      "handle": "@la_impala_kings",
+      "location": "Los Angeles, CA",
+      "stats": [
+        {
+          "value": "$41.5K",
+          "label": "Total"
+        },
+        {
+          "value": "3 yr",
+          "label": "Build Time"
+        },
+        {
+          "value": "360",
+          "label": "HP"
+        }
+      ],
+      "tags": [
+        {
+          "color": "gold",
+          "label": "Restoration"
+        },
+        {
+          "color": "gold",
+          "label": "Classic"
+        },
+        {
+          "color": "grey",
+          "label": "Show Car"
+        }
+      ],
+      "progressPct": "55",
+      "modsCount": "17"
+    }
+  ],
+  "popularMods": []
+}

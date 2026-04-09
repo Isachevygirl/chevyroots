@@ -1,0 +1,105 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[dev]
+  command = "npm run dev"
+  targetPort = 4321
+  framework = "astro"
+
+# ── API endpoints ───────────────────────────────────────────────────────
+[[redirects]]
+  from = "/api/subscribe"
+  to = "/.netlify/functions/subscribe"
+  status = 200
+
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+
+[[redirects]]
+  from = "/api/submit-build"
+  to = "/.netlify/functions/submit-build"
+  status = 200
+
+[[redirects]]
+  from = "/api/submit-event"
+  to = "/.netlify/functions/submit-event"
+  status = 200
+
+# ── Affiliate redirects ────────────────────────────────────────────────
+[[redirects]]
+  from = "/go/*"
+  to = "/.netlify/functions/go/:splat"
+  status = 200
+  force = true
+
+# ── Legacy path preservation (so existing indexed URLs don't break) ───
+[[redirects]]
+  from = "/pages/guides/:slug.html"
+  to = "/guides/:slug/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/guides/"
+  to = "/guides/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/models/"
+  to = "/models/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/models/:slug.html"
+  to = "/models/:slug/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/events/"
+  to = "/events/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/mechanics/"
+  to = "/mechanics/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/news/"
+  to = "/news/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/crystals-corner/"
+  to = "/crystals-corner/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/about/"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/ads/"
+  to = "/vintage-ads/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/:slug/"
+  to = "/:slug/"
+  status = 301
+
+# ── Security headers ───────────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

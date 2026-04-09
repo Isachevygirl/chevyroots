@@ -1,0 +1,320 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { vehicles, knownIssuesForModel, type Vehicle } from '@lib/data';
+
+export async function getStaticPaths() {
+  const reserved = new Set(['trucks', 'cars', 'classics', 'suvs', 'evs', 'corvette']);
+  return vehicles
+    .filter((v) => !reserved.has(v.slug))
+    .filter((v) => v.years.length >= 1) // Show for any model with year data
+    .map((v) => ({
+      params: { slug: v.slug },
+      props: { vehicle: v },
+    }));
+}
+
+interface Props {
+  vehicle: Vehicle;
+}
+
+const { vehicle } = Astro.props;
+const issues = knownIssuesForModel(vehicle.slug);
+
+// Score each year: higher score = better buy
+// Starting from 100, subtract for major/moderate issues in the year range
+interface YearScore {
+  year: number;
+  score: number;
+  msrp: number;
+  majorIssues: number;
+  moderateIssues: number;
+  minorIssues: number;
+  notes: string[];
+}
+
+function scoreYears(vehicle: Vehicle): YearScore[] {
+  return vehicle.years.map((yr) => {
+    const relevant = issues?.issues_by_year.filter((block) => {
+      const range = block.year_range.replace(/[^0-9-]/g, '');
+      const [startStr, endStr] = range.split('-');
+      const start = parseInt(startStr, 10);
+      const end = parseInt(endStr || startStr, 10);
+      return yr.year >= start && yr.year <= end;
+    }) || [];
+
+    let major = 0, moderate = 0, minor = 0;
+    const notes: string[] = [];
+    for (const block of relevant) {
+      for (const issue of block.issues) {
+        if (issue.severity === 'major') { major++; notes.push(`${issue.title} (major)`); }
+        else if (issue.severity === 'moderate') { moderate++; notes.push(`${issue.title} (moderate)`); }
+        else minor++;
+      }
+    }
+    const score = 100 - (major * 25) - (moderate * 10) - (minor * 3);
+    return {
+      year: yr.year,
+      score: Math.max(0, score),
+      msrp: yr.starting_msrp || 0,
+      majorIssues: major,
+      moderateIssues: moderate,
+      minorIssues: minor,
+      notes: notes.slice(0, 3),
+    };
+  }).sort((a, b) => b.score - a.score);
+}
+
+const scored = scoreYears(vehicle);
+const best = scored[0];
+const worst = scored[scored.length - 1];
+const recommended = scored.filter((s) => s.score >= 70).slice(0, 3);
+---
+
+<BaseLayout
+  title={`Best Year to Buy a ${vehicle.model} — Year-by-Year Reliability Ranking | ChevyRoots`}
+  description={`Honest year-by-year analysis of every ${vehicle.model} we cover — which years are the best buys, which years have known issues, and what to look for when shopping used. Based on real owner reports and TSBs.`}
+>
+  <header class="best-header">
+    <div class="container">
+      <p class="section-eyebrow">Year-by-Year Ranking</p>
+      <h1 class="best-title">Best Year to Buy a <em>{vehicle.model}</em></h1>
+      <span class="gold-line"></span>
+      <p class="best-lede">
+        An honest ranking of every {vehicle.model} model year based on known issues, TSBs, and real owner reports. Higher scores mean fewer problems and a better used-market value proposition.
+      </p>
+    </div>
+  </header>
+
+  {best && (
+    <section class="hero-year">
+      <div class="container container-narrow">
+        <div class="section-eyebrow">Our Pick</div>
+        <h2 class="hero-year-title">The <strong>{best.year} {vehicle.model}</strong></h2>
+        <div class="hero-year-score">Reliability Score: <span class="gold">{best.score}/100</span></div>
+        <p class="hero-year-note">
+          {best.score >= 90 && `The ${best.year} ${vehicle.model} is the year we'd recommend if you're shopping used. Very few reported issues and a strong track record from owners.`}
+          {best.score >= 70 && best.score < 90 && `The ${best.year} ${vehicle.model} is a solid used buy with minor known issues you should budget for but nothing catastrophic.`}
+          {best.score < 70 && `Even the best year of this generation has some known issues — read the full ranking below before buying.`}
+        </p>
+        <a href={`/models/${vehicle.slug}/${best.year}/`} class="btn btn-gold">See {best.year} trim details →</a>
+      </div>
+    </section>
+  )}
+
+  <section class="ranking-section">
+    <div class="container container-narrow">
+      <h2 class="section-title">Complete Year-by-Year Ranking</h2>
+      <span class="gold-line"></span>
+
+      <div class="rank-list">
+        {scored.map((s, i) => (
+          <div class={`rank-item ${i === 0 ? 'top' : ''} ${s.score < 50 ? 'bottom' : ''}`}>
+            <div class="rank-number">#{i + 1}</div>
+            <div class="rank-content">
+              <h3><a href={`/models/${vehicle.slug}/${s.year}/`}>{s.year} {vehicle.model}</a></h3>
+              <div class="rank-meta">
+                <span class="rank-score">Score: <strong>{s.score}/100</strong></span>
+                {s.msrp > 0 && <span class="rank-msrp">${s.msrp.toLocaleString()} MSRP</span>}
+              </div>
+              <div class="rank-issues">
+                {s.majorIssues > 0 && <span class="issue-tag major">{s.majorIssues} major</span>}
+                {s.moderateIssues > 0 && <span class="issue-tag moderate">{s.moderateIssues} moderate</span>}
+                {s.minorIssues > 0 && <span class="issue-tag minor">{s.minorIssues} minor</span>}
+                {s.majorIssues === 0 && s.moderateIssues === 0 && s.minorIssues === 0 && <span class="issue-tag clean">Clean record</span>}
+              </div>
+              {s.notes.length > 0 && (
+                <ul class="rank-notes">
+                  {s.notes.map((note) => <li>{note}</li>)}
+                </ul>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="cta-box">
+        <h2>How we score model years</h2>
+        <p>
+          Each year starts at 100 points. We deduct 25 for each major known issue (lifter failures, transmission replacements, engine internals), 10 for each moderate issue (drivability complaints, common repairs), and 3 for each minor issue (easy DIY fixes, comfort quirks). Scores are based on our <a href="/models/">known-issues database</a>, which pulls from TSBs, owner forums, and real repair reports.
+        </p>
+        <p>
+          <strong>This is a guide, not a guarantee.</strong> Even the best year can have a lemon, and even the worst year can have perfectly maintained examples out there. Always get a pre-purchase inspection, read the service history, and verify warranty status before buying any used vehicle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterCTA source={`best-year-${vehicle.slug}`} />
+</BaseLayout>
+
+<style>
+  .best-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #1f1a0e 100%);
+    border-bottom: 1px solid rgba(196, 160, 53, 0.2);
+  }
+  .best-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .best-title em { font-style: italic; color: var(--gold); }
+  .best-lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 72ch;
+    margin-top: 1.5rem;
+  }
+  .hero-year {
+    padding: 60px 0;
+    background: var(--warm-gray);
+    text-align: center;
+  }
+  .hero-year-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 0.75rem 0;
+  }
+  .hero-year-title strong {
+    color: var(--gold);
+    font-weight: 900;
+  }
+  .hero-year-score {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 1.5rem;
+  }
+  .hero-year-score .gold { color: var(--gold); font-weight: 700; }
+  .hero-year-note {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 60ch;
+    margin: 0 auto 2rem;
+  }
+  .ranking-section {
+    padding: var(--section-pad) 0;
+  }
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+  .rank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 3rem 0;
+  }
+  .rank-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .rank-item.top {
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(196, 160, 53, 0.1);
+  }
+  .rank-item.bottom {
+    border-left: 3px solid #c0392b;
+  }
+  .rank-number {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .rank-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .rank-content h3 a {
+    color: var(--off-white);
+    text-decoration: none;
+  }
+  .rank-content h3 a:hover { color: var(--gold); }
+  .rank-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .rank-score strong { color: var(--gold); }
+  .rank-issues {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .issue-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+  }
+  .issue-tag.major { background: rgba(192, 57, 43, 0.2); color: #e06c5a; }
+  .issue-tag.moderate { background: rgba(230, 126, 34, 0.2); color: #f1a663; }
+  .issue-tag.minor { background: rgba(196, 160, 53, 0.15); color: var(--gold); }
+  .issue-tag.clean { background: rgba(46, 204, 113, 0.15); color: #7adc9f; }
+  .rank-notes {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    margin: 0.5rem 0 0 1.25rem;
+    list-style: disc;
+  }
+  .rank-notes li {
+    margin-bottom: 0.25rem;
+  }
+  .cta-box {
+    padding: 2rem;
+    background: var(--warm-gray);
+    border: 1px solid rgba(196, 160, 53, 0.2);
+    border-radius: var(--radius-lg);
+    margin-top: 3rem;
+  }
+  .cta-box h2 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .cta-box p {
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .cta-box strong { color: var(--off-white); }
+  .cta-box a { color: var(--gold); text-decoration: underline; }
+</style>

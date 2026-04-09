@@ -1,0 +1,34 @@
+name: Reddit Content-Idea Listener (Daily)
+
+on:
+  schedule:
+    - cron: '0 13 * * *'  # Daily 9am ET
+  workflow_dispatch:
+
+jobs:
+  listen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install praw
+        run: pip install praw
+
+      - name: Run Reddit listener
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+          TURSO_DB_URL: ${{ secrets.TURSO_DB_URL }}
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+        run: |
+          cd pipelines
+          python reddit_listener.py

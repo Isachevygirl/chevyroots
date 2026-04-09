@@ -1,0 +1,41 @@
+name: NHTSA Recall Watcher (Weekly)
+
+on:
+  schedule:
+    - cron: '0 14 * * 1'  # Mondays at 10am ET
+  workflow_dispatch:
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run NHTSA watcher
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TURSO_DB_URL: ${{ secrets.TURSO_DB_URL }}
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+        run: |
+          cd pipelines
+          python nhtsa_recalls.py
+
+      - name: Commit recall drafts
+        run: |
+          git config user.name "chevyroots-bot"
+          git config user.email "bot@chevyroots.com"
+          if [[ -n "$(git status --porcelain drafts/)" ]]; then
+            git add drafts/
+            git commit -m "recalls: weekly NHTSA draft refresh $(date -u +%Y-%m-%d)"
+            git push
+          fi

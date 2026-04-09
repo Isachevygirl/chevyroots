@@ -1,0 +1,338 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NewsletterCTA from '@components/NewsletterCTA.astro';
+import { vehicles, knownIssuesForModel, type Vehicle, type VehicleYear } from '@lib/data';
+
+export async function getStaticPaths() {
+  const paths: Array<{
+    params: { slug: string; year: string };
+    props: { vehicle: Vehicle; yearData: VehicleYear };
+  }> = [];
+
+  const reserved = new Set(['trucks', 'cars', 'classics', 'suvs', 'evs', 'corvette']);
+
+  for (const vehicle of vehicles) {
+    if (reserved.has(vehicle.slug)) continue;
+    for (const yearData of vehicle.years) {
+      paths.push({
+        params: { slug: vehicle.slug, year: String(yearData.year) },
+        props: { vehicle, yearData },
+      });
+    }
+  }
+
+  return paths;
+}
+
+interface Props {
+  vehicle: Vehicle;
+  yearData: VehicleYear;
+}
+
+const { vehicle, yearData } = Astro.props;
+const issues = knownIssuesForModel(vehicle.slug);
+
+// Find issues matching this year
+const matchingIssues = issues?.issues_by_year.filter((block) => {
+  const range = block.year_range.replace(/[^0-9-]/g, '');
+  const [startStr, endStr] = range.split('-');
+  const start = parseInt(startStr, 10);
+  const end = parseInt(endStr || startStr, 10);
+  return yearData.year >= start && yearData.year <= end;
+}) || [];
+
+const title = `${yearData.year} Chevrolet ${vehicle.model} — Specs, Trims, Issues, Value | ChevyRoots`;
+const description = `Complete reference for the ${yearData.year} Chevrolet ${vehicle.model}. Every trim, MSRP, engine spec, towing capacity, known issues for this year, and buyer's guidance from Crystal and the ChevyRoots team.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <header class="year-header">
+    <div class="container">
+      <p class="section-eyebrow">{yearData.year} Model Year</p>
+      <h1 class="year-title">{yearData.year} {vehicle.model}</h1>
+      <span class="gold-line"></span>
+      <div class="year-meta">
+        <div class="meta-item">
+          <div class="meta-label">Starting MSRP</div>
+          <div class="meta-value">${yearData.starting_msrp?.toLocaleString() || '—'}</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Trims</div>
+          <div class="meta-value">{yearData.trims?.length || 0}</div>
+        </div>
+        {matchingIssues.length > 0 && (
+          <div class="meta-item">
+            <div class="meta-label">Known Issues</div>
+            <div class="meta-value">{matchingIssues.reduce((n, b) => n + b.issues.length, 0)}</div>
+          </div>
+        )}
+      </div>
+    </div>
+  </header>
+
+  <section class="year-section">
+    <div class="container">
+      <nav class="year-nav">
+        <a href={`/models/${vehicle.slug}/`}>← All {vehicle.model} years</a>
+      </nav>
+
+      {yearData.trims && yearData.trims.length > 0 && (
+        <>
+          <h2 class="section-title">{yearData.year} {vehicle.model} Trims &amp; Specs</h2>
+          <div class="trims-table-wrap">
+            <table class="trims-table">
+              <thead>
+                <tr>
+                  <th>Trim</th>
+                  <th>MSRP</th>
+                  <th>Engine</th>
+                  <th>HP</th>
+                  <th>Torque</th>
+                  <th>Towing</th>
+                  <th>MPG</th>
+                </tr>
+              </thead>
+              <tbody>
+                {yearData.trims.map((trim) => (
+                  <tr>
+                    <td class="trim-name">{trim.name}</td>
+                    <td>${trim.msrp?.toLocaleString() || '—'}</td>
+                    <td>{trim.engine || '—'}</td>
+                    <td>{trim.hp || '—'}</td>
+                    <td>{trim.torque ? `${trim.torque} lb-ft` : '—'}</td>
+                    <td>{trim.towing_capacity ? `${trim.towing_capacity.toLocaleString()} lbs` : '—'}</td>
+                    <td>{trim.mpg_city && trim.mpg_highway ? `${trim.mpg_city}/${trim.mpg_highway}` : '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+
+      {matchingIssues.length > 0 && (
+        <>
+          <h2 class="section-title">Known Issues for the {yearData.year} {vehicle.model}</h2>
+          <p class="lede">
+            Real-world reliability notes for this model year, compiled from owner reports, TSBs, and technical service bulletins. If you're shopping a {yearData.year} {vehicle.model} used, read these first.
+          </p>
+          {matchingIssues.map((block) => (
+            <div class="issue-block">
+              <h3 class="issue-year">Covering model years {block.year_range}</h3>
+              {block.issues.map((issue) => (
+                <div class={`issue-card severity-${issue.severity}`}>
+                  <div class="issue-header">
+                    <h4>{issue.title}</h4>
+                    <span class={`severity-badge severity-${issue.severity}`}>{issue.severity}</span>
+                  </div>
+                  <p>{issue.description}</p>
+                  {issue.fix_description && <p><strong>Fix:</strong> {issue.fix_description}</p>}
+                  {issue.estimated_cost && <p><strong>Cost:</strong> {issue.estimated_cost}</p>}
+                </div>
+              ))}
+            </div>
+          ))}
+        </>
+      )}
+
+      <div class="cta-box">
+        <h2>Still shopping a {vehicle.model}?</h2>
+        <p>
+          Read our <a href={`/models/${vehicle.slug}/`}>complete {vehicle.model} buyer's reference</a>,
+          compare it against other Chevys in our <a href="/guides/">guides library</a>,
+          or <a href="/contact/">reach out</a> if you have a specific question about the {yearData.year} model year.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterCTA source={`model-${vehicle.slug}-${yearData.year}`} />
+</BaseLayout>
+
+<style>
+  .year-header {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--warm-gray) 100%);
+  }
+  .year-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin-top: 0.75rem;
+  }
+  .year-meta {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .meta-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+  .meta-value {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--gold);
+  }
+  .year-section {
+    padding: var(--section-pad) 0;
+  }
+  .year-nav {
+    margin-bottom: 2rem;
+  }
+  .year-nav a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    margin: 3rem 0 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--gold);
+  }
+  .lede {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 72ch;
+  }
+  .trims-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--warm-gray);
+    margin-bottom: 2rem;
+  }
+  .trims-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .trims-table th {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    text-align: left;
+    padding: 12px 14px;
+    background: var(--charcoal);
+    border-bottom: 2px solid var(--gold);
+  }
+  .trims-table td {
+    padding: 10px 14px;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+  }
+  .trim-name {
+    color: var(--off-white);
+    font-weight: 600;
+  }
+  .issue-block {
+    margin-bottom: 2rem;
+  }
+  .issue-year {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .issue-card {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .issue-card.severity-major { border-left-color: #c0392b; }
+  .issue-card.severity-moderate { border-left-color: #e67e22; }
+  .issue-card.severity-minor { border-left-color: var(--gold); }
+  .issue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .issue-header h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+  .severity-badge {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+  }
+  .severity-badge.severity-major { background: rgba(192, 57, 43, 0.2); color: #e06c5a; }
+  .severity-badge.severity-moderate { background: rgba(230, 126, 34, 0.2); color: #f1a663; }
+  .severity-badge.severity-minor { background: rgba(196, 160, 53, 0.15); color: var(--gold); }
+  .issue-card p {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin-bottom: 0.5rem;
+  }
+  .issue-card strong {
+    color: var(--gold);
+  }
+  .cta-box {
+    padding: 2rem;
+    background: var(--warm-gray);
+    border: 1px solid rgba(196, 160, 53, 0.2);
+    border-radius: var(--radius-lg);
+    margin-top: 3rem;
+  }
+  .cta-box h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .cta-box p {
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  .cta-box a {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+</style>

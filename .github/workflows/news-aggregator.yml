@@ -1,0 +1,52 @@
+name: News Aggregator (Nightly)
+
+on:
+  schedule:
+    # 7am UTC = 3am ET = midnight PT — before anyone's checking Google News
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: news-aggregator
+  cancel-in-progress: false
+
+jobs:
+  aggregate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run news aggregator
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TURSO_DB_URL: ${{ secrets.TURSO_DB_URL }}
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM_EMAIL: ${{ secrets.RESEND_FROM_EMAIL }}
+        run: |
+          cd pipelines
+          python news_aggregator.py
+
+      - name: Commit new items
+        run: |
+          git config user.name "chevyroots-bot"
+          git config user.email "bot@chevyroots.com"
+          if [[ -n "$(git status --porcelain data/news_articles.json astro/src/data/news_articles.json)" ]]; then
+            git add data/news_articles.json astro/src/data/news_articles.json
+            git commit -m "news: nightly aggregation $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No new news items to commit"
+          fi

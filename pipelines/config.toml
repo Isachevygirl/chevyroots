@@ -1,0 +1,81 @@
+# ChevyRoots Content Pipelines — Configuration
+# Used by all pipelines in this directory. Edit with care.
+
+[http]
+# Polite defaults. Do not reduce these without a good reason.
+rate_limit_seconds = 5
+user_agent = "ChevyRootsBot/1.0 (+https://chevyroots.com/bot; contact hello@chevyroots.com)"
+timeout_seconds = 30
+max_retries = 3
+respect_robots_txt = true
+
+[alerts]
+failure_email = "alerts@chevyroots.com"
+success_digest = false  # Set to true to get a daily success digest too
+
+[news]
+# RSS sources for news_aggregator.py. Pulled into data/news_articles.json
+# each night. Sources organized by tier (reliability of summaries).
+
+tier1 = [
+  { name = "GM Authority",        url = "https://gmauthority.com/blog/feed/" },
+  { name = "Corvette Blogger",    url = "https://www.corvetteblogger.com/feed/" },
+  { name = "GM-Trucks",           url = "https://www.gm-trucks.com/forums/-/index.rss" },
+  { name = "Motor Trend Chevy",   url = "https://www.motortrend.com/make/chevrolet/feed/" },
+  { name = "Hagerty",             url = "https://www.hagerty.com/media/feed/" },
+  { name = "Electrek Chevy",      url = "https://electrek.co/guides/chevrolet/feed/" },
+  { name = "Automotive News",     url = "https://www.autonews.com/rss.xml" },
+]
+
+tier2 = [
+  { name = "Jalopnik Chevy",      url = "https://jalopnik.com/tag/chevrolet/rss" },
+  { name = "The Drive Chevy",     url = "https://www.thedrive.com/tag/chevrolet/feed" },
+  { name = "Car and Driver",      url = "https://www.caranddriver.com/rss/all.xml/" },
+  { name = "Autoblog",            url = "https://www.autoblog.com/rss.xml" },
+]
+
+[nhtsa]
+# NHTSA Recalls API (public, no key required)
+base_url = "https://api.nhtsa.gov/recalls/recallsByVehicle"
+models = [
+  "SILVERADO 1500", "SILVERADO 2500", "SILVERADO 3500",
+  "CORVETTE", "CAMARO", "MALIBU", "IMPALA", "CRUZE",
+  "TAHOE", "SUBURBAN", "BLAZER", "TRAVERSE", "EQUINOX", "TRAX", "TRAILBLAZER",
+  "COLORADO", "BOLT", "VOLT",
+]
+start_year = 2015
+
+[reddit]
+# Must have REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USER_AGENT in env
+subreddits = [
+  "Chevy", "chevrolet", "Corvette", "Silverado",
+  "camaro", "chevytrucks", "CarsForSale", "Cartalk",
+]
+min_upvotes_for_idea = 50
+max_ideas_per_run = 30
+
+[auctions]
+sources = [
+  { name = "Bring a Trailer",  url = "https://bringatrailer.com/chevrolet/feed/" },
+  { name = "Hemmings",         url = "https://www.hemmings.com/news.rss" },
+]
+top_n = 10
+
+[forum_synthesis]
+# Only forums that have been ToS-reviewed and are explicitly allowed. Any
+# addition requires manual review.
+enabled = false  # Set to true after ToS review is complete
+allowlist = [
+  # { name = "CorvetteForum", base_url = "https://www.corvetteforum.com/" },
+  # { name = "ChevyTalk",     base_url = "https://www.chevytalk.com/" },
+  # { name = "GM-Trucks",     base_url = "https://www.gm-trucks.com/forums/" },
+]
+max_quote_words = 150
+max_quote_percentage = 0.10  # Quoted content ≤ 10% of original thread length
+
+[event_scrapers]
+sources = [
+  { name = "Goodguys",                url = "https://www.good-guys.com/event-calendar" },
+  { name = "NHRA",                    url = "https://www.nhra.com/schedule" },
+  # SEMA calendar, Hagerty Drivers Club, regional car show aggregators
+]

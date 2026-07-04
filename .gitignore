@@ -48,3 +48,7 @@ drafts/rejected/
 # ── Temporary outputs from content pipelines ───────────
 pipeline_runs.log
 pipelines/.cache/
+
+# local session instructions & plans — never commit
+CLAUDE.md
+.claude/
